@@ -1,0 +1,40 @@
+
+
+# jalal7h@gmail.com
+# 2016/05/17
+# Version 3.3
+
+/*
+# $list = array(
+# 	id : name of the subdirectory. (if not null)
+# 	input : name of <input tag. / directory of destination, placed on `data` directory.
+# 	numb : number of the input[] to be saved. (empty == save all).
+# 	ext : valid file extensions for upload (empty = picture) [ jpeg , png , gif , mp4 ] , if "all" it will not be chekced
+# );
+# $array_of_file_path = fileupload_upload( array("id"=>"2", "input"=>"pic", "ext"=>['mpg','mov'] ) );
+
+# $f = fileupload_upload([ 'fInpName'=>'file_dir', 'id'=>11, 'ext'=>'wmv,avi,mp4' ]);
+# $f = fileupload_upload([ 'fInpName'=>'file_dir', 'ext'=>'*' ]);
+# $f = fileupload_upload([ 'fInpName'=>'file_dir' ]);
+
+
+# $list = array(
+# 	id : name of the subdirectory. (if not null)
+# 	input : name of <input tag. / directory of destination, placed on `data` directory.
+# 	numb : number of the input[] to be saved. (empty == save all).
+# 	ext : valid file extensions for upload (empty = picture) [ jpeg , png , gif , mp4 ] , if "all" it will not be chekced
+# );
+# $array_of_file_path = fileupload_upload( array("id"=>"2", "input"=>"pic") );
+
+
+# $array_of_file_path = fileupload_upload( array("id"=>"2", "input"=>"pic") );
+inja "pic" esm e "<input type=file" hast, va hamchenin esme directory ke baiad file tush save beshe
+va in function dare, hameye <input haye type=file ke name="pic[]" hast ro file esh ro mirize tu data/pic/2
+va khorujish ke tu $array_of_file_path hast, ye array hast az address e file hai ke upload shode
+
+masalan , 
+array(
+	[0]=>"data/pic/2/some-name.jpeg",
+	[1]=>"data/pic/2/some-name2.jpeg",
+);
+

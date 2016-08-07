@@ -1,0 +1,44 @@
+
+#do_admin .mainbar > .top > .breadcrumb {
+	position: absolute; top: -3px; right: 0px;
+	display: inline-block;
+	padding: 0 12px;
+	vertical-align: middle;
+}
+#do_admin .mainbar > .top > .breadcrumb > a {
+	color: #bbb;
+	text-shadow: 0 0 2px #000;
+	display: inline-block;
+	vertical-align: middle;
+}
+#do_admin .mainbar > .top > .breadcrumb > a:hover {
+	color: #eee;
+}
+#do_admin .mainbar > .top > .breadcrumb > a:before {
+	color: #bbb !important;
+}
+#do_admin .mainbar > .top > .breadcrumb > .home {
+
+}
+#do_admin .mainbar > .top > .breadcrumb > .home:before {
+	font-family: FontAwesome;
+	content: "\f015";
+	font-size: 20px;
+	display: inline-block;
+	position: relative; top: 4px; right: 4px;
+	margin-left: 14px;
+}
+
+#do_admin .mainbar > .top > .breadcrumb > .etc {
+	margin: 0 10px 0 0;
+}
+#do_admin .mainbar > .top > .breadcrumb > .etc:before {
+	font-family: FontAwesome;
+	content: "\f100";
+	font-size: 20px;
+	/* margin: 0 0 0 10px; */
+	display: inline-block;
+	margin-left: 10px;
+	position: relative; top: 3px; left: 0px;
+}
+

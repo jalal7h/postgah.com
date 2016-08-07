@@ -1,0 +1,80 @@
+
+.userpanel_menu {
+	display: inline-block;
+	width: 162px;
+	direction: rtl;
+	background-color: white;
+	/*border: 1px solid #d9d9d9;*/
+	margin-bottom: 20px;
+	border-radius: 4px;
+
+	/*display: none;*/
+	opacity: 0.0;
+}
+
+/*avatar*/
+.userpanel_menu .profile_avatar {
+	/*margin-bottom: 5px !important;*/
+	width: 162px;
+	max-height: 200px;
+	overflow: hidden;
+	display: inline-block;
+}
+.userpanel_menu .profile_avatar > img {
+	border-radius: 4px 4px 0 0;
+	border: 1px solid #d9d9d9;
+    border-right: 3px solid gray;
+    width: 162px;
+    height: auto;
+}
+
+.userpanel_menu > div > a {
+	position: relative;
+	display: block;
+    color: #404040;
+    white-space: nowrap;
+    font-size: 12px;
+    height: 39px;
+    border-bottom: 1px solid #ededed;
+    border-right: 3px solid gray;
+}
+.userpanel_menu > div > a:last-child {
+	border-bottom: 0px !important;
+}
+.userpanel_menu > div > a:hover {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-right-color: #E22697;
+}
+.userpanel_menu > div > a:before {
+	text-align: center;
+	background-color: #ededed;
+	width: 38px;
+	height: 38px;
+	line-height: 38px !important;
+	display: inline-block;
+    font: normal 20px FontAwesome;
+    padding: 0;
+    margin: 0 0 0 10px !important;
+    /*border-left: 1px solid #ededed;*/
+    border-bottom: 1px solid white;
+	content: "\f015";
+}
+
+.userpanel_menu > div > a:hover:before {
+    border-bottom: 1px solid #ededed;
+	background-color: black;
+}
+.userpanel_menu > div > a:hover:last-child:before {
+    border-bottom: 1px solid #000;	
+}
+.userpanel_menu > div > a > span {
+	position: absolute; top: 11px; right: 50px;
+}
+
+.userpanel_menu > div > a.current {
+	box-shadow: 0 0 300px rgba(0, 0, 0, 0.07) inset;
+}
+
+
+

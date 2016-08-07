@@ -1,0 +1,51 @@
+
+.lmffts {
+	display: block;
+	margin: 25px 10px 5px 0;
+	font-size: 14px;
+}
+.lmff_div {
+	display: block;
+	float: none;
+	clear: both;
+	/*margin-right: 40px;*/
+	/* margin-bottom: 5px; */
+	vertical-align: middle;
+}
+.lmff_div:nth-child(1) {
+	display: inline-block;
+}
+.lmff_div input[type=file] {
+	/*float: none !important;*/
+	/*display: inline-block !important;*/
+}
+.lmff_span {
+	
+}
+.lmff_span:hover {
+	opacity: 0.8;
+}
+
+.lmff_file {
+	float: none !important;
+	display: none !important;
+}
+
+.lmff_aplus {
+	font: bold 16px BYekan,Tahoma !important;
+	color: rgb(117, 172, 0) !important;
+	margin: 0 15px 0 0;
+}
+.lmff_aplus icon:before {
+	content: "\f067";
+}
+
+
+hr.listmaker_divider {
+	height: 0;
+    border: 0px;
+    border-top: 1px dotted #bbb;
+    padding: 0px;
+    margin: 10px 0 9px 0;
+}
+

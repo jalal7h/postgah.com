@@ -1,0 +1,46 @@
+
+.texty_management {
+	margin: 30px auto;
+	direction: rtl;
+	text-align: right;
+}
+.texty_management > .r {
+	width: 45%;
+	display: inline-block;
+	margin: 0 15px;
+}
+.texty_management > .r > .name {
+	text-align: right;
+	margin: 25px 12px 0 0;
+	color: #888;
+}
+.texty_management > .r > input {
+	width: 100%;
+	padding: 12px 15px 10px 15px;
+	border: 0px;
+	box-shadow: 0 0 15px #ccc;
+	margin: 10px 10px 0px 10px;
+	font-size: 14px;
+	line-height: 22px !important;
+	border-radius: 8px 8px 3px 3px;
+}
+.texty_management > .r > textarea {
+	resize: none;
+	width: 100%;
+	padding: 15px;
+	border: 0px;
+	box-shadow: 0 0 15px #ccc;
+	margin: 10px;
+	height: 140px;
+	font-size: 14px;
+	line-height: 22px !important;
+	border-radius: 3px 3px 8px 8px;
+}
+.texty_management > .r > textarea::-webkit-scrollbar {
+	display: none;
+}
+
+.texty_management > .submit-div {
+	margin: 40px auto 80px auto;
+	text-align: center;
+}

@@ -1,0 +1,72 @@
+
+/*index*/
+
+body {
+	direction: rtl;
+}
+
+a,
+a:visited,
+a:active {
+	text-decoration: none;
+	color: #000000;
+}
+
+a:hover {
+	color: #BD3559;
+}
+
+table,
+tr,
+td,
+th,
+span,
+div,
+input,
+select,
+form {
+	font:12px IRANSans,Tahoma;
+}
+
+select,
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=reset],
+input[type=button],
+textarea,
+reset {
+	background-color:#ffffff;
+	border:1px solid #cccccc;
+	padding:6px;
+/*	margin-left:8px;*/
+/*	margin-top:2px;*/
+/*	margin-bottom:2px;*/
+	color:#666;
+	width:160px;
+	font-family:IRANSans,Tahoma;
+	font-size:12px;
+	outline: 0;
+}
+input[type=reset],
+input[type=button] {
+	cursor: pointer;
+	margin: 1px;
+}
+input[type=checkbox] {
+	position: relative;
+	top: 3px;
+	left: 5px;
+}
+select:hover,
+input[type=text]:hover,
+input[type=email]:hover,
+input[type=password]:hover,
+input[type=reset]:hover,
+reset:hover,
+textarea:hover,
+input[type=button]:hover {
+	border: 1px solid #f0f0f0;
+	background-color: white;
+	color: #000;
+}

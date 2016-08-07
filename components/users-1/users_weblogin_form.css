@@ -1,0 +1,32 @@
+
+.users_weblogin_form {
+	border-top: 2px dashed #eee;
+	margin: 20px auto;
+	padding: 30px 0 80px 0;
+	width: 80%;
+	text-align: center;
+}
+.users_weblogin_form > a.login {
+	margin: 0px 6px;
+	display: inline-block;
+}
+.users_weblogin_form > a.login > img {
+	/*width: 180px;*/
+	height: 34px;
+	/*width: 100%;*/
+	border-radius: 4px;
+	opacity: 0.8;
+}
+.users_weblogin_form > a.login > img:hover {
+	opacity: 1;
+}
+
+.users_weblogin_form > a.google {
+
+}
+.users_weblogin_form > a.facebook {
+
+}
+.users_weblogin_form > a.twitter {
+
+}

@@ -1,0 +1,20 @@
+
+.kwordbanned_mg_form {
+	margin: 100px auto;
+	width: 70%;
+}
+
+.kwordbanned_mg_list_wrap .kwordbanned_mg_form {
+	width: 100%;
+}
+.kwordbanned_mg_list_wrap .kwordbanned_mg_form hr {
+	margin-top: -70px;
+	margin-bottom: 40px;
+}
+.kwordbanned_mg_list_wrap .kwordbanned_mg_form .lmfe_tnit {
+	width: 60px;
+}
+.kwordbanned_mg_list_wrap .kwordbanned_mg_form .lmfe_tnit:nth-child(4) {
+	width: 0px;
+	margin: 0px;
+}

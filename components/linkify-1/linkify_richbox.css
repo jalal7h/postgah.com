@@ -1,0 +1,70 @@
+
+.linkify_richbox {
+	direction: rtl;
+	position: relative; z-index: 101;
+}
+.linkify_richbox > div {
+	display: inline-block;
+}
+.linkify_richbox > div:hover {
+	background-color: #C7C7C9;
+}
+.linkify_richbox > div > a {
+	display: inline-block;
+	padding: 15px 16px 15px 16px; 
+	font-size: 12px;
+}
+.linkify_richbox > div > .list {
+	position: absolute;
+	top: 42px;
+	right: -10px;
+	background-color: #C7C7C9;
+	width: 955px;
+	height: 0px;
+	overflow: hidden;
+	transition: all 0.5s;
+}
+.linkify_richbox > div:hover .list {
+	height: 224px;
+}
+.linkify_richbox > div:hover a {
+	color: white;
+}
+
+.linkify_richbox > div > .list > img {
+	position: absolute; right: 10px; top: 10px;
+	display: inline-block;
+}
+.linkify_richbox > div > .list > .div_list {
+	padding: 5px 10px;
+	display: inline-block;
+	position: absolute; right: 65%; top: 10px;
+	border-right: 1px solid #aaa;
+	margin-top: 10px;
+	height: 190px;
+}
+.linkify_richbox > div > .list > span.head {
+	color: #214D83;
+	font-size: 13px;
+	font-weight: bold;
+	position: absolute; right: 52%; top: 30px;
+}
+.linkify_richbox > div > .list > .div_list > a {
+	display: inline-block;
+	width: 150px;
+	padding: 5px;
+	color: black;
+}
+.linkify_richbox > div > .list > .div_list > a:hover {
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+

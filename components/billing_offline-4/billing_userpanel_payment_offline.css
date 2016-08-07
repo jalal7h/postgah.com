@@ -1,0 +1,57 @@
+
+.billing_userpanel_payment_offline {
+	margin: 30px auto 100px auto;
+	position: relative; right: 40px;
+}
+.billing_userpanel_payment_offline h1 {
+	margin: 20px 30px 60px 0;
+}
+.billing_userpanel_payment_offline div {
+	margin: 25px;
+	/* width: 420px; */
+}
+.billing_userpanel_payment_offline div span {
+	text-align: left;
+	width: 180px;
+	display: inline-block;
+}
+.billing_userpanel_payment_offline div input[type=text] {
+	width: 250px;
+	font-size: 14px;
+	padding: 10px;
+}
+.billing_userpanel_payment_offline input[type=submit] {
+	/* display: block !important; */
+	margin: 20px 0 !important;
+}
+
+.billing_userpanel_payment_offline hr {
+	color: #f8f8f8;
+	margin-bottom: 0px;
+}
+
+._buposnc {
+	margin: 80px auto;
+	direction: rtl;
+	width: 600px;
+}
+._buposnc span {
+	display: inline-block;
+	font-size: 15px;
+	line-height: 34px !important;
+	margin: 13px 30px 13px 0;
+	vertical-align: top;
+}
+._buposnc icon:before {
+	display: inline-block;
+	font-family: FontAwesome;
+	content: "\f14a";
+	font-size: 120px;
+	margin: -40px 0px;
+}
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+
+.kwordbanned_mg_list_wrap {
+	margin: 20px 0 80px 0;
+}
+
+.kwordbanned_mg_list tr > *:nth-child(1) {
+	text-align: center;
+	width: 50px;
+}
+.kwordbanned_mg_list tr > *:nth-child(1) input[type=checkbox] {
+	top: 0px;
+	left: 0px;
+}
+.kwordbanned_mg_list tr > td:nth-child(2) {
+	padding-right: 20px;
+}
+
+.kwordbanned_mg_list .listmaker_list_paging {
+	margin-top: 130px;
+}
+
+#kwordbanned_mg_list_remove_selected {
+	cursor: pointer;
+	color: #f88;
+	display: inline-block;
+	position: relative; left: calc( 50% - 70px);
+}
+#kwordbanned_mg_list_remove_selected:hover {
+	color: #e00;
+}
+
+
+
+
+
+
+
+
+
+

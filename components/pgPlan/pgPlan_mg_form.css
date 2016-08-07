@@ -1,0 +1,73 @@
+
+.pgPlan_mg_form {
+	width: 80%;
+	margin: 80px auto 160px auto;
+}
+.pgPlan_mg_form > div span.lmfe_tnit {
+	width: 160px;
+}
+#lmfe_pgPlan_mg_form_name { 
+	width: 60%;
+}
+#lmfe_pgPlan_mg_form_name_on_form {
+	width: 60%;
+}
+#lmfe_pgPlan_mg_form_sample_page {
+	width: 60%;
+}
+
+.pgPlan_mg_form hr {
+	margin: 28px 0 25px 0;
+}
+
+.pgPlan_mg_form .lmfe_inDiv.toggle {
+	display: inline-block;
+	width: 49%;
+}
+
+#lmfe_inDiv_pgPlan_mg_form_watermark {
+	display: inline-block;
+	width: 49%;
+}
+#lmfe_inDiv_pgPlan_mg_form_search_box_color {
+	display: inline-block;
+	width: 49%;	
+}
+
+.pgPlan_mg_form_duration_c {
+	margin-right: 170px;
+	margin-top: 40px;
+}
+.pgPlan_mg_form_duration_c div.more {
+	display: inline-block;
+    position: relative; top: -44px; right: 334px;
+    
+}
+.pgPlan_mg_form_duration_c div.more:before {
+	content: "\f0fe";
+    font-family: FontAwesome;
+    font-size: 32px;
+    cursor: pointer;
+    color: #75AC00;
+    transition: all 0.1s;
+}
+.pgPlan_mg_form_duration_c div.more:hover:before {
+	opacity: 0.8;
+}
+
+.pgPlan_mg_form_duration_c div.new {
+	margin-top: 20px;
+}
+
+.pgPlan_mg_form_duration_c input[name="duration_name[]"] {
+	position: relative;
+    top: -2px;
+    height: 37px;
+}
+
+.pgPlan_mg_form_duration_c div.more_div {
+	margin-top: -30px;
+}
+
+
+

@@ -1,0 +1,14 @@
+
+#listmaker_list_pgItem_mg_form .Waiting . {
+	
+}
+
+#listmaker_list_pgItem_mg_form .Active a[name="AcceptAds"] ,
+#listmaker_list_pgItem_mg_form .Active a[name="RejectAds"] {
+	display: none;
+}
+
+#listmaker_list_pgItem_mg_form .Rejected a[name="RejectAds"] {
+	display: none;
+}
+

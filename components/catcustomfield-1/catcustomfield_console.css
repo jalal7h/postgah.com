@@ -1,0 +1,13 @@
+
+.lmfe_inDiv.ccfc {
+	display: none;
+	margin: 0px !important;
+}
+.lmfe_inDiv.ccfc > div {
+	display: inline-block;
+	width: calc(100% - 150px);
+}
+
+.ccffe_thisCat {
+	margin: 10px 0;
+}

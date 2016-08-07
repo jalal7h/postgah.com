@@ -1,0 +1,93 @@
+
+.users_headerLoginIcon {
+	position: absolute; top: 25px; left: 10px;
+}
+.users_headerLoginIcon .box {
+    display: inline-block;
+    /* width: 150px; */
+    padding: 6px 10px 6px 50px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    line-height: 25px !important;
+    font-size: 15px;
+    transition: all 0.2s;
+    margin-left: 20px;
+}
+.users_headerLoginIcon .box > icon {
+	background-image: url('image_list/icons-web.png');
+    background-position: -268px -19px;
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    left: 3px;
+    transition: all 0.2s;
+}
+.users_headerLoginIcon .box:hover {
+	background-color: #E22697;
+	border-color: #E22697;
+	color: white;
+    padding-left: 63px;
+}
+.users_headerLoginIcon .box:hover icon {
+	width: 0px;
+}
+.users_headerLoginIcon .box:hover .circle {
+	background-color: #E22697;
+}
+
+.users_headerLoginIcon .links {
+
+}
+.users_headerLoginIcon .links > a {
+	margin: 13px 2px 0 8px;
+}
+.users_headerLoginIcon .links > a:hover {
+	color: black;
+}
+.users_headerLoginIcon .links > a:before {
+	background-image: url('image_list/icons-web.png');
+    background-position: -318px -19px;
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    left: 1px;
+    content: " ";
+    transition: all 0.2s;
+}
+.users_headerLoginIcon .links > a:hover:before {
+	background-position: -368px -19px;
+}
+
+
+.users_headerLoginIcon .box > .circle {
+	border-radius: 50px;
+	background-color: #555;
+	padding: 15px;
+	width: 39px;
+	height: 39px;
+	display: inline-block;
+	background-image: url('image_list/icons-web.png');
+	background-position:  -55px -56px;
+	position: absolute; top: 0px; left: 0px;
+	transition: all 0.2s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

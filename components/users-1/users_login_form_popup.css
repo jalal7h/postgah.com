@@ -1,0 +1,67 @@
+
+/*index*/
+
+#users_login_form.popup {
+	vertical-align: top;
+	padding-right: 20px;
+}
+#users_login_form.popup .container {
+	display: inline-block;
+	width: 273px;
+	padding: 0px !important;
+	position: relative;
+    right: 17px;
+}
+#users_login_form.popup .d01 {
+	/* margin-top: 0px; */
+}
+#users_login_form.popup .d02 {
+	font-size: 13px;
+    margin-bottom: 20px;
+}
+#users_login_form.popup input[type="text"] ,
+#users_login_form.popup input[type="password"] {
+	width: 240px !important;
+	border-radius: 10px !important;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+#users_login_form.popup .d03 {
+	width: 236px !important;
+    text-align: justify;
+    font-size: 11px;
+    line-height: 20px !important;
+    margin-top: 20px;
+}
+
+#users_login_form.popup .users_weblogin_form {
+	display: inline-block;
+	width: 285px;
+	vertical-align: top;
+	border: 0px;
+	border-right: 1px dashed #ccc;
+	padding-top: 272px;
+	background-color: #FFFBF1;
+	margin: 0px auto;
+	position: absolute; right: 315px; top: 0px;
+}
+#users_login_form.popup .users_weblogin_form > a {
+	margin-bottom: 5px;
+	display: block;
+}
+#users_login_form.popup .users_weblogin_form > a.login > img {
+	width: 180px;
+}
+#users_login_form.popup .the_key {
+	display: block;
+    position: absolute;
+    right: 363px;
+    top: 72px;
+    width: 160px;
+    z-index: 1;
+}
+
+
+
+
+

@@ -1,0 +1,14 @@
+
+.catcustomfield_mg_form {
+
+}
+
+.catcustomfield_mg_form .head {
+	font: bold 16px IRANSans;
+	padding: 0 0 40px 0;
+	margin: 0 0 40px 0;
+	border-bottom: 1px dashed #aaa;
+}
+.catcustomfield_mg_form .head a {
+	font: bold 16px IRANSans;
+}

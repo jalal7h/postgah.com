@@ -1,0 +1,67 @@
+
+.layout_mg .the_layers {
+	
+}
+.layout_mg .the_layers > a.new {
+	background-color: #777777;
+    color: #EEEEEE;
+    border-radius: 0 0 4px 4px;
+    padding: 2px 5px 3px 6px;
+    font-size: 11px;
+    margin: -5px 14px 0 0;
+    display: inline-block;
+    opacity: 0.3;
+    transition: all 0.2s;
+}
+.layout_mg .the_layers > a.new:hover {
+	opacity: 1.0;
+}
+.layout_mg .the_layers > a.new:before {
+	content: "\f02b";
+	font-family: FontAwesome;
+	margin-left: 5px;
+}
+
+.layout_mg_this_layer {
+	width: 70%;
+	box-shadow: 0 0 10px #ddd;
+	padding: 5px;
+	margin: 5px 0;
+	background-color: #FDFFF7;
+	color: #999;
+	border-radius: 5px;
+}
+.layout_mg_this_layer > .name {
+	display: inline-block;
+	cursor: default;
+}
+.layout_mg_this_layer > .tools {
+	float: left;
+	display: inline-block;
+}
+.layout_mg_this_layer > .tools > a {
+	display: inline-block;
+	margin-left: 3px;
+}
+.layout_mg_this_layer > .tools > a.form icon:before {
+	content: "\f044";
+}
+.layout_mg_this_layer > .tools > a.prio_up icon:before {
+	content: "\f062";
+}
+.layout_mg_this_layer > .tools > a.prio_down icon:before {
+	content: "\f063";
+}
+.layout_mg_this_layer > .tools > a.remove icon:before {
+	content: "\f00d";
+}
+.layout_mg_this_layer > .tools > a.flag_off icon:before {
+	content: "\f204";
+}
+.layout_mg_this_layer > .tools > a.flag_on icon:before {
+	content: "\f205";
+}
+
+.layout_mg_this_layer_off {
+	background-color: #FFF1F1;
+}

@@ -1,0 +1,82 @@
+
+.userprofile_vw {
+	padding: 40px;
+}
+
+.userprofile_vw > .head {
+	padding: 19px 30px 15px 0px;
+    background-color: #eee;
+    font-size: 18px;
+    text-shadow: 0 0 1px #fff;
+    font-family: IRANSans;
+    color: #555;
+    margin: 0 0 25px 0;
+    border-radius: 8px;
+}
+
+/* detail */
+.userprofile_vw .detail {
+	display: inline-block;
+	width: calc( 100% - 290px );
+	vertical-align: top;
+	vertical-align: middle;
+	margin: 0 auto 50px 25px;
+	padding-left: 25px;
+
+	border-left: 1px dotted #ccc;
+
+}
+.userprofile_vw .detail > div {
+	font: normal 13px IRANSans;
+	margin: 0px 0;
+	vertical-align: middle;
+}
+.userprofile_vw .detail > div > span {
+	font: bold 13px IRANSans;
+	padding-left: 20px;
+	margin-left: 20px;
+	width: 150px;
+	text-align: left;
+	display: inline-block;
+	border-left: 1px solid #e8e8e8;
+	height: 40px;
+	line-height: 40px;
+}
+
+.userprofile_vw .detail > div.name {
+	margin: 0px 0 0px 0;
+	font: bold 20px IRANSans;
+	padding: 0;
+	height: 80px;
+	line-height: 80px !important;
+}
+.userprofile_vw .detail > div.name > span {
+	height: 80px;
+	line-height: 80px !important;
+}
+
+.userprofile_vw .detail .email > img {
+	border: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+/* avatar */
+.userprofile_vw .avatar {
+	display: inline-block;
+	width: auto;
+	/* margin-right: 25px;
+	padding-right: 25px;
+ 	border-right: 1px dotted #ccc; */
+ 	vertical-align: top;
+}
+.userprofile_vw .avatar img {
+	display: inline-block;
+	width: 260px;
+	margin: 0px;
+	border-radius: 8px 2px 2px 8px;
+	cursor: pointer;
+}
+
+

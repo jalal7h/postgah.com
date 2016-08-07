@@ -1,0 +1,86 @@
+
+form.lmfo {
+	direction: rtl;
+	text-align: right;
+}
+
+
+
+/*
+ * more button */
+.lmfe_more_c {
+	display: inline-block;
+}
+.lmfe_more {
+	display: inline-block;
+}
+.lmfe_more icon:before {
+	content: "\f0fe";
+	color: #75AC00;
+	font-size: 30px;
+	vertical-align: middle;
+	margin: 0 10px;
+	cursor: pointer;
+}
+.lmfe_more icon:hover:before {
+	opacity: 0.8;
+}
+.lmfe_more.added {
+	display: block;
+	margin: 5px 0;
+}
+
+.lmfe_inDiv {
+	display: block;
+	margin: 15px 0;
+}
+
+.lmfe_inDiv.toggle {
+	vertical-align: middle;
+}
+.lmfe_inDiv.toggle * {
+	vertical-align: middle;
+}
+.lmfe_inDiv.toggle > span > span {
+	margin-right: 10px;	
+}
+
+
+/*
+ * title in tag */
+.lmfe_tnit {
+	margin-left: 10px;
+	display: inline-block;
+	text-align: left;
+	direction: rtl;
+	padding-left: 10px;
+	width: 120px;
+	cursor: default;
+}
+
+.lmfe_fileDiv {
+	display: inline-block;
+	background-color: inherit;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+.lmfe_fileDiv input[type="file"] {
+	display: none;
+}
+
+.lmfe_isDate {
+	direction: ltr !important;
+	font-family: monospace,sans-serif !important;
+	font-size: 13px !important;
+	padding: 8px !important;
+}
+
+
+
+
+
+
+
+
+

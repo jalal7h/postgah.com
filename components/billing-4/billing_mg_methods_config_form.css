@@ -1,0 +1,44 @@
+
+/*admin*/
+
+.billing_management_methods_config_form {
+	direction: rtl;
+	margin: 40px auto;
+	width: 80%;
+	display: block;
+}
+.billing_management_methods_config_form > div {
+	margin: 10px 0px;
+	width: 49.5%;
+    display: inline-block;
+    text-align: right;
+}
+.billing_management_methods_config_form > div > span {
+	width: 100px;
+	display: inline-block;
+	text-align: left;
+	margin: 0 10px 0 10px;
+}
+.billing_management_methods_config_form > div > input {
+	padding: 10px;
+	font: normal 16px tahoma;
+	width: 180px;
+	box-shadow: 0 0 20px #eee;
+	direction: ltr;
+}
+.billing_management_methods_config_form > div > input[type=submit] {
+	position: relative; right: 2px; top: 8px;
+	/* margin-top: 30px; */
+	width: auto;
+}
+
+.billing_management_methods_config_form > div:last-child > span {
+	/* width: 200px; */
+}
+.billing_management_methods_config_form > div:last-child {
+	display: block;
+	width: 100%;
+	text-align: right;
+	margin: 0px;
+}
+

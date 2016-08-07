@@ -1,0 +1,42 @@
+
+.ppugpftc label {
+    display: block;
+    color: #666;
+    line-height: 35px !important;
+    transition: all 0.2s;
+}
+.ppugpftc label:hover {
+    color: #400;
+}
+.ppugpftc input[type="radio"] {
+    margin: 0 5px;
+}
+
+.ppugpftc .this_plan {
+	display: block;
+	background-color: #f6f6f6;
+	border-radius: 5px;
+	padding: 4px 8px;
+	margin: 4px;
+}
+.ppugpftc .this_plan .head {
+	background-color: #ececec;
+	color: #777;
+	cursor: default;
+    border-radius: 5px 5px 0 0;
+    margin: -4px -8px 4px -8px;
+    padding: 10px 15px;
+}
+.ppugpftc .this_plan a.sample_page {
+    color: white;
+    background-color: #888;
+    padding: 0 7px;
+    border-radius: 5px;
+    display: inline-block;
+    opacity: 0.6;
+    transition: all 0.3s;
+}
+.ppugpftc .this_plan a.sample_page:hover {
+	opacity: 1.0;
+}
+

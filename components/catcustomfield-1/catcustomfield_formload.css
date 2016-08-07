@@ -1,0 +1,51 @@
+
+.catcustomfield_formload {
+	
+}
+.catcustomfield_formload > .ccffe_thisCat {
+	margin-bottom: 15px;
+	padding-bottom: 10px;
+	border-radius: 0 0 8px 8px;
+	background-color: #f8f8f8;
+	border-radius: 8px;
+}
+.catcustomfield_formload > .ccffe_thisCat > .head {
+	padding: 10px;
+	background-color: #eee;
+	text-shadow: 1px 1px 0 #fff;
+	border-radius: 8px 8px 0 0;
+	cursor: default;
+	margin-bottom: 10px;
+}
+.catcustomfield_formload > .ccffe_thisCat > div ,
+.catcustomfield_formload > .ccffe_thisCat > label {
+	display: block;
+	padding: 10px 0;
+}
+
+.catcustomfield_formload > .ccffe_thisCat .element_name {
+	width: 150px;
+	text-align: left;
+	direction: rtl;
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 10px;
+	color: #777;
+}
+.catcustomfield_formload > .ccffe_thisCat label {
+	margin-left: 15px;
+}
+
+.catcustomfield_formload > .ccffe_thisCat textarea {
+	width: calc( 100% - 160px );
+}
+.catcustomfield_formload input[type=checkbox] {
+	left: 0px; top: 0px; right: 0px;
+	margin-left: 5px;
+	margin-right: 3px;
+}
+
+
+
+
+

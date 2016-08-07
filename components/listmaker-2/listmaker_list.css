@@ -1,0 +1,257 @@
+
+/*2016/07/30*/
+
+.listmaker_list {
+	direction:rtl;
+	width: 100%;
+	margin: auto;
+	margin: 20px 0;
+	/*background-color:#fff;*/
+	padding:0px;
+}
+.listmaker_list_record {
+	cursor:pointer;
+	background-color:white;
+	padding:5px;
+	margin:5px;
+/*	width:100%;*/
+}
+
+.listmaker_list_record td {
+	/*border:1px solid #eee;*/
+	box-shadow: 0 0 10px #D4D4D4;
+	border-left:0px;
+	vertical-align: middle;
+	border-radius: 4px;
+	text-align: right;
+}
+.listmaker_list_record td:last-child {
+	border-left:1px solid #eee;
+/*	text-align:center;*/
+	cursor: default;
+}
+.listmaker_list-no-record-found {
+	direction:rtl;
+	text-align:center;
+	margin: 100px 0;
+	line-height: 30px !important;
+	font-size: 14px;
+}
+.listmaker_list_record:hover {
+	background-color:#ffe;
+}
+.listmaker_list_record_inactive {
+	background-color:#fff4f4;
+}
+.listmaker_list_record td {
+	padding:10px;
+}
+
+.listmaker_list_picture {
+	padding:0px !important;
+}
+.listmaker_list_picture img {
+	margin:0px; 
+	padding:0px;
+	border-radius: 4px;
+}
+
+.listmaker_list_record .tools-td {
+	text-align: center;
+	background-color: white !important;
+}
+
+.listmaker_list_record .tools-td {
+	text-align: center;
+}
+
+.listmaker_list_record .tools-td a.linkToFA:before {
+	display: inline-block;
+    background-color: #676767;
+	padding: 3px 4px;
+    font: normal 20px FontAwesome;
+    color: white;
+    border-radius: 3px;
+    margin: 0 0 0 5px;
+    text-decoration: none;
+    /* box-shadow: 0 0 10px #ccc; */
+    opacity: 0.6;
+    margin: 2px 3px;
+    float: right;
+    border-radius: 5px;
+    min-width: 21px;
+}
+.listmaker_list_record .tools-td a.linkToFA:hover:before {
+	opacity: 1.0;
+}
+
+.listmaker_list_record .tools-td a.up:before ,
+.listmaker_list_record .tools-td a.down:before {
+    float: right;
+    padding: 3px 8px;
+    background-color: #eee;
+    color: #444;
+    margin: 0 3px;
+    border-radius: 4px;
+    position: relative; top: 3px;
+}
+.listmaker_list_record .tools-td a.up:before {
+	font-family: FontAwesome;
+    content: "\f0d8";
+    font-size: 13px;
+}
+.listmaker_list_record .tools-td a.down:before {
+	font-family: FontAwesome;
+    content: "\f0d7";
+    font-size: 13px;
+}
+.listmaker_list_record .tools-td a.up:hover:before ,
+.listmaker_list_record .tools-td a.down:hover:before {
+	/*opacity: 0.6;*/
+	color: white;
+    background-color: #444;
+}
+
+.listmaker_list_head {
+	background: -webkit-linear-gradient(#fbfbfb, #fefefe); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#fbfbfb, #fefefe); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#fbfbfb, #fefefe); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#fbfbfb, #fefefe); /* Standard syntax (must be last) */
+}
+.listmaker_list_head th {
+	padding:10px;
+	cursor:default;
+	text-align:center;
+	border-radius: 4px;
+	background-color: #ddd;
+}
+.listmaker_list_head_footer {
+	height: 5px;
+}
+
+/* linkTo */
+.listmaker_list_record .linkTo {
+	display: inline-block;
+	background-color: rgb(117, 172, 0);
+	padding: 7px 15px;
+	font: normal 13px BYekan;
+	color: white;
+	border-radius: 3px;
+	margin: 0 0 0 5px;
+	text-decoration: none;
+	box-shadow: 0 0 10px #ccc;
+}
+.listmaker_list_record .linkTo:hover {
+	opacity: 0.6;
+	text-decoration: none;
+}
+
+/* remove */
+.listmaker_list_record .remove:before {
+	float: right;
+	font: normal 30px FontAwesome;
+	color: red;
+	opacity: 0.6;
+	content: "\f00d";
+	margin: 0 3px;
+	position: relative; top: -2px;
+}
+.listmaker_list_record .remove:hover:before {
+	opacity: 1.0;
+}
+
+/* modify */
+.listmaker_list_record .modify:before {
+	float: right;
+	font: normal 30px FontAwesome;
+	color: green;
+	opacity: 0.6;
+	content: "\f14b";
+	margin: 0 3px;
+	/*position: relative; top: -2px;*/
+}
+.listmaker_list_record .modify:hover:before {
+	opacity: 1.0;
+}
+
+/* setflag */
+.listmaker_list_record .setflag:before {
+	float:left;
+	font: normal 30px FontAwesome;
+	color: black;
+	content: "\f14a";
+	opacity: 0.6;
+}
+.listmaker_list_record .setflag:hover:before {
+	opacity: 1.0;
+}
+
+.paging_select {
+	float:left;
+	text-align:right;
+	direction:rtl;
+	margin:0 0 10px 0;
+}
+.paging_select select {
+	width: auto;
+	margin: 0 3px 0 3px;
+}
+
+.listmaker_list_search {
+	margin: 10px 0 -5px 0;
+	display: block;
+	text-align: right;
+	direction: rtl;
+}
+.listmaker_list_search input {
+	width: 140px !important;
+    outline: 0px;
+    border-radius: 3px;
+    margin: 5px;
+	box-shadow: 0 0 0px rgba(0,0,0,0.25) inset;
+    padding: 10px 8px !important;
+    border: 0px !important;
+    transition: all 0.5s;
+    border: 1px solid rgba(0,0,0,0.08) !important;
+}
+.listmaker_list_search input:hover {
+	border: 0px;
+}
+.listmaker_list_search input:focus {
+    padding: 10px 20px !important;
+	width: 280px !important;
+	background-color: #f8f8f8 !important;
+	border-color: #f8f8f8 !important;
+	color: black !important;
+}
+.listmaker_list_search input:focus::-webkit-input-placeholder {
+   color: black;
+}
+.listmaker_list_search input:focus:-moz-placeholder { /* Firefox 18- */
+   color: black;  
+}
+.listmaker_list_search input:focus::-moz-placeholder {  /* Firefox 19+ */
+   color: black;  
+}
+.listmaker_list_search input:focus:-ms-input-placeholder {  
+   color: black;  
+}
+
+
+.listmaker_list_form {
+	position: relative;
+	text-align: left;
+	display: inline-block;
+	width: 100%;
+}
+.listmaker_list_form .list_addnew_url {
+	position: relative;
+	left: 6px;
+    top: 0px;
+}
+
+iframe[name="_hidden"] {
+	display: none;
+}
+
+

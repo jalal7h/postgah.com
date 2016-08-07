@@ -1,0 +1,14 @@
+
+
+# jalal7h@gmail.com
+# 2016/04/15
+# Version 1.7
+
+/*
+echo listmaker_paging( " SELECT * FROM `posts` WHERE 1 " , "http://site.com/p=%%", 10 );
+
+az in query list e shomare page ha ro mide faghat
+ino mizanim zire list
+
+albate tu listmaker_list, in khdoesh call mishe.
+

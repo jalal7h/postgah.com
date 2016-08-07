@@ -1,0 +1,52 @@
+
+.useraccess_mg_form {
+	margin: 40px auto 80px auto;
+	width: 80%;
+}
+.useraccess_mg_form .lmfe_inDiv {
+/* 	display: inline-block;
+	width: 48%; */
+}
+.useraccess_mg_form .lmfe_inDiv input[type=text] ,
+.useraccess_mg_form .lmfe_inDiv input[type=password] ,
+.useraccess_mg_form .lmfe_inDiv input[type=email] {
+	width: 200px;
+}
+.useraccess_mg_form .lmfe_inDiv input[type=number] {
+	width: 200px;
+}
+
+.useraccess_mg_form > .right ,
+.useraccess_mg_form > .left {
+	display: inline-block;
+	width: 49%;
+	vertical-align: top;
+}
+.useraccess_mg_form > .right {
+	padding-top: 23px;
+}
+.useraccess_mg_form > .left {
+	margin-top: 0;
+    border-right: 1px dashed #ccc;
+    padding-right: 60px;
+    padding-bottom: 50px;
+    margin-bottom: -20px;
+    padding-top: 30px;
+}
+.useraccess_mg_form > .left > label {
+	min-width: 47.5%;
+    margin-right: 5px;
+    margin-top: 8px;
+    padding: 8px 13px 8px 5px;
+}
+.useraccess_mg_form .lmfe_inDiv.submit {
+	margin-top: 50px;
+}
+
+
+
+
+
+
+
+

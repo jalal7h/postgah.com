@@ -1,0 +1,8 @@
+
+$GLOBALS['do_action'][] = "seo_sitemap";
+
+/*
+$GLOBALS['seo_sitemap'][] = array( 
+	"query" => " some query with *,date ",
+	"link" => 'some link with php support'
+);

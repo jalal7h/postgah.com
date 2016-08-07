@@ -1,0 +1,31 @@
+
+.linkify_mg_form {
+	direction: rtl;
+	padding: 50px 30px;
+}
+
+.linkify_mg_form .list_of_pages_in_select {
+	
+}
+.linkify_mg_form .lmft_tis {
+	width: 100px;
+	display: inline-block;
+}
+.linkify_mg_form input[name="url"] {
+	direction: ltr;
+	font-family: monospace,'courier new',tahoma;
+}
+.linkify_mg_form input[type="text"] , 
+.linkify_mg_form select {
+	width: 280px;
+	font-size: 14px;
+}
+.linkify_mg_form div {
+	margin: 10px 0;
+	text-align: right;
+	width: 450px;
+}
+#inDiv_linkify_mg_form_linkify > .lmff_div ,
+#inDiv_linkify_mg_form_submit {
+	text-align: center;
+}

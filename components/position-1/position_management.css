@@ -1,0 +1,35 @@
+
+/*admin*/
+
+#position_management{
+	padding-top:30px;
+	width:90%;
+	text-align:right;
+	direction:rtl;
+}
+#position_management input[type=submit]{
+	width:80px;
+}
+#position_management input[type=text]{
+	width:200px;
+}
+#position_management #new{
+	padding-right:36px;
+}
+#position_management div a img{
+	padding-left:10px;
+	padding-right:10px;
+}
+#position_management #title{
+	padding:10px;
+	font-weight:bold;
+	color:black;
+	cursor:default;
+}
+#position_management div .manage{
+	padding-right:10px;
+	color:blue;
+	font-weight:bold;
+}
+
+

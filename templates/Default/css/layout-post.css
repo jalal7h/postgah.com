@@ -1,0 +1,20 @@
+
+.layout-post {
+	border: 1px solid #eee;
+	border-radius: 4px;
+}
+.layout-post > .header {
+	background-color: #eee;
+	color: #636363;
+	padding: 15px;
+	font-size: 13px;
+	cursor: default;
+}
+.layout-post > .content {
+	padding: 15px;
+	color: #333;
+}
+.layout-post > .footer {
+	
+}
+

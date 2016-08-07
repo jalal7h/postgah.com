@@ -1,0 +1,20 @@
+
+.kword_mg_form {
+	margin: 100px auto;
+	width: 70%;
+}
+
+.kword_mg_list_wrap .kword_mg_form {
+	width: 100%;
+}
+.kword_mg_list_wrap .kword_mg_form hr {
+	margin-top: -70px;
+	margin-bottom: 40px;
+}
+.kword_mg_list_wrap .kword_mg_form .lmfe_tnit {
+	width: 60px;
+}
+.kword_mg_list_wrap .kword_mg_form .lmfe_tnit:nth-child(4) {
+	width: 0px;
+	margin: 0px;
+}

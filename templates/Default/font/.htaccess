@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteRule ^font.css$ ../../../?do_action=include_all_font [L]
+

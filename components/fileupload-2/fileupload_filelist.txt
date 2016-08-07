@@ -1,0 +1,12 @@
+
+
+/*
+
+// list of files in /path/to/files
+
+
+$list = fileupload_filelist( "data/images" );
+print_r( $list );
+
+// list e file haye dakhele data/images ro tu array mide.
+

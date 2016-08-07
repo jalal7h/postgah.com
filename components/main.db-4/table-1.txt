@@ -1,0 +1,28 @@
+
+
+# jalal7h@gmail.com
+# 2016/07/30
+# Version 1.7
+
+/*
+
+* the old version * * *
+
+table( "esm e table" , "id e record" , "field i ke ma mikhaim azash ( ino age nadim kole record ro bar migardune)" , "esme element e ID, age `id` nabud, inja esmesho mizanim );
+
+# table( "posts", $id , "fullname");
+# table( "posts" $id );
+# table( "posts" $username , "fullname" , "username" );
+
+
+* the new version * * * 
+
+ table([ 
+ 	"tablename", "count" ,
+ 	"id"=>$id ,
+ 	"parent"=>0 ,
+ 	"name" ,
+ 	" `mother`='43' AND ( 0 OR `cat`='$cat_id') "
+ ]);
+
+* no AND prefixed to conditon

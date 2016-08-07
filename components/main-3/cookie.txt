@@ -1,0 +1,19 @@
+
+
+# jalal7h@gmail.com
+# 2016/07/19
+# 1.0
+
+/*
+
+# set cookie
+cookie( 'some_cookie_name', 'some content' );
+
+# get cookie
+echo cookie( 'some_cookie_name' );
+
+# set cookie for 10 days only [ default is 10 years ]
+cookie( 'some_cookie_name', 'some another content', 10 );
+
+*/
+

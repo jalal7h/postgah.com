@@ -1,0 +1,25 @@
+
+.pgItem_mg_reject_hitbox textarea {
+	position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    padding: 30px;
+    direction: rtl;
+    font-size: 20px;
+}
+.pgItem_mg_reject_hitbox input[type="submit"] {
+	position: absolute;
+    bottom: -60px;
+    left: 20px;
+    z-index: 2;
+    transition: all 0.3s;
+}
+.pgItem_mg_reject_hitbox:hover input[type="submit"] {
+	bottom: 20px;
+}
+
+

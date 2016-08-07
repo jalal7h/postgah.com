@@ -1,0 +1,27 @@
+
+.convbox {
+	margin: 20px;
+	padding: 45px 55px;
+	border: 1px solid #e8e8e8;
+	background: #f8f8f8;
+	color: #7d7d7d;
+	text-shadow: 1px 1px #fff;
+	font-size: 13px;
+	line-height: 25px !important;
+	border-radius: 10px;
+	direction: rtl;
+	box-sizing: border-box;
+	/* text-align: center; */
+}
+.convbox a {
+	color: blue;
+}
+.convbox b {
+	color: #444;
+	font-weight: bold !important;
+}
+
+.convbox .submit_button {
+	color: white;
+	text-shadow: 0 0 0 #000;
+}

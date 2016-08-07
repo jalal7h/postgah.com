@@ -1,0 +1,30 @@
+
+.billing_userpanel_credit {
+	margin: 30px 0 30px 0;
+	text-indent: 60px;
+	font: normal 12px BYekan;
+	border: 1px dashed #ddd;
+	border-width: 1px 0px;
+	height: 60px;
+	line-height: 60px !important;
+	background-color: #f8f8f8;
+}
+.billing_userpanel_credit > * {
+	display: inline-block;
+	text-indent: 0;
+	vertical-align: middle;
+}
+.billing_userpanel_credit span:nth-child(1) {
+	font:normal 13px tahoma;
+}
+.billing_userpanel_credit span:nth-child(2) {
+	font-weight: bold;
+	margin: 0 5px 0 5px;
+}
+.billing_userpanel_credit > a.submit_button {
+	float: left;
+	margin-top: 8px;
+	margin-left: 12px;
+}
+
+

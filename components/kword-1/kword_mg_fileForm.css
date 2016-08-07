@@ -1,0 +1,27 @@
+
+.kword_mg_fileForm {
+	width: 53%;
+	margin: 80px auto;
+}
+
+#lmfe_inDiv_kword_mg_fileForm_kword_head {
+	margin-right: 10px;
+	margin-bottom: 30px;
+	font: normal 18px IRANSans;
+}
+#lmfe_inDiv_kword_mg_fileForm_kword_text ,
+#lmfe_inDiv_kword_mg_fileForm_kword_excel {
+	margin-right: 30px;
+	font: normal 12px IRANSans;
+}
+#lmfe_inDiv_kword_mg_fileForm_kword_text {
+	line-height: 23px !important;
+}
+
+.kword_mg_fileForm hr {
+	margin: 30px 0;
+}
+
+.kword_mg_fileForm .lmfe_tnit {
+	width: 16px;
+}

@@ -1,0 +1,10 @@
+
+
+/*
+// in baraye ineke check konim age google bud chize monaseb baraye google neshunesh bedim, age google nabud 
+
+if( itsGoogle() ){
+	age google bud in ejra mishe
+} else {
+	age karbar e mamuli bud in ejra mishe
+}

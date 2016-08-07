@@ -1,0 +1,21 @@
+
+
+# jalal7h@gmail.com
+# 2016/06/10
+# Version 1.3
+
+/*
+	
+	'{text/color/name/number/textarea/select/checkbox/radio/date/clock/toggle/url/email/submit}:some_name'
+	
+	['text:name*+{ + will add `[]` }'],
+	['color:color_code'],
+	['number:tell[]{ `[]` will be added to name }'],
+	['textarea:desc.tinymce class_name'],
+	['name:name@{ @ -> force title in element, !@ -> force title no in element }','forced place holder { not-array not-inDiv not-text:..  }'],
+	['text:student_id','inDiv'],
+	['select:name#some_id'=>'2{ forced_value }','option{string/array}'=>listmaker_option($table_name)],
+	'some text',
+	['file:attachment.someClass and_moreclass','accept'=>'image/*'],
+	['submit:Submit!.some_class more class#some_id.className'],
+

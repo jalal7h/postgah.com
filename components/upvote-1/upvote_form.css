@@ -1,0 +1,22 @@
+
+.upvote_form {
+	margin-top: 8px;
+	/*margin-right: 5px;*/
+	cursor: pointer;
+}
+.upvote_form > icon:before {
+	content: "\f0d8";
+	text-align: center;
+	font-size: 16px;
+	display: block;
+	position: relative; top: 5px;
+}
+.upvote_form > div {
+	font-family: 'Raleway';	
+	text-align: center;
+	/* width: 40px; */
+}
+.upvote_form.clicked ,
+.upvote_form.clicked:hover {
+	color: #BD3559 !important;
+}

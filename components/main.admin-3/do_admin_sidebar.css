@@ -1,0 +1,64 @@
+
+/*admin*/
+
+#do_admin .sidebar-wrapper {
+	background-color: #282828;
+	width: 180px;
+	height: 100vh;	
+	display: inline-block;
+	padding-top: 30px;
+	position: fixed; right: 0px; top: 0px; z-index: 111;
+	vertical-align: middle;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+#do_admin .sidebar-wrapper::-webkit-scrollbar-track {
+	background: #282828;
+}
+#do_admin .sidebar-wrapper::-webkit-scrollbar {
+	width: 0px;
+}
+#do_admin .sidebar-wrapper::-webkit-scrollbar-thumb {
+	background: #383838;
+	border: 0px solid white;
+	border-top: 0px solid white;
+	border-bottom: 0px solid white;
+}
+
+
+
+#do_admin .sidebar {
+	
+}
+#do_admin .sidebar > a {
+	display: block;
+	font-size: 13px;
+	padding: 8px 15px;
+	color: #bbb;
+	vertical-align: middle;
+}
+#do_admin .sidebar > a:hover {
+	color: #fff;
+	background-color: #383838;
+}
+#do_admin .sidebar > a.current {
+	background-color: #353535;
+}
+#do_admin .sidebar > a > span {
+	font-size: 13px;
+    position: relative;
+    top: -2px;
+}
+
+#do_admin .sidebar > a icon:before {
+	font-family: FontAwesome;
+	font-size: 16px;
+    margin-left: 9px;
+    width: 20px;
+    text-align: center;
+}
+#do_admin .sidebar > a:first-child {
+	margin: 10px 0 15px 0;
+}
+
+

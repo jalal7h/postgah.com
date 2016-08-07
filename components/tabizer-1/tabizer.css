@@ -1,0 +1,47 @@
+
+.tabizer {
+	border-bottom: 1px solid #888;
+	padding-right: 10px;
+}
+.tabizer > * {
+	margin-top: 10px;
+	display: inline-block;
+	padding: 5px 15px;
+	border-width: 1px 1px 0px 0px;
+	background-color: #e6e6e6;
+	cursor: pointer;
+	border-radius: 4px 4px 0 0;
+	vertical-align: top;
+	transition: all 0.05s;
+	font-family: IRANSans;
+	box-shadow: 0 0 3px #C7C7C7 inset;
+}
+
+.tabizer > div:hover {
+	/* background-color: #d8d8d8; */
+	box-shadow: 0 0 5px #aaa inset;
+}
+.tabizer > div:active {
+	background-color: #ddd;
+	box-shadow: 0 0 5px #555 inset;
+}
+.tabizer > div.cur {
+	background-color: #ddd;	
+	box-shadow: 0 0 5px #888 inset;
+
+}
+
+.tabizer > div.cur ,
+.tabizer > div:hover {
+	color: #333;
+	margin-top: 0px;
+	padding: 10px 15px;
+}
+
+.tabizer-c {
+
+}
+
+
+
+

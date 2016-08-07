@@ -1,0 +1,41 @@
+
+
+<div class="contact_vw_form">
+	
+	<div class="path">
+		<div>آدرس شرکت : {contact_address}</div>
+		<div>دفتر فروش : <span dir=ltr >{contact_tell}</div>
+		<div>دفتر پشتیبانی : <span dir=ltr >{contact_fax}</div>
+	</div>
+
+	<form method="post" action="./?page={page}&do=send" >
+	<fieldset>
+		<legend>
+		<select name="to">
+			<option value="">ارتباط با ..</option>
+			{email_select_option}
+		</select>
+		</legend>
+		<img src="http://parsunix.com/cdn/img/contact.jpg" class="handshaking" />
+		<div class="right">
+		<input placeholder="نام" type="text" name="name" value="{name}">
+		<input placeholder="تلفن" type="text" class="numeric" name="cell_number" value="{cell_number}">
+		<input placeholder="ایمیل" type="email" name="email_address" value="{email_address}">
+		<textarea placeholder="متن پیام ..." name="content" >{content}</textarea>
+		<input type="submit" value="ارسال" class="submit_button" >
+		</div>
+	</fieldset>
+	</form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+

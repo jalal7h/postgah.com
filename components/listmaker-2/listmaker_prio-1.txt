@@ -1,0 +1,30 @@
+
+
+# jalal7h@gmail.com
+# 2016/06/19
+# Version 1.5
+
+/*
+
+	listmaker_prio( 
+		array( "post", 'up_or_down'=>"up", 'id'=>$my_id, 'column'=>"prio2", 'same'=>"parent,flag" , " `parent`='$parent' " )
+	);
+
+	listmaker_prio(  array( "post" )  );
+
+	this function is sensitive about the following variables in $_REQUEST : id , up_or_down
+
+
+listmaker_prio( $table_name=DB_PREF."currency" , $up_or_down="up" , $table_id=$_REQUEST['id'] , $column="prio" );
+	// supporting `parent` property
+
+new version 1.3 :
+
+	listmaker_prio( 
+		array( "post", 'up_or_down'=>"up", 'id'=>$my_id, 'column'=>"prio2", 'same'=>"parent,flag" , " `parent`='$parent' " )
+	);
+
+	listmaker_prio(  array( "post" )  );
+
+	this function is sensitive about the following variables in $_REQUEST : id , up_or_down
+

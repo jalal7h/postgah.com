@@ -1,0 +1,9 @@
+
+#listmaker_list_pgItem_mg_form tr > td:nth-child(4) ,
+#listmaker_list_pgItem_mg_form tr > td:nth-child(5) {
+	text-align: center;
+}
+#listmaker_list_pgItem_mg_form td {
+	cursor: default;
+}
+

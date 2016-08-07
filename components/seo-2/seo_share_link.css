@@ -1,0 +1,34 @@
+
+.seo_share_link {
+	position: relative;
+}
+.seo_share_link > a {
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.seo_share_link .facebook icon:before {
+	content: "\f09a";
+	font-size: 12px;
+}
+.seo_share_link .twitter icon:before {
+	content: "\f099";
+	font-size: 13px;
+}
+.seo_share_link .google icon:before {
+	content: "\f0d5";
+	font-size: 11px;
+}
+.seo_share_link .pinterest icon:before {
+	content: "\f231";
+	font-size: 11px;
+}
+.seo_share_link .linkedin icon:before {
+	content: "\f0e1";
+	font-size: 11px;
+}
+.seo_share_link .instagram icon:before {
+	content: "\f16d";
+	font-size: 11px;
+}
+

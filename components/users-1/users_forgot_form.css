@@ -1,0 +1,40 @@
+
+#users_forgot_form {
+	margin: auto;
+	display: block;
+	margin-right: 8%;
+	margin-bottom: 8%;
+	padding: 60px 0 80px 0;
+}
+#users_forgot_form .container {
+	width: 600px !important;
+	margin: 0 auto 0 auto !important;	
+}
+#users_forgot_form input {
+	display: block;
+	font: normal 16px BYekan;
+	padding: 10px 10px 10px 10px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin: 5px 0 5px 0;
+	width: 450px;
+	max-width: 95%;
+	line-height: 30px !important;
+}
+#users_forgot_form input[type=submit] {
+	width: auto;
+}
+#users_forgot_form input[type=text] {
+	font-family: monospace,'sans-serif' !important;
+	margin-bottom: 20px;
+}
+
+#users_forgot_form .d01 {
+	margin: 20px 0 30px 0;
+	font: bold 32px BYekan;
+	color: #666;
+}
+#users_forgot_form .d02 {
+	 margin: 50px 3px 20px 0;
+}
+

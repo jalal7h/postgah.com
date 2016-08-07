@@ -1,0 +1,19 @@
+
+
+/*
+# $dir : directory of destination, placed on `data` directory.
+# $id : name of the subdirectory.
+# $numb : number of the files to be removed. (empty == remove all).
+#
+# fileupload_remove("slideshow", "11", "1");
+
+
+
+in function baraye pak kardan e ax haye tuye directory "data" hast.
+
+# fileupload_remove("slideshow", "11", "1");
+in az address e "data/slideshow/11" ye dune file pak mikone
+
+# fileupload_remove("news", "54" );
+in harchi tu "data/news/54" hast ro pak mikone
+

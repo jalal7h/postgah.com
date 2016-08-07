@@ -1,0 +1,42 @@
+
+.pgPlan_user_RenewAds_form_buffer {
+	display: none;
+}
+
+#hitbox-container .ppuraf_form {
+    text-align: left;
+    background-color: #ececec;
+}
+#hitbox-container .ppuraf_form .submit_button {
+    margin: 50px 40px 35px 40px;
+}
+#hitbox-container .ppuraf_form > div.head {
+    text-align: right;
+    padding: 30px;
+    font-size: 20px;
+    background-color: #f6f6f6;
+    color: #777777;
+    margin-bottom: 22px;
+}
+
+#hitbox-container .ppuraf_form label {
+	display: block;
+	direction: rtl;
+    text-align: right;
+    padding: 7px 20px 7px 20px;
+    margin: 10px 40px -2px 40px;
+    position: relative; top: 15px;
+    background-color: #f6f6f6;
+    border-radius: 4px;
+    box-shadow: 0 0 5px #ccc;
+    font-size: 14px;
+}
+#hitbox-container .ppuraf_form label input[type="radio"] {
+	margin: 0 0 0 10px;
+}
+
+#hitbox-container .ppuraf_form label:hover {
+	background-color: #999;
+	color: #fff;
+}
+

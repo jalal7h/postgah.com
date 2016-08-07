@@ -1,0 +1,8 @@
+
+
+# jalal7h@gmail.com
+# 2016/07/18
+# 1.2
+
+# after order invoice payment order_table_name_orderSettle( $order_id );
+# the order table should have `flag` column

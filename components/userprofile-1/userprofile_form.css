@@ -1,0 +1,72 @@
+
+
+.userprofile_form {
+	margin: auto;
+	display: block;
+	padding-right: 8%;
+	padding: 7%;
+	padding-bottom: 10%;
+	/*background-color: white;*/
+	/*border-radius: 4px;*/
+	/*box-shadow: 0 0 10px #ccc;*/
+}
+.userprofile_form * {
+	font-size: 13px !important;
+}
+.userprofile_form > div {
+	margin: 5px 0;
+}
+.userprofile_form > div > span {
+	display: inline-block;
+	width: 160px;
+	text-align: left;
+	margin-left: 25px;
+}
+.userprofile_form input {
+	width: 60%;
+}	
+.userprofile_form > div.divider {
+	margin: 0 0 20px 0;
+}
+
+.userprofile_form #inDiv_userprofile_form_username > input ,
+.userprofile_form #inDiv_userprofile_form_tell > input ,
+.userprofile_form #inDiv_userprofile_form_cell > input {
+	direction: ltr;
+	font-family: monospace,'courier new',tahoma;
+}
+
+.userprofile_form .d01 {
+	margin: 20px 143px 40px 0;
+    font: bold 30px Tahoma;
+    color: #666;
+}
+
+.userprofile_form input {
+	width: 320px;
+}
+
+.userprofile_form input[type="submit"] {
+	width: auto !important;
+}
+
+
+.userprofile_form input[name="username"] ,
+.userprofile_form input[name="tell"] ,
+.userprofile_form input[name="cell"] {
+	direction: ltr;
+}
+
+
+
+
+.userprofile_form_head {
+	border-bottom: 1px dashed #ddd;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 30px 30px 30px 0;
+    padding: 0 0 20px 0;
+}
+
+
+

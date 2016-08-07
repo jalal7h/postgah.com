@@ -1,0 +1,54 @@
+
+.pgItem_user_list td {
+	box-shadow: 0 0 0 #fff;
+	border-bottom: 1px solid #ddd;
+}
+.pgItem_user_list tr {
+	background-color: #f8f8f8;
+}
+.pgItem_user_list .tools-td {
+	background-color: #f8f8f8 !important;
+	border-radius: 0px;
+}
+.pgItem_user_list td:nth-child(3) {
+	text-align: center;
+	width: 150px;
+}
+.pgItem_user_list td:nth-child(4) {
+	text-align: center;
+	/* width: 150px; */
+}
+
+.pgItem_user_list .listmaker_list_picture img {
+	border-radius: 3px;
+	margin: 10px;
+	border: 1px solid rgba(0,0,0,0.3);
+}
+
+.pgItem_user_list tr:hover {
+	background-color: #f8f8f8;
+	cursor: default !important;
+}
+.pgItem_user_list tr .tools-td {
+	/* background-color: #f8f8f8 !important; */
+	/* cursor: default !important; */
+	width: 259px !important;
+}
+
+.pgItem_user_list_RejectMessage {
+	padding:  30px;
+	direction: rtl;
+	font-size: 14px;
+	line-height: 25px!important;
+}
+.pgItem_user_list_RejectMessage .head {
+    font-size: 16px;
+    color: #999;
+    margin-bottom: 17px;
+}
+
+
+
+
+
+

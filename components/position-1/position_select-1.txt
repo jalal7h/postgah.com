@@ -1,0 +1,21 @@
+
+
+# jalal7h@gmail.com
+# 2015/08/22
+# Version 1.0.2
+
+/*
+# $position_str (  "1,11,0,0,0" / $tNetbarg / null[from-REQUEST] )
+
+# $position_str = "1,11,0,0,0";
+# or
+# $position_str = $rw;
+# or
+# $position_str = null; // from REQUEST
+# 
+# echo position_select( $position_str=null );
+
+hame position ha ro tu ye select miare
+in system positiuon shamele keshvar / ostan / shahr / mantaghe / mahalle hast
+
+# echo position_select( "id-keshvar,id-ostan,id-shahr,id-mantaghe,id-mahale" );

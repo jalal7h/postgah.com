@@ -1,0 +1,63 @@
+
+.uvupluv {
+	font-family: IRANSans;
+    margin-bottom: 40px;
+}
+
+.uvupluv ,
+.uvupluv * {
+    font-family: IRANSans;
+    font-size: 13px;
+    line-height: 30px !important;
+}
+.uvupluv span {
+    color: #bbb;
+}
+
+.uvupluv > .head {
+    padding: 19px 30px 15px 0px;
+    background-color: #ddd;
+    font-size: 18px;
+    text-shadow: 0 0 1px #fff;
+    font-family: IRANSans;
+    color: #555;
+    margin: 0 0 15px 0;
+    border-radius: 8px;
+}
+.uvupluv > .this {
+	padding: 15px 30px 15px 30px;
+	font-size: 16px;
+}
+.uvupluv > .this:nth-child(2n+1) {
+	background-color: #f8f8f8;
+	border-radius: 10px;
+}
+.uvupluv > .this > .the_post > a {
+    /* color: #333;     */
+}
+.uvupluv > .this > .the_post > a.text {
+    display: block;
+    margin-right: 20px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    padding: 3px;
+}
+.uvupluv > .this:nth-child(2n+1) > .the_post > a.text {
+    background-color: #efefef;
+}
+.uvupluv > .this > .the_post > a:before ,
+.uvupluv > .this > .the_post > a:after {
+    font-family: FontAwesome;
+    content: "\f10e";
+    position: relative;
+    margin: 0 10px;
+    display: inline-block;
+}
+.uvupluv > .this > .the_post > a:before {
+    content: "\f10e";
+    top: -2px;
+}
+.uvupluv > .this > .the_post > a:after {
+    content: "\f10d";
+    top: 5px;
+}

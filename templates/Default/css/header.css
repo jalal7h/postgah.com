@@ -1,0 +1,11 @@
+
+header {
+	background-color: #eee;
+	height: 80px;
+	display: block;
+	padding: 25px;
+}
+header a.home {
+	font: normal 18px IRANSans;
+	color: #636363;
+}

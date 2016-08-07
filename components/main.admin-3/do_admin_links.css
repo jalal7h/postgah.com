@@ -1,0 +1,18 @@
+
+#do_admin .mainbar > .top > .links {
+	position: absolute; top: 0px; left: 0px;
+	display: inline-block;
+}
+
+#do_admin .mainbar > .top > .links > a {
+	color: #bbb;
+	padding: 6px 10px;
+	display: inline-block;
+}
+#do_admin .mainbar > .top > .links > a:hover {
+	color: white;
+	background-color: #383838;
+}
+#do_admin .mainbar > .top > .links > a:last-child:hover {
+	background-color: #790000;
+}
