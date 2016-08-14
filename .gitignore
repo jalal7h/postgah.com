@@ -3,6 +3,5 @@ codec
 codec.d
 allow.inc
 config.php
-# ../../PROJ/*/components/*/*.inc.php
-components/*/.*
+components/*/*.inc.php
 error_log
