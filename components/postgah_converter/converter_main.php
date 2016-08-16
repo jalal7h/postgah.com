@@ -1,12 +1,15 @@
 <?
-
-
 $GLOBALS['do_action'][] = 'converter_main';
+
+
+## CONFIG ## # ##
+define( 'mysql_database_old', 'depost_tmp' );
+define( 'image_dir_old', 'img/' );
+define( 'image_dir_new', 'data/item_image/old/' );
+## # ## # ## # ##
 
 function converter_main(){
 	
-	define( 'mysql_database_old', 'postgah.com_tmp00_t' );
-
 	?>
 	<style>
 	a ,

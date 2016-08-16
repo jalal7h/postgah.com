@@ -8,7 +8,7 @@ $GLOBALS['do_action'][] = 'catcustomfield_mg';
 
 function catcustomfield_mg(){
 
-	f_admin__a_html__header();
+	layout_open();
 	echo "<div class='".__FUNCTION__."'>";
 	
 	if(! $cat_id = intval($_REQUEST['cat_id']) ){
@@ -96,5 +96,5 @@ function catcustomfield_mg(){
 
 
 	echo "</div>";
-	f_admin__a_html__footer();
+	layout_close();
 }

@@ -1,20 +1,18 @@
 
 .layout-post {
-	border: 1px solid #eee;
+	background-color: white;
 	border-radius: 4px;
+	box-shadow: 0 0 10px #ddd;
 }
 .layout-post > .header {
-	background-color: #eee;
-	color: #636363;
-	padding: 15px;
+	color: #000;
+	padding: 15px 20px 10px 20px;
 	font-size: 13px;
+	font-weight: bold;
 	cursor: default;
 }
 .layout-post > .content {
-	padding: 15px;
+	padding: 10px 20px 20px 20px;
 	color: #333;
-}
-.layout-post > .footer {
-	
 }
 

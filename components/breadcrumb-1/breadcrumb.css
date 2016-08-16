@@ -1,0 +1,38 @@
+
+.breadcrumb {
+	padding: 10px 10px;
+}
+
+.breadcrumb a {
+	color: #9d9d9d !important;
+	font-size: 11px !important;
+}
+.breadcrumb a.home:before {
+	position: relative; top: 2px;
+	font-family: FontAwesome;
+	content: "\f015";
+	font-size: 18px;
+	padding-left: 8px;
+}
+.breadcrumb a:hover ,
+.breadcrumb a:hover:before {
+	color: #444 !important;
+}
+
+.breadcrumb a.the_link {
+
+}
+.breadcrumb a.the_link:before {
+	font-family: FontAwesome;
+	font-size: 12px;
+	content: "\f104";
+	padding: 0 8px;
+}
+
+
+
+
+
+
+
+

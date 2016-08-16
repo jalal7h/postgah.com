@@ -5,7 +5,7 @@ $GLOBALS['converter_list'][] = 'pub_kw_into_kword';
 function pub_kw_into_kword(){
 
 	$table_name = "item";
-	$limit = 1000;
+	$limit = 10000;
 
 	if(! $rs = dbq_old(" SELECT `id`,`_keywords`,`keyword` FROM `pub` WHERE `converter`='1' LIMIT $limit ") ){
 		dbe();
@@ -21,7 +21,8 @@ function pub_kw_into_kword(){
 		}
 
 		if(! sizeof($kw) ){
-			continue;
+			//
+			
 		} else {
 			$table_id = $rw['id'];
 			$kw = implode(',', $kw);
@@ -62,7 +63,8 @@ function pub_kw_into_kword(){
 
 	} 
 
-	echo $k." kword inserted";
+	echo "<hr>".$k." kword inserted";
+	echo "<br>".dbr( dbq_old(" SELECT COUNT(*) FROM `pub` WHERE `converter`='1' ") , 0, 0)." pub remained";
 
 }
 

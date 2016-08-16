@@ -4,7 +4,7 @@ $GLOBALS['converter_list'][] = 'move_pub_to_item';
 
 function move_pub_to_item(){
 
-	$limit = 100000;
+	$limit = 10000;
 
 	dbq_old(" ALTER TABLE `pub` ADD `converter` INT(1) NOT NULL AFTER `keyword` ");
 

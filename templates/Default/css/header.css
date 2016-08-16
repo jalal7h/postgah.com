@@ -1,11 +1,63 @@
 
 header {
-	background-color: #eee;
-	height: 80px;
+	background-color: #fff;
+	height: 110px;
 	display: block;
-	padding: 25px;
+	/* padding: 25px; */
+	box-shadow: 0 0 10px #ccc;
+	margin-bottom: 60px;
 }
+header .middle {
+	width: 1030px;
+	margin: auto;
+	position: relative;
+}
+header a.logo-container > img {
+	height: 65px;
+	margin: 20px 0 0 0;
+}
+
 header a.home {
 	font: normal 18px IRANSans;
 	color: #636363;
 }
+
+header .new_ads ,
+header .login_or_register {
+	padding: 10px 15px;
+	border-radius: 5px;
+	color: white;
+	font-family: IRANSans;
+	position: absolute;
+	top: 36px;
+}
+header .new_ads {
+	background-color: #e72a46;
+	left: 128px;
+}
+header .new_ads:before {
+	font-family: FontAwesome;
+	content: "\f1d8";
+	padding-left: 5px;
+	/* font-size: 12px; */
+}
+header .login_or_register {
+	background-color: #8cc34b;
+	left: 10px;
+}
+
+header .new_ads:hover ,
+header .login_or_register:hover {
+	opacity: 0.8;
+}
+
+header .breadcrumb {
+	position: absolute;
+	top: 115px;
+	right: 0px;
+}
+
+
+
+
+
