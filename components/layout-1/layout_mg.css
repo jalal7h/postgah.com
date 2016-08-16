@@ -5,12 +5,14 @@
 }
 
 .layout_mg > .this {
-	background-color: rgba(255,255,255, 0.50);
+	background-color: rgba(255,255,255, 0.60);
 	margin: 10px 0;
 	text-align: right;
 	padding: 15px;
 	border-radius: 4px;
 	transition: all 0.3s;
+	box-shadow: 0 0 10px #ddd;
+	position: relative;
 }
 .layout_mg > .this:hover {
 	background-color: rgba(255,255,255, 0.75);
@@ -22,7 +24,7 @@
 }
 
 .layout_mg > .this > .the_name {
-	min-width: 30%;
+	min-width: 27%;
 }
 .layout_mg > .this > .the_name a.name {
 	padding: 9px 0;
@@ -68,12 +70,10 @@
 	display: inline-block;
 }
 
-
 .layout_mg > .this > .the_layers {
 	min-width: calc( 70% - 110px );
 	margin: auto;
 }
-
 
 .layout_mg > .this > .the_meta {
 	min-width: 32px;
@@ -81,18 +81,21 @@
 	margin-left: 10px;
 }
 .layout_mg > .this > .the_meta > icon:before {
-	vertical-align: middle;
-	content: "\f121";
-	font-size: 36px;
-    color: rgba(239, 165, 0, 0.3);
+    vertical-align: middle;
+    content: "\f121";
+    font-size: 40px;
+    color: rgba(239, 165, 0, 0.5);
+    position: absolute;
+    left: 60px;
+    top: 0px;
+    transition: all 0.1s;
 }
 .layout_mg > .this > .the_meta > icon:hover:before {
 	color: rgba(239, 165, 0, 1);
 }
 
-
-
 .layout_mg > .this > .the_remove_button {
+	position: absolute; left: 15px; top: 0px;
 	min-width: 32px;
 	vertical-align: middle;
 }
@@ -100,13 +103,12 @@
 	vertical-align: middle;
 	content: "\f00d";
 	font-size: 40px;
-    color: rgba( 255,0,0, 0.3);
+    color: rgba( 255,0,0, 0.5);
+    transition: all 0.1s;
 }
 .layout_mg > .this > .the_remove_button > icon:hover:before {
 	color: rgba(255,0,0, 1);	
 }
-
-
 
 .layout_mg > .new {
 
@@ -114,6 +116,5 @@
 .layout_mg > .new input[type="submit"] {
 	top: 10px;
 }
-
 
 

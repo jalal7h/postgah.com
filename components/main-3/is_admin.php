@@ -4,6 +4,8 @@
 # 2016.07.29
 # 1.0
 
+# if we are in admin page
+
 function is_admin(){
 	
 	if( $_REQUEST['page']=='admin' ){

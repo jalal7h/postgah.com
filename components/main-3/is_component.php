@@ -4,6 +4,8 @@
 # 2016.07.01
 # 1.1
 
+# if we have this component(s)
+
 function is_component( $component ){
 	
 	# 
