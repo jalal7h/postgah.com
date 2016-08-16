@@ -10,7 +10,7 @@
 
 #do_admin .mainbar > .top {
 	background-color: #282828;
-	position: fixed; top: 0px; left: 0px; z-index: 111;
+	position: fixed; top: 0px; left: 0px; z-index: 99;
 	width: 100%;
 	height: 30px;
 }
