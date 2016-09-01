@@ -1,0 +1,12 @@
+
+
+# jalal7h@gmail.com
+# 2016/09/01
+# 1.2
+
+/*
+function breadcrumb_66(){ // page id is 66
+	return "<a href=''>صفحه</a>";
+}
+*/
+

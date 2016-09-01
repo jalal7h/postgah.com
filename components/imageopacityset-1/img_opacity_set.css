@@ -1,0 +1,7 @@
+
+/*index*/
+
+img {
+	opacity: 0.0;
+	transition: 1.0s opacity;
+}

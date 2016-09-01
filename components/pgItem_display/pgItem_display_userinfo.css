@@ -1,0 +1,60 @@
+
+.pgItem_display_userinfo {
+	vertical-align: top;
+
+}
+.pgItem_display_userinfo > * {
+	margin: 10px 0;
+}
+.pgItem_display_userinfo > * > span ,
+.pgItem_display_userinfo > * > a {
+	display: inline-block;
+    vertical-align: middle;
+    color: #888;
+} 
+.pgItem_display_userinfo > * > icon:before {
+	font-family: FontAwesome;
+	font-size: 34px;
+	color: #888;
+	direction: rtl;
+	width: 45px;
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	vertical-align: middle;
+	/* top: 2px; */
+}
+.pgItem_display_userinfo .pos {
+	padding-bottom: 5px;
+	border-bottom: 1px dashed #ddd;
+}
+.pgItem_display_userinfo .pos span {
+	max-width: 150px;
+	display: inline-block;
+}
+.pgItem_display_userinfo .pos icon:before {
+	content: "\f041";
+	/* top: -5px; */
+}
+.pgItem_display_userinfo .cell {
+	margin-bottom: -5px;
+}
+.pgItem_display_userinfo .cell a ,
+.pgItem_display_userinfo .tell a {
+	font: normal 18px Raleway;
+	/* text-align: center; */
+	margin-right: 10px;
+}
+.pgItem_display_userinfo .cell icon:before {
+	content: "\f10b";
+}
+.pgItem_display_userinfo .tell {
+	margin-top: -5px;
+}
+.pgItem_display_userinfo .tell icon:before {
+	content: "\f2a0";
+}
+.pgItem_display_userinfo a:hover {
+	color: #900;
+}
+

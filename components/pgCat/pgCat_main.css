@@ -1,0 +1,29 @@
+
+.pgCat_main {
+	margin: -8px -6px;
+}
+.pgCat_main > .head {
+	margin: 12px;
+    color: #a0a0a0;
+}
+
+.pgCat_main_this {
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
+	width: 143px;
+	height: 120px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #ddd;
+	background-color: white;
+	margin: 8px 6px;
+}
+.pgCat_main_this img {
+	max-height: 40px;
+	width: auto;
+	margin-top: 30px;
+}
+.pgCat_main_this div {
+	margin-top: 10px;
+}
+

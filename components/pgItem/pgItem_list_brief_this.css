@@ -1,0 +1,43 @@
+
+.pgItem_list_brief_this {
+	display: block;
+	margin-top: 10px;
+	border-radius: 5px;
+	border: 1px solid white;
+}
+.pgItem_list_brief_this:hover {
+	background-color: #f4f4f4;
+	border-color: #f4f4f4;
+}
+.pgItem_list_brief_this img {
+	border-radius: 5px;
+	width: 70px;
+	height: 70px;
+	margin-bottom: -7px;
+}
+.pgItem_list_brief_this .text {
+	vertical-align: top;
+	display: inline-block;
+	width: calc( 100% - 80px );
+	margin-right: 6px;
+}
+.pgItem_list_brief_this .text > * {
+	width: 100%;
+	height: 18px;
+	overflow: hidden;
+	line-height: 1.5 !important;
+}
+.pgItem_list_brief_this .text .name {
+	margin: 5px 0;
+}
+.pgItem_list_brief_this .text .cat {
+	color: #888;
+	margin-top: 5px;
+	font-size: 10px;
+}
+.pgItem_list_brief_this .text .price {
+	color: green;
+	font-size: 10px;
+}
+
+

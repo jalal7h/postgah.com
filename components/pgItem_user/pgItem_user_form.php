@@ -2,10 +2,6 @@
 
 function pgItem_user_form(){
 	
-	// item_id="<?=$rw[\'id\']"
-
-	// echo kwordusage_get("item", 7, $string_flag=true );die();
-
 	echo listmaker_form('
 
 	[!
@@ -17,6 +13,8 @@ function pgItem_user_form(){
 	!]
 
 		<?= token_make(); ?>
+
+		<div class="head">فرم ثبت آیتم جدید</div>
 
 		[!"cat:cat_id*", "cat_name"=>"adsCat","inDiv"!]
 		[!"position:position_id*","inDiv"!]
@@ -85,7 +83,7 @@ function pgItem_user_form(){
 	[!close!]
 	
 	');
-	
+
 }
 
 

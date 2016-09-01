@@ -37,7 +37,11 @@ function users_login_form(){
 
 		<img src="image_list/arrow.png" class="the_key" />
 		
-		<?=users_weblogin_form();?>
+		<?
+		if( is_component('user_weblogin') ){
+			user_weblogin_form();
+		}
+		?>
 
 	</form>
 	<?

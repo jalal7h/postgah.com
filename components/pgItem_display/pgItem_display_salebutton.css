@@ -1,0 +1,23 @@
+
+.pgItem_display_salebutton {
+	text-align: center;
+}
+.pgItem_display_salebutton .cost {
+	font-size: 22px;
+	color: green;
+	display: block;
+	margin: 20px 0;
+}
+.pgItem_display_salebutton .submit_button {
+
+}
+.pgItem_display_salebutton .help {
+	display: block;
+	margin: 20px 0;
+	color: royalblue;
+	/* padding: 6px 0; */
+	/* border-bottom: 1px solid royalblue; */
+}
+
+
+

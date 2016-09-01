@@ -1,0 +1,112 @@
+
+/*index*/
+
+.fbcmuplu {
+	font-family: IRANSans;
+	margin-bottom: 40px;
+}
+.fbcmuplu > .head {
+    padding: 19px 30px 15px 0px;
+    background-color: #ddd;
+    font-size: 18px;
+    text-shadow: 0 0 1px #fff;
+    font-family: IRANSans;
+    color: #555;
+    margin: 0 0 15px 0;
+    border-radius: 8px;
+}
+.fbcmuplu > .this {
+	padding: 10px 30px 40px 30px;
+	font-size: 16px;
+}
+.fbcmuplu > .this:nth-child(2n+1) {
+	background-color: #f8f8f8;
+	border-radius: 10px;
+}
+
+.fbcmuplu > .this > div {
+	margin: 10px 0;	
+}
+.fbcmuplu > .this * {
+	font-size: 14px;
+	color: #888;
+}
+.fbcmuplu > .this a {
+	color: black;
+}
+.fbcmuplu > .this > .related_post {
+
+}
+
+.fbcmuplu > .this > .replay_to {
+
+}
+.fbcmuplu > .this > .replay_to .useravatar img {
+	width: auto;
+	height: 20px;
+}
+.fbcmuplu > .this > .replay_to .useravatar > div {
+	margin-right: 4px;
+}
+.fbcmuplu > .this > .replay_to .useravatar div > a {
+	line-height: 16px !important;
+}
+.fbcmuplu > .this > .replay_to > a {
+	background-color: #f8f8f8;
+	padding: 10px;
+	display: block;
+	border-radius: 10px;
+	font-style: italic;
+	margin: 5px 50px;
+	width: auto;
+}
+.fbcmuplu > .this:nth-child(2n+1) > .replay_to > a {
+	background-color: #f3f3f3;
+}
+.fbcmuplu > .this > .replay_to > a:before ,
+.fbcmuplu > .this > .replay_to > a:after {
+	font-family: FontAwesome;
+	content: "\f10e";
+	position: relative;
+	margin: 0 10px;
+	display: inline-block;
+}
+.fbcmuplu > .this > .replay_to > a:before {
+	content: "\f10e";
+	top: -2px;
+}
+.fbcmuplu > .this > .replay_to > a:after {
+	content: "\f10d";
+	top: 5px;
+}
+
+.fbcmuplu > .this > .said {
+	margin: 5px 50px;
+}
+.fbcmuplu > .this > .said > a {
+	background-color: #f8f8f8;
+	padding: 10px;
+	display: block;
+	border-radius: 10px;
+	font-style: italic;
+	width: auto;
+}
+.fbcmuplu > .this:nth-child(2n+1) > .said > a {
+	background-color: #f3f3f3;
+}
+.fbcmuplu > .this > .said > a:before ,
+.fbcmuplu > .this > .said > a:after {
+	font-family: FontAwesome;
+	content: "\f10e";
+	position: relative;
+	margin: 0 10px;
+	display: inline-block;
+}
+.fbcmuplu > .this > .said > a:before {
+	content: "\f10e";
+	top: -2px;
+}
+.fbcmuplu > .this > .said > a:after {
+	content: "\f10d";
+	top: 5px;
+}

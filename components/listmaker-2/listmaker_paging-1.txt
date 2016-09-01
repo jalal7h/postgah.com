@@ -1,8 +1,8 @@
 
 
 # jalal7h@gmail.com
-# 2016/04/15
-# Version 1.7
+# 2016/09/01
+# 1.9
 
 /*
 echo listmaker_paging( " SELECT * FROM `posts` WHERE 1 " , "http://site.com/p=%%", 10 );

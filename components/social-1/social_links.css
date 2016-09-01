@@ -1,0 +1,38 @@
+
+.social_links {
+
+}
+.social_links > a:before {
+	font-family: FontAwesome;
+	font-size: 20px;
+	color: white;
+	background-color: red;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+}
+.social_links > a.google:before {
+	content: "\f0d5";
+	background-color: #dc4a38;
+}
+.social_links > a.facebook:before {
+	content: "\f09a";
+	background-color: #3b5998;
+}
+.social_links > a.twitter:before {
+	content: "\f099";
+	background-color: #2aa9e0;
+}
+.social_links > a.linkedin:before {
+	content: "\f0e1";
+	background-color: #1686b0;
+}
+.social_links > a.tumblr:before {
+	content: "\f173";
+	background-color: #36465d;
+}
+.social_links > a.reddit:before {
+	content: "\f281";
+	background-color: #ff4500;
+}
+

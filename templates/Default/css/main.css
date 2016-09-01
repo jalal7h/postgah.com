@@ -1,7 +1,44 @@
 
 main {
-	width: 1024px;
-	max-width: 98%;
+	width: 1030px;
+	max-width: 100%;
 	margin: 25px auto;
-
 }
+main section.right ,
+main section.left {
+	vertical-align: top;
+	display: inline-block;
+	width: 230px;
+	overflow: hidden;
+	position: relative; z-index: 3;
+}
+
+main section.right {
+	margin-left: 15px;
+}
+main section.left {
+	margin-right: 15px;
+}
+
+main section.center {
+	vertical-align: top;
+	display: inline-block;
+	width: 100%;
+}
+main section.center.have_right_sidebar {
+	margin-right: -250px;
+	padding-right: 250px;
+}
+main section.center.have_left_sidebar {
+	margin-left: -250px;
+	padding-left: 250px;
+}
+main section > * {
+	margin-bottom: 18px;
+}
+main section > div.clear {
+	margin-bottom: 0px;
+}
+
+
+

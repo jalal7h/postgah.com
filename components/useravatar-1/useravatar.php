@@ -1,5 +1,9 @@
 <?
 
+# jalal7h@gmail.com
+# 2016/08/23
+# 1.1
+
 function useravatar( $user_id , $text_flag=false , $link_flag=false , $job_flag=false , $where_flag=false ){
 
 	// if( $GLOBALS['useravatar-cache'][ $user_id ] ){
@@ -10,12 +14,15 @@ function useravatar( $user_id , $text_flag=false , $link_flag=false , $job_flag=
 		return false;
 	}
 
+	if(! $rw_user['profile_pic'] ){
+		$rw_user['profile_pic'] = 'image_list/avatar-not-found.png';
+	}
+
 	$c.= '<div class="useravatar">';
 	
 	$c.= ( $link_flag ?'<a target="_blank" href="'.userprofile_link( $user_id ).'">' :'' );
 	$c.= '<img src="'._URL.'/'.$rw_user['profile_pic'].'" />';
 	$c.= ( $link_flag ?'</a>' :'' );
-
 	
 	if( $text_flag ) {
 		$c.= '<div>'.
@@ -33,5 +40,9 @@ function useravatar( $user_id , $text_flag=false , $link_flag=false , $job_flag=
 
 	return $c;
 }
+
+
+
+
 
 

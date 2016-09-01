@@ -1,0 +1,91 @@
+
+.fbcm_list {
+
+}
+.fbcm_list > div > div.r {
+	margin: 30px 16px 0 0;
+	position: relative;
+}
+.fbcm_list > div > div.r > .date {
+	position: absolute; left: 10px; top: 10px;
+	color: #ADADAD;
+	opacity: 0.0;
+}
+.fbcm_list > div > div.r:hover .date {
+	opacity: 1.0;
+}
+
+.fbcm_list div.r div.text {
+	/* text-indent: 52px; */
+	margin: 15px 52px 8px 52px;
+	font-size: 13px;
+	/* background-color: #f8f8f8; */
+}
+.fbcm_list div.r .useravatar a.name {
+	color: #adadad;
+}
+.fbcm_list div.r div.text:before ,
+.fbcm_list div.r div.text:after {
+	font-family: FontAwesome;
+	font-size: 12px;
+	content: "\f10e";
+	position: relative;
+	margin: 0 10px;
+	display: inline-block;
+	color: #adadad;
+}
+.fbcm_list div.r div.text:before {
+	content: "\f10e";
+	top: -2px;
+}
+.fbcm_list div.r div.text:after {
+	content: "\f10d";
+	top: 5px;
+}
+
+
+.fbcm_list div.r div.links {
+	padding-right: 47px;
+}
+.fbcm_list div.r div.links > * {
+	display: inline-block;
+	margin-left: 15px;
+	color: #ADADAD;
+}
+.fbcm_list div.r div.links > .reply {
+	
+}
+.fbcm_list div.r div.links > .tweet {
+	
+}
+.fbcm_list div.r div.links > .reply:before ,
+.fbcm_list div.r div.links > .tweet:before {
+	font-family: FontAwesome;
+	margin-left: 5px;
+	position: relative; top: 2px;
+	font-size: 14px;
+	display: inline-block;
+	color: #ADADAD;
+}
+.fbcm_list div.r div.links > .reply:before {
+	content: "\f064";
+}
+.fbcm_list div.r div.links > .tweet:before {
+	content: "\f099";
+}
+
+.fbcm_list div.r div.links .upvote_form > icon ,
+.fbcm_list div.r div.links .upvote_form > div {
+	display: inline-block;
+}
+.fbcm_list div.r div.links .upvote_form > icon:before {
+	top: 3px;
+}
+
+.fbcm_list .fbcm {
+	padding-right: 65px;
+}
+.fbcm_list .fbcm > form.form {
+	display: none;
+}
+

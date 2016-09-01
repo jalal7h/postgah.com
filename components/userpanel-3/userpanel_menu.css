@@ -70,6 +70,7 @@
 }
 .userpanel_menu > div > a > span {
 	position: absolute; top: 11px; right: 50px;
+	line-height: 1.5 !important;
 }
 
 .userpanel_menu > div > a.current {

@@ -1,0 +1,14 @@
+
+/*--spi--*/
+
+.slidy > .main > img {
+	width: 100%; /* arz e ax e asli e slide */
+}
+.slidy > .tumb {
+	left: 30px; top: 30px; /* fasele tumb az bala chap */
+}
+.slidy > .tumb > img {
+	height: 50px; /* andaze tumb ha */
+}
+
+

@@ -16,6 +16,7 @@
 	border-radius: 5px;
 	vertical-align: top;
 	margin-right: 10px;
+	overflow: hidden;
 }
 
 .userpanel_desk_management {

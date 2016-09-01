@@ -27,9 +27,6 @@ function pgShop_user_form(){
 			
 			<div class="head">مشخصات فروشگاه</div>
 
-			<hr>
-			<br>
-
 			[!"text:path*","inDiv"!]
 			[!"text:name*","inDiv"!]
 			[!"textarea:desc","inDiv"!]

@@ -6,6 +6,59 @@
 
 /*
 
+	# -------------------------------------------------
+	echo listmaker_form('
+		[!
+			"table" => "plan" ,
+			"action" => "./?page=admin&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["cp"]."_list",
+			"name" => "'.__FUNCTION__.'" ,
+			"class" => "'.__FUNCTION__.'" ,
+			"switch" => "do",
+		!]
+			
+			[!"cat:cat_id","cat_name"=>"adsCat","inDiv"!]
+			[!"position:position_id","inDiv"!]
+			
+			<hr>
+
+			[!"text:name","inDiv"!]
+			[!"text:name_on_form","inDiv"!]
+			[!"url:sample_page","inDiv"!]
+			
+			<hr>
+
+			[!"file:icon","inDiv"!]
+
+			[!"file:watermark","inDiv"!]
+			[!"toggle:watermark_onlyfirst","inDiv"!]
+
+			<hr>
+
+			[!"toggle:search_box_color_flag","inDiv"!]
+			[!"color:search_box_color","inDiv"!]
+			[!"file:search_result_cover","inDiv"!]
+			
+			<hr>
+
+			[!"toggle:show_in_index","inDiv"!]
+			[!"toggle:suggest_as_related","inDiv"!]
+			[!"toggle:send_in_newsletter","inDiv"!]
+			[!"toggle:pin_in_all_cat","inDiv"!]
+			[!"toggle:pin_in_own_cat","inDiv"!]
+			[!"toggle:pin_in_search","inDiv"!]		
+			
+			<hr>
+
+			'.$duration.'
+
+			<hr>
+
+			[!"submit:ثبت","inDiv"!]
+
+		[!close!]
+	');
+	# -------------------------------------------------
+
 	echo lmfo([
 		'table' => 'item' ,
 		'action' => './?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['func'],
@@ -84,59 +137,6 @@ function litesponsor_mg_form(){
 
 	?></div><?
 }
-
--------------------------------------------------
-echo listmaker_form('
-	[!
-		"table" => "plan" ,
-		"action" => "./?page=admin&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["cp"]."_list",
-		"name" => "'.__FUNCTION__.'" ,
-		"class" => "'.__FUNCTION__.'" ,
-		"switch" => "do",
-	!]
-		
-		[!"cat:cat_id","cat_name"=>"adsCat","inDiv"!]
-		[!"position:position_id","inDiv"!]
-		
-		<hr>
-
-		[!"text:name","inDiv"!]
-		[!"text:name_on_form","inDiv"!]
-		[!"url:sample_page","inDiv"!]
-		
-		<hr>
-
-		[!"file:icon","inDiv"!]
-
-		[!"file:watermark","inDiv"!]
-		[!"toggle:watermark_onlyfirst","inDiv"!]
-
-		<hr>
-
-		[!"toggle:search_box_color_flag","inDiv"!]
-		[!"color:search_box_color","inDiv"!]
-		[!"file:search_result_cover","inDiv"!]
-		
-		<hr>
-
-		[!"toggle:show_in_index","inDiv"!]
-		[!"toggle:suggest_as_related","inDiv"!]
-		[!"toggle:send_in_newsletter","inDiv"!]
-		[!"toggle:pin_in_all_cat","inDiv"!]
-		[!"toggle:pin_in_own_cat","inDiv"!]
-		[!"toggle:pin_in_search","inDiv"!]		
-		
-		<hr>
-
-		'.$duration.'
-
-		<hr>
-
-		[!"submit:ثبت","inDiv"!]
-
-	[!close!]
-');
--------------------------------------------------
 
 /*README*/
 

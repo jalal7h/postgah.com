@@ -11,5 +11,6 @@ ALTER TABLE `kword`
 ALTER TABLE `kword`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
+ALTER TABLE `kword` ADD FULLTEXT(`kword`);
 
 --spi--

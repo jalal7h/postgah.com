@@ -1,0 +1,43 @@
+
+.pgItem_item_list {
+	
+}
+
+.pgItem_item_list .head_and_subcat_wrapper {
+	background-color: #e8e8e8;
+	border-radius: 5px;
+}
+
+.pgItem_item_list .head {
+    color: #9a9a9a;
+    margin: 0;
+    padding: 17px 20px 15px 20px
+}
+.pgItem_item_list .subcat {
+	background-color: #ddd;
+	border-radius: 5px;
+	padding: 10px;
+}
+.pgItem_item_list .subcat > a {
+	color: royalblue;
+	display: inline-block;
+	margin: 10px;
+}
+.pgItem_item_list .subcat > a:hover {
+	color: blue;
+}
+.pgItem_item_list .subcat > a > span.count {
+	color: #adadad;
+}
+
+.pgItem_item_list .items {
+	/* margin-top: 10px; */
+}
+
+
+
+
+
+
+
+

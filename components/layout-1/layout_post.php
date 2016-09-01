@@ -1,60 +1,50 @@
 <?
+
+# jalal7h@gmail.com
+# 2016/08/23
+# 1.1
+
 $GLOBALS['block_layers']['layout_post'] = 'پست دلخواه';
 
-function layout_post( $table_name, $page_id ){
+function layout_post( $rw /* $rw_pagelayer */ ){
 	
-	switch($table_name){
-		
-		case 'page_layer' :
-			$query = " select * from `page_layer` where `id`='$page_id' limit 1 ";
+	$allow_eval = false;
+	
+	switch(strtoupper($rw['type'])){
+	
+		case 'HTML' :
 			break;
-		
-		case 'page_frame' :
-			$query = " select * from `page_frame` where `id`='$page_id' limit 1 ";
-			break;
-	}
-	
-	if(! $rs = dbq($query) ){
-		e(__FUNCTION__,__LINE__,dbe());
-	
-	} else if(! $rw = dbf($rs) ){
-		e(__FUNCTION__,__LINE__);
-
-	} else {
-		
-		$allow_eval = false;
-		
-		switch(strtoupper($rw['type'])){
-		
-			case 'HTML' :
-				//if($rw['framed']){
-					//$rw['data']= "<div style=padding:10px >".$rw['data']."</div>";
-				//}
-				break;
-				
-			case 'PHP5' : 
-				$allow_eval=true;
-				break;
 			
-			case 'TEXT' :
-			DEFAULT : 
-				$rw['data']=htmlspecialchars($rw['data']);
-				$rw['data']=nl2br($rw['data']);
-				break;
-				
-		}
-
-		if(strtoupper($rw['type'])!='PHP5'){
-			$rw['data'] = "<div class='layout-html-content'>".$rw['data']."</div>";
-		}
-
-		return layout_post_box( $rw['name'], $rw['data'], $allow_eval, $rw['framed'], $rw['position'] );
+		case 'PHP5' : 
+			$allow_eval = true;
+			break;
+		
+		case 'TEXT' :
+		default : 
+			$rw['data'] = htmlspecialchars($rw['data']);
+			$rw['data'] = nl2br($rw['data']);
+			break;
+			
 	}
 
-	return false;
+	if(! $rw['framed'] ){
+	
+		if( strtoupper($rw['type']) == 'PHP5' ){
+			$rw['data'] = "<div class='layout-php5-raw-content'>".$rw['data']."</div>";
+
+		} else {
+			$rw['data'] = "<div class='layout-html-raw-content'>".$rw['data']."</div>";
+		}
+	
+	}
+
+	return layout_post_box( $rw['name'], $rw['data'], $allow_eval, $rw['framed'], $rw['pos'] );
+	
 }
 
-function post( $table_name, $page_id ){
-	return layout_post( $table_name, $page_id );
+function post( $rw ){
+	return layout_post( $rw );
 }
+
+
 

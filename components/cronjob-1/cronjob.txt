@@ -1,0 +1,9 @@
+
+
+# jalal7h@gmail.com
+# 2016/07/20
+# 1.1
+
+// $GLOBALS['cronjob'][] = [ 'pgItem_expire_agent', '0 0 * * *' ];
+// $GLOBALS['cronjob'][] = [ 'pgItem_expire_agent', '0 0 * * sun,mon', $variable_value ];
+// $GLOBALS['cronjob'][] = [ 'pgItem_expire_agent', '143084800' ];

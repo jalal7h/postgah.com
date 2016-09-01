@@ -27,6 +27,9 @@ function pgItem_user_saveEdit(){
 		['name','text','cat_id','position_id','cost','cell','tell','sale_by_postgah','state','count_of_stock','weight','sale_duration','delivery_method','delivery_cost_town','delivery_cost_country','flag'=>$flag ], ['id','user_id'=>$user_id] );
 	#
 
+	pgItem_set_cat_serial( $item_id );
+	pgItem_set_position_serial( $item_id );
+
 	# 
 	# set kword
 	kwordusage_set( $_REQUEST['kword'], "item", $item_id );

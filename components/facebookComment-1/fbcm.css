@@ -1,0 +1,21 @@
+
+.fbcm_container {
+	width: 80%;
+	margin: auto;
+}
+.fbcm_container > #fbcm_temp {
+	/*display: none;*/
+}
+
+.fbcm {
+	width: 100%;
+	/*height: 500px;*/
+	margin: 20px 0 40px 0;
+}
+
+.fbcm_sharp_anchor {
+	width: 1px; 
+	height: 1px;
+	overflow: hidden;
+	display: inline-block;
+}

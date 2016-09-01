@@ -14,8 +14,11 @@ RewriteRule ^captcha-(.*)\.png(.*)$ ./?do_action=captcha_build&captcha_name=$1 [
 RewriteRule ^contact$ ./?page=2 [L]
 
 # 
+# layout-1
+RewriteRule ^page-([0-9]+).html$ ./?page=$1 [L]
+
+# 
 # main-3
-RewriteRule ^resize/([0-9]+)x([0-9]+)/(.*)$ ./?do_action=quick_resize&width=$1&height=$2&address=$3 [L]
 RewriteRule ^scripts.js$ ./?do_action=include_all_js [L]
 RewriteRule ^scripts-admin.js$ ./?do_action=include_all_js&page=admin [L]
 RewriteRule ^styles.css$ ./?do_action=include_all_css [L]
@@ -31,6 +34,30 @@ RewriteRule ^image_list/(.*)$ ./?do_action=imgp_echo&filename=$1 [L]
 <FilesMatch "\.(ico|pdf|jpg|jpeg|png|gif|html|htm|xml|txt|xsl)$">
 Header set Cache-Control "max-age=31536050"
 </FilesMatch>
+
+# 
+# newsletter-1
+RewriteRule ^newsletter-email-list.txt$ ./?do_action=nl_management_emailList_download [L]
+
+# 
+# pgCat
+RewriteRule ^cat-([0-9]*),([0-9]*)-(.*)$ ./?page=65&cat_id=$1&p=$2 [L]
+
+# 
+# pgItem
+RewriteRule ^([0-9]*)-(.*)$ ./?page=66&item_id=$1 [L]
+
+# 
+# pgItem_user
+RewriteRule ^new_item$ ./?page=14&do=pgItem_user_list&do1=form [L]
+
+# 
+# pgSearch
+RewriteRule ^tag/(.*)$ ./?page=67&q=$1 [L]
+
+# 
+# resize-1
+RewriteRule ^resize/([0-9]+)x([0-9]+)/(.*)$ ./?do_action=quick_resize&width=$1&height=$2&address=$3 [L]
 
 # 
 # seo-2

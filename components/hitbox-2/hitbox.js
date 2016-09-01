@@ -1,5 +1,5 @@
 
-// 2016/05/14
+// 2016/08/22
 
 document.write('<div id="hitbox-container"><div id="hitbox-text" class="boxborder"></div></div>');
 
@@ -12,24 +12,24 @@ function hitbox(text,w,h){
 		h = '100%';
 	}
 
-	var orig_w = w;
-	var orig_h = h;
-
 	if(! isNaN(w) ){
 		var wiW = window.innerWidth;
 		if( w > wiW * 0.9 ){
+			w_before_change = w;
 			w = wiW * 0.9;
 			if(! isNaN(h) ){
-				h = h * w / orig_w;
+				h = h * w / w_before_change;
 			}
 		}
 	}
+
 	if(! isNaN(h) ){
 		var wiH = window.innerHeight;
-		if( h > wiH * 0.9 ){
-			h = wiH * 0.9;
-			if(! isNaN(w) ){
-				w = w * h / orig_h;
+		if( h > wiH * 0.9 ){ // agar h ziadi bozorge
+			h_before_change = h;
+			h = wiH * 0.9; // height ro bezar ru max
+			if(! isNaN(w) ){ // va agar w number e
+				w = w * h / h_before_change; // w ro motenaseb ba h tanzim kon
 			}
 		}
 	}
@@ -52,7 +52,7 @@ function hitbox(text,w,h){
 
 function dehitbox(){
 	if( hb_intoolstd!='in' ){
-		cl('out');
+		console.log('out');
 		$('#hitbox-text').html('');
 		$('#hitbox-text').css({'width':'0px','height':'0px','padding':'0px'});
 		$('#hitbox-container').animate({'opacity':'0.0'},500);
@@ -60,7 +60,7 @@ function dehitbox(){
 			$('#hitbox-container').hide();
 		}, 500);
 	} else {
-		cl('in');
+		console.log('in');
 	}
 	
 }

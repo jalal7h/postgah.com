@@ -1,0 +1,23 @@
+
+.pgItem_display_related {
+
+}
+.pgItem_display_related > a {
+	display: inline-block;
+	overflow: hidden;
+	width: 172px;
+	height: 200px;
+	text-align: center;
+	margin: 5px;
+}
+.pgItem_display_related > a > img {
+	border-radius: 5px;
+	width: 172px;
+	height: 160px;
+	margin-bottom: 10px;
+}
+.pgItem_display_related > a > span {
+	display: block;
+	line-height: 35px !important;
+}
+

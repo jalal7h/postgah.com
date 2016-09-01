@@ -1,0 +1,46 @@
+
+.pgItem_display_text {
+	line-height: 22px !important;
+	font-size: 12px;
+	text-align: justify;
+	/* margin: 10px; */
+}
+
+.pgItem_display_text .text_footer {
+	margin-top: 40px;
+	border-top: 1px dashed #ddd;
+	height: 47px;
+	position: relative;
+}
+.pgItem_display_text .text_footer .abuse_report {
+	position: absolute; right: 10px; bottom: 3px;
+	cursor: pointer;
+	color: #888;
+}
+.pgItem_display_text .text_footer .abuse_report:hover {
+	color: black;
+}
+.pgItem_display_text .text_footer .abuse_report:before {
+	font-family: FontAwesome;
+	content: "\f071";
+    font-size: 16px;
+    margin-left: 8px;
+}
+.pgItem_display_text .text_footer .print_button {
+	position: absolute; right: 140px; bottom: 3px;
+	cursor: pointer;
+	color: #888;
+}
+.pgItem_display_text .text_footer .print_button:hover {
+	color: black;
+}
+.pgItem_display_text .text_footer .print_button:before {
+	font-family: FontAwesome;
+	content: "\f02f";
+    font-size: 16px;
+    margin-left: 8px;
+}
+.pgItem_display_text .text_footer .ask_from_seller {
+	position: absolute; left: 0px; bottom: -10px;
+	background-color: #2095f4 !important;
+}

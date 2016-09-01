@@ -6,7 +6,7 @@
 
 #do_admin .mainbar > .top > .links > a {
 	color: #bbb;
-	padding: 6px 10px;
+	padding: 4px 10px;
 	display: inline-block;
 }
 #do_admin .mainbar > .top > .links > a:hover {

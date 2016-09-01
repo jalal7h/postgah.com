@@ -1,6 +1,5 @@
 
 #do_admin .mainbar > .top > .breadcrumb {
-	position: absolute; top: -3px; right: 0px;
 	display: inline-block;
 	padding: 0 12px;
 	vertical-align: middle;

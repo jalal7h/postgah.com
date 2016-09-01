@@ -1,4 +1,44 @@
 
+.pgItem_user_form {
+	padding: 0 0 30px 0;
+}
+
+.pgItem_user_form .head {
+	line-height: 50px !important;
+	padding: 0 20px;
+	font-size: 14px;
+	border-bottom: 1px dashed #ddd;
+	margin-bottom: 50px;
+}
+.pgItem_user_form select {
+	line-height: 1.5 !important;
+}
+.pgItem_user_form .lmfe_tnit {
+	width: 140px;
+}
+.pgItem_user_form .plans .lmfe_tnit {
+	vertical-align: top;
+	padding-top: 17px;
+}
+
+.pgItem_user_form .list_of_plans {
+	width: calc( 100% - 200px );
+	display: inline-block;
+}
+.pgItem_user_form .list_of_plans label {
+	display: block;
+	color: #666;
+	line-height: 35px !important;
+	transition: all 0.2s;
+}
+.pgItem_user_form .list_of_plans label:hover {
+	color: #400;
+}
+.pgItem_user_form .list_of_plans input[type="radio"] {
+	margin: 0 5px;
+}
+
+
 #lmfe_inDiv_pgItem_user_form_delivery_method {
 
 }
@@ -25,29 +65,5 @@
 #lmfe_pgItem_user_form_tell {
 	width: 130px;
 }
-
-.pgItem_user_form .plans .lmfe_tnit {
-	vertical-align: top;
-	padding-top: 17px;
-}
-
-.pgItem_user_form .list_of_plans {
-	width: calc( 100% - 200px );
-	display: inline-block;
-}
-.pgItem_user_form .list_of_plans label {
-	display: block;
-	color: #666;
-	line-height: 35px !important;
-	transition: all 0.2s;
-}
-.pgItem_user_form .list_of_plans label:hover {
-	color: #400;
-}
-.pgItem_user_form .list_of_plans input[type="radio"] {
-	margin: 0 5px;
-}
-
-
 
 

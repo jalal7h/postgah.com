@@ -1,14 +1,14 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/04/19
-# Version 1.2
+# 2016/08/18
+# 2.0
 
-function layout_post_box( $title, $content, $allow_eval=false, $framed=true, $position="center" ){
+function layout_post_box( $title, $content, $allow_eval=false, $framed=0, $pos="center" ){
 	
-	if(!$framed){
+	if(! $framed ){
 	
-		if($allow_eval==true){
+		if( $allow_eval==true ){
 			eval("?>$content<?");
 	
 		} else {
@@ -23,12 +23,21 @@ function layout_post_box( $title, $content, $allow_eval=false, $framed=true, $po
 			$content = ob_get_contents();
 			ob_end_clean();
 		}
+
 		$vars['layout-title'] = $title;
 		$vars['layout-content'] = $content;
-		$vars['layout-position'] = $position;
+		$vars['layout-pos'] = $pos;
+
 		echo template_engine( "layout-post", $vars );
+
 	}
 
 	return true;
+
 }
+
+
+
+
+
 

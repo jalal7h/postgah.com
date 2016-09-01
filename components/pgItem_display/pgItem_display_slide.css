@@ -1,0 +1,26 @@
+
+.pgItem_display_slide {
+	position: relative;
+	padding-top: 50px;
+}
+.pgItem_display_slide .item_name {
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.pgItem_display_slide .item_code {
+	position: absolute;
+    left: 6px;
+    top: 9px;
+    color: gray;
+}
+.pgItem_display_slide .item_prompt {
+	background-color: #f5e8bc;
+	color: rgba(0, 0, 0, 0.4);
+	padding: 15px;
+	border-radius: 5px;
+	margin: 5px 0 15px 0;
+}
+

@@ -16,7 +16,9 @@
 	margin:5px;
 /*	width:100%;*/
 }
-
+.listmaker_list * {
+	line-height: 1.5 !important;
+}
 .listmaker_list_record td {
 	/*border:1px solid #eee;*/
 	box-shadow: 0 0 10px #D4D4D4;

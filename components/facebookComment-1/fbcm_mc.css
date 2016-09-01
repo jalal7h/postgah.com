@@ -1,0 +1,23 @@
+
+.facebookComment {
+	
+}
+.facebookComment tr > td {
+	background-color: white !important;
+}
+
+.facebookComment tr > td:nth-child(1) {
+	cursor: default;
+}
+.facebookComment tr > td:nth-child(1).name {
+	
+}
+
+.facebookComment tr > td:nth-child(2) {
+	width: 120px;
+	text-align: center;
+}
+.facebookComment tr > td:nth-child(3) {
+	width: 90px;
+	text-align: center;
+}

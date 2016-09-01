@@ -39,7 +39,7 @@ function users_register_form(){
 		"</div>".
 		"<img src=\""._URL."/image_list/signature.png\" class=\"the_key\" />\n",
 		
-		users_weblogin_form() ,
+		( is_component('user_weblogin') ? user_weblogin_form() : '' ) ,
 
 	]);
 

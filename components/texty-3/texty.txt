@@ -2,11 +2,10 @@
 
 # jalal7h@gmail.com
 # 2016/07/29
-# Version 1.0
+# 1.0
 
 #
 # echo texty( 'some_slug_name', $vars );
 # age field e sms ya email por shode bashe, ersal ha ham anjam mishe ( email va sms karbar + admin )
 # 
-
 

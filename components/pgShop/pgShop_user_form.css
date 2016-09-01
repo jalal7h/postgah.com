@@ -3,14 +3,11 @@
 	margin-bottom: 80px;
 }
 .pgShop_user_form .head {
-	font: bold 16px IRANSans;
-    margin: 0 0 -1px 0;
-    padding: 20px 30px;
-    background-color: #f4f4f4;
-    border-radius: 5px 5px 2px 2px;
-    text-shadow: 0 0 1px #fff;
-    color: #444;
-    cursor: default;
+    line-height: 50px !important;
+    padding: 0 20px;
+    font-size: 14px;
+    border-bottom: 1px dashed #ddd;
+    margin-bottom: 50px;
 }
 .pgShop_user_form .lmfe_tnit {
 	width: 160px;
@@ -24,7 +21,7 @@
 	width: 140px !important;
 }
 .pgShop_user_form textarea {
-	width: calc( 100% - 200px );
+	width: calc( 100% - 300px );
 	height: 160px;
 }
 
