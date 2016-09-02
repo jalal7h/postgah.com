@@ -17,14 +17,13 @@ function cat_management_saveEdit(){
 		e( __FUNCTION__,__LINE__ );
 	
 	} else {
-		
+
+		dbs( 'cat', [ 'name'=>$name, 'desc'=>$desc, 'kw'=>$kw ], [ 'id'=>$id ] );
+
 		$fileupload_upload = fileupload_upload( array("id"=>$l, "input"=>"cat") );
 		if( $fileupload_upload[0] ){
-			$query_logo = " , `logo`='".$fileupload_upload[0]."' ";
-		}
-		
-		if(!dbq(" UPDATE `cat` SET `name`='$name',`desc`='$desc',`kw`='$kw' $query_logo WHERE `id`='$id' LIMIT 1 ")){
-			e(dbe());
+			$logo = $fileupload_upload[0];
+			dbs( 'cat', [ 'logo'=>$logo ], ['id'=>$id] );
 		}
 
 	}
