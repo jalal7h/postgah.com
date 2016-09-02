@@ -1,5 +1,7 @@
 <?
 
+define( 'pgItem_image_nopic', 'image_list/no-pic-ads.png' );
+
 function pgItem_image( $rw_item, $numb_or_size=null, $size=null ){
 
 	if( $numb_or_size==null ){
@@ -19,7 +21,7 @@ function pgItem_image( $rw_item, $numb_or_size=null, $size=null ){
 
 	$image_path = $image_array[ $numb ];
 
-	if( $size ){
+	if( $size and ($image_path != pgItem_image_nopic) ){
 		$image_path = "resize/$size/$image_path";
 	}
 
@@ -44,7 +46,7 @@ function pgItem_image_array( $rw_item ){
 		e(__FUNCTION__,__LINE__);
 
 	} else if(! dbn($rs) ){
-		$image_array[] = 'image_list/no-pic-ads.png';
+		$image_array[] = pgItem_image_nopic;
 	
 	} else {
 		while( $rw = dbf($rs) ){
