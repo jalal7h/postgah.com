@@ -4,7 +4,7 @@ $GLOBALS['converter_list'][] = 'set_item_image';
 
 function set_item_image(){
 
-	$limit = 10000;
+	$limit = 30000;
 
 	if(! file_exists(image_dir_new) ){
 		mkdir( image_dir_new );

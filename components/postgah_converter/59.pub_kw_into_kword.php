@@ -5,7 +5,7 @@ $GLOBALS['converter_list'][] = 'pub_kw_into_kword';
 function pub_kw_into_kword(){
 
 	$table_name = "item";
-	$limit = 10000;
+	$limit = 100000;
 
 	if(! $rs = dbq_old(" SELECT `id`,`_keywords`,`keyword` FROM `pub` WHERE `converter`='1' LIMIT $limit ") ){
 		dbe();

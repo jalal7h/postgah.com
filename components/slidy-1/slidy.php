@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/08/22
-# 1.0
+# 2016/09/02
+# 1.1
 
 function slidy( $arr ){
 
@@ -14,7 +14,7 @@ function slidy( $arr ){
 	#
 
 	if(! is_array($arr) ){
-		e(__FUNCTION__,__LINE__);
+		// e(__FUNCTION__,__LINE__);
 
 	} else if(! sizeof($arr) ){
 		e(__FUNCTION__,__LINE__);

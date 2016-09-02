@@ -8,7 +8,7 @@ function move_pub_to_item(){
 
 	dbq_old(" ALTER TABLE `pub` ADD `converter` INT(1) NOT NULL AFTER `keyword` ");
 
-	if(! $rs = dbq_old(" SELECT * FROM `pub` WHERE `converter`='0' LIMIT $limit ") ){
+	if(! $rs = dbq_old(" SELECT * FROM `pub` WHERE  `user_id`!=0 AND `converter`='0' LIMIT $limit ") ){
 		e(__FUNCTION__,__LINE__);
 	
 	} else while( $rw = dbf($rs) ){
@@ -76,7 +76,9 @@ function move_pub_to_item(){
 	$id_str = implode(',', $id_arr);
 	dbq_old(" UPDATE `pub` SET `converter`='1' WHERE `id` IN ($id_str) ");
 
-	echo "<hr>".intval($_done)." done , ".intval($_err)." error";
+	$_remained = dbr( dbq_old(" SELECT COUNT(*) FROM `pub` WHERE `converter`='0' "), 0, 0);
+
+	echo "<hr>".intval($_done)." done , ".intval($_err)." error, ".intval($_remained)." remained";
 
 }
 

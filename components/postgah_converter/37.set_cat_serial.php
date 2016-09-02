@@ -24,8 +24,9 @@ function set_cat_serial(){
 
 	}
 
-	echo "<hr>".intval($_done)." done , ".intval($_err)." error";
+	$_remained = dbr( dbq(" SELECT COUNT(*) FROM `item` WHERE `cat_serial`='' ") , 0, 0);
 
+	echo "<hr>".intval($_done)." done , ".intval($_err)." error, ".intval($_remained)." remained";
 }
 
 

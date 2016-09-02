@@ -30,12 +30,12 @@ function pgItem_image( $rw_item, $numb_or_size=null, $size=null ){
 function pgItem_image_array( $rw_item ){
 
 	# memo #
-	return [
-		'data/item_image_memo/0'.rand(1,8).'.jpg',
-		'data/item_image_memo/0'.rand(1,8).'.jpg',
-		'data/item_image_memo/0'.rand(1,8).'.jpg',
-		'data/item_image_memo/0'.rand(1,8).'.jpg',
-	];
+	// return [
+	// 	'data/item_image_memo/0'.rand(1,8).'.jpg',
+	// 	'data/item_image_memo/0'.rand(1,8).'.jpg',
+	// 	'data/item_image_memo/0'.rand(1,8).'.jpg',
+	// 	'data/item_image_memo/0'.rand(1,8).'.jpg',
+	// ];
 	# #### #
 
 	$item_id = $rw_item['id'];

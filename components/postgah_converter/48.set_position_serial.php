@@ -4,7 +4,7 @@ $GLOBALS['converter_list'][] = 'set_position_serial';
 
 function set_position_serial(){
 
-	$limit = 10000;
+	$limit = 30000;
 
 	if(! $rs = dbq(" SELECT `id` FROM `item` WHERE `position_serial`='' LIMIT $limit ") ){
 
@@ -24,7 +24,9 @@ function set_position_serial(){
 
 	}
 
-	echo "<hr>".intval($_done)." done , ".intval($_err)." error";
+	$_remained = dbr( dbq(" SELECT COUNT(*) FROM `item` WHERE `position_serial`='' ") , 0, 0);
+
+	echo "<hr>".intval($_done)." done , ".intval($_err)." error, ".intval($_remained)." remained";
 
 }
 

@@ -3,7 +3,7 @@ $GLOBALS['do_action'][] = 'converter_main';
 
 
 ## CONFIG ## # ##
-define( 'mysql_database_old', 'depost_tmp' );
+define( 'mysql_database_old', 'postgah_tmp00' );
 define( 'image_dir_old', 'img/' );
 define( 'image_dir_new', 'data/item_image/old/' );
 ## # ## # ## # ##
