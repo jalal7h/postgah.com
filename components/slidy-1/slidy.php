@@ -6,6 +6,10 @@
 
 function slidy( $arr ){
 
+	if( !$arr or !sizeof($arr) ){
+		return false;
+	}
+
 	# fix array index
 	foreach( $arr as $i0 => $img0 ){
 		$arr2[] = $img0;

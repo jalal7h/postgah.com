@@ -14,9 +14,10 @@ function pgItem_display_slide( $rw_pagelayer ){
 
 	} else {
 		
-		$image_arr = pgItem_image_array( $rw_item );
-
-		foreach ($image_arr as $i => $image_this) {
+		if(! $image_arr = pgItem_image_array( $rw_item ) ){
+			//
+			
+		} else foreach ($image_arr as $i => $image_this) {
 			
 			if(! file_exists($image_this) ){
 				e(__FUNCTION__,__LINE__);
