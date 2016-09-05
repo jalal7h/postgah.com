@@ -9,7 +9,7 @@ function pgCat_main( $rw_pagelayer ){
 		<div class="head"><?=$rw_pagelayer['name']?></div>
 	<?
 
-	if(! $rs_cat = dbq(" SELECT * FROM `cat` WHERE `cat`='adsCat' AND `parent`='0' ORDER BY `name` ASC ") ){
+	if(! $rs_cat = dbq(" SELECT * FROM `cat` WHERE `cat`='adsCat' AND `parent`='0' AND `flag`='1' ORDER BY `prio` ASC ") ){
 		e(__FUNCTION__,__LINE__);
 
 	} else if(! dbn($rs_cat) ){
