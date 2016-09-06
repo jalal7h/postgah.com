@@ -41,7 +41,7 @@ function pgItem_item_list( $rw_pagelayer ){
 
 			#
 			# sub cats
-			if(! $rs_sub = dbq(" SELECT * FROM `cat` WHERE `parent`='$cat_id' ORDER BY `name` ") ){
+			if(! $rs_sub = dbq(" SELECT * FROM `cat` WHERE `flag`='1' AND `parent`='$cat_id' ORDER BY `prio` ASC, `name` ASC ") ){
 				e(__FUNCTION__,__LINE__);
 			
 			} else if(! dbn($rs_sub) ){
