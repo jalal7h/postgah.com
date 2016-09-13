@@ -2,7 +2,7 @@
 
 function pgItem_user_form(){
 	
-	echo listmaker_form('
+	$content = listmaker_form('
 
 	[!
 		"table" => "item" ,
@@ -13,8 +13,6 @@ function pgItem_user_form(){
 	!]
 
 		<?= token_make(); ?>
-
-		<div class="head">فرم ثبت آیتم جدید</div>
 
 		[!"cat:cat_id*", "cat_name"=>"adsCat","inDiv"!]
 		[!"position:position_id*","inDiv"!]
@@ -39,8 +37,8 @@ function pgItem_user_form(){
 		[!"number:tell","inDiv"!]
 
 		<hr>
-		'.
 
+		'.
 		( $_REQUEST['id'] ? '' : '
 		<div class="plans" >
 			<span class="lmfe_tnit">پلان</span>
@@ -53,8 +51,8 @@ function pgItem_user_form(){
 		</div>
 		<hr>
 		')
-		
 		.'
+		
 		<div>
 			[!"checkbox:sale_by_postgah","آیا مایلید کالا/محصول فوق را با همکاری '.setting('tiny_title').' به فروش برسانید؟"!]
 			<span>(<a href=\''._URL.'/?page=64\' target=\'_blank\'>همکاری با پستگاه چیست؟</a>)</span>
@@ -84,6 +82,11 @@ function pgItem_user_form(){
 	
 	');
 
+	layout_post_box( "فرم ثبت آیتم جدید", $content, $allow_eval=false, $framed=1 );
+
 }
+
+
+
 
 

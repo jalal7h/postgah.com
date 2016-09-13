@@ -16,7 +16,7 @@ function pgShop_user_form(){
 		}
 	}
 
-	echo listmaker_form('
+	$content = listmaker_form('
 		[!
 			"table" => "shop" ,
 			"action" => "./?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'",
@@ -25,8 +25,6 @@ function pgShop_user_form(){
 			"switch" => "do1",
 		!]
 			
-			<div class="head">مشخصات فروشگاه</div>
-
 			[!"text:path*","inDiv"!]
 			[!"text:name*","inDiv"!]
 			[!"textarea:desc","inDiv"!]
@@ -45,6 +43,7 @@ function pgShop_user_form(){
 		[!close!]
 	');
 
+	layout_post_box( "مشخصات فروشگاه", $content, $allow_eval=false, $framed=1 );
 
 }
 

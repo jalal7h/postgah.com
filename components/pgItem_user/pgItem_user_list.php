@@ -1,55 +1,9 @@
 <?
 
+
 function pgItem_user_list(){
 
-	if(! $user_id = user_logged() ){
-		ed(__FUNCTION__,__LINE__);
-	}
-
-	switch ($_REQUEST['do1']) {
-		
-		case 'form':
-			return pgItem_user_form();
-
-		case 'saveNew':
-			pgItem_user_saveNew();
-			break;
-		
-		case 'saveEdit':
-			pgItem_user_saveEdit();
-			break;
-
-		case 'remove':
-			pgItem_user_remove();
-			break;
-
-		case 'RegisterInShop':
-			pgShop_user_RegisterInShop( $_REQUEST['id'] );
-			break;
-
-		case 'UnregisterInShop':
-			pgShop_removeItemShopId( $_REQUEST['id'] );
-			break;
-
-		case 'SetStock':
-			listmaker_flag('item',null,null,'sold');
-			break;
-
-		case 'SetUpdateTime':
-			dbs( 'item', ['date_updated'=>U()], ['id'] );
-			break;
-
-		case 'MakePremium':
-			if( $_REQUEST['plan_duration_id'] ){
-				return pgPlan_user_MakePremium_do();
-			}
-			break;
-
-		case 'RenewAds':
-			return pgPlan_user_RenewAds_do();
-
-	}
-
+	
 	###################################################################################
 	# the new version 1.2
 
@@ -168,7 +122,7 @@ function pgItem_user_list(){
 
 	#
 	# echo result
-	echo listmaker_list( $list );
+	$content = listmaker_list( $list );
 	#
 	########################################################################################
 
@@ -180,30 +134,11 @@ function pgItem_user_list(){
 	</style>
 	<?
 
-}
-
-function pgItem_user_list_RejectMessage( $rw ){
-
-	$id = $rw['id'];
-
-	if(! $rs_reject = dbq(" SELECT * FROM `item_reject` WHERE `item_id`='$id' ORDER BY `date_created` DESC LIMIT 1 ") ){
-		e(__FUNCTION__,__LINE__);
-
-	} else if(! dbn($rs_reject) ){
-		$rw_reject['text'] = "نامشخص";
-
-	} else if(! $rw_reject = dbf($rs_reject) ){
-		e(__FUNCTION__,__LINE__);
-
-	} else if(! $rw_reject['text'] ){
-		$rw_reject['text'] = "نامشخص";
-	}
-
-	$rw_reject['text'] = nl2br( $rw_reject['text'] );
-
-	return "<div class=\"".__FUNCTION__."\"><div class=\"head\">پیام مدیریت سایت :‌</div><hr>".$rw_reject['text']."<hr><a class=\"submit_button\" href=\"./?page=14&do=pgItem_user_list&do1=form&id=".$id."\">ویرایش</a></div>";
+	layout_post_box( "لیست آگهی ها", $content, $allow_eval=false, $framed=1 );
 
 }
+
+
 
 
 

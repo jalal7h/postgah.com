@@ -7,8 +7,8 @@ function pgItem_list_brief_this( $rw ){
 	$price = $rw['cost'] > 0 ? $rw['cost']." ".setting('money_unit') : "مجانی";
 
 	$c.= "
-	<a class=\"pgItem_list_brief_this\" href=\"".pgItem_link($rw)."\">
-		<img src=\"".pgItem_image($rw, "150x150" )."\"/ title=\"\" alt=\"\" />
+	<a title=\"$name\" class=\"pgItem_list_brief_this\" href=\"".pgItem_link($rw)."\">
+		<img class=\"isss\" src=\"".pgItem_image($rw, "150x150" )."\"/ title=\"$name\" alt=\"$name\" />
 		<div class=\"text\">
 			<div class=\"name\">".$name."</div>
 			<div class=\"cat\">".$cat."</div>

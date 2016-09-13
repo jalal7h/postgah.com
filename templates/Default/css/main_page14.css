@@ -1,0 +1,15 @@
+
+main.page_14 section.right ,
+main.page_14 section.left {
+	width: 180px;
+}
+
+main.page_14 section.center.have_right_sidebar {
+	margin-right: -200px;
+	padding-right: 200px;
+}
+main.page_14 section.center.have_left_sidebar {
+	margin-left: -200px;
+	padding-left: 200px;
+}
+

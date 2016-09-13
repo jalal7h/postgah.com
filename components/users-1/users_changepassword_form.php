@@ -11,20 +11,20 @@ function users_changepassword_form(){
 		<input type='hidden' name='email' value='$email'>
 		<input type='hidden' name='h' value='".$_REQUEST['h']."'>
 			<div class=container >
-				<div class=d01>تغییر رمز عبور!</div>
+				<div class=d01>تغییر رمز عبور</div>
 				
 				<div>
-					<span>کلمه عبور فعلی :‌ </span>
+					<span>کلمه عبور فعلی</span>
 					<input placeholder='Old password' type='password' name='old_password' />
 				</div>
 				
 				<div>
-					<span>کلمه عبور جدید :‌ </span>
+					<span>کلمه عبور جدید</span>
 					<input placeholder='New password' type='password' id='password1' />
 				</div>
 				
 				<div>
-					<span>تکرار کلمه عبور : </span>
+					<span>تکرار کلمه عبور</span>
 					<input placeholder='Repeat password' type='password' id='password2' name='password' />
 				</div>
 				

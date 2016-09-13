@@ -107,6 +107,9 @@
 	margin: 7px 24px 0 0;
 	display: block;
 }
-
+.billing_userpanel_payment .convbox {
+	padding: 30px 40px;
+	font-size: 12px;
+}
 
 

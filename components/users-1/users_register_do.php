@@ -1,66 +1,71 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/07/09
-# 1.2
+# 2016/09/12
+# 1.3
 
 function users_register_do(){
 	
-	if(!$username = strtolower(trim($_REQUEST['username']))){
-		echo "<script>alert('لطفا آدرس ایمیل خود را وارد کنید.'); history.go(-1);</script>";
-		die();
-	
-	} else if(!$password = trim($_REQUEST['password'])){
-		echo "<script>alert('لطفا آدرس ایمیل خود را وارد کنید.'); history.go(-1);</script>";
-		die();
-	
-	} else if(!$name = trim($_REQUEST['name'])){
-		echo "<script>alert('لطفا آدرس ایمیل خود را وارد کنید.'); history.go(-1);</script>";
-		die();
-	}
-
-	if( hash_password ){
-		$raw_password = $password;
-		$password = md5x( $password, 20 );
-	}
-
-	$cell = trim($_REQUEST['cell']);
-
 	if( user_logged() ){
-		?>
-		<script>location.href = '<?=_URL?>/userpanel';</script>
-		<?
+		echo "<script>location.href = '"._URL."/userpanel';</script>";
 		die();
+
+	} else if(! $username = strtolower(trim($_REQUEST['username'])) ){
+		$text = "لطفا آدرس ایمیل خود را وارد کنید.";
 	
-	} else if(!$rs = dbq(" SELECT COUNT(*) FROM `users` WHERE `username`='$username' LIMIT 1 ")){
-		echo "<script>alert('اختلال در پایگاه داده'); history.go(-1);</script>";
+	} else if( table('users', $username, null, 'username') ){
+		$text = "آدرس ایمیل مورد نظر قبلا ثبت شده است";
+
+	} else if(! is_email_correct_or_not($username) ){
+		$text = "لطفا آدرس ایمیل خود را به درستی وارد کنید.";
+
+	} else if(! $password = trim($_REQUEST['password']) ){
+		$text = "لطفا کلمه عبور خود وارد کنید.";
+
+	} else if(! is_password_secure_or_not($password) ){
+		$text = "لطفا کلمه عبور خود را به درستی وارد کنید.";
+
+	} else if(! $name = trim($_REQUEST['name']) ){
+		$text = "لطفا نام خود را وارد کنید.";
+
+	} else if(! is_name_correct_or_not($name) ){
+		$text = "لطفا نام خود را به درستی وارد کنید.";
 	
-	} else if(dbr($rs,0,0)=='1'){
-		echo "<script>alert('نام کاربری / آدرس ایمیل مورد نظر قبلا ثبت شده است'); history.go(-1);</script>";
-	
-	} else if(!dbq(" INSERT INTO `users` (`username`,`password`,`name`,`cell`) VALUES ('$username','$password','$name','$cell') ")){
-		echo "<script>alert('اختلال در ثبت نام'); history.go(-1);</script>";
-	
+	} else if(! $user_id = dbs('users', [
+		'username'=>$username, 
+		'password'=>hash_password_if_needed($password), 
+		'name'=>$name, 
+		'cell'=>( is_cell_correct_or_not(trim($_REQUEST['cell'])) ?trim($_REQUEST['cell']) :"" ),
+	]) ){
+		$text = "اختلال در ثبت‌نام رخ داده است.";
+		
 	} else {
 
 		# 
 		# loging in client
-		$_SESSION['uid'] = table("users", $username, "id", "username");
+		$_SESSION['uid'] = $user_id;
 
 		#
 		# sending email to client after registration
 		if( is_component('texty') ){
 			
 			$vars['main_title'] = setting('main_title');
-			$vars['password'] = $raw_password;
+			$vars['username'] = $username;
+			$vars['password'] = $password;
+			$vars['name'] = $name;
+			$vars['user_id'] = $user_id;
+			$vars['__BEFORE__'] = '<div class="'.__FUNCTION__.'"><icon></icon><div class="left"><span>';
+			$vars['__AFTER__'] = '</span><a href="./userpanel">ورود به محیط کاربری</a></div></div>';
 
-			echo texty( 'users_register_do' , $vars );
+			echo texty( 'users_register_do' , $vars, '', $convbox=false );
 			
 		}
 		
 		return true;
 	}
 
-	die();
+	echo convbox( $text );
+	return false;
+
 }
 

@@ -19,6 +19,7 @@ function pgItem_display_related( $rw_pagelayer ){
 	} else {
 
 		$title = $rw_pagelayer['name'];
+		$title.= "<a class=\"".__FUNCTION__."_link_to_all\" href=\"".pgCat_link( table('cat', $rw_item['cat_id']) )."\" target=\"_blank\" >مشاهده همه</a>";
 
 		$content = "<div class=\"".__FUNCTION__."\">";
 
@@ -39,7 +40,7 @@ function pgItem_display_related_this( $rw ){
 	
 	$c.= "
 	<a href=\"".pgItem_link( $rw )."\" >
-		<img src=\"".pgItem_image($rw, "200x200")."\"/>
+		<img class=\"isss\" src=\"".pgItem_image($rw, "200x200")."\"/>
 		<span>".$rw['name']."</span>
 	</a>";
 

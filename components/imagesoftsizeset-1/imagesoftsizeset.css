@@ -1,0 +1,8 @@
+
+.isss_wrapper {
+	display: inline-block;
+}
+.isss_wrapper > .inner {
+	display: inline-block;
+	overflow: hidden;
+}

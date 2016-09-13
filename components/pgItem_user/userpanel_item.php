@@ -1,4 +1,4 @@
 <?
 
-$GLOBALS['userpanel_item'][] = [ 'pgItem_user_list', 'لیست آگهی', '022', true ];
+$GLOBALS['userpanel_item'][] = [ 'pgItem_user', 'لیست آگهی ها', '022', true ];
 

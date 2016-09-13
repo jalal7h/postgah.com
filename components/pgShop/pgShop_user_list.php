@@ -1,33 +1,6 @@
 <?
 
 function pgShop_user_list(){
-
-	if(! $user_id = user_logged() ){
-		die();
-	}
-
-	switch ($_REQUEST['do1']) {
-		
-		case 'form':
-			return pgShop_user_form();
-		
-		case 'saveNew':
-			pgShop_user_saveNew();
-			break;
-		
-		case 'saveEdit':
-			pgShop_user_saveEdit();
-			break;
-		
-		case 'remove':
-			pgShop_user_remove();
-			break;
-
-		case 'flag':
-			listmaker_flag('shop');
-			break;
-		
-	}
 	
 	###################################################################################
 	# the new version 1.2
@@ -87,9 +60,11 @@ function pgShop_user_list(){
 
 	#
 	# echo result
-	echo listmaker_list( $list );
+	$content = listmaker_list( $list );
 	#
 	########################################################################################
+
+	layout_post_box( "فروشگاه من", $content, $allow_eval=false, $framed=1 );
 
 }
 

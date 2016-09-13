@@ -1,11 +1,11 @@
 
-// 2016/08/22
+// 2016/09/12
 
 
 
 
 /** * ** * ** * ** * ** * ** * ** * **/
-var slidy_disable_height_change = 1;
+var slidy_disable_height_change = true;
 /** * ** * ** * ** * ** * ** * ** * **/
 
 
@@ -33,7 +33,7 @@ jQuery(document).ready(function($) {
 		var this_height = $('.slidy > .main > img:nth-child('+slidy_i0+')').attr('height');
 		var slidy_height = this_height * slidy_width / this_width;
 
-		if( slidy_disable_height_change == 1 ){
+		if( slidy_disable_height_change == true ){
 			if( slidy_height > max_slidy_height ){
 				max_slidy_height = slidy_height;
 			} else {

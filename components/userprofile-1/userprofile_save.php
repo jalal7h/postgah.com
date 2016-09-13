@@ -1,54 +1,58 @@
 <?
 
+# jalal7h@gmail.com
+# 2016/09/13
+# 1.1
+
 function userprofile_save(){
 	
-	if(! $uid = user_logged() ){
-		$prompt = "error on ".__LINE__;
+	if(! $user_id = user_logged() ){
+		dg();
 	
-	} else if(! $rw = table("users", $uid)){
-		$prompt = "error on ".__LINE__;
+	} else if(! $rw = table("users", $user_id) ){
+		dg();
 	
-	} else if(! $name = trim(strip_tags($_REQUEST['name'])) ){
-		$prompt = "لطفا نام خود را به درستی وارد کنید!";
+	} else if(! $name = trim($_REQUEST['name']) ){
+		$text = "لطفا نام خود را وارد کنید!";
 	
-	} else if(! $username = trim(strip_tags($_REQUEST['username'])) ){
-		$prompt = "لطفا آدرس ایمیل خود را به درستی وارد کنید!";
+	} else if(! is_name_correct_or_not($name) ){
+		$text = "لطفا نام خود را به درستی وارد کنید!";
+
+	} else if(! $username = trim($_REQUEST['username']) ){
+		$text = "لطفا آدرس ایمیل خود را وارد کنید!";
 	
+	} else if(! is_email_correct_or_not($username) ){
+		$text = "لطفا آدرس ایمیل خود را به درستی وارد کنید!";
+
+	} else if( ($username != $rw['username']) and table('users', $username, null, 'username') ){
+		$text = "آدرس ایمیل جدید شما قبلا توسط کاربر دیگری ثبت شده است!";
+
+	} else if(! dbs('users', ['name','username','cell','tell','address','im_a','work_at','gender'] , ['id'=>$user_id] ) ){
+		dg( dbe() );
+
 	} else {
+
+		$f = fileupload_upload([ "id"=>$user_id, "input"=>"profile_pic" ]);
+		if($f[0]){
+			dbs( 'users', [ 'profile_pic'=>$f[0] ] , [ 'id'=>$user_id ] );
+		}
+
+		#
+		# sending email to client after save change on profile
+		if( is_component('texty') ){
+			$vars = table('users', $user_id);
+			$vars['main_title'] = setting('main_title');
+			echo texty( 'userprofile_save' , $vars );
+		}
 		
-		$tell = trim(strip_tags($_REQUEST['tell']));
-		$cell = trim(strip_tags($_REQUEST['cell']));
-		$position_region_id = trim(strip_tags($_REQUEST['position_region_id']));
+		return true;
 
-		$address = trim(strip_tags($_REQUEST['address']));
-		$im_a = trim(strip_tags($_REQUEST['im_a']));
-		$work_at = trim(strip_tags($_REQUEST['work_at']));
-		$gender = trim(strip_tags($_REQUEST['gender']));
-
-		if(!dbq(" UPDATE `users` SET 
-			`name`='$name',
-			`username`='$username',
-			`tell`='$tell',
-			`cell`='$cell',
-			`position_region_id`='$position_region_id',
-			`address`='$address',
-			`im_a`='$im_a',
-			`work_at`='$work_at',
-			`gender`='$gender'
-			WHERE `id`='$uid' LIMIT 1 ")){
-			$prompt = "error on ".__LINE__;
-		} else {
-			$prompt = "اطلاعات شما با موفقیت بروز شد.";
-		}
-
-		$profile_pic = fileupload_upload( array("id"=>$uid, "input"=>"profile_pic") );
-		if($profile_pic[0]){
-			dbs("users", array("profile_pic"=>$profile_pic[0]) , array("id"=>$uid) );
-		}
 	}
 
-	echo "<div style='width: 70%; margin: 100px auto 110px auto;' class='convbox'>$prompt</div>";
+	echo convbox($text);
 	
+	return false;
+
 }
 
 

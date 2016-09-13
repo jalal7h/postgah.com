@@ -1,23 +1,43 @@
 
 .pgItem_display_related {
-
+	margin: -13px;
 }
 .pgItem_display_related > a {
 	display: inline-block;
 	overflow: hidden;
-	width: 172px;
+	width: 162px;
 	height: 200px;
 	text-align: center;
-	margin: 5px;
+	margin: 13px;
+	vertical-align: top;
 }
 .pgItem_display_related > a > img {
-	border-radius: 5px;
-	width: 172px;
-	height: 160px;
+	/* border-radius: 5px; */
+	width: 159px;
+	height: 159px;
 	margin-bottom: 10px;
+	border: 1px solid #bbb;
+	padding: 2px;
 }
 .pgItem_display_related > a > span {
 	display: block;
 	line-height: 35px !important;
 }
+
+.pgItem_display_related_link_to_all {
+	float: left;
+	color: #e0e0e0 !important;
+	transition: 0.1s all;
+}
+.pgItem_display_related_link_to_all:after {
+	font-family: FontAwesome;
+	content: "\f060";
+	font-size: 10px;
+	padding-right: 5px;
+}
+.pgItem_display_related_link_to_all:hover {
+	color: #999 !important;
+}
+
+
 

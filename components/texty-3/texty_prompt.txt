@@ -1,0 +1,10 @@
+
+
+# jalal7h@gmail.com
+# 2016/09/12
+# 2.1
+
+
+# texty_prompt( $slug , $vars=null, $convbox=true )
+# __BEFORE__ , __AFTER__
+

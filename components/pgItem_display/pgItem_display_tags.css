@@ -3,16 +3,30 @@
 
 }
 .pgItem_display_tags > a {
-    line-height: 19px !important;
-    padding: 0px 5px;
-    background-color: #666;
+    line-height: 17px !important;
+    padding: 1px 6px 0;
+    background-color: #ccc;
+    box-shadow: 0 0 5px #c0c0c0 inset;
     color: white;
     border-radius: 4px;
     margin: 1px 0px;
     display: inline-block;
-    font-size: 8px;
+    font-size: 9px;
     transition: all 0.3s;
+    text-shadow: 0 0 3px #999;
 }
 .pgItem_display_tags > a:hover {
-	background-color: #ff006a
+	background-color: #ef2847;
+    box-shadow: 0 0 5px #e12143 inset;
+    text-shadow: #7b1919;
+}
+.pgItem_display_tags > a:before {
+    font-family: FontAwesome;
+    content: "\f111";
+    font-size: 5px;
+    padding-left: 5px;
+    color: #a7a7a7;
+}
+.pgItem_display_tags > a:hover:before {
+    color: #bd182d;
 }

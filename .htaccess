@@ -65,7 +65,7 @@ RewriteRule ^sitemap.xml$ ./?do_action=seo_sitemap [L]
 RewriteRule ^rss/([a-zA-Z0-9]+)\.xml$ ./?do_action=seo_rss&feed=$1 [L]
 
 # 
-# userpanel-3
+# userpanel-4
 RewriteRule ^userpanel$ ./?page=14 [L]
 
 # 
