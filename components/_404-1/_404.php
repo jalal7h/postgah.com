@@ -4,6 +4,8 @@
 # 2016/09/13
 # 1.0
 
+$GLOBALS['do_action'][] = '_404';
+
 function _404(){
 
 	header("HTTP/1.0 404 Not Found");

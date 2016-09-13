@@ -1,5 +1,13 @@
 RewriteEngine On
+RewriteBase /live.git/postgah.com/
 # AddType application/x-httpd-php54 .php
+
+# 
+# _404-1
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_URI} !image_list
+RewriteRule .* ./?do_action=_404 [L]
 
 # 
 # billing-4
