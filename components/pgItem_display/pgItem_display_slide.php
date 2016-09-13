@@ -7,10 +7,10 @@ function pgItem_display_slide( $rw_pagelayer ){
 	pgItem_viewCounter();
 
 	if(! $item_id = $_REQUEST['item_id'] ){
-		e(__FUNCTION__,__LINE__);
+		dg();
 	
 	} else if(! $rw_item = table('item', $item_id) ){
-		e(__FUNCTION__,__LINE__);
+		dg();
 
 	} else {
 		
@@ -20,10 +20,10 @@ function pgItem_display_slide( $rw_pagelayer ){
 		} else foreach ($image_arr as $i => $image_this) {
 			
 			if(! file_exists($image_this) ){
-				e(__FUNCTION__,__LINE__);
+				dg($image_this);
 
 			} else if(! $size = getimagesize($image_this) ){
-				e(__FUNCTION__,__LINE__);
+				dg($image_this);
 
 			} else if( $size[0] >= 500 ){
 				// $image_arr[$i] = "./resize/800x2000/".$image_this;
@@ -46,9 +46,8 @@ function pgItem_display_slide( $rw_pagelayer ){
 
 		</div>";
 
-
-		
 		layout_post_box( $title, $content, $allow_eval=false, $framed=1, $rw_pagelayer['pos'] );
+		
 	}
 
 }
