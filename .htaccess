@@ -46,6 +46,7 @@ RewriteRule ^cat-([0-9]*),([0-9]*)-(.*)$ ./?page=65&cat_id=$1&p=$2 [L]
 # 
 # pgItem
 RewriteRule ^([0-9]*)-(.*)$ ./?page=66&item_id=$1 [L]
+RewriteRule ^([0-9]*).html$ ./?page=66&item_id=$1&item_needs_to_be_redirected=1 [L]
 
 # 
 # pgItem_user
