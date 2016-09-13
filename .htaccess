@@ -56,6 +56,9 @@ RewriteRule ^new_item$ ./?page=14&do=pgItem_user_list&do1=form [L]
 # pgSearch
 RewriteRule ^tag/(.*)$ ./?page=67&q=$1 [L]
 
+RewriteRule ^pk=(.*)$ ./?page=67&q=$1&tag_needs_to_be_redirected=1 [L]
+RewriteRule ^t=(.*)/p=([0-9]*).html$ ./?page=67&q=$1&tag_needs_to_be_redirected=1 [L]
+
 # 
 # resize-1
 RewriteRule ^resize/([0-9]+)x([0-9]+)/(.*)$ ./?do_action=quick_resize&width=$1&height=$2&address=$3 [L]

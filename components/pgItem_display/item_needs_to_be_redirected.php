@@ -1,6 +1,8 @@
 <?
 
-$GLOBALS['do_init'][] = 'item_needs_to_be_redirected';
+if( $_REQUEST['item_needs_to_be_redirected']==1 ){
+	$GLOBALS['do_init'][] = 'item_needs_to_be_redirected';
+}
 
 function item_needs_to_be_redirected(){
 	
