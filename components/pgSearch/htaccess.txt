@@ -1,7 +1,7 @@
 
-RewriteRule ^tag/(.*)$ ./?page=67&q=$1 [L]
+RewriteRule ^tag/(.*)$ ./?page=67&q=$1&its_tag=1 [L]
 
-RewriteRule ^pk=(.*)$ ./?page=67&q=$1&tag_needs_to_be_redirected=1 [L]
-RewriteRule ^t=(.*)/p=([0-9]*).html$ ./?page=67&q=$1&tag_needs_to_be_redirected=1 [L]
+RewriteRule ^pk=(.*)$ ./?page=67&q=$1&tag_needs_to_be_redirected=1&its_tag=1 [L]
+RewriteRule ^t=(.*)/p=([0-9]*).html$ ./?page=67&q=$1&tag_needs_to_be_redirected=1&its_tag=1 [L]
 
 

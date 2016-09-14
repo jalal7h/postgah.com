@@ -237,3 +237,12 @@ flag {
 	display: inline-block;
 }
 
+.notfound {
+	text-align: center;
+	margin: 30px 0;
+	color: #666;
+}
+
+
+
+

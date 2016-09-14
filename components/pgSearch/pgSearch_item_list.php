@@ -9,7 +9,7 @@ $GLOBALS['block_layers_center']['pgSearch_item_list'] = 'جستجوی آیتم -
 function pgSearch_item_list( $rw_pagelayer ){
 	
 	if(! $q = pgSearch_q() ){
-		e(__FUNCTION__,__LINE__);
+		echo convbox("عبارت مورد نظر شما برای جستجو مناسب نیست");
 
 	} else {
 
@@ -27,8 +27,12 @@ function pgSearch_item_list( $rw_pagelayer ){
 
 			$c.= '<div class="head_and_subcat_wrapper">';
 			$title = str_replace('%WORD%', $q, $rw_pagelayer['name']);
-			$c.= '<div class="head">'.$title.' <span class="count">('.qpop('listmaker_paging__count').')</span></div>';
 
+			$listmaker_paging__count = qpop('listmaker_paging__count');
+			$c.= '<div class="head">'.$title.
+				( $listmaker_paging__count ? ' <span class="count">('.$listmaker_paging__count.')</span>' : '' ).
+				'</div>';
+			
 			#
 			# sub cats
 			if(! $rs_sub = dbq(" SELECT *, MATCH (`name`) AGAINST ('$q') AS relevance FROM `cat` WHERE `cat`='adsCat' AND MATCH (`name`) AGAINST ('$q' IN BOOLEAN MODE ) ORDER BY relevance DESC LIMIT 10 ") ){
@@ -66,6 +70,11 @@ function pgSearch_item_list( $rw_pagelayer ){
 				$c.= pgItem_item_list_this( $rw_item );
 			}
 
+			if(! sizeof($pse) ){
+				$c.= convbox("جستجوی شما نتیجه ای نداشت");
+			}
+			
+			
 			$c.= "</div>";
 
 			#

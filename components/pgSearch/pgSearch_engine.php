@@ -38,7 +38,7 @@ function pgSearch_engine( $q ){
 		$res[] = $rw;
 	}
 
-	$query = " SELECT * FROM `item` WHERE MATCH (`name`,`text`) AGAINST ('$q' IN BOOLEAN MODE ) ";
+	$query = " SELECT * FROM `item` WHERE `flag`='2' AND `expired`='0' $pos_query AND MATCH (`name`,`text`) AGAINST ('$q' IN BOOLEAN MODE ) ";
 	$link = _URL."/?".query_string_set( "p", "%%" );
 	qpush( 'pgSearch_engine_paging', listmaker_paging( $query, $link, $limit ) );
 

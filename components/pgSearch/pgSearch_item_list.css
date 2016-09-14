@@ -33,7 +33,9 @@
 .pgSearch_item_list .items {
 	/* margin-top: 10px; */
 }
-
+.pgSearch_item_list .convbox {
+	margin: 20px 0;
+}
 
 
 

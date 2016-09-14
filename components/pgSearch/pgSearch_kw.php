@@ -21,7 +21,7 @@ function pgSearch_kw( $rw_pagelayer ){
 		# ## # ## # ## 
 		} else {
 			if(! $words = kword_search( $q, 50 ) ){
-				//
+				$c.= "<div class=\"notfound\">موردی یافت نشد</div>";
 
 			} else {
 
