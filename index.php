@@ -2,7 +2,7 @@
 
 # jalal7h@gmail.com
 # 2016/03/07
-# Version 1.2.0
+# 1.2
 
 #
 # php version check
