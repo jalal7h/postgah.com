@@ -50,7 +50,7 @@ RewriteRule ^([0-9]*).html$ ./?page=66&item_id=$1&item_needs_to_be_redirected=1 
 
 # 
 # pgItem_user
-RewriteRule ^new_item$ ./?page=14&do=pgItem_user_list&do1=form [L]
+RewriteRule ^new_item$ ./?page=14&do=pgItem_user&do1=form [L]
 
 # 
 # pgSearch
