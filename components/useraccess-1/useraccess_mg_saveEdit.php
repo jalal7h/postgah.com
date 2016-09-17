@@ -19,7 +19,7 @@ function useraccess_mg_saveEdit(){
 			if( is_component('userhashpassword') ){
 				$password = userhashpassword($password);
 			}
-			$set_array[] = 'password';
+			$set_array['password'] = $password;
 		}
 
 		dbs( 'users', $set_array, ['id'] );

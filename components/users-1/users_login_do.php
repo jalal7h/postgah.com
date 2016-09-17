@@ -1,9 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/07/09
-# Version 1.2
-
+# 2016/09/17
+# 1.3
 
 function users_login_do(){
 
@@ -41,12 +40,12 @@ function users_login_do(){
 
 function users_login_check( $username , $password ){
 	
-	if( hash_password ){
-		$password = md5x( $password, 20 );
+	if( is_component('userhashpassword') ){
+		$password = userhashpassword($password);
 	}
 
 	if(! $rs = dbq(" SELECT COUNT(*) FROM `users` WHERE `username`='$username' AND `password`='$password' LIMIT 1 ")){
-		e(__FUNCTION__.__LINE__);
+		dg();
 	
 	} else if( dbr($rs,0,0)!=1 ){
 		//

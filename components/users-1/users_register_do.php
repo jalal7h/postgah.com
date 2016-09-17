@@ -33,7 +33,7 @@ function users_register_do(){
 	
 	} else if(! $user_id = dbs('users', [
 		'username'=>$username, 
-		'password'=>hash_password_if_needed($password), 
+		'password'=>( is_component('userhashpassword') ? userhashpassword($password) : $password ), 
 		'name'=>$name, 
 		'cell'=>( is_cell_correct_or_not(trim($_REQUEST['cell'])) ?trim($_REQUEST['cell']) :"" ),
 	]) ){

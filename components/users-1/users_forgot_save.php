@@ -17,9 +17,8 @@ function users_forgot_save(){
 	if(! $password = trim(strip_tags($_REQUEST['password'])) ){
 		ed(__FUNCTION__,__LINE__);
 	}
-	if( hash_password ){
-		$raw_password = $password;
-		$password = md5x( $password, 20 );
+	if( is_component('userhashpassword') ){
+		$password = userhashpassword($password);
 	}
 
 	#

@@ -21,7 +21,7 @@ function users_changepassword_save(){
 	} else if(! is_password_secure_or_not($password) ){
 		$text = "لطفا کلمه عبور خود را به درستی وارد کنید.";
 
-	} else if(! dbs( 'users', ['password'=>hash_password_if_needed($password)], ['id'=>$user_id] ) ){
+	} else if(! dbs( 'users', [ 'password'=>( is_component('userhashpassword') ? userhashpassword($password) : $password ) ], ['id'=>$user_id] ) ){
 		dg();
 	
 	} else {
