@@ -8,6 +8,12 @@ $GLOBALS['do_action'][] = '_404';
 
 function _404(){
 
+	if( basename($_SERVER['REQUEST_URI']) != '404.php' ){
+		header("HTTP/1.1 301 Moved Permanently"); 
+		header('Location: '._URL."/404.php");
+		die();
+	}
+
 	header("HTTP/1.0 404 Not Found");
 	?>
 	<html>
