@@ -39,8 +39,6 @@ function pgItem_display_slide( $rw_pagelayer ){
 			
 			<div class=\"item_name\">".$rw_item['name']."</div>
 			<div class=\"item_code\">کد آگهی :‌ ".$rw_item['id']."</div>
-		
-		 	<div class=\"item_prompt\">اخطار! لطفا از واریز وجه به حساب فروشندگان ناشناس قبل از دسترسی مستقیم به کالا خودداری کنید.</div>
 			
 			".slidy( $image_arr )."
 

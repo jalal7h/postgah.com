@@ -1,0 +1,11 @@
+
+.pgItem_display_warning {
+	background-color: #f5e8bc;
+	color: rgba(0, 0, 0, 0.4);
+	padding: 15px;
+	border-radius: 5px;
+	margin: 5px 0 25px 0;
+	box-shadow: 0 0 10px #ddd;
+    border: 1px solid #ffffff;
+    text-shadow: 0 0 3px #c3b688;
+}
