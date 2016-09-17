@@ -41,7 +41,7 @@ RewriteRule ^newsletter-email-list.txt$ ./?do_action=nl_management_emailList_dow
 
 # 
 # pgCat
-RewriteRule ^cat-([0-9]*),([0-9]*)-(.*)$ ./?page=65&cat_id=$1&p=$2 [L]
+RewriteRule ^cat-([0-9]*),([0-9]*)/(.*)$ ./?page=65&cat_id=$1&p=$2 [L]
 
 # 
 # pgItem
