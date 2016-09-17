@@ -84,7 +84,7 @@ RewriteRule ^login$ ./?page=60 [L]
 RewriteRule ^forgot$ ./?page=63 [L]
 
 # 
-# _404-1
+# _404-1-spi
 RewriteCond %{REQUEST_FILENAME} !-f 
 RewriteCond %{REQUEST_FILENAME} !-d 
 RewriteCond %{REQUEST_URI} !image_list
