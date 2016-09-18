@@ -1,9 +1,4 @@
 <?
-
-# jalal7h@gmail.com
-# 2016/09/18
-# 1.0
-
 $GLOBALS['do_action'][] = 'mailq_cron';
 
 function mailq_cron(){

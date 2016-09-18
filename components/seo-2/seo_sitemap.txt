@@ -1,5 +1,4 @@
 
-
 $GLOBALS['do_action'][] = "seo_sitemap";
 
 /*
