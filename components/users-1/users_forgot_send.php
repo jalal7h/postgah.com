@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/13
-# 1.1
+# 2016/09/18
+# 1.2
 
 function users_forgot_send(){
 	
@@ -17,7 +17,7 @@ function users_forgot_send(){
 		$h = md5x($username."01q!", 20);
 		$vars['link'] = _URL."/?page=".$_REQUEST['page']."&do=new&username=".$username."&h=".$h;
 	
-		echo texty( 'users_forgot_send', $vars );
+		echo texty( 'users_forgot_send', $vars, $vars['id'] );
 
 	}
 
