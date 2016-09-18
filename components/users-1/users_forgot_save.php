@@ -40,7 +40,7 @@ function users_forgot_save(){
 			
 			$vars = table( 'users', $_SESSION['uid'] );
 			$vars['password'] = $raw_password;
-			
+			$vars['__AFTER__'] = '<br><a href="./userpanel">ورود به محیط کاربری</a>';
 			echo texty( 'users_forgot_save', $vars );
 
 		}

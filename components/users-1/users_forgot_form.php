@@ -1,11 +1,16 @@
 <?
 
+# jalal7h@gmail.com
+# 2016/09/18
+# 1.1
+
 $GLOBALS['block_layers']['users_forgot_form'] = 'فرم فراموشی کلمه عبور';
 
 function users_forgot_form(){
 	
 	if( user_logged() ){
-		header("Location: ./userpanel");
+		// header("Location: ./userpanel");
+		echo '<META http-equiv=Refresh Content="0; Url='._URL.'/userpanel">';
 		die();
 	}
 

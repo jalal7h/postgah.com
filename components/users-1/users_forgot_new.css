@@ -30,7 +30,8 @@
 #users_forgot_new input[type="submit"] {
 
 }
-#users_forgot_new .d03 {
+#users_forgot_new .prompt {
 	color: red;
 	padding: 10px;
+	display: inline-block;
 }
