@@ -19,6 +19,8 @@ function contact_vw_form(){
 		$vars['email_select_option'].= '<option value="'.$rw['slug'].'">'.str_replace('@','[at]',$rw['text']).'</option>';		
 	}
 	
+	$vars['token'] = token_make();
+
 	echo template_engine('contact', $vars);
 
 }

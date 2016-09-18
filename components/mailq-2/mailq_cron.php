@@ -18,8 +18,15 @@ function mailq_cron(){
 
 	} else while( $rw = dbf($rs) ){
 		
-		xmail( $rw['to'] , $rw['subject'] , $rw['text'] , $rw['mail_from'] , ($rw['html']=='1'?true:false) , $cron=true );
+		$to = $rw['to'];
+		$subject = $rw['subject'];
+		$text = $rw['text'];
+		$from = $rw['mail_from'];
+		$html = $rw['html'];
+		$mssp_id = $rw['mssp_id'];
 
+		xmail( $to , $subject , $text , $from , $html, $mssp_id );
+		
 		if(! dbq(" DELETE FROM `mailq` WHERE `id`='".$rw['id']."' LIMIT 1 ") ){
 			dg();
 		}

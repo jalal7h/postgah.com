@@ -6,6 +6,8 @@
 
 function users_forgot_send(){
 	
+	token_check();
+
 	if(! $username = $_REQUEST['username'] ){
 		dg();
 

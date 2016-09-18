@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/07/13
-# 1.1
+# 2016/09/18
+# 1.2
 
 function time_inword_before( $U ){
 	
@@ -13,20 +13,20 @@ function time_inword_before( $U ){
 	$aMonth = $aDay * 30;
 	$diff = $now - $U;
 	
-	if($diff > $aMonth){
-		return ceil($diff/$aMonth)." ماه قبل";
+	if($diff >= $aMonth){
+		return round($diff/$aMonth)." ماه قبل";
 	
-	} else if($diff > $aDay){
-		return ceil($diff/$aDay)." روز قبل";
+	} else if($diff >= $aDay){
+		return round($diff/$aDay)." روز قبل";
 	
-	} else if($diff > $anHour){
-		return ceil($diff/$anHour)." ساعت قبل";
+	} else if($diff >= $anHour){
+		return round($diff/$anHour)." ساعت قبل";
 	
-	} else if($diff > $aMinute){
-		return ceil($diff/$aMinute)." دقیقه قبل";
+	} else if($diff >= $aMinute){
+		return round($diff/$aMinute)." دقیقه قبل";
 	
 	} else {
-		return ceil($diff)." ثانیه قبل";
+		return round($diff)." ثانیه قبل";
 	}
 }
 

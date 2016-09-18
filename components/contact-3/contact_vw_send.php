@@ -1,26 +1,24 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/07/29
-# 1.1
+# 2016/09/18
+# 1.2
 
 function contact_vw_send(){
 
+	token_check();
+
 	if(! $_REQUEST['to'] = $_REQUEST['to'] ){
-		e(__FUNCTION__,__LINE__);
+		dg();
 	
 	} else if(! $_REQUEST['to'] = setting($_REQUEST['to']) ){
-		e(__FUNCTION__,__FILE__);
+		dg();
 	
-	} else if(! dbs('contact', ['name','email_address','cell_number','to','content','date'=>U()] ) ){
-		e(__FUNCTION__,__FILE__);
+	} else if(! dbs( 'contact', ['name','email','cell','to','content','date'=>U()] ) ){
+		dg();
 
 	} else {
-		
-		echo "<div class='convbox contact_vw_send'>";
-		echo texty( "contact_vw_send" , $_REQUEST, $_REQUEST['email_address'] );
-		echo "</div>";
-
+		echo texty( 'contact_vw_send' , $_REQUEST, $_REQUEST['email'] );
 	}
 
 }

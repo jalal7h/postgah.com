@@ -1,0 +1,13 @@
+
+.mss_mg_server_form {
+	padding: 50px 80px;
+}
+.mss_mg_server_form input[type="password"] ,
+.mss_mg_server_form input[type="text"] ,
+.mss_mg_server_form input[type="email"] {
+	width: 200px !important;
+}
+.mss_mg_server_form .ltr {
+	direction: ltr;
+}
+

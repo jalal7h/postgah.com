@@ -23,6 +23,7 @@ function users_forgot_form(){
 
 	?>
 	<form method="post" action="./?page=<?=$_REQUEST['page']?>&do=send" id="users_forgot_form" >
+		<?=token_make()?>
 		<div class="container"> 
 			<div class="d01">فراموشی کلمه عبور!</div>
 			<div class="d02">لطفا آدرس ایمیل خود را برای دریافت پیوند تنظیم مجدد کلمه عبور وارد نمایید.</div>

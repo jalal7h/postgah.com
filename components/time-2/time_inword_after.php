@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/07/15
-# 1.0
+# 2016/09/18
+# 1.1
 
 function time_inword_after( $U ){
 	
@@ -14,20 +14,20 @@ function time_inword_after( $U ){
 	$now = U();
 	$diff = $U - $now;
 	
-	if($diff > $aMonth){
-		return ceil($diff/$aMonth)." ماه بعد";
+	if($diff >= $aMonth){
+		return round($diff/$aMonth)." ماه بعد";
 	
-	} else if($diff > $aDay){
-		return ceil($diff/$aDay)." روز بعد";
+	} else if($diff >= $aDay){
+		return round($diff/$aDay)." روز بعد";
 	
-	} else if($diff > $anHour){
-		return ceil($diff/$anHour)." ساعت بعد";
+	} else if($diff >= $anHour){
+		return round($diff/$anHour)." ساعت بعد";
 	
-	} else if($diff > $aMinute){
-		return ceil($diff/$aMinute)." دقیقه بعد";
+	} else if($diff >= $aMinute){
+		return round($diff/$aMinute)." دقیقه بعد";
 	
 	} else {
-		return ceil($diff)." ثانیه بعد";
+		return round($diff)." ثانیه بعد";
 	}
 }
 

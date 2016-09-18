@@ -22,7 +22,9 @@ function users_register_form(){
 	]);
 
 	echo lmfe([
-	
+		
+		token_make(),
+
 		'<div class="container">'.
 			'<div class="d02">ثبت نام</div>'.
 			'<div class="d05">اگر قبلآ ثبت نام کرده اید <a target="_top" href="./login">وارد شوید</a></div>',

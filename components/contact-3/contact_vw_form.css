@@ -42,11 +42,11 @@
 .contact_vw_form input[name="name"] {
 	
 }
-.contact_vw_form input[name="cell_number"] {
+.contact_vw_form input[name="cell"] {
 	direction: ltr;
 	text-align: left !important;
 }
-.contact_vw_form input[name="email_address"] {
+.contact_vw_form input[name="email"] {
 	direction: ltr;
 }
 .contact_vw_form input[name="content"] {
