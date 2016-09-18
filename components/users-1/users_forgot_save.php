@@ -6,6 +6,8 @@
 
 function users_forgot_save(){
 	
+	token_check();
+
 	#
 	# username
 	if(! $username = trim(strip_tags($_REQUEST['username'])) ){
