@@ -1,5 +1,9 @@
 <?
 
+# jalal7h@gmail.com
+# 2016/09/19
+# 1.1
+
 define( 'pgItem_image_nopic', 'image_list/no-pic-ads.png' );
 
 function pgItem_image( $rw_item, $numb_or_size=null, $size=null ){
@@ -23,6 +27,12 @@ function pgItem_image( $rw_item, $numb_or_size=null, $size=null ){
 
 	if( $size and ($image_path != pgItem_image_nopic) ){
 		$image_path = "resize/$size/$image_path";
+	}
+
+	$_URL_SLASH = _URL."/";
+
+	if( substr( $image_path, 0, strlen($_URL_SLASH) ) != $_URL_SLASH ){
+		$image_path = $_URL_SLASH . $image_path;
 	}
 
 	return $image_path;

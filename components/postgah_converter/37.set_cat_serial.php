@@ -4,18 +4,18 @@ $GLOBALS['converter_list'][] = 'set_cat_serial';
 
 function set_cat_serial(){
 
-	$limit = 10000;
+	$limit = 30000;
 
-	if(! $rs = dbq(" SELECT `id` FROM `item` WHERE `cat_serial`='' LIMIT $limit ") ){
+	if(! $rs_item = dbq(" SELECT `id`,`cat_id` FROM `item` WHERE `cat_serial`='' LIMIT $limit ") ){
 
-	} else if(! dbn($rs) ){
+	} else if(! dbn($rs_item) ){
 		echo "all cat_serial is set";
 
-	} else while( $rw = dbf($rs) ){
+	} else while( $rw_item = dbf($rs_item) ){
 		
-		$id = $rw['id'];
+		$id = $rw_item['id'];
 		
-		if(! pgItem_set_cat_serial( $id ) ){
+		if(! pgItem_set_cat_serial( $id, $rw_item ) ){
 			$_err++;
 
 		} else {
