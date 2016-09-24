@@ -15,7 +15,7 @@ RewriteRule ^contact$ ./?page=2 [L]
 
 # 
 # layout-1
-RewriteRule ^page-([0-9]+).html$ ./?page=$1 [L]
+RewriteRule ^page-([0-9]+).html$ ./?page=$1&canonical_tag=1 [L]
 
 # 
 # main-3
