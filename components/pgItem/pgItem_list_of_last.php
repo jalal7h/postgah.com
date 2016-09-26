@@ -17,7 +17,7 @@ function pgItem_list_of_last( $rw_pagelayer ){
 			$number_of_rows = 3;
 		}
 
-		if(! $rs_item = dbq(" SELECT * FROM `item` WHERE 1 ORDER BY `date_updated` DESC LIMIT $number_of_rows ") ){
+		if(! $rs_item = dbq(" SELECT * FROM `item` WHERE `flag`='1' ORDER BY `date_updated` DESC LIMIT $number_of_rows ") ){
 			e(__FUNCTION__,__LINE__);
 
 		} else if(! dbn($rs_item) ){
