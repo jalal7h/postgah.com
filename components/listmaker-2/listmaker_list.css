@@ -251,6 +251,7 @@
 	position: relative;
 	left: 6px;
     top: 0px;
+    z-index: 3;
 }
 
 iframe[name="_hidden"] {
