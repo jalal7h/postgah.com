@@ -55,7 +55,7 @@ function pgItem_user_saveNew(){
 				'button_payment_form' => '<a class="submit_button" href="'._URL.'/?page='.$_REQUEST['page'].'&do=billing_userpanel_payment&invoice_id='.$invoice_id.'">پرداخت فاکتور</a>',
 				'button_list_of_invoices' => '<a class="submit_button" href="'._URL.'/?page='.$_REQUEST['page'].'&do=billing_userpanel_list">لیست فاکتور ها</a>',
 			];
-			echo texty('pgItem_user_saveNew_invoiceMake', $vars);
+			$c = texty('pgItem_user_saveNew_invoiceMake', $vars);
 			
 		}
 
@@ -64,8 +64,10 @@ function pgItem_user_saveNew(){
 	} else {
 		$vars['item_id'] = $item_id;
 		$vars['item_name'] = trim( strip_tags($_REQUEST['name']) );
-		echo texty('pgItem_user_saveNew', $vars);
+		$c = texty('pgItem_user_saveNew', $vars);
 	}
+
+	qpush( __FUNCTION__."_result", $c );
 
 }
 

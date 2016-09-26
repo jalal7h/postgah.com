@@ -41,7 +41,9 @@ function pgItem_user_saveEdit(){
 
 	$vars['item_id'] = $item_id;
 	$vars['item_name'] = trim( strip_tags($_REQUEST['name']) );
-	echo texty('pgItem_user_saveEdit', $vars);
+	$c = texty('pgItem_user_saveEdit', $vars);
+	
+	qpush( __FUNCTION__."_result", $c );
 	
 }
 

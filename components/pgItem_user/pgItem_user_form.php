@@ -1,12 +1,16 @@
 <?
 
+# jalal7h@gmail.com
+# 2016/09/26
+# 1.1
+
 function pgItem_user_form(){
 	
 	$content = listmaker_form('
 
 	[!
 		"table" => "item" ,
-		"action" => "./?page=".$_REQUEST["page"]."&do=pgItem_user_list",
+		"action" => "./?page=".$_REQUEST["page"]."&do=pgItem_user",
 		"name" => "'.__FUNCTION__.'" ,
 		"class" => "'.__FUNCTION__.'" ,
 		"switch" => "do1",

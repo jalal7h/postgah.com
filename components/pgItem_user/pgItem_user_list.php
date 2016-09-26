@@ -1,9 +1,19 @@
 <?
 
+# jalal7h@gmail.com
+# 2016/09/26
+# 1.1
 
 function pgItem_user_list(){
 
-	
+	if(! $user_id = user_logged() ){
+		echo "<script>location.href = '"._URL."/login';</script>";
+		die();
+	}
+
+	$content.= qpop( 'pgItem_user_saveNew_result' );
+	$content.= qpop( 'pgItem_user_saveEdit_result' );
+
 	###################################################################################
 	# the new version 1.2
 
@@ -122,7 +132,7 @@ function pgItem_user_list(){
 
 	#
 	# echo result
-	$content = listmaker_list( $list );
+	$content.= listmaker_list( $list );
 	#
 	########################################################################################
 
