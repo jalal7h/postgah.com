@@ -21,7 +21,7 @@ function pgItem_list_of_last( $rw_pagelayer ){
 			e(__FUNCTION__,__LINE__);
 
 		} else if(! dbn($rs_item) ){
-			$content = convbox('موردی یافت نشد');
+			$content = '<br><center>موردی یافت نشد</center><br>';
 
 		} while( $rw_item = dbf($rs_item) ){
 			$content.= pgItem_list_brief_this( $rw_item );		
