@@ -46,3 +46,18 @@ jQuery(document).ready(function($) {
 });
 			
 
+jQuery(document).ready(function($) {
+	$('#lmfe_pgItem_user_form_text').on('mouseenter focus', function(){
+		$(this).height(200);
+	});
+});
+
+
+
+
+
+
+
+
+
+

@@ -65,5 +65,12 @@
 #lmfe_pgItem_user_form_tell {
 	width: 130px;
 }
-
+#lmfe_pgItem_user_form_name {
+	width: calc( 100% - 165px );	
+}
+#lmfe_pgItem_user_form_text {
+	width: calc( 100% - 165px );
+	height: 100px;
+	transition: height 0.3s;
+}
 
