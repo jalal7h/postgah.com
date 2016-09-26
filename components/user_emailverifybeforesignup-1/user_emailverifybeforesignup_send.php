@@ -22,7 +22,7 @@ function user_emailverifybeforesignup_send(){
 
 		$vars['site_title'] = setting('tiny_title');
 		$vars['email'] = $e;
-		echo $vars['link'] = _URL."/?page="._PAGE."&e=".$e_enc."&h=".$h;
+		$vars['link'] = _URL."/?page="._PAGE."&e=".$e_enc."&h=".$h;
 		
 		echo texty( 'user_emailverifybeforesignup_send' , $vars, $e );
 
