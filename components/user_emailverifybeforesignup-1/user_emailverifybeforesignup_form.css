@@ -26,7 +26,7 @@
 	padding: 10px 20px;
 	border-radius: 6px;
 }
-#user_emailverifybeforesignup_form input[type=text] {
+#user_emailverifybeforesignup_form input[type=email] {
 	font-family: monospace,'sans-serif' !important;
 	margin-bottom: 18px;
 }

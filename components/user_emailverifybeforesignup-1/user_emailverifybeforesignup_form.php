@@ -14,7 +14,7 @@ function user_emailverifybeforesignup_form(){
 		<div class="container"> 
 			<div class="d01">ثبت نام</div>
 			<div class="d02">لطفا آدرس ایمیل خود را برای دریافت لینک تایید ایمیل وارد نمایید.</div>
-			<input type="text" name="e" placeholder="Email address" dir="ltr" />
+			<input type="email" name="e" placeholder="Email address" dir="ltr" />
 			<input type="submit" class="submit_button" value="ارسال" />
 		</div>
 
