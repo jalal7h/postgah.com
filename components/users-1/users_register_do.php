@@ -1,14 +1,20 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/12
-# 1.3
+# 2016/09/26
+# 1.4
 
 function users_register_do(){
 	
 	if( user_logged() ){
 		echo "<script>location.href = '"._URL."/userpanel';</script>";
 		die();
+
+	} else if( is_component('user_emailverifybeforesignup') and !user_emailverifybeforesignup_check() ){
+		$text = user_emailverifybeforesignup_invalid_verification_link;
+
+	} else if( is_component('user_emailverifybeforesignup') and !user_emailverifybeforesignup_fillRequestUsername() ){
+		dg();
 
 	} else if(! $username = strtolower(trim($_REQUEST['username'])) ){
 		$text = "لطفا آدرس ایمیل خود را وارد کنید.";

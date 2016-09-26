@@ -2,7 +2,7 @@
 
 # jalal7h@gmail.com
 # 2016/04/07
-# Version 1.0.0
+# 1.0
 
 function str_enc( $str ){
 	for( $i=0; $i<strlen($str); $i++ ){

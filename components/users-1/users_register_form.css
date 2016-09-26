@@ -38,7 +38,7 @@
 .users_register_form input[type=submit] {
 	margin: 10px 0px !important;
 	width: auto;
-	border-radius: 20px;
+	border-radius: 6px;
     padding: 10px 20px;
 }
 
