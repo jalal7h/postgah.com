@@ -1,8 +1,4 @@
 
-RewriteRule ^scripts.js$ ./?do_action=include_all_js [L]
-RewriteRule ^scripts-admin.js$ ./?do_action=include_all_js&page=admin [L]
-RewriteRule ^styles.css$ ./?do_action=include_all_css [L]
-RewriteRule ^styles-admin.css$ ./?do_action=include_all_css&page=admin [L]
 RewriteRule ^about$ ./?page=3 [L]
 RewriteRule ^terms$ ./?page=6 [L]
 RewriteRule ^help$ ./?page=4 [L]

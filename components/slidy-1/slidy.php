@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/02
-# 1.1
+# 2016/10/05
+# 1.2
 
 function slidy( $arr ){
 
@@ -30,7 +30,9 @@ function slidy( $arr ){
 			$list_of_images.= "<img src=\"$image\" numb=\"".($i+1)."\" width=\"".$size[0]."\" height=\"".$size[1]."\" />";
 		}
 
-		$c = "
+		$c.= js_print( 'slidy', 'slidy' );
+
+		$c.= "
 		<div class=\"slidy\" min_wh=\"".$min_wh."\">
 			<div class=\"main\">
 				$list_of_images

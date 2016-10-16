@@ -1,0 +1,36 @@
+
+/* 2016/10/09 */
+
+.listmaker_list_c.position_mg_list_c {
+	
+}
+.listmaker_list_c.position_mg_list_c .listmaker_list_paging {
+}
+.listmaker_list_c.position_mg_list_c .paging_select select {
+	border: 0px;
+	box-shadow: 0 0 10px #D4D4D4;
+	margin-bottom: -42px;
+}
+.position_mg_list_new {
+	margin-right: 5px;
+}
+.position_mg_list_new > input[type="text"] ,
+.position_mg_list_new > select {
+	border: 0px;
+	box-shadow: 0 0 10px #D4D4D4;	
+	margin-left: 5px;
+}
+
+.position_mg_list_new > input[type="text"] {
+	padding: 10px;
+	transition: 0.2s all;
+}
+.position_mg_list_new > input[type="text"]:focus {
+	padding: 10px 15px;
+}
+
+
+
+
+
+

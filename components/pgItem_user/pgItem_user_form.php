@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/26
-# 1.1
+# 2016/10/16
+# 1.2
 
 function pgItem_user_form(){
 	
@@ -18,8 +18,8 @@ function pgItem_user_form(){
 
 		<?= token_make(); ?>
 
-		[!"cat:cat_id*", "cat_name"=>"adsCat","inDiv"!]
-		[!"position:position_id*","inDiv"!]
+		[!"catbox:cat_id*", "cat_name"=>"adsCat","inDiv"!]
+		[!"positionbox:position_id*","inDiv"!]
 		
 		<hr>
 		

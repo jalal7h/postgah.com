@@ -1,0 +1,30 @@
+
+/* 2016/10/09 */
+
+.position_mg_form {
+	direction: rtl;
+	text-align: right;
+	width: 50%;
+	margin: 60px auto;
+}
+.position_mg_form * {
+	margin: 10px 0;
+}
+.position_mg_form input[name="name"] {
+	display: block;
+	padding: 10px;
+	/* margin: 5px 0; */
+	font: normal 15px IRANSans;
+	width: 100%;
+}
+.position_mg_form select {
+
+}
+.position_mg_form hr {
+	margin: 30px 0;
+}
+.position_mg_form input[type="submit"] {
+	padding-right: 25px;
+	padding-left: 25px;
+}
+

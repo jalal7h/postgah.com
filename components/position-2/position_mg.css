@@ -1,35 +1,39 @@
 
 /*admin*/
+/* 2016/10/09 */
 
-#position_management{
+#position_mg{
 	padding-top:30px;
 	width:90%;
 	text-align:right;
 	direction:rtl;
 }
-#position_management input[type=submit]{
+#position_mg input[type=submit]{
 	width:80px;
 }
-#position_management input[type=text]{
+#position_mg input[type=text]{
 	width:200px;
 }
-#position_management #new{
+#position_mg #new{
 	padding-right:36px;
 }
-#position_management div a img{
+#position_mg div a img{
 	padding-left:10px;
 	padding-right:10px;
 }
-#position_management #title{
+#position_mg #title{
 	padding:10px;
 	font-weight:bold;
 	color:black;
 	cursor:default;
 }
-#position_management div .manage{
+#position_mg div .manage{
 	padding-right:10px;
 	color:blue;
 	font-weight:bold;
 }
+
+
+
 
 

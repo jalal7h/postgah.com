@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016.08.31
-# 1.0
+# 2016/10/16
+# 1.1
 
 define( '_PAGE_SEARCH', '67' );
 
@@ -10,7 +10,7 @@ function pgSearch_form(){
 
 	$pos_id = intval($_REQUEST['position_id']);
 
-	if(! $rs = dbq(" SELECT * FROM `position` WHERE `parent`='11' ORDER BY `name` ASC ") ){
+	if(! $rs = dbq(" SELECT * FROM `position` WHERE `parent`='0' ORDER BY `name` ASC ") ){
 		e(__FUNCTION__,__LINE__);
 
 	} else if(! dbn($rs) ){

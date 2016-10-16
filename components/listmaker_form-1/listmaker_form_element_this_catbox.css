@@ -1,0 +1,82 @@
+
+div.catjson_hitbox_c {
+	display: block;
+	padding: 20px;
+}
+div.catjson_hitbox_c span.head {
+	display: block;
+    border-bottom: 1px dashed #d8d8d8;
+    margin-bottom: 10px;
+    padding: 0 10px 10px 0;
+    font: normal 13px IRANSans;
+    color: #666;
+    cursor: default;
+}
+div.catjson_hitbox_c span.head .up {
+	display: inline-block;
+	cursor: pointer;
+	color: royalblue;
+	/* padding-left: 10px; */
+}
+div.catjson_hitbox_c span.head .up:before {
+	font-family: FontAwesome;
+	content: "\f148";
+	padding-left: 5px;
+}
+div.catjson_hitbox_c span.head .up:after {
+	font-family: IRANSans;
+	content: "/";
+	padding: 0 15px 0 0;
+	margin-left: 10px;
+	color: #666;
+}
+
+div.catjson_hitbox_c > span.r {
+	display: inline-block;
+	width: 49%;
+	padding: 5px 10px;
+	background-color: #eee;
+	border-radius: 4px;
+	margin: 2px;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+div.catjson_hitbox_c > span.r:nth-child(2n) {
+	float: left;
+}
+div.catjson_hitbox_c > span.r:hover {
+	background-color: #ddd;
+	color: #000;
+}
+
+.lmfe_catbox_c nobr {
+	display: inline-block;
+}
+.lmfe_catbox_c > .lmfe_catbox {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 5px 6px;
+	background-color: white;
+	color: #666;
+	font-size: 12px;
+	cursor: pointer;
+}
+.lmfe_catbox_c > .lmfe_catbox:after {
+	font-family: FontAwesome;
+	content: "\f104";
+	font-size: 24px;
+	padding: 0px 10px 0 3px;
+	position: relative; top: 5px;
+}
+.lmfe_catbox_c > .lmfe_catbox:hover {
+	border: 1px solid #f0f0f0;
+}
+
+
+
+
+
+
+
+
+

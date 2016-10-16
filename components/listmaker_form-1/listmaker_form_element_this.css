@@ -76,9 +76,12 @@ form.lmfo {
 	padding: 8px !important;
 }
 
-
-
-
+.lmfe_redline {
+	border: 1px solid #c00 !important;
+}
+.lmfe_redline:hover {
+	border: 1px solid #f99 !important;
+}
 
 
 

@@ -1,5 +1,5 @@
 
-// 2016/08/22
+// 2016/10/05
 
 document.write('<div id="hitbox-container"><div id="hitbox-text" class="boxborder"></div></div>');
 
@@ -51,18 +51,27 @@ function hitbox(text,w,h){
 }
 
 function dehitbox(){
+	
 	if( hb_intoolstd!='in' ){
-		console.log('out');
-		$('#hitbox-text').html('');
-		$('#hitbox-text').css({'width':'0px','height':'0px','padding':'0px'});
-		$('#hitbox-container').animate({'opacity':'0.0'},500);
-		setTimeout(function(){
-			$('#hitbox-container').hide();
-		}, 500);
+		// console.log('out');
+		dehitbox_do();
+
 	} else {
-		console.log('in');
+		// console.log('in');
 	}
 	
+}
+
+function dehitbox_do(){
+
+	$('#hitbox-text').html('');
+	$('#hitbox-text').css({'width':'0px','height':'0px','padding':'0px'});
+	$('#hitbox-container').animate({'opacity':'0.0'},500);
+	
+	setTimeout(function(){
+		$('#hitbox-container').hide();
+	}, 500);
+
 }
 
 var hb_intoolstd = 'out';
@@ -82,8 +91,7 @@ $("#hitbox-container").on("click",function(){
 
 $(document).keydown(function(e) {
 	if(e.keyCode == '27'){
-		hb_intoolstd = 'out';
-		dehitbox();
+		dehitbox_do();
 	}
 });
 

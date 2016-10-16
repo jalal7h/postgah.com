@@ -16,7 +16,7 @@ function pgPlan_user_getPlansForThisCat( $ignore_plan_id_list=null ){
 	$cat_serial[] = 0;
 	$position_id = intval($_REQUEST['position_id']);
 	$position_serial = position_id_serial( $position_id );
-	if( $position_id==11 ){
+	if( $position_id==11 ){ // 11 == iran
 		$position_id = 0;
 	}
 	$position_serial[] = 0;

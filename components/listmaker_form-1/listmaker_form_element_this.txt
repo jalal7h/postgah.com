@@ -17,5 +17,5 @@
 	['select:name#some_id'=>'2{ forced_value }','option{string/array}'=>listmaker_option($table_name)],
 	'some text',
 	['file:attachment.someClass and_moreclass','accept'=>'image/*'],
-	['submit:Submit!.some_class more class#some_id.className'],
+	['submit:Submit!.some_class more class#some_id.className/rel="1"'],
 

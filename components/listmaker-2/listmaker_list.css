@@ -28,7 +28,7 @@
 	text-align: right;
 }
 .listmaker_list_record td:last-child {
-	border-left:1px solid #eee;
+	/* border-left: 1px solid #eee; */
 /*	text-align:center;*/
 	cursor: default;
 }
@@ -196,7 +196,7 @@
 }
 .paging_select select {
 	width: auto;
-	margin: 0 3px 0 3px;
+	margin: 0 1px 0 5px;
 }
 
 .listmaker_list_search {
