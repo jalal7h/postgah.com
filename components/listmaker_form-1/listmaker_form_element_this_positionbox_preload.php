@@ -1,7 +1,7 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/15
+# 2016/10/16
 # 1.0
 
 $GLOBALS['do_action'][] = 'listmaker_form_element_this_positionbox_preload';
@@ -15,18 +15,8 @@ function listmaker_form_element_this_positionbox_preload(){
 		echo $cache_hit;
 
 	} else {
-		
-		if(! $info = trim($_REQUEST['info']) ){
-			ed(__FUNCTION__,__LINE__);
-		} else if(! $info = str_dec($info) ){
-			ed(__FUNCTION__,__LINE__);
-		} else if(! $info = json_decode($info, true) ){
-			ed(__FUNCTION__,__LINE__);
-		}
 
-		$position_name = $info['position_name'];
-
-		position_remove_n_fix_unknowns();		
+		position_remove_n_fix_unknowns();
 
 		if(! $rs_parents = dbq(" SELECT `parent` FROM `position` WHERE 1 GROUP BY `parent` ") ){
 			e(__FUNCTION__,__LINE__);

@@ -16,15 +16,11 @@ function listmaker_form_element_this_catbox_preload(){
 
 	} else {
 		
-		if(! $info = trim($_REQUEST['info']) ){
+		if(! $cat_name = $_REQUEST['cat_name'] ){
 			ed(__FUNCTION__,__LINE__);
-		} else if(! $info = str_dec($info) ){
-			ed(__FUNCTION__,__LINE__);
-		} else if(! $info = json_decode($info, true) ){
+		} else if(! $cat_name = str_dec($cat_name) ){
 			ed(__FUNCTION__,__LINE__);
 		}
-
-		$cat_name = $info['cat_name'];
 		
 		$list_of_cat[] = "0";
 

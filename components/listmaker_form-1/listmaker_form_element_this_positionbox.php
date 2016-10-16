@@ -1,7 +1,7 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/15
+# 2016/10/16
 # 1.0
 
 function listmaker_form_element_this_positionbox( $info ){
@@ -14,7 +14,7 @@ function listmaker_form_element_this_positionbox( $info ){
 		$c.= lmfe_tnit( $info );
 
 		// list e position ha besurat e json
-		js_enqueue( _URL."/?do_action=listmaker_form_element_this_positionbox_preload&info=".str_enc(json_encode($info))."&nc=".date("md") );
+		js_enqueue( _URL."/?do_action=listmaker_form_element_this_positionbox_preload&nc=".date("md") );
 		js_enqueue( 'listmaker_form', 'listmaker_form_element_this_positionbox' );
 
 		if(! $info['value'] ){
