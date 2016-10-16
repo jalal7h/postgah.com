@@ -25,23 +25,8 @@ function listmaker_form_element_this_positionbox_preload(){
 		}
 
 		$position_name = $info['position_name'];
-		// $c.= "positionjson_typename = new Array();\n\n";
 
-		# set parent to 0, if parent is not known
-		if(! $rs_fixpos = dbq(" SELECT `id` FROM `position` WHERE `parent`!=0 AND `parent` NOT IN (SELECT `id` FROM `position`) ") ){
-			e(__FUNCTION__,__LINE__);
-		
-		} else if(! dbn($rs_fixpos) ){
-			// echo "this is already fixed";
-
-		} else {
-			while( $rw_fixpos = dbf($rs_fixpos) ){
-				$list_of_damn_ids[] = $rw_fixpos['id'];
-			}
-			$list_of_damn_ids = implode(',', $list_of_damn_ids);
-			dbq(" UPDATE `position` SET `parent`='0' WHERE `id` IN ($list_of_damn_ids) ");
-		}
-		
+		position_remove_n_fix_unknowns();		
 
 		if(! $rs_parents = dbq(" SELECT `parent` FROM `position` WHERE 1 GROUP BY `parent` ") ){
 			e(__FUNCTION__,__LINE__);

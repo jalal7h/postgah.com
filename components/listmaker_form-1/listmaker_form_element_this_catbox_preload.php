@@ -50,7 +50,7 @@ function listmaker_form_element_this_catbox_preload(){
 
 		if( sizeof($cat_arr) ){
 
-			$c.= "catjson = new Array();";
+			$c.= "\ncatjson = new Array();\n\n";
 
 			foreach( $cat_arr as $i => $cat_rw ){
 				$cat_rw_json = [];
@@ -60,7 +60,7 @@ function listmaker_form_element_this_catbox_preload(){
 					}
 				}
 				if( sizeof($cat_rw_json) ){
-					$c.= "catjson[$i]='{".implode(',', $cat_rw_json)."}';";
+					$c.= "catjson[$i]='{".implode(',', $cat_rw_json)."}';\n\n";
 				}
 			}
 
