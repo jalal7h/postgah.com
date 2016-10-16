@@ -1,5 +1,9 @@
 <?
 
+# jalal7h@gmail.com
+# 2016/10/16
+# 1.0
+
 function pgItem_user_saveNew(){
 	
 	token_check();
@@ -18,7 +22,9 @@ function pgItem_user_saveNew(){
 
 	# 
 	# set kword
-	kwordusage_set( $_REQUEST['kword'], "item", $item_id );
+	if( trim($_REQUEST['kword']) ){
+		kwordusage_set( $_REQUEST['kword'], "item", $item_id );
+	}
 
 	#
 	# upload photo

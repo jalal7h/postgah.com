@@ -1,0 +1,59 @@
+
+.lmfe_inDiv.keyword .lmfe_tnit {
+	vertical-align: top;
+	padding-top: 18px;
+}
+.lmfe_inDiv.keyword {
+
+}
+
+.lmfe_isKeyword {
+	border: 1px solid #f0f0f0;
+	/* background-color: red; */
+	padding: 3px 5px;
+	border-radius: 4px;
+	display: inline-block;
+	max-width: calc( 100% - 155px );
+}
+.lmfe_isKeyword > span.kw_w {
+	/* display: inline-block; */
+
+}
+.lmfe_isKeyword > span.kw_w > span {
+	border: 1px solid #ddd;
+	background-color: #f8f8f8;
+	padding: 1px 6px;
+	margin: 1px;
+	border-radius: 3px;
+	font-size: 10px;
+	cursor: pointer;
+	display: inline-block;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.lmfe_isKeyword > span.kw_w > span:before {
+	content: "\f00d";
+	font-family: FontAwesome;
+	padding: 0 0px 0 5px;
+	cursor: pointer;
+	font-size: 13px;
+	/* font-weight: bold; */
+}
+.lmfe_isKeyword > span.kw_w > span:hover:before {
+	color: red;
+}
+.lmfe_isKeyword > input[type="text"] {
+	width: auto;
+	border: 0px;
+	display: inline-block;
+	/* background-color: #eee; */
+}
+.lmfe_isKeyword > input[type="text"]:hover {
+	border: 0;
+}
+
+

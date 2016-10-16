@@ -33,7 +33,7 @@ function pgItem_user_form(){
 		
 		<hr>
 
-		[!"کلمه کلیدی","text:kword"=>kwordusage_get("item",$rw["id"],$string_flag=true),"inDiv"!]
+		[!"کلمه کلیدی","keyword:kword"=>kwordusage_get("item",$rw["id"],$string_flag=true),"inDiv"!]
 		
 		<hr>
 		
