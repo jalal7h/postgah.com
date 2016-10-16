@@ -15,7 +15,7 @@ function listmaker_form_element_this_catbox( $info ){
 
 	// list e cat ha besurat e json
 	js_enqueue( _URL."/?do_action=listmaker_form_element_this_catbox_preload&cat_name=".str_enc($info['cat_name'])."&nc=".date("md") );
-	js_enqueue( 'listmaker_form', 'listmaker_form_element_this_catbox' );
+	js_enqueue( 'listmaker_form-1', 'listmaker_form_element_this_catbox' );
 
 	if(! $info['value'] ){
 		$cat_name = "انتخاب ".$info['placeholder'];

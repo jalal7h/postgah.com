@@ -15,7 +15,7 @@ function listmaker_form_element_this_positionbox( $info ){
 
 		// list e position ha besurat e json
 		js_enqueue( _URL."/?do_action=listmaker_form_element_this_positionbox_preload&nc=".date("md") );
-		js_enqueue( 'listmaker_form', 'listmaker_form_element_this_positionbox' );
+		js_enqueue( 'listmaker_form-1', 'listmaker_form_element_this_positionbox' );
 
 		if(! $info['value'] ){
 			$position_name = "انتخاب ".$info['placeholder'];
