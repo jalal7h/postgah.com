@@ -42,7 +42,7 @@ function pgItem_user_saveEdit(){
 	# upload photo
 	listmaker_fileupload( 'item', $item_id );
 	#
-
+	
 	$vars['item_id'] = $item_id;
 	$vars['item_name'] = trim( strip_tags($_REQUEST['name']) );
 	$c = texty('pgItem_user_saveEdit', $vars);

@@ -1,6 +1,6 @@
 
 /*print*/
-/* 2016/10/15 */
+/*2016/10/17*/
 
 var catjson_head = '';
 
@@ -20,7 +20,6 @@ jQuery(document).ready(function($) {
 		content+= $('.lmfe_catbox_c.selected').parent().find('.lmfe_tnit').html();
 		var nosh = $('.lmfe_catbox_c.selected input[type="hidden"]').attr("name");
 		content+= $('.lmfe_catbox_c.selected').closest('form').find('input[name="'+nosh+'"]').first().parent().parent().find('.lmfe_tnit').html();
-
 	}
 
 	if( cat_value > 0 ){
@@ -29,14 +28,12 @@ jQuery(document).ready(function($) {
 
 	content+= '</span>';
 
-
 	for( var prop in obj ){
-		// console.log("obj." + prop + " = " + obj[prop]);
 		content+= '<span class="r" rel="' + prop + '" >' + obj[prop] + '</span>';
 	}
-
+	
 	$('.catjson_hitbox_c').html( content );
-
+	
 });
 }
 
@@ -58,10 +55,8 @@ jQuery(document).ready(function($) {
 				cl('index ' + cat_value + ' in catjson is NOT defined' );
 			
 			} else {
-
 				hitbox( '<div class="catjson_hitbox_c"></div>' , '600', 'auto' );
 				catjson_set_content( cat_value );
-
 			}
 
 		}
@@ -72,14 +67,30 @@ jQuery(document).ready(function($) {
 	$('body').delegate('.catjson_hitbox_c > span.r', 'click', function() {
 		
 		var cat_value = $(this).attr('rel');
-		// var cat_name = $(this).html();
-		var cat_name = catjson_get_title_serial( cat_value );
+		var cat_title = catjson_get_title_serial( cat_value );
 
 		if( typeof catjson[ cat_value ] === 'undefined' ){
-			// cl('un');
+
+			// extra before
+			if(typeof lmfetc_extra_before == 'function') { 
+				lmfetc_extra_before( select_value );
+			}
+			
+			cat_name = $('.lmfe_catbox_c.selected').attr('cat_name');
 			$('.lmfe_catbox_c.selected input[type="hidden"]').val( cat_value );
-			$('.lmfe_catbox_c.selected .lmfe_catbox').html( '<nobr>' + cat_name + '</nobr>' );
+			$('.lmfe_catbox_c.selected .lmfe_catbox').html( '<nobr>' + cat_title + '</nobr>' );
 			$('.lmfe_catbox_c.selected').removeClass('selected');
+
+			// catcustomfield console
+			if(typeof catcustomfield_console == 'function') { 
+				catcustomfield_console( cat_name, cat_value /* as cat_id */ ); 
+			}
+
+			// extra after
+			if(typeof lmfetc_extra_after == 'function') { 
+				lmfetc_extra_after( select_value );
+			}
+
 			dehitbox_do();
 		
 		} else {

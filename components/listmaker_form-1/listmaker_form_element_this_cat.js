@@ -2,12 +2,12 @@
 // 2016/06/28
 
 function lmfetc_load( lmfetc_rahem, select_value ){
-
+	
 	// extra before
 	if(typeof lmfetc_extra_before == 'function') { 
 		lmfetc_extra_before( select_value );
 	}
-
+	
 	// vars
 	cat_name = lmfetc_rahem.closest('.lmfetc_container').attr('rel_cat_name');
 	value_serial = lmfetc_rahem.attr('rel_value_serial');
@@ -21,8 +21,8 @@ function lmfetc_load( lmfetc_rahem, select_value ){
 	} else {
 		parent = lmfetc_rahem.parent().attr('rel_parent');
 	}
-
-
+	
+	
 	//
 	// update the `hidden` input
 	lmfetc_rahem.closest('.lmfetc_container').find('> input[type="hidden"]').val( parent );
