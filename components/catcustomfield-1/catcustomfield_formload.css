@@ -32,8 +32,21 @@
 	padding-left: 10px;
 	color: #777;
 }
+.catcustomfield_formload > .ccffe_thisCat .element_name.radio {
+	vertical-align: top;
+    padding-top: 3px;
+}
+
 .catcustomfield_formload > .ccffe_thisCat label {
-	margin-left: 15px;
+	margin: 6px 0 6px 20px;
+    display: inline-block;
+}
+.catcustomfield_formload > .ccffe_thisCat label span {
+	display: inline-block;
+}
+.catcustomfield_formload > .ccffe_thisCat .radio_c {
+	display: inline-block;
+    width: calc( 100% - 200px );
 }
 
 .catcustomfield_formload > .ccffe_thisCat textarea {
