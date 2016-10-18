@@ -1,10 +1,10 @@
 
-/*2016/10/17*/
+/*2016/10/18*/
 
 function catcustomfield_console( cat_name, cat_id ){
 jQuery(document).ready(function($) {
 	
-	cl( cat_name + ' ;; ' + cat_id );
+	// cl( cat_name + ' ;; ' + cat_id );
 
 	$('.lmfe_inDiv.ccfc').hide();
 	$('#ccfc_'+cat_name+'_c').show();

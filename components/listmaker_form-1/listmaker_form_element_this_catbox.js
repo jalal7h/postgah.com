@@ -73,7 +73,7 @@ jQuery(document).ready(function($) {
 
 			// extra before
 			if(typeof lmfetc_extra_before == 'function') { 
-				lmfetc_extra_before( select_value );
+				lmfetc_extra_before( cat_value );
 			}
 			
 			cat_name = $('.lmfe_catbox_c.selected').attr('cat_name');
@@ -88,7 +88,7 @@ jQuery(document).ready(function($) {
 
 			// extra after
 			if(typeof lmfetc_extra_after == 'function') { 
-				lmfetc_extra_after( select_value );
+				lmfetc_extra_after( cat_value );
 			}
 
 			dehitbox_do();

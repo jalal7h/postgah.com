@@ -78,13 +78,11 @@ function listmaker_form_element_this_cat_fetchSubCat(){
 	#
 	# if no child
 	} else if(! dbn($rs) ){
-		// echo "00";
+		//
 	
 	} else {
 		
-
 		$lmfetc_rahem_rand = 'lmfetc_rand_'.rand(100000,999999);
-		error_log('kkl; '.$lmfetc_rahem_rand);
 
 		# 
 		# the select

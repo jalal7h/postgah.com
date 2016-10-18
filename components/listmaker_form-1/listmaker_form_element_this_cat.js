@@ -1,5 +1,5 @@
 
-// 2016/06/28
+// 2016/10/18
 
 function lmfetc_load( lmfetc_rahem, select_value ){
 	
@@ -62,7 +62,11 @@ jQuery(document).ready(function($) {
 	
 	$('.lmfetc_container').each(function( index ) {
 		// console.log( index );
-		lmfetc_load( $(this).find('> .lmfetc'), null );
+		rel_no_subcat = $(this).find('span.lmfetc').attr('rel_no_subcat');
+		// age subcat dare ..
+		if( rel_no_subcat == 0 ){
+			lmfetc_load( $(this).find('> .lmfetc'), null );
+		}
 	});
 	
 });
