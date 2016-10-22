@@ -11,7 +11,7 @@ function pgItem_user_remove(){
 	} else if(! $rw_item = table('item', $id) ){
 		e(__FUNCTION__,__LINE__);
 	
-	} else if( $rw_item['userid']!=$user_id ){
+	} else if( $rw_item['user_id'] != $user_id ){
 		e(__FUNCTION__,__LINE__);
 
 	} else if(! pgItem_remove( $_REQUEST['id'], $user_id ) ){
@@ -24,3 +24,5 @@ function pgItem_user_remove(){
 	return false;
 	
 }
+
+

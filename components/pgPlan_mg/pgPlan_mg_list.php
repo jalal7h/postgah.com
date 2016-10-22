@@ -64,8 +64,8 @@ function pgPlan_mg_list(){
 
 	#
 	# list array // list e sotun haye list
-	$list['list_array'][] = array( "head"=>lmtc("plan:pic") , "tag"=>"th", "picture" => '$rw[\'icon\']');
-	$list['list_array'][] = array("head"=>lmtc("plan:name"), "content" => '$rw["name"]');
+	$list['list_array'][] = array("head"=>lmtc("plan:pic"), "tag"=>"th", "picture" => '$rw[\'icon\']');
+	$list['list_array'][] = array("head"=>lmtc("plan:name"), "content" => '$rw["name"]." (".$rw["name_on_form"].")"');
 	$list['list_array'][] = array("head"=>lmtc("plan:cat_id"), "content" => 'cat_translate($rw[\'cat_id\'])');
 	$list['list_array'][] = array("head"=>lmtc("plan:position_id"), "content" => 'position_translate($rw[\'position_id\'])');
 

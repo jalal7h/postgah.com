@@ -18,7 +18,7 @@ function pgItem_user_form(){
 
 		<?= token_make(); ?>
 		
-		[!"catbox:cat_id*", "cat_name"=>"adsCat","inDiv"!]
+		[!"catbox:cat_id*", "ccf"=>true, "cat_name"=>"adsCat","inDiv"!]
 		[!"positionbox:position_id*","inDiv"!]
 		
 		<hr>

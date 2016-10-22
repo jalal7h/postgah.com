@@ -16,7 +16,7 @@
 			"switch" => "do",
 		!]
 			
-			[!"cat:cat_id","cat_name"=>"adsCat","inDiv"!]
+			[!"cat:cat_id", "ccf"=>true, "cat_name"=>"adsCat","inDiv"!]
 			[!"position:position_id","inDiv"!]
 			
 			<hr>

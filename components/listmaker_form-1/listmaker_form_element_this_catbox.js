@@ -26,6 +26,8 @@ jQuery(document).ready(function($) {
 		content+= '<span class="title_serial">' + catjson_get_title_serial( cat_value ) + '</span>';
 	}
 
+	content+= '<span class="the_save_button"></span>';
+
 	content+= '</span>';
 
 	for( var prop in obj ){
@@ -43,6 +45,10 @@ jQuery(document).ready(function($) {
 
 		$('.lmfe_catbox_c').removeClass('selected');
 		$(this).parent().addClass('selected');
+
+		// ba click ruye section, bere be 0
+		$(this).parent().find('input[type="hidden"]').val('0');
+		$(this).parent().find('.lmfe_catbox').html('<nobr>انتخاب '+ $(this).parent().parent().find('.lmfe_tnit').html() +'</nobr>');			
 
 		cat_value = 0;
 		
@@ -69,6 +75,9 @@ jQuery(document).ready(function($) {
 		var cat_value = $(this).attr('rel');
 		var cat_title = catjson_get_title_serial( cat_value );
 
+		$('.lmfe_catbox_c.selected input[type="hidden"]').val( cat_value );
+		$('.lmfe_catbox_c.selected .lmfe_catbox').html( '<nobr>' + cat_title + '</nobr>' );
+		
 		if( typeof catjson[ cat_value ] === 'undefined' ){
 
 			// extra before
@@ -77,8 +86,8 @@ jQuery(document).ready(function($) {
 			}
 			
 			cat_name = $('.lmfe_catbox_c.selected').attr('cat_name');
-			$('.lmfe_catbox_c.selected input[type="hidden"]').val( cat_value );
-			$('.lmfe_catbox_c.selected .lmfe_catbox').html( '<nobr>' + cat_title + '</nobr>' );
+			// $('.lmfe_catbox_c.selected input[type="hidden"]').val( cat_value );
+			// $('.lmfe_catbox_c.selected .lmfe_catbox').html( '<nobr>' + cat_title + '</nobr>' );
 			$('.lmfe_catbox_c.selected').removeClass('selected');
 
 			// catcustomfield console
@@ -104,6 +113,9 @@ jQuery(document).ready(function($) {
 		catjson_set_content( $(this).attr('parent') );
 	});
 
+	$('body').delegate('div.catjson_hitbox_c span.head span.the_save_button', 'click', function() {
+		dehitbox_do();
+	});
 
 });
 

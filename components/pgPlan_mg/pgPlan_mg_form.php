@@ -51,8 +51,8 @@ function pgPlan_mg_form(){
 		"switch" => "do",
 	!]
 		
-		[!"cat:cat_id","cat_name"=>"adsCat","inDiv"!]
-		[!"position:position_id","inDiv"!]
+		[!"catbox:cat_id","cat_name"=>"adsCat","inDiv"!]
+		[!"positionbox:position_id","inDiv"!]
 		
 		<hr>
 

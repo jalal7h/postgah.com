@@ -1,7 +1,7 @@
 <?
 
 # jalal7h@gmail.com
-# 2016.07.01
+# 2016/07/01
 # 1.1
 
 # if we have this component(s)
@@ -32,20 +32,23 @@ function is_component( $component ){
 }
 
 function is_component_load(){
-
-	if(! $dp = opendir("components") ){
+	
+	if( $GLOBALS['component_list'] ){
+		return true;
+	
+	} else if(! $dp = opendir("components") ){
 		e(__FUNCTION__.__LINE__);
 	
 	} else while( $d = readdir($dp) ){
 		
 		if( substr($d,0,1)=='.' ){
 			continue;
-		
-		} else if(! $component_name = explode("-", $d)[0] ) {
-			continue;
 
 		} else {
-			$GLOBALS['component_list'][] = $component_name;
+			if( strstr($d, "-") ){
+				$d = explode("-", $d)[0];
+			}
+			$GLOBALS['component_list'][] = $d;
 		}
 
 	}

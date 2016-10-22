@@ -1,7 +1,7 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/19
+# 2016/10/22
 # 1.0
 
 function listmaker_form_element_content_minOrMax_table( $info ){
@@ -50,6 +50,9 @@ function listmaker_form_element_content_minOrMax_table_this( $info, $minOrMax ){
 		$val = $info['value'];
 		$count_in_val['c'] = mb_strlen( trim( $val ) );
 		$count_in_val['w'] = sizeof( explode(" ", trim( str_replace(".", " ", $val) ) ) );
+		if( $val == '' ){
+			$count_in_val['w'] = 0;
+		}
 
 		$cur_class_name = 'count_of_current_'.$content_min_type;
 		$c.= "<span class=\"limit\">".$lng[$minOrMax]." ".$content_min_numb." ".$lng[$content_min_type]."</span>\n";

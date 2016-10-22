@@ -1,7 +1,7 @@
 <?
 
 function listmaker_form_element_this_position( $info ){
-
+	
 	if( $info['value'] ){
 		if( $value_serial = position_id_serial( $info['value'] ) ){
 			$value_serial = array_reverse($value_serial);

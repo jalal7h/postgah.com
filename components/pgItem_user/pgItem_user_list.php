@@ -26,7 +26,7 @@ function pgItem_user_list(){
 	#
 	# base url is needed in version upper 1.2 
 	# ** address base e in list
-	$list['base_url'] = '"./?page='.$_REQUEST['page'].'&do=pgItem_user_list"';
+	$list['base_url'] = '"./?page='.$_REQUEST['page'].'&do=pgItem_user"';
 
 	#
 	# actions 

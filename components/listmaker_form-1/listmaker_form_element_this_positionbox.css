@@ -2,6 +2,7 @@
 div.positionjson_hitbox_c {
 	display: block;
 	padding: 20px;
+	direction: rtl;
 }
 div.positionjson_hitbox_c span.head {
 	display: block;
