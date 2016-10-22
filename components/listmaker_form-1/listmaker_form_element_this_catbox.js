@@ -17,7 +17,7 @@ jQuery(document).ready(function($) {
 	}
 	
 	if( cat_value == 0 ){
-		content+= $('.lmfe_catbox_c.selected').parent().find('.lmfe_tnit').html();
+		// content+= $('.lmfe_catbox_c.selected').parent().find('.lmfe_tnit').html();
 		var nosh = $('.lmfe_catbox_c.selected input[type="hidden"]').attr("name");
 		content+= $('.lmfe_catbox_c.selected').closest('form').find('input[name="'+nosh+'"]').first().parent().parent().find('.lmfe_tnit').html();
 	}
@@ -48,7 +48,7 @@ jQuery(document).ready(function($) {
 
 		// ba click ruye section, bere be 0
 		$(this).parent().find('input[type="hidden"]').val('0');
-		$(this).parent().find('.lmfe_catbox').html('<nobr>انتخاب '+ $(this).parent().parent().find('.lmfe_tnit').html() +'</nobr>');			
+		$(this).parent().find('.lmfe_catbox').html('<nobr>انتخاب '+ $(this).parent().parent().find('.lmfe_tnit').html() +'</nobr>');
 
 		cat_value = 0;
 		

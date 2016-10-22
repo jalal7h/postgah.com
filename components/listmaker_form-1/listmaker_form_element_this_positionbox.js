@@ -25,6 +25,8 @@ jQuery(document).ready(function($) {
 		content+= '<span class="title_serial">' + positionjson_get_title_serial( position_value ) + '</span>';
 	}
 
+	content+= '<span class="the_save_button"></span>';
+
 	content+= '</span>';
 
 
@@ -47,6 +49,10 @@ jQuery(document).ready(function($) {
 		$('.lmfe_positionbox_c').removeClass('selected');
 		$(this).parent().addClass('selected');
 		
+		// ba click ruye section, bere be 0
+		$(this).parent().find('input[type="hidden"]').val('0');
+		$(this).parent().find('.lmfe_positionbox').html('<nobr>انتخاب '+ $(this).parent().parent().find('.lmfe_tnit').html() +'</nobr>');
+
 		position_value = 0;
 		
 		if (typeof positionjson == "undefined" || !(positionjson instanceof Array)) {
@@ -74,9 +80,12 @@ jQuery(document).ready(function($) {
 		var position_value = $(this).attr('rel');
 		var position_name = positionjson_get_title_serial( position_value );
 		
+		$('.lmfe_positionbox_c.selected input[type="hidden"]').val( position_value );
+		$('.lmfe_positionbox_c.selected .lmfe_positionbox').html( '<nobr>' + position_name + '</nobr>' );
+			
 		if( typeof positionjson[ position_value ] === 'undefined' ){
-			$('.lmfe_positionbox_c.selected input[type="hidden"]').val( position_value );
-			$('.lmfe_positionbox_c.selected .lmfe_positionbox').html( '<nobr>' + position_name + '</nobr>' );
+			// $('.lmfe_positionbox_c.selected input[type="hidden"]').val( position_value );
+			// $('.lmfe_positionbox_c.selected .lmfe_positionbox').html( '<nobr>' + position_name + '</nobr>' );
 			$('.lmfe_positionbox_c.selected').removeClass('selected');
 			dehitbox_do();
 		
@@ -86,9 +95,16 @@ jQuery(document).ready(function($) {
 
 	});
 
+
 	$('body').delegate('div.positionjson_hitbox_c span.head .up', 'click', function() {
 		positionjson_set_content( $(this).attr('parent') );
 	});
+
+
+	$('body').delegate('div.positionjson_hitbox_c span.head span.the_save_button', 'click', function() {
+		dehitbox_do();
+	});
+
 
 });
 
