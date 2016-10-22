@@ -12,12 +12,12 @@ function pgItem_user_saveEdit(){
 		ed(__FUNCTION__,__LINE__);
 	}
 
-	if( admin_logged() ){
-		$flag = table('item', $_REQUEST['id'], 'flag');
+	// if( admin_logged() ){
+	// 	$flag = table('item', $_REQUEST['id'], 'flag');
 
-	} else {
+	// } else {
 		$flag = 0;
-	}
+	// }
 
 	#
 	# age agahi rad shode bude, va alan edit dare mishe, set beshe be onvane agahi molaheze nashode, k admin dobare barresish kone

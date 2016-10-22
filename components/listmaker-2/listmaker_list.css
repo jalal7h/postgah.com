@@ -200,11 +200,14 @@
 }
 
 .listmaker_list_search {
-	margin: 10px 0 -49px 0;
+	margin: 10px 0 0 0;
 	display: block;
 	text-align: right;
 	direction: rtl;
 	position: relative; z-index: 2;
+}
+.listmaker_list_search.have_addnew_url {
+	margin-bottom: -49px;
 }
 .listmaker_list_search input {
 	width: 140px !important;

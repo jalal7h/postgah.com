@@ -65,7 +65,7 @@ jQuery(document).ready(function($) {
 			
 			} else {
 				cl('sss');
-				hitbox( '<div class="positionjson_hitbox_c"></div>' , '600', 'auto' );
+				hitbox( '<div class="positionjson_hitbox_c"></div>' , '80%', 'auto', 'lmfe_positionbox_c_hitbox' );
 				positionjson_set_content( position_value );
 
 			}

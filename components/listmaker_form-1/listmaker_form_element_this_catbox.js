@@ -61,7 +61,7 @@ jQuery(document).ready(function($) {
 				cl('index ' + cat_value + ' in catjson is NOT defined' );
 			
 			} else {
-				hitbox( '<div class="catjson_hitbox_c"></div>' , '600', 'auto' );
+				hitbox( '<div class="catjson_hitbox_c"></div>' , '600', 'auto', 'lmfe_catbox_c_hitbox' );
 				catjson_set_content( cat_value );
 			}
 

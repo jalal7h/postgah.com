@@ -36,6 +36,8 @@
 	color: #333;
 	margin: 0 10px;
 }
-
+.pgPlan_user_MakePremium_form_hitbox {
+    overflow: hidden !important;
+}
 
 

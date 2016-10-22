@@ -76,7 +76,7 @@ function pgPlan_user_getPlansForThisCat( $ignore_plan_id_list=null ){
 
 			while( $rw0 = dbf($rs0) ){
 				// '.($rw0['id']==$item_planDurationId?'checked':'').'
-				echo '<label><input type="radio" name="plan_duration_id" value="'.$rw0['id'].'" /> '.$rw['name_on_form'].' ( '.$rw0['name'].' / '.number_format($rw0['cost']).' '.setting('money_unit').' ) <a class="sample_page" href="'.$rw['sample_page'].'" target="_blank" >'.lmtc('plan:sample_page').'</a></label>';
+				echo '<label><input type="radio" name="plan_duration_id" value="'.$rw0['id'].'" /> '.$rw['name_on_form'].' ( '.$rw0['name'].' / '.number_format($rw0['cost']).' '.setting('money_unit').' ) '.( $rw['sample_page'] ? '<a class="sample_page" href="'.$rw['sample_page'].'" target="_blank" >'.lmtc('plan:sample_page').'</a>' : '').'</label>';
 			}
 
 			echo "</span>";

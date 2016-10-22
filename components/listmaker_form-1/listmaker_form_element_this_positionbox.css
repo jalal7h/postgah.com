@@ -50,7 +50,7 @@ div.positionjson_hitbox_c span.head span.the_save_button:hover:before {
 
 div.positionjson_hitbox_c > span.r {
 	display: inline-block;
-	width: 49%;
+	width: 32.9%;
 	padding: 5px 10px;
 	background-color: #eee;
 	border-radius: 4px;
@@ -58,9 +58,9 @@ div.positionjson_hitbox_c > span.r {
 	cursor: pointer;
 	transition: all 0.2s;
 }
-div.positionjson_hitbox_c > span.r:nth-child(2n) {
+/* div.positionjson_hitbox_c > span.r:nth-child(3n) {
 	float: left;
-}
+} */
 div.positionjson_hitbox_c > span.r:hover {
 	background-color: #ddd;
 	color: #000;
@@ -89,6 +89,10 @@ div.positionjson_hitbox_c > span.r:hover {
 	border: 1px solid #f0f0f0;
 }
 
+.lmfe_positionbox_c_hitbox {
+	overflow-x: hidden !important;
+	overflow-y: scroll !important;
+}
 
 
 

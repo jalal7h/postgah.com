@@ -1,9 +1,9 @@
 
-// 2016/10/05
+// 2016/10/22
 
 document.write('<div id="hitbox-container"><div id="hitbox-text" class="boxborder"></div></div>');
 
-function hitbox(text,w,h){
+function hitbox( text, w, h, extra_class="" ){
 
 	if( w==0 || w==undefined ){
 		w = 'auto';
@@ -42,8 +42,13 @@ function hitbox(text,w,h){
 		w = w + 'px';
 	}
 
+	$('#hitbox-text').attr('class', 'boxborder');
+	if( extra_class != "" ){
+		$('#hitbox-text').addClass( extra_class );		
+	}
+
 	$('#hitbox-container').show();
-	$('#hitbox-container').css({'width':'100%','height':'100%'}).animate({'opacity':'1'},500);
+	$('#hitbox-container').css({'height':'100%'}).animate({'opacity':'1'},500);
 	$('#hitbox-text').css({'width':w,'height':h,'padding':'0px'});
 	$('#hitbox-text').html(text);
 
@@ -65,7 +70,7 @@ function dehitbox(){
 function dehitbox_do(){
 
 	$('#hitbox-text').html('');
-	$('#hitbox-text').css({'width':'0px','height':'0px','padding':'0px'});
+	$('#hitbox-text').css({'width':'100%','height':'0px','padding':'0px'});
 	$('#hitbox-container').animate({'opacity':'0.0'},500);
 	
 	setTimeout(function(){
