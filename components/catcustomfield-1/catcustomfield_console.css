@@ -4,7 +4,7 @@
 	margin: 0px !important;
 }
 .lmfe_inDiv.ccfc > div {
-	display: inline-block;
+	/* display: inline-block; */
 	/* width: calc(100% - 180px); */
 }
 
