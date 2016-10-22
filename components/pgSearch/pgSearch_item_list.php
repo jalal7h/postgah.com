@@ -29,7 +29,7 @@ function pgSearch_item_list( $rw_pagelayer ){
 			$title = str_replace('%WORD%', $q, $rw_pagelayer['name']);
 
 			$listmaker_paging__count = qpop('listmaker_paging__count');
-			$c.= '<div class="head">'.$title.
+			$c.= '<div class="head"><span class="title">'.$title.'</span>'.
 				( $listmaker_paging__count ? ' <span class="count">('.$listmaker_paging__count.')</span>' : '' ).
 				'</div>';
 			
@@ -54,7 +54,7 @@ function pgSearch_item_list( $rw_pagelayer ){
 
 				if( sizeof($list_of_live_sub) ){
 					foreach ($list_of_live_sub as $k => $rw_sub) {
-						$c.= '<a href="'.pgCat_link($rw_sub).'">'.$rw_sub['name'].' <span class="count">('.$rw_sub['count'].')</span></a>';
+						$c.= '<a href="'.pgCat_link($rw_sub).'"><span class="title">'.$rw_sub['name'].'</span> <span class="count">('.$rw_sub['count'].')</span></a>';
 					}
 				}
 

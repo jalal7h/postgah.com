@@ -37,7 +37,7 @@ function pgItem_item_list( $rw_pagelayer ){
 			$cat_name = $rw_cat['name'];
 			$title = str_replace( '%CAT_NAME%', $cat_name, $rw_pagelayer['name'] );
 
-			$cache_value.= '<div class="head">'.$title.' <span class="count">('.pgCat_number_of_items($cat_id).')</span></div>';
+			$cache_value.= '<div class="head"><span class="title">'.$title.'</span> <span class="count">('.pgCat_number_of_items($cat_id).')</span></div>';
 
 			#
 			# sub cats
@@ -59,7 +59,7 @@ function pgItem_item_list( $rw_pagelayer ){
 
 				if( sizeof($list_of_live_sub) ){
 					foreach ($list_of_live_sub as $k => $rw_sub) {
-						$cache_value.= '<a href="'.pgCat_link($rw_sub).'">'.$rw_sub['name'].' <span class="count">('.$rw_sub['count'].')</span></a>';
+						$cache_value.= '<a href="'.pgCat_link($rw_sub).'"><span class="title">'.$rw_sub['name'].'</span> <span class="count">('.$rw_sub['count'].')</span></a>';
 					}
 				}
 

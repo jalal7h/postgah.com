@@ -23,6 +23,9 @@
 	display: inline-block;
 	margin: 10px;
 }
+.pgItem_item_list .subcat > a > .title {
+	display: inline-block;
+}
 .pgItem_item_list .subcat > a:hover {
 	color: blue;
 }
