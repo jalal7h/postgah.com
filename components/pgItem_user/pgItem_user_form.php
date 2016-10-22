@@ -17,18 +17,19 @@ function pgItem_user_form(){
 	!]
 
 		<?= token_make(); ?>
-
+		
 		[!"catbox:cat_id*", "cat_name"=>"adsCat","inDiv"!]
 		[!"positionbox:position_id*","inDiv"!]
 		
 		<hr>
 		
-		[!"text:name*","inDiv"!]
-		[!"textarea:text*","inDiv"!]
+		[!"text:name*","content_min"=>"3w","content_max"=>"70c","inDiv"!]
+		[!"textarea:text*","content_min"=>"50c","inDiv"!]
 		
 		<hr>
 		
 		[!"file:image+","inDiv"!]
+		[!"url:video","inDiv"!]
 		<div>[!"number:cost"!] &nbsp; <?=setting("money_unit")?></div>
 		
 		<hr>

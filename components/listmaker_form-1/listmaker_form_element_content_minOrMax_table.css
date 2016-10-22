@@ -1,0 +1,22 @@
+
+.lmfe_minOrMax {
+	position: relative;
+	top: 3px;
+}
+.lmfe_minOrMax ,
+.lmfe_minOrMax * {
+	font-size: 9px;
+	color: #999;
+}
+
+.count_of_current_w ,
+.count_of_current_c ,
+.lmfe_minOrMax .cur {
+	color: #000;
+}
+.lmfe_minOrMax .cur:before {
+	content: "[ ";
+}
+.lmfe_minOrMax .cur:after {
+	content: " ]";
+}

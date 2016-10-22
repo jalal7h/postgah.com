@@ -1,12 +1,12 @@
 
 
 # jalal7h@gmail.com
-# 2016/06/10
-# Version 1.3
+# 2016/10/19
+# 1.4
 
 /*
 	
-	'{text/color/name/number/textarea/select/checkbox/radio/date/clock/toggle/url/email/submit}:some_name'
+	'[ 'text','color','name','number','textarea','select','checkbox','radio','date','clock','toggle','url','email','file','submit','hidden','password','cat','catbox','catsearch','position','positionbox','keyword' ]'
 	
 	['text:name*+{ + will add `[]` }'],
 	['color:color_code'],

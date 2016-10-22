@@ -65,7 +65,8 @@
 #lmfe_pgItem_user_form_tell {
 	width: 130px;
 }
-#lmfe_pgItem_user_form_name {
+#lmfe_pgItem_user_form_name ,
+#lmfe_pgItem_user_form_video {
 	width: calc( 100% - 165px );	
 }
 #lmfe_pgItem_user_form_text {
@@ -73,7 +74,9 @@
 	height: 100px;
 	transition: height 0.3s;
 }
-
+#lmfe_inDiv_pgItem_user_form_kword > .lmfe_tnit {
+	padding-top: 10px;
+}
 
 
 

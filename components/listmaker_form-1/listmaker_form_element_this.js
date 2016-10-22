@@ -1,5 +1,5 @@
 
-// 2016/10/08
+// 2016/10/22
 
 $(document).ready(function($) {
 		
@@ -72,5 +72,115 @@ $(document).ready(function($) {
 
 	});
 
+	// content_min
+	$('body').delegate('.lmfe_inDiv input, .lmfe_inDiv textarea', 'keyup', function(){
+		$(this).closest('form').attr( 'closed', 0 );
+		lmfe_content_minOrMaxLimit_setFormState( $(this) , 'min' );
+		lmfe_content_minOrMaxLimit_setFormState( $(this) , 'max' );
+	});
+	
+	$('.lmfe_inDiv input, .lmfe_inDiv textarea').each(function(i){
+		lmfe_content_minOrMaxLimit_setFormState( $(this) , 'min' );
+		lmfe_content_minOrMaxLimit_setFormState( $(this) , 'max' );
+	});
+
 });
+
+
+function lmfe_content_minOrMaxLimit_setFormState( ts, minOrMax ){
+
+	// if its already closed, dont do anything
+	if( ts.closest('form').attr('closed') == '1' ){
+		return;
+	}
+
+	var content_attr = ts.attr('content_'+minOrMax);
+	if (typeof content_attr !== typeof undefined && content_attr !== false) {
+
+		var val = ts.val();
+		var the_limit = ts.attr( 'content_'+minOrMax );
+
+		if(! isNaN(the_limit) ){
+			the_limit_type = "c";
+			the_limit_numb = the_limit;
+		
+		} else {
+			the_limit_type = the_limit.substr( the_limit.length-1, the_limit.length );
+			the_limit_numb = the_limit.substr( 0, the_limit.length-1 );
+		}
+
+		switch( the_limit_type ){
+			
+			case 'w':
+				val_count = val.replace('.',' ').trim().split(' ').length;
+				break;
+
+			case 'c':
+				val_count = val.length;
+				break;
+
+		}
+
+		if( minOrMax == 'min' ){
+			condition = ( val_count < the_limit_numb );
+		
+		} else if( minOrMax == 'max' ){
+			condition = ( val_count > the_limit_numb );
+		
+		} else {
+			return false;
+		}
+
+		ts.parent().find('> .lmfe_minOrMax > .cur > .count_of_current_'+the_limit_type).html( val_count );
+
+		if( condition ){
+			ts.closest('form').attr('closed','1');
+			ts.closest('form').bind('submit',function(e){e.preventDefault();});
+			minOrMax_list_of_needs_add( ts.attr('id') );
+			cl('form is closed more');
+
+		} else {
+			minOrMax_list_of_needs_remove( ts.attr('id') );
+			if(! minOrMax_list_of_needs_checkIfAny() ){
+				ts.closest('form').attr('closed','0');
+		    	ts.closest('form').unbind('submit');
+				cl('form is open all');
+			}
+			cl('form is open one');
+		}
+
+	}
+
+}
+
+
+var minOrMax_list_of_needs = '';
+
+function minOrMax_list_of_needs_add( the_id ){
+	if( minOrMax_list_of_needs.search( the_id + ' ' ) == -1 ){
+		minOrMax_list_of_needs = minOrMax_list_of_needs + the_id + ' ';
+	}
+	cl( 'remove ' + the_id + ';' + minOrMax_list_of_needs );
+}
+
+function minOrMax_list_of_needs_remove( the_id ){
+	minOrMax_list_of_needs = minOrMax_list_of_needs.replace( the_id+' ' , '' );
+	cl( 'remove ' + the_id + '; needs :' + minOrMax_list_of_needs );
+}
+
+function minOrMax_list_of_needs_checkIfAny(){
+
+	if( minOrMax_list_of_needs.trim() == '' ){
+		return false;
+
+	} else {
+		return true;
+	}
+
+}
+
+
+
+
+
 

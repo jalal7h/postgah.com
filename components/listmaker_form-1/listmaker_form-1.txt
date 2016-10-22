@@ -1,12 +1,10 @@
 
 
 # jalal7h@gmail.com
-# 2016/06/07
-# Version 1.2
+# 2016/10/19
+# 1.2
 
 /*
-
-
 
 	## -------------------------------------------------
 	echo listmaker_form('
@@ -23,7 +21,7 @@
 			
 			<hr>
 
-			[!"text:name","inDiv"!]
+			[!"text:name*","content_min"=>"3w","content_max"=>"70c","inDiv"!]
 			[!"text:name_on_form","inDiv"!]
 			[!"url:sample_page","inDiv"!]
 			
