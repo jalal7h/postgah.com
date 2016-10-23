@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/07/07
-# 1.0
+# 2016/10/23
+# 1.1
 
 function billing_userpanel_payment_redirectToMethod(){
 	
@@ -15,7 +15,7 @@ function billing_userpanel_payment_redirectToMethod(){
 		e(__FUNCTION__,__LINE__);
 
 	} else if(! $rw_invoice = table('billing_invoice', $invoice_id) ){
-		e(__FUNCTION__,__LINE__);
+		echo convbox('صورتحساب با شناسه '.$invoice_id.' یافت نشد!');
 
 	} else if(! $rw_invoice['user_id']==$user_id ){
 		e(__FUNCTION__,__LINE__);
@@ -52,6 +52,7 @@ function billing_userpanel_payment_redirectToMethod(){
 	}
 
 	return false;
+
 }
 
 
