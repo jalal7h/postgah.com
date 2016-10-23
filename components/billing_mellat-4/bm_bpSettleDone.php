@@ -9,7 +9,7 @@ function bpSettleDone(){
 	if(! $transaction = $_REQUEST['SaleReferenceId'] ){
 		e(__FUNCTION__,__LINE__);
 
-	} else if(! $invoice_id = intval($_REQUEST['SaleCode']) ){
+	} else if(! $invoice_id = intval($_REQUEST['invoice_id']) ){
 		e(__FUNCTION__,__LINE__);
 
 	} else {

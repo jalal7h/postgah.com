@@ -1,10 +1,11 @@
 
 
 # jalal7h@gmail.com
-# 2016/09/12
-# 2.1
+# 2016/10/23
+# 2.2
 
 
 # texty_prompt( $slug , $vars=null, $convbox=true )
 # __BEFORE__ , __AFTER__
+# it does support slug named template.htm
 

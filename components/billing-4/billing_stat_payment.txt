@@ -1,0 +1,16 @@
+
+
+// $list = array (
+// 	"user_id" => "11" ,
+// 	"method" => "mellat" ,
+// 	"skipwallet" => true ,
+// 	"date" => array ( 
+// 		"day" => "1394/12/12" , // the day
+// 		"week" => "1394/12/12" , // end day
+// 		"month" => "1394/12/12" , // end day
+// 		"monthIn" => "1394/12" , // this month
+// 		"year" => "1394/12/12" , // end day
+// 		"yearIn" => "1394" , // this year
+// 	) ,
+// );
+// echo billing_stat_payment( $list );

@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/12
-# 1.2
+# 2016/10/23
+# 1.3
 
 function e( $text=null, $line=null, $etc=null ){
 
@@ -35,7 +35,7 @@ function ed( $text, $line=null, $etc=null ){
 	die();
 }
 
-function dg( $text="" ){
+function dg( $text = "" ){
 	
 	if(! defined('debug') ){
 		return false;
@@ -49,7 +49,13 @@ function dg( $text="" ){
 		$d0 = $dbg[0];
 		$d1 = $dbg[1];
 
-		error_log( "debug :: line ".$d0['line']." at function ".$d1['function']." , ran at line ".$d1['line']." of ".basename($d1['file']).($text?", ".$text:"") );
+		if( $text ){
+			if( is_array($text) ){
+				$text = json_encode($text);
+			}
+		}
+
+		error_log( "debug :: line ".$d0['line']." at function ".$d1['function']." , ran at line ".$d1['line']." of ".basename($d1['file']).( $text ? ", ".$text : "" ) );
 
 	}
 }

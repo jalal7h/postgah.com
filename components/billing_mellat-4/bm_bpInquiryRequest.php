@@ -24,7 +24,7 @@ function bpInquiryRequest(){
 		// At this point, you know the call that follows will fail
 	}
 	
-	$invoice_id = $_REQUEST['SaleCode'];
+	$invoice_id = $_REQUEST['invoice_id'];
 	$inquirySaleOrderId = $_REQUEST['SaleOrderId'];
 	$inquirySaleReferenceId = $_REQUEST['SaleReferenceId'];
 	

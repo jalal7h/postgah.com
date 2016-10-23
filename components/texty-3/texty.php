@@ -1,13 +1,13 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/12
-# 1.1
+# 2016/10/23
+# 1.2
 
 #
 # echo texty( 'some_slug_name', $vars, $user_id='user' /*the logged in user*/ , $convbox=true );
 # age field e sms ya email por shode bashe, ersal ha ham anjam mishe ( email va sms karbar + admin )
-# 
+# $vars['prompt_class'] is supported, this will add a class into prompt div
 
 /*README*/
 
