@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/05/07
-# Version 1.2
+# 2016/10/23
+# 1.3
 
 /*
 
@@ -14,6 +14,7 @@
 			"name" => "'.__FUNCTION__.'" ,
 			"class" => "'.__FUNCTION__.'" ,
 			"switch" => "do",
+			"target" => "self",
 		!]
 			
 			[!"cat:cat_id", "ccf"=>true, "cat_name"=>"adsCat","inDiv"!]
@@ -199,25 +200,33 @@ function listmaker_form_open( $list ){
 	$list['class'].= ' lmfo';
 	$list['class'] = trim($list['class']);
 	
+	if( $list['target'] == 'self' ){
+		$list['target'] = 'target_self_'.rand(1111,9999);
+		$c.= '<iframe style="display:none;" name="'.$list['target'].'" ></iframe>';
+	}
+
 	#
 	# etc
 	foreach ($list as $k => $r) {
-		if(! in_array($k,['name','class','action','method','switch','table','rw','id']) ){
+		if(! in_array($k,['name','class','action','method','switch','table','rw','id','target']) ){
 			$etc.= " $k=\"$r\"";
 		}
 	}
 	
-	#
-	# burn the <form tag
-	return '<form '.
+	$c.= '<form '.
 		'action="'.$list['action'].'" '.
 		'method="'.($list['method'] ? $list['method']:'POST').'" '.
 		'enctype="multipart/form-data" '.
 		'name="'.$list['name'].'" '.
 		($list['id'] ? 'id="'.$list['id'].'" ':'').
 		'class="'.$list['class'].'" '.
+		'target="'.$list['target'].'" '.
 		($etc ?$etc :'').
 		">\n";
+
+	#
+	# burn the <form tag
+	return $c;
 	
 }
 

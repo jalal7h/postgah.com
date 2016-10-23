@@ -4,7 +4,7 @@ function listmaker_form_element_this_email( $info ){
 	
 	$c.= lmfe_tnit( $info );
 
-	$c.= $info['PreTab']."<input type=\"".$info['type']."\" ".
+	$c.= $info['PreTab']."<input autocomplete=\"off\" type=\"email\" ".
 		"name=\"".$info['name'].( $info['ArrayInput'] ? '[]' : '' )."\" ".
 		"id=\"".( $info['id'] ? $info['id'] : "lmfe_".$info['formName']."_".$info['name'] )."\" ".
 		( $info['class'] ? "class=\"".$info['class']."\" " : '' ).

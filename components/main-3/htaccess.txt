@@ -3,7 +3,7 @@ RewriteRule ^about$ ./?page=3 [L]
 RewriteRule ^terms$ ./?page=6 [L]
 RewriteRule ^help$ ./?page=4 [L]
 RewriteRule ^privacy$ ./?page=7 [L]
-RewriteRule ^admin$ /?page=admin [R]
+RewriteRule ^admin$ ./?page=admin [L]
 RewriteRule ^image_list/(.*)$ ./?do_action=imgp_echo&filename=$1 [L]
 
 

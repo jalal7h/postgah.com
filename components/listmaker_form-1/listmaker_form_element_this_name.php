@@ -10,7 +10,7 @@ function listmaker_form_element_this_name( $info ){
 	$info['class'].= " lmfe_isName";
 	$info['class'] = trim($info['class']);
 	
-	$c.= $info['PreTab']."<input type=\"text\" ".
+	$c.= $info['PreTab']."<input autocomplete=\"off\" type=\"text\" ".
 		"name=\"".$info['name'].( $info['ArrayInput'] ? '[]' : '' )."\" ".
 		"id=\"".$id."\" ".
 		( $info['class'] ? "class=\"".$info['class']."\" " : '' ).

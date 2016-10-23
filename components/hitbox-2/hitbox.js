@@ -5,6 +5,10 @@ document.write('<div id="hitbox-container"><div id="hitbox-text" class="boxborde
 
 function hitbox( text, w, h, extra_class="" ){
 
+	if( text.substr(0,7) == 'http://' || text.substr(0,8) == 'https://' ){
+		text = '<iframe style="width:100%; height:100%;" frameborder="0" src="' + text + '"></iframe>';
+	}
+
 	if( w==0 || w==undefined ){
 		w = 'auto';
 	}
