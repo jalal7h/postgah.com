@@ -18,11 +18,11 @@ function bpProcess(){
 		
 		#
 		# remove the generated invoice, if its not related to any order
-		// if(! $rw_invoice = billing_invoiceDetail($invoice_id) ){
-		// 	e(__FUNCTION__,__LINE__);
-		// } else if( $rw_invoice['order_table'] == '' ){
-		// 	billing_invoiceRemove($invoice_id);
-		// }
+		if(! $rw_invoice = billing_invoiceDetail($invoice_id) ){
+			e(__FUNCTION__,__LINE__);
+		} else if( $rw_invoice['order_table'] == '' ){
+			billing_invoiceRemove($invoice_id);
+		}
 
 	} else if(! bpVerifyRequest() ){
 		
