@@ -49,8 +49,9 @@ function bpPayRequest(){
 	$localDate = substr(date( 'Ymd', U() ), 2);
 	$localTime = date('His', U() );
 	$additionalData = "";
-	$callBackUrl = _URL."/process.php?SaleCode=".$invoice_id;
-	$callBackUrl = _URL."/?page=".$_REQUEST['page']."&do=".$_REQUEST['do']."&do2=".$_REQUEST['do2']."&cost=".$_REQUEST['cost']."&method=".$_REQUEST['method']."&bp_do=verify&SaleCode=".$invoice_id;
+	// $callBackUrl = _URL."/process.php?SaleCode=".$invoice_id;
+	// $callBackUrl = _URL."/?page=".$_REQUEST['page']."&do=".$_REQUEST['do']."&do2=".$_REQUEST['do2']."&cost=".$_REQUEST['cost']."&method=".$_REQUEST['method']."&bp_do=verify&SaleCode=".$invoice_id;
+	$callBackUrl = _URL."/?page=".$_REQUEST['page']."&do=".$_REQUEST['do']."&do2=".$_REQUEST['do2']."&cost=".$_REQUEST['cost']."&method=".$_REQUEST['method']."&bp_do=verify&invoice_id=".$invoice_id;
 	$payerId = 0;
 	
 	$parameters = array(

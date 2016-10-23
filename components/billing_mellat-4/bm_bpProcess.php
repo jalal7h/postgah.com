@@ -9,9 +9,20 @@ function bpProcess(){
 	if(! $_REQUEST ){
 		e(__FUNCTION__,__LINE__);
 
-	} else if( $_REQUEST['ResCode']!=0 ){
-		echo "<div class='convbox'>پرداخت شما لغو شد!</div>";
-		return false;
+	} else if(! $invoice_id = $_REQUEST['invoice_id'] ){
+		e(__FUNCTION__,__LINE__);
+
+	} else if( $_REQUEST['ResCode'] != 0 ){
+		
+		echo "<div class='convbox transparent'>پرداخت شما لغو شد!</div>";
+		
+		#
+		# remove the generated invoice, if its not related to any order
+		// if(! $rw_invoice = billing_invoiceDetail($invoice_id) ){
+		// 	e(__FUNCTION__,__LINE__);
+		// } else if( $rw_invoice['order_table'] == '' ){
+		// 	billing_invoiceRemove($invoice_id);
+		// }
 
 	} else if(! bpVerifyRequest() ){
 		
@@ -20,12 +31,10 @@ function bpProcess(){
 			if(! bpReversalRequest() ){
 				echo "<hr>".$result['return']."<hr>";
 				echo "<font color=red >transaction not reversed, wrong response from bpReversalRequest.</font>";
-				return false;
 			
 			} else {
 				echo "<hr>".$result['return']."<hr>";
 				echo "<font color=green >transaction reversed, please try again.</font>";
-				return false;
 			}
 		
 		} else if(! bpSettleRequest() ){
@@ -49,6 +58,7 @@ function bpProcess(){
 	}
 
 	return false;
+
 }
 
 
