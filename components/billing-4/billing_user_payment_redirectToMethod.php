@@ -15,7 +15,7 @@ function billing_userpanel_payment_redirectToMethod(){
 		e(__FUNCTION__,__LINE__);
 
 	} else if(! $rw_invoice = table('billing_invoice', $invoice_id) ){
-		echo convbox('صورتحساب با شناسه '.$invoice_id.' یافت نشد!');
+		echo convbox('صورتحساب با شناسه '.$invoice_id.' یافت نشد!', 'transparent');
 
 	} else if(! $rw_invoice['user_id']==$user_id ){
 		e(__FUNCTION__,__LINE__);
