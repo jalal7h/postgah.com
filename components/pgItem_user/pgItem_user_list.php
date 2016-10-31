@@ -34,7 +34,7 @@ function pgItem_user_list(){
 	# ** ama age base_url ro dashte bashim az hamun estefade mikone
 	#
 	
-	$list['addnew_url'] = '"./?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=form"';
+	$list['addnew_url'] = true;
 	$list['remove_url'] = true; // link dokme hazf
 	$list['modify_url'] = '"./?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=form&id=".$rw["id"]';
 	$list['paging_url'] = true; // not needed when we have 'tdd'
