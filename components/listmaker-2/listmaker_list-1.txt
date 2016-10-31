@@ -1,18 +1,18 @@
 
 
 # jalal7h@gmail.com
-# 2016/10/22
-# 1.29
+# 2016/10/27
+# 1.30
 
 /*
 	
 	###################################################################################
-	# the new version 1.2
+	# the new version 1.30
 
 	# 
 	# the list
 	$table = 'item';
-	$list['name'] = __FUNCION__;
+	$list['name'] = __FUNCTION__;
 	$list['query'] = " SELECT * FROM `$table` WHERE 1 AND `parent`='$parent' ORDER BY `prio` ASC ";
 	$list['tdd'] = 10; // tedad dar safhe
 	
@@ -33,7 +33,7 @@
 	$list['modify_url'] = true; // link icon modify 
 	or $list['modify_url_inBlank'] = true; // this will open in new tab
 
-	$list['addnew_url'] = false; // link icon "new" vaghti ke list khali hast dide mishe
+	$list['addnew_url'] = false; // [true/false/url]
 	$list['remove_url'] = true; // link dokme hazf
 	$list['up_or_down'] = true; // link priority
 	$list['setflag_url'] = true; // link active / inactive

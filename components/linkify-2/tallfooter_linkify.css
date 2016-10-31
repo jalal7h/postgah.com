@@ -1,0 +1,46 @@
+
+.tallfooter .this.linkify {
+	padding: 0 20px 10px 20px;
+}
+.tallfooter .this.linkify:first-child {
+	padding-right: 0px;
+}
+.tallfooter .this.linkify:last-child {
+	padding-left: 0px;
+}
+
+.tallfooter .this.linkify > div.head {
+	font-size: 12px;
+    border-bottom: 1px solid #404040;
+    font-weight: normal;
+    margin-bottom: 16px;
+    padding: 5px 0 10px 0;
+    color: #e6e6e6;
+    cursor: default;
+}
+.tallfooter .this.linkify > a {
+	display: block;
+    color: gray;
+    font-size: 11px;
+    line-height: 25px !important;
+    transition: all 0.3s;
+    text-shadow: 0 0 2px black;
+}
+.tallfooter .this.linkify > a:before {
+	display: inline-block;
+    font-family: FontAwesome;
+    content: "\f060";
+    font-size: 12px;
+    color: #eee;
+    margin: 0 12px 0 8px;
+    transition: all 0.3s;
+}
+.tallfooter .this.linkify > a:hover {
+	color: #fff;
+}
+.tallfooter .this.linkify > a:hover:before {
+	color: #A90000;
+    transform: rotate(-45deg);
+}
+
+

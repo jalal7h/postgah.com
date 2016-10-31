@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/23
-# 1.3
+# 2016/10/28
+# 1.4
 
 function e( $text=null, $line=null, $etc=null ){
 
@@ -10,8 +10,9 @@ function e( $text=null, $line=null, $etc=null ){
 		$text.= " : ".$line;
 	
 	} else {
-		$bt = debug_backtrace()[1];
-		$text = $bt['function'] . " : " . $bt['line'] . "; " . $text;
+		$bt1 = debug_backtrace()[1];
+		$bt0 = debug_backtrace()[0];
+		$text = $bt1['function'] . " : " . $bt0['line'] . "; " . $text;
 	}
 	
 	if( $etc ){

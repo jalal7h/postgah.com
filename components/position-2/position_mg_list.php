@@ -1,11 +1,13 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/09
-# 2.0
+# 2016/10/31
+# 2.1
 
 function position_mg_list(){
 	
+	position_remove_n_fix_unknowns();
+
 	if(! $type = $_REQUEST['type'] ){
 		ed(__FUNCTION__,__LINE__);
 	}

@@ -1,0 +1,18 @@
+
+/*index*/
+
+.footer-copyright {
+    direction: ltr;
+    display: block;
+    margin: 1px 40px;
+    font: normal 11px monospace;
+}
+.footer-copyright > a {
+    font: normal 11px monospace;
+    color: #300;
+}
+.footer-copyright > a:hover {
+    color: #900;
+}
+
+

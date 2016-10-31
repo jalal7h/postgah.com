@@ -1,0 +1,24 @@
+
+/*index*/
+
+ul.tallfooter_social {
+	text-align: left;
+}
+
+ul.tallfooter_social > li {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+}
+
+ul.tallfooter_social > li > a {
+    font-size: 28px;
+    margin-right: 5px;
+    color: grey;
+    transition-duration: 0.2s;
+    text-shadow: 0 0 4px rgba(0,0,0,0.6);
+}
+ul.tallfooter_social > li > a:hover {
+	color: rgb(169,0,0);
+}
+

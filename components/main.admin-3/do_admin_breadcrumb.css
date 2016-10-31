@@ -30,7 +30,7 @@
 }
 
 #do_admin .mainbar > .top > .breadcrumb > .etc {
-	margin: 0 10px 0 0;
+	margin: 0 0 0 0;
 }
 #do_admin .mainbar > .top > .breadcrumb > .etc:before {
 	font-family: FontAwesome;
@@ -38,7 +38,7 @@
 	font-size: 20px;
 	/* margin: 0 0 0 10px; */
 	display: inline-block;
-	margin-left: 10px;
+	margin-left: 0px;
 	position: relative; top: 3px; left: 0px;
 }
 #do_admin .mainbar > .top > .breadcrumb a:hover {
