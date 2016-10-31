@@ -8,9 +8,21 @@
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 	color: #999;
 }
+
 .tallfooter ,
 .tallfooter * {
 	box-sizing: border-box;
+	line-height: 20px !important;
+}
+
+.tallfooter a {
+	color: gray;
+    /* padding: 10px 0 0 10px; */
+    display: inline-block;
+    transition: all 0.3s;
+}
+.tallfooter a:hover {
+	color: #A90000;
 }
 
 .tallfooter .wrapper {

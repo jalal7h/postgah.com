@@ -20,7 +20,9 @@ function listmaker_form_element_this_text( $info ){
 		( $info['value'] ? "value=\"".$info['value']."\" " : '' ).
 		( $info['content_min'] ? "content_min=\"".$info['content_min']."\" " : "" ).
 		( $info['content_max'] ? "content_max=\"".$info['content_max']."\" " : "" ).
-		( $info['TitleInTag'] ? "placeholder=\"".$info['placeholder']."\" " : '' ).
+		( $info['TitleInTag'] ? "placeholder=\"".$info['placeholder']."\" " : 
+			( $info['placeholder'] ? "placeholder=\"".$info['placeholder']."\" " : '' )
+		 ).
 		"/>\n";
 
 	$minOrMax_c = listmaker_form_element_content_minOrMax_table( $info );

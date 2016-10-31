@@ -31,6 +31,7 @@ function is_component( $component ){
 
 }
 
+
 function is_component_load(){
 	
 	if( $GLOBALS['component_list'] ){
@@ -46,9 +47,12 @@ function is_component_load(){
 
 		} else {
 			if( strstr($d, "-") ){
-				$d = explode("-", $d)[0];
+				$d = explode("-", $d);
+				$the_component_name = $d[0];
+				$the_component_version = $d[1];
 			}
-			$GLOBALS['component_list'][] = $d;
+			$GLOBALS['component_list'][] = $the_component_name;
+			$GLOBALS['component_version'][ $the_component_name ] = $the_component_version;
 		}
 
 	}

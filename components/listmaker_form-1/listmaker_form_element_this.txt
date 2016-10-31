@@ -1,8 +1,8 @@
 
 
 # jalal7h@gmail.com
-# 2016/10/19
-# 1.4
+# 2016/10/31
+# 1.5
 
 /*
 	
@@ -13,7 +13,7 @@
 	['number:tell[]{ `[]` will be added to name }'],
 	['textarea:desc.tinymce class_name'],
 	['name:name@{ @ -> force title in element, !@ -> force title no in element }','forced place holder { not-array not-inDiv not-text:..  }'],
-	['text:student_id','inDiv'],
+	['text:student_id','notInDiv'],
 	['select:name#some_id'=>'2{ forced_value }','option{string/array}'=>listmaker_option($table_name)],
 	'some text',
 	['file:attachment.someClass and_moreclass','accept'=>'image/*'],

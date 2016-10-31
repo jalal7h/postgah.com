@@ -14,39 +14,39 @@
 			"name" => "'.__FUNCTION__.'" ,
 			"class" => "'.__FUNCTION__.'" ,
 			"switch" => "do",
-			"target" => "self",
+			"target" => "self", // in yani tuye ye iframe e hidden run mishe
 		!]
 			
-			[!"cat:cat_id", "ccf"=>true, "cat_name"=>"adsCat","inDiv"!]
-			[!"position:position_id","inDiv"!]
+			[!"cat:cat_id", "ccf"=>true, "cat_name"=>"adsCat"!]
+			[!"position:position_id","notInDiv"!]
 			
 			<hr>
 
-			[!"text:name","inDiv"!]
-			[!"text:name_on_form","inDiv"!]
-			[!"url:sample_page","inDiv"!]
+			[!"text:name"!]
+			[!"text:name_on_form"!]
+			[!"url:sample_page"!]
 			
 			<hr>
 
-			[!"file:icon","inDiv"!]
+			[!"file:icon","notInDiv"!]
 
-			[!"file:watermark","inDiv"!]
-			[!"toggle:watermark_onlyfirst","inDiv"!]
+			[!"file:watermark"!]
+			[!"toggle:watermark_onlyfirst"!]
 
 			<hr>
 
-			[!"toggle:search_box_color_flag","inDiv"!]
-			[!"color:search_box_color","inDiv"!]
-			[!"file:search_result_cover","inDiv"!]
+			[!"toggle:search_box_color_flag"!]
+			[!"color:search_box_color"!]
+			[!"file:search_result_cover"!]
 			
 			<hr>
 
-			[!"toggle:show_in_index","inDiv"!]
-			[!"toggle:suggest_as_related","inDiv"!]
-			[!"toggle:send_in_newsletter","inDiv"!]
-			[!"toggle:pin_in_all_cat","inDiv"!]
-			[!"toggle:pin_in_own_cat","inDiv"!]
-			[!"toggle:pin_in_search","inDiv"!]		
+			[!"toggle:show_in_index"!]
+			[!"toggle:suggest_as_related"!]
+			[!"toggle:send_in_newsletter"!]
+			[!"toggle:pin_in_all_cat"!]
+			[!"toggle:pin_in_own_cat"!]
+			[!"toggle:pin_in_search"!]		
 			
 			<hr>
 
@@ -54,9 +54,9 @@
 
 			<hr>
 
-			[!"submit:ثبت","inDiv"!]
+			[!"submit:ثبت"!]
 
-		[!close!]
+		[!close!] // in close ro nazari ham khodesh ezafe mikone
 	');
 	# -------------------------------------------------
 

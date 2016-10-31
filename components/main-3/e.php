@@ -1,17 +1,17 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/28
-# 1.4
+# 2016/10/31
+# 1.5
 
-function e( $text=null, $line=null, $etc=null ){
+function e( $text=null, $line=null, $etc=null, $its_ed=0 ){
 
 	if( $line ){
 		$text.= " : ".$line;
 	
 	} else {
-		$bt1 = debug_backtrace()[1];
-		$bt0 = debug_backtrace()[0];
+		$bt1 = debug_backtrace()[1+$its_ed];
+		$bt0 = debug_backtrace()[0+$its_ed];
 		$text = $bt1['function'] . " : " . $bt0['line'] . "; " . $text;
 	}
 	
@@ -31,10 +31,13 @@ function e( $text=null, $line=null, $etc=null ){
 }
 
 
-function ed( $text, $line=null, $etc=null ){
-	e( $text, $line, $etc );
+function ed( $text=null, $line=null, $etc=null ){
+	
+	e( $text, $line, $etc, $its_ed=1 );
 	die();
+
 }
+
 
 function dg( $text = "" ){
 	

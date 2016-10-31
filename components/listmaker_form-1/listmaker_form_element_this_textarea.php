@@ -9,6 +9,12 @@ function listmaker_form_element_this_textarea( $info ){
 	$tnit_c = lmfe_tnit( $info );
 	$c.= $tnit_c;
 
+	#
+	# tinymce
+	if( strstr( " ".strtolower($info['class'])." ", ' tinymce ') ){
+		$c = "<script src=\"modules/tinymce/tinymce.min.js\"></script>\n<script src=\"modules/tinymce/tinymce-set.js\"></script>\n".$c;
+	}
+
 	$id = $info['id'] ? $info['id'] : "lmfe_".$info['formName']."_".$info['name'];
 	$id = listmaker_uniqId( $id );
 

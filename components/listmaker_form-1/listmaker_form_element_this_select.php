@@ -1,5 +1,9 @@
 <?
 
+# jalal7h@gmail.com
+# 2016/10/31
+# 1.1
+
 function listmaker_form_element_this_select( $info ){
 	
 	#
@@ -19,6 +23,7 @@ function listmaker_form_element_this_select( $info ){
 		"name=\"".$info['name'].( $info['ArrayInput'] ? '[]' : '' )."\" ".
 		"id=\"".$id."\" ".
 		( $info['class'] ? "class=\"".$info['class']."\" " : '' ).
+		( $info['dir'] ? " dir=\"".$info['dir']."\" " : '' ).
 		( $info['etc'] ? $info['etc']." " : '' ).
 		">\n";
 

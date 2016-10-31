@@ -10,7 +10,7 @@ function its_tag_check_if_exists_on_db(){
 		//
 
 	} else if(! kword_is($q) ){
-		_404();
+		d404();
 	}
 }
 

@@ -8,7 +8,7 @@ function tallfooter_mg_list(){
 	
 	###################################################################################
 	# the new version 1.2
-
+	
 	# 
 	# the list
 	$table = 'tallfooter';
@@ -50,17 +50,27 @@ function tallfooter_mg_list(){
 	#
 	########################################################################################
 
+	#
+	# list e nou e element ha baraye hitbox e dokme "new item"
+	echo "<div id=\"tallfooter_typelist\" >
+	<div class=\"tallfooter_typelist_container\">
+	<div class=\"info\">انتخاب نوع لایه جدید ..</div>";
+	foreach( $GLOBALS['tallfooter_element'] as $type => $title ){
+		echo "<a class=\"submit_button\" href=\"./?page=admin&cp=".$_REQUEST['cp']."&do=form&type=".$type."\">".$title."</a>";
+	}
+	echo "</div></div>";
+
 }
 
 
 function tallfooter_mg_list_theName( $rw ){
 
-	if( $rw['type'] == 'hr' ){
-		return '- - - - - - - -';
+	// if( $rw['type'] == 'hr' ){
+	// 	return '- - - - - - - -';
 	
-	} else {
+	// } else {
 		return $rw['name'];
-	}
+	// }
 
 }
 

@@ -15,8 +15,8 @@ function admin_html_open(){
 		<META http-equiv=Content-Type content="text/html; charset=utf-8">
 		<link rel="stylesheet" href="<?=_URL?>/modules/font-awesome-4.6.1/css/font-awesome.min.css">
 		<link href="<?=_URL?>/templates/<?=_THEME?>/font/font.css" rel="stylesheet" type="text/css" />
-		<link href="<?=_URL?>/templates/<?=_THEME?>/css/template-admin.css" rel="stylesheet" type="text/css" />
 		<?=include_all_css_echotags(); ?>
+		<link href="<?=_URL?>/templates/<?=_THEME?>/css/template-admin.css" rel="stylesheet" type="text/css" />
 	</head>
 	
 	<body leftmargin="0" topmargin="0" rightmargin="0" downmargin="0" marginheight="0" marginwidth="0">

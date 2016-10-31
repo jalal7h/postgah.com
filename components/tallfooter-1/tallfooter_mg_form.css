@@ -1,0 +1,21 @@
+
+#tallfooter_typelist {
+	display: none;
+}
+
+.tallfooter_typelist_container {
+	padding: 50px;
+	direction: rtl;
+}
+.tallfooter_typelist_container .info {
+	margin: 0px 0 40px 0;
+	color: #999;
+}
+.tallfooter_typelist_container > a {
+	margin: 20px 0;
+	display: block !important;
+}
+.tallfooter_mg_form_social .lmfe_tnit {
+	vertical-align: top;
+	padding-top: 10px;
+}

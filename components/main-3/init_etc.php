@@ -22,5 +22,7 @@ function init_etc(){
 		die();
 	}
 
+	is_component_load();
+
 }
 

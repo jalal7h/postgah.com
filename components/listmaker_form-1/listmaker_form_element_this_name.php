@@ -16,7 +16,9 @@ function listmaker_form_element_this_name( $info ){
 		( $info['class'] ? "class=\"".$info['class']."\" " : '' ).
 		( $info['etc'] ? $info['etc']." " : '' ).
 		( $info['value'] ? "value=\"".$info['value']."\" " : '' ).
-		( $info['TitleInTag'] ? "placeholder=\"".$info['placeholder']."\" " : '' ).
+		( $info['TitleInTag'] ? "placeholder=\"".$info['placeholder']."\" " : 
+			( $info['placeholder'] ? "placeholder=\"".$info['placeholder']."\" " : '' )
+		).
 		"/>\n";
 	
 	return $c;

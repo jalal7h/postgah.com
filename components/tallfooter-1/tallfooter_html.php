@@ -1,8 +1,10 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/28
+# 2016/10/31
 # 1.0
+
+$GLOBALS['tallfooter_element']['html'] = 'محتوای HTML';
 
 function tallfooter_html( $rw_tf ){
 

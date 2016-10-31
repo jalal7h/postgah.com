@@ -1,5 +1,11 @@
 <?
 
+# jalal7h@gmail.com
+# 2016/10/31
+# 1.0
+
+$GLOBALS['tallfooter_element']['social'] = 'جامعه مجازی';
+
 function tallfooter_social( $rw_tf ){
 
 	if(! $links = $rw_tf['content'] ){
@@ -9,7 +15,7 @@ function tallfooter_social( $rw_tf ){
 		e();
 
 	} else foreach( $links as $i => $link ){
-		
+
 		if(! $link = trim($link) ){
 			continue;
 		}
@@ -37,7 +43,7 @@ function tallfooter_social( $rw_tf ){
 		} else if( strstr($link_pattern, "http://linkedin.com/" ) ){
 			$class = 'linkedin';
 			
-		} else if( strstr($link_pattern, "http://plus.google.com.com/" ) ){
+		} else if( strstr($link_pattern, "http://plus.google.com/" ) ){
 			$class = 'google-plus';
 
 		} else {
@@ -48,9 +54,10 @@ function tallfooter_social( $rw_tf ){
 		$class_title = str_replace("-", " ", $class_title);
 		$class_title = ucfirst($class_title);
 
-		$c.= "\t<li><a href=\"".$link."\" title=\"".$class_title."\" target=\"_blank\"><i class=\"fa fa-".$class."-square\"></i></a></li>\n";
+		$c.= "\t<li><a href=\"".$link."\" title=\"".$class_title."\" target=\"_blank\"><i class=\"fa fa-".$class.( $class=='instagram' ? '' : '-square' )."\"></i></a></li>\n";
 
 	}
+	// die();
 
 
 	if( $c != '' ){
