@@ -22,6 +22,7 @@ function tallfooter_mg_form_linkify(){
 		!]
 			
 			[!"name:name*"!]
+			[!"hidden:type"=>"linkify"!]
 			[!"select:grid*","dir"=>"ltr","option"=>'.$grid_option.'!]
 			[!"select:content*","جعبه پیوند","option"=>listmaker_option("linkify_config","`flag`=1")!]
 			

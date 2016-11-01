@@ -30,6 +30,7 @@ function tallfooter_mg_form_html(){
 		!]
 			
 			[!"text:name*"!]
+			[!"hidden:type"=>"html"!]
 			[!"select:grid*","dir"=>"ltr","option"=>'.$grid_option.'!]
 			
 			<hr>

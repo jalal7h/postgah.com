@@ -17,6 +17,7 @@ function tallfooter_mg_form_hr(){
 		!]
 			
 			[!"text:name*"!]
+			[!"hidden:type"=>"hr"!]
 			[!"hidden:grid"=>"12"!]
 			
 			<hr>
