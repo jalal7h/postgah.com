@@ -1,0 +1,11 @@
+
+#footer_validation_links {
+	padding: 10px;
+	background-color: #999;
+	border-radius: 3px;
+	box-shadow: 0 0 10px #000;
+}
+#footer_validation_links > img {
+	width: auto;
+	height: 80px;
+}
