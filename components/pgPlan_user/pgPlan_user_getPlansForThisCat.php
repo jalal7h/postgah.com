@@ -43,10 +43,10 @@ function pgPlan_user_getPlansForThisCat( $ignore_plan_id_list=null ){
 		} else {
 			// echo convbox('هیچ پلانی تعریف نشده است');
 		}
-		echo "<style>
-		.current_plan { display: none; } 
-		.pgiul_sb_".$item_id." { display: none !important; }
-		</style>";
+		// echo "<style>
+		// .current_plan { display: none; } 
+		// .pgiul_sb_".$item_id." { display: none !important; }
+		// </style>";
 
 	} else while( $rw = dbf($rs) ){
 
