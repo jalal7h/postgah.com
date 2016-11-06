@@ -2,8 +2,9 @@
 #footer_validation_links {
 	padding: 10px;
 	background-color: #999;
-	border-radius: 3px;
+	border-radius: 2px;
 	box-shadow: 0 0 10px #000;
+	text-align: center;
 }
 #footer_validation_links > img {
 	width: auto;
