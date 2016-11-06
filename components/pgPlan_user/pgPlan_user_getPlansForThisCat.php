@@ -39,9 +39,9 @@ function pgPlan_user_getPlansForThisCat( $ignore_plan_id_list=null ){
 
 	} else if(! dbn($rs) ){
 		if( $ignore_plan_id_query ){
-			echo convbox('هیچ پلانی برای این گروه / منطقه تعریف نشده است');
+			// echo convbox('هیچ پلانی برای این گروه / منطقه تعریف نشده است');
 		} else {
-			echo convbox('هیچ پلانی تعریف نشده است');
+			// echo convbox('هیچ پلانی تعریف نشده است');
 		}
 		echo "<style>
 		.current_plan { display: none; } 
