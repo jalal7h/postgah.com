@@ -18,7 +18,7 @@ function listmaker_form_element_this_positionbox( $info ){
 		js_enqueue( 'listmaker_form-1', 'listmaker_form_element_this_positionbox' );
 
 		if(! $info['value'] ){
-			$position_name = "انتخاب ".$info['placeholder'];
+			$position_name = __("انتخاب ").$info['placeholder'];
 		} else {
 			$position_name = positionjson_get_title_serial( $info['value'] );	
 		}

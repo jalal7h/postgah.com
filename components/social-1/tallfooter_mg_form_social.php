@@ -35,11 +35,11 @@ function tallfooter_mg_form_social(){
 			[!"name:name*"!]
 			[!"hidden:type"=>"social"!]
 			[!"select:grid*","dir"=>"ltr","option"=>'.$grid_option.'!]
-			[!"textarea:content*","لینکها"!]
+			[!"textarea:content*","'.__('لینکها').'"!]
 			
 			<hr>
 			
-		[!"submit:ثبت"!]
+		[!"submit:'.__('ثبت').'"!]
 	');
 	# -------------------------------------------------
 

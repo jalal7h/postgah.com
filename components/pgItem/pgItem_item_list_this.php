@@ -9,7 +9,7 @@ function pgItem_item_list_this( $rw_item ){
 			<div class="name">'.$rw_item['name'].'</div>
 			<div class="cat">'.cat_translate($rw_item['cat_id']).'</div>
 			<div class="pos">'.position_translate($rw_item['position_id']).'</div>
-			<div class="price">'.cost_in_word($rw_item['cost']).'</div>
+			<div class="price">'.billing_format($rw_item['cost']).'</div>
 			<div class="date">'.time_inword($rw_item['date_updated']).'</div>
 		</div>
 	</a>';

@@ -12,7 +12,7 @@ function users_forgot_send(){
 		dg();
 
 	} else if(! $vars = table( 'users', $username, null, 'username' ) ){
-		echo convbox("هیچ حساب کاربری مرتبط با آدرس ایمیل شما یافت نشد<br>لطفا نسبت به <a href=\""._URL."/register\">ثبت نام</a> با آدرس ایمیل خود اقدام نمائید.");
+		echo convbox( __("هیچ حساب کاربری مرتبط با آدرس ایمیل شما یافت نشد<br>لطفا نسبت به %%ثبت نام%% با آدرس ایمیل خود اقدام نمائید.", ["<a href=\""._URL."/register\">",'</a>'] ) );
 
 	} else {
 

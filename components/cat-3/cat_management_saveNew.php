@@ -16,10 +16,12 @@ function cat_management_saveNew(){
 
 	#
 	# trying to put it into db
-	if(!$name = $_REQUEST['name']){
+	if(! $name = $_REQUEST['name'] ){
 		return false;
-	} else if(!dbq(" INSERT INTO `cat` (`name`,`desc`,`kw`,`cat`,`parent`,`logo`,`flag`) VALUES ('$name','$desc','$kw','$l','$parent','$logo','1') ")){
-		e(dbe());
+	
+	} else if(! dbs( 'cat', ['name','desc'=>$desc,'kw'=>$kw,'cat'=>$l,'parent'=>$parent,'logo'=>$logo,'flag'=>1] ) ){
+		e( dbe() );
 	}
+
 }
 

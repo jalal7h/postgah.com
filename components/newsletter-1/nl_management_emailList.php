@@ -57,7 +57,7 @@ function nl_management_emailList(){
 	#
 	########################################################################################
 
-	echo "<a class='newsletter-email-list' href='"._URL."/newsletter-email-list.txt'>دریافت فایل حاوی ایمیلها</a>";
+	echo "<a class='newsletter-email-list' href='"._URL."/newsletter-email-list.txt'>".__('دریافت فایل حاوی ایمیلها')."</a>";
 
 }
 

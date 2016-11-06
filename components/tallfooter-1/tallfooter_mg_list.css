@@ -1,0 +1,8 @@
+
+/*admin*/
+
+.listmaker_list_c.tallfooter_mg_list_c td:nth-child(3) {
+	text-align: center;
+	direction: ltr;
+	font: normal 14px monospace,sans-serif;
+}

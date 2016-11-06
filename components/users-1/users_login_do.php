@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/17
-# 1.3
+# 2016/11/01
+# 1.4
 
 function users_login_do(){
 
@@ -19,7 +19,7 @@ function users_login_do(){
 		die();
 	
 	} else if(! users_login_check( $u , $p ) ){
-		$c.= "نام کاربری یا کلمه عبور اشتباه است";
+		$c.= __("نام کاربری یا کلمه عبور اشتباه است");
 	
 	} else {
 		

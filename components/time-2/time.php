@@ -145,8 +145,8 @@ function MLD_2_SMSI( $TIME){
 	$Converter = new Converter;
 	$g2j = $Converter->GregorianToJalali($year,$month,$day);
 	$Y = $g2j[0];
-	$M = addZiro($g2j[1]);
-	$D = addZiro($g2j[2]);
+	$M = addzero($g2j[1]);
+	$D = addzero($g2j[2]);
 	$W = gmdate('w', Time2U($TIME)+86400);
 	$TIME = $Y . '-' . $M . '-' . $D . ' ' . $E . '|' . $W ;
 	return $TIME;
@@ -160,9 +160,9 @@ function Time2Vaght($TIME){
 	$E = substr($TIME, 11,8);
 	$Converter = new Converter;
 	$g2j = $Converter->GregorianToJalali($year,$month,$day);
-	$D = addZiro($g2j[2]);
-	$M = addZiro($g2j[1]);
-	$Y = addZiro($g2j[0]);
+	$D = addzero($g2j[2]);
+	$M = addzero($g2j[1]);
+	$Y = addzero($g2j[0]);
 	$W = gmdate('w', Time2U($TIME)+86400);
 	$VAGHT = $Y . '/' . $M . '/' . $D . ' ' . $E . '|' . $W ;
 
@@ -178,8 +178,8 @@ function Vaght2Time($VAGHT){
 	$Converter = new Converter;
 	$j2g = $Converter->JalaliToGregorian($sall, $mah, $ruz);
 	$Y = $j2g[0];
-	$M = addZiro($j2g[1]);
-	$D = addZiro($j2g[2]);
+	$M = addzero($j2g[1]);
+	$D = addzero($j2g[2]);
 	$W = gmdate('w', Time2U($Y.'.'.$M.'.'.$D." 12:00:00")+86400);
 	$TIME = $Y . '.' . $M . '.' . $D . ' ' . $E . '|' . $W ;
 
@@ -399,3 +399,9 @@ $GLOBALS['do_action'][] = "echo_date";
 function echo_date(){
     echo date("Y/m/d H:i:s", U());
 }
+
+
+
+
+
+

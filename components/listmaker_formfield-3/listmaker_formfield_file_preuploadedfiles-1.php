@@ -116,16 +116,16 @@ function listmaker_formfield_file_preuploadedfiles__simple_this( $file_dir, $fil
 
 	if(in_array( $ext, array("jpg","jpeg","png","gif"))){
 		$c.= "
-		<div title='حذف فایل' class='imgc'>
-			<a title='نمایش کامل' class='blank' href='".$file_path."' target='_blank'>open</a>
-			<a rel='".$file_path."' title='حذف' class='remove' >remove</a>
+		<div title='".__('حذف فایل')."' class='imgc'>
+			<a title='".__('نمایش کامل')."' class='blank' href='".$file_path."' target='_blank'>open</a>
+			<a rel='".$file_path."' title='".__('حذف')."' class='remove' >remove</a>
 			<img src='".$file_path."' />
 		</div>";
 	} else {
 		$c.= "
-		<div title='حذف فایل' class='imgc notpic'>
-			<a title='نمایش کامل' class='blank' href='".$file_path."' target='_blank'>open</a>
-			<a rel='".$file_path."' title='حذف' class='remove' >remove</a>
+		<div title='".__('حذف فایل')."' class='imgc notpic'>
+			<a title='".__('نمایش کامل')."' class='blank' href='".$file_path."' target='_blank'>open</a>
+			<a rel='".$file_path."' title='".__('حذف')."' class='remove' >remove</a>
 			<div class=text >".strtoupper($ext)."</div>
 		</div>";
 	}
@@ -168,7 +168,7 @@ function listmaker_formfield_file_preuploadedfiles__expand( $field ){
 				if(in_array( $ext, array("jpg","jpeg","png","gif"))){
 					$c.= "
 					<div>
-						<div rel='".$file_path."' title='حذف فایل' class='imgc'>
+						<div rel='".$file_path."' title='".__("حذف فایل")."' class='imgc'>
 							<img src='".$file_path."' />
 						</div>
 						<a target=_blank href='".$file_path."' >".$file_name."</a>
@@ -177,7 +177,7 @@ function listmaker_formfield_file_preuploadedfiles__expand( $field ){
 				} else {
 					$c.= "
 					<div>
-						<div rel='".$file_path."' title='حذف فایل' class='imgc notpic'>".strtoupper($ext)."</div>
+						<div rel='".$file_path."' title='".__("حذف فایل")."' class='imgc notpic'>".strtoupper($ext)."</div>
 						<a target=_blank href='".$file_path."' >".$file_name."</a>
 					</div>";
 				}

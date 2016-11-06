@@ -13,43 +13,43 @@ function nl_management_send_form(){
 	<form method="post" action="./?page=admin&cp=<?=$_REQUEST['cp']?>&func=<?=$_REQUEST['func']?>&do=send" class="<?=__FUNCTION__?>">
 		
 		<div class="te-div">
-			<div>عنوان خبرنامه</div>
+			<div><?=__('عنوان خبرنامه')?></div>
 			<input type="text" name="subject" id="<?=__FUNCTION__?>_subject"/>
 		</div>
 		
 		<div class="te-div">
-			<div>متن خبرنامه</div>
+			<div><?=__('متن خبرنامه')?></div>
 			<textarea name="text" id="<?=__FUNCTION__?>_text"></textarea>
 		</div>
 	
 		<label>
 			<input type="checkbox" value="1" name="newsletter_email_list" id="newsletter_email_list" checked />
-			<span>ارسال به ایمیل های ثبت شده در بخش خبرنامه 
-				<span style="color:green;">( <?=table(array( 'newsletter' , 'count' ))?> آدرس ایمیل )</span>
+			<span><?=__('ارسال به ایمیل های ثبت شده در بخش خبرنامه')?>
+				<span style="color:green;">( <?=table(array( 'newsletter' , 'count' ))?> <?=__('آدرس ایمیل')?> )</span>
 			</span>
 		</label>
 
 		<label>
 			<input type="checkbox" value="1" name="users_email_list" id="users_email_list" />
-			<span>ارسال به ایمیل های کاربران
-				<span style="color:green;">( <?=table(array( 'users' , 'count' , " AND `username` LIKE '%@%' " ))?> آدرس ایمیل )</span>
+			<span><?=__('ارسال به ایمیل های کاربران')?>
+				<span style="color:green;">( <?=table(array( 'users' , 'count' , " AND `username` LIKE '%@%' " ))?> <?=__('آدرس ایمیل')?> )</span>
 			</span>
 		</label>
 
 		<label>
 			<input type="checkbox" value="1" id="nlmg_list_of_emails_checkbox" />
-			<span>ارسال به ایمیل های دلخواه</span>
+			<span><?=__('ارسال به ایمیل های دلخواه')?></span>
 		</label>
 
 		<div class="te-div" id="nlmg_list_of_emails">
-			<div>آدرس های ایمیل (با کاما ، ویرگول و یا خط به خط جدا کنید)</div>
+			<div><?=__('آدرس های ایمیل (با کاما ، ویرگول و یا خط به خط جدا کنید)')?></div>
 			<textarea name="numb"></textarea>
 		</div>
 
 		<div class="divider"></div>
 		
 		<div>
-			<input type="submit" value="ارسال" class="submit_button" />
+			<input type="submit" value="<?=__('ارسال')?>" class="submit_button" />
 		</div>
 
 	</form>

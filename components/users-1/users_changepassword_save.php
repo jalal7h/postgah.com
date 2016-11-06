@@ -13,13 +13,13 @@ function users_changepassword_save(){
 		dg();
 	
 	} else if( $rw['password']!=trim(strip_tags($_REQUEST['old_password'])) ){
-		$text = "کلمه عبور به درستی وارد نشده است";
+		$text = __("کلمه عبور به درستی وارد نشده است");
 	
 	} else if(! $password = trim($_REQUEST['password']) ){
-		$text = "لطفا کلمه عبور خود را وارد کنید.";
+		$text = __("لطفا کلمه عبور خود را وارد کنید.");
 	
 	} else if(! is_password_secure_or_not($password) ){
-		$text = "لطفا کلمه عبور خود را به درستی وارد کنید.";
+		$text = __("لطفا کلمه عبور خود را به درستی وارد کنید.");
 
 	} else if(! dbs( 'users', [ 'password'=>( is_component('userhashpassword') ? userhashpassword($password) : $password ) ], ['id'=>$user_id] ) ){
 		dg();

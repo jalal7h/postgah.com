@@ -17,25 +17,25 @@ function users_register_do(){
 		dg();
 
 	} else if(! $username = strtolower(trim($_REQUEST['username'])) ){
-		$text = "لطفا آدرس ایمیل خود را وارد کنید.";
+		$text = __("لطفا آدرس ایمیل خود را وارد کنید.");
 	
 	} else if( table('users', $username, null, 'username') ){
-		$text = "آدرس ایمیل مورد نظر قبلا ثبت شده است";
+		$text = __("آدرس ایمیل مورد نظر قبلا ثبت شده است");
 
 	} else if(! is_email_correct_or_not($username) ){
-		$text = "لطفا آدرس ایمیل خود را به درستی وارد کنید.";
+		$text = __("لطفا آدرس ایمیل خود را به درستی وارد کنید.");
 
 	} else if(! $password = trim($_REQUEST['password']) ){
-		$text = "لطفا کلمه عبور خود وارد کنید.";
+		$text = __("لطفا کلمه عبور خود وارد کنید.");
 
 	} else if(! is_password_secure_or_not($password) ){
-		$text = "لطفا کلمه عبور خود را به درستی وارد کنید.";
+		$text = __("لطفا کلمه عبور خود را به درستی وارد کنید.");
 
 	} else if(! $name = trim($_REQUEST['name']) ){
-		$text = "لطفا نام خود را وارد کنید.";
+		$text = __("لطفا نام خود را وارد کنید.");
 
 	} else if(! is_name_correct_or_not($name) ){
-		$text = "لطفا نام خود را به درستی وارد کنید.";
+		$text = __("لطفا نام خود را به درستی وارد کنید.");
 	
 	} else if(! $user_id = dbs('users', [
 		'username'=>$username, 
@@ -43,7 +43,7 @@ function users_register_do(){
 		'name'=>$name, 
 		'cell'=>( is_cell_correct_or_not(trim($_REQUEST['cell'])) ?trim($_REQUEST['cell']) :"" ),
 	]) ){
-		$text = "اختلال در ثبت‌نام رخ داده است.";
+		$text = __("اختلال در ثبت‌نام رخ داده است.");
 		
 	} else {
 
@@ -61,7 +61,7 @@ function users_register_do(){
 			$vars['name'] = $name;
 			$vars['user_id'] = $user_id;
 			$vars['__BEFORE__'] = '<div class="'.__FUNCTION__.'"><icon></icon><div class="left"><span>';
-			$vars['__AFTER__'] = '</span><a href="./userpanel">ورود به محیط کاربری</a></div></div>';
+			$vars['__AFTER__'] = '</span><a href="./userpanel">'.__('ورود به محیط کاربری').'</a></div></div>';
 
 			echo texty( 'users_register_do' , $vars, '', $convbox=false );
 			

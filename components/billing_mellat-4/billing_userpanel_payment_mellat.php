@@ -9,7 +9,7 @@ $GLOBALS['billing_method']['mellat'] = 'بانک ملت';
 function billing_userpanel_payment_mellat( $invoice_id ){
 	
 	if(! $rw_invoice = table("billing_invoice", $invoice_id) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else {
 		switch ($_REQUEST['bp_do']) {
@@ -19,7 +19,7 @@ function billing_userpanel_payment_mellat( $invoice_id ){
 				break;
 			
 			default:
-				echo "<div class='convbox'>درحال انتقال به درگاه بانک ..</div>";
+				echo convbox( __('درحال انتقال به درگاه بانک ..') );
 				$_REQUEST['ACT'] = "CREATE_FORM";
 				$_REQUEST['Amount'] = $rw_invoice['cost'];
 				$_REQUEST['invoice_id'] = $invoice_id;

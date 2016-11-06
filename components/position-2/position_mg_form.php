@@ -40,7 +40,7 @@ function position_mg_form(){
 
 			<hr>
 
-			<input type="submit" class="submit_button" value="ثبت"/>
+			<input type="submit" class="submit_button" value="<?=__('ثبت')?>"/>
 
 		</form>
 

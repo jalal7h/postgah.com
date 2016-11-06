@@ -39,6 +39,7 @@ function tallfooter_mg_list(){
 	# list array // list e sotun haye list
 	$list['list_array'][] = ["head"=>lmtc($table.":name"), "content" => 'tallfooter_mg_list_theName($rw)'];
 	$list['list_array'][] = ["head"=>lmtc($table.":type"), "content" => 'tallfooter_mg_list_theType($rw)'];
+	$list['list_array'][] = ["head"=>lmtc($table.":grid"), "content" => '$rw["grid"]." / 12"'];
 	
 	#
 	# search columns // az in field ha tu table search mikone
@@ -54,7 +55,7 @@ function tallfooter_mg_list(){
 	# list e nou e element ha baraye hitbox e dokme "new item"
 	echo "<div id=\"tallfooter_typelist\" >
 	<div class=\"tallfooter_typelist_container\">
-	<div class=\"info\">انتخاب نوع لایه جدید ..</div>";
+	<div class=\"info\">".__("انتخاب نوع لایه جدید ..")."</div>";
 	foreach( $GLOBALS['tallfooter_element'] as $type => $title ){
 		echo "<a class=\"submit_button\" href=\"./?page=admin&cp=".$_REQUEST['cp']."&do=form&type=".$type."\">".$title."</a>";
 	}
@@ -80,19 +81,19 @@ function tallfooter_mg_list_theType( $rw ){
 	switch ($rw['type']) {
 		
 		case 'hr':
-			return 'جدا کننده';
+			return __('جدا کننده');
 
 		case 'html':
-			return 'محتوای html';
+			return __('محتوای html');
 		
 		case 'linkify':
-			return 'جعبه پیوند';
+			return __('جعبه پیوند');
 		
 		case 'social':
-			return 'جامعه مجازی';
+			return __('جامعه مجازی');
 		
 		default:
-			return 'نامشخص';
+			return __('نامشخص');
 		
 	}
 

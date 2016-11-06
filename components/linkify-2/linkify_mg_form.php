@@ -17,18 +17,16 @@ function linkify_mg_form(){
 			"switch" => "do",
 		!]
 			
-			<div class="head">مشخصات جعبه پیوند</div>
+			<div class="head">'.__('مشخصات جعبه پیوند').'</div>
 			<hr>
 
-			[!"text:name*","inDiv"!]
-			[!"toggle:haveSub","inDiv"!]
-			[!"toggle:haveIcon","inDiv"!]
+			[!"text:name*"!]
+			[!"toggle:haveSub"!]
+			[!"toggle:haveIcon"!]
 
 			<hr>
 
-			[!"submit:ثبت","inDiv"!]
-
-		[!close!]
+		[!"submit:ثبت"!]
 	');
 	## -------------------------------------------------
 

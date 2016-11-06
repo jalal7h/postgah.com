@@ -6,15 +6,20 @@ function nl_management_send_do(){
 
 	if(! $subject = trim($_REQUEST['subject']) ){
 		e( __FUNCTION__ , __LINE__ );
+	
 	} else if(! $text = trim($_REQUEST['text']) ){
 		e( __FUNCTION__ , __LINE__ );		
+	
 	} else {
 
 		if( $_REQUEST['newsletter_email_list']=='1' ){
+			
 			if(! $rws = table(array( 'newsletter' , 'email' )) ){
-				;//
+				//
+			
 			} else if(! sizeof($rws) ){
-				;//
+				//
+			
 			} else foreach ($rws as $k => $rw) {
 				if(! $email = trim($rw['email']) ){
 					continue;
@@ -22,13 +27,17 @@ function nl_management_send_do(){
 					$list_of_email_addresses[ $email ] = true;
 				}
 			}
+
 		}
 
 		if( $_REQUEST['users_email_list']=='1' ){
+			
 			if(! $rws = table(array( 'users' , 'username' , " AND `username` LIKE '%@%' " )) ){
-				;//
+				//
+			
 			} else if(! sizeof($rws) ){
-				;//
+				//
+			
 			} else foreach ($rws as $k => $rw) {
 				if(! $email = trim($rw['username']) ){
 					continue;
@@ -36,6 +45,7 @@ function nl_management_send_do(){
 					$list_of_email_addresses[ $email ] = true;
 				}
 			}
+
 		}
 
 		if( $numb = $_REQUEST['numb'] ){
@@ -54,6 +64,7 @@ function nl_management_send_do(){
 		$from = "noreply@"._DOMAIN;
 
 		if( sizeof($list_of_email_addresses)){
+			
 			foreach ($list_of_email_addresses as $k => $r) {
 				if(! strstr($k, '@')){
 					continue;
@@ -62,13 +73,15 @@ function nl_management_send_do(){
 					$i++;
 				}
 			}
+			
 			xmail( $list , $subject , $text , $from );
-			?>
-			<div class="convbox">ارسال ایمیل به <?=$i?> آدرس با موفقیت انجام شد</div>
-			<?
+			echo convbox('ارسال ایمیل به %% آدرس با موفقیت انجام شد.', [ $i ] );
+
 		}
 
 	}
 
 }
+
+
 

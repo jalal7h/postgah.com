@@ -39,18 +39,18 @@ function linkify_mg_this_form(){
 			"switch" => "do1",
 		!]
 			
-			[!"select:list_of_pages_in_select","option"=>"'.$list_of_pages_in_select.'","inDiv"!]
+			[!"select:list_of_pages_in_select","option"=>"'.$list_of_pages_in_select.'"!]
 
 			<hr>
 
-			[!"text:name*","inDiv"!]
-			[!"text:url*","inDiv"!]
+			[!"text:name*"!]
+			[!"text:url*"!]
 			
 			<hr>
 			
-			'.( $rw_linkify_config['haveIcon'] ? '[!"file:pic","inDiv"!]<hr>' : '' ).'
+			'.( $rw_linkify_config['haveIcon'] ? '[!"file:pic"!]<hr>' : '' ).'
 			
-			[!"submit:ثبت","inDiv"!]
+			[!"submit:'.__("ثبت").'","inDiv"!]
 
 		[!close!]
 	');

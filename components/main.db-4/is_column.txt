@@ -1,8 +1,0 @@
-
-
-# jalal7h@gmail.com
-# 2016/09/14
-# 1.2
-
-# is_column( table_name , array_of_column_names or a_single_column_name ) [ true / false ]
-

@@ -22,7 +22,8 @@ function users_headerLoginIcon(){
 		 	</a>
 		 	'.(is_component('billing') 
 		 		?'<div class="links">
-			 		<a href="./?page=14&do=billing_userpanel_payment">موجودی شما : '.number_format(billing_userCredit($uid)).' ریال</a>
+			 		<a href="./?page=14&do=billing_userpanel_payment">'.
+			 		__('موجودی شما').' : '.billing_format(billing_userCredit($uid)).'</a>
 			 	</div>'
 		 		:'').'
 		</div>';
@@ -32,12 +33,12 @@ function users_headerLoginIcon(){
 		<div class="users_headerLoginIcon">
 		 	<a href="./login" class="box">
 		 		<icon></icon>
-		 		ورود به سایت
+		 		'.__('ورود به سایت').'
 		 		<div class="circle"></div>
 		 	</a>
 		 	<div class="links">
-		 		<a href="./register">ثبت نام</a>
-			 	<a href="./forgot">فراموشی کلمه عبور</a>
+		 		<a href="./register">'.__('ثبت نام').'</a>
+			 	<a href="./forgot">'.__('فراموشی کلمه عبور').'</a>
 		 	</div>
 		</div>';
 	}

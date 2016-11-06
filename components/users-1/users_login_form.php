@@ -1,4 +1,5 @@
 <?
+
 $GLOBALS['block_layers']['users_login_form'] = 'فرم ورود به محیط کاربری';
 $GLOBALS['do_action'][] = 'users_login_form';
 
@@ -25,14 +26,14 @@ function users_login_form(){
 	<input type="hidden" name="refer" value="<?=$_SERVER['HTTP_REFERER']?>" />
 
 		<div class="container"> 
-			<div class="d01">ورود</div>
-			<div class="d02">اگر هنور عضو نیستید، الان <a target="_top" href="./register">ثبت نام</a> کنید.</div>
-			<input autocomplete="off" type="text" name="username" placeholder="پست الکترونیک" dir="ltr" />
-			<input autocomplete="off" type="password" name="password" placeholder="کلمه عبور" dir="ltr" />
-			<div class="d03">شما با کلیک کردن روی دکمه ورود موافقت می کنید که تمامی <a href="./terms">قوانین سایت</a> را پذیرفته اید.</div>
+			<div class="d01"><?=__('ورود')?></div>
+			<div class="d02"><?=__('اگر هنور عضو نیستید، الان %%ثبت نام%% کنید.', ['<a target="_top" href="./register">','</a>'] )?></div>
+			<input autocomplete="off" type="text" name="username" placeholder="<?=lmtc('users:username')?>" dir="ltr" />
+			<input autocomplete="off" type="password" name="password" placeholder="<?=lmtc('users:password')?>" dir="ltr" />
+			<div class="d03"><?=__('شما با کلیک کردن روی دکمه ورود موافقت می کنید که تمامی %%قوانین سایت%% را پذیرفته اید.', ['<a href="./terms">','</a>'] )?></div>
 			<?=( $prompt ?'<div class="prompt">'.$prompt.'</div>' :'' )?>
-			<input type="submit" class="submit_button" value="ورود" />
-			<a class="d04" target="_top" href="./forgot">کلمه عبورام را فراموش کرده ام</a>
+			<input type="submit" class="submit_button" value="<?=__('ورود')?>" />
+			<a class="d04" target="_top" href="./forgot"><?=__('کلمه عبورام را فراموش کرده ام')?></a>
 		</div>
 
 		<img src="image_list/arrow.png" class="the_key" />

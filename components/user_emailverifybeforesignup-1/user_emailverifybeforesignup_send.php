@@ -13,7 +13,7 @@ function user_emailverifybeforesignup_send(){
 		dg();
 
 	} else if( table('users', $e, null, 'username') ){
-		echo convbox('آدرس ایمیل مورد نظر شما قبلا ثبت شده است.<br><a href="javascript:history.go(-1);">بازگشت</a>');
+		echo convbox( __('آدرس ایمیل مورد نظر شما قبلا ثبت شده است.<br>%%بازگشت%%', ['<a href="javascript:history.go(-1);">', '</a>'] ) );
 
 	} else if(! $h = user_emailverifybeforesignup_hash($e) ){
 		dg();

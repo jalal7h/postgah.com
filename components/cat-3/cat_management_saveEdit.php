@@ -2,7 +2,7 @@
 
 # jalal7h@gmail.com
 # 2016/05/17
-# Version 1.2
+# 1.2
 
 function cat_management_saveEdit(){
 	
@@ -11,10 +11,10 @@ function cat_management_saveEdit(){
 	$kw = strip_tags($_REQUEST['kw']);
 
 	if(! $name = $_REQUEST['name'] ){
-		;//echo "err - ".__LINE__;
+		//
 	
-	} else if(!$id = $_REQUEST['id']){
-		e( __FUNCTION__,__LINE__ );
+	} else if(! $id = $_REQUEST['id'] ){
+		e();
 	
 	} else {
 

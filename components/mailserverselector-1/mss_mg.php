@@ -11,8 +11,8 @@ function mss_mg(){
 	
 	$url = "./?page=admin&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func'];
 	$menu = array(
-		__FUNCTION__."_server_list" => "لیست سرور ها",
-		__FUNCTION__."_client_list" => "لیست کلاینت ها",
+		__FUNCTION__."_server_list" => __("لیست سرور ها"),
+		__FUNCTION__."_client_list" => __("لیست کلاینت ها"),
 	);
 
 	listmaker_tabmenu( $menu, $url, "func2" );

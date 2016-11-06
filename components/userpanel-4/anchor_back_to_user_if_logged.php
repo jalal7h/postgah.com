@@ -9,7 +9,7 @@ function anchor_back_to_user_if_logged(){
 		//
 	
 	} else {
-		return "<a target='_blank' href='"._URL."/userpanel' id='anchor_back_to_user_if_logged'>محیط کاربری</a>";
+		return "<a target='_blank' href='"._URL."/userpanel' id='anchor_back_to_user_if_logged'>".__('محیط کاربری')."</a>";
 	}
 
 }

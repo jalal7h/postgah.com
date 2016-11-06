@@ -11,8 +11,6 @@ function tallfooter_mg_form_html(){
 	}
 	$grid_option = '['.implode(',', $grid_option).']';
 
-
-
 	# -------------------------------------------------
 	echo listmaker_form('
 		<style>
@@ -39,7 +37,7 @@ function tallfooter_mg_form_html(){
 			
 			<hr>
 			
-		[!"submit:ثبت"!]
+		[!"submit:'.__('ثبت').'"!]
 	');
 	# -------------------------------------------------
 

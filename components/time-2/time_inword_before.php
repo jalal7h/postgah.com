@@ -14,19 +14,19 @@ function time_inword_before( $U ){
 	$diff = $now - $U;
 	
 	if($diff >= $aMonth){
-		return round($diff/$aMonth)." ماه قبل";
+		return round($diff/$aMonth)." ".__("ماه قبل");
 	
 	} else if($diff >= $aDay){
-		return round($diff/$aDay)." روز قبل";
+		return round($diff/$aDay)." ".__("روز قبل");
 	
 	} else if($diff >= $anHour){
-		return round($diff/$anHour)." ساعت قبل";
+		return round($diff/$anHour)." ".__("ساعت قبل");
 	
 	} else if($diff >= $aMinute){
-		return round($diff/$aMinute)." دقیقه قبل";
+		return round($diff/$aMinute)." ".__("دقیقه قبل");
 	
 	} else {
-		return round($diff)." ثانیه قبل";
+		return round($diff)." ".__("ثانیه قبل");
 	}
 }
 

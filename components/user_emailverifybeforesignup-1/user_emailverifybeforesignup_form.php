@@ -12,9 +12,9 @@ function user_emailverifybeforesignup_form(){
 		<?=token_make()?>
 		
 		<div class="container"> 
-			<div class="d01">ثبت نام</div>
-			<div class="d02">لطفا آدرس ایمیل خود را برای دریافت لینک تایید ایمیل وارد نمایید.</div>
-			<input type="email" name="e" placeholder="Email address" dir="ltr" />
+			<div class="d01"><?=__('ثبت نام')?></div>
+			<div class="d02"><?=__('لطفا آدرس ایمیل خود را برای دریافت لینک تایید ایمیل وارد نمایید.')?></div>
+			<input type="email" name="e" placeholder="<?=('Email address')?>" dir="ltr" />
 			<input type="submit" class="submit_button" value="ارسال" />
 		</div>
 

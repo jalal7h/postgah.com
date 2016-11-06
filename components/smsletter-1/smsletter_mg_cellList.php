@@ -44,7 +44,7 @@ function smsletter_mg_cellList(){
 	#
 	########################################################################################
 
-	echo "<a download class='newsletter-cell-list' href='"._URL."/?do_action=smsletter_mg_cellList_download'>دریافت فایل حاوی شماره‌ها</a>";
+	echo "<a download class='newsletter-cell-list' href='"._URL."/?do_action=smsletter_mg_cellList_download'>".__("دریافت فایل حاوی شماره‌ها")."</a>";
 
 }
 

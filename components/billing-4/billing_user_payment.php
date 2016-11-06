@@ -47,9 +47,9 @@ function billing_userpanel_payment(){
 		$method_str.= "
 			<div class='r'>
 			<label>
-			<input title='کیف پول' type=radio name='method' value='wallet' />
+			<input title='".__('کیف پول')."' type=radio name='method' value='wallet' />
 			<img src='image_list/billing_wallet.png'/>
-			<span class='wallet_credit'>".number_format(billing_userCredit($user_id))." ".setting('money_unit')." اعتبار</span>
+			<span class='wallet_credit'>".billing_format( billing_userCredit($user_id) )." ".__('اعتبار')."</span>
 			</label>
 			</div>";
 	}
@@ -78,7 +78,7 @@ function billing_userpanel_payment(){
 	
 	} else {
 		
-		$method_str_offline = "<div style='clear: both; float: none;'></div><h1 style='border-top: 1px dashed #ccc; padding-top: 27px;'>آفلاین</h1>";
+		$method_str_offline = "<div style='clear: both; float: none;'></div><h1 style='border-top: 1px dashed #ccc; padding-top: 27px;'>".__("آفلاین")."</h1>";
 		
 		while( $rw_off = dbf($rs_off) ){
 			$method_str_offline.= "
@@ -86,8 +86,8 @@ function billing_userpanel_payment(){
 				<input title='".$rw_off['c1']."' type='radio' name='method' value='".$rw_off['method']."' />
 				<span class='c1'>".$rw_off['c1']."</span>
 			    <div class='c-container'>
-					<span class='c2'>حساب:‌ ".$rw_off['c2']."</span>
-					<span class='c3'>کارت:‌ ".$rw_off['c3']."</span>
+					<span class='c2'>".__("حساب").":‌ ".$rw_off['c2']."</span>
+					<span class='c3'>".__("کارت").":‌ ".$rw_off['c3']."</span>
 				</div>
 			</label>";
 		}
@@ -97,26 +97,23 @@ function billing_userpanel_payment(){
 	$content = "
 	<script> var billing_userCredit='".billing_userCredit( $user_id )."';</script>
 	<form method='post' action='./?page=".$_REQUEST['page']."&do=".$_REQUEST['do']."&do2=submit".( $invoice_id ? "&invoice_id=".$invoice_id : "" )."' class='billing_userpanel_payment' name='blngpf'>
-		<div class='text' >نحوه پرداخت:</div>
+		<div class='text' >".__("نحوه پرداخت").":</div>
 		<div class='method_list'>
-			<h1>آنلاین</h1>
+			<h1>".__("آنلاین")."</h1>
 			".$method_str."
 			".$method_str_offline."
 		</div>
 		<div class='cost-container'>
-			<span>مبلغ قابل پرداخت</span>
+			<span>".__("مبلغ قابل پرداخت")."</span>
 			<input type=text name='cost' class='numeric' id='billing_cost' value='$cost' ".($cost?"readonly='1'":"")." />
-			<span>تومان</span>
-			<div class='convbox'>
-				با کلیک روی پرداخت به درگاه بانک می روید<br/>
-				شما می توانید پرداخت خود را با کلیه کارت عضو شتاب انجام دهید
-			</div>
-			<input type='submit' value='پرداخت' />
+			<span>".setting('money_unit')."</span>
+			".convbox( __('با کلیک روی پرداخت به درگاه بانک می روید<br/>شما می توانید پرداخت خود را با کلیه کارت عضو شتاب انجام دهید') )."
+			<input type='submit' value='".__("پرداخت")."' />
 		</div>
 		".token_make()."
 	</form>";
 
-	layout_post_box( "شارژ حساب", $content, $allow_eval=false, $framed=1 );
+	layout_post_box( __("شارژ حساب"), $content, $allow_eval=false, $framed=1 );
 
 }
 

@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/18
-# 1.1
+# 2016/11/01
+# 1.2
 
 function users_forgot_new(){
 	
@@ -11,7 +11,7 @@ function users_forgot_new(){
 	$h_new = md5x($username."01q!", 20);
 
 	if( $h_old != $h_new ){
-		echo convbox("خطایی رخ داده است!");
+		echo convbox( __("خطایی رخ داده است!") );
 
 	} else {
 		
@@ -22,15 +22,15 @@ function users_forgot_new(){
 		<input type="hidden" name="h" value="<?=$h_old?>" />
 			<div class="container" >
 				
-				<div class="head" >لطفا کلمه عبور جدید را وارد کنید!</div>
+				<div class="head" ><?=__('لطفا کلمه عبور جدید را وارد کنید!')?></div>
 				
 				<label>
-					<span>کلمه عبور جدید :‌ </span>
+					<span><?=__('%% جدید', [ lmtc('users:password') ] )?> :‌ </span>
 					<input type="password" id="password1" />
 				</label>
 				
 				<label>
-					<span>تکرار کلمه عبور :‌ </span>
+					<span><?=__('تکرار %%', [ lmtc('users:password') ] )?> :‌ </span>
 					<input type="password" id="password2" name="password" />
 				</label>
 				
@@ -38,7 +38,7 @@ function users_forgot_new(){
 
 				<label>
 					<span></span>
-					<input type="submit" class="submit_button" value="ثبت کلمه عبور جدید" />
+					<input type="submit" class="submit_button" value="<?=__('ثبت %% جدید', [ lmtc('users:password') ] )?>" />
 				</label>
 
 				<label>

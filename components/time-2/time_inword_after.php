@@ -15,19 +15,19 @@ function time_inword_after( $U ){
 	$diff = $U - $now;
 	
 	if($diff >= $aMonth){
-		return round($diff/$aMonth)." ماه بعد";
+		return round($diff/$aMonth)." ".__("ماه بعد");
 	
 	} else if($diff >= $aDay){
-		return round($diff/$aDay)." روز بعد";
+		return round($diff/$aDay)." ".__("روز بعد");
 	
 	} else if($diff >= $anHour){
-		return round($diff/$anHour)." ساعت بعد";
+		return round($diff/$anHour)." ".__("ساعت بعد");
 	
 	} else if($diff >= $aMinute){
-		return round($diff/$aMinute)." دقیقه بعد";
+		return round($diff/$aMinute)." ".__("دقیقه بعد");
 	
 	} else {
-		return round($diff)." ثانیه بعد";
+		return round($diff)." ".__("ثانیه بعد");
 	}
 }
 

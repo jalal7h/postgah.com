@@ -19,7 +19,7 @@ function pgItem_display_salebutton( $rw_pagelayer ){
 
 		$content = "
 		<div class=\"".__FUNCTION__."\">
-			<div class=\"cost\">".cost_in_word($rw_item['cost'])."</div>
+			<div class=\"cost\">".billing_format($rw_item['cost'])."</div>
 			<a class=\"submit_button\" href=\"".pgVendor_item_link( $rw_item )."\">خرید با همکاری پستگاه</a>
 			<a class=\"help\" href=\"\" >خرید با همکاری پستگاه چیست؟</a>
 		</div>";

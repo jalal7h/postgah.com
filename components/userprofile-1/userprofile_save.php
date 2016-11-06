@@ -13,19 +13,19 @@ function userprofile_save(){
 		dg();
 	
 	} else if(! $name = trim($_REQUEST['name']) ){
-		$text = "لطفا نام خود را وارد کنید!";
+		$text = __("لطفا نام خود را وارد کنید!");
 	
 	} else if(! is_name_correct_or_not($name) ){
-		$text = "لطفا نام خود را به درستی وارد کنید!";
+		$text = __("لطفا نام خود را به درستی وارد کنید!");
 
 	} else if(! $username = trim($_REQUEST['username']) ){
-		$text = "لطفا آدرس ایمیل خود را وارد کنید!";
+		$text = __("لطفا آدرس ایمیل خود را وارد کنید!");
 	
 	} else if(! is_email_correct_or_not($username) ){
-		$text = "لطفا آدرس ایمیل خود را به درستی وارد کنید!";
+		$text = __("لطفا آدرس ایمیل خود را به درستی وارد کنید!");
 
 	} else if( ($username != $rw['username']) and table('users', $username, null, 'username') ){
-		$text = "آدرس ایمیل جدید شما قبلا توسط کاربر دیگری ثبت شده است!";
+		$text = __("آدرس ایمیل جدید شما قبلا توسط کاربر دیگری ثبت شده است!");
 
 	} else if(! dbs('users', ['name','username','cell','tell','address','im_a','work_at','gender'] , ['id'=>$user_id] ) ){
 		dg( dbe() );

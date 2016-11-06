@@ -25,7 +25,7 @@ function do_admin_dashboard(){
 			e(__FUNCTION__,__LINE__);
 
 		} else if( is_component('useraccess') and (! useraccess(admin_logged(), $func) ) ){
-			echo "<div style='margin: 100px auto 0 auto; width: 80%; box-shadow: 0 0 30px #ddd;' class='convbox'>دسترسی شما مجاز نیست !</div>";
+			echo "<div style='margin: 100px auto 0 auto; width: 80%; box-shadow: 0 0 30px #ddd;' class='convbox'>".__('دسترسی شما مجاز نیست !')."</div>";
 
 		} else {
 			$func();
@@ -38,3 +38,7 @@ function do_admin_dashboard(){
 	echo '</div>';
 
 }
+
+
+
+

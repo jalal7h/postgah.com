@@ -1,9 +1,10 @@
 <?
-$GLOBALS['block_layers']['userprofile_vw'] = 'پروفایل کاربر';
 
 # jalal7h@gmail.com
 # 2016/05/17
 # Version 1.1
+
+$GLOBALS['block_layers']['userprofile_vw'] = 'پروفایل کاربر';
 
 function userprofile_vw(){
 	

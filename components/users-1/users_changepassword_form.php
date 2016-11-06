@@ -3,7 +3,7 @@
 function users_changepassword_form(){
 	
 	echo "<div class=".__FUNCTION__."_container >
-		<div class=d01>تغییر رمز عبور</div>";
+		<div class=d01>".__('تغییر %%',[lmtc('users:password')])."</div>";
 
 	switch( $_REQUEST['do2'] ){
 		
@@ -16,23 +16,23 @@ function users_changepassword_form(){
 			<input type='hidden' name='h' value='".$_REQUEST['h']."'>
 
 					<div>
-						<span>کلمه عبور فعلی</span>
-						<input placeholder='Old password' type='password' name='old_password' />
+						<span>".__('%% فعلی',[lmtc('users:password')])."</span>
+						<input placeholder='".__('Old password',[lmtc('users:password')] )."' type='password' name='old_password' />
 					</div>
 					
 					<div>
-						<span>کلمه عبور جدید</span>
-						<input placeholder='New password' type='password' id='password1' />
+						<span>".__('%% جدید',[lmtc('users:password')])."</span>
+						<input placeholder='".__('New password',[lmtc('users:password')] )."' type='password' id='password1' />
 					</div>
 					
 					<div>
-						<span>تکرار کلمه عبور</span>
-						<input placeholder='Repeat password' type='password' id='password2' name='password' />
+						<span>".__('تکرار %%',[lmtc('users:password')])."</span>
+						<input placeholder='".__('Repeat password',[lmtc('users:password')] )."' type='password' id='password2' name='password' />
 					</div>
 					
 					<div>
 						<span></span>
-						<input type='submit' class='submit_button' value='تغییر رمز' />
+						<input type='submit' class='submit_button' value='".__('تغییر %%',[lmtc('users:password')])."' />
 					</div>
 					
 			</form>";
@@ -41,13 +41,13 @@ function users_changepassword_form(){
 			function checkform_uchform(){
 				
 				if( uchform.old_password.value=='' ){
-					alert("لطفا رمز قبلی را وارد کنید");
+					alert("<?=__('لطفا %% قبلی را وارد کنید',[lmtc('users:password')])?>");
 				
 				} else if( document.getElementById("password1").value == '' ){
-					alert("لطفا رمز جدید را وارد کنید.");
+					alert("<?=__('لطفا %% جدید را وارد کنید.',[lmtc('users:password')])?>");
 				
 				} else if( document.getElementById("password1").value!=document.getElementById("password2").value){
-					alert("کلمه عبور مطابقت ندارد!");
+					alert("<?=__('%% مطابقت ندارد!',[lmtc('users:password')])?>");
 				
 				} else {
 					return true;

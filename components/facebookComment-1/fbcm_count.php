@@ -7,9 +7,9 @@ function fbcm_count( $table_name , $table_id ) {
 	} else {
 		$number_of_comments = dbr( $rs , 0 , 0 );
 		if(! $number_of_comments ){
-			$number_of_comments = "بدون نظر";
+			$number_of_comments = __("بدون نظر");
 		} else {
-			$number_of_comments.= " نظر";
+			$number_of_comments.= " ".__("نظر");
 		}
 	}
 

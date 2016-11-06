@@ -10,7 +10,7 @@ function convbox( $text, $dir=null ){
 		$class = $dir;
 		$dir = null;
 	}
-
+	
 	return '<div class="convbox'.
 		( $class ? " ".$class : '' ).'" '.
 		( $dir ? 'style="direction: '.$dir.';" ' : '' ).

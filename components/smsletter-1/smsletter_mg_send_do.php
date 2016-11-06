@@ -45,9 +45,8 @@ function cellletter_mg_send_do(){
 			
 			sms_send( $list_of_cell_addresses , $text );
 
-			?>
-			<div class="convbox">ارسال پیامک به <?=$i?> شماره با موفقیت انجام شد</div>
-			<?
+			echo convbox( __('ارسال پیامک به %% شماره با موفقیت انجام شد', [$i] ) );
+			
 		}
 
 	}

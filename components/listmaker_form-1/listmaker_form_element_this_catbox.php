@@ -18,7 +18,7 @@ function listmaker_form_element_this_catbox( $info ){
 	js_enqueue( 'listmaker_form-1', 'listmaker_form_element_this_catbox' );
 
 	if(! $info['value'] ){
-		$cat_name = "انتخاب ".$info['placeholder'];
+		$cat_name = __("انتخاب ").$info['placeholder'];
 	} else {
 		$cat_name = catjson_get_title_serial( $info['value'] );	
 	}

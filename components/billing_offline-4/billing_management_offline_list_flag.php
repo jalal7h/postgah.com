@@ -7,19 +7,19 @@
 function billing_management_offline_list_flag(){
 	
 	if(! $invoice_id = $_REQUEST['id'] ){
-		e(__FUNCTION__,__LINE__);
+		e();
 	
 	} else if(! $rw_invoice = table("billing_invoice", $invoice_id) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 	
 	} else if( $rw_invoice['date'] ){
-		e(__FUNCTION__,__LINE__);
+		e();
 	
-	} else if(! dbs( 'billing_invoice', [ 'transaction'=>explode('::',$rw_invoice['transaction'])[0], 'date'=>explode('::',$rw_invoice['transaction'])[1] ], [ 'id'=>$invoice_id ] ) ){
-		e(__FUNCTION__,__LINE__);
+	} else if(! dbs( 'billing_invoice', [ 'transaction'=>explode('::',$rw_invoice['transaction'])[0], 'date'=>explode('::',$rw_invoice['transaction'])[1] ], ['id'] ) ){
+		e();
 	
 	} else if(! billing_userCredit( $rw_invoice['user_id'] , $rw_invoice['cost'] ) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 	
 	} else {
 
@@ -31,9 +31,11 @@ function billing_management_offline_list_flag(){
 		echo texty( 'billing_management_offline_list_flag', $vars, $rw_invoice['user_id'] );
 
 		return true;
+		
 	}
 
 	return false;
+
 }
 
 

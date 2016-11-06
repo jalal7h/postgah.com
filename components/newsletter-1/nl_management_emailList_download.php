@@ -1,4 +1,5 @@
 <?
+
 $GLOBALS['do_action'][] = 'nl_management_emailList_download';
 
 function nl_management_emailList_download(){
@@ -25,9 +26,6 @@ function nl_management_emailList_download(){
 	}
 
 }
-
-
-
 
 
 

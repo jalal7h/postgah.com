@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/26
-# 1.1
+# 2016/11/01
+# 1.2
 
 $GLOBALS['block_layers']['users_register_form'] = 'فرم ثبت نام';
 $GLOBALS['do_action'][] = 'users_register_form';
@@ -38,8 +38,10 @@ function users_register_form(){
 				'.( is_component('user_emailverifybeforesignup') ? user_emailverifybeforesignup_formHiddenInput() : '' ).'
 
 				<div class="container">
-					<div class="d02">ثبت نام</div>
-					<div class="d05">اگر قبلآ ثبت نام کرده اید <a target="_top" href="./login">وارد شوید</a></div>
+					<div class="d02">'.__('ثبت نام').'</div>
+					<div class="d05">'.
+						__('اگر قبلآ ثبت نام کرده اید %%وارد شوید%%', ['<a target="_top" href="./login">','</a>'] ).'
+					</div>
 					
 					[!"name:name*"!]
 					[!"number:cell"!]
@@ -50,9 +52,9 @@ function users_register_form(){
 
 					[!"password:password*"!]
 
-					<div class="d04">شما با کلیک کردن روی دکمه ثبت نام موافقت می کنید که تمامی <a target="_top" href="<?=_URL?>/terms">قوانین سایت</a> پذیرفته اید.</div>
+					<div class="d04">'.__('شما با کلیک کردن روی دکمه ثبت نام موافقت می کنید که تمامی %%قوانین سایت%% پذیرفته اید.',[ '<a target="_top" href="<?=_URL?>/terms">','</a>' ] ).'</div>
 					
-					[!"submit:ثبت نام.bgSameAsBG"!]
+					[!"submit:'.__('ثبت نام').'.bgSameAsBG"!]
 	
 				</div>
 				<img src="<?=_URL?>/image_list/signature.png" class="the_key" />

@@ -3,15 +3,19 @@
 function nl_index_save(){
 
 	$icon_class = "error";
+	
 	if(! $email = trim($_REQUEST['email']) ){
 		e( __FUNCTION__ , __LINE__ );
+	
 	} else if( table( array("newsletter", "email"=>$email) ) ){
-		$text = "ایمیل قبلا ثبت شده است";
+		$text = __("ایمیل قبلا ثبت شده است");
+
 	} else if(! dbq(" INSERT INTO `newsletter` (`email`) VALUES ('$email') ") ){
-		$text = "خطا در ثبت ایمیل";
+		$text = __("خطا در ثبت ایمیل");
+
 	} else {
 		$icon_class = "succeed";
-		$text = "ثبت با موفقیت انجام شد";		
+		$text = __("ثبت با موفقیت انجام شد");
 	}
 	
 	?>

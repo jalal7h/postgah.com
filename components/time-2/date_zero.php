@@ -42,12 +42,15 @@ function date_zero( $action , $date ){
 
 
 # same as top
-function addZiro($Q){
+function addzero($Q){
+	
 	if($Q<10){
 		return '0'.$Q;
+
 	} else {
 		return $Q;
 	}
+	
 }
 
 

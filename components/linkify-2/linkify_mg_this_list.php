@@ -49,7 +49,7 @@ function linkify_mg_this_list(){
 	$list['list_array'][] = ["head"=>lmtc("linkify:name"), "content" => '$rw[\'name\']'];
 	$list['list_array'][] = ["head"=>lmtc("linkify:url"), "content" => '"<a target=\'_blank\' href=\'".$rw[\'url\']."\'>".( strlen($rw[\'url\']) > 23 ? ".. ".substr($rw[\'url\'] , -20 ) : $rw[\'url\'] )."</a>"'];
 	if( $rw_linkify_config['haveSub'] == 1 ){
-		$list['list_array'][] = ["head"=>'زیرپیوند', "content" => '"<center>".dbr(dbq(" SELECT COUNT(*) FROM `linkify` WHERE `parent`=\'".$rw[\'id\']."\' "),0,0)."</center>"'];
+		$list['list_array'][] = ["head"=>__('زیرپیوند'), "content" => '"<center>".dbr(dbq(" SELECT COUNT(*) FROM `linkify` WHERE `parent`=\'".$rw[\'id\']."\' "),0,0)."</center>"'];
 	}
 
 	#
@@ -62,7 +62,7 @@ function linkify_mg_this_list(){
 
 	#
 	# new form link
-	echo "<a class='submit_button' href='./?page=admin&cp=".$_REQUEST['cp']."&cat=".$cat.'&do='.$_REQUEST['do']."&parent=".$parent."&do1=form'>ثبت پیوند جدید</a>";
+	echo "<a class='submit_button' href='./?page=admin&cp=".$_REQUEST['cp']."&cat=".$cat.'&do='.$_REQUEST['do']."&parent=".$parent."&do1=form'>".__("ثبت پیوند جدید")."</a>";
 }
 
 

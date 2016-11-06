@@ -7,15 +7,16 @@
 function bpSettleDone(){
 	
 	if(! $transaction = $_REQUEST['SaleReferenceId'] ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else if(! $invoice_id = intval($_REQUEST['invoice_id']) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else {
 		return billing_settle( $invoice_id , $transaction );
 	}
 
 	return false;
+	
 }
 
