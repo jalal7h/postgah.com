@@ -1,6 +1,6 @@
 
 /*print*/
-/*2016/10/17*/
+/*2016/11/06*/
 
 var catjson_head = '';
 
@@ -85,12 +85,12 @@ jQuery(document).ready(function($) {
 				lmfetc_extra_before( cat_value );
 			}
 			
-			cat_name = $('.lmfe_catbox_c.selected').attr('cat_name');
 			// $('.lmfe_catbox_c.selected input[type="hidden"]').val( cat_value );
 			// $('.lmfe_catbox_c.selected .lmfe_catbox').html( '<nobr>' + cat_title + '</nobr>' );
 			$('.lmfe_catbox_c.selected').removeClass('selected');
 
 			// catcustomfield console
+			cat_name = $('.lmfe_catbox_c.selected').attr('cat_name');
 			if(typeof catcustomfield_console == 'function') { 
 				catcustomfield_console( cat_name, cat_value /* as cat_id */ ); 
 			}
