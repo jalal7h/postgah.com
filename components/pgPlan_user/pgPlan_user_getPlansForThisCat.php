@@ -1,4 +1,5 @@
 <?
+
 $GLOBALS['do_action'][] = 'pgPlan_user_getPlansForThisCat';
 
 function pgPlan_user_getPlansForThisCat( $ignore_plan_id_list=null ){

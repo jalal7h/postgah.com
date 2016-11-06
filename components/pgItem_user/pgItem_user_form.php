@@ -18,28 +18,28 @@ function pgItem_user_form(){
 
 		<?= token_make(); ?>
 		
-		[!"catbox:cat_id*", "ccf"=>true, "cat_name"=>"adsCat","inDiv"!]
-		[!"positionbox:position_id*","inDiv"!]
+		[!"catbox:cat_id*", "ccf"=>true, "cat_name"=>"adsCat"!]
+		[!"positionbox:position_id*"!]
 		
 		<hr>
 		
-		[!"text:name*","content_min"=>"3w","content_max"=>"70c","inDiv"!]
-		[!"textarea:text*","content_min"=>"50c","inDiv"!]
+		[!"text:name*","content_min"=>"3w","content_max"=>"70c"!]
+		[!"textarea:text*","content_min"=>"50c"!]
 		
 		<hr>
 		
-		[!"file:image+","inDiv"!]
-		[!"url:video","inDiv"!]
-		<div>[!"number:cost"!] &nbsp; <?=setting("money_unit")?></div>
+		[!"file:image+"!]
+		[!"url:video"!]
+		<div>[!"number:cost","notInDiv"!] &nbsp; <?=setting("money_unit")?></div>
 		
 		<hr>
 
-		[!"کلمه کلیدی","keyword:kword"=>kwordusage_get("item",$rw["id"],$string_flag=true),"inDiv"!]
+		[!"کلمه کلیدی","keyword:kword"=>kwordusage_get("item",$rw["id"],$string_flag=true)!]
 		
 		<hr>
 		
-		[!"number:cell","inDiv"!]
-		[!"number:tell","inDiv"!]
+		[!"number:cell"!]
+		[!"number:tell"!]
 
 		<hr>
 
@@ -48,42 +48,42 @@ function pgItem_user_form(){
 		<div class="plans" >
 			<span class="lmfe_tnit">پلان</span>
 			<div class="list_of_plans ppugpftc">
+				<!--
 				<span class="this_plan">
 					<label><input type="radio" name="plan_duration_id" checked=1 value="0" /> مجانی</label>
 				</span>
+				-->
 				<span class="etc"></span>
 			</div>
-		</div>
 		<hr>
+		</div>
 		')
 		.'
 		
 		<div>
-			[!"checkbox:sale_by_postgah","آیا مایلید کالا/محصول فوق را با همکاری '.setting('tiny_title').' به فروش برسانید؟"!]
+			[!"checkbox:sale_by_postgah","آیا مایلید کالا/محصول فوق را با همکاری '.setting('tiny_title').' به فروش برسانید؟","notInDiv"!]
 			<span>(<a href=\''._URL.'/?page=64\' target=\'_blank\'>همکاری با پستگاه چیست؟</a>)</span>
 	 	</div>
 		
 		<div id="sale_by_postgah_wrapper" <?=( $rw[\'sale_by_postgah\']==0 ? "style=\'display:none;\'" : "" )?> >
 			
-			[!"cat:state","cat_name"=>"product-state","inDiv"!]
-			<div>[!"number:count_of_stock"!] &nbsp; عدد</div>
-			[!"cat:weight","cat_name"=>"product-weight","inDiv"!]
+			[!"cat:state","cat_name"=>"product-state"!]
+			<div>[!"number:count_of_stock","notInDiv"!] &nbsp; عدد</div>
+			[!"cat:weight","cat_name"=>"product-weight"!]
 
-			[!"radio:delivery_method","option"=>["BuyerPaysAll"=>"ارسال با هزینه خریدار","SellerPaysTown"=>"ارسال رایگان در شهر خودم","SellerPaysAll"=>"ارسال رایگان به کل کشور"],"inDiv"!]
+			[!"radio:delivery_method","option"=>["BuyerPaysAll"=>"ارسال با هزینه خریدار","SellerPaysTown"=>"ارسال رایگان در شهر خودم","SellerPaysAll"=>"ارسال رایگان به کل کشور"]!]
 
 			<div id="delivery_costs">
 				<span class="lmfe_tnit"></span>
-				<span id="delivery_cost_country-span">[!"number:delivery_cost_country"!]</span>
-				<span id="delivery_cost_town-span">[!"number:delivery_cost_town"!]</span>
+				<span id="delivery_cost_country-span">[!"number:delivery_cost_country","notInDiv"!]</span>
+				<span id="delivery_cost_town-span">[!"number:delivery_cost_town","notInDiv"!]</span>
 			</div>
 
 		</div>
 
 		<hr>
 
-		[!"submit:ثبت","inDiv"!]
-
-	[!close!]
+	[!"submit:ثبت"!]
 	
 	');
 

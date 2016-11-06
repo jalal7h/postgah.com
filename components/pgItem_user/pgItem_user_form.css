@@ -16,6 +16,9 @@
 .pgItem_user_form .lmfe_tnit {
 	width: 140px;
 }
+.pgItem_user_form .plans {
+	display: none;
+}
 .pgItem_user_form .plans .lmfe_tnit {
 	vertical-align: top;
 	padding-top: 17px;

@@ -5,7 +5,7 @@ pug_pos_id = 0;
 
 function lmfetc_extra_before( cat_id ){
 	
-	if( cat_id===null ){
+	if( cat_id === null ){
 		cat_id = 0;
 	}
 
@@ -17,7 +17,7 @@ function lmfetc_extra_before( cat_id ){
 
 function lmfetp_extra_before( position_id ){
 	
-	if( position_id===null ){
+	if( position_id === null ){
 		position_id = 0;
 	}
 	
@@ -42,7 +42,10 @@ function pgPlan_user_getPlansForThisCat(){
 			url: './?do_action=pgPlan_user_getPlansForThisCat&cat_id='+pug_cat_id+'&position_id='+pug_pos_id
 		
 		}).done(function( html ) {
-			$('.pgItem_user_form .list_of_plans .etc').html( html );
+			if( html != '' ){
+				$('.pgItem_user_form .plans').show();
+				$('.pgItem_user_form .list_of_plans .etc').html( html );
+			}
 		});
 
 	});
