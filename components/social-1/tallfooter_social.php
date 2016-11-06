@@ -1,7 +1,7 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/31
+# 2016/11/06
 # 1.0
 
 $GLOBALS['tallfooter_element']['social'] = 'جامعه مجازی';
@@ -26,35 +26,50 @@ function tallfooter_social( $rw_tf ){
 		$link_pattern = str_replace( "https://", "http://", $link_pattern );
 
 		if( strstr($link_pattern, "http://facebook.com/" ) ){
-			$class = 'facebook';
+			$class = 'fa-facebook-square';
+			$class_title = 'Facebook';
 
 		} else if( strstr($link_pattern, "http://twitter.com/" ) ){
-			$class = 'twitter';
+			$class = 'fa-twitter-square';
+			$class_title = 'Twitter';
 			
 		} else if( strstr($link_pattern, "http://instagram.com/" ) ){
-			$class = 'instagram';
+			$class = 'fa-instagram';
+			$class_title = 'Instagram';
 			
 		} else if( strstr($link_pattern, "http://youtube.com/" ) ){
-			$class = 'youtube';
+			$class = 'fa-youtube-square';
+			$class_title = 'Youtube';
 			
 		} else if( strstr($link_pattern, "http://pinterest.com/" ) ){
-			$class = 'pinterest';
+			$class = 'fa-pinterest-square';
+			$class_title = 'Pinterest';
 			
 		} else if( strstr($link_pattern, "http://linkedin.com/" ) ){
-			$class = 'linkedin';
+			$class = 'fa-linkedin-square';
+			$class_title = 'LinkedIn';
 			
 		} else if( strstr($link_pattern, "http://plus.google.com/" ) ){
-			$class = 'google-plus';
+			$class = 'fa-google-plus-square';
+			$class_title = 'Google Plus';
+
+		} else if( strstr( $link , 'sitemap' ) ){
+			$class = 'fa-sitemap';
+			$class_title = 'Sitemap';
+
+		} else if( strstr( $link , 'rss' ) ){
+			$class = 'fa-rss-square';
+			$class_title = 'RSS';
+
+		} else if( strstr( $link , 'aparat.com' ) ){
+			$class = 'social-aparat';
+			$class_title = 'Aparat';
 
 		} else {
 			continue;
 		}
 
-		$class_title = $class;
-		$class_title = str_replace("-", " ", $class_title);
-		$class_title = ucfirst($class_title);
-
-		$c.= "\t<li><a href=\"".$link."\" title=\"".$class_title."\" target=\"_blank\"><i class=\"fa fa-".$class.( $class=='instagram' ? '' : '-square' )."\"></i></a></li>\n";
+		$c.= "\t<li><a href=\"".$link."\" title=\"".$class_title."\" target=\"_blank\"><i class=\"fa ".$class."\"></i></a></li>\n";
 
 	}
 	// die();
