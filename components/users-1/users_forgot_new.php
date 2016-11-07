@@ -8,7 +8,7 @@ function users_forgot_new(){
 	
 	$username = $_REQUEST['username'];
 	$h_old = trim($_REQUEST['h']);
-	$h_new = md5x($username."01q!", 20);
+	$h_new = md5x( str_dec($username)."01q!", 20);
 
 	if( $h_old != $h_new ){
 		echo convbox( __("خطایی رخ داده است!") );
