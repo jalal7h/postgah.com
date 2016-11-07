@@ -27,9 +27,12 @@ function mss_mg_server_list_test(){
 		$from = "noreply@"._DOMAIN;
 		$html = false;
 
-		mss_send( $rw_mssp, $to , $subject , $text , $from , $html );
-
-		echo __('ارسال ایمیل آزمایشی انجام شد.');
+		if(! mss_send( $rw_mssp, $to , $subject , $text , $from , $html ) ){
+			ed();
+		
+		} else {
+			echo __('ارسال ایمیل آزمایشی انجام شد.');
+		}
 
 	}
 
