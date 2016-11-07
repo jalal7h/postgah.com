@@ -10,7 +10,7 @@ function users_forgot_save(){
 
 	#
 	# username
-	if(! $username = trim(strip_tags($_REQUEST['username'])) ){
+	if(! $username = trim(strip_tags( str_dec($_REQUEST['username']) )) ){
 		ed(__FUNCTION__,__LINE__);
 	}
 

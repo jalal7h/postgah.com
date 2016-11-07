@@ -17,7 +17,7 @@ function users_forgot_send(){
 	} else {
 
 		$h = md5x($username."01q!", 20);
-		$vars['link'] = _URL."/?page=".$_REQUEST['page']."&do=new&username=".$username."&h=".$h;
+		$vars['link'] = _URL."/?page=".$_REQUEST['page']."&do=new&username=".str_enc($username)."&h=".$h;
 	
 		echo texty( 'users_forgot_send', $vars, $vars['id'] );
 
