@@ -1,0 +1,12 @@
+
+/*admin*/
+
+.mss_mg_server_list_test {
+	padding-top: 100px;
+	text-align: center;
+	direction: rtl;
+}
+.mss_mg_server_list_test div.fa {
+	font-size: 180px;
+	color: #478000;
+}

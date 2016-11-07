@@ -31,7 +31,7 @@ function mss_mg_server_list_test(){
 			ed();
 		
 		} else {
-			echo __('ارسال ایمیل آزمایشی انجام شد.');
+			echo "<div class=\"".__FUNCTION__."\" ><div style=\"font-family:FontAwesome; font-size: 180px;\" class=\"fa fa-check-square\"></div><br>".__('ارسال ایمیل آزمایشی انجام شد.')."</div>";
 		}
 
 	}
