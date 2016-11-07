@@ -73,6 +73,16 @@ function mss_mg_server_list(){
 	# search columns // az in field ha tu table search mikone
 	$list['search'] = [ "name", "sender_name", "sender_addr", "server_addr", "server_username" ]; 
 
+	$list['linkTo']['mss_mg_server_list_test'] = [
+		// 'url' => '_URL."/?page=".$_REQUEST["page"]."&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["func"]."&do=test&mssp_id=".$rw["id"]',
+		'url' => '"./?do_action=mss_mg_server_list_test&mssp_id=".$rw["id"]',
+		// 'icon' => '021',
+		'name' => 'تست',
+		// 'color' => '#f00',
+		'width' => 65,
+		'target' => '_hidden'
+	];
+
 	#
 	# echo result
 	echo listmaker_list( $list );
