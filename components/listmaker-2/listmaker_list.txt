@@ -33,7 +33,7 @@
 	$list['modify_url'] = true; // link icon modify 
 	or $list['modify_url_inBlank'] = true; // this will open in new tab
 
-	$list['addnew_url'] = false; // [true/false/url]
+	$list['addnew_url'] = false; // [true/false/url] default is false
 	$list['remove_url'] = true; // link dokme hazf
 	$list['up_or_down'] = true; // link priority
 	$list['setflag_url'] = true; // link active / inactive

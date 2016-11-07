@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/08/28
-# 1.0
+# 2016/11/07
+# 1.1
 
 function mss_mg_server_list(){
 
@@ -57,7 +57,7 @@ function mss_mg_server_list(){
 	# target // maghsad e click ruye har row
 	$list['target_url'] = '"./?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['func'].'&do=form&id=".$rw["id"]';
 
-	// $list['addnew_url'] = true; // link icon "new" vaghti ke list khali hast dide mishe
+	$list['addnew_url'] = true;
 	$list['remove_url'] = true; // link dokme hazf
 	$list['up_or_down'] = true; // link priority
 	$list['setflag_url'] = true; // link active / inactive
