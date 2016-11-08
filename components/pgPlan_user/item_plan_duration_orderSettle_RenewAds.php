@@ -30,8 +30,8 @@ function item_plan_duration_orderSettle_RenewAds( $rw_item, $rw_IPD ){
 		} else {
 
 			# va sync e plan dar table e `item`, dar moede shoru/payan renew
-			cronjob_add( 'pgPlan_syncItemPlan', $date_start , $item_id );
-			cronjob_add( 'pgPlan_syncItemPlan', $date_end , $item_id );
+			pgPlan_syncItemPlan( $item_id ); // shoru
+			cronjob_add( 'pgPlan_syncItemPlan', $date_end+10, $item_id ); // 10 zarib khata time
 
 			return true;
 		}

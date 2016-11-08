@@ -13,8 +13,21 @@ function setting_mg(){
 	$cp = $_REQUEST['cp'];
 
 	$menu[ $cp.'_main' ] = __('تنظیمات کلی');
-
 	// etc ...
+
+
+	#
+	# action
+	switch ($_REQUEST['do']) {
+		case 'save':
+			foreach( $_REQUEST as $k => $r ){
+				if( table('setting',$k,null,'slug') ){
+					setting( $k, $r );
+				}
+			}
+			break;
+	}
+
 
 	if( sizeof($GLOBALS['setting']) ){
 		foreach( $GLOBALS['setting'] as $setting_func => $setting_name ){

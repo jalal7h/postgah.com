@@ -26,7 +26,7 @@ $GLOBALS['cronjob'][] = [ 'pgItem_expire_agent', '0 0 * * *' ];
 // 	}
 
 // 	if( $number_of_moved_items > 0 ){
-// 		# texty needed to admin for number of changed items to free
+// 		# texty.needed to admin for number of changed items to free
 // 	}
 
 // }

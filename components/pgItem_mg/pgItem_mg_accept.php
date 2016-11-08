@@ -3,16 +3,16 @@
 function pgItem_mg_accept(){
 
 	if(! $item_id = $_REQUEST['id'] ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else if(! $rw_item = table('item', $item_id) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
-	} else if( $rw_item['flag']==2 ){
-		e(__FUNCTION__,__LINE__);
+	} else if( $rw_item['flag'] == 2 ){
+		e();
 
 	} else if(! dbs('item', ['flag'=>'2'], ['id'=>$item_id]) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else {
 
@@ -24,7 +24,11 @@ function pgItem_mg_accept(){
 			item_plan_duration_orderSettle_setDate( $item_id );
 		}
 
-		# texty needed pgItem_mg_accept
+		# texty pgItem_mg_accept
+		$user_id = $rw_item['user_id'];
+		$vars = $rw_item;
+		$vars['ads_link'] = pgItem_link( $rw_item );
+		texty( 'pgItem_mg_accept', $vars, $user_id );
 
 		return true;
 	}

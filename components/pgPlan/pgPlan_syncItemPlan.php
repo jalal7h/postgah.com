@@ -14,8 +14,16 @@ function pgPlan_syncItemPlan( $item_id ){
 
 	if( $plan_id != $rw_item['plan'] ){
 
-		# texty needed for plan change - maybe changed to free
 		dbs( 'item', [ 'plan'=>$plan_id ], [ 'id'=>$item_id ] );
+
+		# texty for plan change - maybe changed to free
+		if( $plan_id == 0 ){
+			$user_id = $rw_item['user_id'];
+			$vars = $rw_item;
+			$vars['old_plan'] = table('plan',$rw['plan'],'name_on_form');
+			$vars['renew_link'] = _URL.'/userpanel';
+			texty('pgPlan_syncItemPlan_changed_to_free', $vars, $user_id);
+		}
 
 	}
 

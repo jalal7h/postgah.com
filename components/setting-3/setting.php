@@ -13,7 +13,7 @@ function setting( $slug=null, $text=null ){
 			e(__FUNCTION__,__LINE__,dbe());
 		
 		} else if(! dbn($rs) ){
-			e(__FUNCTION__,__LINE__);
+			e();
 		
 		} else {
 			while( $rw = dbf($rs) ){
@@ -26,17 +26,17 @@ function setting( $slug=null, $text=null ){
 	
 	#
 	# wants some specific record
-	} else if( $text===null ){
+	} else if( $text === null ){
 		
 		if(! $rs = dbq(" SELECT `text` FROM `setting` WHERE `slug`='$slug' LIMIT 1 ")){
 			e(__FUNCTION__,__LINE__,dbe());
 		
-		} else if( dbn($rs)!=1 ){
+		} else if( dbn($rs) != 1 ){
 			// e(__FUNCTION__,__LINE__,$slug);
 			return false;
 
 		} else if(! $rw = dbf($rs) ){
-			e(__FUNCTION__,__LINE__);
+			e();
 
 		} else {
 			return $rw['text'];

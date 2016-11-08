@@ -1,0 +1,25 @@
+
+/*admin*/
+/*-spi-*/
+
+.setting_mg_ads {
+	padding: 30px 0 60px 0;
+}
+
+.setting_mg_ads .lmfe_tnit {
+	width: 240px !important;
+}
+
+.setting_mg_ads .the_day {
+	margin-right: -35px;
+	margin-left: 15px;
+	display: inline-block;
+	position: relative;
+	z-index: 2;
+	top: -3px;
+}
+#lmfe_setting_mg_ads_free_ads_duration_limit {
+	font-size: 16px;
+	padding-left: 40px;
+	width: 90px;
+}

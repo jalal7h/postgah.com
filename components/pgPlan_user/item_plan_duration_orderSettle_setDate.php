@@ -56,7 +56,7 @@ function item_plan_duration_orderSettle_setDate( $item_id ){
         pgPlan_syncItemPlan( $item_id );
 
         # va sync e plan dar table e `item`, vaghti modat zaman e ye service tamum mishe,
-        cronjob_add( 'pgPlan_syncItemPlan', $date_end , $item_id );
+        cronjob_add( 'pgPlan_syncItemPlan', $date_end+10 , $item_id ); // 10 zarib khata time
 
         return true;
     }
