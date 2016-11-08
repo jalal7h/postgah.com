@@ -17,7 +17,7 @@ function billing_userpanel_payment_redirectToMethod(){
 	} else if(! $rw_invoice = table('billing_invoice', $invoice_id) ){
 		echo convbox( __('صورتحساب با شناسه %% یافت نشد!', [$invoice_id] ), 'transparent');
 
-	} else if(! $rw_invoice['user_id']==$user_id ){
+	} else if(! $rw_invoice['user_id'] == $user_id ){
 		e();
 
 	} else if( $rw_invoice['date'] ){

@@ -4,7 +4,7 @@ function mail_phpmailer( $to , $subject , $content , $from="" ){
 	
 	#
 	# define
-	require("modules/phpmailer/class.phpmailer.php");
+	require_once("modules/phpmailer/class.phpmailer.php");
 	$mail = new PHPMailer();
 	$mail->IsSMTP();                                   // send via SMTP
 	$mail->CharSet = 'UTF-8';
