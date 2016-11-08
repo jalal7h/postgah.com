@@ -1,6 +1,12 @@
 <?
 
+# jalal7h@gmail.com
+# 2016/11/08
+# 1.1
+
 # list of payments done by user
+/*README*/
+
 
 function billing_userpanel_list(){
 	
@@ -14,7 +20,9 @@ function billing_userpanel_list(){
 	$p = intval($_REQUEST['p']);
 	$stt = $tdd * $p;
 	
-	if(! $rs = dbq(" SELECT * FROM `billing_invoice` WHERE `user_id`='$user_id' AND ( `date`>0 OR `order_table`!='' ) ORDER BY `date_created` DESC LIMIT $stt,$tdd ") ){
+	$query = " SELECT * FROM `billing_invoice` WHERE `user_id`='$user_id' AND ( `date`>0 OR `order_table`!='' ) ORDER BY `date_created` DESC LIMIT $stt,$tdd ";
+
+	if(! $rs = dbq($query) ){
 		e();
 	
 	} else {
