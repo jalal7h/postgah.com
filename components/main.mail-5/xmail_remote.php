@@ -24,7 +24,7 @@ function xmail_remote( $rw ){
 
 	#
 	# define
-	require("modules/phpmailer/class.phpmailer.php");
+	require_once("modules/phpmailer/class.phpmailer.php");
 	$mail = new PHPMailer();
 	
 	$mail->IsSMTP();
