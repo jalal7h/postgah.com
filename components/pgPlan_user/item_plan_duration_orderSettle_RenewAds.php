@@ -11,13 +11,13 @@ function item_plan_duration_orderSettle_RenewAds( $rw_item, $rw_IPD ){
 	$item_id = $rw_item['id'];
 
 	if(! $rw_PD = table('plan_duration', $rw_IPD['plan_duration_id']) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else if(! $current_IPD_id = pgPlan_getItemPlanDuration($item_id) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else if(! $rw_current_IPD = table('item_plan_duration', $current_IPD_id) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else {
 	
@@ -25,7 +25,7 @@ function item_plan_duration_orderSettle_RenewAds( $rw_item, $rw_IPD ){
 		$date_end = $date_start + ( $rw_PD['hour'] * 3600 );
 		
 		if(! dbs( 'item_plan_duration', [ 'date_start'=>$date_start, 'date_end'=>$date_end ], [ 'id'=>$rw_IPD['id'] ] ) ){
-			e(__FUNCTION__,__LINE__);
+			e();
 
 		} else {
 

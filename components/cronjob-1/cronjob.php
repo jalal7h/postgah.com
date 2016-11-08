@@ -14,7 +14,7 @@ $GLOBALS['do_action'][] = 'cronjob';
 function cronjob(){
 
 	cronjob_fetch_db_cronjobs();
-
+	
 	if(! sizeof($GLOBALS['cronjob']) ){
 		return false;
 	
@@ -53,8 +53,8 @@ function cronjob(){
 			
 			$time_arr = explode(" ", $time);
 			
-			if( sizeof($time_arr)!=5 ){
-				ed(__FUNCTION__,__LINE__);
+			if( sizeof($time_arr) != 5 ){
+				ed();
 			}
 
 			$time_min = $time_arr[0];

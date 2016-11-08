@@ -9,7 +9,7 @@ function cronjob_fetch_db_cronjobs(){
 	$date = U();// + 120;
 	
 	if(! $rs = dbq(" SELECT * FROM `cronjob` WHERE `date` < '$date' ORDER BY `date` ASC ") ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else if(! dbn($rs) ){
 		return true;
