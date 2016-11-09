@@ -1,6 +1,6 @@
 
 .listmaker_clicktab {
-
+	
 }
 .listmaker_clicktab > .r {
 	border: 1px solid #ddd;
@@ -19,7 +19,7 @@
 	border-radius: 4px;
 }
 .listmaker_clicktab > .r > .name:hover {
-	background-color: #F06305;
+	background-color: #A90000;
 	color: white;
 }
 .listmaker_clicktab > .r > .text {
