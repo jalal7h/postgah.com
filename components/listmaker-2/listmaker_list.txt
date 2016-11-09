@@ -11,7 +11,7 @@
 
 	# 
 	# the list
-	$table = 'item';
+	$table = 'item'; / ??
 	$list['name'] = __FUNCTION__;
 	$list['query'] = " SELECT * FROM `$table` WHERE 1 AND `parent`='$parent' ORDER BY `prio` ASC ";
 	$list['tdd'] = 10; // tedad dar safhe

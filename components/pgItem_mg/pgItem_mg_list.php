@@ -8,7 +8,20 @@ function pgItem_mg_list(){
 	# 
 	# the list
 	$list['name'] = 'pgItem_mg';
-	$list['query'] = " SELECT * FROM `item` WHERE 1 ".( $_REQUEST['flag']!='1' ? " AND `flag`!=1 " : " AND `flag`='1' " )." ORDER BY `flag` ASC , `date_updated` DESC ,`id` DESC ";
+
+	$list['query'] = 
+	" SELECT * FROM `item` WHERE `hide`='0' ".
+	  ( $_REQUEST['flag']!='1' ? " AND `flag`!=1 " : " AND `flag`='1' " ).
+		
+		// hazf e mavaredi ke dar hale pardakht hastand ( faktor barashun sader shode, ama pardakht nashode, hala che offline, che online )
+		" AND `id` NOT IN ( ".
+		  " SELECT `id` FROM `item` WHERE `flag`='0' AND `hide`='0' AND `id` IN ( ".
+			" SELECT `item_id` FROM `item_plan_duration` WHERE `flag`='0' AND `request_for_date`='0' AND `hide`='0' ".
+		  " ) ".
+		" ) ".
+
+	  " ORDER BY `flag` ASC , `date_updated` DESC ,`id` DESC ";
+
 	$list['tdd'] = 10; // tedad dar safhe
 	
 	#

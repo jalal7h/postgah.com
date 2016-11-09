@@ -9,7 +9,13 @@ function pgItem_user_saveEdit(){
 	token_check();
 
 	if(! $user_id = user_logged() ){
-		ed(__FUNCTION__,__LINE__);
+		ed();
+
+	} else if(! $_REQUEST['cat_id'] ){
+		ed();
+	
+	} else if(! $_REQUEST['position_id'] ){
+		ed();
 	}
 
 	// if( admin_logged() ){

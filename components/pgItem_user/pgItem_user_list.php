@@ -38,7 +38,7 @@ function pgItem_user_list(){
 	$list['remove_url'] = true; // link dokme hazf
 	$list['modify_url'] = '"./?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=form&id=".$rw["id"]';
 	$list['paging_url'] = true; // not needed when we have 'tdd'
-	$list['tr_class'] = 'pgItem_user_list_tr_class($rw)';
+	// $list['tr_class'] = 'pgItem_user_list_tr_class($rw)';
 	
 	#
 	# list array // list e sotun haye list
@@ -46,7 +46,8 @@ function pgItem_user_list(){
 		["picture" => 'pgItem_image($rw)'],
 		["content" => '$rw[\'name\']'],
 		["content" => 'cat_translate($rw[\'cat_id\'])'],
-		["content" => 'pgItem_user_list_this_status($rw).pgPlan_user_MakePremium_form( $rw ).pgPlan_user_RenewAds_form( $rw )'],
+		["content" => 'pgItem_user_list_this_status($rw). pgPlan_user_MakePremium_form($rw). pgPlan_user_RenewAds_form($rw)'],
+		["content" => 'pgItem_user_list_this_tools($rw)'],
 	];
 
 	#
@@ -62,73 +63,6 @@ function pgItem_user_list(){
 		'cat_id' => "<option value='' >.. ".lmtc('item:cat_id')." ..</option>".listmaker_option( "cat", $condition=" AND `cat`='adsCat' AND `parent`='0' AND `flag`='1' ", $returnArray=false ) ,
 	];
 
-
-	$list['linkTo']['OutOfStock'] = [
-		'url'=>'_URL."/?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=SetStock&id=".$rw["id"]',
-		'icon'=>'00c',
-		'name'=>'فروخته شد',
-		'color'=>'#4b00ff',
-	];
-	#
-	$list['linkTo']['InStock'] = [
-		'url'=>'_URL."/?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=SetStock&id=".$rw["id"]',
-		'icon'=>'00c',
-		'name'=>'بازگشت به فروش',
-		'color'=>'#b7b7b7',
-	];
-
-	$list['linkTo']['SetUpdateTime'] = [
-			'url'=>'_URL."/?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=SetUpdateTime&id=".$rw["id"]',
-		'icon'=>'021',
-		'name'=>'بروزرسانی',
-		'color'=>'#c3bd00',
-		// 'target'=>'_hidden'
-	];
-
-	if( pgShop_getUserShopId() ){
-		$list['linkTo']['RegisterInShop'] = [
-			'url'=>'_URL."/?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=RegisterInShop&id=".$rw["id"]',
-			'icon'=>'07a',
-			'name'=>'نمایش در فروشگاه من',
-			'color'=>'#b7b7b7',
-		];
-		#
-		$list['linkTo']['UnregisterInShop'] = [
-			'url'=>'_URL."/?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=UnregisterInShop&id=".$rw["id"]',
-			'icon'=>'07a',
-			'name'=>'عدم نمایش در فروشگاه من',
-			'color'=>'#b10000',
-		];
-	}
-
-	$list['linkTo']['LinkToAds'] = [
-		'url'=>'pgItem_link($rw)',
-		'icon'=>'08e',
-		'name'=>'نمایش آگهی',
-		'color'=>'#000',
-		'target'=>'_blank'
-	];
-
-	$list['linkTo']['RenewAds'] = [
-		'url'=>'$rw["id"]',
-		'icon'=>'017',
-		'name'=>'تمدید',
-		'color'=>'#ff7600',
-	];
-
-	$list['linkTo']['MakePremium'] = [
-		'url'=>'$rw["id"]',
-		'icon'=>'005',
-		'name'=>'ویژه کردن',
-		'color'=>'#00cad4',
-	];
-
-	$list['linkTo']['RejectMessage'] = [
-		'url'=>__FUNCTION__.'_RejectMessage($rw)',
-		'icon'=>'0e0',
-		'name'=>'پیام از طرف مدیریت در رابطه با رد آگهی',
-		'color'=>'#ff8100',
-	];
 
 	#
 	# echo result

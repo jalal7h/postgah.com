@@ -6,12 +6,15 @@ function pgShop_user_form(){
 		die();
 	}
 
+	# 
+	# only one shop for each user
 	if(! $_REQUEST['id'] ){
 		if(! $rs = dbq(" SELECT * FROM `shop` WHERE `user_id`='$user_id' LIMIT 1 ") ){
-			e(__FUNCTION__,__LINE__);
+			e();
 
 		} else if( dbn($rs) ){
-			echo "<div class='convbox'>درحال حاضر امکان ثبت بیش از یک فروشگاه برای هر کاربر نیست!</div>";
+			echo convbox('درحال حاضر امکان ثبت بیش از یک فروشگاه برای هر کاربر نیست!','transparent');
+			// echo "<div class='convbox'>درحال حاضر امکان ثبت بیش از یک فروشگاه برای هر کاربر نیست!</div>";
 			return true;
 		}
 	}

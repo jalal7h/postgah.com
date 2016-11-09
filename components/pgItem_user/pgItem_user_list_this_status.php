@@ -1,5 +1,9 @@
 <?
 
+# jalal7h@gmail.com
+# 2016/11/09
+# 1.1
+
 function pgItem_user_list_this_status( $rw ){
 
 	// mojudiat
@@ -24,7 +28,11 @@ function pgItem_user_list_this_status( $rw ){
 			break;
 
 		case 0:
-			$c[] = 'منتظر تایید';
+			if( pgItem_haveIncompletePayment($rw) ){
+				$c[] = 'منتظر پرداخت';
+			} else {
+				$c[] = 'منتظر تایید';
+			}
 			break;
 	}
 

@@ -29,11 +29,6 @@
 	background-color: #f8f8f8;
 	cursor: default !important;
 }
-.pgItem_user_list tr .tools-td {
-	/* background-color: #f8f8f8 !important; */
-	/* cursor: default !important; */
-	width: 259px !important;
-}
 
 .pgItem_user_list_RejectMessage {
 	padding:  30px;

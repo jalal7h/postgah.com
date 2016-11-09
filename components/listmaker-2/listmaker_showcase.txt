@@ -1,0 +1,23 @@
+
+
+# jalal7h@gmail.com
+# 2015/10/24
+# Version 1.2.5
+
+/************
+	$list['name'] = 'some-name-for-class';
+	$list['head'] = 'آخرین ها';
+	$list['tdd'] = 12;
+	$list['quiet_if_empty'] = true;
+	$list['exclude_in_query'] = true;
+	$list['progressive'] = true;
+	$list['query'] = " SELECT * FROM `dastedo` WHERE 1 ORDER BY `id` DESC ";
+	$list['target_url'] = '_URL."/dastedo-".$rw["id"]."-".name_for_link($rw["name"]).".html"';
+	$list['target_blank'] = false;
+	$list['paging_url'] = '_URL."/?page=".$_REQUEST["page"]."&q=".$_REQUEST["q"]."&dpl=';
+	$list['pattern'] = '"<img src=\'".$rw["pic"]."\' /><div class=\'name\'>".$rw["name"]."</div>"';
+	$list['search'] = array("name");
+
+	echo listmaker_showcase($list);
+*************/
+

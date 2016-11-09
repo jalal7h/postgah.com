@@ -9,16 +9,16 @@ function pgPlan_mg_form(){
 	#
 	# already have some records
 	if( $plan_id = $_REQUEST['id'] ){
-		if(! $rs_dr = dbq(" SELECT * FROM `plan_duration` WHERE `plan_id`='$plan_id' ORDER BY `id` ASC ") ){
+		if(! $rs_dr = dbq(" SELECT * FROM `plan_duration` WHERE `plan_id`='$plan_id' ORDER BY `hour` ASC, `id` ASC ") ){
 			e(__FUNCTION__,__LINE__,dbe());
 		} else if(! dbn($rs_dr) ){
 			;//
 		} else while( $rw_dr = dbf($rs_dr) ){
 			$duration.= "<div class='edit'>\n";
 			$duration.= lmfe([
-				[ lmtc('plan_duration:hour'), 'number:duration_hour[]@'=>$rw_dr['hour'] ],				
-				[ lmtc('plan_duration:name'), 'text:duration_name[]@'=>$rw_dr['name'] ],
-				[ lmtc('plan_duration:cost'), 'number:duration_cost[]@'=>$rw_dr['cost'] ],
+				[ lmtc('plan_duration:hour'), 'number:duration_hour[]@'=>$rw_dr['hour'],'notInDiv' ],				
+				[ lmtc('plan_duration:name'), 'text:duration_name[]@'=>$rw_dr['name'],'notInDiv' ],
+				[ lmtc('plan_duration:cost'), 'number:duration_cost[]@'=>$rw_dr['cost'],'notInDiv' ],
 				[ 'hidden:duration_in_table[]'=>$rw_dr['id'] ],
 			]);
 
@@ -30,9 +30,9 @@ function pgPlan_mg_form(){
 	# new
 	$duration.= "<div class='new'>\n";
 	$duration.= lmfe([
-		[ lmtc('plan_duration:hour'), 'number:duration_hour[]@'],
-		[ lmtc('plan_duration:name'), 'text:duration_name[]@'],
-		[ lmtc('plan_duration:cost'), 'number:duration_cost[]@'],
+		[ lmtc('plan_duration:hour'), 'number:duration_hour[]@','notInDiv'],
+		[ lmtc('plan_duration:name'), 'text:duration_name[]@','notInDiv'],
+		[ lmtc('plan_duration:cost'), 'number:duration_cost[]@','notInDiv'],
 	]);
 	$duration.= "
 	</div><!-- new -->

@@ -55,7 +55,7 @@ function pgPlan_user_getPlansForThisCat( $ignore_plan_id_list=null ){
 		
 		while( $rw = dbf($rs) ){
 
-			if(! $rs0 = dbq(" SELECT * FROM `plan_duration` WHERE `plan_id`='".$rw['id']."' ORDER BY `name` ASC ") ){
+			if(! $rs0 = dbq(" SELECT * FROM `plan_duration` WHERE `plan_id`='".$rw['id']."' ORDER BY `hour` ASC , `name` ASC ") ){
 				e(__FUNCTION__,__LINE__);
 
 			} else if(! dbn($rs0) ){

@@ -1,7 +1,7 @@
 
 jQuery(document).ready(function($) {
 	
-	$('.pgItem_user_list a[name="MakePremium"]').on('click', function(e){
+	$('.pgItem_user_list .MakePremium').on('click', function(e){
 
 		item_id = $(this).attr('href');
 		content = $('.pgPlan_user_MakePremium_form_buffer[item_id="'+item_id+'"]').html();
