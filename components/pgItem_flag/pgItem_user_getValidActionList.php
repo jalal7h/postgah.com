@@ -69,7 +69,7 @@ function pgItem_user_getValidActionList( $rw ){
 
 	# 
 	# [ dokme pardakht ] agar pardakht e naghesi dashte, va faktor sakhte shode
-	if( $IPD_id = pgItem_haveIncompletePayment($rw) ){
+	if( $IPD_id = pgItem_haveIncompletePayment($rw) and !pgItem_isAnyWaitingOfflinePayment($rw) ){
 		$invoice_id = billing_invoiceDetail_byOrderDetail( 'item_plan_duration', $IPD_id )['id'];
 		$list[] = 'IncompletePayment';
 		qpush( 'IncompletePayment-invoice_id', $invoice_id );

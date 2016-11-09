@@ -1,7 +1,7 @@
 
 jQuery(document).ready(function($) {
 	
-	$('.pgItem_user_list a[name="RenewAds"]').on('click', function(e){
+	$('.pgItem_user_list .RenewAds').on('click', function(e){
 		
 		item_id = $(this).attr('href');
 		content = $('.pgPlan_user_RenewAds_form_buffer[item_id="'+item_id+'"]').html();

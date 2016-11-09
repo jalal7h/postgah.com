@@ -29,7 +29,11 @@ function pgItem_user_list_this_status( $rw ){
 
 		case 0:
 			if( pgItem_haveIncompletePayment($rw) ){
-				$c[] = 'منتظر پرداخت';
+				if( pgItem_isAnyWaitingOfflinePayment($rw) ){
+					$c[] = 'منتظر تاییدپرداخت';					
+				} else {
+					$c[] = 'منتظر پرداخت';
+				}
 			} else {
 				$c[] = 'منتظر تایید';
 			}

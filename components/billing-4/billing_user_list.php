@@ -44,7 +44,9 @@ function billing_userpanel_list(){
 			echo "<tr><th colspan=7 class='convbox' >".__("هنوز صورتحسابی برای شما ثبت نشده است.")."</th></tr>";
 	
 		} else while( $rw = dbf($rs) ){
+
 			$paymentmethod_name = billing_method_name($rw['method']);
+			
 			?>
 			<tr>
 				<th class="ltr"><?=$rw['id']?></th>
@@ -53,7 +55,7 @@ function billing_userpanel_list(){
 
 				<? if( $rw['date'] ){ ?>
 					<td dir="ltr" align="center"><?=substr(u2vaght($rw['date']),0,16)?></td>
-					<td align="center"><?=$paymentmethod_name?></td>
+					<td align="center" title="<?=( substr($rw['method'],0,6)=='manual' ? "پرداخت فیش بانکی" : ($rw['method']=='wallet' ? 'پرداخت از اعتبار' : "پرداخت آنلاین") )?>"><?=$paymentmethod_name?></td>
 					<td dir="ltr" align="center"><?=( $rw['method']=='wallet' ? '<span class="none">- - -</span>' : strtoupper($rw['transaction']) )?></td>
 					<td align="center"><span class="paid_invoice"><?=__('پرداخت شده')?></span></td>
 				
@@ -61,7 +63,7 @@ function billing_userpanel_list(){
 					<td dir="ltr" align="center"><span class="none">- - -</span></td>
 					<td align="center"><span class="none">- - -</span></td>
 					<td dir="ltr" align="center"><span class="none">- - -</span></td>
-					<td align="center"><a target="_blank" class="payment_link" href="<?=_URL?>/?page=<?=$_REQUEST['page']?>&do=billing_userpanel_payment&invoice_id=<?=$rw['id']?>"><?=__('پرداخت نشده')?></a></td>
+					<td align="center"><a target="_blank" class="payment_link" href="<?=billing_invoiceLink($rw)?>"><?=__('پرداخت نشده')?></a></td>
 				
 				<? } ?>
 
