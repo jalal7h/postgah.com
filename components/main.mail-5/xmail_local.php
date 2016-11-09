@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/18
-# 2.0
+# 2016/11/09
+# 2.1
 
 # it checks if its html sends it as html, and if not sends with simple mail function
 
@@ -46,7 +46,7 @@ function xmail_local( $to , $subject , $text , $from=null , $html=false, $mssp_i
 		$from = '"'.$from_name.'" <'.$from_addr.'>';
 	}
 
-	$mail_headers = "From: ".$from."\r\n";
+	$mail_headers = "From: $from\r\nReply-To: $from\r\nX-Mailer: PHP/".phpversion();
 
 	if( is_component('mailq') and ($_REQUEST['do_action'] != 'mailq_cron') ){
 		dg();
