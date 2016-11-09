@@ -9,7 +9,7 @@ function pgItem_mg_accept(){
 		e();
 
 	} else if( $rw_item['flag'] == 2 ){
-		e();
+		// e();
 		
 	} else if(! dbs('item', ['flag'=>'2'], ['id'=>$item_id]) ){
 		e();
