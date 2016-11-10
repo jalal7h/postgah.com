@@ -7,33 +7,32 @@ function pgPlan_getItemPlanDuration( $item_id, $still_not_used=false ){
 	
 	$date = U();
 
-	$query = " SELECT * FROM `item_plan_duration` WHERE 1
+	$query = " SELECT * FROM `item_plan_duration` WHERE 1 ".
 		
-		AND `item_id`='$item_id' 
-		AND `flag`='1'
-		AND `revokedBy`='0'
+		" AND `item_id`='$item_id' ".
+		" AND `flag`='1' ".
+		" AND `revokedBy`='0' ".
 		
-		".( $still_not_used ? 
+		( $still_not_used ? 
 			" AND `date_start`='0' AND `date_end`='0' AND `request_for_date`='1' " : 
 			" AND `date_start` <= '$date' AND `date_end` > '$date' "
 		).
 
 		" LIMIT 1 ";
 
-	// echo $query;
+	// echo $query."<hr>";
 
 	if(! table('item', $item_id) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 	
 	} else if(! $rs = dbq( $query ) ){
-
-		e(__FUNCTION__,__LINE__,dbe());
+		e(dbe());
 
 	} else if(! dbn($rs) ){
 		// no record found
 
 	} else if(! $rw = dbf($rs) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else {
 		return $rw['id']; // IPD_id
@@ -41,5 +40,10 @@ function pgPlan_getItemPlanDuration( $item_id, $still_not_used=false ){
 	
 	return false;
 }
+
+
+
+
+
 
 

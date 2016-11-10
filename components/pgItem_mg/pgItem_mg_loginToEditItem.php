@@ -21,7 +21,7 @@ function pgItem_mg_loginToEditItem(){
 		
 		#
 		# redirect to user panel
-		echo '<script>location.href="'._URL.'/?page=14&do=pgItem_user_list&do1=form&id='.$item_id.'";</script>';
+		echo '<script>location.href="'._URL.'/?page=14&do=pgItem_user&do1=form&id='.$item_id.'";</script>';
 		die();
 
 	}

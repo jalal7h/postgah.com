@@ -1,0 +1,11 @@
+
+/*admin*/
+
+.listmaker_list.users_mg td:nth-child(1) {
+	width: 50px;
+}
+.listmaker_list.users_mg td:nth-child(3) {
+	direction: ltr;
+	text-align: center;
+	width: 160px;
+}

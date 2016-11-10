@@ -11,9 +11,9 @@
 
 function billing_format( $money ){
 
-	// if( $cost == 0 ){
-	// 	return __("مجانی");
-	// }
+	if( $money == 0 ){
+		return "";
+	}
 
 	$unit = setting('money_unit');
 	

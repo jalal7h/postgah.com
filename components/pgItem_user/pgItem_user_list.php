@@ -44,8 +44,8 @@ function pgItem_user_list(){
 	# list array // list e sotun haye list
 	$list['list_array']= [
 		["picture" => 'pgItem_image($rw)'],
-		["content" => '$rw[\'name\']'],
-		["content" => 'cat_translate($rw[\'cat_id\'])'],
+		["content" => '$rw["name"].pgPlan_itemCurrentPlan($rw)'],
+		["content" => 'cat_translate($rw["cat_id"])'],
 		["content" => 'pgItem_user_list_this_status($rw). pgPlan_user_MakePremium_form($rw). pgPlan_user_RenewAds_form($rw)'],
 		["content" => 'pgItem_user_list_this_tools($rw)'],
 	];

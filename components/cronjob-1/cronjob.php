@@ -35,7 +35,7 @@ function cronjob(){
 				}
 				
 				if(! function_exists($func) ){
-					e(__FUNCTION__,__LINE__,'function '.$func.' not defined');
+					e('function '.$func.' not defined');
 				
 				} else if( $vars ){
 					$func( $vars );

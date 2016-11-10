@@ -47,7 +47,7 @@ function pgItem_mg_list(){
 	$list['list_array']= [
 		["picture" => 'pgItem_image($rw)'],
 		["content" => '$rw[\'name\']', "title"=>'time_inword($rw["date_updated"])'],
-		["content" => '"<a target=\'_blank\' href=\'./?page=admin&cp=users_management&do=login&id=".$rw[\'user_id\']."\'>".table("users",$rw[\'user_id\'], "name")'],
+		["content" => '"<a target=\'_blank\' href=\'./?page=admin&cp=users_mg&do=login&id=".$rw[\'user_id\']."\'>".table("users",$rw[\'user_id\'], "name")'],
 		["content" => 'position_translate($rw[\'position_id\'])." / ".cat_translate($rw[\'cat_id\'])'],
 		["content" => 'pgItem_user_list_this_status($rw)'],
 	];
