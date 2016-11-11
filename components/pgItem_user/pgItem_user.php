@@ -3,8 +3,9 @@
 function pgItem_user(){
 
 	if(! $user_id = user_logged() ){
-		ed(__FUNCTION__,__LINE__);
+		ed();
 	}
+
 
 	if( $id = $_REQUEST['id'] ){
 		if(! $rw = table('item',$id) ){

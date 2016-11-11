@@ -25,11 +25,13 @@ function pgPlan_user_MakePremium_form( $rw_item ){
 
 		## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ##
 		if(! $rs_IPD = dbq(" SELECT * FROM `item_plan_duration` WHERE `item_id`='$item_id' AND `revokedBy`='0' AND `flag`='1' AND `plan_duration_id` IN ( SELECT `id` FROM `plan_duration` WHERE `plan_id`='$plan_id' ) ORDER BY `date_start` DESC LIMIT 1 ") ){
-			e(__FUNCTION__,__LINE__);
+			e();
+			
 		} else if(! dbn($rs_IPD) ){
 			//
+
 		} else if(! $rw_IPD = dbf($rs_IPD) ){
-			e(__FUNCTION__,__LINE__);
+			e();
 		}
 		## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ##
 
