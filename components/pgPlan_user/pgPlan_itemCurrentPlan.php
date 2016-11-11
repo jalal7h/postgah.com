@@ -23,7 +23,7 @@ function pgPlan_itemCurrentPlan( $rw_item ){
 		$c.= $rw_plan['name_on_form']."، ".time_inword($rw_IPD['date_end']);
 
 	} else {
-		e();
+		e( $item_id );
 	}
 
 	$c.= "</div>";
