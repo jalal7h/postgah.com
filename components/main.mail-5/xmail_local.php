@@ -14,11 +14,9 @@
 
 function xmail_local( $to, $subject, $text, $from=null, $html=false, $mssp_id=0 ){
 
-
 	if(! $to ){
 		return false;
 	}
-
 
 	####################################################
 	#
@@ -48,7 +46,7 @@ function xmail_local( $to, $subject, $text, $from=null, $html=false, $mssp_id=0 
 
 	$mail_headers = "From: $from\r\nReply-To: $from\r\nX-Mailer: PHP/".phpversion();
 
-	if( is_component('mailq') and !qpop('xmail-'.md5x($to.$subject.$text))/*prevent-mailq-loop*/ ){
+	if( is_component('mailq') and !mailq_itsFromQueue() ){
 		dg();
 		mailq( $to , $subject , $text , $from , $html, $mssp_id );
 

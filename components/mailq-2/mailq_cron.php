@@ -27,7 +27,7 @@ function mailq_cron(){
 
 		# 
 		# signature for prevent mailq loop
-		qpush( 'xmail-'.md5x($to.$subject.$text) , 'Yes' );
+		qpush( 'mailq_itsFromQueue' , true );
 
 		# 
 		# send the mail

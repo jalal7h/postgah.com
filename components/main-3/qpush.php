@@ -1,12 +1,13 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/05
-# 1.1
+# 2016/11/11
+# 1.2
 
 function qpush( $name, $value ){
 
-	$GLOBALS[ 'qpush-'.$name ] = $value;
+	$the_key = 'qpush-'.$name;
+	$GLOBALS[ $the_key ] = $value;
 
 	return true;
 }
@@ -14,11 +15,15 @@ function qpush( $name, $value ){
 
 function qpop( $name ){
 
-	if(! $value = $GLOBALS[ 'qpush-'.$name ] ){
-		return '';
-
+	$the_key = 'qpush-'.$name;
+	
+	if(! array_key_exists($the_key, $GLOBALS) ){
+		dg(__FUNCTION__."; the key ".$name." does not exists");
+		return false;
+	
 	} else {
-		unset( $GLOBALS[ 'qpush-'.$name ] );
+		$value = $GLOBALS[ $the_key ];
+		unset( $GLOBALS[ $the_key ] );
 		return $value;
 	}
 
