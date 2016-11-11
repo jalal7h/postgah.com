@@ -2,7 +2,7 @@
 
 # jalal7h@gmail.com
 # 2016/11/11
-# 2.0
+# 2.1
 
 $GLOBALS['cronjob'][] = [ 'mailq_cron', '* * * * *' ];
 
@@ -25,6 +25,12 @@ function mailq_cron(){
 		$html = $rw['html'];
 		$mssp_id = $rw['mssp_id'];
 
+		# 
+		# signature for prevent mailq loop
+		qpush( 'xmail-'.md5x($to.$subject.$text) , 'Yes' );
+
+		# 
+		# send the mail
 		xmail( $to , $subject , $text , $from , $html, $mssp_id );
 		
 		if(! dbq(" DELETE FROM `mailq` WHERE `id`='".$rw['id']."' LIMIT 1 ") ){

@@ -34,10 +34,9 @@ function mailq( $to , $subject , $text , $from , $html=true, $mssp_id=0 ){
 		$add_to_column_name = ",`mssp_id`";
 		$add_to_column_value = ",'$mssp_id'";
 	}
-
+	
 	if(! dbq(" INSERT INTO `mailq` (`to`,`subject`,`text`,`mail_from`,`html` $add_to_column_name ) VALUES ('$to','$subject','$text','$from','$html' $add_to_column_value ) ") ){
-		e( __FUNCTION__ , __LINE__ , dbe() );
-		return false;
+		return e( dbe() );
 
 	} else {
 		return true;
