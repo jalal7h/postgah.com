@@ -7,6 +7,7 @@
 // $GLOBALS['cronjob'][] = [ 'pgItem_expire_agent', '0 0 * * *' ];
 // $GLOBALS['cronjob'][] = [ 'pgItem_expire_agent', '0 0 * * sun,mon', $variable_value ];
 // $GLOBALS['cronjob'][] = [ 'pgItem_expire_agent', '143084800' ];
+
 /*README*/
 
 $GLOBALS['do_action'][] = 'cronjob';

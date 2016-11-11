@@ -1,10 +1,10 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/18
-# 1.1
+# 2016/11/11
+# 2.0
 
-$GLOBALS['do_action'][] = 'mailq_cron';
+$GLOBALS['cronjob'][] = [ 'mailq_cron', '* * * * *' ];
 
 function mailq_cron(){
 	
