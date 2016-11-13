@@ -6,7 +6,7 @@
 
 # -spi-
 
-// define( 'lang_flag' , false ); // not implemented. 
+define( 'lang_flag' , false ); // not implemented. 
 
 define( 'lang_code', 'fa' );
 define( 'lang_dir', 'rtl' );

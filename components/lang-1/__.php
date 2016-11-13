@@ -1,16 +1,18 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/01
+# 2016/11/13
 # 1.0
 
 function __( $text, $vars=null ){
 
 	// lang replacement
-	if( do_action != 'lang_sync_db' ){
-		lang_loadFromDB();
-		if( $GLOBALS['lang_loadFromDB'][ lang_hash($text) ] ){
-			$text = $GLOBALS['lang_loadFromDB'][ lang_hash($text) ];
+	if( lang_flag ){
+		if( do_action != 'lang_sync_db' ){
+			lang_loadFromDB();
+			if( $GLOBALS['lang_loadFromDB'][ lang_hash($text) ] ){
+				$text = $GLOBALS['lang_loadFromDB'][ lang_hash($text) ];
+			}
 		}
 	}
 
