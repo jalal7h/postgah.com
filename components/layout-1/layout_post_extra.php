@@ -10,12 +10,12 @@ function layout_post_extra( $rw_pagelayer ){
 
 	<label class="framed_label">
 		<input type="checkbox" name="framed" <?=($rw_pagelayer['framed']? "checked" :"")?> value="1" >
-		<span>فريم اضافه شود</span>
+		<span><?=__("فريم اضافه شود")?></span>
 	</label>
 
 	<div class="types">
-		<label><input type="radio" name="type" onclick="tinyMCE_off('_data'); $('#_data').prop('dir','rtl');" value="TEXT" >Text</label>
-		<label><input type="radio" name="type" onclick="tinyMCE_on('_data'); $('#_data').prop('dir','rtl');" value="HTML" >HTML</label>
+		<label><input type="radio" name="type" onclick="tinyMCE_off('_data'); $('#_data').prop('dir','<?=_rtl?>');" value="TEXT" >Text</label>
+		<label><input type="radio" name="type" onclick="tinyMCE_on('_data'); $('#_data').prop('dir','<?=_rtl?>');" value="HTML" >HTML</label>
 		<label><input type="radio" name="type" onclick="tinyMCE_off('_data'); $('#_data').prop('dir','ltr');" value="PHP5" >PHP</label>
 	</div>
 

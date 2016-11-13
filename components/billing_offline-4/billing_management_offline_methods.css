@@ -37,7 +37,7 @@
 }
 .billing_management_offline_methods_form input[name="c1"] {
 	direction: rtl;
-	font-family: BYekan;
+	font-family: DefaultFont;
 }
 .billing_management_offline_methods_form input[type="submit"] {
 	margin: 20px !important;

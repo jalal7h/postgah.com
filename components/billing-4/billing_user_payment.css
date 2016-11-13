@@ -5,7 +5,7 @@
 .billing_userpanel_payment .text {
 	transition: all 0.4s;
 	margin: 25px;
-	font: bold 17px BYekan;
+	font: bold 17px DefaultFont;
 }
 .billing_userpanel_payment .method_list {
 	display: inline-block;
@@ -66,7 +66,7 @@
 	display: block;
 }
 .billing_userpanel_payment .method_list .offline .c1 {
-	font: bold 16px BYekan;
+	font: bold 16px DefaultFont;
 }
 .billing_userpanel_payment .method_list .offline input {
 	top: 7px;
@@ -80,7 +80,7 @@
 .billing_userpanel_payment .cost-container span {
 	margin: 0 20px 0 0;
 	display: inline-block;
-	font: normal 14px BYekan;
+	font: normal 14px DefaultFont;
 }
 .billing_userpanel_payment .cost-container input[type=text] {
 	margin: 0 20px 0 0;
@@ -95,7 +95,7 @@
 	display: inline-block;
 	background-color: rgb(117, 172, 0);
 	padding: 7px 15px;
-	font: normal 13px BYekan;
+	font: normal 13px DefaultFont;
 	color: white;
 	border-radius: 3px;
 	margin: 3px 20px 3px 3px; 

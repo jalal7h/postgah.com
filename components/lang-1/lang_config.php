@@ -1,12 +1,18 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/06
+# 2016/11/12
 # 1.0
 
-define( 'lang_flag' , false );
+# -spi-
 
+// define( 'lang_flag' , false ); // not implemented. 
 
+define( 'lang_code', 'fa' );
+define( 'lang_dir', 'rtl' );
+
+define( '_rtl', 'rtl' );
+define( '_ltr', 'ltr' );
 
 
 

@@ -21,7 +21,7 @@ function setting_rw( $slug=null ){
 	# this slug
 	} else {
 		if(! $rs = dbq(" SELECT * FROM `setting` WHERE `slug`='$slug' LIMIT 1 ")){
-			e(__FUNCTION__,__LINE__,dbe());
+			e(dbe());
 		
 		} else if( dbn($rs) != 1 ){
 			e();
@@ -30,6 +30,7 @@ function setting_rw( $slug=null ){
 			e();
 
 		} else {
+			$rw['name'] = __($rw['name']);
 			return $rw;
 		}
 	}

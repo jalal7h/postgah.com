@@ -5,12 +5,9 @@ $GLOBALS['block_layers_side']['pgItem_display_detail'] = 'نمایش آیتم - 
 function pgItem_display_detail( $rw_pagelayer ){
 	
 	pgItem_viewCounter();
-
-	if(! $item_id = $_REQUEST['item_id'] ){
-		e(__FUNCTION__,__LINE__);
-
-	} else if(! $rw_item = table('item', $item_id) ){
-		e(__FUNCTION__,__LINE__);
+	
+	if(! $rw_item = pgItem_fetch() ){
+		e();
 
 	} else {
 

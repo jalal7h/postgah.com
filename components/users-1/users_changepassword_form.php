@@ -16,23 +16,23 @@ function users_changepassword_form(){
 			<input type='hidden' name='h' value='".$_REQUEST['h']."'>
 
 					<div>
-						<span>".__('%% فعلی',[lmtc('users:password')])."</span>
-						<input placeholder='".__('Old password',[lmtc('users:password')] )."' type='password' name='old_password' />
+						<span>".__('کلمه عبور فعلی')."</span>
+						<input type='password' name='old_password' />
 					</div>
 					
 					<div>
-						<span>".__('%% جدید',[lmtc('users:password')])."</span>
-						<input placeholder='".__('New password',[lmtc('users:password')] )."' type='password' id='password1' />
+						<span>".__('کلمه عبور جدید')."</span>
+						<input type='password' id='password1' />
 					</div>
 					
 					<div>
-						<span>".__('تکرار %%',[lmtc('users:password')])."</span>
-						<input placeholder='".__('Repeat password',[lmtc('users:password')] )."' type='password' id='password2' name='password' />
+						<span>".__('تکرار کلمه عبور')."</span>
+						<input type='password' id='password2' name='password' />
 					</div>
 					
 					<div>
 						<span></span>
-						<input type='submit' class='submit_button' value='".__('تغییر %%',[lmtc('users:password')])."' />
+						<input type='submit' class='submit_button' value='".__('تغییر کلمه عبور')."' />
 					</div>
 					
 			</form>";
@@ -41,13 +41,13 @@ function users_changepassword_form(){
 			function checkform_uchform(){
 				
 				if( uchform.old_password.value=='' ){
-					alert("<?=__('لطفا %% قبلی را وارد کنید',[lmtc('users:password')])?>");
+					alert("<?=__('لطفا کلمه عبور قبلی را وارد کنید')?>");
 				
 				} else if( document.getElementById("password1").value == '' ){
-					alert("<?=__('لطفا %% جدید را وارد کنید.',[lmtc('users:password')])?>");
+					alert("<?=__('لطفا کلمه عبور جدید را وارد کنید.')?>");
 				
 				} else if( document.getElementById("password1").value!=document.getElementById("password2").value){
-					alert("<?=__('%% مطابقت ندارد!',[lmtc('users:password')])?>");
+					alert("<?=__('کلمه عبور مطابقت ندارد!')?>");
 				
 				} else {
 					return true;

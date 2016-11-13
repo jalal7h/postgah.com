@@ -24,7 +24,7 @@
 
 .lmfetfp .open ,
 .lmfetfp .remove {
-	font: normal 10px IRANSans;
+	font: normal 10px DefaultFont;
 	line-height: 18px !important;
 	vertical-align: middle;
 	display: inline-block;

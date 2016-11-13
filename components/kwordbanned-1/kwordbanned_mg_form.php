@@ -24,7 +24,7 @@ function kwordbanned_mg_form(){
 		[!"text:kword*"'.( $id ? '' : ',"notInDiv"' ).'!]
 		'.( $id ? "<hr>" : '' ).'
 			
-		[!"submit:ثبت"'.( $id ? '' : ',"notInDiv"' ).'!]
+		[!"submit:'.__('ثبت').'"'.( $id ? '' : ',"notInDiv"' ).'!]
 	');
 	# -------------------------------------------------
 

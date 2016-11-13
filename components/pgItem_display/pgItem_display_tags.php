@@ -4,13 +4,11 @@ $GLOBALS['block_layers']['pgItem_display_tags'] = 'نمایش آیتم - برچ�
 
 function pgItem_display_tags( $rw_pagelayer ){
 
-	if(! $item_id = $_REQUEST['item_id'] ){
-		e(__FUNCTION__,__LINE__);
 
-	} else if(! $rw_item = table('item', $item_id) ){
-		e(__FUNCTION__,__LINE__);
+	if(! $rw_item = pgItem_fetch() ){
+		e();
 
-	} else if(! $kword_array = kwordusage_get( 'item', $item_id ) ){
+	} else if(! $kword_array = kwordusage_get( 'item', $rw_item['id'] ) ){
 		//
 
 	} else {

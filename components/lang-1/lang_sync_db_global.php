@@ -1,7 +1,7 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/02
+# 2016/11/12
 # 1.0
 
 function lang_sync_db_global(){
@@ -16,6 +16,16 @@ function lang_sync_db_global(){
 	# $GLOBALS['block_layers']['users_forgot_form'] = 'فرم فراموشی کلمه عبور';
 	if( sizeof($GLOBALS['block_layers']) ){
 		foreach( $GLOBALS['block_layers'] as $i => $text ){
+			$arr[ ":".lang_hash($text) ] = $text;
+		}
+	}
+	if( sizeof($GLOBALS['block_layers_side']) ){
+		foreach( $GLOBALS['block_layers_side'] as $i => $text ){
+			$arr[ ":".lang_hash($text) ] = $text;
+		}
+	}
+	if( sizeof($GLOBALS['block_layers_center']) ){
+		foreach( $GLOBALS['block_layers_center'] as $i => $text ){
 			$arr[ ":".lang_hash($text) ] = $text;
 		}
 	}
@@ -64,6 +74,15 @@ function lang_sync_db_global(){
 		}
 	}
 	
+	# ccf
+	if( sizeof($GLOBALS['catcustomfield-select-options']) ){
+		foreach( $GLOBALS['catcustomfield-select-options'] as $i => $text ){
+			$arr[ ":".lang_hash($text) ] = $text;
+		}
+	}
+	
+
+
 	return $arr;
 
 }

@@ -1,0 +1,20 @@
+
+/*skipfix*/
+
+.numeric {
+	text-align: center;
+	direction: ltr;
+	width: 160px !important;
+}
+.calendar {
+	width:120px !important;
+	text-align:center;
+	direction:ltr;
+}
+input[type=password] ,
+input[type=email] ,
+input[type=url] {
+	direction: ltr;
+}
+
+

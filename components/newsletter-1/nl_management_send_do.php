@@ -5,14 +5,14 @@ $GLOBALS['mss_list']['nl_management_send_do'] = 'خبرنامه';
 function nl_management_send_do(){
 
 	if(! $subject = trim($_REQUEST['subject']) ){
-		e( __FUNCTION__ , __LINE__ );
+		e();
 	
 	} else if(! $text = trim($_REQUEST['text']) ){
-		e( __FUNCTION__ , __LINE__ );		
+		e();		
 	
 	} else {
 
-		if( $_REQUEST['newsletter_email_list']=='1' ){
+		if( $_REQUEST['newsletter_email_list'] == '1' ){
 			
 			if(! $rws = table(array( 'newsletter' , 'email' )) ){
 				//
@@ -20,7 +20,7 @@ function nl_management_send_do(){
 			} else if(! sizeof($rws) ){
 				//
 			
-			} else foreach ($rws as $k => $rw) {
+			} else foreach( $rws as $k => $rw ){
 				if(! $email = trim($rw['email']) ){
 					continue;
 				} else {
@@ -75,7 +75,7 @@ function nl_management_send_do(){
 			}
 			
 			xmail( $list , $subject , $text , $from );
-			echo convbox('ارسال ایمیل به %% آدرس با موفقیت انجام شد.', [ $i ] );
+			echo convbox( __('ارسال ایمیل به %% آدرس با موفقیت انجام شد.', [$i] ) );
 
 		}
 

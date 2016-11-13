@@ -1,7 +1,7 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/02
+# 2016/11/12
 # 1.0
 
 function lang_loadFromDB(){
@@ -12,7 +12,7 @@ function lang_loadFromDB(){
 	} else {
 		
 		$v = component_version('lang');
-		$path = "components/lang-".$v."/db/en.txt";
+		$path = "components/lang-".$v."/db/".lang_code.".txt";
 		
 		foreach ( file($path) as $i => $line ){
 			

@@ -1,0 +1,19 @@
+
+/*admin*/
+/*skipfix*/
+
+.contact_mg_config input[type="text"] {
+	width: 180px;
+	direction: ltr;
+	font-family: monospace,sans-serif;
+	font-size: 14px;
+	padding: 7px 12px;
+}
+
+.contact_mg_config input[type="email"] {
+	width: 240px;
+	font-size: 14px;
+	padding: 7px 12px;
+	direction: ltr;
+}
+

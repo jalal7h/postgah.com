@@ -22,7 +22,7 @@ function webstatus_check(){
 			table.webstatus_main {
 				width: 100vw;
 				height: 100vh;
-				direction: rtl;
+				direction: <?=_rtl?>;
 				background-color: #f4f2ed;
 				color: #666;
 			}

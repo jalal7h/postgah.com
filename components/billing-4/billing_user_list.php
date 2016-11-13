@@ -55,7 +55,7 @@ function billing_userpanel_list(){
 
 				<? if( $rw['date'] ){ ?>
 					<td dir="ltr" align="center"><?=substr(u2vaght($rw['date']),0,16)?></td>
-					<td align="center" title="<?=( substr($rw['method'],0,6)=='manual' ? "پرداخت فیش بانکی" : ($rw['method']=='wallet' ? 'پرداخت از اعتبار' : "پرداخت آنلاین") )?>"><?=$paymentmethod_name?></td>
+					<td align="center" title="<?=( substr($rw['method'],0,6)=='manual' ? __("پرداخت فیش بانکی") : ($rw['method']=='wallet' ? __('پرداخت از اعتبار') : __("پرداخت آنلاین") ) )?>"><?=$paymentmethod_name?></td>
 					<td dir="ltr" align="center"><?=( $rw['method']=='wallet' ? '<span class="none">- - -</span>' : strtoupper($rw['transaction']) )?></td>
 					<td align="center"><span class="paid_invoice"><?=__('پرداخت شده')?></span></td>
 				

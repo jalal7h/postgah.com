@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/01
-# 1.4
+# 2016/11/12
+# 1.5
 
 function users_login_do(){
 
@@ -10,16 +10,15 @@ function users_login_do(){
 	$p = trim(stripcslashes(strip_tags($_REQUEST['password'])));
 
 	if( user_logged() ){
-		e(__FUNCTION__.__LINE__);
-		return true;
+		return e();
 	
-	} else if( $_REQUEST['do']!="login_do" ){
-		e(__FUNCTION__.__LINE__);
+	} else if( $_REQUEST['do'] != "login_do" ){
+		dg($u);
 		header("Location: ./login");
 		die();
 	
 	} else if(! users_login_check( $u , $p ) ){
-		$c.= __("نام کاربری یا کلمه عبور اشتباه است");
+		$c.= __("%% یا کلمه عبور اشتباه است", [lmtc('users:username')]);
 	
 	} else {
 		
@@ -66,6 +65,7 @@ function user_logged(){
 	} else {
 		return false;
 	}
+	
 }
 
 

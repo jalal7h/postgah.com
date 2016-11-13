@@ -8,7 +8,7 @@
     background-color: #eee;
     font-size: 18px;
     text-shadow: 0 0 1px #fff;
-    font-family: IRANSans;
+    font-family: DefaultFont;
     color: #555;
     margin: 0 0 25px 0;
     border-radius: 8px;
@@ -27,12 +27,12 @@
 
 }
 .userprofile_vw .detail > div {
-	font: normal 13px IRANSans;
+	font: normal 13px DefaultFont;
 	margin: 0px 0;
 	vertical-align: middle;
 }
 .userprofile_vw .detail > div > span {
-	font: bold 13px IRANSans;
+	font: bold 13px DefaultFont;
 	padding-left: 20px;
 	margin-left: 20px;
 	width: 150px;
@@ -45,7 +45,7 @@
 
 .userprofile_vw .detail > div.name {
 	margin: 0px 0 0px 0;
-	font: bold 20px IRANSans;
+	font: bold 20px DefaultFont;
 	padding: 0;
 	height: 80px;
 	line-height: 80px !important;

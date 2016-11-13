@@ -22,7 +22,7 @@ function faq_management_list(){
 	$list['target_url'] = '_URL."/?page=".$_REQUEST["page"]."&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["cp"]."_form&id=".$rw["id"]';
 	$list['paging_url'] = '_URL."/?page=".$_REQUEST["page"]."&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["func"]';
 	$list['remove_url'] = '_URL."/?page=".$_REQUEST["page"]."&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["func"]."&do=remove&id=".$rw["id"]';
-	$list['remove_prompt'] = '"آیا مایل به حذف هستید?"';
+	$list['remove_prompt'] = '__("آیا مایل به حذف هستید?")';
 	$list['list_array'] = array (
 		array("content" => '$rw[\'name\']'),
 	);
@@ -31,4 +31,10 @@ function faq_management_list(){
 	
 	echo listmaker_list($list);
 }
+
+
+
+
+
+
 

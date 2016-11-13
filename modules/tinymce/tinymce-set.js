@@ -12,7 +12,7 @@ if( typeof tinymce !== 'undefined' ){
                 ],
 
                 fontsize_formats: "8px 9px 10px 11px 12px 13px 14px 15px 16px 17px 18px 20px 22px 24px 30px 36px 42px 60px 72px 84px 90px",
-                font_formats: 'IRANSans=IRANSans;Tahoma=tahoma;Sans Serif=sans-serif;Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace',
+                font_formats: 'DefaultFont=DefaultFont;Tahoma=tahoma;Sans Serif=sans-serif;Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace',
 
                 toolbar1: "newdocument | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect",
                 toolbar2: "cut copy paste | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media code | insertdatetime preview | forecolor backcolor",

@@ -7,7 +7,7 @@
 function linkify_mg_this_form(){
 
 	if(! $id = $_REQUEST['id'] ){
-		;// new
+		// new
 
 	} else if(! $rw = table("linkify", $id) ){
 		dg();
@@ -50,9 +50,7 @@ function linkify_mg_this_form(){
 			
 			'.( $rw_linkify_config['haveIcon'] ? '[!"file:pic"!]<hr>' : '' ).'
 			
-			[!"submit:'.__("ثبت").'","inDiv"!]
-
-		[!close!]
+		[!"submit:'.__("ثبت").'"!]
 	');
 	## -------------------------------------------------
 

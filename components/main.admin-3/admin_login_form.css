@@ -1,6 +1,6 @@
 
 /*admin*/
-/*2016/07/11*/
+/*skipfix*/
 
 .admin_login_form_wrapper {
 	vertical-align: middle;
@@ -91,7 +91,7 @@
 }
 
 .admin_login_form_code {
-	font: normal 12px IRANSans;
+	font: normal 12px DefaultFont;
     display: block;
     margin: 0;
     text-align: center;

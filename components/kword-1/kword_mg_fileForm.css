@@ -7,12 +7,12 @@
 #lmfe_inDiv_kword_mg_fileForm_kword_head {
 	margin-right: 10px;
 	margin-bottom: 30px;
-	font: normal 18px IRANSans;
+	font: normal 18px DefaultFont;
 }
 #lmfe_inDiv_kword_mg_fileForm_kword_text ,
 #lmfe_inDiv_kword_mg_fileForm_kword_excel {
 	margin-right: 30px;
-	font: normal 12px IRANSans;
+	font: normal 12px DefaultFont;
 }
 #lmfe_inDiv_kword_mg_fileForm_kword_text {
 	line-height: 23px !important;

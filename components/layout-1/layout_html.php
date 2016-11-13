@@ -60,7 +60,7 @@ function layout_header(){
 	$dates=U2Vaght(U());
 	$dates=Vaght_2_Taghvim($dates);
 	$dates=explode('&nbsp;',$dates);
-	$vars['date']=$dates[1]." <span dir=rtl lang=fa>".str_replace('.','/',substr(U2Vaght(U()),2,8))."</span>";
+	$vars['date']=$dates[1]." <span dir="._rtl.">".str_replace('.','/',substr(U2Vaght(U()),2,8))."</span>";
 	$vars['THEME']=_THEME;
 	
 	return template_engine('header',$vars);

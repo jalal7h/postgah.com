@@ -29,7 +29,7 @@ div,
 input,
 select,
 form {
-	font:12px IRANSans,Tahoma;
+	font:12px DefaultFont,Tahoma;
 }
 
 select,
@@ -48,7 +48,7 @@ reset {
 /*	margin-bottom:2px;*/
 	color: #666;
 	width: 160px;
-	font-family: IRANSans,Tahoma;
+	font-family: DefaultFont,Tahoma;
 	font-size: 12px;
 	outline: 0;
 }

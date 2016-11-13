@@ -16,7 +16,7 @@
 }
 #cat_management select{
 	width: 400px;
-	font: 14px IRANSans;
+	font: 14px DefaultFont;
 }
 
 
@@ -41,7 +41,7 @@
 	margin-top: 2px;
 	margin-right: 3px;
 	color: white;
-	font-family: IRANSans;
+	font-family: DefaultFont;
 }
 #cat_form_management input[type=submit]{
 	width: 80px;
@@ -74,7 +74,7 @@
 }
 #cat_form_management .title,
 #cat_form_management .title a {
-	font:bold 14px IRANSans ;
+	font:bold 14px DefaultFont ;
 }
 #cat_form_management div .manage{
 	padding-right:10px;

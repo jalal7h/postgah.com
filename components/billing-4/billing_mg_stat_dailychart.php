@@ -86,8 +86,8 @@ function billing_management_stat_dailychart(){
 	
 	<div style="border-bottom: 0px dotted #ddd; width: 80%; margin: 30px 0 0px 0;" ></div>
 
-	<div style="width: 98%" dir=rtl >
-		<div style="98%; text-align: right; margin: 20px 20px 10px 0; ">آمار روزانه پرداخت ها (ضریب ۱۰۰۰ تومان)</div>
+	<div style="width: 98%" dir='._rtl.' >
+		<div style="98%; text-align: right; margin: 20px 20px 10px 0; ">'.__('آمار روزانه پرداخت ها (ضریب ۱۰۰۰)').'</div>
 		<canvas id="canvas_daily" height="250" width="1000"></canvas>
 	</div>
 	<div style="border-bottom: 1px dotted #ddd; width: 80%; margin: 50px 0 50px 0;" ></div>
@@ -98,19 +98,19 @@ function billing_management_stat_dailychart(){
 	echo '
 	<div style="border-bottom: 1px dotted #ddd; width: 80%; margin: 50px 0 50px 0;" ></div>
 
-	<div style="width: 98%; " dir=rtl >
+	<div style="width: 98%; " dir='._rtl.' >
 		<div style="width: 47%; margin: 0 5px 0 5px; display:inline-block;">
-			<div style="98%; text-align: right; margin: 20px 20px 10px 0; ">آمار ماهیانه پرداخت ها (ضریب ۱۰۰۰ تومان)</div>
+			<div style="98%; text-align: right; margin: 20px 20px 10px 0; ">'.__('آمار ماهیانه پرداخت ها (ضریب ۱۰۰۰)').'</div>
 			<canvas id="canvas_monthly" height="250" width="500"></canvas>
 		</div>
 		<div style="width: 47%; margin: 0 5px 0 5px; display:inline-block;">
-			<div style="98%; text-align: right; margin: 20px 20px 10px 0; ">آمار سالیانه پرداخت ها (ضریب ۱۰۰۰ تومان)</div>
+			<div style="98%; text-align: right; margin: 20px 20px 10px 0; ">'.__('آمار سالیانه پرداخت ها (ضریب ۱۰۰۰)').'</div>
 			<canvas id="canvas_annually" height="250" width="500"></canvas>
 		</div>
 	</div>
 
 	<div style="height: 80px; " ></div>
-
+	
 	<script>
 		var barChartData_daily = {
 			labels : ['.$list_of_days_str.'],

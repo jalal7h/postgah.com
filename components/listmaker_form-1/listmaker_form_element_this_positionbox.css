@@ -9,7 +9,7 @@ div.positionjson_hitbox_c span.head {
     border-bottom: 1px dashed #d8d8d8;
     margin-bottom: 10px;
     padding: 0 10px 10px 0;
-    font: normal 13px IRANSans;
+    font: normal 13px DefaultFont;
     color: #666;
     cursor: default;
 }
@@ -25,7 +25,7 @@ div.positionjson_hitbox_c span.head .up:before {
 	padding-left: 5px;
 }
 div.positionjson_hitbox_c span.head .up:after {
-	font-family: IRANSans;
+	font-family: DefaultFont;
 	content: "/";
 	padding: 0 15px 0 0;
 	margin-left: 10px;

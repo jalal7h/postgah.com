@@ -26,6 +26,11 @@ function lang_sync_db(){
 	if( sizeof($arr_l) ){
 		$arr = array_merge( $arr, $arr_l );
 	}
+	#
+	$arr_s = lang_sync_db_tableSetting();
+	if( sizeof($arr_s) ){
+		$arr = array_merge( $arr, $arr_s );
+	}
 
 	# 
 	# convert arr to txt

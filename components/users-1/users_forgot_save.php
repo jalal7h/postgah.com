@@ -11,13 +11,13 @@ function users_forgot_save(){
 	#
 	# username
 	if(! $username = trim(strip_tags( str_dec($_REQUEST['username']) )) ){
-		ed(__FUNCTION__,__LINE__);
+		ed();
 	}
 
 	#
 	# password
 	if(! $password = trim(strip_tags($_REQUEST['password'])) ){
-		ed(__FUNCTION__,__LINE__);
+		ed();
 	}
 	if( is_component('userhashpassword') ){
 		$password = userhashpassword($password);
@@ -28,10 +28,10 @@ function users_forgot_save(){
 	$h = md5x($username."01q!", 20);
 	
 	if( $_REQUEST['h']!=$h ){
-		e(__FUNCTION__,__LINE__);
+		e();
 	
-	} else if(! dbq(" UPDATE `users` SET `password`='$password' WHERE `username`='$username' LIMIT 1 ") ){
-		e(__FUNCTION__,__LINE__);
+	} else if(! dbs('users', ['password'=>$password], ['username'=>$username]) ){
+		e();
 	
 	} else {
 		$_SESSION['uid'] = table("users", $username, "id", "username");
@@ -49,5 +49,6 @@ function users_forgot_save(){
 	}
 
 	die();
+	
 }
 

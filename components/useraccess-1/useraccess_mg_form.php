@@ -48,7 +48,7 @@ function useraccess_mg_form(){
 
 		"<hr>",
 		
-		['submit:ثبت','inDiv'],
+		['submit:'.__('ثبت'),'inDiv'],
 
 	]);
 

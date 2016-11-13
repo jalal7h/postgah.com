@@ -10,7 +10,7 @@ function do_admin_sidebar(){
 	echo "\t<div class=\"sidebar\">\n";
 
 	$rand = "dasi".rand(10000000,99999999);
-	echo "\n\t\t<a href=\""._URL."/?page=admin\"><icon id=\"".$rand."\"></icon>پیشخوان</a>\n";
+	echo "\n\t\t<a href=\""._URL."/?page=admin\"><icon id=\"".$rand."\"></icon>".__("پیشخوان")."</a>\n";
 	echo "\t\t<style> #".$rand.":before { content: \"\\f0e4\" }</style>\n\n";
 
 	foreach ($GLOBALS['cmp'] as $func => $name ) {

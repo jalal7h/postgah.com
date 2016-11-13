@@ -6,11 +6,11 @@
 	padding: 30px;
 }
 .d404 .head {
-	font: bold 24px IRANSans;
+	font: bold 24px DefaultFont;
 	padding: 10px 0;
 }
 .d404 .desc {
-	font: normal 13px IRANSans;
+	font: normal 13px DefaultFont;
 	padding: 10px 0;
 }
 .d404 .submit_button {

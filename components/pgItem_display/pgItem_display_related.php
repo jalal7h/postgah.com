@@ -4,17 +4,14 @@ $GLOBALS['block_layers_center']['pgItem_display_related'] = 'نمایش آیتم
 
 function pgItem_display_related( $rw_pagelayer ){
 	
-	if(! $item_id = $_REQUEST['item_id'] ){
-		e(__FUNCTION__,__LINE__);
-
-	} else if(! $rw_item = table('item', $item_id) ){
-		e(__FUNCTION__,__LINE__);
+	if(! $rw_item = pgItem_fetch() ){
+		e();
 
 	} else if(! $rs = dbq(" SELECT * FROM `item` WHERE `cat_id`='{$rw_item['cat_id']}' ORDER BY rand() LIMIT 4 ") ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else if(! dbn($rs) ){
-		//	
+		//
 
 	} else {
 

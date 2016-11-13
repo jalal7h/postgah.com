@@ -20,7 +20,7 @@
 	vertical-align: top;
 	width: calc( 100% - 54px );
 	border-radius: 6px;
-	font: normal 11px IRANSans;
+	font: normal 11px DefaultFont;
 	transition: all 0.2s;
 	margin: 0 10px 0 0;
 }
@@ -43,7 +43,7 @@
 .fbcm_form_login_request {
 	background-color: #f8f8f8;
 	color: #aaa;
-	font: normal 12px IRANSans;
+	font: normal 12px DefaultFont;
 	padding: 20px 50px;
 	border: 1px solid #eee;
 	border-radius: 8px;

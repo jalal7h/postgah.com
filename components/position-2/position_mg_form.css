@@ -14,7 +14,7 @@
 	display: block;
 	padding: 10px;
 	/* margin: 5px 0; */
-	font: normal 15px IRANSans;
+	font: normal 15px DefaultFont;
 	width: 100%;
 }
 .position_mg_form select {

@@ -30,7 +30,7 @@
 }
 .listmaker_showcase > a > div.name {
 	padding: 12px 0 10px 0;
-	font: normal 13px BYekan, tahoma;
+	font: normal 13px DefaultFont, tahoma;
 	background-color: rgba(255,255,255,0.8);
 	width: 100%;
 	position: absolute; bottom: 0px; right: 0px;

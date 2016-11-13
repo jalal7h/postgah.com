@@ -25,12 +25,12 @@ function users_forgot_new(){
 				<div class="head" ><?=__('لطفا کلمه عبور جدید را وارد کنید!')?></div>
 				
 				<label>
-					<span><?=__('%% جدید', [ lmtc('users:password') ] )?> :‌ </span>
+					<span><?=__('کلمه عبور جدید')?> :‌ </span>
 					<input type="password" id="password1" />
 				</label>
 				
 				<label>
-					<span><?=__('تکرار %%', [ lmtc('users:password') ] )?> :‌ </span>
+					<span><?=__('تکرار کلمه عبور')?> :‌ </span>
 					<input type="password" id="password2" name="password" />
 				</label>
 				
@@ -38,7 +38,7 @@ function users_forgot_new(){
 
 				<label>
 					<span></span>
-					<input type="submit" class="submit_button" value="<?=__('ثبت %% جدید', [ lmtc('users:password') ] )?>" />
+					<input type="submit" class="submit_button" value="<?=__('ثبت کلمه عبور جدید')?>" />
 				</label>
 
 				<label>

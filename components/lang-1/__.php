@@ -7,7 +7,7 @@
 function __( $text, $vars=null ){
 
 	// lang replacement
-	if( lang_flag === true ){
+	if( do_action != 'lang_sync_db' ){
 		lang_loadFromDB();
 		if( $GLOBALS['lang_loadFromDB'][ lang_hash($text) ] ){
 			$text = $GLOBALS['lang_loadFromDB'][ lang_hash($text) ];

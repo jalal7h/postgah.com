@@ -88,13 +88,12 @@ textarea {
 /*	margin-bottom:2px;*/
 	color:#666;
 	/* width:260px; */
-	font-family:IRANSans,Tahoma;
+	font-family:DefaultFont,Tahoma;
 	font-size:11px;
 	outline: 0;
 	border-radius: 4px;
 }
 input[type=password] {
-	direction: ltr;
 	font-family: monospace;
 }
 input[type=number] {
@@ -117,7 +116,6 @@ input[type=url] {
 }
 input[type=email],
 input[type=url] {
-	direction: ltr;
 	font-family: monospace,'sans-serif';
 }
 
@@ -155,7 +153,7 @@ select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	background: url('./image_list/select-tag-drop-icon.png') no-repeat 7px 50%;
+	background: url('./image_list/select-tag-drop-icon.png') no-repeat 7px center;
 	padding-left: 28px !important;
 	background-color: white;
 }
@@ -175,7 +173,7 @@ select {
 	display: inline-block !important;
 	background-color: rgb(117, 172, 0);
 	padding: 9px 15px;
-	font: normal 13px IRANSans !important;
+	font: normal 13px DefaultFont !important;
 	color: white !important;
 	border-radius: 3px;
 	margin: 3px auto;
@@ -211,17 +209,6 @@ select {
 	margin:auto;
 	margin-bottom:20px !important;
 	clear:both;
-}
-
-.numeric {
-	text-align: center;
-	direction: ltr;
-	width: 160px !important;
-}
-.calendar {
-	width:120px !important;
-	text-align:center;
-	direction:ltr;
 }
 
 icon:before {

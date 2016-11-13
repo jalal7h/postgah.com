@@ -27,11 +27,11 @@ function mss_mg_client_form(){
 			</div>
 			
 
-			[!"ارسال‌کننده ایمیل", "select:mailserverselector_provider_id","option"=>"<option value=0></option>".listmaker_option( "mailserverselector_provider", $condition="", $returnArray=false )!]
+			[!"'.lmtc('mailserverselector_provider')[0].'", "select:mailserverselector_provider_id","option"=>"<option value=0></option>".listmaker_option( "mailserverselector_provider", $condition="", $returnArray=false )!]
 			
 			<hr>
 			
-		[!"submit:ثبت"!]
+		[!"submit:'.__('ثبت').'"!]
 	');
 	# -------------------------------------------------
 

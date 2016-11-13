@@ -29,7 +29,7 @@ function users_login_form(){
 			<div class="d01"><?=__('ورود')?></div>
 			<div class="d02"><?=__('اگر هنور عضو نیستید، الان %%ثبت نام%% کنید.', ['<a target="_top" href="./register">','</a>'] )?></div>
 			<input autocomplete="off" type="text" name="username" placeholder="<?=lmtc('users:username')?>" dir="ltr" />
-			<input autocomplete="off" type="password" name="password" placeholder="<?=lmtc('users:password')?>" dir="ltr" />
+			<input autocomplete="off" type="password" name="password" placeholder="<?=__("کلمه عبور")?>" dir="ltr" />
 			<div class="d03"><?=__('شما با کلیک کردن روی دکمه ورود موافقت می کنید که تمامی %%قوانین سایت%% را پذیرفته اید.', ['<a href="./terms">','</a>'] )?></div>
 			<?=( $prompt ?'<div class="prompt">'.$prompt.'</div>' :'' )?>
 			<input type="submit" class="submit_button" value="<?=__('ورود')?>" />

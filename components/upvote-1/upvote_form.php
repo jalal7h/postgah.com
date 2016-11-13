@@ -9,7 +9,7 @@ function upvote_form( $table_name , $table_id=null ){
 	$page_url = urldecode(str_enc( _URI ));
 
 	if(! $table_id ){
-		echo "<script>upvote_title = '".upvote_title."';</script>\n";
+		echo "<script>upvote_title = '".__('پلاس')."';</script>\n";
 		if(! $table_id = $_REQUEST['id'] ){
 			return "";
 		}
@@ -33,12 +33,12 @@ function upvote_form( $table_name , $table_id=null ){
 
 		if( is_component('upvote') ){
 
-			$the_title = __('برای ثبت %% باید ثبت نام کنید', [upvote_title] );
+			$the_title = __('برای ثبت %% باید ثبت نام کنید', [__('پلاس')] );
 			
 			$c.= '
 			<div class="upvote_form '.$clicked.'" '.( user_logged() ?'onclick="upvote_do(this)"' :'title="'.$the_title.'" style="cursor:default" ' ).' rel="'.$table_name.":".$table_id.':'.$page_url.'" >
 				<icon></icon>
-				<div>'.( $numb==0 ? upvote_title : $numb ).'</div>
+				<div>'.( $numb==0 ? __('پلاس') : $numb ).'</div>
 			</div>';
 			
 		}

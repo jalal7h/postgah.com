@@ -18,7 +18,7 @@ header a.logo-container > img {
 }
 
 header a.home {
-	font: normal 18px IRANSans;
+	font: normal 18px DefaultFont;
 	color: #636363;
 }
 
@@ -27,7 +27,7 @@ header .login_or_register {
 	padding: 10px 15px;
 	border-radius: 5px;
 	color: white;
-	font-family: IRANSans;
+	font-family: DefaultFont;
 	position: absolute;
 	top: 36px;
 }

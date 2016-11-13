@@ -49,7 +49,7 @@ function contact_mg_list(){
 	#
 	# list array // list e sotun haye list
 	$list['list_array'][] = array( "head"=>lmtc("contact:name"), "content" => '"<a href=\'mailto:".$rw[\'email\']."\'>".$rw[\'name\']."</a>"');
-	$list['list_array'][] = array("head"=>'تاریخ', "content" => 'time_inword($rw[\'date\'])');
+	$list['list_array'][] = array("head"=>lmtc('contact:date'), "content" => 'time_inword($rw[\'date\'])');
 
 	#
 	# search columns // az in field ha tu table search mikone

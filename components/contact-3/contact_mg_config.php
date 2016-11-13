@@ -32,7 +32,7 @@ function contact_mg_config(){
 	echo lmfe([
 		
 		'<div>',	
-			[setting_rw('contact_tell')['name'],'text:contact_tell'=>setting('contact_tell'),'inDiv'],
+			[ setting_rw('contact_tell')['name'],'text:contact_tell'=>setting('contact_tell'),'inDiv'],
 			[setting_rw('contact_cell')['name'],'text:contact_cell'=>setting('contact_cell'),'inDiv'],
 			[setting_rw('contact_fax')['name'],'text:contact_fax'=>setting('contact_fax'),'inDiv'],
 			[setting_rw('contact_address')['name'],'textarea:contact_address'=>setting('contact_address'),'inDiv'],

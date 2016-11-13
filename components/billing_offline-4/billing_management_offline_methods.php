@@ -28,12 +28,12 @@ function billing_management_offline_methods(){
 	$list['remove_prompt'] = '__("آیا مایل به حذف هستید?")';
 	$list['list_array'] = array (
 		array("head"=>__("نام بانک"), "content" => '"<b>".$rw[\'c1\']."</b> <span style=color:#bbb>(".billing_format(dbr(dbq(" SELECT SUM(`cost`) FROM `billing_invoice` WHERE `method`=\'".$rw[\'method\']."\' "),0,0))." '.__('دریافتی').')</span>"' ),
-		array("head"=>__("شماره حساب"), "content" => '$rw[\'c2\']' ,"attr" => array("align" => 'center',"dir" => "rtl")),
-		array("head"=>__("شماره کارت"), "content" => '$rw[\'c3\']' ,"attr" => array("align" => 'center',"dir" => "rtl")),
+		array("head"=>__("شماره حساب"), "content" => '$rw[\'c2\']' ,"attr" => array("align" => 'center',"dir" => _rtl)),
+		array("head"=>__("شماره کارت"), "content" => '$rw[\'c3\']' ,"attr" => array("align" => 'center',"dir" => _rtl)),
 	);
 	echo listmaker_list($list);
 
-	// echo "<a class='submit_button' href='./?page=admin&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func']."&func2=".$_REQUEST['func2']."&do=form' class='new'>ثبت روشی پرداخت جدید</a>";
+	echo "<a class='submit_button' href='./?page=admin&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func']."&func2=".$_REQUEST['func2']."&do=form' class='new'>".__('ثبت روشی پرداخت جدید')."</a>";
 
 	echo "</div>";
 }

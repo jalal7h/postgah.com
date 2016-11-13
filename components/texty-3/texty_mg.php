@@ -4,9 +4,9 @@
 # 2016/09/22
 # 4.0
 
-// $GLOBALS['cmp']['texty_mg'] = 'پیام های پیشفرض';
+// $GLOBALS['cmp']['texty_mg'] = 'پیام های‌پیشفرض';
 // $GLOBALS['cmp-icon']['texty_mg'] = '071';
-$GLOBALS['setting']['texty_mg'] = 'پیام های پیشفرض';
+$GLOBALS['setting']['texty_mg'] = 'پیامهای پیشفرض';
 
 
 function texty_mg(){

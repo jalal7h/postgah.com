@@ -2,7 +2,7 @@
 /*index*/
 
 .fbcmuplu {
-	font-family: IRANSans;
+	font-family: DefaultFont;
 	margin-bottom: 40px;
 }
 .fbcmuplu > .head {
@@ -10,7 +10,7 @@
     background-color: #ddd;
     font-size: 18px;
     text-shadow: 0 0 1px #fff;
-    font-family: IRANSans;
+    font-family: DefaultFont;
     color: #555;
     margin: 0 0 15px 0;
     border-radius: 8px;

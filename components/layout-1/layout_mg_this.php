@@ -15,10 +15,10 @@ function layout_mg_this( $rw ){
 			<form class="rename_form" method="post" >
 				<input type="hidden" name="id" value="<?=$rw['id']?>" />
 				<input type="text" name="name" value="<?=$rw['name']?>"/>
-				<input type="submit" class="submit_button" value="ثبت"/>
+				<input type="submit" class="submit_button" value="<?=__('ثبت')?>"/>
 			</form>
 			<div class="rename_button_container">
-				<a href="#" class="rename_button">تغییر نام</a>
+				<a href="#" class="rename_button"><?=__('تغییر نام')?></a>
 			</div>
 		</div>
 		

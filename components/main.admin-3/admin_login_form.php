@@ -26,7 +26,7 @@ function admin_login_form(){
 		
 		<table cellpadding="0" cellspacing="0" ><tr>
 		<td><input autocomplete="off" maxlength="4" type="text" name="<?=admin_key()['captcha']?>" class="captcha numeric"></td>
-		<td><img dir="rtl" class="captcha_img" title="<?=__('این قسمت برای مقابله با روبوت های brute force در نظر گرفته شده، با وارد کردن شماره در فرم ادامه دهید')?>" 
+		<td><img dir="<?=_rtl?>" class="captcha_img" title="<?=__('این قسمت برای مقابله با روبوت های brute force در نظر گرفته شده، با وارد کردن شماره در فرم ادامه دهید')?>" 
 			src="<?=_URL?>/captcha-admin-login.png&nocache=<?=rand(10000000,99999999)?>" >
 		</td>
 		<td><input type="submit" value="Login" class="submit" ></td>

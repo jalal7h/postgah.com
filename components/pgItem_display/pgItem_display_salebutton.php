@@ -4,18 +4,13 @@ $GLOBALS['block_layers_side']['pgItem_display_salebutton'] = 'نمایش آیت�
 
 function pgItem_display_salebutton( $rw_pagelayer ){
 	
-	if(! $item_id = $_REQUEST['item_id'] ){
-		e(__FUNCTION__,__LINE__);
-
-	} else if(! $rw_item = table('item', $item_id) ){
-		e(__FUNCTION__,__LINE__);
+	if(! $rw_item = pgItem_fetch() ){
+		e();
 
 	} else if( $rw_item['cost']==0 ){
 		//
 
 	} else {
-
-		// $rw_item['cost'] = 100000;
 
 		$content = "
 		<div class=\"".__FUNCTION__."\">
@@ -29,4 +24,9 @@ function pgItem_display_salebutton( $rw_pagelayer ){
 	}
 
 }
+
+
+
+
+
 

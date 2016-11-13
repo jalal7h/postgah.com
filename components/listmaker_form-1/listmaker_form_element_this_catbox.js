@@ -1,6 +1,6 @@
 
 /*print*/
-/*2016/11/06*/
+/*2016/11/13*/
 
 var catjson_head = '';
 
@@ -84,16 +84,17 @@ jQuery(document).ready(function($) {
 			if(typeof lmfetc_extra_before == 'function') { 
 				lmfetc_extra_before( cat_value );
 			}
-			
-			// $('.lmfe_catbox_c.selected input[type="hidden"]').val( cat_value );
-			// $('.lmfe_catbox_c.selected .lmfe_catbox').html( '<nobr>' + cat_title + '</nobr>' );
-			$('.lmfe_catbox_c.selected').removeClass('selected');
 
 			// catcustomfield console
 			cat_name = $('.lmfe_catbox_c.selected').attr('cat_name');
+			cl( 'SSS ' + cat_name );
 			if(typeof catcustomfield_console == 'function') { 
 				catcustomfield_console( cat_name, cat_value /* as cat_id */ ); 
 			}
+
+			// $('.lmfe_catbox_c.selected input[type="hidden"]').val( cat_value );
+			// $('.lmfe_catbox_c.selected .lmfe_catbox').html( '<nobr>' + cat_title + '</nobr>' );
+			$('.lmfe_catbox_c.selected').removeClass('selected');
 
 			// extra after
 			if(typeof lmfetc_extra_after == 'function') { 

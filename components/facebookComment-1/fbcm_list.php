@@ -26,7 +26,7 @@ function fbcm_list_this( $table_name , $table_id , $rw ){
 		<div class="text">'.$rw['text'].'</div>
 		<div class="links">
 			'.( is_component('upvote') ? upvote_form("facebookComment",$rw['id']) : '').'
-			'.( user_logged() ? '<a class="reply" href="#" onclick="return fbcm_subCommentVisible( this )">پاسخ</a>' :'' ).
+			'.( user_logged() ? '<a class="reply" href="#" onclick="return fbcm_subCommentVisible( this )">'.__('پاسخ').'</a>' :'' ).
 			( _fbcm_share_on_twitter ? '<a class="tweet twitter_popup" href="http://twitter.com/share?text='.urlencode($rw['text']).'&url='.urlencode( stash_item_link( table("item", $_REQUEST['id']) )."#comment-".$rw['id'] ).'"></a>' : '').
 			'
 		</div>

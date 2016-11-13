@@ -12,7 +12,7 @@
 }
 #user_emailverifybeforesignup_form input {
 	display: block;
-	font: normal 18px BYekan;
+	font: normal 18px DefaultFont;
 	padding: 10px 20px;
 	border: 1px solid #ccc;
 	border-radius: 3px;
@@ -33,7 +33,7 @@
 
 #user_emailverifybeforesignup_form .d01 {
 	margin: 20px 0 30px 0;
-	font: bold 32px BYekan;
+	font: bold 32px DefaultFont;
 	color: #666;
 }
 #user_emailverifybeforesignup_form .d02 {
