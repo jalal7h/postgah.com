@@ -50,6 +50,7 @@
 	transition: all 0.3s;
 	vertical-align: top;
 	font: bold 15px tahoma;
+	text-shadow: 0 0 4px rgba(0,0,0,0.8);
 }
 .jtoggle-ul .middle {
 	border-radius: 15px;

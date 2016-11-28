@@ -20,9 +20,9 @@ function kwordbanned_mg_form(){
 			"switch" => "do",
 		!]
 			
-		'.( $id ? '' : "<hr>" ).'
-		[!"text:kword*"'.( $id ? '' : ',"notInDiv"' ).'!]
-		'.( $id ? "<hr>" : '' ).'
+			'.( $id ? '' : "<hr>" ).'
+			[!"text:kword*"'.( $id ? '' : ',"notInDiv"' ).'!]
+			'.( $id ? "<hr>" : '' ).'
 			
 		[!"submit:'.__('ثبت').'"'.( $id ? '' : ',"notInDiv"' ).'!]
 	');

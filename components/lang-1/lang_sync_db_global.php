@@ -62,8 +62,18 @@ function lang_sync_db_global(){
 	#$GLOBALS['cat_items']['product-weight'] = ['رده‌های وزنی کالا', $inDashboard=false, ... ];
 	if( sizeof($GLOBALS['cat_items']) ){
 		foreach( $GLOBALS['cat_items'] as $i => $record ){
-			$text = $record[0];
-			$arr[ ":".lang_hash($text) ] = $text;
+			
+			if( isset($record['name']) ){
+				$text = $record['name'];
+			
+			} else if( isset($record[0]) ){
+				$text = $record[0];
+			}
+
+			if( $text ){
+				$arr[ ":".lang_hash($text) ] = $text;
+			}
+
 		}
 	}
 

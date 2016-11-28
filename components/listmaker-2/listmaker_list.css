@@ -222,6 +222,7 @@
 }
 .listmaker_list_search input:hover {
 	border: 0px;
+	transition: all 0.5s;
 }
 .listmaker_list_search input:focus {
     padding: 10px 20px !important;

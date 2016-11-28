@@ -1,12 +1,12 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/12
-# 1.0
+# 2016/11/14
+# 1.1
 
-function lang_css_fix( $css ){
+function lang_css_fix( $css, $file ){
 
-	if( stristr($css, '/*skipfix*/') ){
+	if( stristr($css, '/*skipfix*/') or strstr( basename($file), '.skipfix.css' ) ){
 		return $css;
 	}
 	// return $css;
@@ -21,17 +21,16 @@ function lang_css_fix( $css ){
 		[ ': ', ' ;', ' :', ' {' ], 
 		[ ':' , ';' , ':' , '{'  ], $css);
 
-	# 
-	# direction
-	$css = str_ireplace('direction:rtl', 'direction:__l', $css);
-	$css = str_ireplace('direction:ltr', 'direction:rtl', $css);
-	$css = str_ireplace('direction:__l', 'direction:ltr', $css);
-
 	#
-	# left / right
-	$css = str_ireplace('left', '__ft', $css);
-	$css = str_ireplace('right', 'left', $css);
-	$css = str_ireplace('__ft', 'right', $css);
+	# toggle
+	$css_arr = explode('{', $css);
+	foreach ($css_arr as $i => $tag) {
+		$tag_arr = explode('}', $tag);
+		$tag_arr[0] = lang_css_fix_toggle( $tag_arr[0], 'direction:rtl', 'direction:ltr' );
+		$tag_arr[0] = lang_css_fix_toggle( $tag_arr[0], 'left', 'right' );
+		$css_arr[$i] = implode('}', $tag_arr);
+	}
+	$css = implode('{', $css_arr);
 
 	# 
 	# 4section elements
@@ -123,6 +122,25 @@ function lang_css_fix_fontawesome( $css ){
 	return $css;
 
 }
+
+
+function lang_css_fix_toggle( $css, $from, $to ){
+
+	$fr__ = substr($from, 0, -2)."__";
+
+	$css = str_ireplace( $from, $fr__, $css);
+	$css = str_ireplace( $to, $from, $css);
+	$css = str_ireplace( $fr__, $to, $css);
+
+	return $css;
+
+}
+
+
+
+
+
+
 
 
 

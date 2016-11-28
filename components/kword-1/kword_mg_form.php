@@ -20,8 +20,9 @@ function kword_mg_form(){
 			"switch" => "do",
 		!]
 			
-			[!"text:kword*"!]
-			<hr>
+			'.( $id ? '' : "<hr>" ).'
+			[!"text:kword*"'.( $id ? '' : ',"notInDiv"' ).'!]
+			'.( $id ? "<hr>" : '' ).'
 			
 		[!"submit:'.__('ثبت').'"!]
 	');

@@ -57,15 +57,17 @@ $(document).ready(function($) {
 		$('#'+lmfe_more_new_item_id+' .lmfetc .lmfetc select').val('');
 
 		if( $(this).parent().hasClass('catbox') ){
+			var lang_select = $('.lmfe_catbox').attr('lang_select');
 			$('#'+lmfe_more_new_item_id+' input[type="hidden"]').val('0');
 			var the_text = $(this).parent().find('.lmfe_catbox_c > input[type="hidden"]').attr('name');
-			the_text = 'انتخاب ' + $(this).closest('form').find('input[name="'+the_text+'"]').first().closest('.lmfe_inDiv.catbox').find('.lmfe_tnit').html();
+			the_text = lang_select+' ' + $(this).closest('form').find('input[name="'+the_text+'"]').first().closest('.lmfe_inDiv.catbox').find('.lmfe_tnit').html();
 			$('#'+lmfe_more_new_item_id+' span > span').html( the_text );
 		
 		} else if( $(this).parent().hasClass('positionbox') ){
+			var lang_select = $('.lmfe_positionbox').attr('lang_select');
 			$('#'+lmfe_more_new_item_id+' input[type="hidden"]').val('0');
 			var the_text = $(this).parent().find('.lmfe_positionbox_c > input[type="hidden"]').attr('name');
-			the_text = 'انتخاب ' + $(this).closest('form').find('input[name="'+the_text+'"]').first().closest('.lmfe_inDiv.positionbox').find('.lmfe_tnit').html();
+			the_text = lang_select+' ' + $(this).closest('form').find('input[name="'+the_text+'"]').first().closest('.lmfe_inDiv.positionbox').find('.lmfe_tnit').html();
 			$('#'+lmfe_more_new_item_id+' span > span').html( the_text );
 		
 		}

@@ -5,8 +5,11 @@ function layout_post_extra( $rw_pagelayer ){
 	$rw_pagelayer['data'] = str_ireplace( "</textarea>", "&lt;/textarea&gt;", $rw_pagelayer['data'] );
 	
 	?>
-	<script src="http://parsunix.com/cdn/js/tinymce/tinymce-set+func.js"></script>
-	<textarea name="data" id="_data" ><?=$rw_pagelayer['data']?></textarea>
+
+	<script src="modules/tinymce/tinymce.min.js"></script>
+	<script src="modules/tinymce/tinymce-set+func.js"></script>
+	
+	<textarea name="data" class="tinymce" id="_data" ><?=$rw_pagelayer['data']?></textarea>
 
 	<label class="framed_label">
 		<input type="checkbox" name="framed" <?=($rw_pagelayer['framed']? "checked" :"")?> value="1" >
@@ -23,17 +26,20 @@ function layout_post_extra( $rw_pagelayer ){
 	$(document).ready(function(){
 		
 		$('.<?=__FUNCTION__?> .types input[value="<?=$rw_pagelayer['type']?>"]').prop( "checked", true );
-		
-		<? if($rw_pagelayer['type']=='PHP5'){ ?>
-			$('#_data').prop('dir','ltr');
-		<? } ?>
-		
-		<? if($rw_pagelayer['type']=='HTML'){ ?>
-			$(window).load(function(){
-				tinyMCE_on('_data');
-			});
-		<? } ?>
-		
+		<?
+
+		if( $rw_pagelayer['type'] == 'PHP5' ){
+			echo "$('#_data').prop('dir','ltr');\n";
+		}
+
+		if( $rw_pagelayer['type'] == 'HTML' ){
+			echo "$(window).load(function(){	tinyMCE_on('_data');	});\n";
+
+		} else {
+			echo "$(window).load(function(){	tinyMCE_off('_data');	});\n";
+		}
+
+		?>
 	});
 	</script>
 

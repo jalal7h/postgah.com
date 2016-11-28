@@ -9,11 +9,11 @@
 // $menu = array(
 // 	"ms_management_list" => "لیست موبایل ها",
 // 	"ms_management_form" => "ثبت موبایل جدید",
-// 	"cat_management&l=brand" => "برندها",
-// 	"cat_management&l=stuff_status" => "وضعیت ها",
-// 	"cat_management&l=mobile_sim" => "سیم ها",
-// 	"cat_management&l=mobile_os" => "سیستم عامل ها",
-// 	"cat_management&l=mobile_browser" => "مرورگر",
+// 	"cat_mg&l=brand" => "برندها",
+// 	"cat_mg&l=stuff_status" => "وضعیت ها",
+// 	"cat_mg&l=mobile_sim" => "سیم ها",
+// 	"cat_mg&l=mobile_os" => "سیستم عامل ها",
+// 	"cat_mg&l=mobile_browser" => "مرورگر",
 // );
 // listmaker_tabmenu($menu,$url);
 

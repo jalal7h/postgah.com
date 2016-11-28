@@ -72,6 +72,12 @@
 #lmfe_pgItem_user_form_video {
 	width: calc( 100% - 165px );	
 }
+.pgItem_user_form .video_memo {
+	text-align: left;
+	font-size: 9px;
+	margin: -10px 0 -5px 18px;
+	color: #777;
+}
 #lmfe_pgItem_user_form_text {
 	width: calc( 100% - 165px );
 	height: 100px;

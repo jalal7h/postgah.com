@@ -23,9 +23,12 @@ function setting_mg_main(){
 			[!"'.setting_rw('websitedescription')['name'].'","text:websitedescription"!]
 
 			[!"'.setting_rw('money_unit')['name'].'","text:money_unit"!]
-			[!"'.setting_rw('webstatus_main')['name'].'","toggle:webstatus_main"!]
-
+			
 			[!"'.setting_rw('html_extra_tags')['name'].'","textarea:html_extra_tags"!]
+
+			[!"'.setting_rw('webstatus_main')['name'].'","toggle:webstatus_main"!]
+			'. ( is_component('sms') ? '[!"'.setting_rw('sms_state')['name'].'","toggle:sms_state"!]' : '' ) .'
+			
 			[!"'.setting_rw('webstatus_main_content')['name'].'","textarea:webstatus_main_content"!]
 
 			<hr>

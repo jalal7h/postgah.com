@@ -1,5 +1,9 @@
 <?
 
+# jalal7h@gmail.com
+# 2016/11/14
+# 1.0
+
 function billing_userpanel_payment_offline(){
 
 	#
@@ -49,12 +53,12 @@ function billing_userpanel_payment_offline(){
 			
 			<div>
 				<span><?=__('شماره تراکنش / سریال')?> : </span>
-				<input type="text" dir="ltr" name="transaction" id="transaction" />
+				<input type="text" dir="ltr" name="transaction" alert="<?=__('لطفا شماره تراکنش / سریال را وارد کنید')?>" id="transaction" />
 			</div>
 
 			<div>
 				<span><?=lmtc('billing_invoice:date')?> :‌ </span>
-				<input type="text" class="calendar-fa" name="date" />
+				<input type="text" class="calendar-fa" alert="<?=__('لطفا تاریخ پرداخت را وارد کنید')?>" name="date" />
 			</div>
 
 
@@ -72,6 +76,10 @@ function billing_userpanel_payment_offline(){
 	}
 
 }
+
+
+
+
 
 
 

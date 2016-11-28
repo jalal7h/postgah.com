@@ -69,7 +69,12 @@ function lang_translate_globals(){
 	#$GLOBALS['cat_items']['product-weight'] = ['رده‌های وزنی کالا', $inDashboard=false, ... ];
 	if( sizeof($GLOBALS['cat_items']) ){
 		foreach( $GLOBALS['cat_items'] as $i => $record ){
-			$GLOBALS['cat_items'][$i][0] = __( $GLOBALS['cat_items'][$i][0] );
+			if( isset($GLOBALS['cat_items'][$i][0]) ){
+				$GLOBALS['cat_items'][$i][0] = __( $GLOBALS['cat_items'][$i][0] );
+			}
+			if( isset($GLOBALS['cat_items'][$i]['name']) ){
+				$GLOBALS['cat_items'][$i]['name'] = __( $GLOBALS['cat_items'][$i]['name'] );
+			}
 		}
 	}
 

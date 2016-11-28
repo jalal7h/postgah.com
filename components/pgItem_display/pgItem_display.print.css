@@ -1,0 +1,39 @@
+
+@media print {
+	
+	@page {
+		margin: 0mm 0mm;
+	}
+
+	body {
+		margin: 0px 20px !important;
+		padding: 0px !important;
+	}
+
+	header {
+		display: none !important;
+	}
+
+	main > section.left {
+		display: none !important;
+	}
+	main section.center {
+		margin: 0px !important;
+		padding: 0px !important;
+	}
+
+	.pgItem_display_warning_wrap ,
+	.pgItem_display_comment_wrap ,
+	.pgItem_display_related_wrap {
+		display: none !important;
+	}
+	.pgItem_display_text .text_footer {
+		display: none !important;
+	}
+
+	.tallfooter ,
+	.footer-copyright {
+		display: none !important;
+	}
+
+}

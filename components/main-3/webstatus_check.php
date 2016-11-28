@@ -32,7 +32,7 @@ function webstatus_check(){
 				text-align: center;
 			}
 		</style>
-		<table class="webstatus_main" ><tr><td><?=setting('webstatus_main_content')?></td></tr></table>
+		<table class="webstatus_main" ><tr><td><?=nl2br(setting('webstatus_main_content'))?></td></tr></table>
 		<?
 
 		echo layout_close();

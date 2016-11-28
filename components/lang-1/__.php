@@ -1,7 +1,7 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/13
+# 2016/11/14
 # 1.0
 
 function __( $text, $vars=null ){
@@ -15,7 +15,7 @@ function __( $text, $vars=null ){
 			}
 		}
 	}
-
+	
 	// vars replacement
 	if( $vars ){
 		foreach( $vars as $i => $var ){
@@ -23,13 +23,21 @@ function __( $text, $vars=null ){
 		}
 	}
 	
+	$text = trim($text);
+
+	if( !strstr($text, " ") and lang_dir == 'ltr' ){
+		$text = ucfirst($text);
+	}
+
 	return $text;
 	
 }
 
 function str_replace_first($from, $to, $subject){
+	
     $from = '/'.preg_quote($from, '/').'/';
     return preg_replace($from, $to, $subject, 1);
+
 }
 
 

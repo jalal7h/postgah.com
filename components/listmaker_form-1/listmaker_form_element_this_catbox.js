@@ -1,6 +1,6 @@
 
 /*print*/
-/*2016/11/13*/
+/*2016/11/14*/
 
 var catjson_head = '';
 
@@ -13,7 +13,8 @@ jQuery(document).ready(function($) {
 	content+= '<span class=\"head\">';
 
 	if( cat_value > 0 ){
-		content+= '<span class="up" parent="'+catjson_get_parent(cat_value)+'" >بازگشت</span>';
+		var lang_back = $('.lmfe_catbox_c.selected .lmfe_catbox').attr('lang_back');
+		content+= '<span class="up" parent="'+catjson_get_parent(cat_value)+'" >'+lang_back+'</span>';
 	}
 	
 	if( cat_value == 0 ){
@@ -27,7 +28,6 @@ jQuery(document).ready(function($) {
 	}
 
 	content+= '<span class="the_save_button"></span>';
-
 	content+= '</span>';
 
 	for( var prop in obj ){
@@ -43,12 +43,14 @@ jQuery(document).ready(function($) {
 	
 	$('body').delegate('.lmfe_catbox_c .lmfe_catbox', 'click', function() {
 
+		var lang_select = $(this).attr('lang_select');
+
 		$('.lmfe_catbox_c').removeClass('selected');
 		$(this).parent().addClass('selected');
 
 		// ba click ruye section, bere be 0
 		$(this).parent().find('input[type="hidden"]').val('0');
-		$(this).parent().find('.lmfe_catbox').html('<nobr>انتخاب '+ $(this).parent().parent().find('.lmfe_tnit').html() +'</nobr>');
+		$(this).parent().find('.lmfe_catbox').html('<nobr>'+lang_select+' '+ $(this).parent().parent().find('.lmfe_tnit').html() +'</nobr>');
 
 		cat_value = 0;
 		

@@ -22,7 +22,7 @@ function listmaker_form_element_this_cat( $info ){
 	
 	#
 	# check if this cat have subcat
-	if(! $GLOBALS['cat_items'][ $info['cat_name'] ][2] ){
+	if(! cat_detail($info['cat_name'])['sub'] ){
 		$noSubcat = 1;
 	} else {
 		$noSubcat = 0;

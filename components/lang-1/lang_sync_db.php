@@ -31,20 +31,24 @@ function lang_sync_db(){
 	if( sizeof($arr_s) ){
 		$arr = array_merge( $arr, $arr_s );
 	}
+	#
+	$arr_tpl = lang_sync_db_template();
+	if( sizeof($arr_tpl) ){
+		$arr = array_merge( $arr, $arr_tpl );
+	}
 
 	# 
 	# convert arr to txt
 	foreach( $arr as $md5 => $text ){
-		$c.= substr($md5,1)." ".$text."\n";
+		$c.= substr($md5,1)." ".nl2br($text)."\n";
 	}
 
 	#
 	# save on txt
-	$v = component_version('lang');
-	$path = "components/lang-".$v."/db/fa.txt";
-	file_put_contents( $path, $c );
+	lang_sync_db_putInFiles( $c );
 
-	echo $c;
+	# echo what we did
+	// echo "<pre>".$c."</pre>";
 	
 }
 

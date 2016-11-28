@@ -18,13 +18,13 @@ function tallfooter_linkify( $rw_tf ){
 		//
 
 	} else {
-		$c.= "\t\t<div class=\"head\">".$rw_tf['name']."</div>\n";
+		$c.= "<div class=\"head\">".$rw_tf['name']."</div>\n";
 		
 		if(! sizeof($cat['items']) ){
 			dg();
 
 		} else foreach( $cat['items'] as $id => $info ){
-			$c.= "\t\t<a href=\"".$info['url']."\" >".$info['name']."</a>\n";
+			$c.= "<a href=\"".$info['url']."\" >".$info['name']."</a>\n";
 		}
 
 	}

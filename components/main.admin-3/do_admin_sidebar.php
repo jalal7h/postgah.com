@@ -1,17 +1,22 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/07/11
-# 2.1
+# 2016/11/18
+# 2.2
 
 function do_admin_sidebar(){
 
-	echo "\n\n<div class=\"sidebar-wrapper\">\n";
-	echo "\t<div class=\"sidebar\">\n";
+	?>
+	<div class="sidebar-wrapper">
+	<div class="sidebar">
+	<?
 
 	$rand = "dasi".rand(10000000,99999999);
-	echo "\n\t\t<a href=\""._URL."/?page=admin\"><icon id=\"".$rand."\"></icon>".__("پیشخوان")."</a>\n";
-	echo "\t\t<style> #".$rand.":before { content: \"\\f0e4\" }</style>\n\n";
+	
+	?>
+	<a href="<?=_URL?>/?page=admin"><icon id="<?=$rand?>" ></icon><?=__("پیشخوان")?></a>
+	<style> #<?=$rand?>:before { content: "\f0e4" }</style>
+	<?
 
 	foreach ($GLOBALS['cmp'] as $func => $name ) {
 		if( (! is_component('useraccess')) or useraccess( admin_logged(), $func) ){
@@ -19,8 +24,10 @@ function do_admin_sidebar(){
 		}
 	}
 
-	echo "\t</div>\n";
-	echo "</div>\n\n";
+	?>
+	</div>
+	</div>
+	<?
 	
 }
 
@@ -31,11 +38,11 @@ function do_admin_sidebar_this( $func, $name ){
 		$icon_code = '1b2';
 	}
 
-	if( substr($func, 0, 15)=='cat_management&' ){
-		$cat_name = substr($func, 17);
-		if( $GLOBALS['cat_items'][ $cat_name ][1] ){
-			if( $GLOBALS['cat_items'][ $cat_name ][1]!==true ){
-				$icon_code = $GLOBALS['cat_items'][ $cat_name ][1];
+	if( substr($func, 0, 7) == 'cat_mg&' ){
+		$cat_name = substr($func, 9);
+		if( cat_detail($cat_name)['dashboard'] ){
+			if( cat_detail($cat_name)['dashboard'] !== true ){
+				$icon_code = cat_detail($cat_name)['dashboard'];
 			}
 		}
 	

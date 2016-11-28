@@ -32,7 +32,7 @@ function admin_changepassword(){
 	
 			[!"email:username"=>"'.$rw_user['username'].'","inDiv"!]
 			[!"name:name"=>"'.$rw_user['name'].'","inDiv"!]
-			[!"number:cell"=>"'.$rw_user['cell'].'","inDiv"!]
+			[!"text:cell"=>"'.$rw_user['cell'].'","inDiv"!]
 			[!"password:password"=>"************","inDiv"!]
 			
 			<br> 

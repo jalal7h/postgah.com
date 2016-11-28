@@ -1,0 +1,7 @@
+
+/*admin*/
+/*skipfix*/
+
+.linkify_mg_this_form input[name="url"] {
+	direction: ltr;
+}

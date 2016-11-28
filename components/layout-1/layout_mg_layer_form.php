@@ -13,7 +13,7 @@ function layout_mg_layer_form(){
 	} else {
 		$pos = $_REQUEST['pos'];
 	}
-
+	
 	if( in_array( $pos, ['left','right'] ) ){
 		if( sizeof($GLOBALS['block_layers_side']) ){
 			$GLOBALS['block_layers'] = array_merge( $GLOBALS['block_layers'], $GLOBALS['block_layers_side'] );

@@ -1,8 +1,19 @@
 <?
 
+
 # -spi-
 
-#
-# name , عنوان , displayInDashboard
-$GLOBALS['cat_items']['adsCat'] = ['دسته بندی آگهی' , $inDashboard='0ca' , $zirgoruh=true, $haveIcon=true, $haveDesc=true, $flag=true, $customfield=true, $kw=true ];
 
+/*********************************************/
+$GLOBALS['cat_items']['adsCat'] = [
+	'name'		=> 'دسته بندی آگهی' ,
+	'dashboard'	=> '0ca' ,
+	'sub'		=> true ,
+	'icon'		=> true ,
+	'desc'		=> true ,
+	'flag'		=> true ,
+	'ccf'		=> true ,
+	'kw'		=> true ,
+	'color'		=> false ,
+];
+/*********************************************/

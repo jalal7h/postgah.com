@@ -1,1 +1,1 @@
-RewriteRule ^newsletter-email-list.txt$ ./?do_action=nl_management_emailList_download [L]
+RewriteRule ^newsletter-email-list.txt$ ./?do_action=nl_mg_emailList_download [L]

@@ -49,16 +49,6 @@ function wget(urlpath, id, pars){ // jquery
 	});
 }
 
-function form_check(e,t){
-	if(e.value==''){
-		alert('لطفا '+t+' را بطور درست وارد نمایید');
-		e.focus();
-		return false;
-	} else {
-		return true;
-	}
-}
-
 function str_replace(find,replace,string){
 	var fndLng=find.length;
 	for(i=0; i<string.length; i++){

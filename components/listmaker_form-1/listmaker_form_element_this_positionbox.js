@@ -13,7 +13,8 @@ jQuery(document).ready(function($) {
 	content+= '<span class=\"head\">';
 
 	if( position_value > 0 ){
-		content+= '<span class="up" parent="'+positionjson_get_parent(position_value)+'" >بازگشت</span>';
+		var lang_back = $('.lmfe_positionbox_c.selected .lmfe_positionbox').attr('lang_back');
+		content+= '<span class="up" parent="'+positionjson_get_parent(position_value)+'" >'+lang_back+'</span>';
 	}
 	
 	if( position_value == 0 ){
@@ -46,12 +47,14 @@ jQuery(document).ready(function($) {
 	// opens the hitbox of selecting position and sub position
 	$('body').delegate('.lmfe_positionbox_c .lmfe_positionbox', 'click', function() {
 		
+		var lang_select = $(this).attr('lang_select');
+
 		$('.lmfe_positionbox_c').removeClass('selected');
 		$(this).parent().addClass('selected');
 		
 		// ba click ruye section, bere be 0
 		$(this).parent().find('input[type="hidden"]').val('0');
-		$(this).parent().find('.lmfe_positionbox').html('<nobr>انتخاب '+ $(this).parent().parent().find('.lmfe_tnit').html() +'</nobr>');
+		$(this).parent().find('.lmfe_positionbox').html('<nobr>'+lang_select+' '+ $(this).parent().parent().find('.lmfe_tnit').html() +'</nobr>');
 
 		position_value = 0;
 		

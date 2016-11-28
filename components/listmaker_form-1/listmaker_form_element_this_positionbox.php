@@ -18,7 +18,7 @@ function listmaker_form_element_this_positionbox( $info ){
 		js_enqueue( 'listmaker_form-1', 'listmaker_form_element_this_positionbox' );
 
 		if(! $info['value'] ){
-			$position_name = __("انتخاب ").$info['placeholder'];
+			$position_name = __("انتخاب")." ".$info['placeholder'];
 		} else {
 			$position_name = positionjson_get_title_serial( $info['value'] );	
 		}
@@ -31,7 +31,7 @@ function listmaker_form_element_this_positionbox( $info ){
 				name=\"".$info['name'].( $info['ArrayInput'] ? '[]' : '' )."\" 
 				value=\"".( $info['value'] ? $info['value'] : '0' )."\" 
 				/>
-			<span class='lmfe_positionbox' >".$position_name."</span>
+			<span class='lmfe_positionbox' lang_select='".__('انتخاب')."' lang_back='".__('بازگشت')."' >".$position_name."</span>
 		</span>";
 		
 		return $c;

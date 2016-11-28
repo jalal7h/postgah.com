@@ -1,0 +1,8 @@
+
+/*index*/
+
+.contact_vw_form input[name="cell"] {
+	direction: ltr;
+	text-align: left !important;
+}
+

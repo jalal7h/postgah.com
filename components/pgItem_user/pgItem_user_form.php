@@ -30,6 +30,8 @@ function pgItem_user_form(){
 		
 		[!"file:image+"!]
 		[!"url:video"!]
+		<div class="video_memo">فقط یوتوب، آپارات،‌ ویمئو</div>
+
 		<div>[!"number:cost","notInDiv"!] &nbsp; <?=setting("money_unit")?></div>
 		
 		<hr>

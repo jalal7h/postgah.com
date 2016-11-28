@@ -46,7 +46,7 @@ RewriteRule ^styles-admin.css$ ./?do_action=include_all_css&page=admin [L]
 
 # 
 # newsletter-1
-RewriteRule ^newsletter-email-list.txt$ ./?do_action=nl_management_emailList_download [L]
+RewriteRule ^newsletter-email-list.txt$ ./?do_action=nl_mg_emailList_download [L]
 
 # 
 # pgCat

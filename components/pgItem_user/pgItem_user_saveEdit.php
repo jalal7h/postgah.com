@@ -6,7 +6,17 @@
 
 function pgItem_user_saveEdit(){
 
+	# 
+	# check if the content is verified
 	token_check();
+
+	#
+	# filter all words
+	kbclear( $_REQUEST['name'] );
+	kbclear( $_REQUEST['text'] );
+	kbclear( $_REQUEST['cost'] );
+	kbclear( $_REQUEST['cell'] );
+	kbclear( $_REQUEST['tell'] );
 
 	if(! $user_id = user_logged() ){
 		ed();

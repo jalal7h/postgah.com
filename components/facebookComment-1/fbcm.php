@@ -31,6 +31,7 @@ function fbcm( $table_name , $table_id , $comment_id=0, $page_id=0 ){
 	}
 
 	return $c;
+	
 }
 
 

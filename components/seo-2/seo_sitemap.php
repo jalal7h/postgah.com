@@ -1,6 +1,8 @@
 <?
 
-$GLOBALS['do_action'][] = "seo_sitemap";
+# jalal7h@gmail.com
+# 2016/11/28
+# 1.1
 
 /*
 $GLOBALS['seo_sitemap'][] = array( 
@@ -9,54 +11,57 @@ $GLOBALS['seo_sitemap'][] = array(
 );
 /*README*/	
 
+$GLOBALS['do_action'][] = "seo_sitemap";
 
 function seo_sitemap(){
 	
 	$date = date("Y-m-d\TH:i:s\+00:00", U());
 	
-	@header('Content-Type: text/xml, charset=utf-8');
+	header('Content-Type: text/xml, charset=utf-8');
 	echo '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.google.com/schemas/sitemap/0.84"><url><loc>'._URL.'/</loc><lastmod>'.$date.'</lastmod><changefreq>always</changefreq><priority>1</priority></url>';
 
-	if(!sizeof($GLOBALS['seo_sitemap'])){
+	if(! sizeof($GLOBALS['seo_sitemap']) ){
 		//
+
 	} else foreach ($GLOBALS['seo_sitemap'] as $k => $r) {
 		
 		$query = $r['query'];
 		$link0 = $r['link'];
 
-		if(!$query){
+		if(! $query ){
 			echo "no query defined in seo_sitemap";
 
-		} else if(!$rs = dbq($query)){
-			// echo("error in seo_rss - ".__LINE__);
-			echo "::".dbe()."::";
-			echo $query;
+		} else if(! $rs = dbq($query) ){
+			echo dbe();
 
-		} else if(!dbn($rs)){
-			// echo("error in seo_rss - ".__LINE__);
+		} else if(! dbn($rs) ){
+			e();
 
-		} else for($i=0; $i<dbn($rs); $i++){
+		} else for( $i=0; $i<dbn($rs); $i++ ){
 			
 			#
 			# get the main variables
-			if(!$rw = dbf($rs)){
-				echo "Err - ".__LINE__;
+			if(! $rw = dbf($rs) ){
+				e();
 			}
 
 			eval("\$link = $link0;");
 			
-			if(intval($rw['date'])=='0'){
-				$rw['date'] = $date;
+			if( intval($rw['date']) != '0' ){
+				$the_date = date( "Y-m-d\TH:i:s\+00:00", $rw['date'] );
+			} else {
+				$the_date = $date;
 			}
 
 			#
 			# echo row
-			echo "\n<url>\n"
-			."<loc>".$link."</loc>\n"
-			."<lastmod>".date("Y-m-d\TH:i:s\+00:00", $rw['date'])."</lastmod>\n"
-			."<priority>0.5</priority>\n"
-			."<changefreq>daily</changefreq>\n"
-			."</url>\n";
+			echo "
+			<url>
+				<loc>$link</loc>
+				<lastmod>$the_date</lastmod>
+				<priority>0.5</priority>
+				<changefreq>daily</changefreq>
+			</url>";
 
 		}
 	}

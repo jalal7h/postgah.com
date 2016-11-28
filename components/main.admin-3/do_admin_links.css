@@ -8,6 +8,7 @@
 	color: #bbb;
 	padding: 4px 10px;
 	display: inline-block;
+	line-height: 22px;
 }
 #do_admin .mainbar > .top > .links > a:hover {
 	color: white;

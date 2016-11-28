@@ -16,8 +16,8 @@ function do_admin_breadcrumb(){
 			<? if( array_key_exists($cp, $GLOBALS['cmp']) ){ ?>
 				<a class="etc" href="<?=_URL?>/?page=admin&cp=<?=$cp?>"><?=$GLOBALS['cmp'][$cp]?></a>
 
-			<? } else if( $cp=='cat_management' and $_REQUEST['l']!='' ) { ?>
-				<a class="etc" href="<?=_URL?>/?page=admin&cp=<?=$cp?>"><?=$GLOBALS['cat_items'][ $_REQUEST['l'] ][0]?></a>
+			<? } else if( $cp=='cat_mg' and $_REQUEST['l']!='' ) { ?>
+				<a class="etc" href="<?=_URL?>/?page=admin&cp=<?=$cp?>"><?=cat_detail( $_REQUEST['l'] )['name']?></a>
 
 			<? } else if( $cp=='linkify_mg' and $_REQUEST['l']!='' ) { ?>
 				<a class="etc" href="<?=_URL?>/?page=admin&cp=<?=$cp?>"><?=$GLOBALS['linkify_items'][ $_REQUEST['l'] ]['name']?></a>

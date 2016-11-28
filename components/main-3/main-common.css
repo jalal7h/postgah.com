@@ -153,7 +153,7 @@ select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	background: url('./image_list/select-tag-drop-icon.png') no-repeat 7px center;
+	background: url('./image_list/select-tag-drop-icon.png') no-repeat left 7px center;
 	padding-left: 28px !important;
 	background-color: white;
 }

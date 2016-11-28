@@ -22,7 +22,7 @@ function users_forgot_new(){
 		<input type="hidden" name="h" value="<?=$h_old?>" />
 			<div class="container" >
 				
-				<div class="head" ><?=__('لطفا کلمه عبور جدید را وارد کنید!')?></div>
+				<div class="head" ><?=__('لطفا کلمه عبور جدید را وارد کنید.')?></div>
 				
 				<label>
 					<span><?=__('کلمه عبور جدید')?> :‌ </span>
@@ -43,7 +43,8 @@ function users_forgot_new(){
 
 				<label>
 					<span></span>
-					<div class="prompt"></div>
+					<div class="prompt" lang_empty_password="<?=__('لطفا کلمه عبور مناسب وارد کنید.')?>" lang_more_than_8_char="<?=__('کلمه عبور شما باید بیش از ۸ کارکتر داشته باشد.')?>" lang_does_not_match="<?=__('کلمه عبور مطابقت ندارد')?>"
+					></div>
 				</label>
 
 			</div>

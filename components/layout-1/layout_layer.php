@@ -15,7 +15,7 @@ function layout_layer( $pos="center" ){
 	$we_have_column_pos = is_column('page_layer', 'pos');
 
 	if(! $rs_pagelayer = dbq(" SELECT * FROM `page_layer` WHERE `page_id`='"._PAGE."' ".( $we_have_column_pos ? " AND `pos`='$pos' " : "" )." AND `flag`='1' ORDER BY `prio` ASC, `id` ASC ") ){
-		e(__FUNCTION__,__LINE__);
+		e();
 		
 	} else if(! dbn($rs_pagelayer) ){
 		return "";
@@ -26,10 +26,12 @@ function layout_layer( $pos="center" ){
 		$page_layer_func = $rw_pagelayer['func'];
 
 		if(! function_exists( $page_layer_func ) ){
-			e(__FUNCTION__,__LINE__);
+			e();
 		
 		} else {
+			echo "<div class=\"no_margin ".$page_layer_func."_wrap\">";
 			$page_layer_func( $rw_pagelayer );
+			echo "</div>";
 		}
 
 	}
@@ -52,10 +54,10 @@ function layout_layer( $pos="center" ){
 
 	} else {
 		$content = "\n<section class=\"".$pos."\">\n".$content."\n</section>\n";
-
 	}
 
 	return $content;
+
 }
 
 

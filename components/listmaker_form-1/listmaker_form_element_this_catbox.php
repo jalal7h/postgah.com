@@ -7,8 +7,7 @@
 function listmaker_form_element_this_catbox( $info ){
 
 	if(! $info['cat_name'] ){
-		echo "no cat defined !";
-		return false;
+		ed();
 	}
 
 	$c.= lmfe_tnit( $info );
@@ -18,7 +17,7 @@ function listmaker_form_element_this_catbox( $info ){
 	js_enqueue( 'listmaker_form-1', 'listmaker_form_element_this_catbox' );
 
 	if(! $info['value'] ){
-		$cat_name = __("انتخاب ").$info['placeholder'];
+		$cat_name = __("انتخاب")." ".$info['placeholder'];
 	} else {
 		$cat_name = catjson_get_title_serial( $info['value'] );	
 	}
@@ -33,7 +32,7 @@ function listmaker_form_element_this_catbox( $info ){
 			name=\"".$info['name'].( $info['ArrayInput'] ? '[]' : '' )."\" 
 			value=\"".$cat_value."\" 
 			/>
-		<span class='lmfe_catbox' >".$cat_name."</span>
+		<span class='lmfe_catbox' lang_select='".__('انتخاب')."' lang_back='".__('بازگشت')."' >".$cat_name."</span>
 	</span>";
 	
 	if( is_component('catcustomfield') and $info['ccf']==true ){

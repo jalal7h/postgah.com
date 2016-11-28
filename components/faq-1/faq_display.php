@@ -15,7 +15,7 @@ function faq_display( $table_name=null, $page_id=null ){
 		e();
 	
 	} else while($rw = dbf($rs)){
-		$list[] = array("name"=>$rw['name'], "text"=>$rw['text']);
+		$list[] = [ "name"=>$rw['name'], "text"=>$rw['text'] ];
 	}
 
 	$content = listmaker_clicktab($list);
