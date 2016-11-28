@@ -1,23 +1,23 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/08/18
-# 2.0
+# 2016/11/28
+# 2.1
 
-function layout_post_box( $title, $content, $allow_eval=false, $framed=0, $pos="center" ){
+function layout_post_box( $title, $content, $allow_eval=false, $framed=0, $pos="center", $return=false ){
 	
 	if(! $framed ){
 	
 		if( $allow_eval==true ){
+			ob_start();
 			eval("?>$content<?");
-	
-		} else {
-			echo $content;
+			$content = ob_get_contents();
+			ob_end_clean();
 		}
 		
 	} else {
 		
-		if($allow_eval==true){
+		if( $allow_eval==true ){
 			ob_start();
 			eval("?>$content<?");
 			$content = ob_get_contents();
@@ -28,11 +28,15 @@ function layout_post_box( $title, $content, $allow_eval=false, $framed=0, $pos="
 		$vars['layout-content'] = $content;
 		$vars['layout-pos'] = $pos;
 
-		echo template_engine( "layout-post", $vars );
+		$content = template_engine( "layout-post", $vars );
 
 	}
 
-	return true;
+	if( $return ){
+		return $content;
+	} else {
+		echo $content;
+	}
 
 }
 

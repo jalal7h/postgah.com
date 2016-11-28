@@ -18,7 +18,7 @@ function pgItem_list_of_premium( $rw_pagelayer ){
 		}
 
 		if(! $rs_item = dbq(" SELECT * FROM `item` WHERE `flag`='2' AND `plan`!=0 ORDER BY rand() LIMIT $number_of_rows ") ){
-			e(__FUNCTION__,__LINE__);
+			e();
 
 		} else if(! dbn($rs_item) ){
 			$content = '<br><center>موردی یافت نشد</center><br>';
@@ -27,12 +27,8 @@ function pgItem_list_of_premium( $rw_pagelayer ){
 			$content.= pgItem_list_brief_this( $rw_item );		
 		}
 
-		ob_start();
-		layout_post_box( $layer_name, $content, 0, 1, $rw_pagelayer['pos'] );
-		$the_box = ob_get_contents();
-		ob_end_clean();
-
-		echo cache( "make", $cache_key, $the_box );
+		$content = layout_post_box( $layer_name, $content, 0, 1, $rw_pagelayer['pos'], $return=true );
+		echo cache( "make", $cache_key, $content );	
 	}
 
 }
