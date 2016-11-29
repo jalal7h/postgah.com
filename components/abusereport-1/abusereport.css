@@ -1,0 +1,10 @@
+
+.abusereport {
+	cursor: pointer;
+}
+.abusereport:before {
+	font-family: FontAwesome;
+	content: "\f071";
+	padding: 0 4px;
+}
+

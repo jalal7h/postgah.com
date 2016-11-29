@@ -1,0 +1,94 @@
+
+.fbcomment_list {
+
+}
+.fbcomment_list > div > div.r {
+	margin: 30px 16px 0 0;
+	position: relative;
+}
+.fbcomment_list > div > div.r > .date {
+	position: absolute; left: 10px; top: 10px;
+	color: #ADADAD;
+	opacity: 0.0;
+}
+.fbcomment_list > div > div.r:hover .date {
+	opacity: 1.0;
+}
+
+.fbcomment_list div.r div.text {
+	/* text-indent: 52px; */
+	margin: 15px 52px 8px 52px;
+	font-size: 13px;
+	/* background-color: #f8f8f8; */
+}
+.fbcomment_list div.r .useravatar a.name {
+	color: #adadad;
+}
+.fbcomment_list div.r div.text:before ,
+.fbcomment_list div.r div.text:after {
+	font-family: FontAwesome;
+	font-size: 12px;
+	content: "\f10e";
+	position: relative;
+	margin: 0 10px;
+	display: inline-block;
+	color: #adadad;
+}
+.fbcomment_list div.r div.text:before {
+	content: "\f10e";
+	top: -2px;
+}
+.fbcomment_list div.r div.text:after {
+	content: "\f10d";
+	top: 5px;
+}
+
+
+.fbcomment_list div.r div.links {
+	padding-right: 47px;
+}
+.fbcomment_list div.r div.links > * {
+	display: inline-block;
+	margin-left: 15px;
+	color: #ADADAD;
+}
+.fbcomment_list div.r div.links > *:hover {
+	color: black;
+}
+.fbcomment_list div.r div.links > .reply {
+	
+}
+.fbcomment_list div.r div.links > .tweet {
+	
+}
+.fbcomment_list div.r div.links > .reply:before ,
+.fbcomment_list div.r div.links > .tweet:before {
+	font-family: FontAwesome;
+	margin-left: 5px;
+	position: relative; top: 2px;
+	font-size: 14px;
+	display: inline-block;
+	/* color: #ADADAD; */
+}
+.fbcomment_list div.r div.links > .reply:before {
+	content: "\f064";
+}
+.fbcomment_list div.r div.links > .tweet:before {
+	content: "\f099";
+}
+
+.fbcomment_list div.r div.links .upvote_form > icon ,
+.fbcomment_list div.r div.links .upvote_form > div {
+	display: inline-block;
+}
+.fbcomment_list div.r div.links .upvote_form > icon:before {
+	top: 3px;
+}
+
+.fbcomment_list .fbcomment {
+	padding-right: 65px;
+}
+.fbcomment_list .fbcomment > form.form {
+	display: none;
+}
+

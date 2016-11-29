@@ -56,14 +56,25 @@ function abusereport_mg_list(){
 	$list['list_array'][] = array( "head"=>lmtc($table.":user_id"), "content" => '
 		
 		( $rw["user_id"]
-			? ( users_detail($rw["user_id"]) ? users_detail($rw["user_id"])["name"] : "[حذف شده]" )
-			: "[ناشناس]"
+			? ( users_detail($rw["user_id"]) ? users_detail($rw["user_id"])["name"] : "['.__('حذف شده').']" )
+			: "['.__('ناشناس').']"
 		)
-
 
 		');
 
-	$list['list_array'][] = array("head"=>__('مورد تخلف'), "content" => 'lmtc($rw["table_name"])[0]." : ".( table($rw["table_name"],$rw["table_id"]) ? table($rw["table_name"],$rw["table_id"])["name"] : "[حذف شده]" )' );
+	$list['list_array'][] = array("head"=>__('مورد تخلف'), "content" => '
+
+		lmtc($rw["table_name"])[0]." : ".
+
+		( table($rw["table_name"],$rw["table_id"]) 
+			? ( table($rw["table_name"],$rw["table_id"])["name"] 
+				? table($rw["table_name"],$rw["table_id"])["name"]
+				: mb_substr( table($rw["table_name"],$rw["table_id"])["text"], 0 , 200 )." .."
+			  )
+			: "['.__('حذف شده').']"
+		)
+
+	' );
 	
 	$list['height'] = 100;
 
