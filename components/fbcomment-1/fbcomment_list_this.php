@@ -25,7 +25,7 @@ function fbcomment_list_this( $table_name , $table_id , $rw ){
 			
 			( _fbcomment_share_on_twitter ? '<a class="tweet twitter_popup" href="http://twitter.com/share?text='.urlencode($rw['text']).'&url='.urlencode( stash_item_link( table("item", $_REQUEST['id']) )."#comment-".$rw['id'] ).'"></a>' : '').
 
-			( is_component('abusereport') ? '<a '.abusereport( 'fbcomment', $rw['id'] ).' >'.__('گزارش تخلف').'</a>' : '' ).
+			( (is_component('abusereport') and $rw['user_id']!=user_logged()) ? '<a '.abusereport( 'fbcomment', $rw['id'] ).' >'.__('گزارش تخلف').'</a>' : '' ).
 
 			'
 		</div>
