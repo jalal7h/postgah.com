@@ -1,0 +1,59 @@
+
+.abusereport_mg_view {
+	margin: 60px 7vw;
+}
+.abusereport_mg_view a {
+	color: #8e0000 !important;
+}
+.abusereport_mg_view a:hover {
+	color: #000 !important;
+}
+.abusereport_mg_view a.submit_button {
+	color: white !important;
+}
+.abusereport_mg_view .case {
+	display: inline-block;
+	width: calc( 100% - 100px );
+	font-size: 18px;
+}
+.abusereport_mg_view .case > a {
+	font-size: 18px;
+}
+.abusereport_mg_view .date {
+	display: inline-block;
+	width: 100px;
+	text-align: left;
+	direction: rtl;
+}
+
+.abusereport_mg_view .text {
+	margin: 20px 0;
+	padding: 20px 100px;
+	border-top: 1px dashed #d4d4d4;
+	border-bottom: 1px dashed #d4d4d4;
+	line-height: 23px !important;
+}
+.abusereport_mg_view .text:before ,
+.abusereport_mg_view .text:after {
+	font-family: FontAwesome;
+	padding: 0 8px;
+	font-size: 18px;
+}
+.abusereport_mg_view .text:before {
+	content: "\f10e";
+	/* position: relative; top: -5px; */
+}
+.abusereport_mg_view .text:after {
+	content: "\f10d";
+	position: relative; bottom: -5px;
+}
+
+.abusereport_mg_view .links {
+	margin: 40px 0 10px 0;
+	text-align: center;
+}
+.abusereport_mg_view .links > a {
+	margin: 0 3px;
+}
+
+

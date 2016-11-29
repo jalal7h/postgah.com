@@ -6,16 +6,16 @@
 
 function is_table( $table ){
 
-	if( $table=="" ){
+	if( $table == "" ){
 		return false;
 	
-	}if(! $rs = dbq(" SHOW TABLES LIKE '$table' ") ){
+	} else if(! $rs = dbq(" SHOW TABLES LIKE '$table' ") ){
 		dg();
 	
 	} else if(! dbn($rs) ){
 		return false;
 
-	} else if( dbr($rs,0,0)!=$table ){
+	} else if( dbr($rs,0,0) != $table ){
 		return false;
 	
 	} else {
@@ -23,4 +23,9 @@ function is_table( $table ){
 	}
 	
 }
+
+
+
+
+
 

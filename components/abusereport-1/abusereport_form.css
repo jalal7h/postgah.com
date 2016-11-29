@@ -1,0 +1,54 @@
+
+.abusereport_form {
+    background-color: #eee;
+    position: relative;
+}
+
+.abusereport_form textarea {
+	position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    width: 100%;
+    height: calc( 100% - 80px );
+    resize: none;
+    padding: 30px;
+    direction: rtl;
+    font-size: 20px;
+    border-radius: 4px 4px 0 0;
+    border: 0px;
+    border-bottom: 1px solid #d4d4d4;
+}
+.abusereport_form textarea:hover {
+    border: 0px;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.abusereport_form select {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+    width: 200px;
+    padding: 10px;
+}
+
+.abusereport_form input[type="submit"] {
+	position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2;
+    transition: all 0.3s;
+    opacity: 0.8;
+}
+.abusereport_form input[type="submit"]:hover {
+	opacity: 1;
+}
+
+
+
+
+
+
+
+

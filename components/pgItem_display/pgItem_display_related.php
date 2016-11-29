@@ -7,7 +7,7 @@ function pgItem_display_related( $rw_pagelayer ){
 	if(! $rw_item = pgItem_fetch() ){
 		e();
 
-	} else if(! $rs = dbq(" SELECT * FROM `item` WHERE `cat_id`='{$rw_item['cat_id']}' ORDER BY rand() LIMIT 4 ") ){
+	} else if(! $rs = dbq(" SELECT * FROM `item` WHERE `cat_id`='{$rw_item['cat_id']}' AND `id`!='".$rw_item['id']."' ORDER BY rand() LIMIT 4 ") ){
 		e();
 
 	} else if(! dbn($rs) ){

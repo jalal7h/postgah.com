@@ -11,3 +11,8 @@ function pgItem_link( $rw ){
 
 }
 
+# 
+# only for abusereport component
+function item_link( $rw ){
+	return pgItem_link($rw);
+}

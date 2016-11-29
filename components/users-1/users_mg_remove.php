@@ -1,17 +1,17 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/01
-# 1.0
+# 2016/11/29
+# 1.1
 
 function users_mg_remove(){
 	
 	$need_confirm = false;
 	
-	if(!$id = $_REQUEST['id']){
-		e(__LINE__);
+	if(! $id = $_REQUEST['id'] ){
+		e();
 	
-	} else if($_REQUEST['confirm']=='1'){
+	} else if( $_REQUEST['confirm'] == '1' ){
 		return users_mg_remove_confirm( $id );
 	
 	} else {
@@ -22,12 +22,12 @@ function users_mg_remove(){
 
 
 function users_mg_remove_confirm( $id ){
-	
-	// remove from etc
-	dbq(" DELETE FROM `users` WHERE `id`='$id' LIMIT 1 ");
-	echo "<script>location.href='"._URL."/?page=admin&cp=".$_REQUEST['cp']."&p=".$_REQUEST['p']."';</script>";
+
+	users_remove($id);
+	jsgo( _URL."/?page=admin&cp=".$_REQUEST['cp']."&p=".$_REQUEST['p'] );
 
 	die();
+	
 }
 
 

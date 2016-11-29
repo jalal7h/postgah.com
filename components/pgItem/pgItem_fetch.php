@@ -30,8 +30,8 @@ function pgItem_fetch( $id=null, $refetch=false ){
 
 function pgItem_fetch_process( $rw ){
 
-	$rw['name'] = kwordbanned_clear($rw['name']);
-	$rw['text'] = kwordbanned_clear($rw['text']);
+	kbclear($rw['name']);
+	kbclear($rw['text']);
 
 	# nxx
 

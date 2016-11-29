@@ -12,15 +12,15 @@
 	height: 47px;
 	position: relative;
 }
-.pgItem_display_text .text_footer .abuse_report {
+.pgItem_display_text .text_footer .abusereport {
 	position: absolute; right: 10px; bottom: 3px;
 	cursor: pointer;
 	color: #888;
 }
-.pgItem_display_text .text_footer .abuse_report:hover {
+.pgItem_display_text .text_footer .abusereport:hover {
 	color: black;
 }
-.pgItem_display_text .text_footer .abuse_report:before {
+.pgItem_display_text .text_footer .abusereport:before {
 	font-family: FontAwesome;
 	content: "\f071";
     font-size: 16px;

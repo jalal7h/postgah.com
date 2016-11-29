@@ -1,30 +1,51 @@
 <?
 
-function pgItem_remove( $id, $by ){
+function pgItem_remove( $id, $by, $silent=false ){
 
 	if(! $rw = table('item', $id) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else if(! dbrm('item', $id) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else if(! $rs = dbq(" DELETE FROM `item_image` WHERE `item_id`='$id' ") ){
-		e(__FUNCTION__,__LINE__);
+		e();
 	
 	} else {
-
+		
 		$rw['user_name'] = table('users', $rw['user_id'], 'name');
 
-		if( $by=="admin" ){
-			echo texty( 'pgItem_remove_byAdmin', $rw, $rw['user_id'] );
+		if( $by == "admin" ){
+			$prompt = texty( 'pgItem_remove_byAdmin', $rw, $rw['user_id'] );
+			if(! $silent ){
+				echo $prompt;
+			}
 			
 		} else {
-			echo texty( 'pgItem_remove_byUser', $rw );
+			$prompt = texty( 'pgItem_remove_byUser', $rw );
+			if(! $silent ){
+				echo $prompt;
+			}
 		}
 		
 		return true;
+
 	}
 
 	return false;
+
 }
+
+
+# 
+# only for abusereport component
+function item_remove( $item_id ){
+	return pgItem_remove( $item_id, $by="admin", true );
+}
+
+
+
+
+
+
 
