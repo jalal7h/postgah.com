@@ -7,7 +7,7 @@
 function user_remove( $user_id ){
 
 	#
-	# remove users record
+	# remove user record
 	dbrm( 'user', $user_id, $recursive=true );
 
 	return true;

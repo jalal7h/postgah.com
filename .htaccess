@@ -78,19 +78,19 @@ RewriteRule ^sitemap.xml$ ./?do_action=seo_sitemap [L]
 RewriteRule ^rss/([a-zA-Z0-9]+)\.xml$ ./?do_action=seo_rss&feed=$1 [L]
 
 # 
+# user-1
+RewriteRule ^register$ ./?page=58 [L]
+RewriteRule ^register_do$ ./?page=59 [L]
+RewriteRule ^login$ ./?page=60 [L]
+RewriteRule ^forgot$ ./?page=63 [L]
+
+# 
 # userpanel-4
 RewriteRule ^userpanel$ ./?page=14 [L]
 
 # 
 # userprofile-1
 RewriteRule ^@([0-9]+)$ ./?page=19&id=$1 [L]
-
-# 
-# users-1
-RewriteRule ^register$ ./?page=58 [L]
-RewriteRule ^register_do$ ./?page=59 [L]
-RewriteRule ^login$ ./?page=60 [L]
-RewriteRule ^forgot$ ./?page=63 [L]
 
 # 
 # d404-1-spi
