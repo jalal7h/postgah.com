@@ -9,7 +9,7 @@ function set_pub_user_id(){
 	dbq_old(" ALTER TABLE `pub` ADD `user_id` INT NOT NULL AFTER `email` ");
 
 	if(! $rs = dbq_old(" SELECT DISTINCT `email` FROM `pub` WHERE `user_id`='0' LIMIT $limit ") ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else if(! dbn($rs) ){
 		echo "0 record with user_id of 0";
@@ -23,14 +23,14 @@ function set_pub_user_id(){
 			$email = $rw['email'];
 
 			$user_id = 0;
-			if(! $rs_users = dbq(" SELECT `id` FROM `users` WHERE `username`='$email' LIMIT 1 ") ){
-				e(__FUNCTION__,__LINE__,dbe() );
+			if(! $rs_user = dbq(" SELECT `id` FROM `user` WHERE `username`='$email' LIMIT 1 ") ){
+				e( dbe() );
 			
-			} else if(! dbn($rs_users) ){
-				e(__FUNCTION__,__LINE__);
+			} else if(! dbn($rs_user) ){
+				e();
 
-			} else if(! $user_id = dbr($rs_users, 0, 0) ){
-				e(__FUNCTION__,__LINE__);
+			} else if(! $user_id = dbr($rs_user, 0, 0) ){
+				e();
 			}
 			
 			if(! dbq_old(" UPDATE `pub` SET `user_id`='$user_id' WHERE `email`='$email' ") ){

@@ -47,14 +47,14 @@ function pgItem_mg_list(){
 	$list['list_array']= [
 		["picture" => 'pgItem_image($rw)'],
 		["content" => '$rw[\'name\']', "title"=>'time_inword($rw["date_updated"])'],
-		["content" => '"<a target=\'_blank\' href=\'./?page=admin&cp=users_mg&do=login&id=".$rw[\'user_id\']."\'>".table("users",$rw[\'user_id\'], "name")'],
+		["content" => '"<a target=\'_blank\' href=\'./?page=admin&cp=user_mg&do=login&id=".$rw[\'user_id\']."\'>".table("user",$rw[\'user_id\'], "name")'],
 		["content" => 'position_translate($rw[\'position_id\'])." / ".cat_translate($rw[\'cat_id\'])'],
 		["content" => 'pgItem_user_list_this_status($rw)'],
 	];
 
 	#
 	# search columns // az in field ha tu table search mikone
-	$list['search'] = [ "id", "name", "text", "users(user_id)[username]", "users(user_id)[name]", "cat(cat_id)[name]", "position(position_id)[name]" ];
+	$list['search'] = [ "id", "name", "text", "user(user_id)[username]", "user(user_id)[name]", "cat(cat_id)[name]", "position(position_id)[name]" ];
 
 	#
 	# paging select

@@ -1,8 +1,8 @@
 <?
 
-$GLOBALS['converter_list'][] = 'move_users';
+$GLOBALS['converter_list'][] = 'move_user';
 
-function move_users(){
+function move_user(){
 
 
 
@@ -10,12 +10,12 @@ function move_users(){
 
 
 
-	dbq_old(" ALTER TABLE `users` ADD `converter` INT(1) NOT NULL AFTER `oldUser` ");
+	dbq_old(" ALTER TABLE `user` ADD `converter` INT(1) NOT NULL AFTER `oldUser` ");
 	echo "<hr>";
 	
 	#
-	# move users to users
-	if(! $rs = dbq_old(" SELECT * FROM `users` WHERE `converter`='0' LIMIT $limit ") ){
+	# move user to user
+	if(! $rs = dbq_old(" SELECT * FROM `user` WHERE `converter`='0' LIMIT $limit ") ){
 		e(__FUNCTION__,__LINE__,dbe());
 	
 	} else if(! dbn($rs) ){
@@ -64,7 +64,7 @@ function move_users(){
 
 		#
 		# insert
-		if(! dbq(" INSERT INTO `users` (`username`,`password`,`name`,`tell`,`cell`,`wallet_credit`,`address`) VALUES 
+		if(! dbq(" INSERT INTO `user` (`username`,`password`,`name`,`tell`,`cell`,`wallet_credit`,`address`) VALUES 
 			('".$rw['username']."',
 			'".$rw['password']."',
 			'".$rw['name']."',
@@ -73,7 +73,7 @@ function move_users(){
 			'$credit',
 			'$address') ") ){
 			e( __FUNCTION__, __LINE__, dbe() );
-		echo " INSERT INTO `users` (`username`,`password`,`name`,`tell`,`cell`,`wallet_credit`,`address`) VALUES 
+		echo " INSERT INTO `user` (`username`,`password`,`name`,`tell`,`cell`,`wallet_credit`,`address`) VALUES 
 			('".$rw['username']."',
 			'".$rw['password']."',
 			'".$rw['name']."',
@@ -88,10 +88,10 @@ function move_users(){
 
 	if( sizeof($username_arr) ){
 		$username_str = "'" . implode("','", $username_arr) . "'";
-		if(! dbq_old(" UPDATE `users` SET `converter`='1' WHERE `username` IN ($username_str) ") ){
+		if(! dbq_old(" UPDATE `user` SET `converter`='1' WHERE `username` IN ($username_str) ") ){
 			e(__FUNCTION__,__LINE__,dbe());
 		}
-		echo "<hr>".mysql_affected_rows()." rows changed in old users";
+		echo "<hr>".mysql_affected_rows()." rows changed in old user";
 		echo "<hr>".sizeof($username_arr)." rows inserted";
 	}
 

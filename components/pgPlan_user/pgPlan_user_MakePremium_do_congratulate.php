@@ -11,7 +11,7 @@ function pgPlan_user_MakePremium_do_congratulate( $IPD_id, $invoice_id ){
 	$cost = $rw_invoice['cost'];
 
 	$user_id = $rw_invoice['user_id'];
-	$rw_users = table( 'users', $user_id );
+	$rw_user = table( 'user', $user_id );
 
 	$rw_PD = table( 'plan_duration', $rw_IPD['plan_duration_id'] );
 	$rw_plan = table( 'plan', $rw_PD['plan_id'] );
@@ -24,7 +24,7 @@ function pgPlan_user_MakePremium_do_congratulate( $IPD_id, $invoice_id ){
 		'button_list_of_invoices' => '<a class="submit_button" href="'._URL.'/?page='.$_REQUEST['page'].'&do=billing_userpanel_list">لیست فاکتور ها</a>',
 	];
 	
-	$vars['user_name'] = $rw_users['name'];
+	$vars['user_name'] = $rw_user['name'];
 	$vars['item_name'] = $rw_item['name'];
 	$vars['plan_name'] = $rw_plan['name_on_form'];
 	$vars['duration'] = $rw_PD['hour']." ساعت";

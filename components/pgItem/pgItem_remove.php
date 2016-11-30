@@ -13,7 +13,7 @@ function pgItem_remove( $id, $by, $silent=false ){
 	
 	} else {
 		
-		$rw['user_name'] = table('users', $rw['user_id'], 'name');
+		$rw['user_name'] = table('user', $rw['user_id'], 'name');
 
 		if( $by == "admin" ){
 			$prompt = texty( 'pgItem_remove_byAdmin', $rw, $rw['user_id'] );
