@@ -10,7 +10,7 @@ function useravatar( $user_id , $text_flag=false , $link_flag=false , $job_flag=
 	// 	return $GLOBALS['useravatar-cache'][ $user_id ];
 	// }
 
-	if(! $rw_user = table("users", $user_id) ){
+	if(! $rw_user = table("user", $user_id) ){
 		return false;
 	}
 

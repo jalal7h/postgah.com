@@ -56,7 +56,7 @@ function abusereport_mg_list(){
 	$list['list_array'][] = array( "head"=>lmtc($table.":user_id"), "content" => '
 		
 		( $rw["user_id"]
-			? ( users_detail($rw["user_id"]) ? users_detail($rw["user_id"])["name"] : "['.__('حذف شده').']" )
+			? ( user_detail($rw["user_id"]) ? user_detail($rw["user_id"])["name"] : "['.__('حذف شده').']" )
 			: "['.__('ناشناس').']"
 		)
 
@@ -80,7 +80,7 @@ function abusereport_mg_list(){
 
 	#
 	# search columns // az in field ha tu table search mikone
-	$list['search'] = [ "text", "users(user_id)[name]" ];
+	$list['search'] = [ "text", "user(user_id)[name]" ];
 
 
 	#

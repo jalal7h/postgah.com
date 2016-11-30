@@ -1,17 +1,17 @@
 <?
 
-function billing_management_users(){
+function billing_management_user(){
 	
 	#
 	# action
 	switch($_REQUEST['do']){
 		case 'invoice_list':
-			return billing_management_users_invoicelist();
+			return billing_management_user_invoicelist();
 	}
 
 	#
 	# list
-	$list['query'] = " SELECT * FROM `users` WHERE `permission`='0' ORDER BY `id` DESC ";
+	$list['query'] = " SELECT * FROM `user` WHERE `permission`='0' ORDER BY `id` DESC ";
 	
 	$list['target_url'] = '_URL."/?page=".$_REQUEST["page"]."&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["func"]."&do=invoice_list&id=".$rw["id"]';
 	$list['paging_url'] = '_URL."/?page=".$_REQUEST["page"]."&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["func"]';
@@ -20,7 +20,7 @@ function billing_management_users(){
 	$list['list_array'] = array(
 		#
 		# name
-		array( "head" => lmtc('users:name') , "content" => '"<span title=\'".$rw[\'username\']."\'>".$rw["name"]."</span>"' , "attr" => array( "width" => "200px" , "align" => 'center' , "dir" => _rtl) ),
+		array( "head" => lmtc('user:name') , "content" => '"<span title=\'".$rw[\'username\']."\'>".$rw["name"]."</span>"' , "attr" => array( "width" => "200px" , "align" => 'center' , "dir" => _rtl) ),
 		#
 		# payments
 		array( "head" => __("پرداخت") , "content" => 'billing_format(intval(dbr(dbq(" SELECT SUM(`cost`) FROM `billing_invoice` WHERE `user_id`=\'".$rw[\'id\']."\' AND `date`>0 AND `method`!=\'wallet\' "),0,0)))' , "attr" => array( "align" => 'right',"dir" => _rtl) ),

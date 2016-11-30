@@ -3,7 +3,7 @@
 function useraccess_mg_form(){
 
 	echo lmfo([
-		'table' => 'users' ,
+		'table' => 'user' ,
 		'action' => './?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['cp'].'_list',
 		'name' => __FUNCTION__ ,
 		'class' => __FUNCTION__ ,
@@ -13,14 +13,14 @@ function useraccess_mg_form(){
 
 	#
 	# var
-	$users_id = intval($_REQUEST['id']);
+	$user_id = intval($_REQUEST['id']);
 	$access_list.= "<div class='left'>\n";
 	foreach ($GLOBALS['cmp'] as $component_func => $component_name) {
 		
 		# 
 		# flag
-		if( $users_id ){
-			$flag = dbn( dbq(" SELECT * FROM `useraccess` WHERE `users_id`='$users_id' AND `component`='$component_func' LIMIT 1 ") );
+		if( $user_id ){
+			$flag = dbn( dbq(" SELECT * FROM `useraccess` WHERE `user_id`='$user_id' AND `component`='$component_func' LIMIT 1 ") );
 		}
 
 		# 
@@ -40,7 +40,7 @@ function useraccess_mg_form(){
 			['text:name*','inDiv'],
 			['email:username*','inDiv'],
 			['text:management_title*','inDiv'],
-			( $users_id ? ['password:password','inDiv'] : ['password:password*','inDiv'] ),
+			( $user_id ? ['password:password','inDiv'] : ['password:password*','inDiv'] ),
 			['number:cell*','inDiv'],
 		'</div>',
 		
@@ -54,7 +54,7 @@ function useraccess_mg_form(){
 
 	echo lmfc();
 
-	if( $users_id ){
+	if( $user_id ){
 		?>
 		<script>
 			jQuery(document).ready(function($) {

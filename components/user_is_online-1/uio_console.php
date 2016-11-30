@@ -16,7 +16,7 @@ function uio_console(){
 
 function uio_console_this( $user_id ){
 	
-	dbs('users', [ 'uio_date'=>U() ], [ 'id'=>$user_id ] );
+	dbs('user', [ 'uio_date'=>U() ], [ 'id'=>$user_id ] );
 	
 }
 

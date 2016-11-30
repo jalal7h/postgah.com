@@ -14,7 +14,7 @@
 function emailgif( $emil ){
 		
 	if( is_numeric($email) ){
-		if(! $email = table( "users", $email, "username" ) ){
+		if(! $email = table( "user", $email, "username" ) ){
 			e(__FUNCTION__,__LINE__);
 			return false;
 		}

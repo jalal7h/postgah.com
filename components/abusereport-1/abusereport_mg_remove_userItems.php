@@ -9,7 +9,7 @@ function abusereport_mg_remove_userItems(){
 	if(! $user_id = $_REQUEST['user_id'] ){
 		e();
 		
-	} else if(! $rw_users = table('users', $user_id) ){
+	} else if(! $rw_user = table('user', $user_id) ){
 		e();
 		
 	} else if(! $id = $_REQUEST['id'] ){

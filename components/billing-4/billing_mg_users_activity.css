@@ -1,7 +1,7 @@
 
 /*admin*/
 
-.billing_management_users_activity {
+.billing_management_user_activity {
 	margin: 24px 0 40px 0;
 	text-align: right;
 	direction: rtl;
@@ -9,19 +9,19 @@
 	text-align: right;
 	font: normal 16px tahoma;
 }
-.billing_management_users_activity > div {
+.billing_management_user_activity > div {
 	margin: 10px 0 10px 0;
 }
-.billing_management_users_activity .name {
+.billing_management_user_activity .name {
 	
 }
-.billing_management_users_activity > div > span:nth-child(1) {
+.billing_management_user_activity > div > span:nth-child(1) {
 	font-weight: bold;
 	color: black;
 	display: inline-block;
 	width: 70px;
 	padding: 2px;
 }
-.billing_management_users_activity > div > span:nth-child(2) {
+.billing_management_user_activity > div > span:nth-child(2) {
 	
 }

@@ -5,7 +5,7 @@
 # 3.1
 
 /*
-texty_sms( "user" , "users_register_do_sms" , array(
+texty_sms( "user" , "user_register_do_sms" , array(
 	"username"=>$username,
 	"password"=>$password,
 ) );
@@ -31,13 +31,13 @@ function texty_sms( $who , $slug , $vars ){
 			$username = $_SESSION[ admin_key()['username'] ];
 			#
 			# admin cell
-			$to = table("users", $username, "cell", "username");
+			$to = table("user", $username, "cell", "username");
 			break;
 
 		case 'user':
 			if(! $user_id = user_logged() ){
 				return false;
-			} else if(! $to = table("users", $user_id, "cell") ){
+			} else if(! $to = table("user", $user_id, "cell") ){
 				return false;
 			} else {
 				// its OK
@@ -50,11 +50,11 @@ function texty_sms( $who , $slug , $vars ){
 				
 			} else if( strlen($who)<10 ){ // its user_id
 				$user_id = $who;
-				if(! $rw_users = table("users", $user_id) ){
+				if(! $rw_user = table("user", $user_id) ){
 					e(__FUNCTION__,__LINE__);
 					die();
 				} else {
-					$to = $rw_users['username'];
+					$to = $rw_user['username'];
 				}
 
 			} else {
@@ -76,11 +76,11 @@ function texty_sms( $who , $slug , $vars ){
 
 	#
 	# user sms content
-	} else if( $rw_users ){
+	} else if( $rw_user ){
 		$content = $texty['user_sms'];
-		$content = str_replace('{user_email}', $rw_users['username'], $content);
-		$content = str_replace('{user_id}', $rw_users['id'], $content);
-		$content = str_replace('{user_name}', $rw_users['name'], $content);
+		$content = str_replace('{user_email}', $rw_user['username'], $content);
+		$content = str_replace('{user_id}', $rw_user['id'], $content);
+		$content = str_replace('{user_name}', $rw_user['name'], $content);
 
 	#
 	# admin sms content

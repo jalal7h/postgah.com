@@ -3,11 +3,12 @@
 function cellletter_mg_send_do(){
 
 	if(! $text = trim(strip_tags($_REQUEST['text'])) ){
-		e( __FUNCTION__ , __LINE__ );		
+		e();	
+			
 	} else {
 
-		if( $_REQUEST['users_cell_list']=='1' ){
-			if(! $rws = table(array( 'users' , 'cell' , " AND `cell` LIKE '%9%' " )) ){
+		if( $_REQUEST['user_cell_list']=='1' ){
+			if(! $rws = table(array( 'user' , 'cell' , " AND `cell` LIKE '%9%' " )) ){
 				;//
 			} else if(! sizeof($rws) ){
 				;//

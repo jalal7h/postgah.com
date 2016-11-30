@@ -13,7 +13,7 @@ function lang_sync_db_global(){
 		}
 	}
 
-	# $GLOBALS['block_layers']['users_forgot_form'] = 'فرم فراموشی کلمه عبور';
+	# $GLOBALS['block_layers']['user_forgot_form'] = 'فرم فراموشی کلمه عبور';
 	if( sizeof($GLOBALS['block_layers']) ){
 		foreach( $GLOBALS['block_layers'] as $i => $text ){
 			$arr[ ":".lang_hash($text) ] = $text;

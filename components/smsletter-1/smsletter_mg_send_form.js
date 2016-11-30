@@ -23,7 +23,7 @@ $(document).ready(function(){
 
 		//
 		// if no checkbox checked
-		if( (document.getElementById('users_email_list').checked) || (document.getElementById('smsletter_mg_list_of_cell_checkbox').checked) ){
+		if( (document.getElementById('user_email_list').checked) || (document.getElementById('smsletter_mg_list_of_cell_checkbox').checked) ){
 			console.log('its ok');
 		} else {
 			e.preventDefault();

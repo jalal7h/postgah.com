@@ -30,9 +30,9 @@ function nl_mg_send_do(){
 
 		}
 
-		if( $_REQUEST['users_email_list']=='1' ){
+		if( $_REQUEST['user_email_list']=='1' ){
 			
-			if(! $rws = table(array( 'users' , 'username' , " AND `username` LIKE '%@%' " )) ){
+			if(! $rws = table(array( 'user' , 'username' , " AND `username` LIKE '%@%' " )) ){
 				//
 			
 			} else if(! sizeof($rws) ){

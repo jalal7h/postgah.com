@@ -4,7 +4,7 @@
 # 2015/10/17
 # Version 1.1.0
 
-function billing_management_users_invoicelist(){
+function billing_management_user_invoicelist(){
 	
 	if(! $user_id = $_REQUEST['id'] ){
 		ed();
@@ -14,7 +14,7 @@ function billing_management_users_invoicelist(){
 	$p = intval($_REQUEST['p']);
 	$stt = $tdd * $p;
 	
-	billing_management_users_activity( $user_id );
+	billing_management_user_activity( $user_id );
 	
 	echo "<div class='".__FUNCTION__."'>";
 		

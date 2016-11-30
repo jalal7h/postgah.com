@@ -1,0 +1,53 @@
+
+#user_login_form {
+	margin: auto;
+	display: block;
+	/*margin-right: 8%;*/
+	margin-bottom: 8%;
+}
+#user_login_form .container {
+	padding: 30px 0 20px 0;
+}
+#user_login_form .the_key {
+	display: none;
+}
+#user_login_form input {
+	direction: ltr;
+	display: block;
+	font: normal 16px monospace,tahoma;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin: 5px 0 5px 0;
+	width: 450px;
+	max-width: 95%;
+}
+#user_login_form input[type="submit"] {
+	width: auto;
+	padding: 10px 20px;
+}
+#user_login_form .d01 {
+	margin: 20px 0 40px 0;
+	font: bold 32px tahoma;
+	color: #666;
+}
+#user_login_form .d03 {
+	font: normal 10px tahoma;
+	margin: 0px 2px 20px 0;
+}
+#user_login_form .d04 {
+	font: normal 10px tahoma;
+	display: block;
+	margin: 15px 2px 0 0;
+	width: 140px;
+}
+#user_login_form .d05 {
+	font: normal 10px tahoma;
+}
+
+#user_login_form .prompt {
+	color: red;
+	margin: -5px 0 15px 0;
+}
+
+

@@ -1,13 +1,13 @@
 <?
 
-function billing_management_users_activity( $user_id ){
+function billing_management_user_activity( $user_id ){
 	
-	if(! $rw = table("users", $user_id) ){
+	if(! $rw = table("user", $user_id) ){
 		e();
 	
 	} else {
 		echo "
-		<div class='billing_management_users_activity' >
+		<div class='billing_management_user_activity' >
 			<div class='name' >
 				<span>".__("نام")." : </span>
 				<span>".$rw['name']." &lt;".$rw['username']."&gt;</span>

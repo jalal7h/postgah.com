@@ -24,18 +24,18 @@ function useraccess_mg_saveNew(){
 		
 		#
 		# edit
-		if( $rw = table('users', $username, null, 'username') ){
-			$users_id = dbs( 'users', ['password','permission'=>'2','name','management_title','cell','flag_admin'=>'1','flag_user'=>'1'], ['username'] );
+		if( $rw = table('user', $username, null, 'username') ){
+			$user_id = dbs( 'user', ['password','permission'=>'2','name','management_title','cell','flag_admin'=>'1','flag_user'=>'1'], ['username'] );
 		
 		#
 		# new
 		} else {
-			$users_id = dbs( 'users', ['username','password','permission'=>'2','name','management_title','cell','flag_admin'=>'1','flag_user'=>'1'] );
+			$user_id = dbs( 'user', ['username','password','permission'=>'2','name','management_title','cell','flag_admin'=>'1','flag_user'=>'1'] );
 		}
 
 		#
 		# access list
-		useraccess_mg_save__access_list( $users_id );
+		useraccess_mg_save__access_list( $user_id );
 
 	}
 	

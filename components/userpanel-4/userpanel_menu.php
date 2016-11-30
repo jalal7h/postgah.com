@@ -12,9 +12,9 @@ function userpanel_menu(){
 		dg();
 		return true;
 	
-	} else if(! $rw = table("users",$user_id) ){
+	} else if(! $rw = table("user",$user_id) ){
 		dg();
-		users_logout();
+		user_logout();
 	
 	} else if( $_REQUEST['page']!=14 ){
 		dg();

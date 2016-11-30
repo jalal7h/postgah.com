@@ -8,11 +8,11 @@ function abusereport_mg_removeUser(){
 	if(! $user_id = $_REQUEST['user_id'] ){
 		e();
 
-	} else if( function_exists('users_remove') ){
-		users_remove($user_id);
+	} else if( function_exists('user_remove') ){
+		user_remove($user_id);
 	
 	} else {
-		dbrm( 'users', $user_id );
+		dbrm( 'user', $user_id, true );
 	}
 
 }

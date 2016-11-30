@@ -6,7 +6,7 @@
 
 function fbcomment_mg_info( $rw ){
 
-	$profile_name = table("users", $rw['user_id'], "name");
+	$profile_name = table("user", $rw['user_id'], "name");
 	$profile_link = userprofile_link( $rw['user_id'] );
 
 	$item_name = table($rw['table_name'],$rw['table_id'],'name');

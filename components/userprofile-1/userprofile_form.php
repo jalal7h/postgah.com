@@ -1,5 +1,11 @@
 <?
 
+# jalal7h@gmail.com
+# 2016/11/30
+# 1.1
+
+$GLOBALS['userpanel_item'][ 94 ] = [ 'userprofile_form', 'پروفایل کاربر', '007' ];
+
 function userprofile_form(){
 
 	echo '<div class="userprofile_form_head">'.__('پروفایل کاربر').'</div>';
@@ -11,10 +17,10 @@ function userprofile_form(){
 	}
 
 	if(! $uid = user_logged() ){
-		e( __FUNCTION__ . __LINE__ );
+		e();
 	
-	} else if(! $rw = table("users", $uid) ){
-		e( __FUNCTION__ . __LINE__ );
+	} else if(! $rw = table("user", $uid) ){
+		e();
 	
 	} else {
 
@@ -23,7 +29,7 @@ function userprofile_form(){
 		## -------------------------------------------------
 		echo listmaker_form('
 			[!
-				"table" => "users" ,
+				"table" => "user" ,
 				"action" => "./?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'",
 				"name" => "'.__FUNCTION__.'" ,
 				"class" => "'.__FUNCTION__.'" ,
@@ -54,6 +60,7 @@ function userprofile_form(){
 		## -------------------------------------------------
 
 	}
+	
 }
 
 

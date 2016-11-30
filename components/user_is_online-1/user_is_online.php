@@ -6,7 +6,7 @@
 
 function user_is_online( $user_id ){
 	
-	$uio_date = table('users',$user_id,'uio_date');
+	$uio_date = table('user',$user_id,'uio_date');
 
 	if( $uio_date + 60 < U() ){
 		return false;

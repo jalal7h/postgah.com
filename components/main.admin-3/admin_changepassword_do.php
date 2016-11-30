@@ -11,13 +11,13 @@ function admin_changepassword_do(){
 	if(! $user_id = admin_logged() ){
 		ed(__FUNCTION__,__LINE__);
 	
-	} else if(! $rw_user = table('users', $user_id) ){
+	} else if(! $rw_user = table('user', $user_id) ){
 		ed(__FUNCTION__,__LINE__);
 	}
 
 	#
 	# info
-	dbs( 'users', ['username','name','cell'], ['id'=>$user_id] );
+	dbs( 'user', ['username','name','cell'], ['id'=>$user_id] );
 
 	#
 	# password
@@ -28,7 +28,7 @@ function admin_changepassword_do(){
 		if( is_component('userhashpassword') ){
 			$password = userhashpassword($password);
 		}
-		dbs( 'users', ['password'=>$password], ['id'=>$user_id] );
+		dbs( 'user', ['password'=>$password], ['id'=>$user_id] );
 	}
 
 

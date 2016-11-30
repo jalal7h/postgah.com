@@ -23,7 +23,7 @@ function billing_invoiceMake( $cost, $order_table="", $order_id=0, $user_id=null
 
 	#
 	# user verification
-	} else if(! $rw_user = table('users', $user_id) ){
+	} else if(! $rw_user = table('user', $user_id) ){
 		e();
 	
 	#

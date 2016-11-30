@@ -11,7 +11,7 @@ function admin_changepassword(){
 	if(! $user_id = admin_logged() ){
 		ed();
 	
-	} else if(! $rw_user = table('users', $user_id) ){
+	} else if(! $rw_user = table('user', $user_id) ){
 		ed();
 	}
 
@@ -20,7 +20,7 @@ function admin_changepassword(){
 	# -------------------------------------------------
 	echo listmaker_form('
 		[!
-			"table" => "users" ,
+			"table" => "user" ,
 			"action" => "./?do_action=admin_changepassword_do",
 			"name" => "'.__FUNCTION__.'" ,
 			"class" => "'.__FUNCTION__.'" ,

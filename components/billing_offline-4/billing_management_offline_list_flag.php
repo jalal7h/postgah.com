@@ -25,7 +25,7 @@ function billing_management_offline_list_flag(){
 
 		$vars = $rw_invoice;
 		$vars['bank_name'] = billing_method_name( $rw_invoice['method'] );
-		$vars['user_name'] = table( 'users', $rw_invoice['user_id'], 'name' );
+		$vars['user_name'] = table( 'user', $rw_invoice['user_id'], 'name' );
 		$vars['cost'] = number_format($rw_invoice['cost'])." ".setting('money_unit');
 		
 		echo texty( 'billing_management_offline_list_flag', $vars, $rw_invoice['user_id'] );

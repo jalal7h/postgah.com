@@ -12,7 +12,7 @@ function billing_invoiceMake_congratulate( $invoice_id ){
 	} else if(! $user_id = $rw_invoice['user_id'] ){
 		e();
 
-	} else if(! $rw_users = table('users', $user_id) ) {
+	} else if(! $rw_user = table('user', $user_id) ) {
 		e();
 
 	} else {
@@ -23,7 +23,7 @@ function billing_invoiceMake_congratulate( $invoice_id ){
 
 		$vars['invoice_id'] = $invoice_id;
 		$vars['cost'] = $rw_invoice['cost'];
-		$vars['user_name'] = $rw_users['name'];
+		$vars['user_name'] = $rw_user['name'];
 
 		echo texty( 'billing_invoiceMake_congratulate', $vars, $user_id );
 

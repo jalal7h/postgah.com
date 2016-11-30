@@ -23,7 +23,7 @@ $(document).ready(function(){
 
 		//
 		// if no checkbox checked
-		if( (document.getElementById('newsletter_email_list').checked) || (document.getElementById('users_email_list').checked) || (document.getElementById('nlmg_list_of_emails_checkbox').checked) ){
+		if( (document.getElementById('newsletter_email_list').checked) || (document.getElementById('user_email_list').checked) || (document.getElementById('nlmg_list_of_emails_checkbox').checked) ){
 			console.log('its ok');
 		} else {
 			e.preventDefault();

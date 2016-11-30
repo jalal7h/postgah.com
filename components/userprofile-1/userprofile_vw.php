@@ -11,7 +11,7 @@ function userprofile_vw(){
 	if(! $id = $_REQUEST['id'] ){
 		e(__FUNCTION__,__LINE__);
 	
-	} else if(! $rw = table("users", $id)){
+	} else if(! $rw = table("user", $id)){
 		echo "<script> location.href='"._URL."/404.php';</script>";
 		die();
 

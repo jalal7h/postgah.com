@@ -12,7 +12,7 @@ function user_emailverifybeforesignup_send(){
 	} else if(! $e_enc = str_enc($e) ){
 		dg();
 
-	} else if( table('users', $e, null, 'username') ){
+	} else if( table('user', $e, null, 'username') ){
 		echo convbox( __('آدرس ایمیل مورد نظر شما قبلا ثبت شده است.<br>%%بازگشت%%', ['<a href="javascript:history.go(-1);">', '</a>'] ) );
 
 	} else if(! $h = user_emailverifybeforesignup_hash($e) ){

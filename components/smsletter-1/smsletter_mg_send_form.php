@@ -18,9 +18,9 @@ function smsletter_mg_send_form(){
 		</div>
 
 		<label>
-			<input type="checkbox" value="1" name="users_cell_list" id="users_cell_list" checked />
+			<input type="checkbox" value="1" name="user_cell_list" id="user_cell_list" checked />
 			<span><?=__('ارسال به شماره‌های کاربران')?>
-				<span style="color:green;">( <?=table(array( 'users' , 'count' , " AND `cell` LIKE '%9%' " ))?> <?=__('شماره')?> )</span>
+				<span style="color:green;">( <?=table(array( 'user' , 'count' , " AND `cell` LIKE '%9%' " ))?> <?=__('شماره')?> )</span>
 			</span>
 		</label>
 

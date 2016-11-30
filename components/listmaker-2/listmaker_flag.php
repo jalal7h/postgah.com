@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2015/12/24
-# Version 1.0.2
+# 2015/11/30
+# 1.1
 
 /*
 	listmaker_flag( "links" );
@@ -20,11 +20,12 @@ karborde listmaker_flag baraye enable/disable kardan e ye record e.
 
 function listmaker_flag( $table_name , $setFlagTo=null , $id=null , $column="flag" ){
 	
-	if($id===null){
+	if( $id === null ){
 		if(! $id = $_REQUEST['id']){
-			e(__FUNCTION__ , __LINE__);
+			e();
 		}
 	}
+
 
 	if( $setFlagTo ){
 		$value_query = "'$setFlagTo'";
@@ -32,17 +33,29 @@ function listmaker_flag( $table_name , $setFlagTo=null , $id=null , $column="fla
 		$value_query = "MOD(`$column`+1,2)";
 	}
 
-	if(!$rw = table( $table_name , $id )){
-		e(__FUNCTION__,__LINE__);
+
+	if(! $rw = table( $table_name , $id ) ){
+		e();
 	}
 
-	$query = " UPDATE `$table_name` SET `$column`=$value_query WHERE `id`='$id' LIMIT 1 ";
 
-	if(! dbq( $query )){
-		e(__FUNCTION__ , __LINE__, dbe());
+	if(! dbq(" UPDATE `$table_name` SET `$column`=$value_query WHERE `id`='$id' LIMIT 1 ") ){
+		e( dbe() );
+
 	} else {
 		return true;
 	}
 
+
 	return false;
+
 }
+
+
+
+
+
+
+
+
+

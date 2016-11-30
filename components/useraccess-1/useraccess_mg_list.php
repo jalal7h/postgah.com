@@ -19,7 +19,7 @@ function useraccess_mg_list(){
 			break;
 			
 		case 'flag':
-			listmaker_flag( 'users', null, null, 'flag_admin' );
+			listmaker_flag( 'user', null, null, 'flag_admin' );
 			break;
 
 		case 'remove':
@@ -39,7 +39,7 @@ function useraccess_mg_list(){
 	# the list
 	$list['name'] = __FUNCTION__;
 	$list['class'] = __FUNCTION__;
-	$list['query'] = " SELECT * FROM `users` WHERE `permission`='2' AND `id`!='1' ORDER BY `id` DESC ";
+	$list['query'] = " SELECT * FROM `user` WHERE `permission`='2' AND `id`!='1' ORDER BY `id` DESC ";
 	$list['tdd'] = 10; // tedad dar safhe
 	
 	#
@@ -67,9 +67,9 @@ function useraccess_mg_list(){
 
 	#
 	# list array // list e sotun haye list
-	$list['list_array'][] = array("head"=>lmtc("users:name"), "content" => '$rw[\'name\']');
-	$list['list_array'][] = array("head"=>lmtc("users:username"), "content" => '$rw[\'username\']');
-	$list['list_array'][] = array("head"=>lmtc("users:management_title"), "content" => '$rw[\'management_title\']');
+	$list['list_array'][] = array("head"=>lmtc("user:name"), "content" => '$rw[\'name\']');
+	$list['list_array'][] = array("head"=>lmtc("user:username"), "content" => '$rw[\'username\']');
+	$list['list_array'][] = array("head"=>lmtc("user:management_title"), "content" => '$rw[\'management_title\']');
 	$list['list_array'][] = array("head"=>__('زمان ثبت‌نام'), "content" => '( $rw[\'date_created\']==0 ? \''.__('نامشخص').'\' : time_inword($rw[\'date_created\']) )');
 	$list['list_array'][] = array("head"=>__('وضعیت'), "content" => 'useraccess_mg_list__status($rw)');
 

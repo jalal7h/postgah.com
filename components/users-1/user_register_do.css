@@ -1,0 +1,27 @@
+
+.user_register_do {
+	margin: 40px;
+}
+.user_register_do > icon:before {
+	font-family: FontAwesome;
+	font-size: 110px;
+	content: "\f14a";
+	width: 130px;
+	margin-right: 100px;
+	color: #96cc00;
+}
+.user_register_do > .left {
+	display: inline-block;
+	width: calc( 100% - 250px );
+}
+.user_register_do > .left > span {
+	display: block;
+	font: normal 18px DefaultFont;
+	color: #6f6f6f;
+}
+.user_register_do > .left > a {
+	color: blue;
+	display: inline-block;
+	margin-top: 15px;
+}
+

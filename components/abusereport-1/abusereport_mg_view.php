@@ -50,7 +50,7 @@ function abusereport_mg_view(){
 			//
 
 		# invalid good user
-		} else if(! $rw_theGoodUser = table('users', $rw_ar['user_id']) ){
+		} else if(! $rw_theGoodUser = table('user', $rw_ar['user_id']) ){
 			//
 		}
 
@@ -70,7 +70,7 @@ function abusereport_mg_view(){
 			//
 
 		# user does not exist
-		} else if(! $rw_theBadUser = table('users', $rw_item['user_id'] ) ){
+		} else if(! $rw_theBadUser = table('user', $rw_item['user_id'] ) ){
 
 		}
 
@@ -97,9 +97,9 @@ function abusereport_mg_view(){
 
 			$GoodUserLink = is_component('userprofile')
 				? userprofile_link($rw_theGoodUser['id']) 
-				: users_loginLink($rw_theGoodUser['id']);
+				: user_loginLink($rw_theGoodUser['id']);
 
-			echo "گزارش از طرف <a href=\"".$GoodUserLink."\" target=\"_blank\">".$rw_theGoodUser['name']."</a> (<a href=\"".users_loginLink($rw_theGoodUser['id'])."\" target=\"_blank\">".__('ورود')."</a>)";
+			echo "گزارش از طرف <a href=\"".$GoodUserLink."\" target=\"_blank\">".$rw_theGoodUser['name']."</a> (<a href=\"".user_loginLink($rw_theGoodUser['id'])."\" target=\"_blank\">".__('ورود')."</a>)";
 		}
 
 		if( $rw_theGoodUser and $rw_theBadUser ){
@@ -110,9 +110,9 @@ function abusereport_mg_view(){
 			
 			$BadUserLink = is_component('userprofile') 
 				? userprofile_link($rw_theBadUser['id'])
-				: users_loginLink($rw_theBadUser['id']);
+				: user_loginLink($rw_theBadUser['id']);
 
-			echo "$item_title ".__("ثبت شده توسط")." <a href=\"".$BadUserLink."\" target=\"_blank\">".$rw_theBadUser['name']."</a> (<a href=\"".users_loginLink($rw_theBadUser['id'])."\" target=\"_blank\">".__('ورود')."</a>)";
+			echo "$item_title ".__("ثبت شده توسط")." <a href=\"".$BadUserLink."\" target=\"_blank\">".$rw_theBadUser['name']."</a> (<a href=\"".user_loginLink($rw_theBadUser['id'])."\" target=\"_blank\">".__('ورود')."</a>)";
 		}
 		
 		echo "</div>"; // sub

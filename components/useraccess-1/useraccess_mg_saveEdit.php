@@ -4,8 +4,8 @@ function useraccess_mg_saveEdit(){
 
 	#
 	# check variables
-	if(! $users_id = $_REQUEST['id'] ){
-		e(__FUNCTION__,__LINE__);
+	if(! $user_id = $_REQUEST['id'] ){
+		e();
 
 	} else {
 
@@ -22,13 +22,13 @@ function useraccess_mg_saveEdit(){
 			$set_array['password'] = $password;
 		}
 
-		dbs( 'users', $set_array, ['id'] );
+		dbs( 'user', $set_array, ['id'] );
 
 	}
 
 	#
 	# access list
-	useraccess_mg_save__access_list( $users_id );
+	useraccess_mg_save__access_list( $user_id );
 
 }
 

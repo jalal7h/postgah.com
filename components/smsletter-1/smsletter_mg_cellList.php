@@ -6,7 +6,7 @@ function smsletter_mg_cellList(){
 	# 
 	# the list
 	$list['name'] = __FUNCTION__;
-	$list['query'] = " SELECT * FROM `users` WHERE `cell` LIKE '%9%' ";
+	$list['query'] = " SELECT * FROM `user` WHERE `cell` LIKE '%9%' ";
 	$list['tdd'] = 10; // tedad dar safhe
 	
 	#
@@ -32,7 +32,7 @@ function smsletter_mg_cellList(){
 	
 	#
 	# list array // list e sotun haye list
-	$list['list_array'][] = array("head"=>lmtc("users:cell"), "content" => '$rw[\'cell\']');
+	$list['list_array'][] = array("head"=>lmtc("user:cell"), "content" => '$rw[\'cell\']');
 
 	#
 	# search columns // az in field ha tu table search mikone

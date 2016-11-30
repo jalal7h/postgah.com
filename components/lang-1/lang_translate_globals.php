@@ -20,7 +20,7 @@ function lang_translate_globals(){
 		}
 	}
 
-	# $GLOBALS['block_layers']['users_forgot_form'] = 'فرم فراموشی کلمه عبور';
+	# $GLOBALS['block_layers']['user_forgot_form'] = 'فرم فراموشی کلمه عبور';
 	if( sizeof($GLOBALS['block_layers']) ){
 		foreach( $GLOBALS['block_layers'] as $i => $text ){
 			$GLOBALS['block_layers'][$i] = __( $text );

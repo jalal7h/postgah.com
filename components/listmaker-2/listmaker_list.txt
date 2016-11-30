@@ -50,7 +50,7 @@
 
 	#
 	# search columns // az in field ha tu table search mikone
-	$list['search'] = [ "name", "text", "users(user_id)[username]", "users(user_id)[name]" ]; jai ke name moshabehe q hast, id sho az users miare beyne user_id haye table ma peyda mikone
+	$list['search'] = [ "name", "text", "user(user_id)[username]", "user(user_id)[name]" ]; jai ke name moshabehe q hast, id sho az user miare beyne user_id haye table ma peyda mikone
 
 	#
 	# paging select

@@ -30,9 +30,9 @@ function nl_mg_send_form(){
 		</label>
 
 		<label>
-			<input type="checkbox" value="1" name="users_email_list" id="users_email_list" />
+			<input type="checkbox" value="1" name="user_email_list" id="user_email_list" />
 			<span><?=__('ارسال به ایمیل های کاربران')?>
-				<span style="color:green;">( <?=table(array( 'users' , 'count' , " AND `username` LIKE '%@%' " ))?> <?=__('آدرس ایمیل')?> )</span>
+				<span style="color:green;">( <?=table(array( 'user' , 'count' , " AND `username` LIKE '%@%' " ))?> <?=__('آدرس ایمیل')?> )</span>
 			</span>
 		</label>
 

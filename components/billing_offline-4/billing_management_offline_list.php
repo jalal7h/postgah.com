@@ -31,7 +31,7 @@ function billing_management_offline_list(){
 	$list['remove_prompt'] = '__("آیا مایل به حذف این پرداخت هستید?")';
 
 	$list['list_array'] = array (
-		array("head"=>__("کاربر"), "content"=>'table("users",$rw["user_id"], "name")'),
+		array("head"=>__("کاربر"), "content"=>'table("user",$rw["user_id"], "name")'),
 		array("head"=>lmtc("billing_invoice:cost"), "content"=>'billing_format($rw[\'cost\'])','attr'=>array('align'=>'center')),
 		array("head"=>__("بانک"), "content"=>'table("billing_method",$rw["method"],"c1","method")'),
 		

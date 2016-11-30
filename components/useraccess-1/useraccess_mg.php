@@ -7,8 +7,8 @@ function useraccess_mg(){
 	
 	$url = "./?page=admin&cp=".$_REQUEST['cp'];
 	$menu = array(
-		__FUNCTION__."_list" => __("لیست مدیران"),
-		__FUNCTION__."_form" => __("ثبت مدیر جدید"),
+		"useraccess_mg_list" => __("لیست مدیران"),
+		"useraccess_mg_form" => __("ثبت مدیر جدید"),
 	);
 
 	listmaker_tabmenu( $menu, $url );

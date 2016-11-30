@@ -41,11 +41,11 @@ function texty_email( $who , $slug , $vars=null ){
 			if(! $user_id = user_logged() ){
 				return false;
 			
-			} else if(! $rw_users = table("users", $user_id) ){
+			} else if(! $rw_user = table("user", $user_id) ){
 				return false;
 			
 			} else {
-				$to = $rw_users['username'];
+				$to = $rw_user['username'];
 				// its OK
 			}
 			break;
@@ -53,11 +53,11 @@ function texty_email( $who , $slug , $vars=null ){
 		default:
 			if( is_numeric($who) ){
 				$user_id = $who;
-				if(! $rw_users = table("users", $user_id) ){
+				if(! $rw_user = table("user", $user_id) ){
 					e(__FUNCTION__,__LINE__);
 					die();
 				} else {
-					$to = $rw_users['username'];
+					$to = $rw_user['username'];
 				}
 
 			} else {
@@ -84,17 +84,17 @@ function texty_email( $who , $slug , $vars=null ){
 		$subject = $texty['user_email_subject'];
 		$content = $texty['user_email_content'];
 
-		if( $rw_users ){
+		if( $rw_user ){
 			
 			# email
-			$subject = str_replace('{user_email}', $rw_users['username'], $subject);
-			$content = str_replace('{user_email}', $rw_users['username'], $content);
+			$subject = str_replace('{user_email}', $rw_user['username'], $subject);
+			$content = str_replace('{user_email}', $rw_user['username'], $content);
 			# id
-			$subject = str_replace('{user_id}', $rw_users['id'], $subject);
-			$content = str_replace('{user_id}', $rw_users['id'], $content);
+			$subject = str_replace('{user_id}', $rw_user['id'], $subject);
+			$content = str_replace('{user_id}', $rw_user['id'], $content);
 			# name
-			$subject = str_replace('{user_name}', $rw_users['name'], $subject);
-			$content = str_replace('{user_name}', $rw_users['name'], $content);
+			$subject = str_replace('{user_name}', $rw_user['name'], $subject);
+			$content = str_replace('{user_name}', $rw_user['name'], $content);
 
 		}
 		

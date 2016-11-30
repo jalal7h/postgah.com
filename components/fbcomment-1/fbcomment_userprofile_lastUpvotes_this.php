@@ -21,7 +21,7 @@ function fbcomment_userprofile_lastUpvotes_this( $rw ){
     $rw_replay_to = table("fbcomment", $rw['comment_id']);
     $replay_to_text = $rw_replay_to['text'];
     $replay_to_id = $rw_replay_to['user_id'];
-    $replay_to_name = table("users", $rw_replay_to['user_id'], "name");
+    $replay_to_name = table("user", $rw_replay_to['user_id'], "name");
     $replay_to_url = _URL."/?page=".$rw['page_id']."&id=".$rw['table_id']."&#comment-".$replay_to_id; // nxx
   }
 

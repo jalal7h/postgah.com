@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/28
-# 1.0
+# 2016/11/30
+# 1.1
 
 
 define( 'videoplayer_aparat_pattern' , '<div id="aparat_container"><script type="text/JavaScript" src="https://www.aparat.com/embed/%%?data[rnddiv]=aparat_container&data[responsive]=yes"></script></div>' );
@@ -52,6 +52,9 @@ function videoplayer( $src, $w="auto", $h="auto" ){
 		$code = $src;
 	}
 
+	if( $code ){
+		$code = "<div class=\"".__FUNCTION__." layout-post\">".$code."</div>";
+	}
 
 	return $code;
 

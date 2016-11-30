@@ -1,0 +1,37 @@
+
+#user_forgot_new {
+	padding: 50px 150px 100px 150px;
+	margin: auto;
+}
+#user_forgot_new .head {
+	font-size: 28px;
+	font-family: DefaultFont;
+	margin-bottom: 60px;
+}
+#user_forgot_new label {
+	display: block;
+	margin: 15px;
+}
+#user_forgot_new label > span {
+	width: 150px;
+	display: inline-block;
+	font-size: 16px;
+	color: #999;
+}
+
+#user_forgot_new label > input[type="password"] {
+	padding: 10px;
+	width: 300px;
+	font: normal 16px monospace,sans-serif;
+}
+#user_forgot_new hr {
+	margin: 35px 0 !important;
+}
+#user_forgot_new input[type="submit"] {
+
+}
+#user_forgot_new .prompt {
+	color: red;
+	padding: 10px;
+	display: inline-block;
+}

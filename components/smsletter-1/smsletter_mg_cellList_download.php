@@ -1,10 +1,12 @@
 <?
+
 $GLOBALS['do_action'][] = 'smsletter_mg_cellList_download';
 
 function smsletter_mg_cellList_download(){
 
-	if(! $rs = dbq(" SELECT `cell` FROM `users` WHERE `cell` LIKE '%9%' ORDER BY `cell` ") ){
-		e(__FUNCTION__ , __LINE__);
+	if(! $rs = dbq(" SELECT `cell` FROM `user` WHERE `cell` LIKE '%9%' ORDER BY `cell` ") ){
+		e();
+		
 	} else {
 		
 		# 
