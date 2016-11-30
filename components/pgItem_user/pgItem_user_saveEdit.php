@@ -17,6 +17,7 @@ function pgItem_user_saveEdit(){
 	kbclear( $_REQUEST['cost'] );
 	kbclear( $_REQUEST['cell'] );
 	kbclear( $_REQUEST['tell'] );
+	kbclear( $_REQUEST['video'] );
 
 	if(! $user_id = user_logged() ){
 		ed();
@@ -44,7 +45,7 @@ function pgItem_user_saveEdit(){
 	#
 	# insert
 	$item_id = dbs("item", 
-		['name','text','cat_id','position_id','cost','cell','tell','sale_by_postgah','state','count_of_stock','weight','sale_duration','delivery_method','delivery_cost_town','delivery_cost_country','flag'=>$flag ], ['id','user_id'=>$user_id] );
+		['name','text','cat_id','position_id','cost','cell','tell','video','sale_by_postgah','state','count_of_stock','weight','sale_duration','delivery_method','delivery_cost_town','delivery_cost_country','flag'=>$flag ], ['id','user_id'=>$user_id] );
 	#
 
 	pgItem_set_cat_serial( $item_id );
