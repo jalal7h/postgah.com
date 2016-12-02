@@ -41,7 +41,7 @@ function lmfe_tnit( $info, $skip_title=false ){
 
 	# echo 
 	if(! $info['TitleInTag'] ){
-		$c.= $info['PreTab']."<span class=\"lmfe_tnit\">".( $skip_title ? '' : $info['placeholder'])."</span>\n";
+		$c.= $info['PreTab']."<span class=\"lmfe_tnit\">".( $skip_title ? '' : $info['placeholder'])."</span>";
 	}
 
 	return $c;

@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/29
-# 1.0
+# 2016/12/02
+# 1.1
 
 function get_tables( $refresh = false ){
 
@@ -21,7 +21,7 @@ function get_tables( $refresh = false ){
 		//
 
 	} else while( $rw = dbf($rs) ){
-		$list[] = $rw[0];
+		$list[] = $rw[ 'Tables_in_'.strtolower(mysql_database) ];
 	}
 	
 	$GLOBALS[__FUNCTION__] = $list;

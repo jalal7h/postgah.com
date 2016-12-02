@@ -1,0 +1,19 @@
+
+.ticketbox_mg_form {
+	padding: 30px 0px;
+}
+.ticketbox_mg_form .lmfe_tnit {
+	width: 17%;
+	vertical-align: top;
+	padding-top: 10px;
+}
+#lmfe_ticketbox_mg_form_user_id {
+	width: 75%;
+}
+#lmfe_ticketbox_mg_form_name {
+	width: 75%;
+}
+#lmfe_ticketbox_mg_form_text {
+	width: 75%;
+	height: 200px;
+}

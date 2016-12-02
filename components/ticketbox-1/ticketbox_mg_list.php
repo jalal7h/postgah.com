@@ -11,13 +11,27 @@ function ticketbox_mg_list(){
 	switch ($_REQUEST['do']) {
 		
 		case 'flag':
-			$ticketboxUser_id = ticketbox_user( $_REQUEST['id'] )['id'];
-			listmaker_flag( 'ticketbox_user', null, $ticketboxUser_id );
+			ticketbox_mg_flag();
+			break;
+
+		case 'remove':
+			dbrm( 'ticketbox', null, true );
 			break;
 
 		case 'view':
 			return ticketbox_mg_view();
 		
+		case 'form':
+			return ticketbox_mg_form();
+
+		case 'saveNew':
+			ticketbox_mg_saveNew();
+			break;
+			
+		case 'saveEdit':
+			ticketbox_mg_saveEdit();
+			break;
+			
 	}
 
 
@@ -48,15 +62,15 @@ function ticketbox_mg_list(){
 	$list['remove_url'] = true; // link dokme hazf
 	$list['setflag_url'] = true; // link active / inactive
 	$list['paging_url'] = true; // not needed when we have 'tdd'
+	$list['modify_url'] = true;
 	$list['tr_color_identifier'] = '( ticketbox_user($rw["id"])["flag"] ? 0 : 1 )';
 	$list['tr_class'] = 'ticketbox_mg_list_trClass($rw)';
 
 	#
 	# list array // list e sotun haye list
 	$list['list_array'][] = array('head'=>lmtc('ticketbox:name'), 'content' => '$rw[\'name\']');
-	// $list['list_array'][] = array('head'=>lmtc('ticketbox:url'), 'content' => '$rw[\'url\']');
-	// $list['list_array'][] = [ 'head'=>lmtc('ticketbox:name'), 'title'=>'$rw["slug"]', "content"=>'$rw[\'name\']' ];
-	
+	$list['list_array'][] = array('head'=>__('تاریخ'), 'content' => 'time_inword($rw[\'date_updated\'])');
+		
 	$list['height'] = 100;
 
 	#

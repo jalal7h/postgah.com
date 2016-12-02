@@ -1,10 +1,11 @@
 
-// 2016/10/22
+// 2016/12/02
 
 $(document).ready(function($) {
 		
 	// lmfe_isNeeded
 	$('.lmfe_isNeeded').closest("form").on('submit', function(e){
+
 		$(this).find('.lmfe_isNeeded').each(function( index ) {
   			if( $(this).val()=='' || $(this).val()==0 ){
   				
@@ -19,6 +20,7 @@ $(document).ready(function($) {
   				return false;
   			}
 		});
+
 	});
 	$('body').delegate('.lmfe_redline', 'keypress click', function(e) {
 		$(this).removeClass('lmfe_redline');

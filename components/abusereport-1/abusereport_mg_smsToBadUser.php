@@ -8,7 +8,10 @@ $GLOBALS['do_action'][] = 'abusereport_mg_smsToBadUser';
 
 function abusereport_mg_smsToBadUser(){
 
-	if(! is_component('sms') ){
+	if(! admin_logged() ){
+		ed();
+		
+	} else if(! is_component('sms') ){
 		//
 	
 	} else if( setting('sms_state') != '1' ){

@@ -1,0 +1,42 @@
+
+.lmfe_inDiv.searchbox {
+	position: relative;
+}
+
+.lmfe_inDiv.searchbox input[type="text"] {
+	padding-left: 40px;
+}
+
+.lmfe_inDiv.searchbox icon:before {
+	font-family: FontAwesome;
+	content: "\f103";
+	color: #666666;
+	margin-right: -33px;
+	position: relative;
+	z-index: 111;
+	font-size: 23px;
+	top: 5px;
+}
+
+.lmfe_inDiv.searchbox .list {
+	width: 100%;
+	display: none;
+	position: absolute; top: 0px; right: 0px;
+	/* min-height: 100px; */
+	background-color: white;
+	box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+	border-radius: 0px 0px 5px 5px;
+	/* margin-top: -3px; */
+	max-height: 500px;
+	overflow-y: hidden;
+/* 	padding: 0 5px;
+ */}
+.lmfe_inDiv.searchbox .list > div {
+	cursor: default;
+	padding: 0 5px;
+}
+.lmfe_inDiv.searchbox .list > div.hover ,
+.lmfe_inDiv.searchbox .list > div:hover {
+	color: black;
+	background-color: rgba(0,0,0,0.05);
+}

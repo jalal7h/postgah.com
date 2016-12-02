@@ -1,5 +1,5 @@
 <?
-error_log('KK; lsdjkl');
+
 function ticketbox_mg_view_form(){
 
 	# -------------------------------------------------
@@ -10,9 +10,12 @@ function ticketbox_mg_view_form(){
 			"class" => "'.__FUNCTION__.'" ,
 		!]
 			[!"hidden:ticketbox_id"=>"'.$_REQUEST['id'].'"!]
-			[!"textarea:text*"!]
+			[!"textarea:text"!]
 			
-		[!"submit:ثبت"!]
+		<div>
+			[!"submit:ثبت","notInDiv"!]
+			<div class="prompt">اختلال در ثبت.</div>
+		</div>
 	');
 	# -------------------------------------------------
 

@@ -22,8 +22,16 @@ function ticketbox_mg_view(){
 		} else if(! dbn($rs) ){
 			e();
 
-		} else while( $rw = dbf($rs) ){
-			$c.= ticketbox_mg_view_post( $rw );
+		} else {
+			
+			$c.= "<div class=\"post_list\">";
+			
+			while( $rw = dbf($rs) ){
+				$c.= ticketbox_mg_view_post( $rw );
+			}
+			
+			$c.= "</div>";
+
 		}
 
 	}

@@ -1,0 +1,26 @@
+
+.ticketbox_mg_view .name {
+	position: relative;
+}
+.ticketbox_mg_view .name .the_name {
+	font-size: 18px;
+	padding: 10px 5px;
+	color: #888;
+}
+.ticketbox_mg_view .name .etc {
+	position: absolute; left: 5px; top: 20px;
+}
+.ticketbox_mg_view .name .etc > * {
+	display: inline-block;
+	vertical-align: middle;
+	color: #999;
+}
+.ticketbox_mg_view .name .etc span {
+	color: #ccc;
+	padding: 10px 0;
+	border-right: 1px dotted #ccc;
+	margin-right: 13px;
+	padding-right: 13px;
+}
+
+

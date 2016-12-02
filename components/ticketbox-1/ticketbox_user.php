@@ -23,7 +23,17 @@ function ticketbox_user( $ticketbox_id, $user_id=null ){
 	} else if(! $rw = dbf($rs) ){
 		e();
 
+	} else if(! $rs_f = dbq(" SELECT * FROM `ticketbox_user` WHERE `user_id`!='$user_id' AND `ticketbox_id`='$ticketbox_id' LIMIT 1 ") ){
+		e();
+
+	} else if(! dbn($rs_f) ){
+		dg();
+
+	} else if(! $rw_f = dbf($rs_f) ){
+		dg();
+
 	} else {
+		$rw['foreign'] = $rw_f['user_id'];
 		return $rw;
 	}
 

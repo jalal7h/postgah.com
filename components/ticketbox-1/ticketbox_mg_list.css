@@ -35,8 +35,11 @@
 	content: "\f0c5";
 }
 
-
-
+.ticketbox_mg_list tr td:nth-child(2) {
+	width: 100px;
+	text-align: center;
+	font-size: 10px;
+}
 
 
 

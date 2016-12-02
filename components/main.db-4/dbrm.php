@@ -5,14 +5,12 @@
 # 2.0
 
 function dbrm( $table, $id=null, $recursive=false ){
-	
+
 	if(! $id ){
 		if(! $id = $_REQUEST['id'] ){
 			return false;
 		}
-	
 	}
-
 
 	if( is_array($id) ) {
 		list( $column_name, $column_value ) = $id;
@@ -21,7 +19,6 @@ function dbrm( $table, $id=null, $recursive=false ){
 		$column_name = 'id';
 		$column_value = $id;
 	}
-
 
 	# 
 	# recursive records
@@ -34,15 +31,14 @@ function dbrm( $table, $id=null, $recursive=false ){
 		}
 	}
 
-
 	# 
 	# main record
 	if(! dbq(" DELETE FROM `$table` WHERE `$column_name`='$column_value' LIMIT 1 ") ){
+		dg();
 
 	} else {
 		return true;
 	}
-
 
 	return false;
 

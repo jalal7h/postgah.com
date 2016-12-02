@@ -9,6 +9,11 @@ $GLOBALS['mss_list']['abusereport_mg_mailToBadUser'] = 'ایمیل به کارب
 
 function abusereport_mg_mailToBadUser(){
 
+	if(! admin_logged() ){
+		ed();
+		
+	}
+
 	if(! $abusereport_id = $_REQUEST['abusereport_id'] ){
 		ed();
 	

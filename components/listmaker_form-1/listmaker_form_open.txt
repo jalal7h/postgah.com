@@ -19,7 +19,9 @@
 			
 			[!"cat:cat_id", "ccf"=>true, "cat_name"=>"adsCat"!]
 			[!"position:position_id","notInDiv"!]
-			
+		
+			[!"searchbox:user_id*","feed"=>"user(name)[id]"!]
+
 			<hr>
 
 			[!"text:name"!]
