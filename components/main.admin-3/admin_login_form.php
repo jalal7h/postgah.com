@@ -6,6 +6,8 @@
 
 function admin_login_form(){
 
+	admin_free();
+
 	admin_key_make();
 
 	?>

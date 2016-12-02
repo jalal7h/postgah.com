@@ -1,14 +1,18 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/09
-# 3.1
+# 2016/12/02
+# 3.2
 
 function xmail( $to, $subject, $text, $from='', $html=0, $mssp_id=0 ){
 
+	if( its_local() ){
+		return true;
+	}
+
 	#
 	# fix from
-	if( $from=='' ){
+	if( $from == '' ){
 		$from_name = setting('tiny_title');
 		$from_addr = "noreply@".str_replace("www.", "", $_SERVER['SERVER_NAME']);
 		$from = '"'.$from_name.'" <'.$from_addr.'>';

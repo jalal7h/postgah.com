@@ -37,7 +37,7 @@
 .abusereport_mg_view .text:after {
 	font-family: FontAwesome;
 	padding: 0 8px;
-	font-size: 18px;
+	font-size: 16px;
 }
 .abusereport_mg_view .text:before {
 	content: "\f10e";
@@ -55,5 +55,24 @@
 .abusereport_mg_view .links > a {
 	margin: 0 3px;
 }
+
+.abusereport_mg_view .etc {
+	padding: 15px 0 0 0;
+}
+.abusereport_mg_view .etc > a {
+	display: inline-block;
+	margin: 5px;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
 
 

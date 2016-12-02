@@ -18,7 +18,7 @@ function ticketbox_user( $ticketbox_id, $user_id=null ){
 		e();
 
 	} else if(! dbn($rs) ){
-		e();
+		dg();
 
 	} else if(! $rw = dbf($rs) ){
 		e();

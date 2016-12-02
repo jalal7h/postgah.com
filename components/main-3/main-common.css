@@ -196,6 +196,10 @@ select {
 .submit_button.red {
 	background-color: rgb(255, 71, 0);
 }
+.submit_button.gray {
+	background-color: #777;
+	cursor: default;
+}
 
 .divider {
 	clear:both;

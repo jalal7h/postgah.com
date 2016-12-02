@@ -14,6 +14,9 @@ function ticketbox_mg_list(){
 			$ticketboxUser_id = ticketbox_user( $_REQUEST['id'] )['id'];
 			listmaker_flag( 'ticketbox_user', null, $ticketboxUser_id );
 			break;
+
+		case 'view':
+			return ticketbox_mg_view();
 		
 	}
 
@@ -34,7 +37,7 @@ function ticketbox_mg_list(){
 
 	#
 	# target // maghsad e click ruye har row
-	$list['target_url'] = '"./?page=admin&cp='.$_REQUEST['cp']."&l=".$_REQUEST["l"].'&parent=".$rw["id"]';
+	$list['target_url'] = '"./?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['func'].'&do=view&id=".$rw["id"]';
 
 	#
 	# actions 
@@ -46,7 +49,8 @@ function ticketbox_mg_list(){
 	$list['setflag_url'] = true; // link active / inactive
 	$list['paging_url'] = true; // not needed when we have 'tdd'
 	$list['tr_color_identifier'] = '( ticketbox_user($rw["id"])["flag"] ? 0 : 1 )';
-	
+	$list['tr_class'] = 'ticketbox_mg_list_trClass($rw)';
+
 	#
 	# list array // list e sotun haye list
 	$list['list_array'][] = array('head'=>lmtc('ticketbox:name'), 'content' => '$rw[\'name\']');
@@ -71,5 +75,35 @@ function ticketbox_mg_list(){
 	########################################################################################
 
 }
+
+
+function ticketbox_mg_list_trClass( $rw ){
+
+	if( ticketbox_isReplied($rw['id']) ){
+		$class[] = "replied";
+	} else {
+		$class[] = "notreplied";
+	}
+
+	if( ticketbox_isNew($rw['id']) ){
+		$class[] = "new";
+	} else {
+		$class[] = "notnew";
+	}
+
+	if( sizeof($class) ){
+		return implode(" ", $class);
+	} else {
+		return "";
+	}
+
+}
+
+
+
+
+
+
+
 
 

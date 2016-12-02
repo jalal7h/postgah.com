@@ -2,7 +2,7 @@
 
 function abusereport_mg_removeUser(){
 
-	abusereport_mg_remove_userItems();
+	abusereport_mg_remove_userItems( $silent=true );
 	dbrm('abusereport');
 
 	if(! $user_id = $_REQUEST['user_id'] ){
@@ -15,6 +15,8 @@ function abusereport_mg_removeUser(){
 		dbrm( 'user', $user_id, true );
 	}
 
+	# nxx texty abusereport_mg_removeUser
+	
 }
 
 

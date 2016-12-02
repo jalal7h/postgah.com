@@ -4,7 +4,7 @@
 # 2016/11/29
 # 1.0
 
-function abusereport_mg_remove_userItems(){
+function abusereport_mg_remove_userItems( $silent=false ){
 	
 	if(! $user_id = $_REQUEST['user_id'] ){
 		e();
@@ -41,6 +41,10 @@ function abusereport_mg_remove_userItems(){
 			
 		}
 
+		if(! $silent ){
+			# nxx texty abusereport_mg_remove_userItems
+		}
+		
 	}
 
 }

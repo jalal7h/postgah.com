@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/29
-# 1.0
+# 2016/11/30
+# 1.1
 
 function abusereport_mg_view(){
 
@@ -99,11 +99,11 @@ function abusereport_mg_view(){
 				? userprofile_link($rw_theGoodUser['id']) 
 				: user_loginLink($rw_theGoodUser['id']);
 
-			echo "گزارش از طرف <a href=\"".$GoodUserLink."\" target=\"_blank\">".$rw_theGoodUser['name']."</a> (<a href=\"".user_loginLink($rw_theGoodUser['id'])."\" target=\"_blank\">".__('ورود')."</a>)";
+			echo __('گزارش از طرف')." <a href=\"".$GoodUserLink."\" target=\"_blank\">".$rw_theGoodUser['name']."</a> (<a href=\"".user_loginLink($rw_theGoodUser['id'])."\" target=\"_blank\">".__('ورود')."</a>)";
 		}
 
 		if( $rw_theGoodUser and $rw_theBadUser ){
-			echo " ، در مورد ";
+			echo " ، ".__("در مورد ");
 		}
 
 		if( $rw_theBadUser ){
@@ -115,6 +115,8 @@ function abusereport_mg_view(){
 			echo "$item_title ".__("ثبت شده توسط")." <a href=\"".$BadUserLink."\" target=\"_blank\">".$rw_theBadUser['name']."</a> (<a href=\"".user_loginLink($rw_theBadUser['id'])."\" target=\"_blank\">".__('ورود')."</a>)";
 		}
 		
+		echo "<div>".__('نوع تخلف')." :‌ ".cat_translate($rw_ar['cat_id'])."</div>";
+
 		echo "</div>"; // sub
 
 
@@ -128,7 +130,7 @@ function abusereport_mg_view(){
 			#
 			# remove the bad item
 			$remove_item_link = $base_link."&do=view&id=".$rw_ar['id']."&do2=remove_item";
-			echo "<a class=\"submit_button red\" href=\"".$remove_item_link."\" >".__('حذف %%',[$item_title])."</a>";
+			echo "<a onclick=\"if(!confirm('".__('آیا مایله به حذف هستید؟')."')){return false;}\" class=\"submit_button red\" href=\"".$remove_item_link."\" >".__('حذف %%',[$item_title])."</a>";
 
 		}
 
@@ -137,12 +139,12 @@ function abusereport_mg_view(){
 			#
 			# remove all items of bad user
 			$removeUserItems_link = $base_link."&do=view&id=".$rw_ar['id']."&do2=remove_userItems&user_id=".$rw_theBadUser['id'];
-			echo "<a class=\"submit_button red\" href=\"".$removeUserItems_link."\" >".__("حذف همه %% از این کاربر",[$item_title_s])."</a>";
+			echo "<a onclick=\"if(!confirm('".__('آیا مایله به حذف هستید؟')."')){return false;}\" class=\"submit_button red\" href=\"".$removeUserItems_link."\" >".__("حذف همه %% از این کاربر",[$item_title_s])."</a>";
 			
 			#
 			# remove bad user and all of his things
 			$removeBadUser_link = $base_link."&do=remove_user&id=".$rw_ar['id']."&user_id=".$rw_theBadUser['id'];
-			echo "<a class=\"submit_button red\" href=\"".$removeBadUser_link."\" >".__("حذف کامل این کاربر")."</a>";
+			echo "<a onclick=\"if(!confirm('".__('آیا مایله به حذف هستید؟')."')){return false;}\" class=\"submit_button red\" href=\"".$removeBadUser_link."\" >".__("حذف کامل این کاربر")."</a>";
 
 		}
 
@@ -151,8 +153,28 @@ function abusereport_mg_view(){
 		$remove_abusereport_link = _URL."/?page=admin&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func']."&do=remove&id=".$rw_ar['id'];
 		echo "<a class=\"submit_button red\" href=\"".$remove_abusereport_link."\" >".__("حذف این گزارش")."</a>";
 
-		echo "</div>"; // links
 
+		if( $rw_theBadUser ){
+			
+			echo "<div abusereport_id=\"".$id."\" class=\"etc\">";
+			
+			if( $email = is_email_correct_or_not($rw_theBadUser['username']) ){
+				echo "<a email=\"$email\" text_textMessage=\"".__('متن ایمیل ..')."\" text_sendButton=\"".__('ارسال')."\" class=\"mailToBadUser\" >".__("ایمیل به ثبت‌کننده %%",[$item_title])."</a>";
+			}
+
+			if( is_component('sms') and (setting('sms_state') == 1) and ($numb = user_cellNumber($rw_theBadUser)) ){
+				if( $email ){
+					echo "، ";
+				}
+				echo "<a numb=\"$numb\" text_textMessage=\"".__('متن پیامک ..')."\" text_sendButton=\"".__('ارسال')."\" class=\"smsToBadUser\" >".__("پیامک به ثبت‌کننده %%",[$item_title])."</a>";
+			}
+
+			echo "</div>";
+
+		}
+
+
+		echo "</div>"; // links
 		echo "</div>"; // abusereport_mg_view
 
 	}

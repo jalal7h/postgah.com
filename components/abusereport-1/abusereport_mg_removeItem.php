@@ -17,5 +17,7 @@ function abusereport_mg_removeItem(){
 		e();
 	}
 
+	# nxx texty abusereport_mg_removeItem
+
 }
 

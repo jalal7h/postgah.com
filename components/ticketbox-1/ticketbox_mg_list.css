@@ -1,0 +1,43 @@
+
+.ticketbox_mg_list tr td:first-child {
+	position: relative;
+}
+.ticketbox_mg_list tr.new td:first-child {
+	color: black;
+	font-weight: bold;
+}
+
+.ticketbox_mg_list tr td:first-child:before ,
+.ticketbox_mg_list tr td:first-child:after {
+	font-family: FontAwesome;
+	font-size: 18px;
+}
+
+.ticketbox_mg_list tr td:first-child:before {
+	padding: 0 5px;
+	position: relative; top: 2px;
+}
+.ticketbox_mg_list tr.new td:first-child:before {
+	content: "\f0e0";
+	color: black;
+}
+.ticketbox_mg_list tr.notnew td:first-child {
+	
+}
+
+.ticketbox_mg_list tr td:first-child:after {
+	position: absolute; left: 14px; top: 13px;
+}
+.ticketbox_mg_list tr.notreplied td:first-child:after {
+	content: "\f016";
+}
+.ticketbox_mg_list tr.replied td:first-child:after {
+	content: "\f0c5";
+}
+
+
+
+
+
+
+

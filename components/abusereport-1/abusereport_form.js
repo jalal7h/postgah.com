@@ -6,6 +6,9 @@ jQuery(document).ready(function($) {
 		if( $(this).find('textarea').val() == '' ){
 			return false;
 		
+		} else if( $(this).find('select').val() == '' ){
+			return false;
+		
 		} else {
 			return true;
 		}

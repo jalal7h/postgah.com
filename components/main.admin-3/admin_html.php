@@ -13,7 +13,7 @@ function admin_html_open(){
 		<title>.:: <?=setting('main_title')?> - Administrator ::.</title>
 		<link rel="shortcut icon" href="image_list/favicon.ico" >
 		<META http-equiv=Content-Type content="text/html; charset=utf-8">
-		<link rel="stylesheet" href="<?=_URL?>/modules/font-awesome-4.6.1/css/font-awesome.min.css">
+		<link rel="stylesheet" href="<?=_URL?>/modules/font-awesome-4.7.0/css/font-awesome.min.css">
 		<link href="<?=_URL?>/templates/<?=_THEME?>/font/font.css" rel="stylesheet" type="text/css" />
 		<?=include_all_css_echotags(); ?>
 		<link href="<?=_URL?>/templates/<?=_THEME?>/css/template-admin.css" rel="stylesheet" type="text/css" />
