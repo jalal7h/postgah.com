@@ -126,13 +126,6 @@ function abusereport_mg_view(){
 		$base_link = _URL."/?page=admin&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func'];
 		
 		if( $rw_item ){
-			
-			# 
-			# -spi- for postgah.com
-			if( $rw_ar['table_name'] == 'item' ){
-				$edit_item_link = _URL."/?page=admin&cp=pgItem_mg&do=edit&id=".$rw_ar['table_id'];
-				echo "<a class=\"submit_button red\" href=\"".$edit_item_link."\" >".__('ویرایش %%',[$item_title])."</a>";
-			}
 
 			# 
 			# -spi- for postgah.com
