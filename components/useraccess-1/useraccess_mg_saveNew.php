@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/17
-# 1.1
+# 2016/12/03
+# 1.2
 
 function useraccess_mg_saveNew(){
 
@@ -18,19 +18,25 @@ function useraccess_mg_saveNew(){
 		
 		#
 		# prepare the password
-		if( is_component('userhashpassword') ){
-			$_REQUEST['password'] = userhashpassword($_REQUEST['password']);
-		}
+		$_REQUEST['password'] = md5($_REQUEST['password']);
 		
 		#
 		# edit
-		if( $rw = table('user', $username, null, 'username') ){
-			$user_id = dbs( 'user', ['password','permission'=>'2','name','management_title','cell','flag_admin'=>'1','flag_user'=>'1'], ['username'] );
+		if(  table('user', $username, null, 'username') ){
+			echo convbox( __('از آدرس ایمیل مورد نظر شما قبلا استفاده شده است.') );
 		
 		#
 		# new
 		} else {
-			$user_id = dbs( 'user', ['username','password','permission'=>'2','name','management_title','cell','flag_admin'=>'1','flag_user'=>'1'] );
+
+			#
+			# remove the hidden record
+			dbq(" DELETE FROM `user` WHERE `username`='$username' ", true );
+			
+			#
+			# add new record
+			$user_id = dbs( 'user', ['username','password','permission'=>'2','name','management_title','cell'] );
+
 		}
 
 		#

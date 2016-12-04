@@ -110,13 +110,13 @@ function lang_css_fix_4mirror( $css, $tag, $type/* {side / edge} */ ){
 function lang_css_fix_fontawesome( $css ){
 
 	$css = str_replace( 
-		[ '\f100', '\f104', '\f064', '\f060' ],
-	 	[ '\f101', '\f105', '\f_64', '\f061' ], 
+		[ '\f100', '\f104', '\f064', '\f060', '\f10e' ],
+	 	[ '\f101', '\f105', '\f_64', '\f061', '\f_0e' ], 
 	 	$css );
 
 	$css = str_replace( 
-	 	[ '\f112', '\f_64' ], 
-	 	[ '\f064', '\f112' ], 
+	 	[ '\f112', '\f_64',   '\f10d', '\f_0e' ], 
+	 	[ '\f064', '\f112',   '\f10e', '\f10d' ], 
 	 	$css );
 
 	return $css;

@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
 	// size fix for info box
 	setTimeout( function(){
 
-		$('.ticketbox_mg_view .post .text').each(function() {
+		$('.ticketbox_view .post .text').each(function() {
 			
 			tx = $(this);
 			nf = $(this).parent().find('.info');
@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
 				nf.height( tx_all - nf_padding );
 			}
 			
-			cl( tx_height + ' > ' + nf_height );
+			// cl( tx_height + ' > ' + nf_height );
 
 		});
 

@@ -98,7 +98,6 @@ input[type=password] {
 }
 input[type=number] {
 	text-align: center;
-	direction: ltr;
 	font-family: monospace;
 	font-size: 14px;
 	padding: 7px;

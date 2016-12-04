@@ -41,7 +41,7 @@ function useraccess_mg_form(){
 			['email:username*','inDiv'],
 			['text:management_title*','inDiv'],
 			( $user_id ? ['password:password','inDiv'] : ['password:password*','inDiv'] ),
-			['number:cell*','inDiv'],
+			['text:cell.numeric','inDiv'],
 		'</div>',
 		
 		$access_list ,

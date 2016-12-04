@@ -12,7 +12,7 @@ function fbcomment_mg_info( $rw ){
 	$item_name = table($rw['table_name'],$rw['table_id'],'name');
 	$item_link = _URL."/?page=".$rw['page_id']."&id=".$rw['table_id']."&#comment-".$rw['id']; // nxx
 
-	$info = "<a target=_blank href='$profile_link' class='name'>$profile_name</a>".__('درباره')."<a target=_blank href='$item_link'>$item_name</a> : ";
+	$info = "<a target=_blank href='$profile_link' class='name'>$profile_name</a> ".__('درباره')." <a target=_blank href='$item_link'>$item_name</a> : ";
 	$info.= $rw['text'];
 
 	return $info;

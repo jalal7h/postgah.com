@@ -19,7 +19,7 @@ function useraccess_mg_list(){
 			break;
 			
 		case 'flag':
-			listmaker_flag( 'user', null, null, 'flag_admin' );
+			listmaker_flag('user');
 			break;
 
 		case 'remove':
@@ -61,10 +61,6 @@ function useraccess_mg_list(){
 	$list['setflag_url'] = true; // link active / inactive
 	$list['paging_url'] = true; // not needed when we have 'tdd'
 	
-	#
-	# flag_admin
-	$list['tr_color_identifier'] = '$rw["flag_admin"]';
-
 	#
 	# list array // list e sotun haye list
 	$list['list_array'][] = array("head"=>lmtc("user:name"), "content" => '$rw[\'name\']');

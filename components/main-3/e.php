@@ -42,10 +42,10 @@ function ed( $text=null, $line=null, $etc=null ){
 function dg( $text = "" ){
 	
 	if(! defined('debug') ){
-		return false;
+		//
 	
 	} else if( debug != true ){
-		return false;
+		//
 	
 	} else {
 
@@ -62,6 +62,9 @@ function dg( $text = "" ){
 		error_log( "debug :: line ".$d0['line']." at function ".$d1['function']." , ran at line ".$d1['line']." of ".basename($d1['file']).( $text ? ", ".$text : "" ) );
 
 	}
+
+	return false;
+
 }
 
 

@@ -1,6 +1,6 @@
 <?
 
-function ticketbox_mg_view_name(){
+function ticketbox_view_name(){
 
 	if(! $id = $_REQUEST['id'] ){
 		e();

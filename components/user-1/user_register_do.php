@@ -7,8 +7,7 @@
 function user_register_do(){
 	
 	if( user_logged() ){
-		echo "<script>location.href = '"._URL."/userpanel';</script>";
-		die();
+		jsgo( _URL.'/userpanel' );
 
 	} else if( is_component('user_emailverifybeforesignup') and !user_emailverifybeforesignup_check() ){
 		$text = user_emailverifybeforesignup_invalid_verification_link;
@@ -49,7 +48,7 @@ function user_register_do(){
 
 		# 
 		# loging in client
-		$_SESSION['uid'] = $user_id;
+		user_login_session( $user_id );
 
 		#
 		# sending email to client after registration

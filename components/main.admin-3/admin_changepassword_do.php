@@ -9,10 +9,10 @@ $GLOBALS['do_action'][] = 'admin_changepassword_do';
 function admin_changepassword_do(){
 	
 	if(! $user_id = admin_logged() ){
-		ed(__FUNCTION__,__LINE__);
+		ed();
 	
 	} else if(! $rw_user = table('user', $user_id) ){
-		ed(__FUNCTION__,__LINE__);
+		ed();
 	}
 
 	#
@@ -22,12 +22,10 @@ function admin_changepassword_do(){
 	#
 	# password
 	if(! $password = trim($_REQUEST['password']) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else if( $password != '************' ){
-		if( is_component('userhashpassword') ){
-			$password = userhashpassword($password);
-		}
+		$password = md5( $password );
 		dbs( 'user', ['password'=>$password], ['id'=>$user_id] );
 	}
 

@@ -1,11 +1,11 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/08/16
-# 1.1
+# 2016/12/03
+# 1.2
 
 function layout_layer( $pos="center" ){
-
+	
 	if( $pos=="center" ){
 		$pos = "";
 	}
@@ -26,7 +26,7 @@ function layout_layer( $pos="center" ){
 		$page_layer_func = $rw_pagelayer['func'];
 
 		if(! function_exists( $page_layer_func ) ){
-			e();
+			echo convbox( __("function %% does not exists",[$page_layer_func]) );
 		
 		} else {
 			echo "<div class=\"no_margin ".$page_layer_func."_wrap\">";

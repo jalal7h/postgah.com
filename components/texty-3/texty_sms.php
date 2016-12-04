@@ -28,7 +28,7 @@ function texty_sms( $who , $slug , $vars ){
 		case 'admin':
 			#
 			# admin username 
-			$username = $_SESSION[ admin_key()['username'] ];
+			$username = $_SESSION[ login_key()['username'] ];
 			#
 			# admin cell
 			$to = table("user", $username, "cell", "username");
@@ -51,7 +51,7 @@ function texty_sms( $who , $slug , $vars ){
 			} else if( strlen($who)<10 ){ // its user_id
 				$user_id = $who;
 				if(! $rw_user = table("user", $user_id) ){
-					e(__FUNCTION__,__LINE__);
+					e();
 					die();
 				} else {
 					$to = $rw_user['username'];

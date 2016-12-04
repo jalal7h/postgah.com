@@ -1,20 +1,15 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/12
-# 2.1
+# 2016/12/03
+# 2.2
 
 $GLOBALS['block_layers_center']['userpanel_desk'] = 'میز کاربری';
 
 function userpanel_desk(){
-	
+
 	if( ! user_logged() ){
-		?>
-		<script type="text/javascript">
-			location.href = './login';
-		</script>
-		<?
-		die();
+		user_logout('./login');
 	}
 
 	userpanel_fix_do();
@@ -37,10 +32,9 @@ function userpanel_desk(){
 	
 	?>
 	<style type="text/css">
-		.userpanel_menu {
-			/*display: inline-block;*/
-			opacity: 1.0;
-		}
+	.userpanel_menu {
+		opacity: 1.0;
+	}
 	</style>
 	<?
 	

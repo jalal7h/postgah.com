@@ -27,18 +27,20 @@ function user_forgot_save(){
 	# hash code
 	$h = md5x($username."01q!", 20);
 	
-	if( $_REQUEST['h']!=$h ){
+	if( $_REQUEST['h'] != $h ){
 		e();
 	
 	} else if(! dbs('user', ['password'=>$password], ['username'=>$username]) ){
 		e();
 	
 	} else {
-		$_SESSION['uid'] = table("user", $username, "id", "username");
+
+		$user_id = table("user", $username, "id", "username");
+		user_login_session( $user_id );
 		
 		if( is_component('texty') ){
 			
-			$vars = table( 'user', $_SESSION['uid'] );
+			$vars = table( 'user', $user_id );
 			$vars['password'] = $raw_password;
 			$vars['__AFTER__'] = '<br><a href="./userpanel">'.__('ورود به محیط کاربری').'</a>';
 			echo texty( 'user_forgot_save', $vars );

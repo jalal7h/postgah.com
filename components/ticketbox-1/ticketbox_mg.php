@@ -11,7 +11,8 @@ function ticketbox_mg(){
 
 	$url = "./?page=admin&cp=".$_REQUEST['cp'];
 	$menu = array(
-		"ticketbox_mg_list" => __("لیست پیام‌ها") ,
+		"ticketbox_mg_list" => __("لیست %%",[ lmtc('ticketbox')[1] ]) ,
+		"ticketbox_mg_form" => __("%% جدید",[ lmtc('ticketbox')[0] ]) ,
 		"cat_mg&l=ticketbox" => cat_detail('ticketbox')['name'],
 	);
 

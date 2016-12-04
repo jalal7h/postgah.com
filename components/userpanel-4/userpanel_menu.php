@@ -9,35 +9,25 @@ $GLOBALS['block_layers_side']['userpanel_menu'] = 'منوی کاربری';
 function userpanel_menu(){
 	
 	if(! $user_id = user_logged() ){
-		dg();
-		return true;
+		return dg();
 	
 	} else if(! $rw = table("user",$user_id) ){
 		dg();
 		user_logout();
 	
-	} else if( $_REQUEST['page']!=14 ){
-		dg();
-		return true;
+	} else if( $_REQUEST['page'] != 14 ){
+		return dg();
 	}
-	dg();
-	?>
-	<style>
-	<?
 
+	echo "<style>\n";
 	ksort($GLOBALS['userpanel_item']);
-
 	foreach( $GLOBALS['userpanel_item'] as $n => $array ){
 		$before_content = $array[2];
-		?>
-		.userpanel_menu > div > a:nth-child(<?=( (++$a_ctr)+1 ) ?>):before {
-			content: "\f<?=$before_content?>";
-		}
-		<?
+		echo '.userpanel_menu > div > a:nth-child('.( (++$a_ctr)+1 ).'):before {
+			content: "\f'.$before_content.'";
+		}';
 	}
-	?>
-	</style>
-	<?
+	echo "</style>\n";
 
 	echo '<div class="userpanel_menu">';
 	if( $rw['profile_pic']!='' ){

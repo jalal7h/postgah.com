@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/12
-# 1.5
+# 2016/12/03
+# 1.6
 
 function user_login_do(){
 
@@ -22,7 +22,7 @@ function user_login_do(){
 	
 	} else {
 		
-		$_SESSION['uid'] = table("user", $u, "id", "username");
+		user_login_session( table("user", $u, "id", "username") );
 		
 		if( $r = $_REQUEST['refer'] ){
 			jsgo( $r );
@@ -42,11 +42,11 @@ function user_login_check( $username , $password ){
 		$password = userhashpassword($password);
 	}
 
-	if(! $rs = dbq(" SELECT COUNT(*) FROM `user` WHERE `username`='$username' AND `password`='$password' LIMIT 1 ")){
+	if(! $rs = dbq(" SELECT COUNT(*) FROM `user` WHERE `username`='$username' AND `password`='$password' AND `permission`='0' LIMIT 1 ")){
 		dg();
 	
-	} else if( dbr($rs,0,0)!=1 ){
-		//
+	} else if( dbr($rs,0,0) != 1 ){
+		dg();
 
 	} else {
 		return true;
@@ -58,7 +58,7 @@ function user_login_check( $username , $password ){
 
 function user_logged(){
 	
-	if( $user_id = $_SESSION['uid'] ){
+	if( $user_id = $_SESSION[ login_key()['uid'] ] ){
 		return $user_id;
 	
 	} else {
@@ -68,6 +68,13 @@ function user_logged(){
 }
 
 
+function user_login_session( $user_id ){
+
+	$_SESSION[ login_key()['uid'] ] = $user_id;
+
+}
+		
+		
 
 
 

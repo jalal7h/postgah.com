@@ -6,7 +6,7 @@
 
 function ticketbox_mg_saveEdit(){
 
-	if(! $current_user_id = admin_logged() ){
+	if(! admin_logged() ){
 		ed();
 	
 	} else if(! $_REQUEST['id'] = intval($_REQUEST['id']) ){
@@ -28,7 +28,7 @@ function ticketbox_mg_saveEdit(){
 
 	#
 	# ticketbox user
-	} else if(! $cur_foreign_user_id = ticketbox_user($_REQUEST['id'], $current_user_id)['foreign'] ){
+	} else if(! $cur_foreign_user_id = ticketbox_user($_REQUEST['id'], 1)['foreign'] ){
 		e();
 
 	} else if( $_REQUEST['user_id'] == $cur_foreign_user_id ){

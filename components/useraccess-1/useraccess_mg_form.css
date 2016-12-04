@@ -3,17 +3,16 @@
 	margin: 40px auto 80px auto;
 	width: 80%;
 }
-.useraccess_mg_form .lmfe_inDiv {
-/* 	display: inline-block;
-	width: 48%; */
-}
+
 .useraccess_mg_form .lmfe_inDiv input[type=text] ,
 .useraccess_mg_form .lmfe_inDiv input[type=password] ,
 .useraccess_mg_form .lmfe_inDiv input[type=email] {
 	width: 200px;
 }
-.useraccess_mg_form .lmfe_inDiv input[type=number] {
-	width: 200px;
+.useraccess_mg_form .lmfe_inDiv input.numeric {
+	width: 200px !important;
+	font-family: monospace,sans-serif !important;
+	font-size: 14px;
 }
 
 .useraccess_mg_form > .right ,

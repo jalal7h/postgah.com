@@ -17,4 +17,6 @@ input[type=url] {
 	direction: ltr;
 }
 
-
+input[type="number"] {
+	direction: ltr;
+}

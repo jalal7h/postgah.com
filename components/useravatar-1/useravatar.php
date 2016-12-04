@@ -4,7 +4,7 @@
 # 2016/08/23
 # 1.1
 
-function useravatar( $user_id , $text_flag=false , $link_flag=false , $job_flag=false , $where_flag=false ){
+function useravatar( $user_id, $text_flag=false, $link_flag=false, $job_flag=false, $where_flag=false ){
 
 	// if( $GLOBALS['useravatar-cache'][ $user_id ] ){
 	// 	return $GLOBALS['useravatar-cache'][ $user_id ];

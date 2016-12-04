@@ -1,0 +1,34 @@
+<?
+
+function ticketbox_view_form(){
+
+	if( is_admin() and admin_logged() ){
+		 $user_id = 1;
+	
+	} else if( is_userpanel() and user_logged() ){
+		$user_id = user_logged();
+	
+	} else {
+		ed();
+	}
+
+	# -------------------------------------------------
+	return listmaker_form('
+		[!
+			"table" => "ticketbox" ,
+			"action" => "#",
+			"class" => "'.__FUNCTION__.'" ,
+		!]
+			[!"hidden:ticketbox_id"=>"'.$_REQUEST['id'].'"!]
+			[!"textarea:text/user_id=\"'.$user_id.'\""!]
+			
+		<div>
+			[!"submit:'.__('ثبت').'","notInDiv"!]
+			<div class="prompt">'.__('اختلال در ثبت.').'</div>
+		</div>
+	');
+	# -------------------------------------------------
+
+}
+
+

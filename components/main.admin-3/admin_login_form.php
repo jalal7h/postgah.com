@@ -1,33 +1,32 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/01
-# 1.1
+# 2016/12/03
+# 1.2
 
 function admin_login_form(){
 
 	admin_free();
-
-	admin_key_make();
-
+	
 	?>
 	<div class="<?=__FUNCTION__?>_wrapper">
 
-	<form method="post" action="" >
+	<form method="post" action="" class="<?=__FUNCTION__?>" >
 	<input type="hidden" name="do_action" value="admin_login">
 	
-	<div class="<?=__FUNCTION__?>" >
+	<div>
 		<div class="legend"><?=__('مدیریت سایت')?></div>
 		<div class="container">
 		
-		<input autocomplete="off" placeholder="Username .." type="text" class="username" name="<?=admin_key()['username']?>" >
+		<input autocomplete="off" placeholder="Username .." type="text" class="username" name="<?=login_key()['username']?>" >
 		
-		<input autocomplete="off" placeholder="Password .." type="password" class="password" name="<?=admin_key()['password']?>" >
+		<input autocomplete="off" placeholder="Password .." type="password" class="password" >
+		<input type="hidden" class="md5" name="<?=login_key()['password']?>" value="" >
 		
-		<input autocomplete="off" placeholder="FC2" maxlength="3" type="password" class="fc2 numeric" name="<?=admin_key()['fc2']?>" title="<?=__('کد مشخصه ثابت برای هر لایسنس')?>" >
+		<input autocomplete="off" placeholder="FC2" maxlength="3" type="password" class="fc2 numeric" name="<?=login_key()['fc2']?>" title="<?=__('کد مشخصه ثابت برای هر لایسنس')?>" >
 		
 		<table cellpadding="0" cellspacing="0" ><tr>
-		<td><input autocomplete="off" maxlength="4" type="text" name="<?=admin_key()['captcha']?>" class="captcha numeric"></td>
+		<td><input autocomplete="off" maxlength="4" type="text" name="<?=login_key()['captcha']?>" class="captcha numeric"></td>
 		<td><img dir="<?=_rtl?>" class="captcha_img" title="<?=__('این قسمت برای مقابله با روبوت های brute force در نظر گرفته شده، با وارد کردن شماره در فرم ادامه دهید')?>" 
 			src="<?=_URL?>/captcha-admin-login.png&nocache=<?=rand(10000000,99999999)?>" >
 		</td>

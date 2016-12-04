@@ -1,0 +1,50 @@
+
+.ticketbox_user_list_c {
+	padding: 10px 20px 20px 20px;
+}
+
+.ticketbox_user_list tr td:first-child {
+	position: relative;
+}
+.ticketbox_user_list tr.new td:first-child {
+	color: black;
+	font-weight: bold;
+}
+
+.ticketbox_user_list tr td:first-child:before ,
+.ticketbox_user_list tr td:first-child:after {
+	font-family: FontAwesome;
+	font-size: 18px;
+}
+
+.ticketbox_user_list tr td:first-child:before {
+	padding: 0 5px;
+	position: relative; top: 2px;
+}
+.ticketbox_user_list tr.new td:first-child:before {
+	content: "\f0e0";
+	color: black;
+}
+.ticketbox_user_list tr.notnew td:first-child {
+	
+}
+
+.ticketbox_user_list tr td:first-child:after {
+	position: absolute; left: 14px; top: 13px;
+}
+.ticketbox_user_list tr.notreplied td:first-child:after {
+	content: "\f016";
+}
+.ticketbox_user_list tr.replied td:first-child:after {
+	content: "\f0c5";
+}
+
+.ticketbox_user_list tr td:nth-child(2) {
+	width: 100px;
+	text-align: center;
+	font-size: 10px;
+}
+
+
+
+

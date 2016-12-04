@@ -24,7 +24,7 @@
 
 			<hr>
 
-			[!"text:name"!]
+			[!"text:name/user_id=11"!]
 			[!"text:name_on_form"!]
 			[!"url:sample_page"!]
 			

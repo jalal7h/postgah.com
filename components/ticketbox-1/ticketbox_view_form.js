@@ -2,17 +2,18 @@
 jQuery(document).ready(function($) {
 	
 	// save new post
-	$('.ticketbox_mg_view_form').on('submit', function(e){
+	$('.ticketbox_view_form').on('submit', function(e){
 
-		ticketbox_id = $(this).find('input[name="ticketbox_id"]').val();
-
+		ti = $(this).find('input[name="ticketbox_id"]')
 		ta = $(this).find('textarea');
 		sb = $(this).find('input[type="submit"]');
 		pt = $(this).find('.prompt');
 
+		ticketbox_id = ti.val();
 		the_text = ta.val().trim();
+		user_id = ta.attr('user_id');
 
-		if(the_text == '' ){
+		if( the_text == '' ){
 			e.preventDefault();
 			return false;
 		}
@@ -21,9 +22,8 @@ jQuery(document).ready(function($) {
 		sb.addClass('gray');
 		sb.attr('disabled',true);
 
-
 		$.ajax({
-			url: "./?do_action=ticketbox_mg_view_save&ticketbox_id="+ticketbox_id ,
+			url: "./?do_action=ticketbox_view_save&user_id="+user_id+"&ticketbox_id="+ticketbox_id ,
 			method: "POST",
 			data: { 'text' : the_text },
 			dataType: "html"
@@ -39,9 +39,9 @@ jQuery(document).ready(function($) {
 				sb.removeClass('gray');
 				sb.attr( 'disabled', false );
 				pt.css( 'opacity', '0.0' );
-				$('.ticketbox_mg_view .post_list').prepend( new_post_content );
-				$('.ticketbox_mg_view .post_list .post:first-child').css({'opacity':'0.0'});
-				$('.ticketbox_mg_view .post_list .post:first-child').animate({'opacity':'1.0'}, 400);
+				$('.ticketbox_view .post_list').prepend( new_post_content );
+				$('.ticketbox_view .post_list .post:first-child').css({'opacity':'0.0'});
+				$('.ticketbox_view .post_list .post:first-child').animate({'opacity':'1.0'}, 400);
 
 			} else {
 				ta.attr( 'disabled', false );

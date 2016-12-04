@@ -1,12 +1,12 @@
 
 
-.ticketbox_mg_view form {
+.ticketbox_view form {
 	margin-bottom: 50px;
 }
-.ticketbox_mg_view form .lmfe_tnit {
+.ticketbox_view form .lmfe_tnit {
 	display: none;
 }
-.ticketbox_mg_view form textarea {
+.ticketbox_view form textarea {
 	width: 100%;
 	height: 180px;
 	border: 0px;
@@ -14,10 +14,10 @@
 	padding: 20px;
 	font-size: 16px;
 }
-.ticketbox_mg_view form textarea:hover {
+.ticketbox_view form textarea:hover {
 	border: 0px;
 }
-.ticketbox_mg_view form .prompt {
+.ticketbox_view form .prompt {
 	color: orangered;
 	margin-right: 25px;
 	display: inline-block;
