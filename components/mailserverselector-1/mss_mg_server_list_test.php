@@ -28,7 +28,8 @@ function mss_mg_server_list_test(){
 		$html = false;
 
 		if(! mss_send( $rw_mssp, $to , $subject , $text , $from , $html ) ){
-			echo "$rw_mssp, $to , subject , text , $from , $html";
+			var_dump($rw_mssp);
+			echo ", $to , subject , text , $from , $html";
 			ed();
 		
 		} else {
