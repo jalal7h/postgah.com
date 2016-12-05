@@ -1,7 +1,7 @@
 
 CREATE TABLE `useraccess` (
   `id` int(11) NOT NULL COMMENT 'شناسه',
-  `users_id` int(11) NOT NULL COMMENT 'شناسه کاربر',
+  `user_id` int(11) NOT NULL COMMENT 'شناسه کاربر',
   `component` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'بخش'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

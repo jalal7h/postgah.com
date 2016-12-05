@@ -16,13 +16,13 @@ function texty_prompt( $slug , $vars=null, $convbox=true ){
 	#
 	# get the prompt
 	if(! $texty = texty_fetch( $slug ) ){
-		// e( __FUNCTION__, __LINE__, 'cant find the slug named as '.$slug );
+		e( __FUNCTION__, __LINE__, 'cant find the slug named as '.$slug );
 		return false;
 
 	#
 	# if its set
 	} else if(! $prompt = trim($texty['prompt']) ){
-		// e(__FUNCTION__,__LINE__);
+		e(__FUNCTION__,__LINE__);
 
 	} else {
 		

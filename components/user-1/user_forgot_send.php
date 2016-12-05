@@ -6,20 +6,21 @@
 
 function user_forgot_send(){
 	
-	token_check();
+	// token_check();
 	
 	if(! $username = $_REQUEST['username'] ){
 		dg();
 
-	} else if(! $vars = table( 'user', $username, null, 'username' ) ){
+	} else if(! $rw_user = table( 'user', $username, null, 'username' ) ){
 		echo convbox( __("هیچ حساب کاربری مرتبط با آدرس ایمیل شما یافت نشد<br>لطفا نسبت به %%ثبت نام%% با آدرس ایمیل خود اقدام نمائید.", ["<a href=\""._URL."/register\">",'</a>'] ) );
 
 	} else {
 
 		$h = md5x($username."01q!", 20);
+		$vars = $rw_user;
 		$vars['link'] = _URL."/?page=".$_REQUEST['page']."&do=new&username=".str_enc($username)."&h=".$h;
-	
-		echo texty( 'user_forgot_send', $vars, $vars['id'] );
+		
+		echo texty( 'user_forgot_send', $vars, $rw_user['id'] );
 
 	}
 
