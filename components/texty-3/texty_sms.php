@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/12
-# 3.1
+# 2016/12/05
+# 3.2
 
 /*
 texty_sms( "user" , "user_register_do_sms" , array(
@@ -26,21 +26,17 @@ function texty_sms( $who , $slug , $vars ){
 	switch ($who) {
 
 		case 'admin':
-			#
-			# admin username 
-			$username = $_SESSION[ login_key()['username'] ];
-			#
-			# admin cell
-			$to = table("user", $username, "cell", "username");
+			if(! $to = user_cellNumber(1) ){
+				return false;
+			}
 			break;
 
 		case 'user':
 			if(! $user_id = user_logged() ){
 				return false;
-			} else if(! $to = table("user", $user_id, "cell") ){
+
+			} else if(! $to = user_cellNumber($user_id) ){
 				return false;
-			} else {
-				// its OK
 			}
 			break;
 
@@ -51,8 +47,8 @@ function texty_sms( $who , $slug , $vars ){
 			} else if( strlen($who)<10 ){ // its user_id
 				$user_id = $who;
 				if(! $rw_user = table("user", $user_id) ){
-					e();
-					die();
+					ed();
+
 				} else {
 					$to = $rw_user['username'];
 				}

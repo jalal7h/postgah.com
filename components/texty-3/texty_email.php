@@ -54,8 +54,8 @@ function texty_email( $who , $slug , $vars=null ){
 			if( is_numeric($who) ){
 				$user_id = $who;
 				if(! $rw_user = table("user", $user_id) ){
-					e(__FUNCTION__,__LINE__);
-					die();
+					ed();
+
 				} else {
 					$to = $rw_user['username'];
 				}

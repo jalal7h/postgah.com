@@ -6,7 +6,17 @@
 
 # user_cellNumber( user_rw or user_id )
 
-function user_cellNumber( $rw_user ){
+function user_cellNumber( $rw_user__or__user_id ){
+	
+	if( is_numeric($rw_user__or__user_id) ){
+		$user_id = $rw_user__or__user_id;
+		if(! $rw_user = table('user',$user_id) ){
+			return false;
+		}
+		
+	} else {
+		$rw_user = $rw_user__or__user_id;
+	}
 
 	#
 	# the fields

@@ -10,12 +10,7 @@ $GLOBALS['do_action'][] = 'user_register_form';
 function user_register_form(){
 	
 	if( user_logged() ){
-		?>
-		<script type="text/javascript">
-			location.href = '<?=_URL?>/userpanel';
-		</script>
-		<?
-		die();
+		jsgo( _URL.'/userpanel' );
 		
 	} else if( is_component('user_emailverifybeforesignup') and !user_emailverifybeforesignup_check() ){
 		return user_emailverifybeforesignup();
