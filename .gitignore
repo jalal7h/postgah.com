@@ -5,3 +5,4 @@ allow.inc
 config.php
 components/*/*.inc.php
 error_log
+smtpmail
