@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/18
-# 1.0
+# 2016/12/06
+# 1.1
 
 /*
 $rw_mssp['to'] = $to;
@@ -58,7 +58,12 @@ function xmail_remote( $rw ){
 	if( $html ){
 		$mail->IsHTML(true);
 	}
-
+	
+	if( $mail->Port == 587 ){
+		$mail->SMTPSecure = "tls";
+	} else if( $mail->Port == 465 ){
+		$mail->SMTPSecure = "ssl";
+	}
 
 	#
 	# content
