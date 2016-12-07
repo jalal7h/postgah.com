@@ -17,4 +17,6 @@
     top: 9px;
     color: gray;
 }
-
+.pgItem_display_slide .slidy {
+    margin-top: 20px;
+}
