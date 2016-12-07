@@ -16,7 +16,7 @@ function is_column( $table, $column ){
 	} else if(! is_table($table) ){
 		return false;
 
-	} else if(! $rs = dbq(" DESCRIBE `$table` ") ){
+	} else if(! $rs = dbq(" DESCRIBE `$table` ", $force ) ){
 		dg('there is no table named as '.$table);
 	
 	} else {

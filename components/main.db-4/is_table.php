@@ -5,11 +5,11 @@
 # 1.2
 
 function is_table( $table ){
-
+	
 	if( $table == "" ){
 		return false;
 	
-	} else if(! $rs = dbq(" SHOW TABLES LIKE '$table' ") ){
+	} else if(! $rs = dbq(" SHOW TABLES LIKE '$table' ", $force) ){
 		dg();
 	
 	} else if(! dbn($rs) ){

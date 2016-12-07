@@ -8,7 +8,10 @@
 	margin: 20px 0;
 	/*background-color:#fff;*/
 	padding:0px;
+	border-spacing: 5px;
+    border-collapse: separate;
 }
+
 .listmaker_list_record {
 	cursor:pointer;
 	background-color:white;
@@ -40,11 +43,12 @@
 	font-size: 14px;
 }
 .listmaker_list_record:hover {
-	background-color:#ffe;
+	background-color: #ffe;
 }
 .listmaker_list_record_inactive {
-	background-color:#fff4f4;
+	background-color: #f5f5f5 !important;
 }
+
 .listmaker_list_record td {
 	padding:10px;
 }
@@ -60,7 +64,7 @@
 
 .listmaker_list_record .tools-td {
 	text-align: center;
-	background-color: white !important;
+	/* background-color: ; */
 }
 
 .listmaker_list_record .tools-td {

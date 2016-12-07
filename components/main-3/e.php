@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/31
-# 1.5
+# 2016/12/07
+# 1.6
 
 function e( $text=null, $line=null, $etc=null, $its_ed=0 ){
 
@@ -52,6 +52,8 @@ function dg( $text = "" ){
 		$dbg = debug_backtrace();
 		$d0 = $dbg[0];
 		$d1 = $dbg[1];
+		$d2 = $dbg[2];
+		$d3 = $dbg[3];
 
 		if( $text ){
 			if( is_array($text) ){
@@ -59,7 +61,13 @@ function dg( $text = "" ){
 			}
 		}
 
-		error_log( "debug :: line ".$d0['line']." at function ".$d1['function']." , ran at line ".$d1['line']." of ".basename($d1['file']).( $text ? ", ".$text : "" ) );
+		// error_log( "debug: ".$d1['function'].":".$d0['line']."; ".$d1['line'].":".basename($d1['file'])."; ".( $text ? ", ".$text : "" ) );
+		error_log( 
+			"debug: ".
+			$d1['function'].":".$d0['line']."; ".
+			$d2['function'].":".$d1['line']."; ".
+			$d3['function'].":".$d2['line']."; ".
+			$text );
 
 	}
 

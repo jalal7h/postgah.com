@@ -2,12 +2,16 @@
 
 function ticketbox_view(){
 	
-	$c.= "<div class=\"".__FUNCTION__."\">";
 
-	if(! $id = $_REQUEST['id'] ){
+	if(! $id = intval($_REQUEST['id']) ){
 		e();
 
+	} else if(! table('ticketbox', $id) ){
+		echo convbox( __('%% با شناسه #%% ثبت نشده است.',[ lmtc('ticketbox')[0], $id ] ), 'transparent' );
+
 	} else {
+
+		$c.= "<div class=\"".__FUNCTION__."\">";
 
 		#
 		# tanzim ticket be onvan e dide shode, flag e view dar ticketbox_user
@@ -33,10 +37,11 @@ function ticketbox_view(){
 			$c.= "</div>";
 
 		}
+	
+		$c.= "</div>";
 
 	}
 
-	$c.= "</div>";
 
 	echo $c;
 

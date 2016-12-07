@@ -1,0 +1,10 @@
+
+.ticketbox_view form textarea ,
+.ticketbox_view .post {
+	box-shadow: 0 0 15px rgba(0,0,0,0.12) !important;
+}
+
+.ticketbox_view .post .info {
+	background-color: #f3f3f3 !important;
+}
+
