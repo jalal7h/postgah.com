@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
 			the_tag_name = $(this).attr('name');
 			if (typeof the_tag_name === 'undefined' ) {
 				//
-			} else if(! the_tag_name.indexOf( "[" ) ){
+			} else if( the_tag_name.indexOf( "[" ) > -1 ){
 				//
 			} else {
 				the_value = $(this).val();

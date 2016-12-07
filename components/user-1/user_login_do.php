@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/03
-# 1.6
+# 2016/12/07
+# 1.7
 
 function user_login_do(){
 
@@ -20,6 +20,9 @@ function user_login_do(){
 	} else if(! user_login_check( $u , $p ) ){
 		$c.= __("%% یا کلمه عبور اشتباه است", [lmtc('user:username')]);
 	
+	} else if(! user_flag($u) ){
+		$c.= __("حساب کاربری شما مسدود شده است.", [lmtc('user:username')]);		
+
 	} else {
 		
 		user_login_session( table("user", $u, "id", "username") );
@@ -55,6 +58,7 @@ function user_login_check( $username , $password ){
 	return false;
 	
 }
+
 
 function user_logged(){
 	

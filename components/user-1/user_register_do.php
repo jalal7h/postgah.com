@@ -41,6 +41,7 @@ function user_register_do(){
 		'password'=>( is_component('userhashpassword') ? userhashpassword($password) : $password ), 
 		'name'=>$name, 
 		'cell'=>( is_cell_correct_or_not(trim($_REQUEST['cell'])) ?trim($_REQUEST['cell']) :"" ),
+		'flag'=>'1',
 	]) ){
 		$text = __("اختلال در ثبت‌نام رخ داده است.");
 		

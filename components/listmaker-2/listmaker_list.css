@@ -1,5 +1,5 @@
 
-/*2016/09/26*/
+/*2016/12/07*/
 
 .listmaker_list {
 	direction:rtl;
@@ -178,11 +178,14 @@
 
 /* setflag */
 .listmaker_list_record .setflag:before {
-	float:left;
+	float: left;
 	font: normal 30px FontAwesome;
 	color: black;
-	content: "\f14a";
+	content: "\f205";
 	opacity: 0.6;
+}
+.listmaker_list_record .setflag.off:before {
+	content: "\f204";
 }
 .listmaker_list_record .setflag:hover:before {
 	opacity: 1.0;
