@@ -7,7 +7,7 @@ $GLOBALS['do_action'][] = 'pgItem_display_ticketboxLinkMaker';
 function pgItem_display_ticketboxLinkMaker(){
 
 	if(! $user_id = user_logged() ){
-		echo "<a onclick=\"alert('برای سوال از فروشنده ابتدا وارد ستید شوید'); return false;\" href=\"#\" class=\"submit_button ask_from_seller gray\">".__('سوال از فروشنده')."</a>";
+		echo "<a onclick=\"alert('برای سوال از فروشنده ابتدا وارد سایت شوید'); return false;\" href=\"#\" class=\"submit_button ask_from_seller gray\">".__('سوال از فروشنده')."</a>";
 	
 	} else if(! $item_id = $_REQUEST['item_id'] ){
 		ed();
