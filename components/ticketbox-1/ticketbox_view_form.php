@@ -22,9 +22,11 @@ function ticketbox_view_form(){
 			[!"hidden:ticketbox_id"=>"'.$_REQUEST['id'].'"!]
 			[!"textarea:text/user_id=\"'.$user_id.'\""!]
 			
-		<div>
+		<div class="submit_div">
 			[!"submit:'.__('ثبت').'","notInDiv"!]
 			<div class="prompt">'.__('اختلال در ثبت.').'</div>
+			
+			<a href="<?=userprofile_link( ticketbox_user($rw["id"])["foreign"] )?>" target="_blank" class="foreign"><?=table( "user" , ticketbox_user($rw["id"])["foreign"] , "name" )?></a>
 		</div>
 	');
 	# -------------------------------------------------

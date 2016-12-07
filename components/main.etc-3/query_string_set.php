@@ -10,7 +10,7 @@ query_string_set( "user_id", "some_content" );
 */
 
 function query_string_set( $param=null, $value=null ){
-
+	
 	$qs = $_SERVER['QUERY_STRING'];
 	
 	if(! $param ){

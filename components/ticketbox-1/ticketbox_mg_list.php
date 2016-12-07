@@ -41,7 +41,9 @@ function ticketbox_mg_list(){
 	# 
 	# the list
 	$list['name'] = __FUNCTION__;
-	$list['query'] = " SELECT * FROM `ticketbox` WHERE 1 AND `id` IN (SELECT `ticketbox_id` FROM `ticketbox_user` WHERE `user_id`='$user_id' AND `ticketbox_id`=`ticketbox`.`id`) ORDER BY `date_updated` DESC ";
+	$list['query'] = " SELECT * FROM `ticketbox` INNER JOIN `ticketbox_user` on `ticketbox`.`id` = `ticketbox_user`.`ticketbox_id` WHERE `ticketbox`.`hide`='0' AND `user_id`='1' ORDER BY `ticketbox_user`.`flag` ASC , `date_updated` DESC ";
+	$list['id_column'] = 'ticketbox_id';
+	
 	$list['tdd'] = 10; // tedad dar safhe
 	
 	#
@@ -51,7 +53,7 @@ function ticketbox_mg_list(){
 
 	#
 	# target // maghsad e click ruye har row
-	$list['target_url'] = '"./?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['func'].'&do=view&id=".$rw["id"]';
+	$list['target_url'] = '"./?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['func'].'&do=view&id=".$rw["ticketbox_id"]';
 
 	#
 	# actions 
@@ -63,7 +65,7 @@ function ticketbox_mg_list(){
 	$list['setflag_url'] = true; // link active / inactive
 	$list['paging_url'] = true; // not needed when we have 'tdd'
 	$list['modify_url'] = true;
-	$list['tr_color_identifier'] = '( ticketbox_user($rw["id"])["flag"] ? 0 : 1 )';
+	// $list['tr_color_identifier'] = '( ticketbox_user($rw["id"])["flag"] ? 0 : 1 )';
 	$list['tr_class'] = 'ticketbox_mg_list_trClass($rw)';
 
 	#
@@ -93,13 +95,17 @@ function ticketbox_mg_list(){
 
 function ticketbox_mg_list_trClass( $rw ){
 
-	if( ticketbox_isReplied($rw['id']) ){
-		$class[] = "replied";
-	} else {
-		$class[] = "notreplied";
+	$ticketbox_id = $rw['ticketbox_id'];
+
+	if( dbr( dbq(" SELECT COUNT(*) FROM `ticketbox_post` WHERE `ticketbox_id`='$ticketbox_id' ") , 0, 0) > 1 ){
+		if( ticketbox_isReplied( $ticketbox_id ) ){
+			$class[] = "replied";
+		} else {
+			$class[] = "notreplied";
+		}
 	}
 
-	if( ticketbox_isNew($rw['id']) ){
+	if( ticketbox_isNew( $ticketbox_id ) ){
 		$class[] = "new";
 	} else {
 		$class[] = "notnew";

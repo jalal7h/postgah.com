@@ -22,7 +22,7 @@
 	/* background-color: #f8f8f8; */
 }
 .fbcomment_list div.r .useravatar a.name {
-	color: #adadad;
+	color: #909090;
 }
 .fbcomment_list div.r div.text:before ,
 .fbcomment_list div.r div.text:after {
@@ -50,7 +50,7 @@
 .fbcomment_list div.r div.links > * {
 	display: inline-block;
 	margin-left: 15px;
-	color: #ADADAD;
+	color: #909090;
 }
 .fbcomment_list div.r div.links > *:hover {
 	color: black;

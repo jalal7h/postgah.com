@@ -10,10 +10,10 @@ function setting_mg_main(){
 	echo listmaker_form('
 		[!
 			"table" => "setting" ,
-			"action" => "./?page=admin&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["func"]."&do=save",
+			"action" => "./?'.query_string_set().'&do=save",
 			"name" => "'.__FUNCTION__.'" ,
 			"class" => "'.__FUNCTION__.'" ,
-			"rw" => setting_mg_main_setting_rw(),
+			"rw" => setting_rw_slug_n_text(),
 		!]
 			
 			[!"'.setting_rw('tiny_title')['name'].'","text:tiny_title*"!]
@@ -38,25 +38,6 @@ function setting_mg_main(){
 	# -------------------------------------------------
 
 }
-
-
-function setting_mg_main_setting_rw(){
-
-	if(! $rs0 = dbq(" SELECT * FROM `setting` WHERE 1 ") ){
-		return e();
-
-	} else while( $rw0 = dbf($rs0) ){
-		$rw[ $rw0['slug'] ] = $rw0['text'];
-	}
-
-	return $rw;
-
-}
-
-
-
-
-
 
 
 

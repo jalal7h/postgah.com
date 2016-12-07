@@ -13,7 +13,7 @@ function fbcomment_list_this( $table_name , $table_id , $rw ){
 		
 		( is_component('useravatar') ? useravatar( $rw['user_id'] , $text_flag=true , $link_flag=true , $job_flag=true , $where_flag=true ) : '' ).'
 		
-		<div class="date">'.time_inword( $rw['date'] ).'</div>
+		<div class="date">'.time_inword( $rw['date_created'] ).'</div>
 		
 		<div class="text">'.$rw['text'].'</div>
 		
@@ -23,7 +23,7 @@ function fbcomment_list_this( $table_name , $table_id , $rw ){
 			
 			'.( user_logged() ? '<a class="reply" href="#" onclick="return fbcomment_subCommentVisible( this )">'.__('پاسخ').'</a>' :'' ).
 			
-			( _fbcomment_share_on_twitter ? '<a class="tweet twitter_popup" href="http://twitter.com/share?text='.urlencode($rw['text']).'&url='.urlencode( stash_item_link( table("item", $_REQUEST['id']) )."#comment-".$rw['id'] ).'"></a>' : '').
+			( setting('fbcomment_share_on_twitter') == 1 ? "<a class=\"tweet twitter_popup\" href=\"http://twitter.com/share?text=".urlencode($rw['text'])."&url="._URL._URI.urlencode("#comment-".$rw['id'])."\">".__('توئیت')."</a>" : '').
 
 			( (is_component('abusereport') and $rw['user_id']!=user_logged()) ? '<a '.abusereport( 'fbcomment', $rw['id'] ).' >'.__('گزارش تخلف').'</a>' : '' ).
 

@@ -46,7 +46,7 @@ function fbcomment_mg(){
 	#
 	# list array // list e sotun haye list
 	$list['list_array'][] = array("content" => 'fbcomment_mg_info($rw)');
-	$list['list_array'][] = array("content" => 'time_inword($rw["date"])');
+	$list['list_array'][] = array("content" => 'time_inword($rw["date_created"])');
  
 	#
 	# search columns // az in field ha tu table search mikone

@@ -74,14 +74,14 @@
 	echo lmfe([
 		'some text',
 		['cat:cat_id', 'cat_name'=>'adsCat','inDiv'],
-		['text:name*+','inDiv'],
+		['text:name*+/readonly','inDiv'],
 		['color:color_code','inDiv'],
 		['checkbox:flag','inDiv'],
 		['toggle:flag','inDiv'],
 		['date:date0','inDiv'],
 		['textarea:brief[]','inDiv'],
 		['textarea:desc.tinymce class_name'=>'متن آزماشی فورس شده','inDiv'],
-		['name:name','عنوان اجباری','inDiv'],
+		['name:name/disabled','عنوان اجباری','inDiv'],
 		
 		['number:prio','inDiv'],
 		

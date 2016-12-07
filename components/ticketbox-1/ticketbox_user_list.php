@@ -37,7 +37,7 @@ function ticketbox_user_list(){
 	# 
 	# the list
 	$list['name'] = __FUNCTION__;
-	$list['query'] = " SELECT * FROM `ticketbox` INNER JOIN `ticketbox_user` on `ticketbox`.`id` = `ticketbox_user`.`ticketbox_id` WHERE `user_id`='$user_id' ORDER BY `ticketbox_user`.`flag` ASC , `date_updated` DESC ";
+	$list['query'] = " SELECT * FROM `ticketbox` INNER JOIN `ticketbox_user` on `ticketbox`.`id` = `ticketbox_user`.`ticketbox_id` WHERE `ticketbox`.`hide`='0' AND `user_id`='$user_id' ORDER BY `ticketbox_user`.`flag` ASC , `date_updated` DESC ";
 	$list['id_column'] = 'ticketbox_id';
 
 	$list['tdd'] = 10; // tedad dar safhe

@@ -14,10 +14,9 @@ function pgItem_display_text( $rw_pagelayer ){
 		$content = "<div class=\"".__FUNCTION__."\">";
 		$content.= nl2br($rw_item['text']);
 		$content.= "
-		<div class=\"text_footer\">
+		<div class=\"text_footer\" item_id=\"".$rw_item['id']."\">
 			<a ".abusereport('item',$rw_item['id'])." >گزارش تخلف</a>
 			<a class=\"print_button\">نسخه چاپی</a>
-			<a class=\"submit_button ask_from_seller\">سوال از فروشنده</a>
 		</div>";
 		$content.= "</div>";
 

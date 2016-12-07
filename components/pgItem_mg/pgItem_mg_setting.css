@@ -1,16 +1,13 @@
 
-/*admin*/
-/*-spi-*/
-
-.setting_mg_ads {
+.pgItem_mg_setting {
 	padding: 30px 0 60px 0;
 }
 
-.setting_mg_ads .lmfe_tnit {
+.pgItem_mg_setting .lmfe_tnit {
 	width: 240px !important;
 }
 
-.setting_mg_ads .the_day {
+.pgItem_mg_setting .the_day {
 	margin-right: -35px;
 	margin-left: 15px;
 	display: inline-block;
@@ -18,7 +15,7 @@
 	z-index: 2;
 	top: -3px;
 }
-#lmfe_setting_mg_ads_free_ads_duration_limit {
+#lmfe_pgItem_mg_setting_free_ads_duration_limit {
 	font-size: 16px;
 	padding-left: 40px;
 	width: 90px;

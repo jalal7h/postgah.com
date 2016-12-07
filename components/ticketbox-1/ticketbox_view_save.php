@@ -25,12 +25,24 @@ function ticketbox_view_save(){
 		
 	} else {
 		
+		# 
+		# date_updated on ticketbox
+		dbs( 'ticketbox', [ 'date_updated'=>U() ], [ 'id'=>$_REQUEST['ticketbox_id'] ] );
+
+		# 
+		# set as new for foreign
 		$foreign = ticketbox_user( $_REQUEST['ticketbox_id'], $user_id )['foreign'];
 		ticketbox_setAsNew( $_REQUEST['ticketbox_id'], $foreign );
 
+		# 
+		# congra and display the new post
 		echo "OK";
 		echo ticketbox_view_post( table( 'ticketbox_post' , $id ) );
+		
+		# 
+		# die
 		die();
+
 	}
 	
 }
