@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/17
-# 1.0
+# 2016/12/11
+# 1.1
 
 function news_mg_list(){
 	
@@ -37,7 +37,11 @@ function news_mg_list(){
 		array(  "content" => 'cat_translate($rw["cat"])'),
 				
 	);
+
+	$list['paging_select']['cat'] = "<option value=''>".cat_detail('news')['name']."</option>".cat_display('news',$is_array=false);
 	
+	$list['search'] = [ 'name', 'text' ];
+
 	echo listmaker_list($list);
 
 }
