@@ -1,7 +1,7 @@
 <?
 
 function seo_share_link( $link , $title="" ){
-
+	
 	$c.= "
 	<div class='seo_share_link'>
 		<a href='http://www.facebook.com/sharer/sharer.php?u=".urlencode($link)."' target='_blank' class='facebook' ><icon></icon></a>

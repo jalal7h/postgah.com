@@ -7,7 +7,7 @@
 $GLOBALS['do_action'][] = "echo_date";
 
 function echo_date(){
-    echo date("Y/m/d H:i:s", U());
+	echo date( 'Y/m/d H:i:s', U() );
 }
 
 

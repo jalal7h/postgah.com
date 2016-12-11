@@ -4,6 +4,9 @@
 # 2016/07/24
 # 1.0
 
+# 12 days ago
+# 8 minutes later
+
 function time_inword( $U ){
 
 	$now = U();

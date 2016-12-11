@@ -14,8 +14,8 @@ function pgItem_display_detail( $rw_pagelayer ){
 		$content = "
 		<div class=\"".__FUNCTION__."\">
 			<div class=\"view\">تعداد بازدید : <span>".( $rw_item['view'] >= 1000 ? number_format($rw_item['view']) : $rw_item['view'] )."</span></div>
-			<div class=\"date_created\">تاریخ ثبت : <span>".substr(U2Vaght($rw_item['date_created']), 0, 10)."</span></div>
-			<div class=\"date_updated\">بروزرسانی : <span>".substr(U2Vaght($rw_item['date_updated']), 0, 10)."</span></div>
+			<div class=\"date_created\">تاریخ ثبت : <span>".substr(UDate($rw_item['date_created']), 0, 10)."</span></div>
+			<div class=\"date_updated\">بروزرسانی : <span>".substr(UDate($rw_item['date_updated']), 0, 10)."</span></div>
 	
 			<div class=\"bookmarky_button\">افزودن به علاقه‌مندی‌ها</div>
 			

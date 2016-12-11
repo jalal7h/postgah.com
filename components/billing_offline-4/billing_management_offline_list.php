@@ -35,7 +35,7 @@ function billing_management_offline_list(){
 		array("head"=>lmtc("billing_invoice:cost"), "content"=>'billing_format($rw[\'cost\'])','attr'=>array('align'=>'center')),
 		array("head"=>__("بانک"), "content"=>'table("billing_method",$rw["method"],"c1","method")'),
 		
-		array("head"=>lmtc("billing_invoice:date"), "content"=>'substr(U2Vaght( ($rw[\'date\']==0 ?explode(\'::\',$rw[\'transaction\'])[1] :$rw[\'date\']) ),0,10)','attr'=>array('align'=>'center','dir'=>'ltr')),
+		array("head"=>lmtc("billing_invoice:date"), "content"=>'substr(U2Date( ($rw[\'date\']==0 ?explode(\'::\',$rw[\'transaction\'])[1] :$rw[\'date\']) ),0,10)','attr'=>array('align'=>'center','dir'=>'ltr')),
 		
 		array("head"=>__("شماره تراکنش / سریال"), "content"=>'( $rw[\'date\']==0 ?explode(\'::\',$rw[\'transaction\'])[0] :$rw[\'transaction\'] )','attr'=>array('align'=>'center','dir'=>'ltr')),
 

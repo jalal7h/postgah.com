@@ -40,6 +40,9 @@ function ticketbox_view_save(){
 		echo ticketbox_view_post( table( 'ticketbox_post' , $id ) );
 		
 		# 
+		# nxx texty ticketbox_view_save
+
+		# 
 		# die
 		die();
 

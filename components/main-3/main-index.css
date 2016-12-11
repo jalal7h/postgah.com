@@ -29,7 +29,8 @@ div,
 input,
 select,
 form {
-	font:12px DefaultFont,Tahoma;
+	font-size: 12px;
+	font-family: DefaultFont,Tahoma;
 }
 
 select,

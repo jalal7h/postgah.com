@@ -1,13 +1,13 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/07/03
+# 2016/12/11
 # 1.0
 
 function billing_userpanel_payment_offline_save_n_congragulate(){
 	
 	token_check();
-
+	
 	if(! $user_id = user_logged() ){
 		e();
 		
@@ -23,7 +23,7 @@ function billing_userpanel_payment_offline_save_n_congragulate(){
 	} else if(! $date = trim(strip_tags($_REQUEST['date'])) ){
 		e();
 	
-	} else if(! $date = Vaght2U($date." 12:00:00") ){
+	} else if(! $date = DateU($date) ){
 		e();
 	
 	} else if(! dbs( 'billing_invoice', [ 'transaction'=>$transaction.'::'.$date ], [ 'id'=>$invoice_id ] ) ){
@@ -39,11 +39,11 @@ function billing_userpanel_payment_offline_save_n_congragulate(){
 		echo texty( 'billing_userpanel_payment_offline_save_n_congragulate', $vars );
 		echo "</div>\n";
 
-
 		return true;
 	}
 
 	return false;
+
 }
 
 

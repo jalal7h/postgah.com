@@ -14,6 +14,9 @@ function abusereport_do(){
 
 	dbs( 'abusereport', [ 'table_name', 'table_id', 'cat_id', 'text', 'user_id'=>$user_id ] );
 
+	#
+	# nxx texty abusereport_do
+
 	?>
 	<script>
 		top.dehitbox_do();

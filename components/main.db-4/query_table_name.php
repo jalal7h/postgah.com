@@ -9,9 +9,11 @@ function query_table_name( $q, $skip_tableCheck=false ){
 	if(! $q ){
 		dg();
 		ed("no query defined");
+
 	} else if(! is_string($q) ){
 		dg();
 		ed('its not string '.$q.";");
+
 	} else {
 		$q = trim($q);
 	}
@@ -21,6 +23,7 @@ function query_table_name( $q, $skip_tableCheck=false ){
 	$table_name = trim(preg_split("/ from /i", $q)[1]);
 	$table_name = trim(explode(' ', $table_name)[0]);
 	$table_name = str_replace('`', '', $table_name);
+	$table_name = trim($table_name);
 	
 	if(! $skip_tableCheck ){
 		if(! is_table($table_name) ){

@@ -73,7 +73,7 @@ function pgItem_expire_agent_free_to_die(){
 
 			$vars['count_of_ads'] = sizeof($rw_s);
 			$vars['limit_in_days'] = $expire_duration_in_days;
-			$vars['date'] = Vaght2Tarikh( U2Vaght( U() ) );
+			$vars['date'] = UDate( U() , "text" );
 			texty( 'pgItem_expire_agent_free_to_die_single', $vars );
 
 		}

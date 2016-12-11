@@ -1,0 +1,24 @@
+
+.news_mg_form {
+	margin: 50px 0;
+}
+#lmfe_news_mg_form_name {
+	width: calc( 100% - 200px );
+	font-size:14px;
+}
+.news_mg_form textarea {
+	width: calc( 100% - 200px );
+	height: 200px;
+	font-size:14px;
+}
+
+.news_mg_form .lmfe_tnit {
+	vertical-align: top;
+	margin-top: 11px;
+	padding-top: 0px !important;
+}
+.news_mg_form #mceu_52 {
+	width: calc( 100% - 200px );
+	display: inline-block;
+}
+

@@ -41,7 +41,12 @@ function ticketbox_mg_saveNew(){
 		
 
 	} else {
+
+		# 
+		# nxx texty ticketbox_mg_saveNew
+		
 		return true;
+
 	}
 
 	return false;

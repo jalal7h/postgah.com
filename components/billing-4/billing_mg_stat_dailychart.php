@@ -9,27 +9,23 @@ function billing_management_stat_dailychart(){
 	#
 	# vaght	
 	$U = U();
-	$Vaght = U2Vaght($U);
+	$Date = U2Date($U);
 
 	# 
 	# number of month
-	$numb_of_month = explode("/", $Vaght);
+	$numb_of_month = explode("/", $Date);
 	$numb_of_month = $numb_of_month[1];
 
 	#
 	# day of month
-	$day_of_month = explode("/", $Vaght);
+	$day_of_month = explode("/", $Date);
 	$day_of_month = $day_of_month[2];
 	$day_of_month = explode(" ", $day_of_month);
 	$day_of_month = $day_of_month[0];
 
-	#
-	# last day of month? 31 / 29 / 30
-	$max_of_month_days = ($numb_of_month<=6?31:($numb_of_month==12?29:30));
-
 	# 
 	# list of days
-	for($i=1; $i<=$max_of_month_days; $i++){
+	for( $i=1; $i<=Date_MaxOfMonthDays()[$numb_of_month]; $i++ ){
 		# 
 		# list of days
 		$list_of_days_str[] = '"'.$i.'"';
@@ -37,7 +33,7 @@ function billing_management_stat_dailychart(){
 		# list of costs
 		$list = array (
 			"skipwallet" => true ,
-			"date" => array ( "day" => substr($Vaght, 0, 8).($i<10?"0".$i:$i) ) ,
+			"date" => array ( "day" => substr($Date, 0, 8).($i<10?"0".$i:$i) ) ,
 		);
 		$list_of_days_str_cost[] = round(billing_stat_payment( $list ) / 1000);
 	}
@@ -47,10 +43,10 @@ function billing_management_stat_dailychart(){
 
 	#
 	# costs in months
-	for($i=1; $i<=12; $i++){
+	for( $i=1; $i<=12; $i++ ){
 		$list = array (
 			"skipwallet" => true ,
-			"date" => array ( "monthIn" => substr($Vaght, 0, 5).($i<10?"0".$i:$i) ) ,
+			"date" => array ( "monthIn" => substr($Date, 0, 5).($i<10?"0".$i:$i) ) ,
 		);
 		$list_of_months_str_cost[] = round(billing_stat_payment( $list ) / 1000);
 	}
@@ -58,10 +54,10 @@ function billing_management_stat_dailychart(){
 
 	#
 	# list of years
-	$year = explode("/", $Vaght);
+	$year = explode("/", $Date);
 	$year = $year[0];
 
-	for($i=$year-4; $i<=$year; $i++){
+	for( $i=$year-4; $i<=$year; $i++ ){
 		# 
 		# list of years
 		$list_of_years_str[] = '"'.substr($i,2).'"';
@@ -75,6 +71,7 @@ function billing_management_stat_dailychart(){
 	}
 	$list_of_years_str = implode(",", $list_of_years_str);
 	$list_of_years_str_cost = implode(",", $list_of_years_str_cost);
+
 
 	#
 	# echo the charts
@@ -128,7 +125,7 @@ function billing_management_stat_dailychart(){
 
 	<script>
 		var barChartData_monthly = {
-			labels : ["فروردین","اردیبهشت","خرداد","تیر","مرداد","شهریور","مهر","آبان","آذر","دی","بهمند","اسفند"],
+			labels : ["'.implode('","', Date_listOfMonths() ).'"],
 			datasets : [
 				{
 					fillColor : "rgba(151,187,205,0.5)",

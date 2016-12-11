@@ -45,6 +45,11 @@ RewriteRule ^styles.css$ ./?do_action=include_all_css [L]
 RewriteRule ^styles-admin.css$ ./?do_action=include_all_css&page=admin [L]
 
 # 
+# news-4
+RewriteRule ^news$ ./?page=51 [L]
+RewriteRule ^news-([0-9]+)-(.*).html$ ./?page=52&id=$1 [L]
+
+# 
 # newsletter-1
 RewriteRule ^newsletter-email-list.txt$ ./?do_action=nl_mg_emailList_download [L]
 
@@ -73,7 +78,7 @@ RewriteRule ^t=(.*)/p=([0-9]*).html$ ./?page=67&q=$1&tag_needs_to_be_redirected=
 RewriteRule ^resize/([0-9]+)x([0-9]+)/(.*)$ ./?do_action=quick_resize&width=$1&height=$2&address=$3 [L]
 
 # 
-# seo-2
+# seo-3
 RewriteRule ^sitemap.xml$ ./?do_action=seo_sitemap [L]
 RewriteRule ^rss/([a-zA-Z0-9]+)\.xml$ ./?do_action=seo_rss&feed=$1 [L]
 
