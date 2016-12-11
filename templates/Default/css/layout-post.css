@@ -22,7 +22,7 @@
 .layout-post > .header:after {
 	content: " ";
 	height: 2px;
-	border-bottom: 2px solid #d9d9d9;
+	border-bottom: 1px dashed #d9d9d9;
 	display: block;
 	margin-top: 15px;
 	margin-bottom: -15px;

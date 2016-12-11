@@ -99,6 +99,8 @@ jQuery(document).ready(function($) {
 				t.height(isss_h);
 			}
 		
+			t.animate({'opacity':'1.0'}, 300);
+
 		});
 	
 	});

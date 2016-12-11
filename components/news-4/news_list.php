@@ -89,7 +89,7 @@ function news_list($rw_pagelayer){
 					<div class="news_list_text">
 						<div class="news_list_tile">
 							<span class="news_list__cat">'.cat_translate($rw1['cat']).'</span>
-							<span class="news_list__date">'.UDate( $rw1['date_created'], 'text').'</span>			
+							<span class="news_list__date">'.UDate( $rw1['date_created'],'text').'</span>
 							<p>'.$rw1['name'].'</p>
 						</div>
 					</div><div class="news_list_img">
@@ -138,15 +138,18 @@ function noimg1($rw1){
 }
 
 # در صورت نداشتن تصویر و نمایش خبر در ستون دوم
+$GLOBALS['news-counter'];
 function noimg2( $rw1 ){
-			
-	$noimg2.= '<div class="two_news_list_noimg" >
+	
+	$GLOBALS['news-counter']++;
+		
+	$noimg2.= '<div class="two_news_list_noimg '.( $GLOBALS['news-counter'] %2 ? "first" : "second" ).'" >
 		<a href="'.news_link($rw1).'">
 			<div class="left">
 				<span class="news_list__cat">'.cat_translate($rw1['cat']).'</span>
 				<span class="news_list__date">'.UDate($rw1['date_created'], 'text').'</span>
 				<p>'.$rw1['name'].'</p>
-			</div>			
+			</div>
 			<div class="social2">'.seo_share( '24' , news_link($rw1) ).'</div>
 		</a>			
 	</div>';
@@ -158,7 +161,9 @@ function noimg2( $rw1 ){
 # خبرها در دو ستون نشان داده میشه
 function two_news_list($rw1){
 	
-	$two_news_list.= '<div class="two_news_list" >
+	$GLOBALS['news-counter']++;
+
+	$two_news_list.= '<div class="two_news_list '.( $GLOBALS['news-counter'] %2 ? "first" : "second" ).'" >
 		<a href="'.news_link($rw1).'">
 			<div class="left">
 				<span class="news_list__cat">'.cat_translate($rw1['cat']).'</span>
