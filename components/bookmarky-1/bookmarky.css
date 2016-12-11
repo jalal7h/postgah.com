@@ -1,6 +1,5 @@
 
 .bookmarky {
-	cursor: pointer;
 	transition: all 0.2s;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -9,10 +8,13 @@
 	-ms-user-select: none;
 	user-select: none;
 }
-.bookmarky:hover {
-	opacity: 0.8;
-}
 
+.bookmarky.logged {
+	cursor: pointer;
+}
+.bookmarky.logout {
+	cursor: default;
+}
 .bookmarky:before {
 	font-family: FontAwesome;
 	content: "\f08a";
@@ -20,6 +22,9 @@
 	display: inline-block;
 	transform: scale( 1.0 );
 	transition: 0.2s all;
+}
+.bookmarky.logged:before {
+	opacity: 0.8;
 }
 .bookmarky.active:before {
 	content: "\f004";

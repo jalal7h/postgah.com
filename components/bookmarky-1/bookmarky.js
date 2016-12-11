@@ -1,7 +1,7 @@
 
 // taghipoor.meysam@gmail.com
-// 2016/11/27
-// 1.0
+// 2016/12/11
+// 1.1
 
 jQuery(document).ready(function($) {
 	
@@ -28,6 +28,9 @@ jQuery(document).ready(function($) {
 					$(span).text(data);	
 			    },
 			});
+		
+		} else {
+			alert( $(this).attr('text_notLoggedIn') );
 		}
 
 	});

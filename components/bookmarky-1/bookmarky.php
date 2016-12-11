@@ -6,13 +6,19 @@
 
 function bookmarky( $table_name, $table_id ){
 	
-	$bookmarky = 'class="'.
+	$bookmarky = 
+	
+		'class="'.	
+			__FUNCTION__.' '.
+			( user_logged() ? 'logged ' : 'logout ' ).
+			( bookmarky_ifAdded( $table_name, $table_id ) ? 'active ' : '' ).
+		'" '.
 		
-		__FUNCTION__.' '.
-		( user_logged() ? 'logged ' : 'logout ' ).
-		( bookmarky_ifAdded( $table_name, $table_id ) ? 'active ' : '' ).
+		( user_logged() ? 'title="'.bookmarky_result( $table_name, $table_id ) : '' ).
 		
-		'" table_name="'.$table_name.'" table_id="'.$table_id.'" title="'.bookmarky_result( $table_name, $table_id ).'" ';
+		'" text_notLoggedIn="'.__('لطفا ابتدا وارد سایت شوید.').
+		'" table_name="'.$table_name.
+		'" table_id="'.$table_id.'" ';
 		
     return $bookmarky;
 
