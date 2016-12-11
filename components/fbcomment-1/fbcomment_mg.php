@@ -39,7 +39,7 @@ function fbcomment_mg(){
 	# ** mitunim link ham bedim bejaye 'true'
 	# ** ama age base_url ro dashte bashim az hamun estefade mikone
 	#
-	$list['addnew_url'] = false; // link icon "new" vaghti ke list khali hast dide mishe
+	$list['addnew_url'] = false; // link icon "new" vaqti ke list khali hast dide mishe
 	$list['remove_url'] = true; // link dokme hazf
 	$list['setflag_url'] = true;
 

@@ -39,21 +39,21 @@ function billing_stat_payment( $list ){
 			switch ($k) {
 				case 'day':
 					$d = $d." 00:00:00";
-					$d = vaght2u($d);
+					$d = DateU($d);
 					$date_from = $d;
 					$date_to = $d + (3600 * 24);
 					break;
 
 				case 'week':
 					$d = $d." 23:59:59";
-					$d = vaght2u($d);
+					$d = DateU($d);
 					$date_to = $d;
 					$date_from = $d - (3600 * 24 * 7);
 					break;
 
 				case 'month':
 					$d = $d." 23:59:59";
-					$d = vaght2u($d);
+					$d = DateU($d);
 					$date_to = $d;
 					$date_from = $d - (3600 * 24 * 30);
 					break;
@@ -61,21 +61,21 @@ function billing_stat_payment( $list ){
 				case 'monthIn':
 					$d_month = substr($d, 5, 2);
 					$day_max = ($d_month<=6?31:($d_month==12?29:30));
-					$date_from = vaght2u( $d."/01 00:00:00" );
-					$date_to = vaght2u( $d."/$day_max 23:59:59" );
+					$date_from = DateU( $d."/01 00:00:00" );
+					$date_to = DateU( $d."/$day_max 23:59:59" );
 					break;
 				
 				case 'year':
 					$d = $d." 23:59:59";
-					$d = vaght2u($d);
+					$d = DateU($d);
 					$date_to = $d;
 					$date_from = $d - (3600 * 24 * 365);
 					break;
 
 				case 'yearIn':
 					$d_year = substr($d, 0, 4);
-					$date_from = vaght2u( $d."/01/01 00:00:00" );
-					$date_to = vaght2u( $d."/12/29 23:59:59" );
+					$date_from = DateU( $d."/01/01 00:00:00" );
+					$date_to = DateU( $d."/12/29 23:59:59" );
 					break;
 			}
 			

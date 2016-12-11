@@ -24,7 +24,7 @@ function smsletter_mg_cellList(){
 	# ** ama age base_url ro dashte bashim az hamun estefade mikone
 	#
 	$list['modify_url'] = false; // link icon modify
-	$list['addnew_url'] = false; // link icon "new" vaghti ke list khali hast dide mishe
+	$list['addnew_url'] = false; // link icon "new" vaqti ke list khali hast dide mishe
 	$list['remove_url'] = false; // link dokme hazf
 	$list['up_or_down'] = false; // link priority
 	$list['setflag_url'] = false; // link active / inactive

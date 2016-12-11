@@ -1,0 +1,26 @@
+
+.bookmarky_user_list td {
+	box-shadow: 0 0 0 #fff; 
+	border-bottom: 1px solid #ddd;
+}
+.bookmarky_user_list tr {
+	background-color: #f8f8f8;
+}
+.bookmarky_user_list .tools-td {
+	background-color: #f8f8f8 !important;
+	border-radius: 0px;
+}
+.bookmarky_user_list tr:hover {
+	background-color: #f8f8f8;
+	cursor: default !important;
+}
+.bookmarky_user_list tr .tools-td {
+	background-color: #f8f8f8 !important;
+}
+.bookmarky_user_list .listmaker_list_record td{
+	box-shadow: none;
+}
+
+
+
+

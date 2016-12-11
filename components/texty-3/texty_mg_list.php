@@ -27,7 +27,7 @@ function texty_mg_list(){
 	# target // maghsad e click ruye har row
 	$list['target_url'] = '"./?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['func'].'&do=form&id=".$rw["id"]';
 
-	$list['addnew_url'] = false; // link icon "new" vaghti ke list khali hast dide mishe
+	$list['addnew_url'] = false; // link icon "new" vaqti ke list khali hast dide mishe
 	$list['remove_url'] = false; // link dokme hazf
 	$list['up_or_down'] = false; // link priority
 	$list['setflag_url'] = true; // link active / inactive

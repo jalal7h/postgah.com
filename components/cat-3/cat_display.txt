@@ -16,7 +16,7 @@ in cat ha az admin ghabele control hastan.
 
 
 # echo cat_display('cat', $array=false );
-vaghti array false midi, besurate html mide, tuye <option>
+vaqti array false midi, besurate html mide, tuye <option>
 
 
 # ff(array('گروه','n:cat*'=>$tapk,'option'=>cat_display('cat'),'inDiv')).

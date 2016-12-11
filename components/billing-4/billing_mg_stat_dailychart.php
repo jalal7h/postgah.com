@@ -7,7 +7,7 @@
 function billing_management_stat_dailychart(){
 
 	#
-	# vaght	
+	# vaqt
 	$U = U();
 	$Date = U2Date($U);
 

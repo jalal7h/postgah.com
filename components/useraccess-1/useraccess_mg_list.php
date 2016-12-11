@@ -56,7 +56,7 @@ function useraccess_mg_list(){
 	# ** mitunim link ham bedim bejaye 'true'
 	# ** ama age base_url ro dashte bashim az hamun estefade mikone
 	#
-	// $list['addnew_url'] = true; // link icon "new" vaghti ke list khali hast dide mishe
+	// $list['addnew_url'] = true; // link icon "new" vaqti ke list khali hast dide mishe
 	$list['remove_url'] = true; // link dokme hazf
 	$list['setflag_url'] = true; // link active / inactive
 	$list['paging_url'] = true; // not needed when we have 'tdd'

@@ -67,7 +67,7 @@ function linkify_mg(){
 	# ** ama age base_url ro dashte bashim az hamun estefade mikone
 	#
 	$list['modify_url'] = true;
-	$list['addnew_url'] = true; // link icon "new" vaghti ke list khali hast dide mishe
+	$list['addnew_url'] = true; // link icon "new" vaqti ke list khali hast dide mishe
 	$list['remove_url'] = true; // link dokme hazf
 	$list['setflag_url'] = true; // link active / inactive
 	

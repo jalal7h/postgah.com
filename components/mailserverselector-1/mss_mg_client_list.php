@@ -8,9 +8,6 @@ function mss_mg_client_list(){
 
 	mss_mg_client_reset();
 
-
-	$table = 'mailserverselector_func';
-
 	#
 	# action
 	switch ($_REQUEST['do']) {
@@ -32,7 +29,7 @@ function mss_mg_client_list(){
 	# list
 	###################################################################################
 	# the new version 1.2
-
+	$table = 'mailserverselector_func';
 	# 
 	# the list
 	$list['name'] = __FUNCION__;
@@ -48,7 +45,7 @@ function mss_mg_client_list(){
 	# target // maghsad e click ruye har row
 	$list['target_url'] = '"./?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['func'].'&func2='.$_REQUEST['func2'].'&do=form&id=".$rw["id"]';
 
-	$list['addnew_url'] = false; // link icon "new" vaghti ke list khali hast dide mishe
+	$list['addnew_url'] = false; // link icon "new" vaqti ke list khali hast dide mishe
 	$list['remove_url'] = false; // link dokme hazf
 	$list['paging_url'] = true; // not needed when we have 'tdd'
 	$list['modify_url'] = true;

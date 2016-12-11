@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2015/10/17
-# Version 1.1.0
+# 2016/12/11
+# 1.2
 
 function billing_management_user_invoicelist(){
 	
@@ -43,7 +43,7 @@ function billing_management_user_invoicelist(){
 				<div>".billing_format($rw['cost'])."</div>
 				<div>".$paymentmethod_name."</div>
 				<div>".$rw['transaction']."</div>
-				<div>".substr(u2vaght($rw['date']),0,16)."</div>
+				<div>".substr(UDate($rw['date']),0,16)."</div>
 			</div>";
 		}
 
