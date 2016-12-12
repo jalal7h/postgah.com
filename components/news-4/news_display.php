@@ -25,7 +25,7 @@ function news_display( $rw_pagelayer ){
 		$content = '<section>
 			<div class="news_display">
 				<div class="news_display_head">
-					<span class="news_display__cat"><a target="_blank" href="'._URL.'/?page='._PAGE.'&cat_id='.$rw1['cat'].'">'.cat_translate($rw1['cat']).'</a></span>
+					<span class="news_display__cat"><a target="_blank" href="'._URL.'/?page=51&cat_id='.$rw1['cat'].'">'.cat_translate($rw1['cat']).'</a></span>
 					<span class="news_display__date">'.UDate( $rw1['date_created'], 'text' ).'</span>
 					<span class="news_display__visit">'.$visit." ".__('بازدید').'</span>
 				</div>
