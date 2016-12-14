@@ -4,6 +4,8 @@
 # 2016/12/11
 # 1.1
 
+# echo "<div ". bookmarky( 'item', $rw_item['id'] ) ." >some text</div>";
+
 function bookmarky( $table_name, $table_id ){
 	
 	$bookmarky = 

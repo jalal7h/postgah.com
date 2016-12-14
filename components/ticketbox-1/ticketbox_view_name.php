@@ -11,7 +11,7 @@ function ticketbox_view_name(){
 	} else {
 		$c.= "
 		<div class=\"name\">
-			<div class=\"the_name\">".$rw['name']."
+			<div class=\"the_name\">#".$rw['id']." ".$rw['name']."
 			<div class=\"etc\">
 				".( $rw['cat'] ? "
 				<div class=\"category\">".cat_translate($rw['cat'])."</div>

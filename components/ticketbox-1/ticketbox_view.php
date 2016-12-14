@@ -2,14 +2,27 @@
 
 function ticketbox_view(){
 	
+	if(! $user_id = user_logged() ){
+		ed();
 
-	if(! $id = intval($_REQUEST['id']) ){
+	} else if(! $id = intval($_REQUEST['id']) ){
 		e();
 
 	} else if(! table('ticketbox', $id) ){
 		echo convbox( __('%% با شناسه #%% ثبت نشده است.',[ lmtc('ticketbox')[0], $id ] ), 'transparent' );
 
 	} else {
+
+		# 
+		# auth
+		if( is_admin() ){
+			//
+
+		} else if(! $rw_tu = ticketbox_user($id) ){
+			echo convbox( __('شما دسترسی لازم برای مشاهده این صفحه را ندارید.'), 'transparent' );
+			return false;
+		}
+
 
 		$c.= "<div class=\"".__FUNCTION__."\">";
 

@@ -1,10 +1,11 @@
 
 jQuery(document).ready(function($) {
-	
+
 	ticketbox_mg_post_remove_instantly_hide = 1;
 
 	// remove button
-	$('body').delegate('.ticketbox_mg_view .post .remove', 'click', function() {
+	$('body').delegate('.ticketbox_view .post .remove', 'click', function() {
+	cl('dslkj');	
 		
 		rm = $(this);
 		ps = rm.parent();

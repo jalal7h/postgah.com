@@ -31,7 +31,7 @@ function ticketbox_isReplied( $ticketbox_id ){
 
 	#
 	# age man admin hastam, va akharin pasokh az 1 bud, ya man budam ya yeki az modiran
-	} else if( is_admin() and $user_id == 1 ){
+	} else if( is_admin() and ($user_id == 1) ){
 		return true;
 
 	#

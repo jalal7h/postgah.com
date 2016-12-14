@@ -33,18 +33,25 @@
 	position: absolute; left: 14px; top: 13px;
 }
 .ticketbox_user_list tr.notreplied td:first-child:after {
-	content: "\f016";
+	/* content: "\f016"; */
 }
 .ticketbox_user_list tr.replied td:first-child:after {
-	content: "\f0c5";
+	/* content: "\f0c5"; */
 }
 
 .ticketbox_user_list tr td:nth-child(2) {
-	width: 100px;
+	width: 12%;
+	text-align: center;
+	font-size: 10px;
+}
+.ticketbox_user_list tr td:nth-child(3) {
+	width: 12%;
 	text-align: center;
 	font-size: 10px;
 }
 
-
+.ticketbox_user_list .listmaker_list_record_inactive a.linkToFA[name="move_to_archive"] {
+	display: none;
+}
 
 

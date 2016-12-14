@@ -30,6 +30,10 @@ function ticketbox_view_save(){
 		dbs( 'ticketbox', [ 'date_updated'=>U() ], [ 'id'=>$_REQUEST['ticketbox_id'] ] );
 
 		# 
+		# remove from archive, back to live list
+		dbq(" UPDATE `ticketbox_user` SET `flag`='0' WHERE `ticketbox_id`='".$_REQUEST['ticketbox_id']."' ");
+
+		# 
 		# set as new for foreign
 		$foreign = ticketbox_user( $_REQUEST['ticketbox_id'], $user_id )['foreign'];
 		ticketbox_setAsNew( $_REQUEST['ticketbox_id'], $foreign );

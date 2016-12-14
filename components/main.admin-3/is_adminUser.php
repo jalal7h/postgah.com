@@ -7,7 +7,7 @@
 function is_adminUser( $user_id ){
 
 	if(! $rw = table('user', $user_id) ){
-		return e();
+		return e( $user_id );
 
 	} else if( $rw['permission'] != 2 ){
 		return false;

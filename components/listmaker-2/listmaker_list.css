@@ -48,6 +48,10 @@
 .listmaker_list_record_inactive {
 	background-color: #f5f5f5 !important;
 }
+.listmaker_list_record_inactive th ,
+.listmaker_list_record_inactive td {
+	color: #b7b7b7;
+}
 
 .listmaker_list_record td {
 	padding:10px;
