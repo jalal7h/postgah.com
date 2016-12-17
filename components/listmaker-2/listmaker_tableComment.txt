@@ -1,0 +1,13 @@
+
+
+# jalal7h@gmail.com
+# 2016/04/07
+# Version 1.2.4
+
+/*
+ba tavajoh be inke, ma esm e farsi e field haye table, ro tu phpmyadmin comment mikonim, 
+va az un tu form estefade mikonim (dige tu form esm e farsi e field ha ro nemizanim)
+ba in function mitunim esm e field ha ro dashte bashim
+
+echo lmtc("tableName:fieldName");
+

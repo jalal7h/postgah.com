@@ -1,0 +1,48 @@
+
+
+/*
+$GLOBALS['do_action'][] = 'function_name';
+
+function function_name(){
+	echo "Hello World!";
+}
+
+----
+
+ba tarif e function e bala, va moarefish tu GLOBALS e do_action, 
+age link zir run beshe, khoruji ro echo mikone, bedune pish o pas.
+
+./?do_action=function_name ==> Hello World!
+
+
+
+function do_action(){
+	
+	if($_REQUEST['covered']=='1'){
+		echo layout_open();
+		echo "
+		<style>
+		body {
+			background-color: #fff !important;
+			background-image: inherit !important;
+		}
+		</style>
+		";
+	}
+	
+	if(!$_REQUEST['do_action']){
+		return false;
+	
+	} else foreach($GLOBALS['do_action'] as $k=>$do_action){
+		if($do_action==$_REQUEST['do_action']){
+			call_user_func($do_action);
+			break;
+		}
+	}
+
+	if($_REQUEST['covered']=='1'){
+		echo layout_close();
+	}
+	die();
+}
+

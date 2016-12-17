@@ -1,0 +1,10 @@
+
+
+# jalal7h@gmail.com
+# 2016/07/09
+# 1.2
+
+/*
+ execute all $GLOBALS['do_init'][] functions, before <html>
+ for example: 
+ $GLOBALS['do_init'][] = 'pgItem_init';

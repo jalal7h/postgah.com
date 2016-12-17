@@ -5,9 +5,9 @@ INSERT INTO `texty` ( `slug`, `name`, `prompt`, `user_title`, `user_email_subjec
 
 ( 'user_emailverifybeforesignup_send', 'ثبت نام - تایید آدرس ایمیل', 'لینک تایید ایمیل به آدرس ایمیل شما ارسال شد.\r\nلطفا پس از کلیک بر روی این لینک نسبت به تکمیل ثبت نام خود اقدام نمائید.', 'ثبت‌نام کننده', 'تایید آدرس ایمیل برای درخواست ثبت نام', 'با سلام،‌\r\nکاربر گرامی \r\n\r\nلطفا برای انجام فرایند ثبت نام با آدرس ایمیل {user_email} روی لینک زیر وارد شوید :\r\n{register_link}\r\n\r\nبا تشکر\r\n{main_title}', '', '', '', '', '', '', '', '', '1100011', 'user_email register_link', 1),
 
-( 'pgItem_expire_agent_free_to_die_while', 'انتضاء یک آگهی مجانی', '', '', 'انقضاء آگهی مجانی #{id}', 'کاربر گرامی،\r\n\r\nآگهی مجانی شما با عنوان \"{item_name}\" پس از {limit_in_days} روز نمایش از سایت حذف شد.\r\n\r\nموفق باشید', '', '', '', '', '', '', '', '', '0110011', 'item_name limit_in_days', 1),
+( 'pgItem_expire_agent_free_to_die_while', 'انقضاء یک آگهی مجانی', '', '', 'انقضاء آگهی مجانی #{id}', 'کاربر گرامی،\r\n\r\nآگهی مجانی شما با عنوان \"{item_name}\" پس از {limit_in_days} روز نمایش از سایت حذف شد.\r\n\r\nموفق باشید', '', '', '', '', '', '', '', '', '0110011', 'item_name limit_in_days', 1),
 
-( 'pgItem_expire_agent_free_to_die_single', 'عملیات انقضاء تعدادی آگهی مجانی', '', '', '', '', '', '', '', '', '', 'عملیات انقضاء روز {date}', 'با سلام،\r\n\r\nتعداد {count_of_ads} آگهی مجانی طی عملیات انقضاء پس از {limit_in_days} روز نمایش از سایت حذف شد.\r\n\r\nبا تشکر', '', '', 'count_of_ads limit_in_days date ', 1),
+( 'pgItem_expire_agent_free_to_die_single', 'انقضاء تعدادی آگهی مجانی', '', '', '', '', '', '', '', '', '', 'عملیات انقضاء روز {date}', 'با سلام،\r\n\r\nتعداد {count_of_ads} آگهی مجانی طی عملیات انقضاء پس از {limit_in_days} روز نمایش از سایت حذف شد.\r\n\r\nبا تشکر', '', '', 'count_of_ads limit_in_days date ', 1),
 
 ( 'pgItem_mg_accept', 'ثبت آگهی - تایید توسط مدیر', 'آگهی به شناسه #{item_id} تایید شد.', '', 'آگهی شما تایید شد', 'با سلام\r\nکاربر گرامی {user_name}،\r\n\r\nآگهی شما با عنوان {item_name} تایید و از این لحظه بر روی سایت قرار گرفت.\r\n{item_link}\r\n\r\nبا تشکر', '', '', '', '', '', '', '', '', '', 'item_id item_name item_link', 1),
 

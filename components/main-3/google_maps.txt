@@ -1,0 +1,16 @@
+
+
+# jalal7h@gmail.com
+# 2015/10/17
+# Version 1.2.2
+
+/*
+# $list = array(
+# 	'width' => '360px', // arz e kadr
+#	'height' => '360px', // ertefa e kadr
+#	'x,y' => '36.444444,59.000000', // mogheyat e joghrafiai
+#	'disable_marker' => true,
+# );
+# echo google_maps($list);
+
+in ye naghshe google be ma mide

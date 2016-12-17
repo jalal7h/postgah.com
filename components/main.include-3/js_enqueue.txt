@@ -1,0 +1,10 @@
+
+
+# jalal7h@gmail.com
+# 2016/10/15
+# 1.0
+
+// har anche be vaseteye in function moarefi beshe, besurat e tag e <script .. dar entehaye khorujie html ghabele moshahede khahad bud
+// js_enqueue( _URL."/?do_action=listmaker_form_element_this_positionbox_preload&info=".str_enc(json_encode($info))."&nc=".date("md") );
+// js_enqueue( 'listmaker_form', 'listmaker_form_element_this_positionbox' );
+
