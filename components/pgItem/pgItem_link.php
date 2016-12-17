@@ -1,10 +1,13 @@
 <?
 
-function pgItem_link( $rw ){
+function pgItem_link( $rw__or__item_id ){
 
 	# if rw is id, replace it with rw
-	if(! is_array($rw) ){
-		$item_id = $rw;
+	if( is_array($rw__or__item_id) ){
+		$rw = $rw__or__item_id;
+	
+	} else {
+		$item_id = $rw__or__item_id;
 		$rw = table('item', $item_id);
 	}
 
@@ -22,3 +25,7 @@ function pgItem_link( $rw ){
 function item_link( $rw ){
 	return pgItem_link($rw);
 }
+
+
+
+

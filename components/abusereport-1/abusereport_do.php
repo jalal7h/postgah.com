@@ -12,10 +12,29 @@ function abusereport_do(){
 		$user_id = 0;
 	}
 
-	dbs( 'abusereport', [ 'table_name', 'table_id', 'cat_id', 'text', 'user_id'=>$user_id ] );
+	if(! $id = dbs( 'abusereport', [ 'table_name', 'table_id', 'cat_id', 'text', 'user_id'=>$user_id ] ) ){
+		ed();
 
-	#
-	# nxx texty abusereport_do
+	} else if( $user_id > 0 ){
+
+		if( $lmtc = lmtc($_REQUEST['table_name']) ){
+			$vars['item_title'] = $lmtc[0];
+		} else {
+			$vars['item_title'] = __('آیتم');
+		}
+		$vars['item_name'] = table( $_REQUEST['table_name'], $_REQUEST['table_id'], 'name' );
+		$vars['item_id'] = $_REQUEST['table_id'];
+
+		$func = $_REQUEST['table_name']."_link";
+		if( function_exists($func) ){
+			$vars['item_link'] = $func( $_REQUEST['table_id'] );
+		}
+
+		$vars['abusereport_adminlink'] = abusereport_adminLink( $id );
+
+		texty( 'abusereport_do', $vars, $user_id );
+
+	}
 
 	?>
 	<script>

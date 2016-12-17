@@ -4,29 +4,33 @@
 # 2016/12/17
 # 1.0
 
-function ticketbox_private_token_make(){
+function ticketbox_private_token_make( $elem=null ){
 
-	$table_name = $_REQUEST['table_name'];
+	if(! $elem ){
+		$elem = $_REQUEST;
+	}
+
+	$table_name = $elem['table_name'];
 	$table_name = mb_ereg_replace('[^A-Za-z0-9_]+','',$table_name);
 	$table_name = trim($table_name);
 
 	if(! $table_name ){
 		return false;
-	} else if( $table_name != $_REQUEST['table_name'] ){
+	} else if( $table_name != $elem['table_name'] ){
 		return false;
 	}
 
-	$table_id = intval( $_REQUEST['table_id'] );
+	$table_id = intval( $elem['table_id'] );
 	if(! $table_id ){
 		return false;
-	} else if( $table_id != $_REQUEST['table_id'] ){
+	} else if( $table_id != $elem['table_id'] ){
 		return false;
 	}
 
-	$user_id = intval( $_REQUEST['user_id'] );
+	$user_id = intval( $elem['user_id'] );
 	if(! $user_id ){
 		return false;
-	} else if( $user_id != $_REQUEST['user_id'] ){
+	} else if( $user_id != $elem['user_id'] ){
 		return false;
 	}
 
