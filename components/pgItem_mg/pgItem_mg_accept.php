@@ -26,8 +26,9 @@ function pgItem_mg_accept(){
 
 		# texty pgItem_mg_accept
 		$user_id = $rw_item['user_id'];
-		$vars = $rw_item;
-		$vars['ads_link'] = pgItem_link( $rw_item );
+		$vars['item_id'] = $rw_item['id'];
+		$vars['item_name'] = $rw_item['name'];
+		$vars['item_link'] = item_link( $rw_item );
 		texty( 'pgItem_mg_accept', $vars, $user_id );
 
 		return true;

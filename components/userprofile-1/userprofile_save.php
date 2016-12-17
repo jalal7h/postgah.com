@@ -37,13 +37,8 @@ function userprofile_save(){
 			dbs( 'user', [ 'profile_pic'=>$f[0] ] , [ 'id'=>$user_id ] );
 		}
 
-		#
-		# sending email to client after save change on profile
-		if( is_component('texty') ){
-			$vars = table('user', $user_id);
-			$vars['main_title'] = setting('main_title');
-			echo texty( 'userprofile_save' , $vars );
-		}
+		$vars['login_link'] = user_loginLink( $user_id );
+		echo texty( 'userprofile_save' , $vars, 'user' );
 		
 		return true;
 

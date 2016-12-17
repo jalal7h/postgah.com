@@ -33,7 +33,7 @@ function billing_userpanel_payment_offline_save_n_congragulate(){
 		
 		$vars = $rw_invoice;
 		$vars['bank_name'] = billing_method_name( $rw_invoice['method'] );
-		$vars['cost'] = billing_format($rw_invoice['cost']);
+		$vars['invoice_cost'] = billing_format($rw_invoice['cost']);
 
 		echo "<div class='_buposnc'>\n";
 		echo texty( 'billing_userpanel_payment_offline_save_n_congragulate', $vars );

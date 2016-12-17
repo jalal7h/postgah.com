@@ -1,7 +1,7 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/02
+# 2016/12/14
 # 1.0
 
 function ticketbox_mg_saveNew(){
@@ -14,6 +14,9 @@ function ticketbox_mg_saveNew(){
 
 	} else if(! $_REQUEST['user_id'] = intval($_REQUEST['user_id']) ){
 		e();
+
+	} else if(! $rw_user = table( 'user', $_REQUEST['user_id'] ) ){
+		ed();
 
 	} else if(! $_REQUEST['name'] = trim($_REQUEST['name']) ){
 		e();
@@ -42,9 +45,13 @@ function ticketbox_mg_saveNew(){
 
 	} else {
 
-		# 
-		# nxx texty ticketbox_mg_saveNew
-		
+		$vars = [
+			'ticket_id' => $ticketbox_id,
+			'ticket_name' => $_REQUEST['name'],
+			'ticket_link' => ticketbox_user_link( $ticketbox_id ),
+		];
+		echo texty('ticketbox_mg_saveNew', $vars, [ 0 , $_REQUEST['user_id'] ], $convbox='transparent' );
+
 		return true;
 
 	}

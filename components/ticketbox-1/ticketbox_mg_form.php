@@ -16,7 +16,7 @@ function ticketbox_mg_form(){
 			"switch" => "do",
 		!]
 			
-			[!"select:cat*", "option"=>"<option value=\'0\' >... انتخاب کنید ...</option>".cat_display("ticketbox",false)!]
+			[!"select:cat*", "option"=>"<option value=\'0\' >... '.__('انتخاب کنید').' ...</option>".cat_display("ticketbox",false)!]
 			
 			<hr>
 			

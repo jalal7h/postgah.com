@@ -1,6 +1,4 @@
 
-/* -spi- */
-
 .ticketbox_user_form {
 	padding: 30px 0px;
 }
@@ -18,8 +16,4 @@
 #lmfe_ticketbox_user_form_text {
 	width: 75%;
 	height: 200px;
-}
-
-#lmfe_ticketbox_user_form_user_name_memo {
-	width: 75%;
 }

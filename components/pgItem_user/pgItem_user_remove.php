@@ -3,19 +3,19 @@
 function pgItem_user_remove(){
 	
 	if(! $user_id = user_logged() ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else if(! $id = $_REQUEST['id'] ){
-		e(__FUNCTION__,__LINE__);
+		e();
 	
 	} else if(! $rw_item = table('item', $id) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 	
 	} else if( $rw_item['user_id'] != $user_id ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else if(! pgItem_remove( $_REQUEST['id'], $user_id ) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else {
 		return true;

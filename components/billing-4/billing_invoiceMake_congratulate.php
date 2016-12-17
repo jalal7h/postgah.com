@@ -22,8 +22,9 @@ function billing_invoiceMake_congratulate( $invoice_id ){
 		// }
 
 		$vars['invoice_id'] = $invoice_id;
-		$vars['cost'] = $rw_invoice['cost'];
+		$vars['invoice_cost'] = $rw_invoice['cost'];
 		$vars['user_name'] = $rw_user['name'];
+		$vars['invoice_payment_link'] = _URL.'/?page='.$_REQUEST['page'].'&do=billing_userpanel_payment&invoice_id='.$vars['invoice_id'];
 
 		echo texty( 'billing_invoiceMake_congratulate', $vars, $user_id );
 

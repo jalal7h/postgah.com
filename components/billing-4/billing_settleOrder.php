@@ -44,7 +44,7 @@ function billing_settleOrder( $order_table , $order_id ){
 		
 		# 
 		# congragulate
-		$vars = $rw_order;
+		$vars['order_id'] = $rw_order['id'];
 		$vars['cost'] = $rw_order['cost']." ".setting('money_unit');
 		echo texty( 'billing_orderSettle', $vars );
 		

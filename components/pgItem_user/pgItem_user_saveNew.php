@@ -53,7 +53,7 @@ function pgItem_user_saveNew(){
 	if( $PD_id = $_REQUEST['plan_duration_id'] ){
 
 		if(! $rw_PD = table('plan_duration', $PD_id) ){
-			e(__FUNCTION__,__LINE__);
+			e();
 		
 		} else {
 
@@ -66,19 +66,23 @@ function pgItem_user_saveNew(){
 			$cost = $rw_PD['cost'];
 			
 			if(! $invoice_id = billing_invoiceMake( $cost, $order_table, $order_id ) ){
-				e(__FUNCTION__,__LINE__);
-				return false;
+				return e();
 			}
 
 			# and redirect if needed.
-			$vars = [
-				'item_id' => $item_id,
-				'invoice_id' => $invoice_id,
-				'cost' => number_format($cost)." ".setting('money_unit'),
-				'button_payment_form' => '<a class="submit_button" href="'._URL.'/?page='.$_REQUEST['page'].'&do=billing_userpanel_payment&invoice_id='.$invoice_id.'">پرداخت فاکتور</a>',
-				'button_list_of_invoices' => '<a class="submit_button" href="'._URL.'/?page='.$_REQUEST['page'].'&do=billing_userpanel_list">لیست فاکتور ها</a>',
-			];
-			$c = texty('pgItem_user_saveNew_invoiceMake', $vars);
+			$vars['item_id'] = $item_id;
+			$vars['item_name'] = trim( strip_tags($_REQUEST['name']) );
+			$vars['item_invoice_id'] = $invoice_id;
+			$vars['item_cost'] = billing_format($cost);
+
+			$vars['item_payment_link'] = _URL.'/?page='.$_REQUEST['page'].'&do=billing_userpanel_payment&invoice_id='.$invoice_id;
+			$vars['item_payment_button'] = '<a class="submit_button" href="'.$vars['item_payment_link'].'">پرداخت '.lmtc('billing_invoice')[0].'</a>';
+			$vars['invoice_list_link'] = _URL.'/?page='.$_REQUEST['page'].'&do=billing_userpanel_list';
+			$vars['invoice_list_button'] = '<a class="submit_button" href="'.$vars['invoice_list_link'].'">لیست '.lmtc('billing_invoice')[1].'</a>';
+			
+			$vars['login_link'] = user_loginLink( user_logged() );
+
+			$c = texty('pgItem_user_saveNew_premium', $vars);
 			
 		}
 
@@ -87,7 +91,7 @@ function pgItem_user_saveNew(){
 	} else {
 		$vars['item_id'] = $item_id;
 		$vars['item_name'] = trim( strip_tags($_REQUEST['name']) );
-		$c = texty('pgItem_user_saveNew', $vars);
+		$c = texty('pgItem_user_saveNew_free', $vars);
 	}
 
 	qpush( __FUNCTION__."_result", $c );

@@ -36,8 +36,9 @@ function billing_userpanel_payment_wallet( $invoice_id ){
 	
 	// } else {
 
-	$vars = table('billing_invoice', $invoice_id);
-	$vars['cost'] = number_format($rw_invoice['cost'])." ".setting('money_unit');
+	$rw_invoice = table( 'billing_invoice', $invoice_id );
+	$vars['invoice_id'] = $rw_invoice['id'];
+	$vars['invoice_cost'] = billing_format($rw_invoice['cost']);
 	texty( 'billing_userpanel_payment_wallet', $vars );
 
 	// billing_settleOrder( $rw_invoice['order_table'] , $rw_invoice['order_id'] );

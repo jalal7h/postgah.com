@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/26
-# 1.0
+# 2016/12/17
+# 1.1
 
 function user_emailverifybeforesignup_send(){
 
@@ -20,9 +20,8 @@ function user_emailverifybeforesignup_send(){
 
 	} else {
 
-		$vars['site_title'] = setting('tiny_title');
-		$vars['email'] = $e;
-		$vars['link'] = _URL."/?page="._PAGE."&e=".$e_enc."&h=".$h;
+		$vars['user_email'] = $e;
+		$vars['register_link'] = _URL."/?page="._PAGE."&e=".$e_enc."&h=".$h;
 		
 		echo texty( 'user_emailverifybeforesignup_send' , $vars, $e );
 

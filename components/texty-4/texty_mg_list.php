@@ -16,7 +16,7 @@ function texty_mg_list(){
 	$table = 'texty';
 	$list['name'] = __FUNCION__;
 	$list['query'] = " SELECT * FROM `$table` WHERE 1 ORDER BY `name` ASC ";
-	$list['tdd'] = 10; // tedad dar safhe
+	$list['tdd'] = 5; // tedad dar safhe
 	
 	#
 	# base url is needed in version upper 1.2 

@@ -1,0 +1,46 @@
+
+.texty_mg_head {
+	font-size: 20px;
+	margin: 5px 10px 22px 0;
+}
+
+.texty_mg_form {
+
+}
+
+.texty_mg_form .half_div {
+	display: inline-block;
+	width: 50%;
+	padding: 0 30px;
+}
+.texty_mg_form .half_div input[type="text"] {
+	width: 100%;
+	font-size: 12px;
+}
+.texty_mg_form textarea {
+	width: 100%;
+	height: 220px;
+	font-size: 12px;
+}
+
+.texty_mg_form span.lmfe_tnit {
+	padding: 10px 3px 4px 0;
+	vertical-align: top;
+	width: 100%;
+	display: block;
+	text-align: right;
+}
+
+.texty_mg_form #lmfe_inDiv_texty_mg_form_prompt {
+	padding: 10px 30px;
+}
+.texty_mg_form #lmfe_texty_mg_form_prompt {
+	width: 100%;
+}
+.texty_mg_form #lmfe_texty_mg_form_submit {
+	margin: 0px 30px 50px 0;
+}
+
+
+
+

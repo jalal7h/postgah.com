@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/07
-# 1.3
+# 2016/12/17
+# 1.4
 
 function user_forgot_save(){
 	
@@ -19,9 +19,6 @@ function user_forgot_save(){
 	if(! $password = trim(strip_tags($_REQUEST['password'])) ){
 		ed();
 	}
-	if( is_component('userhashpassword') ){
-		$password = userhashpassword($password);
-	}
 
 	#
 	# hash code
@@ -30,24 +27,22 @@ function user_forgot_save(){
 	if( $_REQUEST['h'] != $h ){
 		e();
 	
-	} else if(! dbs('user', ['password'=>$password], ['username'=>$username]) ){
+	} else if(! dbs('user', [ 'password'=> ( is_component('userhashpassword') ? userhashpassword($password) : $password )  ], [ 'username'=>$username ] ) ){
 		e();
 	
 	} else {
 
+		# login
 		$user_id = table("user", $username, "id", "username");
 		user_login_session( $user_id );
 		
-		if( is_component('texty') ){
-			
-			$vars = table( 'user', $user_id );
-			$vars['password'] = $raw_password;
-			$vars['__AFTER__'] = '<br><a href="./userpanel">'.__('ورود به محیط کاربری').'</a>';
-			echo texty( 'user_forgot_save', $vars );
-
-		}
+		# texty
+		$vars['user_new_password'] = $password;
+		$vars['__AFTER__'] = '<br><a href="./userpanel">'.__('ورود به محیط کاربری').'</a>';
+		echo texty( 'user_forgot_save', $vars );
 
 		return true;
+
 	}
 
 	die();

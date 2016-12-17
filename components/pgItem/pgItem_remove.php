@@ -16,16 +16,25 @@ function pgItem_remove( $id, $by, $silent=false ){
 		$rw['user_name'] = table('user', $rw['user_id'], 'name');
 
 		if( $by == "admin" ){
-			$prompt = texty( 'pgItem_remove_byAdmin', $rw, $rw['user_id'] );
+			
+			$vars['item_id'] = $rw['id'];
+			$vars['item_name'] = $rw['name'];
+			
+			$prompt = texty( 'pgItem_remove_byAdmin', $vars, $rw['user_id'] );
 			if(! $silent ){
 				echo $prompt;
 			}
 			
 		} else {
-			$prompt = texty( 'pgItem_remove_byUser', $rw );
+			
+			$vars['item_id'] = $rw['id'];
+			$vars['item_name'] = $rw['name'];
+			
+			$prompt = texty( 'pgItem_remove_byUser', $vars, 'user' );
 			if(! $silent ){
 				echo $prompt;
 			}
+
 		}
 		
 		return true;

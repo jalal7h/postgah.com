@@ -49,7 +49,7 @@ function ticketbox_user_list(){
 
 	#
 	# target // maghsad e click ruye har row
-	$list['target_url'] = '"./?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=view&id=".$rw["ticketbox_id"]';
+	$list['target_url'] = 'ticketbox_user_link( $rw["ticketbox_id"] )';
 
 	#
 	# actions 

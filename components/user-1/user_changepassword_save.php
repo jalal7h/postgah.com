@@ -25,17 +25,9 @@ function user_changepassword_save(){
 		dg();
 	
 	} else {
-		
-		#
-		# sending email to client after save change password
-		if( is_component('texty') ){
-			$vars = table('user', $user_id);
-			$vars['main_title'] = setting('main_title');
-			echo texty( 'user_changepassword_save' , $vars );
-		}
-		
+		$vars['user_new_password'] = $password;
+		echo texty( 'user_changepassword_save' , $vars, 'user' );
 		return true;
-
 	}
 
 	echo convbox( $text );

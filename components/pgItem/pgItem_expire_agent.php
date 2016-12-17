@@ -66,7 +66,7 @@ function pgItem_expire_agent_free_to_die(){
 		} else {
 
 			foreach( $rw_s as $i => $rw ){
-				$vars = $rw;
+				$vars['item_name'] = $rw['name'];
 				$vars['limit_in_days'] = $expire_duration_in_days;
 				texty( 'pgItem_expire_agent_free_to_die_while', $vars, $rw['user_id'] );
 			}
@@ -74,7 +74,7 @@ function pgItem_expire_agent_free_to_die(){
 			$vars['count_of_ads'] = sizeof($rw_s);
 			$vars['limit_in_days'] = $expire_duration_in_days;
 			$vars['date'] = UDate( U() , "text" );
-			texty( 'pgItem_expire_agent_free_to_die_single', $vars );
+			texty( 'pgItem_expire_agent_free_to_die_single', $vars, 'admin' );
 
 		}
 

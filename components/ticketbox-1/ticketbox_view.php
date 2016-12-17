@@ -1,9 +1,14 @@
 <?
 
+# jalal7h@gmail.com
+# 2016/12/17
+# 1.1
+
 function ticketbox_view(){
 	
 	if(! $user_id = user_logged() ){
-		ed();
+		echo convbox( __('موردی با این شناسه یافت نشد'), 'red' );
+		return false;
 
 	} else if(! $id = intval($_REQUEST['id']) ){
 		e();

@@ -1,0 +1,2 @@
+RewriteRule ^tickets$ ./?page=14&do=ticketbox_user_list [L]
+RewriteRule ^ticket-([0-9]+)$ ./?page=14&do=ticketbox_user_list&do1=view&id=$1 [L]

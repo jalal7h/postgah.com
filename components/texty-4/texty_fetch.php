@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/08/24
-# 2.1
+# 2016/12/16
+# 2.2
 
 #
 # get or put template content
@@ -15,16 +15,17 @@
 function texty_fetch( $slug ){
 	
 	if(! $rs = dbq(" SELECT * FROM `texty` WHERE `slug`='$slug' AND `flag`='1' LIMIT 1 ") ){
-		e(__FUNCTION__." : ".__LINE__);
+		e();
 	
-	} else if( dbn($rs)!=1 ){
-		// e(__FUNCTION__." : ".__LINE__." , texty $slug not defined");
+	} else if( dbn($rs) != 1 ){
+		//
 	
 	} else {
 		return dbf($rs);
 	}
 
 	return false;
+
 }
 
 

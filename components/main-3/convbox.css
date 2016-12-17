@@ -1,5 +1,5 @@
 
-/*2016/10/23*/
+/*2016/12/17*/
 
 .convbox {
 	margin: 20px;
@@ -14,18 +14,36 @@
 	direction: rtl;
 	box-sizing: border-box;
 }
+
 .convbox.transparent {
 	background-color: transparent;
 	border: 0px;
 }
-.convbox.green {
+
+.convbox.not_admin.green {
 	background-color: #eeffe8;
 	color: #567f33;
 }
-.convbox.red {
+.convbox.not_admin.red {
 	background-color: #fff0e8;
 	color: #7f3333;
 }
+
+.convbox.admin.green {
+	background-color: #c1e085;
+    color: #467121;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+    text-shadow: 0 0;
+    border: 0;
+}
+.convbox.admin.red {
+	background-color: #f1c8c2;
+    color: #865757;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+    text-shadow: 0 0;
+    border: 0;
+}
+
 .convbox a {
 	color: blue;
 }
