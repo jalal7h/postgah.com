@@ -21,15 +21,19 @@
 
 function listmaker_fileupload( $table , $id , $ext_array=null ){
 
+	dg();
+
 	#
 	# no file to upload
 	if(! sizeof($_FILES) ){
-		;//
+		dg();
 	
 	#
 	# some input[] found
 	} else foreach ($_FILES as $column => $r) {
 		
+		dg();
+
 		#
 		# its a single input
 		if( $_REQUEST['ArrayInput_'.$column]!=1 ){
@@ -50,20 +54,28 @@ function listmaker_fileupload_solo( $table, $column, $id, $ext_array ){
 	#
 	# its not defined in `table`
 	if(! is_column( $table, $column ) ){
-		;//
+		dg();
 
 	# its defined on table, its single, and we should update the table
 	} else {
 		$f = fileupload_upload([ $column=>$table."_".$column, "id"=>$id, 'ext'=>$ext_array ]);
 		if( $f[0] ){
-			dbs( $table, [ $column=>$f[0] ], [ "id"=>$id ] );
+			dg();
+			if(! dbs( $table, [ $column=>$f[0] ], [ "id"=>$id ] ) ){
+				e();
+			} else {
+				dg( ":".$f[0].":" );
+			}
 		}
+		dg();
 	}
 }
 
 
 function listmaker_fileupload_multi( $table, $column, $id, $ext_array ){
 	
+	dg();
+
 	#
 	# variables
 	$fg_tableName = $table."_".$column;
@@ -90,7 +102,7 @@ function listmaker_fileupload_multi( $table, $column, $id, $ext_array ){
 		# new
 		} else if(! $rw_in_tbl ){
 			if(! dbq(" INSERT INTO `$fg_tableName` (`$fg_foregnIdColumn`,`$column`) VALUES ('$id', '".$f[$i]."') ") ){
-				e(__FUNCTION__,__LINE__);
+				e();
 			}
 
 		#
@@ -100,16 +112,18 @@ function listmaker_fileupload_multi( $table, $column, $id, $ext_array ){
 			#
 			# its removed, we need to insert
 			if(! $rs_crit = dbq(" SELECT COUNT(*) FROM `$fg_tableName` WHERE `id`='$rw_in_tbl' LIMIT 1 ") ){
-				e(__FUNCTION__,__LINE__);
+				e();
 			} else if(! dbn($rs_crit) ){
 				if(! dbq(" INSERT INTO `$fg_tableName` (`id`,`$fg_foregnIdColumn`,`$column`) VALUES ('$rw_in_tbl', '$id', '".$f[$i]."') ") ){
-					e(__FUNCTION__,__LINE__);
+					e();
 				}
 
 			#
 			# we just need to update
 			} else {
-				dbs( $fg_tableName, [$column=>$f[$i]], ['id'=>$rw_in_tbl] );
+				if(! dbs( $fg_tableName, [$column=>$f[$i]], ['id'=>$rw_in_tbl] ) ){
+					e();
+				}
 			}
 
 		}

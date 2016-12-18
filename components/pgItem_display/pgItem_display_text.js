@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
 
 	// ticket to client
 	ticket_item_id = $('.pgItem_display_text .text_footer').attr('item_id');
-	if( ticket_item_id.length ){
+	if( typeof(ticket_item_id) != 'undefined' ){
 		$.ajax({
 			url: "./?do_action=pgItem_display_ticketboxLinkMaker&item_id="+ticket_item_id,
 

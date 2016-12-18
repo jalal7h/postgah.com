@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/14
-# 2.1
+# 2016/12/18
+# 2.2
 
 $GLOBALS['block_layers_side']['userpanel_menu'] = 'منوی کاربری';
 
@@ -47,7 +47,7 @@ function userpanel_menu(){
 		$func = $array[0];
 		$name = $array[1];
 
-		echo '<a href="'._URL.'/?page='.$_REQUEST['page'].'&do='.$func.'"'.( $_REQUEST['do']==$func ? " class=\"current\" " : "" ).'><span>'.$name.'</span></a>';
+		echo '<a href="'._URL.'/?page='.$_REQUEST['page'].'&do='.$func.'" class="userpanel_menu_'.$func.( $_REQUEST['do']==$func ? " current" : "" ).'" ><span>'.$name.'</span></a>';
 
 	}
 

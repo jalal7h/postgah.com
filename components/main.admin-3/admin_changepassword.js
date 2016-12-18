@@ -2,7 +2,7 @@
 jQuery(document).ready(function($) {
 	
 	$('#admin_changepassword').on('click', function(e){
-		hitbox( _URL+'/?do_action=admin_changepassword' , 600, 486 );
+		hitbox( _URL+'/?do_action=admin_changepassword' , 600, 491 );
 		e.preventDefault();
 	});
 

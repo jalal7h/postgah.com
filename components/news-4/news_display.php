@@ -20,9 +20,8 @@ function news_display( $rw_pagelayer ){
 		$visit = dbinc( 'news', $_REQUEST['id'], 'visit' );
 		$image = $rw1['image']; 
 		
-		
-
-		$content = '<section>
+		$content = '
+		<section class="news_display_section">
 			<div class="news_display">
 				<div class="news_display_head">
 					<span class="news_display__cat"><a target="_blank" href="'._URL.'/?page=51&cat_id='.$rw1['cat'].'">'.cat_translate($rw1['cat']).'</a></span>
@@ -42,7 +41,9 @@ function news_display( $rw_pagelayer ){
 
 		#
 		# comment section
-		$content.= fbcomment( 'news' , intval($_REQUEST['id']) );
+		if( news_fbcomment_flag === true ){
+			$content.= fbcomment( 'news' , intval($_REQUEST['id']) );
+		}
 
 	}
 

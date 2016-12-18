@@ -17,7 +17,9 @@ function admin_changepassword_do(){
 
 	#
 	# info
-	dbs( 'user', ['username','name','cell'], ['id'=>$user_id] );
+	if(! dbs( 'user', ['username','name','cell'], ['id'=>$user_id] ) ){
+		e();
+	}
 
 	#
 	# password
@@ -29,6 +31,7 @@ function admin_changepassword_do(){
 		dbs( 'user', ['password'=>$password], ['id'=>$user_id] );
 	}
 
+	listmaker_fileupload( 'user' , $user_id );
 
 	?>
 	<script type="text/javascript">

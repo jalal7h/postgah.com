@@ -10,9 +10,6 @@ function admin_changepassword(){
 	
 	if(! $user_id = admin_logged() ){
 		ed();
-	
-	} else if(! $rw_user = table('user', $user_id) ){
-		ed();
 	}
 
 	admin_html_open();
@@ -26,21 +23,22 @@ function admin_changepassword(){
 			"class" => "'.__FUNCTION__.'" ,
 			"switch" => "do",
 			"target" => "self",
+			"rw"=>table("user","'.$user_id.'") ,
 		!]
 
 			<div class="head">'.__('پروفایل مدیریت').'</div>
 	
-			[!"email:username"=>"'.$rw_user['username'].'","inDiv"!]
-			[!"name:name"=>"'.$rw_user['name'].'","inDiv"!]
-			[!"text:cell"=>"'.$rw_user['cell'].'","inDiv"!]
-			[!"password:password"=>"************","inDiv"!]
+			[!"email:username"!]
+			[!"name:name"!]
+			[!"text:cell"!]
+			[!"password:password"=>"************"!]
+			[!"file:profile_pic"!]
 			
 			<br> 
 			<br>
-
-			[!"submit:'.__('ثبت').'","inDiv"!]
-
-		[!close!]
+			
+			[!"submit:'.__('ثبت').'"!]
+	
 	');
 	# -------------------------------------------------
 
