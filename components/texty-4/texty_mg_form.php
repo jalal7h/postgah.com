@@ -78,9 +78,17 @@ function texty_mg_form(){
 	
 			( ($rw['flagstring'][5] or $rw['flagstring'][6]) ? '<hr>' : '' ).
 
-			'[!"submit:'.__('ثبت').'","inDiv"!]
+		'
+		<div>
+		[!"submit:'.__('ثبت').'","notInDiv"!]
+		<span class="vars"><?
+			if( trim($rw["vars"]) ){
+				echo "<div>'.__('متغیرهای مورد استفاده در این پیام ها').'</div>";
+				echo "<span>".str_replace(" ","</span> <span>", trim($rw["vars"]) )."</span>";
+			}
+			?></span>
+		</div>
 
-		[!close!]
 	');
 	## -------------------------------------------------
 
