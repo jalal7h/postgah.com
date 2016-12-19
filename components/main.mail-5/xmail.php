@@ -12,6 +12,7 @@ function xmail( $to, $subject, $text, $from='', $html=0, $mssp_id=0 ){
 			return true;
 		}
 	}
+	dg();
 	
 	#
 	# fix from
@@ -33,11 +34,13 @@ function xmail( $to, $subject, $text, $from='', $html=0, $mssp_id=0 ){
 	#
 	# maybe local or remote
 	if( is_component('mailserverselector') ){
+		dg();
 		return mss( $to, $subject, $text, $from, $html, $mssp_id, debug_backtrace()[1]['function'] );
 
 	#
 	# only local
 	} else {
+		dg();
 		return xmail_local( $to, $subject, $text, $from, $html );
 	}
 	
