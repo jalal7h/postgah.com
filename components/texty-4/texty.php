@@ -16,7 +16,11 @@
 
 function texty( $slug, $vars=null, $user_id='user', $convbox=true ){
 
-	$vars['texty_user_id'] = $user_id;
+	if( is_array($user_id) ){
+		$vars['texty_user_id'] = $user_id[0];
+	} else {
+		$vars['texty_user_id'] = $user_id;
+	}
 	
 	# 
 	# email

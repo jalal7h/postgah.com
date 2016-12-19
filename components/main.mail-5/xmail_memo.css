@@ -1,0 +1,12 @@
+
+.xmail_memo {
+	border-radius: 6px;
+    background-color: #dcdcdc;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+    margin: 20px;
+}
+.xmail_memo div {
+	margin: 10px;
+}

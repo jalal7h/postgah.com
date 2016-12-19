@@ -1,7 +1,7 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/17
+# 2016/12/19
 # 3.4
 
 /*
@@ -62,19 +62,6 @@ function texty_email( $who , $slug , $vars=null ){
 			break;
 	}
 
-	#
-	# fetch email
-	if( $admin_id ){
-		$admin_email = setting('contact_email_address_0');
-	}
-	if( $user_id > 0 ){
-		$rw_user = table('user',$user_id);
-		$user_email = user_email( $user_id );
-	}
-	if( $user2_id > 0 ){
-		$rw_user2 = table('user',$user2_id);
-		$user2_email = user_email( $user2_id );
-	}
 
 	#
 	# get texty record
@@ -100,17 +87,17 @@ function texty_email( $who , $slug , $vars=null ){
 	} else {
 
 		if( $user_id ){
-			$user_email = user_email( $user_id );
+			$rw_user = table( 'user' , $user_id );
+			$user_email = user_email( $rw_user );
 			$subject = $texty['user_email_subject'];
 			$content = $texty['user_email_content'];
-			$rw_user = table( 'user' , $user_id );
 			texty_email_this( $user_email, $subject, $content, $vars, $rw_user );
 		}
 		if( $user2_id ){
-			$user2_email = user_email( $user2_id );
+			$rw_user2 = table( 'user' , $user2_id );
+			$user2_email = user_email( $rw_user2 );
 			$subject = $texty['user2_email_subject'];
 			$content = $texty['user2_email_content'];
-			$rw_user2 = table( 'user' , $user2_id );
 			texty_email_this( $user2_email, $subject, $content, $vars, $rw_user2 );
 		} 
 
@@ -154,7 +141,7 @@ function texty_email_this( $email, $subject, $content, $vars, $rw_user ){
 		}
 	}
 
-	return xmail( $to , $subject , $content );
+	return xmail( $email , $subject , $content );
 
 }
 

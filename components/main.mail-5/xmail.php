@@ -7,8 +7,7 @@
 function xmail( $to, $subject, $text, $from='', $html=0, $mssp_id=0 ){
 
 	if( its_local() ){
-		echo "xmail local [$to] , [$subject]<br>";
-		return true;
+		return xmail_memo( $to, $subject, $text );
 	}
 	
 	#
