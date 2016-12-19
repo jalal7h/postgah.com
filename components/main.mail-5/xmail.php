@@ -6,7 +6,7 @@
 
 function xmail( $to, $subject, $text, $from='', $html=0, $mssp_id=0 ){
 
-	if( its_local() ){
+	if( its_local() or debug ){
 		return xmail_memo( $to, $subject, $text );
 	}
 	
