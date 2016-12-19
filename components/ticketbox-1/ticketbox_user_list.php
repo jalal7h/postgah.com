@@ -67,6 +67,7 @@ function ticketbox_user_list(){
 	#
 	# list array // list e sotun haye list
 	$list['list_array'][] = array('head'=>lmtc('ticketbox:name'), 'content' => '"<span>#".$rw["ticketbox_id"]."</span> ".$rw[\'name\']');
+	$list['list_array'][] = array('head'=>__('نوع'), 'content' => 'ticketbox_type($rw)');
 	$list['list_array'][] = array('head'=>__('وضعیت'), 'content' => 'ticketbox_replyStatus($rw)');
 	$list['list_array'][] = array('head'=>__('تاریخ'), 'content' => '"<span title=\"".substr(UDate($rw[\'date_updated\']),0,16)."\">".time_inword($rw[\'date_updated\'])."</span>"');
 		

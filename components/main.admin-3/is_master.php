@@ -1,15 +1,18 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/07
-# 1.0
+# 2016/12/19
+# 1.1
 
-function is_master(){
+function is_master( $admin_id=null ){
 
-	if(! $admin_id = admin_logged() ){
-		return false;
-	
-	} else if( $admin_id != 1 ){
+	if(! $admin_id ){
+		if(! $admin_id = admin_logged() ){
+			return false;
+		}
+	}
+
+	if( $admin_id != 1 ){
 		return false;
 	
 	} else {

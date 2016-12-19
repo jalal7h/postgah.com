@@ -6,9 +6,8 @@
 
 function ticketbox_view(){
 	
-	if(! $user_id = user_logged() ){
-		echo convbox( __('موردی با این شناسه یافت نشد'), 'red' );
-		return false;
+	if( !user_logged() and !admin_logged() ){
+		ed();
 
 	} else if(! $id = intval($_REQUEST['id']) ){
 		e();

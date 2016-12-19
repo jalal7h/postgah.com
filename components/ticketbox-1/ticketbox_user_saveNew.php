@@ -19,11 +19,12 @@ function ticketbox_user_saveNew(){
 			case 'private': $tctc_private = ticketbox_private_token_check(); break; // "limit hast"
 		}
 	}
+
 	if( !$tctc_public and !$tctc_private ) {
 		$tctc_off = true;
 		$_REQUEST['user_id'] = 1; // "ejaze nist"
 	}
-
+	
 	# if no body logged in, and wants to send some ticket, kill him
 	if(! $loggedUser_id = user_logged() ){
 		ed();

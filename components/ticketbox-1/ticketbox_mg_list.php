@@ -41,7 +41,7 @@ function ticketbox_mg_list(){
 	# 
 	# the list
 	$list['name'] = __FUNCTION__;
-	$list['query'] = " SELECT * FROM `ticketbox` INNER JOIN `ticketbox_user` on `ticketbox`.`id` = `ticketbox_user`.`ticketbox_id` WHERE `ticketbox`.`hide`='0' AND `user_id`='1' ORDER BY `ticketbox_user`.`flag` ASC , `ticketbox_user`.`flag` ASC , `date_updated` DESC "; // AND `ticketbox_user`.`flag`='0'
+	$list['query'] = " SELECT * FROM `ticketbox` INNER JOIN `ticketbox_user` on `ticketbox`.`id` = `ticketbox_user`.`ticketbox_id` WHERE `ticketbox`.`hide`='0' AND `user_id`='1' ORDER BY `ticketbox_user`.`flag` ASC , `date_updated` DESC "; // AND `ticketbox_user`.`flag`='0'
 	$list['id_column'] = 'ticketbox_id';
 	
 	$list['tdd'] = 10; // tedad dar safhe

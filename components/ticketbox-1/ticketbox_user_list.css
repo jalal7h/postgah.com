@@ -49,6 +49,12 @@
 	text-align: center;
 	font-size: 10px;
 }
+.ticketbox_user_list tr td:nth-child(4) ,
+.ticketbox_user_list tr td:nth-child(4) * {
+	width: 12%;
+	text-align: center;
+	font-size: 10px;
+}
 
 .ticketbox_user_list .listmaker_list_record_inactive a.linkToFA[name="move_to_archive"] {
 	display: none;

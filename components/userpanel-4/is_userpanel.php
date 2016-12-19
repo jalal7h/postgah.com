@@ -1,16 +1,19 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/17
-# 1.0
+# 2016/12/19
+# 1.1
 
 function is_userpanel(){
 
-	if( $_REQUEST['page']==14 ){
-		return true;
+	if(! user_logged() ){
+		return fasle;
+
+	} else if( $_REQUEST['page'] != 14 ){
+		return fasle;
 
 	} else {
-		return false;
+		return true;
 	}
 
 }

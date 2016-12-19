@@ -14,11 +14,20 @@ function ticketbox_replyStatus( $rw_ticketbox ){
 	} else if( $rw_tu['flag'] == 1 ){
 		return __('بسته شده');
 	
+	} else if(! $rs = dbq(" SELECT COUNT(*) FROM `ticketbox_post` WHERE `ticketbox_id`='$id' ") ){
+		e();
+
+	} else if(! $count_of_reply = dbr( $rs, 0, 0 ) ){
+		e();
+
+	} else if( $count_of_reply == 1 ){
+		return __("جدید");
+	
 	} else if( ticketbox_isReplied( $id ) ){
-		return __("پاسخ‌داده");
+		return __("منتظر پاسخ");
 	
 	} else {
-		return __("منتظر پاسخ");
+		return __("پاسخ‌داده");
 	}
 
 }

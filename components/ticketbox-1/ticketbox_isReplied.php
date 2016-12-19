@@ -6,16 +6,15 @@
 
 function ticketbox_isReplied( $ticketbox_id ){
 
-	if( is_admin() and admin_logged() ){
+	if( is_admin() ){
 		 $current_user_id = 1;
 	
-	} else if( is_userpanel() and user_logged() ){
+	} else if( is_userpanel() ){
 		$current_user_id = user_logged();
 	
 	} else {
 		ed();
 	}
-
 
 	if(! $rw = table('ticketbox', $ticketbox_id) ){
 		e();
@@ -26,17 +25,10 @@ function ticketbox_isReplied( $ticketbox_id ){
 	} else if(! dbn($rs) ){
 		e();
 
-	} else if(! $user_id = dbr($rs,0,0) ){
+	} else if(! $last_reply_user_id = dbr($rs,0,0) ){
 		e();
 
-	#
-	# age man admin hastam, va akharin pasokh az 1 bud, ya man budam ya yeki az modiran
-	} else if( is_admin() and ($user_id == 1) ){
-		return true;
-
-	#
-	# age akharin pasokh az man bud
-	} else if( $user_id == $current_user_id ) {
+	} else if( $last_reply_user_id == $current_user_id ){
 		return true;
 	}
 
