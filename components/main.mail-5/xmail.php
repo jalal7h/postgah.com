@@ -1,13 +1,16 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/02
-# 3.2
+# 2016/12/19
+# 3.4
 
 function xmail( $to, $subject, $text, $from='', $html=0, $mssp_id=0 ){
 
 	if( its_local() or debug ){
-		return xmail_memo( $to, $subject, $text );
+		xmail_memo( $to, $subject, $text );
+		if( its_local() ){
+			return true;
+		}
 	}
 	
 	#
