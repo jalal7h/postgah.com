@@ -1,0 +1,20 @@
+
+/*admin*/
+
+.sms_setting {
+	margin-top: 50px;
+}
+.sms_setting .lmfe_tnit {
+	width: 240px;
+	vertical-align: top;
+    padding-top: 9px;
+}
+#lmfe_sms_setting_sms_connection_string {
+	width: calc( 80% - 240px );
+    height: 80px;
+    direction: ltr;
+    font-family: Monospace, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+}
+

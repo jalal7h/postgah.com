@@ -1,6 +1,6 @@
 <?
-$GLOBALS['do_action'][] = 'converter_main';
 
+$GLOBALS['do_action'][] = 'pgConverter';
 
 ## CONFIG ## # ##
 define( 'mysql_database_old', 'postgah_tmp00' );

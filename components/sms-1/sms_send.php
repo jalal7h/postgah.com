@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/18
-# 1.1
+# 2016/12/19
+# 1.2
 
 function sms_send( $to , $text ){
 	
@@ -22,16 +22,30 @@ function sms_send( $to , $text ){
 		return true;
 
 	} else if(! $to = mb_ereg_replace('[^0-9]+','',$to) ){
-		//
+		dg();
 	
 	} else if(! $to = trim($to) ){
-		//
-		
-	} else if(! $html = file_get_contents( str_replace( ['%TO%','%TEXT%'], [$to,urlencode($text)], sms_active_link ) ) ){
-		e();
+		dg();
+	
+	} else if(! $sms_connection_string = setting('sms_connection_string') ){
+		dg();
 
 	} else {
-		return true;
+		
+		$sms_connection_string = str_replace( 
+
+			[ '%TO%',	'%TEXT%' ], 
+			[ $to,		urlencode($text) ],
+
+		$sms_connection_string );
+
+		if(! $html = file_get_contents( $sms_connection_string ) ){
+			dg();
+
+		} else {
+			return true;
+		}
+
 	}
 
 	return false;
