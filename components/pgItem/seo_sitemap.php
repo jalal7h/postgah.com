@@ -1,6 +1,6 @@
 <?
 
-$GLOBALS['seo_sitemap'][] = array( 
+$GLOBALS['seo_sitemap']['item'] = array( 
 	
 	"query" => " SELECT *, `date_created` as `date` FROM `item` WHERE `flag`='2' ORDER BY `date_created` ASC ",
 	

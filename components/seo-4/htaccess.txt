@@ -1,0 +1,8 @@
+
+RewriteRule ^sitemap.xml$ ./?do_action=seo_sitemap_mega [L]
+RewriteRule ^sitemap/([a-zA-Z0-9]+)-([0-9]+)\.xml$ ./?do_action=seo_sitemap&feed=$1&page=$2 [L]
+RewriteRule ^sitemap/([a-zA-Z0-9]+)\.xml$ ./?do_action=seo_sitemap&feed=$1 [L]
+
+RewriteRule ^rss$ ./?do_action=seo_rss_mega [L]
+RewriteRule ^rss/([a-zA-Z0-9]+)\.xml$ ./?do_action=seo_rss&feed=$1 [L]
+

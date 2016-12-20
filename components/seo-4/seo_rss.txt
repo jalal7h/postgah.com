@@ -1,9 +1,8 @@
 
-$GLOBALS['do_action'][] = "seo_rss";
 
 # jalal7h@gmail.com
 # 2015/09/21
-# Version 1.0
+# 1.0
 
 /*
 $GLOBALS['seo_rss']['feed-name'] = array( 

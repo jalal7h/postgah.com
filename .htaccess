@@ -78,8 +78,12 @@ RewriteRule ^t=(.*)/p=([0-9]*).html$ ./?page=67&q=$1&tag_needs_to_be_redirected=
 RewriteRule ^resize/([0-9]+)x([0-9]+)/(.*)$ ./?do_action=quick_resize&width=$1&height=$2&address=$3 [L]
 
 # 
-# seo-3
-RewriteRule ^sitemap.xml$ ./?do_action=seo_sitemap [L]
+# seo-4
+RewriteRule ^sitemap.xml$ ./?do_action=seo_sitemap_mega [L]
+RewriteRule ^sitemap/([a-zA-Z0-9]+)-([0-9]+)\.xml$ ./?do_action=seo_sitemap&feed=$1&page=$2 [L]
+RewriteRule ^sitemap/([a-zA-Z0-9]+)\.xml$ ./?do_action=seo_sitemap&feed=$1 [L]
+
+RewriteRule ^rss$ ./?do_action=seo_rss_mega [L]
 RewriteRule ^rss/([a-zA-Z0-9]+)\.xml$ ./?do_action=seo_rss&feed=$1 [L]
 
 # 

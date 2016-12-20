@@ -1,0 +1,11 @@
+
+
+# jalal7h@gmail.com
+# 2016/12/20
+# 2.0
+
+/*
+$GLOBALS['seo_sitemap']['news'] = array( 
+	"query" => " some query with *,date ",
+	"link" => 'some link with php support'
+);
