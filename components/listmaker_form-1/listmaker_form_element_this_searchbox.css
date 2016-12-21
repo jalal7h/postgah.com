@@ -5,6 +5,11 @@
 
 .lmfe_inDiv.searchbox input[type="text"] {
 	padding-left: 40px;
+	color: #999;
+}
+.lmfe_inDiv.searchbox input[type="text"].completed {
+	font-weight: bold !important;
+    color: black;
 }
 
 .lmfe_inDiv.searchbox icon:before {

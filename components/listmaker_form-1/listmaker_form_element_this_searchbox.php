@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/19
-# 1.1
+# 2016/12/21
+# 1.2
 
 function listmaker_form_element_this_searchbox( $info ){
 	
@@ -26,8 +26,17 @@ function listmaker_form_element_this_searchbox( $info ){
 	if( $info['value'] ){
 		$memo_value = table( $feed_table, $info['value'], $feed_title_column, $feed_id_column);
 	}
+	
+	# 
+	# remove the class lmfe_isNeeded and add it to hidden input
+	if( $info['isNeeded'] ){
+		$info['class'] = str_replace( 'lmfe_isNeeded', '', $info['class'] );
+	}
 
-	$c.= "<input type=\"hidden\" name=\"".$info['name'].( $info['ArrayInput'] ? '[]' : '' )."\" value=\"".$info['value']."\" />";
+	$info['class'].= " lmfe_searchbox";
+	$info['class'] = trim($info['class']);
+
+	$c.= "<input type=\"hidden\" name=\"".$info['name'].( $info['ArrayInput'] ? '[]' : '' )."\" value=\"".$info['value']."\"".( $info['isNeeded'] ? " class=\"lmfe_isNeeded\"" : '' )." />";
 
 	$c.= "<input autocomplete=\"off\" type=\"text\" id=\"".$id."\" ".
 		( $info['class'] ? "class=\"".$info['class']."\" " : '' ).

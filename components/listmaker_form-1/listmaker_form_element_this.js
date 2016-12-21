@@ -10,7 +10,7 @@ $(document).ready(function($) {
   			if( $(this).val()=='' || $(this).val()==0 ){
   				
   				if( $(this).prop('tagName') == 'INPUT' && $(this).prop('type') == 'hidden' ){
-  					$(this).parent().find('.lmfe_catbox,.lmfe_positionbox').addClass('lmfe_redline');
+  					$(this).parent().find('.lmfe_catbox,.lmfe_positionbox,.lmfe_searchbox').addClass('lmfe_redline');
   				} else {
 	  				$(this).addClass('lmfe_redline');
   					$(this).focus();

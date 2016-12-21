@@ -1,6 +1,7 @@
 
 jQuery(document).ready(function($) {
 
+	// select from list by submitting
 	$('.lmfe_inDiv.searchbox input[type="text"]').on('keydown',function(e){
 
 		tx = $(this);
@@ -14,6 +15,8 @@ jQuery(document).ready(function($) {
 			
 			if( hv.length && $('.lmfe_inDiv.searchbox .list').css('display') == 'block' ){
 
+				tx.addClass('completed');
+				
 				id.val( hv.attr('the_id') );
 				tx.val( hv.html() );
 
@@ -27,11 +30,16 @@ jQuery(document).ready(function($) {
 		} else if( e.keyCode == 27 ){
 			hv.remove();
 			ls.hide();
+		
+		} else {
+			id.val('');
+			tx.removeClass('completed');
 		}
 
 	});
 	
-	// open list and search
+
+	// open list , type something , and load options
 	$('.lmfe_inDiv.searchbox input[type="text"]').on('keyup',function(e){
 
 		tx = $(this);
@@ -116,6 +124,7 @@ jQuery(document).ready(function($) {
 
 		hidden_input.val( selected.attr('the_id') );
 		text_input.val( selected.html() );
+		tx.addClass('completed');
 
 		list.hide();
 
