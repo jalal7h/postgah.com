@@ -7,7 +7,7 @@
 	position: relative;
 }
 .ticketbox_user_list tr.new td:first-child {
-	color: black;
+	color: #a00;
 	font-weight: bold;
 }
 
@@ -23,7 +23,7 @@
 }
 .ticketbox_user_list tr.new td:first-child:before {
 	content: "\f0e0";
-	color: black;
+	color: #a00;
 }
 .ticketbox_user_list tr.notnew td:first-child {
 	
