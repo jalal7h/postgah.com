@@ -46,9 +46,10 @@ function ticketbox_mg_saveNew(){
 	} else {
 
 		$vars = [
-			'ticket_id' => $ticketbox_id,
-			'ticket_name' => $_REQUEST['name'],
-			'ticket_link' => ticketbox_user_link( $ticketbox_id ),
+			'user_name'		=> $rw_user['name'],
+			'ticket_id'		=> $ticketbox_id,
+			'ticket_name'	=> $_REQUEST['name'],
+			'ticket_link'	=> ticketbox_user_link( $ticketbox_id ),
 		];
 		echo texty('ticketbox_mg_saveNew', $vars, [ 0 , $_REQUEST['user_id'] ], $convbox='transparent' );
 
