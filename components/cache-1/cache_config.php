@@ -6,7 +6,7 @@
 
 # -spi-
 
-define( '_cache_flag', ( defined('cache') ? defined('cache') : false ) );
+define( '_cache_flag', ( defined('cache') ? cache : false ) );
 define( '_cache_dir', 'data/cache' );
 define( '_cache_debug', false );
 
