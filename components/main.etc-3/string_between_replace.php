@@ -1,10 +1,16 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/14
-# 1.0
+# 2016/12/21
+# 1.1
 
-function string_between_replace( $str, $bet, $ween, $func=null ){
+# $str: mohtavai ke mikhaim yechizi azash replace beshe
+# chizi k beyne $bet va $ween dide mishe, ba mohtavaye $func replace beshe, 
+# age $func bud, $str ro ba func replace mikone
+# age $func nabud, list e karamalti k beyne $bet va $ween peyda kard, besurate array bar migardune
+# $hide_the_keys age true bashe, $bet va $ween pak mishe, age na mimune.
+
+function string_between_replace( $str, $bet, $ween, $func=null, $hide_the_keys=false ){
 	
 	if( $bet == $ween ){
 		ed();
@@ -26,7 +32,11 @@ function string_between_replace( $str, $bet, $ween, $func=null ){
 
 				if( $func ){
 					$str_this_arr[0] = $func( $the_word );
-					$str_arr[$i] = implode( $ween, $str_this_arr);
+					if( $hide_the_keys ){
+						$str_arr[$i] = implode( '', $str_this_arr);
+					} else {
+						$str_arr[$i] = implode( $ween, $str_this_arr);						
+					}
 
 				} else {
 					$word_arr[] = $the_word;
@@ -36,12 +46,15 @@ function string_between_replace( $str, $bet, $ween, $func=null ){
 
 		}
 
-		$str = implode( $bet, $str_arr );
+		if( $hide_the_keys ){
+			$str = implode( '', $str_arr );
+		} else {
+			$str = implode( $bet, $str_arr );			
+		}
 
 	}
 
 	if( $func ){
-		$str = str_replace( [ $bet, $ween ], "", $str );
 		return $str;
 	
 	} else {

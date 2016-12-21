@@ -1,7 +1,7 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/20
+# 2016/12/21
 # 2.0
 
 $GLOBALS['do_action'][] = "seo_sitemap_mega";
@@ -38,7 +38,12 @@ function seo_sitemap_mega(){
     #
     foreach ($GLOBALS['seo_sitemap'] as $id => $info) {
 
-        $count_in_query = dbn( dbq( $info['query'] ) );
+        $query = $info['query'];
+        $query = string_between_replace( $query, "SELECT ", " FROM ", function(){
+            return "COUNT(*)";
+        });
+
+        $count_in_query = dbr( dbq( $query ), 0, 0 );
         $count_of_pages = ceil( $count_in_query / $tdd );
 
         // echo $count_in_query."\n";
