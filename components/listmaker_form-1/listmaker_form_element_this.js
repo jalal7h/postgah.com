@@ -1,5 +1,5 @@
 
-// 2016/12/02
+// 2016/12/21
 
 $(document).ready(function($) {
 		

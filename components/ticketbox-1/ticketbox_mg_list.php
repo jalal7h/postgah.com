@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/30
-# 1.0
+# 2016/12/21
+# 1.1
 
 function ticketbox_mg_list(){
 
@@ -43,7 +43,7 @@ function ticketbox_mg_list(){
 	# 
 	# the list
 	$list['name'] = __FUNCTION__;
-	$list['query'] = " SELECT * FROM `ticketbox` INNER JOIN `ticketbox_user` on `ticketbox`.`id` = `ticketbox_user`.`ticketbox_id` WHERE `ticketbox`.`hide`='0' AND `user_id`='1' ORDER BY `ticketbox_user`.`flag` ASC , `date_updated` DESC "; // AND `ticketbox_user`.`flag`='0'
+	$list['query'] = " SELECT * FROM `ticketbox` INNER JOIN `ticketbox_user` on `ticketbox`.`id` = `ticketbox_user`.`ticketbox_id` WHERE `ticketbox`.`hide`='0' AND `ticketbox_user`.`flag`='".intval($_REQUEST['flag'])."' AND `user_id`='1' ORDER BY `ticketbox_user`.`flag` ASC , `date_updated` DESC ";
 	$list['id_column'] = 'ticketbox_id';
 	
 	$list['tdd'] = 10; // tedad dar safhe
@@ -96,6 +96,7 @@ function ticketbox_mg_list(){
 
 	#
 	# paging select
+	$list['paging_select']['flag'] = "<option value=''>پیامهای فعال</option><option value='1'>آرشیو پیام‌ها</option>";
 	$list['paging_select']['cat'] = "<option value=''>".cat_detail('ticketbox')['name']."</option>".cat_display('ticketbox',$is_array=false);
 	
 	#
