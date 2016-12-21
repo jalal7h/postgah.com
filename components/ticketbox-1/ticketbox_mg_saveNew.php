@@ -52,7 +52,7 @@ function ticketbox_mg_saveNew(){
 			'ticket_link'	=> ticketbox_user_link( $ticketbox_id ),
 		];
 		echo texty('ticketbox_mg_saveNew', $vars, [ 0 , $_REQUEST['user_id'] ], $convbox='transparent' );
-
+		
 		return true;
 
 	}
