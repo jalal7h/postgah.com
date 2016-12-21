@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/02
-# 1.0
+# 2016/12/21
+# 1.1
 
 $GLOBALS['do_action'][] = 'listmaker_form_element_this_searchbox_load';
 
@@ -40,7 +40,7 @@ function listmaker_form_element_this_searchbox_load(){
 			e();
 
 		} else if(! dbn($rs) ){
-			e();
+			// e();
 
 		} else while( $rw = dbf($rs) ){
 			echo "<div the_id=\"".$rw[ $feed_id_column ]."\">".$rw[ $feed_title_column ]."</div>";
