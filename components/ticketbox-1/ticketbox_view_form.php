@@ -2,6 +2,8 @@
 
 function ticketbox_view_form(){
 
+	echo js_print('ticketbox', 'ticketbox_view_form');
+
 	if( is_admin() and admin_logged() ){
 		 $user_id = 1;
 	

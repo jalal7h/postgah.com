@@ -31,6 +31,8 @@ function ticketbox_user_list(){
 	}
 
 
+	echo js_print( 'ticketbox', 'ticketbox_user_list_archive' );
+
 	###################################################################################
 	# the new version 1.30
 
@@ -85,6 +87,7 @@ function ticketbox_user_list(){
 		'name' => 'انتقال به آرشیو',
 		'color' => '#62bb00',
 		'width' => 35,
+		'text_archivePrompt' => __('آیا مایل به انتقال این پیام به آرشیو هستید؟'),
 	];
 
 	#

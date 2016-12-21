@@ -17,7 +17,7 @@ function ticketbox_view_name(){
 				<div class=\"category\">".cat_translate($rw['cat'])."</div>
 				<span></span>
 				" : '' )."
-				<div class=\"the_date\">".time_inword($rw['date_created'])."</div>
+				<div class=\"the_date\" title=\"".UDate($rw['date_created'],'text')." ".UClock($rw['date_created'])."\">".time_inword($rw['date_created'])."</div>
 			</div>
 		</div>";
 	}

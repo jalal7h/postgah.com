@@ -1,4 +1,6 @@
 
+/*print*/
+
 jQuery(document).ready(function($) {
 
 	$('body').delegate('.abusereport_mg_smsToBadUser input[type="submit"]', 'click', function(e) {

@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/16
-# 2.2
+# 2016/12/21
+# 2.3
 
 
 # texty_prompt( $slug , $vars=null, $convbox=true )
@@ -21,7 +21,7 @@ function texty_prompt( $slug , $vars=null, $convbox=true ){
 	#
 	# if its set
 	} else if(! $prompt = trim($texty['prompt']) ){
-		e();
+		// e();
 
 	} else {
 		

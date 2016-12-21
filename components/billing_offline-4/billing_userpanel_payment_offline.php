@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/14
-# 1.0
+# 2016/12/21
+# 1.1
 
 function billing_userpanel_payment_offline(){
 

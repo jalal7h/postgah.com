@@ -17,6 +17,11 @@ function ticketbox_view(){
 
 	} else {
 
+		echo js_print('ticketbox', 'ticketbox_view_post');
+		if( is_admin() ){
+			echo js_print('ticketbox', 'ticketbox_mg_post_remove');
+		}
+
 		# 
 		# auth
 		if( is_admin() ){

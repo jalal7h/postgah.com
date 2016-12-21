@@ -28,7 +28,7 @@ function ticketbox_flag(){
 			ed();
 
 		} else if( $rw_tu['flag'] == 1 ){
-			e();
+			// e();
 
 		} else if(! listmaker_flag( 'ticketbox_user', null, $ticketboxUser_id ) ){
 			e();

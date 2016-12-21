@@ -1,8 +1,10 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/30
-# 1.1
+# 2016/11/21
+# 1.2
+
+# -spi-
 
 function abusereport_mg_view(){
 
@@ -24,7 +26,12 @@ function abusereport_mg_view(){
 		
 	}
 	
-	
+	echo js_print( 'abusereport', [
+		'abusereport_mg_view',
+		'abusereport_mg_smsToBadUser',
+		'abusereport_mg_mailToBadUser'
+	]);
+
 	#
 	# no id found
 	if(! $id = $_REQUEST['id'] ){

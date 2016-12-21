@@ -23,7 +23,8 @@
 	height: 70px;
 	max-width: 150px;
 }
-.ticketbox_view .post .info .user {
+.ticketbox_view .post .info .user ,
+.ticketbox_view .post .info .user * {
 	padding-bottom: 15px;
 	font-size: 9px;
 }

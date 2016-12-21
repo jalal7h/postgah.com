@@ -1,4 +1,6 @@
 
+/*print*/
+
 jQuery(document).ready(function($) {
 
 	// size fix for info box

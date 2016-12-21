@@ -31,7 +31,7 @@ function billing_userpanel_payment(){
 	if( $invoice_id = $_REQUEST['invoice_id'] ){
 		
 		if(! $rw_invoice = table('billing_invoice', $invoice_id) ){
-			e(__FUNCTION__,__LINE__);
+			e();
 		
 		} else {
 			$order_id = $rw_invoice['order_id'];

@@ -35,6 +35,8 @@ function ticketbox_mg_list(){
 	}
 
 
+	echo js_print( 'ticketbox', 'ticketbox_mg_list_archive' );
+
 	###################################################################################
 	# the new version 1.30
 
@@ -89,6 +91,7 @@ function ticketbox_mg_list(){
 		'name' => 'انتقال به آرشیو',
 		'color' => '#62bb00',
 		'width' => 33,
+		'text_archivePrompt' => __('آیا مایل به انتقال این پیام به آرشیو هستید؟'),
 	];
 
 	#
