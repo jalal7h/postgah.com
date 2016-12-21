@@ -1,10 +1,4 @@
-
-
-# jalal7h@gmail.com
-# 2016/12/21
-# 2.1
-
-/*
+<?
 
 $GLOBALS['seo_sitemap']['tags'] = array( 
 	
@@ -14,4 +8,4 @@ $GLOBALS['seo_sitemap']['tags'] = array(
 	"prio"	=>	"0.5",
 
 );
-
+	

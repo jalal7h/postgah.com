@@ -37,7 +37,7 @@ function seo_sitemap_mega(){
     # sitemap list
     #
     foreach ($GLOBALS['seo_sitemap'] as $id => $info) {
-       
+
         $count_in_query = dbn( dbq( $info['query'] ) );
         $count_of_pages = ceil( $count_in_query / $tdd );
 
@@ -45,12 +45,20 @@ function seo_sitemap_mega(){
         // echo $count_of_pages."\n";
 
         $query = $info['query'];
-        $query.= " " . trim($query) . " LIMIT 1 ";
-        $query = str_replace(" ASC LIMIT 1 ", " DESC LIMIT 1 ", $query);
+        // $query = explode(' LIMIT ', $query )[0];
+        // $query = " ".trim($query)." LIMIT 1 ";
+        // $query = str_replace(" ASC LIMIT 1 ", " ASC LIMIT 1 ", $query);
 
         if(! $rs = dbq($query) ){
-            $date = U();
-        } else if(! $date = dbr($rs, 0, 'date') ){
+            //
+        } else if(! $rw = dbf($rs) ){
+            //
+        } else if(! $date = $rw['date'] ){
+            //
+        } else if(! $date = $rw['date_created'] ){
+            //
+        }
+        if(! $date ){
             $date = U();
         }
 
