@@ -110,7 +110,7 @@ RewriteRule ^userpanel$ ./?page=14 [L]
 RewriteRule ^@([0-9]+)$ ./?page=19&id=$1 [L]
 
 # 
-# d404-1-spi
+# d404-1
 RewriteCond %{REQUEST_FILENAME} !-f 
 RewriteCond %{REQUEST_FILENAME} !-d 
 RewriteCond %{REQUEST_URI} !image_list

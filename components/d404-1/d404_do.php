@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/31
-# 1.2
+# 2016/12/23
+# 1.3
 
 # $GLOBALS['d404'][] = ["66,item,item_id,flag"];
 # page_id , table_name , id_variable , flag_variable_in_table
@@ -18,6 +18,7 @@ function d404_do(){
 		return true;
 
 	} else foreach ($GLOBALS['d404'] as $i => $str) {
+		
 		$arr = explode(",", $str);
 		$page_id = $arr[0];
 		$table_name = $arr[1];
@@ -36,12 +37,16 @@ function d404_do(){
 			} else if(! is_table($table_name) ){
 				d404();
 
-			} else if( is_column($table_name, $flag_variable) ){
-				if(! dbr(dbq(" SELECT COUNT(*) FROM `$table_name` WHERE `id`='$id' AND `$flag_variable`!=0 "),0,0) ){
-					d404();
-				}
-
 			} else if(! table($table_name,$id) ){
+				d404();
+
+			} else if(! is_column($table_name, $flag_variable) ){
+				d404();
+
+			} else if(! $rs = dbq(" SELECT COUNT(*) FROM `$table_name` WHERE `id`='$id' AND `$flag_variable`!=0 ") ){
+				d404();
+
+			} else if(! dbr( $rs, 0, 0 ) ){
 				d404();
 			}
 
