@@ -111,14 +111,16 @@
 .layout_mg_this_layer > .tools > a.prio_down icon:before {
 	content: "\f063";
 }
+.layout_mg_this_layer > .tools > a.flag icon:before {
+	content: "\f204";
+	cursor: pointer;
+}
+.layout_mg_this_layer > .tools > a.flag.off icon:before {
+	content: "\f205";
+}
 .layout_mg_this_layer > .tools > a.remove icon:before {
 	content: "\f00d";
-}
-.layout_mg_this_layer > .tools > a.flag_off icon:before {
-	content: "\f204";
-}
-.layout_mg_this_layer > .tools > a.flag_on icon:before {
-	content: "\f205";
+	cursor: pointer;
 }
 
 .layout_mg_this_layer_off {

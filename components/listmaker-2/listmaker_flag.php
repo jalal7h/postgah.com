@@ -37,8 +37,7 @@ function listmaker_flag( $table_name , $setFlagTo=null , $id=null , $column="fla
 	if(! $rw = table( $table_name , $id ) ){
 		e();
 	}
-
-
+	
 	if(! dbq(" UPDATE `$table_name` SET `$column`=$value_query WHERE `id`='$id' LIMIT 1 ") ){
 		e( dbe() );
 
