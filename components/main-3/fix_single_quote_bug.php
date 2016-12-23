@@ -20,13 +20,13 @@ if( $_REQUEST['page'] ){
 if( $_REQUEST ){
 	foreach ($_REQUEST as $k => $v) {
 		
-		$_REQUEST[ $k ] = mysql_real_escape_string( $v );
+		$_REQUEST[ $k ] = mysql_escape_string( $v );
 
 		if( $_GET[ $k ] ){
-			$_GET[ $k ] = mysql_real_escape_string( $v );
+			$_GET[ $k ] = mysql_escape_string( $v );
 
 		} else if( $_POST[ $k ] ){
-			$_POST[ $k ] = mysql_real_escape_string( $v );
+			$_POST[ $k ] = mysql_escape_string( $v );
 		}
 
 	}
