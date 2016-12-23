@@ -5,7 +5,7 @@ $GLOBALS['block_layers']['pgItem_list_of_premium'] = 'لیست آخرین ویژ
 function pgItem_list_of_premium( $rw_pagelayer ){
 	
 	$cache_key = __FUNCTION__.json_encode($rw_pagelayer);
-	if( $cache_hit = cache( "hit", $cache_key, "6hours" ) ){
+	if( $cache_hit = cache( "hit", $cache_key, "10min" ) ){
 		echo $cache_hit;
 	
 	} else {
