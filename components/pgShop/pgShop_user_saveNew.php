@@ -1,10 +1,19 @@
 <?
 
+# jalal7h@gmail.com
+# 2016/12/23
+# 1.0
+
 function pgShop_user_saveNew(){
 
+	$_REQUEST['path'] = trim( strtolower($_REQUEST['path']) );
+
 	if(! $user_id = user_logged() ){
-		return false;
+		dg();
 	
+	} else if(! pgShop_checkShopDomain( $_REQUEST['path'] ) ){
+		echo convbox( 'خطا: لطفا در انتخاب آدرس فروشگاه دقت کنید.', 'red' );
+		
 	} else {
 
 		# 
@@ -17,7 +26,11 @@ function pgShop_user_saveNew(){
 		listmaker_fileupload( 'shop', $id );
 		#
 
+		return true;
+
 	}
+
+	return false;
 
 }
 
