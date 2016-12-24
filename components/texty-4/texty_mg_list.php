@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/22
-# 1.0
+# 2016/12/23
+# 1.1
 
 function texty_mg_list(){
 
@@ -35,7 +35,7 @@ function texty_mg_list(){
 	
 	#
 	# list array // list e sotun haye list
-	$list['list_array'][] = [ "head"=>lmtc($table.":name"), "title"=>'$rw["slug"]', "content"=>'$rw[\'name\']' ];
+	$list['list_array'][] = [ "head"=>lmtc($table.":name"), "title"=>'$rw["slug"]', "content"=>'__($rw["name"])' ];
 
 	#
 	# search columns // az in field ha tu table search mikone

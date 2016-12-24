@@ -9,7 +9,7 @@ function billing_management_stat_dailychart(){
 	#
 	# vaqt
 	$U = U();
-	$Date = U2Date($U);
+	$Date = UDate($U);
 
 	# 
 	# number of month

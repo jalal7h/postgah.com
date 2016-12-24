@@ -25,7 +25,7 @@ function texty_mg_saveEdit(){
 	], ['id'] ) ){
 
 	} else {
-		echo convbox( __( "تغییرات مربوط به پیام های <b>%%</b> ثبت شد", [table('texty',$_REQUEST['id'], 'name')] ) );
+		echo convbox( __("تغییرات مربوط به پیام های <b>%%</b> ثبت شد", [table('texty',$_REQUEST['id'], 'name')] ) );
 	}
 
 }

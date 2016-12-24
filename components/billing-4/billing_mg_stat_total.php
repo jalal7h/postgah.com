@@ -3,7 +3,7 @@
 function billing_management_stat_total(){
 	#
 	# today
-	$date = substr( U2Date( U() ) , 0 , 10) ;
+	$date = substr( UDate( U() ) , 0 , 10) ;
 	$list = array (
 		"skipwallet" => true ,
 		"date" => array ("day" => $date)
@@ -11,7 +11,7 @@ function billing_management_stat_total(){
 	$stat_today = billing_format( billing_stat_payment( $list ) );
 	#
 	# yesterday
-	$date_yesterday = substr( U2Date( U()-(24*3600) ) , 0 , 10) ;
+	$date_yesterday = substr( UDate( U()-(24*3600) ) , 0 , 10) ;
 	$list = array (
 		"skipwallet" => true ,
 		"date" => array ("day" => $date_yesterday)

@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/09
-# 1.1
+# 2016/12/23
+# 1.2
 
 function billing_management_methods(){
 	
@@ -60,7 +60,7 @@ function billing_management_methods(){
 
 		echo "<div class=r >
 			<img src='image_list/billing_".$method.".png' />
-			<span>".__( "دریافتی")." : ".billing_format($cost)."</span>
+			<span>".__("دریافتی")." : ".billing_format($cost)."</span>
 			<div class='input-box'>".$inputs."</div>
 		</div>";
 

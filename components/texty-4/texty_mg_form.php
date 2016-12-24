@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/18
-# 1.3
+# 2016/12/23
+# 1.4
 
 function texty_mg_form(){
 
@@ -20,21 +20,24 @@ function texty_mg_form(){
 
 	if(! $rw['user_title'] ){
 		if( substr( $rw['flagstring'] , 3, 2 ) == '00' ){
-			$rw['user_title'] = 'کاربر';
+			$rw['user_title'] = __('کاربر');
 
 		} else {
-			$rw['user_title'] = 'کاربر حاضر';
+			$rw['user_title'] = __('کاربر حاضر');
 		}
 	}
 	if(! $rw['user2_title'] ){
-		$rw['user2_title'] = 'کاربر غایب';
+		$rw['user2_title'] = __('کاربر غایب');
 	}
+
+	$rw['user_title'] = __($rw['user_title']);
+	$rw['user2_title'] = __($rw['user2_title']);
 
 
 	## -------------------------------------------------
 	echo listmaker_form('
 		
-		<div class="texty_mg_head">'.( $GLOBALS['cmp']['texty_mg'] ? $GLOBALS['cmp']['texty_mg'] : $GLOBALS['setting']['texty_mg'] ).' / <?=$rw["name"]?></div><hr>
+		<div class="texty_mg_head">'.( $GLOBALS['cmp']['texty_mg'] ? $GLOBALS['cmp']['texty_mg'] : $GLOBALS['setting']['texty_mg'] ).' / <?=__($rw["name"])?></div><hr>
 		
 		[!
 			"table" => "texty" ,
@@ -49,20 +52,20 @@ function texty_mg_form(){
 			
 			'.( $rw['flagstring'][1] ? '
 				<div class="half_div">
-					[!"text:user_email_subject","'.lmtc('texty:user_email_subject').' '.$rw['user_title'].'"!]
-					[!"textarea:user_email_content","'.lmtc('texty:user_email_content').' '.$rw['user_title'].'"!]
+					[!"text:user_email_subject","'.__('عنوان ایمیل %%', [$rw['user_title']] ).'"!]
+					[!"textarea:user_email_content","'.__('متن ایمیل %%', [$rw['user_title']] ).'"!]
 				</div>' : '' ).
 
-			( $rw['flagstring'][2] ? '<div class="half_div">[!"textarea:user_sms","notInDiv","'.lmtc('texty:user_sms').' '.$rw['user_title'].'"!]</div>' : '' ).
+			( $rw['flagstring'][2] ? '<div class="half_div">[!"textarea:user_sms","notInDiv","'.__('پیامک %%', [$rw['user_title']] ).'"!]</div>' : '' ).
 	
 			( ($rw['flagstring'][1] or $rw['flagstring'][2]) ? '<hr>' : '' ).
 
 			( $rw['flagstring'][3] ? '<div class="half_div">
-				[!"text:user2_email_subject","'.lmtc('texty:user2_email_subject').' '.$rw['user2_title'].'"!]
-				[!"textarea:user2_email_content","'.lmtc('texty:user2_email_content').' '.$rw['user2_title'].'"!]
+				[!"text:user2_email_subject","'.__('عنوان ایمیل %%', [$rw['user2_title']] ).'"!]
+				[!"textarea:user2_email_content","'.__('متن ایمیل %%', [$rw['user2_title']] ).'"!]
 			</div>' : '' ).
 
-			( $rw['flagstring'][4] ? '<div class="half_div">[!"textarea:user2_sms","notInDiv","'.lmtc('texty:user2_sms').' '.$rw['user2_title'].'"!]</div>' : '' ).
+			( $rw['flagstring'][4] ? '<div class="half_div">[!"textarea:user2_sms","notInDiv","'.__('پیامک %%', [$rw['user2_title']] ).'"!]</div>' : '' ).
 	
 			( ($rw['flagstring'][3] or $rw['flagstring'][4]) ? '<hr>' : '' ).
 

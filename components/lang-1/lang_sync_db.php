@@ -32,6 +32,11 @@ function lang_sync_db(){
 		$arr = array_merge( $arr, $arr_s );
 	}
 	#
+	$arr_s = lang_sync_db_tableTexty();
+	if( sizeof($arr_s) ){
+		$arr = array_merge( $arr, $arr_s );
+	}
+	#
 	$arr_tpl = lang_sync_db_template();
 	if( sizeof($arr_tpl) ){
 		$arr = array_merge( $arr, $arr_tpl );

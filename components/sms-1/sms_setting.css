@@ -12,7 +12,6 @@
 #lmfe_sms_setting_sms_connection_string {
 	width: calc( 80% - 240px );
     height: 80px;
-    direction: ltr;
     font-family: Monospace, sans-serif;
     font-size: 13px;
     line-height: 18px;
