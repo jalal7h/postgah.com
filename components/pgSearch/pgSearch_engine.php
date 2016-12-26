@@ -44,7 +44,10 @@ function pgSearch_engine( $q ){
 
 	$query = " SELECT * FROM `item` WHERE `flag`='2' AND `expired`='0' $pos_query AND MATCH (`name`,`text`) AGAINST ('*$q*' IN BOOLEAN MODE ) ";
 	$link = _URL."/?".query_string_set( "p", "%%" );
-	qpush( 'pgSearch_engine_paging', listmaker_paging( $query, $link, $limit ) );
+	$paging = listmaker_paging( $query, $link, $limit );
+	$paging = str_replace( '<a href', '<a rel="nofollow" href', $paging );
+	
+	qpush( 'pgSearch_engine_paging', $paging );
 
 	return $res;
 

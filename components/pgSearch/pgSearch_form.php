@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/16
-# 1.1
+# 2016/12/26
+# 1.2
 
 define( '_PAGE_SEARCH', '67' );
 
