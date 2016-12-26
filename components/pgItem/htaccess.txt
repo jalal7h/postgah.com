@@ -2,5 +2,5 @@
 RewriteRule ^([0-9]*)-(.*)$ ./?page=66&item_id=$1&canonical_tag=1 [L]
 RewriteRule ^([0-9]*).html$ ./?page=66&item_id=$1&item_needs_to_be_redirected=1 [L]
 
-RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+# RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+# RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
