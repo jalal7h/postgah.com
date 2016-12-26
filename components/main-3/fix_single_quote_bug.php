@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/23
-# 1.0
+# 2016/12/24
+# 1.1
 
 if( $_REQUEST['page'] ){
 	
@@ -19,6 +19,12 @@ if( $_REQUEST['page'] ){
 
 if( $_REQUEST ){
 	foreach ($_REQUEST as $k => $v) {
+		
+		if(! is_string($v) ){
+			continue;
+		} else if(! $v ){
+			continue;
+		}
 		
 		$_REQUEST[ $k ] = mysql_escape_string( $v );
 

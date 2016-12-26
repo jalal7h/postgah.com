@@ -7,8 +7,10 @@ function lmff_div_select( elem ) {
 }
 
 jQuery(document).ready(function($) {
-	$('label.lmfe_fileDiv input[type="file"]').on('change', function(){
+	
+	$("body").delegate( 'label.lmfe_fileDiv input[type="file"]', 'change', function() {
 
+		cl('s');
 		lmfetfp = $(this).parent().parent().find('div.lmfetfp');
 		lmfetfp.show();
 
@@ -17,6 +19,7 @@ jQuery(document).ready(function($) {
 
 		lmfetfp.html( extn );
 	});
+	
 });
 
 

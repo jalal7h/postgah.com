@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/31
-# 1.1
+# 2016/12/24
+# 1.2
 
 function listmaker_form_element_this_select( $info ){
 	
@@ -31,11 +31,15 @@ function listmaker_form_element_this_select( $info ){
 		$c.= $info['PreTab']."\t<option value=\"\">".$info['placeholder']."</option>\n";
 	}
 
-	$info['option'] = str_replace( "</option><option", "</option>\n".$info['PreTab']."\t<option", $info['option'] );
+	// $info['option'] = str_replace( "</option><option", "</option>\n".$info['PreTab']."\t<option", $info['option'] );
 
 	if( is_array($info['option']) ){
-		foreach ($info['option'] as $id => $name) {
-			$c.= $info['PreTab']."\t<option value=\"".$id."\">".$name."</option>\n";
+		foreach( $info['option'] as $id => $name ){
+			if( is_array($name) ){
+				$id = $name['id'];
+				$name = $name['name'];
+			}
+			$c.= "<option value=\"".$id."\"".( $id == $info['value'] ? " selected " : "" ).">".$name."</option>\n";
 		}
 	} else {
 		$c.= $info['PreTab']."\t".$info['option']."\n";
@@ -43,9 +47,9 @@ function listmaker_form_element_this_select( $info ){
 
 	$c.= $info['PreTab']."</select>\n";
 
-	if( $info['value'] ){
-		$c.= $info['PreTab']."<script>document.getElementById(\"".$info['id']."\").value = \"".$info['value']."\";</script>\n";
-	}
+	// if( $info['value'] ){
+		// $c.= $info['PreTab']."<script>document.getElementById(\"".$info['id']."\").value = \"".$info['value']."\";</script>\n";
+	// }
 
 	return $c;
 }

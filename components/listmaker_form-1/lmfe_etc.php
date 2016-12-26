@@ -1,9 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/07/30
-# Version 1.1
-
+# 2016/12/24
+# 1.2
 
 function lmfe_moreButton__nsf( $info , $c ){
 
@@ -39,9 +38,9 @@ function lmfe_tnit( $info, $skip_title=false ){
 	}
 	$GLOBALS[ 'lmfe_tnit-skip-'.$info['name'] ] = true;
 
-	# echo 
+	# echo
 	if(! $info['TitleInTag'] ){
-		$c.= $info['PreTab']."<span class=\"lmfe_tnit\">".( $skip_title ? '' : $info['placeholder'])."</span>";
+		$c.= "<span class=\"lmfe_tnit tnit_".$info["name"]."\">".( $skip_title ? '' : $info['placeholder'])."</span>";
 	}
 
 	return $c;

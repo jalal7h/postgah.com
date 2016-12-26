@@ -10,6 +10,9 @@ function dbrm( $table, $id=null, $recursive=false ){
 		if(! $id = $_REQUEST['id'] ){
 			return false;
 		}
+	
+	} else if(! is_numeric($id) ){
+		return e();
 	}
 
 	if( is_array($id) ) {
