@@ -17,18 +17,18 @@ function pgSearch_engine( $q ){
 	}
 
 	$query = " SELECT *, ".
-		" MATCH (`name`,`text`) AGAINST ('$q') AS relevance, ".
-		" MATCH (`name`) AGAINST ('$q') AS title_relevance ".
+		" MATCH (`text`) AGAINST ( '$q' IN BOOLEAN MODE) AS text_relevance, ".
+		" MATCH (`name`) AGAINST ( '$q' IN BOOLEAN MODE) AS title_relevance ".
 		" FROM `item` ".
-		" WHERE 1 AND `flag`='2' AND `expired`='0' $pos_query AND MATCH (`name`,`text`) AGAINST ('$q' IN BOOLEAN MODE ) ".
-		" ORDER BY title_relevance DESC , relevance DESC LIMIT $start, $limit ";
+		" WHERE 1 AND MATCH (`name`,`text`) AGAINST ( '$q' IN BOOLEAN MODE ) ".
+		" ORDER BY title_relevance DESC , text_relevance DESC LIMIT $start, $limit ";
 
 	// kword
 
 	// category
 
 	if(! $rs = dbq($query) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 		echo "<hr><div dir=ltr >".dbe()."</div><hr>";
 
 	} else if(! dbn($rs) ){
@@ -36,9 +36,12 @@ function pgSearch_engine( $q ){
 
 	} else while( $rw = dbf($rs) ){
 		$res[] = $rw;
+		// echo "<hr>";
+		// echo 'title_relevance : ' . $rw['title_relevance']."<br>";
+		// echo 'text_relevance : ' . $rw['text_relevance']."<br>";
 	}
 
-	$query = " SELECT * FROM `item` WHERE `flag`='2' AND `expired`='0' $pos_query AND MATCH (`name`,`text`) AGAINST ('$q' IN BOOLEAN MODE ) ";
+	$query = " SELECT * FROM `item` WHERE `flag`='2' AND `expired`='0' $pos_query AND MATCH (`name`,`text`) AGAINST ('*$q*' IN BOOLEAN MODE ) ";
 	$link = _URL."/?".query_string_set( "p", "%%" );
 	qpush( 'pgSearch_engine_paging', listmaker_paging( $query, $link, $limit ) );
 

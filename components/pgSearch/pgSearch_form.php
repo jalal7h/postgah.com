@@ -11,10 +11,10 @@ function pgSearch_form(){
 	$pos_id = intval($_REQUEST['position_id']);
 
 	if(! $rs = dbq(" SELECT * FROM `position` WHERE `parent`='0' ORDER BY `name` ASC ") ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else if(! dbn($rs) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else while( $rw = dbf($rs) ){
 		$list_of_options_for_states.= "<option ".( $pos_id==$rw['id'] ? "selected" : "" )." value=\"".$rw['id']."\">".$rw['name']."</option>\n";
