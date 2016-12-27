@@ -8,6 +8,7 @@ function noindexdirtypages(){
 	
 	if( strstr( _FULL_URL , '?') ){
 		return '<meta name="googlebot" content="noindex" />';
+	
 	} else {
 		return '';
 	}
