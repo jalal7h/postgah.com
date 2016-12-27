@@ -9,7 +9,7 @@ function canonical_tag(){
 	# 
 	# page
 	if(  (sizeof($_GET) == 0)  or  ( isset($_GET['page']) and (sizeof($_GET) == 1) )  ){
-		echo __LINE__;
+
 		if( _PAGE == 1 ){
 			$link = _URL;
 		
