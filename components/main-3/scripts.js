@@ -20,9 +20,12 @@ $(document).ready(function() {
         //     }   
         // }
 
+        // .
+        if( e.keyCode == 190 ){
+        	return;
 
         // F5
-        if( e.keyCode == 116 ){
+        } else if( e.keyCode == 116 ){
         	return;
 
         // ctrl

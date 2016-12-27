@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/19
-# 1.1
+# 2016/12/27
+# 1.2
 
 function listmaker_form_element_this_text( $info ){
 	
@@ -21,8 +21,9 @@ function listmaker_form_element_this_text( $info ){
 		( $info['content_min'] ? "content_min=\"".$info['content_min']."\" " : "" ).
 		( $info['content_max'] ? "content_max=\"".$info['content_max']."\" " : "" ).
 		( $info['TitleInTag'] ? "placeholder=\"".$info['placeholder']."\" " : 
-			( $info['placeholder'] ? "placeholder=\"".$info['placeholder']."\" " : '' )
-		 ).
+			// ( $info['placeholder'] ? "placeholder=\"".$info['placeholder']."\" " : '' )
+			""
+		).
 		"/>\n";
 
 	$minOrMax_c = listmaker_form_element_content_minOrMax_table( $info );

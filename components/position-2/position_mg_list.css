@@ -2,7 +2,7 @@
 /* 2016/10/09 */
 
 .listmaker_list_c.position_mg_list_c {
-	
+
 }
 .listmaker_list_c.position_mg_list_c .listmaker_list_paging {
 }
@@ -13,6 +13,7 @@
 }
 .position_mg_list_new {
 	margin-right: 5px;
+	margin-bottom: 50px;
 }
 .position_mg_list_new > input[type="text"] ,
 .position_mg_list_new > select {

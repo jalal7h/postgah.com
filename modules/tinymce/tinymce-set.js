@@ -1,7 +1,12 @@
 
 if( typeof tinymce !== 'undefined' ){
 	tinymce.init({
+
 		selector:'textarea.tinymce',
+
+                plugins: "paste",
+                paste_data_images: true,
+                
 		directionality : 'rtl',
 		theme_advanced_toolbar_align : "right",
 

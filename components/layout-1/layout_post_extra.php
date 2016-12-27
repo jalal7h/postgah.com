@@ -7,6 +7,7 @@ function layout_post_extra( $rw_pagelayer ){
 	?>
 
 	<script src="modules/tinymce/tinymce.min.js"></script>
+	<!-- <script src="//cdn.tinymce.com/4/tinymce.min.js"></script> -->
 	<script src="modules/tinymce/tinymce-set+func.js"></script>
 	
 	<textarea name="data" class="tinymce" id="_data" ><?=$rw_pagelayer['data']?></textarea>

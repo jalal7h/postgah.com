@@ -1,0 +1,15 @@
+
+.lmfe_inDiv.checkbox > label > span {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+.lmfe_inDiv.checkbox > label {
+	padding: 3px 10px;
+}
+.lmfe_inDiv.checkbox > label > input[type="checkbox"] {
+	top: 0px;
+}

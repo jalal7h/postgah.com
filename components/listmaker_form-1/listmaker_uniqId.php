@@ -2,6 +2,8 @@
 
 function listmaker_uniqId( $id ){
 
+	$id = explode('[', $id)[0];
+
 	if(! $GLOBALS['listmaker_uniqId'] ){
 		$GLOBALS['listmaker_uniqId'][] = $id;
 		

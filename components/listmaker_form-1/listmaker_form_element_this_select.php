@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/24
-# 1.2
+# 2016/12/27
+# 1.3
 
 function listmaker_form_element_this_select( $info ){
 	
@@ -19,7 +19,7 @@ function listmaker_form_element_this_select( $info ){
 		$info['id'] = "lmfe_".$info['formName']."_".$info['name'];
 	}
 
-	$c.= $info['PreTab']."<select ".
+	$c.= "<select ".
 		"name=\"".$info['name'].( $info['ArrayInput'] ? '[]' : '' )."\" ".
 		"id=\"".$id."\" ".
 		( $info['class'] ? "class=\"".$info['class']."\" " : '' ).
@@ -28,7 +28,9 @@ function listmaker_form_element_this_select( $info ){
 		">\n";
 
 	if( $info['TitleInTag'] ){
-		$c.= $info['PreTab']."\t<option value=\"\">".$info['placeholder']."</option>\n";
+		$c.= "\t<option value=\"\">".$info['placeholder']."</option>\n";
+	} else if(! $_REQUEST['id'] ){
+		$c.= "\t<option value=\"\"></option>\n";
 	}
 
 	// $info['option'] = str_replace( "</option><option", "</option>\n".$info['PreTab']."\t<option", $info['option'] );
@@ -42,10 +44,10 @@ function listmaker_form_element_this_select( $info ){
 			$c.= "<option value=\"".$id."\"".( $id == $info['value'] ? " selected " : "" ).">".$name."</option>\n";
 		}
 	} else {
-		$c.= $info['PreTab']."\t".$info['option']."\n";
+		$c.= $info['option']."\n";
 	}
 
-	$c.= $info['PreTab']."</select>\n";
+	$c.= "</select>\n";
 
 	// if( $info['value'] ){
 		// $c.= $info['PreTab']."<script>document.getElementById(\"".$info['id']."\").value = \"".$info['value']."\";</script>\n";
