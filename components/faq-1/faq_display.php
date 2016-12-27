@@ -1,20 +1,20 @@
 <?php
 
 # jalal7h@gmail.com
-# 2016/06/20
-# Version 1.2
+# 2016/12/27
+# 1.3
 
 $GLOBALS['block_layers']['faq_display'] = 'سوالات متداول';
 
 function faq_display( $table_name=null, $page_id=null ){
 	
-	if(! $rs = dbq(" SELECT * FROM `faq` WHERE 1 ORDER BY `name` ASC ") ){
+	if(! $rs = dbq(" SELECT * FROM `faq` WHERE 1 ORDER BY `prio` ASC ") ){
 		e();
 	
-	} else if(!dbn($rs)){
+	} else if(! dbn($rs) ){
 		e();
 	
-	} else while($rw = dbf($rs)){
+	} else while( $rw = dbf($rs) ){
 		$list[] = [ "name"=>$rw['name'], "text"=>$rw['text'] ];
 	}
 
