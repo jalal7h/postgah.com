@@ -10,6 +10,9 @@ function layout_post( $rw /* $rw_pagelayer */ ){
 	
 	$allow_eval = false;
 	
+	// $rw['data'] = str_replace( "\'", "'", $rw['data'] );
+	$rw['data'] = stripcslashes( $rw['data'] );
+
 	switch(strtoupper($rw['type'])){
 	
 		case 'HTML' :

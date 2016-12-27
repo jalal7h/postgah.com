@@ -26,12 +26,15 @@ if( $_REQUEST ){
 			continue;
 		}
 		
+		// $_REQUEST[ $k ] = str_replace( "'", "\'", $v );
 		$_REQUEST[ $k ] = mysql_escape_string( $v );
 
 		if( $_GET[ $k ] ){
+			// $_GET[ $k ] = str_replace( "'", "\'", $v );
 			$_GET[ $k ] = mysql_escape_string( $v );
 
 		} else if( $_POST[ $k ] ){
+			// $_POST[ $k ] = str_replace( "'", "\'", $v );
 			$_POST[ $k ] = mysql_escape_string( $v );
 		}
 

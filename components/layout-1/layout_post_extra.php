@@ -3,7 +3,9 @@
 function layout_post_extra( $rw_pagelayer ){
 	
 	$rw_pagelayer['data'] = str_ireplace( "</textarea>", "&lt;/textarea&gt;", $rw_pagelayer['data'] );
-	
+	// $rw_pagelayer['data'] = str_replace( "\'", "'", $rw_pagelayer['data'] );
+	$rw_pagelayer['data'] = stripcslashes( $rw_pagelayer['data'] );
+
 	?>
 
 	<script src="modules/tinymce/tinymce.min.js"></script>
