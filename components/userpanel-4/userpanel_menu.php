@@ -8,6 +8,8 @@ $GLOBALS['block_layers_side']['userpanel_menu'] = 'منوی کاربری';
 
 function userpanel_menu(){
 	
+	$userpanel_slug = Slug::get('page',14);
+
 	if(! $user_id = user_logged() ){
 		return dg();
 	
@@ -31,7 +33,7 @@ function userpanel_menu(){
 
 	echo '<div class="userpanel_menu">';
 	if( $rw['profile_pic']!='' ){
-		echo '<a class="profile_avatar" href="./?page='.$_REQUEST['page'].'&do=userprofile_form"><img src="resize/320x500/'.$rw['profile_pic'].'" /></a>';
+		echo '<a class="profile_avatar" href="'._URL.'/'.$userpanel_slug.'/userprofile_form"><img src="'._URL.'/resize/320x500/'.$rw['profile_pic'].'" /></a>';
 	} else {
 		echo '<div class="profile_avatar"><img src="'._URL.'/image_list/avatar-not-found.png"/></div>';
 	}
@@ -47,7 +49,9 @@ function userpanel_menu(){
 		$func = $array[0];
 		$name = $array[1];
 
-		echo '<a href="'._URL.'/?page='.$_REQUEST['page'].'&do='.$func.'" class="userpanel_menu_'.$func.( $_REQUEST['do']==$func ? " current" : "" ).'" ><span>'.$name.'</span></a>';
+		// '._URL.'/?page='.$_REQUEST['page'].'&do='.$func.'
+
+		echo '<a href="'._URL.'/'.$userpanel_slug.'/'.$func.'" class="userpanel_menu_'.$func.( $_REQUEST['do']==$func ? " current" : "" ).'" ><span>'.$name.'</span></a>';
 
 	}
 

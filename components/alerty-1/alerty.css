@@ -1,0 +1,21 @@
+
+#alerty {
+	position: fixed;
+	left: 20px;
+	bottom: 20px;
+	z-index: 1111;
+}
+#alerty .msg {
+	max-width: 400px;
+	margin: 15px 0 0 0;
+	padding: 12px 20px;
+	box-shadow: 0 0 40px rgba(0, 0, 0, .5);
+	border-radius: 6px;
+	background-color: white;
+	direction: rtl;
+	transition: all 1s;
+}
+
+#alerty .msg.hide {
+	opacity: 0.0;
+}

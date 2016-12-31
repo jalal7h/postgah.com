@@ -2,7 +2,7 @@
 
 function breadcrumb_52(){
 	
-	$links[] = "<a href=\"./news\">اخبار سایت</a>";
+	$links[] = "<a href=\"".layout_link(51)."\">".__('اخبار سایت')."</a>";
 
 	if(! $news_id = $_REQUEST['id'] ){
 		//

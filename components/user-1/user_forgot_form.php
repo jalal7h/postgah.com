@@ -9,7 +9,7 @@ $GLOBALS['block_layers']['user_forgot_form'] = 'فرم فراموشی کلمه �
 function user_forgot_form(){
 	
 	if( user_logged() ){
-		jsgo( _URL.'/userpanel' );
+		jsgo( layout_link(14) );
 	}
 
 	switch ($_REQUEST['do']) {
@@ -25,7 +25,7 @@ function user_forgot_form(){
 	}
 
 	?>
-	<form method="post" action="./?page=<?=$_REQUEST['page']?>&do=send" id="user_forgot_form" >
+	<form method="post" action="<?=_URL?>/?page=<?=$_REQUEST['page']?>&do=send" id="user_forgot_form" >
 		<?=token_make()?>
 		<div class="container"> 
 			<div class="d01"><?=__('فراموشی کلمه عبور!')?></div>

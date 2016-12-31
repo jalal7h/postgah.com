@@ -38,7 +38,7 @@ function user_forgot_save(){
 		
 		# texty
 		$vars['user_new_password'] = $password;
-		$vars['__AFTER__'] = '<br><a href="./userpanel">'.__('ورود به محیط کاربری').'</a>';
+		$vars['__AFTER__'] = '<br><a href="'.layout_link(14).'">'.__('ورود به محیط کاربری').'</a>';
 		echo texty( 'user_forgot_save', $vars );
 
 		return true;

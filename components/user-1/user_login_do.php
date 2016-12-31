@@ -14,7 +14,7 @@ function user_login_do(){
 	
 	} else if( $_REQUEST['do'] != "login_do" ){
 		dg($u);
-		header("Location: ./login");
+		header( "Location: ".layout_link(60) );
 		die();
 	
 	} else if(! user_login_check( $u , $p ) ){
@@ -31,7 +31,7 @@ function user_login_do(){
 			jsgo( $r );
 		
 		} else {
-			jsgo( './userpanel' );
+			jsgo( layout_link(14) );
 		}
 		
 	}

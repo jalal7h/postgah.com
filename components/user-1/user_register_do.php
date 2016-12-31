@@ -1,13 +1,13 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/26
-# 1.4
+# 2016/12/31
+# 1.5
 
 function user_register_do(){
 	
 	if( user_logged() ){
-		jsgo( _URL.'/userpanel' );
+		jsgo( layout_link(14) );
 
 	} else if( is_component('user_emailverifybeforesignup') and !user_emailverifybeforesignup_check() ){
 		$text = user_emailverifybeforesignup_invalid_verification_link;
@@ -54,17 +54,17 @@ function user_register_do(){
 		$vars['user_id'] = $user_id;
 		$vars['user_username'] = $username;
 		$vars['user_password'] = $password;
-		$vars['login_page'] = _URL.'/login';
+		$vars['login_page'] = layout_link(60);
 
 		$vars['__BEFORE__'] = '<div class="'.__FUNCTION__.'"><icon></icon><div class="left"><span>';
-		$vars['__AFTER__'] = '</span><a href="./userpanel">'.__('ورود به محیط کاربری').'</a></div></div>';
+		$vars['__AFTER__'] = '</span><a href="'.layout_link(14).'">'.__('ورود به محیط کاربری').'</a></div></div>';
 		
 		echo texty( 'user_register_do' , $vars, '', $convbox=false );
 					
 		return true;
 	}
 
-	echo convbox( $text );
+	echo convbox( $text."<br><a href=\"javascript:history.go(-1);\">".__('بازگشت')."</a>", "transparent" );
 	return false;
 
 }

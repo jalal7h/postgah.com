@@ -22,16 +22,18 @@ jQuery(document).ready(function($) {
 	$('.layout_mg_this_layer > .tools > a.remove').on('click', function(e){
 		if( confirm( $(this).attr('text_remove') ) ){
 			
-			$(this).parent().parent().hide();
+			the_layer = $(this).parent().parent();
 
 			$.ajax({
 				url: './?do_action=layout_mg_this_layer_this_remove&id=' + $(this).attr('layer_id'),
-			}).done(function(){
-				cl('done');
-				$(this).parent().parent().show();
-
-			}).fail(function() {
-				$(this).parent().parent().show();
+			
+			}).done(function( html ){
+				if( html == "OK" ){
+					the_layer.hide();
+				} else {
+					// the_layer.show();
+					alerty( html );
+				}
 			});
 
 		}

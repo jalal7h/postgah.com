@@ -11,7 +11,7 @@ function layout_mg_this( $rw ){
 	<div class="this">
 		
 		<div class="the_name">
-			<a class="name" href="<?=layout_page_link( $rw )?>" target="_blank"><?=$rw['name']?></a>
+			<a class="name" href="<?=layout_link( $rw )?>" target="_blank"><?=$rw['name']?></a>
 			<form class="rename_form" method="post" >
 				<input type="hidden" name="id" value="<?=$rw['id']?>" />
 				<input type="text" name="name" value="<?=$rw['name']?>"/>
@@ -63,7 +63,7 @@ function layout_mg_this( $rw ){
 			<icon></icon>
 		</a>
 
-		<? if( $rw['id'] > 1 ){ ?>
+		<? if( $rw['id'] > 100 ){ ?>
 		<a onclick="if(!confirm('<?=__('آیا مایل به حذف هستید؟')?>'))return false;" class="the_remove_button" href="<?=_URL?>/?page=admin&cp=<?=$_REQUEST['cp']?>&do=remove&id=<?=$rw['id']?>">
 			<icon></icon>
 		</a>

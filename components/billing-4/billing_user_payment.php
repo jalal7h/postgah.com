@@ -48,7 +48,7 @@ function billing_userpanel_payment(){
 			<div class='r'>
 			<label>
 			<input title='".__('کیف پول')."' type=radio name='method' value='wallet' />
-			<img src='image_list/billing_wallet.png'/>
+			<img src='"._URL."/image_list/billing_wallet.png'/>
 			<span class='wallet_credit'>".billing_format( billing_userCredit($user_id) )." ".__('اعتبار')."</span>
 			</label>
 			</div>";
@@ -63,7 +63,7 @@ function billing_userpanel_payment(){
 			continue;
 		
 		} else {
-			$method_str.= "<div class='r'><label><input title='$method_title' type='radio' name='method' value='$method' /><img src='image_list/billing_".$method.".png'/>".($method=='wallet'?$wallet_credit:"")."</label></div>";
+			$method_str.= "<div class='r'><label><input title='$method_title' type='radio' name='method' value='$method' /><img src='"._URL."/image_list/billing_".$method.".png'/>".($method=='wallet'?$wallet_credit:"")."</label></div>";
 		}
 
 	}

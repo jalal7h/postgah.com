@@ -28,7 +28,7 @@ function news_mg_list(){
 	
 	$list['list_array'] = array(
 		// picture
-		array(	"picture" => '$rw["image"]'),
+		array(	"picture" => '_URL."/".$rw["image"]'),
 		
 		// name
 		array(	"content" => '$rw["name"]'),

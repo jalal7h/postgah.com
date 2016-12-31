@@ -9,7 +9,7 @@ $GLOBALS['block_layers_center']['userpanel_desk'] = 'میز کاربری';
 function userpanel_desk(){
 
 	if( ! user_logged() ){
-		user_logout('./login');
+		user_logout( layout_link(60) );
 	}
 
 	userpanel_fix_do();

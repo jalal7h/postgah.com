@@ -1,5 +1,9 @@
 <?
 
+# jalal7h@gmail.com
+# 2016/12/31
+# 1.0
+
 function pgShop_user_list(){
 	
 	if(! $user_id = user_logged() ){
@@ -19,11 +23,11 @@ function pgShop_user_list(){
 	# 
 	# base url is needed in version upper 1.2 
 	# ** address base e in list
-	$list['base_url'] = '"./?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'"';
+	$list['base_url'] = '_URL."/?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'"';
 
 	# 
 	# target // maghsad e click ruye har row
-	$list['target_url'] = '"./?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=form&id=".$rw["id"]';
+	$list['target_url'] = '_URL."/?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=form&id=".$rw["id"]';
 
 	# 
 	# actions 

@@ -20,7 +20,7 @@ function pgPlan_syncItemPlan($item_id)
             
             $vars['item_name'] = $rw_item['name'];
             $vars['item_old_plan'] = table('plan', $rw['plan'], 'name_on_form');
-            $vars['item_renew_link'] = _URL.'/userpanel';
+            $vars['item_renew_link'] = layout_link(14);
 
             texty('pgPlan_syncItemPlan_changed_to_free', $vars, $user_id);
         }

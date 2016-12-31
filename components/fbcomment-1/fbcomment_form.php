@@ -10,7 +10,7 @@ function fbcomment_form( $table_name , $table_id , $comment_id=0, $page_id=0 ){
 	# no login / no form
 	if(! $user_id = user_logged() ){
 		if( $comment_id == 0 ){
-			$c.= "<div class='fbcomment_form_login_request'>".__("ثبت نظر فقط برای کاربران سایت مجاز است.<br>برای ادامه %%ثبت نام%% کنید.", [ "<a href='./register' class='register_popup'>", "</a>" ] )."</div>";
+			$c.= "<div class='fbcomment_form_login_request'>".__("ثبت نظر فقط برای کاربران سایت مجاز است.<br>برای ادامه %%ثبت نام%% کنید.", [ "<a href='".layout_link(58)."' class='register_popup'>", "</a>" ] )."</div>";
 		}
 
 	} else {

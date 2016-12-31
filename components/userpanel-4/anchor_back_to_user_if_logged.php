@@ -1,5 +1,9 @@
 <?
 
+# jalal7h@gmail.com
+# 2016/12/31
+# 1.0
+
 function anchor_back_to_user_if_logged(){
 
 	if( is_userpanel() ){
@@ -9,7 +13,7 @@ function anchor_back_to_user_if_logged(){
 		//
 	
 	} else {
-		return "<a target='_blank' href='"._URL."/userpanel' id='anchor_back_to_user_if_logged'>".__('محیط کاربری')."</a>";
+		return "<a target='_blank' href='".layout_link(14)."' id='anchor_back_to_user_if_logged'>".__('محیط کاربری')."</a>";
 	}
 
 }

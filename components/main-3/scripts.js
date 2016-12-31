@@ -1,25 +1,50 @@
 
+
+// _URL
+var _URL;
+_URL = window.location.href.match(/^.*\//);
+_URL = String( _URL );
+_URL = _URL.substr( 0, _URL.length -1 );
+
+
 $(document).ready(function() {
+
+
+	// scroll to hash section
+	$("a").on('click', function(event) {
+		if( this.hash !== "" ) {
+			event.preventDefault();
+			var hash = this.hash;
+			$('html, body').animate({
+				scrollTop: $(hash).offset().top
+			}, 800, function(){
+				window.location.hash = hash;
+			});
+		}
+	});
+
+
+	// autocomplete off
+	setTimeout(function(){
+		$("input").each(function(i) {
+			the_tag_name = $(this).attr('name');
+			if (typeof the_tag_name === 'undefined' ) {
+				//
+			} else if( the_tag_name.indexOf( "[" ) > -1 ){
+				//
+			} else {
+				the_value = $(this).val();
+				$(this).val( '' );
+				$(this).val( the_value );
+			}
+		});
+
+	}, 100);
+
 
 	// numeric force input
     $(".numeric").keydown(function(e) {
-    	
-        // Allow: backspace, delete, tab, escape, and enter
-        // if ( event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 || 
-        //      // Allow: Ctrl+A
-        //     (event.keyCode == 65 && event.ctrlKey === true) || 
-        //      // Allow: home, end, left, right
-        //     (event.keyCode >= 35 && event.keyCode <= 39)) {
-        //          // let it happen, don't do anything
-        //          return;
-        
-        // } else {
-        //     // Ensure that it is a number and stop the keypress
-        //     if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105 )) {
-        //         event.preventDefault(); 
-        //     }   
-        // }
-
+    
         // .
         if( e.keyCode == 190 ){
         	return;
@@ -130,6 +155,12 @@ function number_format(n){
 	return r;
 }
 
-function cl(t){console.log(t);}
+function cl(t){
+	console.log(t);
+}
 
+
+function rand( n ){
+	return Math.round( Math.random() * Math.pow( 10 , n ) );
+}
 

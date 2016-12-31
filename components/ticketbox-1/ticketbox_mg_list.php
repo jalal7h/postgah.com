@@ -51,18 +51,18 @@ function ticketbox_mg_list(){
 	#
 	# base url is needed in version upper 1.2 
 	# ** address base e in list
-	$list['base_url'] = '"./?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['func'].'"';
+	$list['base_url'] = '_URL."/?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['func'].'"';
 
 	#
 	# target // maghsad e click ruye har row
-	$list['target_url'] = '"./?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['func'].'&do=view&id=".$rw["ticketbox_id"]';
+	$list['target_url'] = '_URL."/?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['func'].'&do=view&id=".$rw["ticketbox_id"]';
 
 	#
 	# actions 
 	# ** mitunim link ham bedim bejaye 'true'
 	# ** ama age base_url ro dashte bashim az hamun estefade mikone
 	#
-	$list['addnew_url'] = '"./?page=admin&cp='.$_REQUEST['cp'].'&func=ticketbox_mg_form"';
+	$list['addnew_url'] = '_URL."/?page=admin&cp='.$_REQUEST['cp'].'&func=ticketbox_mg_form"';
 	$list['remove_url'] = true; // link dokme hazf
 	// $list['setflag_url'] = true; // link active / inactive
 	$list['paging_url'] = true; // not needed when we have 'tdd'

@@ -55,12 +55,12 @@
 	color: #000;
 }
 .billing_userpanel_payment .method_list .offline .c1 {
-	position: absolute; right: 30px; top: 17px;
+	position: absolute; right: 30px; top: 10px;
 	direction: rtl;
 }
 .billing_userpanel_payment .method_list .offline .c-container {
 	display: inline-block;
-	position: absolute; left: 14px; top: 14px;
+	position: absolute; left: 14px; top: 6px;
 }
 .billing_userpanel_payment .method_list .offline span {
 	display: block;

@@ -7,8 +7,7 @@
 function pgItem_user_list(){
 
 	if(! $user_id = user_logged() ){
-		echo "<script>location.href = '"._URL."/login';</script>";
-		die();
+		jsgo( layout_link(60) );
 	}
 
 	$content.= qpop( 'pgItem_user_saveNew_result' );
@@ -26,7 +25,7 @@ function pgItem_user_list(){
 	#
 	# base url is needed in version upper 1.2 
 	# ** address base e in list
-	$list['base_url'] = '"./?page='.$_REQUEST['page'].'&do=pgItem_user"';
+	$list['base_url'] = '_URL."/?page='.$_REQUEST['page'].'&do=pgItem_user"';
 
 	#
 	# actions 
@@ -34,9 +33,9 @@ function pgItem_user_list(){
 	# ** ama age base_url ro dashte bashim az hamun estefade mikone
 	#
 	
-	$list['addnew_url'] = true;
+	$list['addnew_url'] = '"'._URL.'/new_item"';
 	$list['remove_url'] = true; // link dokme hazf
-	$list['modify_url'] = '"./?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=form&id=".$rw["id"]';
+	$list['modify_url'] = '_URL."/?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=form&id=".$rw["id"]';
 	$list['paging_url'] = true; // not needed when we have 'tdd'
 	// $list['tr_class'] = 'pgItem_user_list_tr_class($rw)';
 	

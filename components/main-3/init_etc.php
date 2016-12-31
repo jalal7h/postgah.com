@@ -4,7 +4,7 @@
 # 2016/07/01
 # 1.1
 
-$GLOBALS['do_init'][] = 'init_etc';
+add_init( 'init_etc', 1 );
 
 function init_etc(){
 	
@@ -13,6 +13,13 @@ function init_etc(){
 	if( session_id()=='' ){
 		session_start();
 	}
+
+	#
+	# _PAGE
+	if(! $page_id = $_REQUEST['page'] ){
+		$page_id = 1;
+	}
+	define( '_PAGE', $page_id );
 
 	# 
 	# main components

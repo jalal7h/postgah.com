@@ -25,7 +25,7 @@ function linkify_mg_this_form(){
 		dg();
 
 	} else while( $rw_page = dbf($rs_page) ){
-		$list_of_pages_in_select.= "<option value='".layout_page_link($rw_page)."::".$rw_page['name']."' >".$rw_page['name']."</option>";
+		$list_of_pages_in_select.= "<option value='".layout_link($rw_page)."::".$rw_page['name']."' >".$rw_page['name']."</option>";
 	}
 	
 

@@ -1,57 +1,10 @@
+
+
+#
+# Middle Section
+
 RewriteEngine On
 # AddType application/x-httpd-php54 .php
-
-# 
-# billing-4
-RewriteRule ^billing-invoice-([0-9]+)$ ./?page=14&do=billing_userpanel_payment&invoice_id=$1 [L]
-
-# 
-# captcha-1
-RewriteRule ^captcha-(.*)\.png(.*)$ ./?do_action=captcha_build&captcha_name=$1 [L]
-
-# 
-# contact-3
-RewriteRule ^contact$ ./?page=2 [L]
-
-# 
-# faq-1
-RewriteRule ^faq$ ./?page=20 [L]
-
-# 
-# layout-1
-RewriteRule ^page-([0-9]+).html$ ./?page=$1&canonical_tag=1 [L]
-
-# 
-# main-3
-RewriteRule ^about$ ./?page=3 [L]
-RewriteRule ^terms$ ./?page=6 [L]
-RewriteRule ^help$ ./?page=4 [L]
-RewriteRule ^privacy$ ./?page=7 [L]
-RewriteRule ^admin$ ./?page=admin [L]
-RewriteRule ^image_list/(.*)$ ./?do_action=imgp_echo&filename=$1 [L]
-
-
-<FilesMatch "\.(ico|pdf|jpg|jpeg|png|gif|html|htm|xml|txt|xsl)$">
-Header set Cache-Control "max-age=31536050"
-</FilesMatch>
-
-# 
-# main.include-3
-RewriteRule ^scripts.js$ ./?do_action=include_all_js [L]
-RewriteRule ^scripts-enqueue.js$ ./?do_action=include_all_js_enqueue [L]
-RewriteRule ^scripts-footer.js$ ./?do_action=include_all_js_footer [L]
-RewriteRule ^scripts-admin.js$ ./?do_action=include_all_js&page=admin [L]
-RewriteRule ^styles.css$ ./?do_action=include_all_css [L]
-RewriteRule ^styles-admin.css$ ./?do_action=include_all_css&page=admin [L]
-
-# 
-# news-4
-RewriteRule ^news$ ./?page=51 [L]
-RewriteRule ^news-([0-9]+)-(.*).html$ ./?page=52&id=$1 [L]
-
-# 
-# newsletter-1
-RewriteRule ^newsletter-email-list.txt$ ./?do_action=nl_mg_emailList_download [L]
 
 # 
 # pgCat
@@ -63,53 +16,30 @@ RewriteRule ^([0-9]*)-(.*)$ ./?page=66&item_id=$1&canonical_tag=1 [L]
 RewriteRule ^([0-9]*).html$ ./?page=66&item_id=$1&item_needs_to_be_redirected=1 [L]
 
 # 
-# pgItem_user
-RewriteRule ^new_item$ ./?page=14&do=pgItem_user&do1=form [L]
-
-# 
 # pgSearch
 RewriteRule ^tag/(.*)$ ./?page=67&q=$1&its_tag=1&canonical_tag=1 [L]
 
 RewriteRule ^pk=(.*)$ ./?page=67&q=$1&tag_needs_to_be_redirected=1&its_tag=1 [L]
 RewriteRule ^t=(.*)/p=([0-9]*).html$ ./?page=67&q=$1&tag_needs_to_be_redirected=1&its_tag=1 [L]
 
-# 
-# resize-1
-RewriteRule ^resize/([0-9]+)x([0-9]+)/(.*)$ ./?do_action=quick_resize&width=$1&height=$2&address=$3 [L]
+
+
+#
+# End Section
 
 # 
-# seo-4
-RewriteRule ^sitemap.xml$ ./?do_action=seo_sitemap_mega [L]
-RewriteRule ^sitemap/([a-zA-Z0-9]+)-([0-9]+)\.xml$ ./?do_action=seo_sitemap&feed=$1&page=$2 [L]
-RewriteRule ^sitemap/([a-zA-Z0-9]+)\.xml$ ./?do_action=seo_sitemap&feed=$1 [L]
-
-RewriteRule ^rss$ ./?do_action=seo_rss_mega [L]
-RewriteRule ^rss/([a-zA-Z0-9]+)\.xml$ ./?do_action=seo_rss&feed=$1 [L]
+# main.etc-3
+<FilesMatch "\.(ico|pdf|jpg|jpeg|png|gif|html|htm|xml|txt|xsl)$">
+Header set Cache-Control "max-age=31536050"
+</FilesMatch>
 
 # 
-# ticketbox-1
-RewriteRule ^tickets$ ./?page=14&do=ticketbox_user_list [L]
-RewriteRule ^ticket-([0-9]+)$ ./?page=14&do=ticketbox_user_list&do1=view&id=$1 [L]
-
-# 
-# user-1
-RewriteRule ^register$ ./?page=58 [L]
-RewriteRule ^register_do$ ./?page=59 [L]
-RewriteRule ^login$ ./?page=60 [L]
-RewriteRule ^forgot$ ./?page=63 [L]
-
-# 
-# userpanel-4
-RewriteRule ^userpanel$ ./?page=14 [L]
-
-# 
-# userprofile-1
-RewriteRule ^@([0-9]+)$ ./?page=19&id=$1 [L]
-
-# 
-# d404-1
-RewriteCond %{REQUEST_FILENAME} !-f 
-RewriteCond %{REQUEST_FILENAME} !-d 
-RewriteCond %{REQUEST_URI} !image_list
-RewriteRule .* ./?do_action=d404 [L]
+# main.slug-1
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . ./index.php [L]
+</IfModule>
 

@@ -13,7 +13,7 @@ function user_changepassword_form(){
 			return user_changepassword_save();
 
 		default :
-			echo "<form id=".__FUNCTION__." method=post action='./?page=".$_REQUEST['page']."&do=".$_REQUEST['do']."&do2=save' onsubmit='return checkform_uchform();' name=uchform >
+			echo "<form id=".__FUNCTION__." method=post action='"._URL."/?page=".$_REQUEST['page']."&do=".$_REQUEST['do']."&do2=save' onsubmit='return checkform_uchform();' name=uchform >
 			<input type='hidden' name='email' value='$email'>
 			<input type='hidden' name='h' value='".$_REQUEST['h']."'>
 

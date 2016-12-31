@@ -7,7 +7,7 @@
 $GLOBALS['do_action'][] = 'user_logout';
 $GLOBALS['userpanel_item'][ 96 ] = [ 'user_logout', 'خروج', '08b' ];
 
-function user_logout( $redirect_to='./' ){
+function user_logout( $redirect_to=_URL ){
 	
 	unset( $_SESSION[ login_key()['uid'] ] );
 	

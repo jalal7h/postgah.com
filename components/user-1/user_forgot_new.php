@@ -16,7 +16,7 @@ function user_forgot_new(){
 	} else {
 		
 		?>
-		<form id="user_forgot_new" method="post" action="./?page=<?=intval($_REQUEST['page'])?>&do=save" >
+		<form id="user_forgot_new" method="post" action="<?=_URL?>/?page=<?=intval($_REQUEST['page'])?>&do=save" >
 		<?=token_make()?>
 		<input type="hidden" name="username" value="<?=$username?>" />
 		<input type="hidden" name="h" value="<?=$h_old?>" />

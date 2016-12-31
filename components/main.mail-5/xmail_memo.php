@@ -10,7 +10,7 @@ function xmail_memo( $to, $subject, $text ){
 	<div class=\"".__FUNCTION__."\">
 		<div>to: ".$to."</div>
 		<div>subject: ".$subject."</div>
-		<div>text:<br> ".$text."</div>
+		<div>text:<br> ".nl2br($text)."</div>
 	</div>";
 
 }

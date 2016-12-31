@@ -1,5 +1,8 @@
 <?php
 
+# jalal7h@gmail.com
+# 2016/12/31
+# 1.0
 
 function layout_open(){
 
@@ -13,6 +16,7 @@ function layout_open(){
 	# title
 	// it have an special title
 	if( $rw['meta_title'] ){
+		$rw['meta_title'] = stripcslashes($rw['meta_title']);
 		ob_start();
 		eval("?>".$rw['meta_title']."<?");
 		$vars['meta_title'] = ob_get_contents();
@@ -20,7 +24,7 @@ function layout_open(){
 	
 	// its a normal page with no special title
 	} else {
-		$vars['meta_title'] = tab__temp('main_title');
+		$vars['meta_title'] = setting('main_title');
 		if( $rw['id']!=1 and $rw['name'] ){
 			$vars['meta_title'].="، ".$rw['name'];
 		}
@@ -29,6 +33,7 @@ function layout_open(){
 	#
 	# kw
 	if($rw['meta_kw']){ // it have an special title
+		$rw['meta_kw'] = stripcslashes($rw['meta_kw']);
 		ob_start();
 		eval("?>".$rw['meta_kw']."<?");
 		$vars['meta_kw'] = ob_get_contents();
@@ -41,6 +46,7 @@ function layout_open(){
 	#
 	# desc
 	if($rw['meta_desc']){ // it have an special title
+		$rw['meta_desc'] = stripcslashes($rw['meta_desc']);
 		ob_start();
 		eval("?>".$rw['meta_desc']."<?");
 		$vars['meta_desc'] = ob_get_contents();

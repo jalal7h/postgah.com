@@ -4,10 +4,10 @@
 # 2016/12/23
 # 1.0
 
-$GLOBALS['cmp']['billing_management'] = 'حسابداری';
-$GLOBALS['cmp-icon']['billing_management'] = '155';
+$GLOBALS['cmp']['billing_mg'] = 'حسابداری';
+$GLOBALS['cmp-icon']['billing_mg'] = '155';
 
-function billing_management(){
+function billing_mg(){
 	
 	$url = "./?page=admin&cp=".$_REQUEST['cp'];
 	

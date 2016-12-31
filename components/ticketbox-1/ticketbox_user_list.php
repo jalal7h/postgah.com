@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/07
-# 1.0
+# 2016/12/31
+# 1.1
 
 $GLOBALS['userpanel_item'][ 51 ] = [ 'ticketbox_user_list', 'پیام ها', '0e6' ];
 
@@ -47,7 +47,7 @@ function ticketbox_user_list(){
 	#
 	# base url is needed in version upper 1.2 
 	# ** address base e in list
-	$list['base_url'] = '"./?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'"';
+	$list['base_url'] = '_URL."/?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'"';
 
 	#
 	# target // maghsad e click ruye har row

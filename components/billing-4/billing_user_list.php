@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/08
-# 1.1
+# 2016/12/31
+# 1.2
 
 # list of payments done by user
 /*README*/
@@ -79,7 +79,7 @@ function billing_userpanel_list(){
 
 	#
 	# the paging links
-	$link = "./?page=".$_REQUEST['page']."&do=".$_REQUEST['do']."&p=";
+	$link = _URL."/?page=".$_REQUEST['page']."&do=".$_REQUEST['do']."&p=";
 	echo listmaker_paging( $query, $link, $tdd );
 
 	# 

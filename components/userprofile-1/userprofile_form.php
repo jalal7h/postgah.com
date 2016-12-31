@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/30
-# 1.1
+# 2016/12/31
+# 1.2
 
 $GLOBALS['userpanel_item'][ 94 ] = [ 'userprofile_form', 'پروفایل کاربر', '007' ];
 
@@ -30,7 +30,7 @@ function userprofile_form(){
 		echo listmaker_form('
 			[!
 				"table" => "user" ,
-				"action" => "./?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'",
+				"action" => "'._URL.'/?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'",
 				"name" => "'.__FUNCTION__.'" ,
 				"class" => "'.__FUNCTION__.'" ,
 				"switch" => "do2",
@@ -44,7 +44,7 @@ function userprofile_form(){
 				[!"text:address","inDiv"!]
 
 				[!"file:profile_pic","inDiv"!]
-				[!"select:gender","option"=>[""=>"", "M"=>"'.__('مذکر').'", "F"=>"'.__('مونث').'"],"inDiv"!]
+				[!"select:gender","option"=>["M"=>"'.__('مذکر').'", "F"=>"'.__('مونث').'"],"inDiv"!]
 
 				[!"text:im_a","inDiv"!]
 				[!"text:work_at","inDiv"!]

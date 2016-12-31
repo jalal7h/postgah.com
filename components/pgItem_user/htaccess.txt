@@ -1,2 +1,0 @@
-
-RewriteRule ^new_item$ ./?page=14&do=pgItem_user&do1=form [L]

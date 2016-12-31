@@ -19,10 +19,6 @@ function layout_mg(){
 		case 'meta_form':
 			return layout_mg_meta_form();
 
-		case 'meta_save':
-			layout_mg_meta_save();
-			break;
-
 		case 'layer_form':
 			return layout_mg_layer_form();
 
