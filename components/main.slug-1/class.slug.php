@@ -1,13 +1,13 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/31
-# 1.1
+# 2017/01/01
+# 1.2
 
 class Slug {
 
 
-	public function translate(){
+	public static function translate(){
 
 		if( _URI == '/' ){
 			return true;
@@ -26,16 +26,14 @@ class Slug {
 			return true;
 
 		} else if( sizeof($_REQUEST) == 0 ) {
-			// 404
-			// define( '_PAGE', $_REQUEST['page'] );
-			$_REQUEST['do_action'] = 'd404';
-			// d404();
+			define( '_PAGE', ( $_REQUEST['page'] ? $_REQUEST['page'] : 1 ) );
+			d404();
 		}
 
 	}
 
 
-	private function file(){
+	private static function file(){
 		
 		if( sizeof($GLOBALS['slug']) ){
 			foreach( $GLOBALS['slug'] as $slug_pattern => $slug_path ){
@@ -50,7 +48,7 @@ class Slug {
 	}
     
 
-	private function database(){
+	private static function database(){
 		
 		$the_slug = substr( _URI , 1 );
 		$the_slug = urldecode($the_slug);
@@ -66,7 +64,7 @@ class Slug {
 	}
 
 
-	private function pattern_matches( $pattern, $path ){
+	private static function pattern_matches( $pattern, $path ){
 		
 		# if the first character if /faq is / remove it.
 		if( substr( $pattern, 0, 1 ) == '/' ){
@@ -99,7 +97,7 @@ class Slug {
 	}
 
 
-	private function pattern_set( $path ){
+	private static function pattern_set( $path ){
 
 		if( strstr( $path, "?" ) ){
 			$path = explode( '?', $path )[1];
@@ -120,7 +118,7 @@ class Slug {
 	}
 
 
-	public function get( $table, $id ){
+	public static function get( $table, $id ){
 
 		if(! $rs = dbq(" SELECT * FROM `slug` WHERE `table_name`='$table' AND `table_id`='$id' LIMIT 1 ") ){
 			e();
@@ -142,7 +140,7 @@ class Slug {
 
 	# Slug::set( 'page', '3', 'about', './?page=3' );
 	# Slug::set( 'page', '3', 'AboutMe' );
-	public function set( $table_name, $table_id, $slug, $path=null ){
+	public static function set( $table_name, $table_id, $slug, $path=null ){
 
 		if(! $rs = dbq(" SELECT * FROM `slug` WHERE `table_name`='$table_name' AND `table_id`='$table_id' LIMIT 1 ") ){
 			e();

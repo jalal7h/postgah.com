@@ -7,7 +7,7 @@
 class Installer {
 	
 
-	public function init(){
+	public static function init(){
 
 		self::db();
 		self::htaccess();
@@ -15,7 +15,7 @@ class Installer {
 	}
 
 
-	private function db(){
+	private static function db(){
 
 		asort($GLOBALS['include_all_sql']);
 		if(sizeof($GLOBALS['include_all_sql'])==0){
@@ -108,7 +108,7 @@ class Installer {
 
 	# 
 	# take care of '# start' and '# end'
-	function htaccess(){
+	private static function htaccess(){
 
 		# drop loop
 		if( $_REQUEST['do_action'] ){
