@@ -14,7 +14,7 @@ class Slug {
 		
 		} else if( strstr( _URI, '?' ) ){
 			return true;
-
+			
 		# 
 		# file slug
 		} else if( self::file() ){
@@ -27,6 +27,7 @@ class Slug {
 
 		} else {
 			
+
 			$the_request = $_REQUEST;
 			
 			if( $the_request['PHPSESSID'] ){
@@ -42,7 +43,7 @@ class Slug {
 			if( sizeof($the_request) == 0 ) {
 				define( '_PAGE', ( $_REQUEST['page'] ? $_REQUEST['page'] : 1 ) );
 				d404();
-		
+				
 			} else {
 				// var_dump($the_request);
 			}
