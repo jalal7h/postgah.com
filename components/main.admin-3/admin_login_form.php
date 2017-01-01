@@ -11,7 +11,7 @@ function admin_login_form(){
 	?>
 	<div class="<?=__FUNCTION__?>_wrapper">
 
-	<form method="post" action="" class="<?=__FUNCTION__?>" >
+	<form method="post" action="<?=_URL?>/admin" class="<?=__FUNCTION__?>" >
 	<input type="hidden" name="do_action" value="admin_login">
 	
 	<div>
