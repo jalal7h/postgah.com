@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/27
-# 1.1
+# 2017/01/01
+# 1.2
 
 function canonical_tag(){
 
@@ -14,7 +14,7 @@ function canonical_tag(){
 			$link = _URL;
 		
 		} else {
-			$link = _URL."/page-"._PAGE.".html";
+			$link = layout_link(_PAGE);
 		}
 		
 		

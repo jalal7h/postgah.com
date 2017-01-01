@@ -25,9 +25,28 @@ class Slug {
 		} else if( self::database() ){
 			return true;
 
-		} else if( sizeof($_REQUEST) == 0 ) {
-			define( '_PAGE', ( $_REQUEST['page'] ? $_REQUEST['page'] : 1 ) );
-			d404();
+		} else {
+			
+			$the_request = $_REQUEST;
+			
+			if( $the_request['PHPSESSID'] ){
+				unset($the_request['PHPSESSID']);
+			}
+			if( $the_request['_gat'] ){
+				unset($the_request['_gat']);
+			}
+			if( $the_request['_ga'] ){
+				unset($the_request['_ga']);
+			}
+
+			if( sizeof($the_request) == 0 ) {
+				define( '_PAGE', ( $_REQUEST['page'] ? $_REQUEST['page'] : 1 ) );
+				d404();
+		
+			} else {
+				// var_dump($the_request);
+			}
+
 		}
 
 	}
@@ -76,7 +95,7 @@ class Slug {
 		
 		$pattern = str_replace('/', '\/', $pattern );
 		$pattern = "/" . $pattern . "_END_PATTERN/U";
-		$subject = substr( _URI , 1 )."_END_PATTERN";
+		$subject = ( substr(_URI,0,1) == '/' ? substr(_URI,1) : _URI ) . "_END_PATTERN";
 		
 		preg_match_all ( $pattern, $subject, $matches );
 		
