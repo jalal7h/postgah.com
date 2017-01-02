@@ -6,7 +6,6 @@
 
 add_init( 'slug_translate', 0 );
 
-
 function slug_translate(){
 	
 	Slug::translate();

@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/01/01
-# 1.1
+# 2017/01/02
+# 1.2
 
 function noindexdirtypages(){
 
@@ -21,10 +21,12 @@ function noindexdirtypages(){
 	} else if( is_admin() ){
 		return $meta;
 
-	} else if( strstr( _FULL_URL , '?') or ( str_replace('/', '', canonical_link() ) != str_replace('/', '', _FULL_URL) ) ){
-		echo canonical_link()." - "._FULL_URL."\n";
+	} else if( strstr( _FULL_URL , '?') ){
 		return $meta;
 	
+	} else if( is_component('canonical') and ( str_replace('/', '', Canonical::link() ) != str_replace('/', '', _FULL_URL) ) ){
+		return $meta;
+
 	} else {
 		return '';
 	}

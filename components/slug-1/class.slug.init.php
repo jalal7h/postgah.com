@@ -27,7 +27,6 @@ class Slug {
 
 		} else {
 			
-
 			$the_request = $_REQUEST;
 			
 			if( $the_request['PHPSESSID'] ){
@@ -46,6 +45,7 @@ class Slug {
 				
 			} else {
 				// var_dump($the_request);
+				return true;
 			}
 
 		}

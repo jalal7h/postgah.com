@@ -1,13 +1,13 @@
 <?
 
 # jalal7h@gmail.com
-# 2016.08.29
-# 1.0
+# 2017/01/02
+# 1.2
 
 $GLOBALS['block_layers_center']['pgSearch_item_list'] = 'جستجوی آیتم - لیست نتایج';
 
 function pgSearch_item_list( $rw_pagelayer ){
-	
+
 	if(! $q = pgSearch_q() ){
 		echo convbox("عبارت مورد نظر شما برای جستجو مناسب نیست");
 
@@ -36,8 +36,7 @@ function pgSearch_item_list( $rw_pagelayer ){
 			#
 			# sub cats
 			if(! $rs_sub = dbq(" SELECT *, MATCH (`name`) AGAINST ('$q') AS relevance FROM `cat` WHERE `cat`='adsCat' AND MATCH (`name`) AGAINST ('$q' IN BOOLEAN MODE ) ORDER BY relevance DESC LIMIT 10 ") ){
-				e(__FUNCTION__,__LINE__);
-				echo dbe();
+				e( dbe() );
 			
 			} else if(! dbn($rs_sub) ){
 				//

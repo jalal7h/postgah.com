@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/26
-# 1.2
+# 2017/01/02
+# 1.3
 
 /*
 query_string_set( "p", null ); to remove p
@@ -16,8 +16,14 @@ query_string_set( "user_id", "some_content" );
 
 function query_string_set( $param=null, $value=null, $qs=null ){
 
+	// $qs = "reza=12&reza=13";
+
 	if(! $qs ){
-		$qs = $_SERVER['QUERY_STRING'];
+		if( sizeof($_REQUEST) ){
+			$qs = http_build_query($_REQUEST);
+		} else {
+			$qs = "";
+		}
 	}
 
 	if(! $param ){
@@ -25,7 +31,7 @@ function query_string_set( $param=null, $value=null, $qs=null ){
 	}
 
 	#############################################
-	# array loop
+	# recursive loop for array param
 	if( is_array($param) ){
 		foreach( $param as $id => $this_param ){
 			if( is_array($value) ){
@@ -41,28 +47,28 @@ function query_string_set( $param=null, $value=null, $qs=null ){
 	#############################################
 
 
-	$qs_arr = explode('&', $qs);
-	
-	if(! sizeof($qs_arr) ){
-
-	} else foreach( $qs_arr as $i => $qs_this ){
-		
-		$qs_this_arr = explode( "=", $qs_arr[$i] );
-
-		if( $qs_this_arr[0] == $param ){
-			if( $value === null or $value === '' ){
-				unset( $qs_arr[$i] );
-			} else {
-				$qs_this_arr[1] = $value;
-				$qs_arr[$i] = implode('=', $qs_this_arr);
+	#############################################
+	# set req
+	parse_str($qs, $req);
+	#	
+	if( sizeof($req) ){
+		foreach( $req as $req_key => $req_value ){
+			$req[$req_key] = urldecode($req[$req_key]);
+			if( $req_key == $param ){
+				if( $value === null or $value === '' ){
+					unset( $req[$req_key] );
+				} else {
+					$req[$req_key] = $value;
+				}
+				break;
 			}
-			break;
 		}
 	}
+	#
+	$qs = http_build_query($req);
+	#
+	#############################################
 
-
-	$qs = implode('&', $qs_arr);
-	// echo "qs : ".$qs."<br>\n";
 	return $qs;
 
 }

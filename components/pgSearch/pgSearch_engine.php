@@ -29,8 +29,7 @@ function pgSearch_engine( $q ){
 	// category
 
 	if(! $rs = dbq($query) ){
-		e();
-		echo "<hr><div dir=ltr >".dbe()."</div><hr>";
+		e( dbe() );
 
 	} else if(! dbn($rs) ){
 		//
@@ -44,6 +43,7 @@ function pgSearch_engine( $q ){
 
 	$query = " SELECT * FROM `item` WHERE `flag`='2' AND `expired`='0' $pos_query AND MATCH (`name`,`text`) AGAINST ('*$q*' IN BOOLEAN MODE ) ";
 	$link = _URL."/?".query_string_set( "p", "%%" );
+	// echo query_string_set();die();
 	$paging = listmaker_paging( $query, $link, $limit );
 	$paging = str_replace( '<a href', '<a rel="nofollow" href', $paging );
 	
