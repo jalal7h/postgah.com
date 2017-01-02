@@ -21,7 +21,7 @@ function user_emailverifybeforesignup_send(){
 	} else {
 
 		$vars['user_email'] = $e;
-		$vars['register_link'] = _URL."/?page="._PAGE."&e=".$e_enc."&h=".$h;
+		$vars['register_link'] = _URL."/register_verify/$e_enc/$h";
 		
 		echo texty( 'user_emailverifybeforesignup_send' , $vars, $e );
 

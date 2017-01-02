@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/19
-# 3.4
+# 2017/01/02
+# 3.5
 
 /*
 texty_email( 
@@ -86,13 +86,19 @@ function texty_email( $who , $slug , $vars=null ){
 		
 	} else {
 
-		if( $user_id ){
+		if( $user_email ){
+			$subject = $texty['user_email_subject'];
+			$content = $texty['user_email_content'];
+			texty_email_this( $user_email, $subject, $content, $vars );
+
+		} else if( $user_id ){
 			$rw_user = table( 'user' , $user_id );
 			$user_email = user_email( $rw_user );
 			$subject = $texty['user_email_subject'];
 			$content = $texty['user_email_content'];
 			texty_email_this( $user_email, $subject, $content, $vars, $rw_user );
 		}
+
 		if( $user2_id ){
 			$rw_user2 = table( 'user' , $user2_id );
 			$user2_email = user_email( $rw_user2 );
@@ -105,7 +111,7 @@ function texty_email( $who , $slug , $vars=null ){
 
 }
 
-function texty_email_this( $email, $subject, $content, $vars, $rw_user ){
+function texty_email_this( $email, $subject, $content, $vars, $rw_user=null ){
 
 	#
 	# if its disabled return back.
@@ -113,8 +119,15 @@ function texty_email_this( $email, $subject, $content, $vars, $rw_user ){
 		return false;
 	}
 
-	$subject = str_replace('{tiny_title}', setting('tiny_title'), $subject);
-	$content = str_replace('{main_title}', setting('main_title'), $content);
+	$subject = str_replace( 
+		['{tiny_title}','{main_title}'], 
+		[setting('tiny_title'),setting('main_title')], 
+		$subject );
+	
+	$content = str_replace( 
+		['{tiny_title}','{main_title}'], 
+		[setting('tiny_title'),setting('main_title')], 
+		$content );
 	
 	#
 	# user replaces

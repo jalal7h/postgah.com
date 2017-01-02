@@ -56,14 +56,25 @@ function query_string_set( $param=null, $value=null, $qs=null ){
 	#
 	#############################################
 
-
+	// 1 reza=12&ali=13
+	// 2 ./?reza=12&ali=12
+	// 3 http://domain.com
+	// 4 http://domain.com/?reza=11
+	// 5 http://domain.com/somewhere
 
 	#############################################
 	# qs fix #1
 	if( $qs ){
-		if( strstr( $qs, "?" ) ){
+		if(! strstr( $qs, "=" ) ){
+			// 3, 5
+			$pre_qs = $qs;
+			$qs = "";
+		} else if( strstr( $qs, "?" ) ){
+			// 2, 4
 			$pre_qs = explode('?', $qs)[0];
 			$qs = explode('?', $qs)[1];
+		} else {
+			// 1
 		}
 	}
 	#
@@ -98,7 +109,11 @@ function query_string_set( $param=null, $value=null, $qs=null ){
 	#############################################
 	# qs fix #2
 	if( $pre_qs ){
-		$qs = $pre_qs."?".$qs;
+		if( $qs ){
+			$qs = $pre_qs."?".$qs;
+		} else {
+			$qs = $pre_qs;
+		}
 	}
 	#
 	#############################################

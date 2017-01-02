@@ -4,24 +4,25 @@
 # 2016/12/31
 # 1.1
 
-function layout_link( $rw, $skip_slug=false ){
+function layout_link( $page_id, $skip_slug=false ){
 
-	if(! is_array($rw) ){
-		if( is_numeric($rw) ){
-			$rw = table( 'page', $rw );
-		} else {
-			ed();
-		}
+	if( is_array($page_id) ){
+		$page_id = $page_id['id'];
+	} else if( $page_id == '_PAGE' ){
+		ed();
 	}
 
-	if( $rw['id'] == 1 ){
+	if( $page_id == 1 ){
 		$link = _URL.'/';
 	
-	} else if( !$skip_slug and $slug = Slug::get( 'page' , $rw['id'] ) ){
+	} else if( !$skip_slug and $slug = Slug::get( './?page='.$page_id ) ){
+		$link = _URL .'/'. $slug;
+
+	} else if( !$skip_slug and $slug = Slug::get( 'page' , $page_id ) ){
 		$link = _URL .'/'. $slug;
 
 	} else {
-		$link = _URL.'/page-'.$rw['id'].'.html';
+		$link = _URL.'/page-'.$page_id.'.html';
 	}
 
 	return $link;

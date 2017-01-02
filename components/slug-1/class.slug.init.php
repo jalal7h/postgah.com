@@ -121,23 +121,52 @@ class Slug {
 	}
 
 
-	public static function get( $table, $id ){
+	public static function get( $p1, $p2=null ){
+		
+		if( $p2 === null ){
+			return self::getFromFile( $p1 );
+		} else {
+			return self::getFromDB( $p1 , $p2 );
+		}
+		
+	}
+
+
+	private static function getFromFile( $query_string ){
+	
+		$query_string = str_replace('./','',$query_string);
+
+		if( sizeof($GLOBALS['slug']) ){
+			foreach( $GLOBALS['slug'] as $slug_pattern => $slug_path ){
+				if( $query_string == str_replace('./','',$slug_path) ){
+					if( substr($slug_pattern, 0, 1) == '/' ){
+						$slug_pattern = substr($slug_pattern, 1);
+					}
+					return $slug_pattern;
+				}
+			}
+		}
+		
+		return false;
+	}
+
+
+	private static function getFromDB( $table, $id ){
 
 		if(! $rs = dbq(" SELECT * FROM `slug` WHERE `table_name`='$table' AND `table_id`='$id' LIMIT 1 ") ){
-			e();
+			return e();
 
 		} else if(! dbn($rs) ){
 			// e();
 
 		} else if(! $rw = dbf($rs) ){
-			e();
+			return e();
 
 		} else {
 			return $rw['slug'];
 		}
 
 		return false;
-
 	}
 
 
