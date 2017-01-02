@@ -7,13 +7,13 @@
 function breadcrumb_67(){
 	
 	if(! $q = pgSearch_q() ){
-		// e(__FUNCTION__,__LINE__);
+		// e();
 
 	} else if( $position_id = $_REQUEST['position_id'] ){
 		return "<a href=\""._URL."/?page="._PAGE."&position_id=".$position_id."&q=".$q."\">".$q."</a>";
 
 	} else {
-		return "<a href=\"".pgItem_tag_link($q)."\">".$q."</a>";
+		return "<a href=\"".kword_link($q)."\">".$q."</a>";
 	}
 
 }

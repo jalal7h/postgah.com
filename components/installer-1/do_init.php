@@ -4,7 +4,9 @@
 # 2016/12/31
 # 1.0
 
-add_init( 'install_init' );
+if( debug === true ){
+	add_init( 'install_init' );
+}
 
 function install_init(){
 

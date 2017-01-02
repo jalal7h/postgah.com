@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016.08.31
-# 1.0
+# 2017/01/02
+# 1.1
 
 $GLOBALS['block_layers_side']['pgSearch_kw'] = 'جستجوی آیتم - کلمات کلیدی';
 
@@ -28,7 +28,7 @@ function pgSearch_kw( $rw_pagelayer ){
 				$c = "<div class=\"".__FUNCTION__."\">\n";
 
 				foreach( $words as $i => $word ){
-					$c.= "<a href=\"".pgItem_tag_link( $word )."\">".$word."</a>\n";
+					$c.= "<a href=\"".kword_link($word)."\">".$word."</a>\n";
 				}
 
 				$c.= "</div>";

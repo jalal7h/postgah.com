@@ -1,7 +1,7 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/26
+# 2017/01/02
 # 1.2
 
 define( '_PAGE_SEARCH', '67' );
@@ -20,9 +20,7 @@ function pgSearch_form(){
 		$list_of_options_for_states.= "<option ".( $pos_id==$rw['id'] ? "selected" : "" )." value=\"".$rw['id']."\">".$rw['name']."</option>\n";
 	}
 
-	$q = $_REQUEST['q'];
-	$q = strip_tags($q);
-	$q = trim( $q );
+	$q = pgSearch_q();
 
 	$c.='
 	<form method="get" action="'._URL.'" name="'.__FUNCTION__.'" class="'.__FUNCTION__.'" >

@@ -1,5 +1,9 @@
 <?
 
+# jalal7h@gmail.com
+# 2017/01/02
+# 1.0
+
 $GLOBALS['block_layers']['pgItem_display_tags'] = 'نمایش آیتم - برچسب ها';
 
 function pgItem_display_tags( $rw_pagelayer ){
@@ -15,7 +19,7 @@ function pgItem_display_tags( $rw_pagelayer ){
 
 		$content = "<div class=\"".__FUNCTION__."\">\n";
 		foreach ($kword_array as $i => $kword) {
-			$content.= "\t<a target=\"_blank\" href=\"".pgItem_tag_link( $kword , $rw_item )."\">".$kword."</a>\n";
+			$content.= "\t<a target=\"_blank\" href=\"".kword_link($kword)."\">".$kword."</a>\n";
 		}
 		$content.= "</div>\n";
 
