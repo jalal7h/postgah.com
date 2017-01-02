@@ -37,7 +37,7 @@ function query_string_set( $param=null, $value=null, $qs=null ){
 	}
 
 	if(! $param ){
-		return $qs;
+		return trim($qs);
 	}
 
 	#############################################
@@ -51,7 +51,7 @@ function query_string_set( $param=null, $value=null, $qs=null ){
 			}
 			$qs = query_string_set( $this_param, $this_value, $qs );
 		}
-		return $qs;
+		return trim($qs);
 	}
 	#
 	#############################################
@@ -120,7 +120,7 @@ function query_string_set( $param=null, $value=null, $qs=null ){
 
 
 
-	return $qs;
+	return trim($qs);
 
 }
 

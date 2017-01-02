@@ -11,7 +11,7 @@ class Slug {
 
 		if( _URI == '/' ){
 			return true;
-		
+			
 		} else if( strstr( _URI, '?' ) ){
 			return true;
 			
@@ -25,9 +25,11 @@ class Slug {
 		} else if( self::database() ){
 			return true;
 
-		} else if( sizeof( query_string_set() ) == 0 ) {
+		} else if( query_string_set() == '' ) {
 			define( '_PAGE', ( $_REQUEST['page'] ? $_REQUEST['page'] : 1 ) );
+			// echo "404";
 			d404();
+			die();
 				
 		} else {
 			return true;
