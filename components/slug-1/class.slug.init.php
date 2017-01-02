@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/01
-# 1.2
+# 2017/01/02
+# 1.3
 
 class Slug {
 
@@ -25,29 +25,12 @@ class Slug {
 		} else if( self::database() ){
 			return true;
 
-		} else {
-			
-			$the_request = $_REQUEST;
-			
-			if( $the_request['PHPSESSID'] ){
-				unset($the_request['PHPSESSID']);
-			}
-			if( $the_request['_gat'] ){
-				unset($the_request['_gat']);
-			}
-			if( $the_request['_ga'] ){
-				unset($the_request['_ga']);
-			}
-
-			if( sizeof($the_request) == 0 ) {
-				define( '_PAGE', ( $_REQUEST['page'] ? $_REQUEST['page'] : 1 ) );
-				d404();
+		} else if( sizeof( query_string_set() ) == 0 ) {
+			define( '_PAGE', ( $_REQUEST['page'] ? $_REQUEST['page'] : 1 ) );
+			d404();
 				
-			} else {
-				// var_dump($the_request);
-				return true;
-			}
-
+		} else {
+			return true;
 		}
 
 	}

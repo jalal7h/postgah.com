@@ -14,13 +14,23 @@ query_string_set( "user_id", "some_content" );
 # qs: the url, or a part of url, it can be null
 # function returns the uri query string
 
+$GLOBALS['query_string_ignore'] = [ 'PHPSESSID','_gat','_ga' ];
+
 function query_string_set( $param=null, $value=null, $qs=null ){
 
 	// $qs = "reza=12&reza=13";
 
 	if(! $qs ){
 		if( sizeof($_REQUEST) ){
-			$qs = http_build_query($_REQUEST);
+			$qs = $_REQUEST;
+			if( sizeof($GLOBALS['query_string_ignore']) ){
+				foreach( $GLOBALS['query_string_ignore'] as $ignore_key ) {
+					if( $qs[ $ignore_key ] ){
+						unset( $qs[ $ignore_key ] );
+					}
+				}
+			}
+			$qs = http_build_query($qs);
 		} else {
 			$qs = "";
 		}
