@@ -22,10 +22,6 @@ function admin_html_open(){
 <body leftmargin="0" topmargin="0" rightmargin="0" downmargin="0" marginheight="0" marginwidth="0">
 	<script type="text/javascript" src="<?=_URL?>/modules/jquery/jquery-1.12.3.min.js"></script>
 	<script src="<?=_URL?>/scripts-admin.js"></script>
-
-	<script type="text/javascript">
-		alert('سلام، آزمایش', 100 )
-	</script>
 	<?
 
 }

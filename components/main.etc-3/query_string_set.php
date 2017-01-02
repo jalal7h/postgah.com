@@ -14,7 +14,7 @@ query_string_set( "user_id", "some_content" );
 # qs: the url, or a part of url, it can be null
 # function returns the uri query string
 
-$GLOBALS['query_string_ignore'] = [ 'PHPSESSID','_gat','_ga' ];
+$GLOBALS['query_string_ignore'] = [ 'PHPSESSID', '_gat', '_ga' ];
 
 function query_string_set( $param=null, $value=null, $qs=null ){
 
@@ -57,6 +57,20 @@ function query_string_set( $param=null, $value=null, $qs=null ){
 	#############################################
 
 
+
+	#############################################
+	# qs fix #1
+	if( $qs ){
+		if( strstr( $qs, "?" ) ){
+			$pre_qs = explode('?', $qs)[0];
+			$qs = explode('?', $qs)[1];
+		}
+	}
+	#
+	#############################################
+
+
+
 	#############################################
 	# set req
 	parse_str($qs, $req);
@@ -78,6 +92,18 @@ function query_string_set( $param=null, $value=null, $qs=null ){
 	$qs = http_build_query($req);
 	#
 	#############################################
+
+
+
+	#############################################
+	# qs fix #2
+	if( $pre_qs ){
+		$qs = $pre_qs."?".$qs;
+	}
+	#
+	#############################################
+
+
 
 	return $qs;
 

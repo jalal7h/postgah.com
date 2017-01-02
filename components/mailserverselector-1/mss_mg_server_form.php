@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/08/28
-# 1.0
+# 2017/01/01
+# 1.1
 
 function mss_mg_server_form(){
 
@@ -11,8 +11,6 @@ function mss_mg_server_form(){
 		[!
 			"table" => "mailserverselector_provider" ,
 			"action" => "./?page=admin&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["func"],
-			"name" => "'.__FUNCTION__.'" ,
-			"class" => "'.__FUNCTION__.'" ,
 			"switch" => "do",
 		!]
 			
