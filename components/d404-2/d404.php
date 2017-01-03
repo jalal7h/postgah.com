@@ -4,7 +4,7 @@
 # 2017/01/03
 # 1.4
 
-$GLOBALS['do_action'][] = 'd404';
+// $GLOBALS['do_action'][] = 'd404';
 
 function d404(){
 

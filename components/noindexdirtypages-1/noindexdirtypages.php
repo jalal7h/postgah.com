@@ -12,11 +12,11 @@ function noindexdirtypages(){
 	$meta.= "\n\t";
 	$meta.= "<meta name=\"robots\" content=\"noindex,nofollow\">";
 	$meta.= "\n";
-	
+
 	if( d404_flag === true ){
 		return $meta;
 
-	} else if( _PAGE == 'admin' or ( noindex_pages() and in_array( _PAGE, noindex_pages() ) ) ){
+	} else if( _PAGE == 'admin' ){
 		return $meta;
 
 	} else if( is_userpanel() ){
@@ -28,12 +28,20 @@ function noindexdirtypages(){
 	} else if( strstr( _FULL_URL , '?') ){
 		return $meta;
 	
-	} else if( is_component('canonical') and ( str_replace('/', '', Canonical::link() ) != str_replace('/', '', _FULL_URL) ) ){
+	} else if( ( sizeof($_GET) == 1 ) and dbr( dbq(" SELECT COUNT(*) FROM `page` WHERE `id`='"._PAGE."' AND `ignore_in_sitemap`='1' LIMIT 1 "), 0, 0) == 1 ){
 		return $meta;
 
+	} else if( is_component('canonical') and $canonical = Canonical::link() ){
+		if( str_replace('/', '', $canonical ) != str_replace('/', '', _FULL_URL) ){
+			return $meta;
+		}
+	
+	
 	} else {
-		return '';
+		//
 	}
+
+	return '';
 
 }
 
