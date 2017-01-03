@@ -10,7 +10,7 @@
 function news_meta( $type ){
 
 	if(! $id = $_REQUEST['id'] ){
-		e();
+		// e();
 
 	} else if(! $rw = table("news", $id) ){
 		e();

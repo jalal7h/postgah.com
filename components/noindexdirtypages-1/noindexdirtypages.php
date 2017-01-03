@@ -12,9 +12,11 @@ function noindexdirtypages(){
 	$meta.= "\n\t";
 	$meta.= "<meta name=\"robots\" content=\"noindex,nofollow\">";
 	$meta.= "\n";
+	
+	if( d404_flag === true ){
+		return $meta;
 
-
-	if( _PAGE == 'admin' or ( noindex_pages() and in_array( _PAGE, noindex_pages() ) ) ){
+	} else if( _PAGE == 'admin' or ( noindex_pages() and in_array( _PAGE, noindex_pages() ) ) ){
 		return $meta;
 
 	} else if( is_userpanel() ){

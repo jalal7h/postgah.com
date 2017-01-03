@@ -1,16 +1,16 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/01
-# 1.0
+# 2017/01/03
+# 1.1
 
 function breadcrumb_66(){
 
 	if(! $item_id = $_REQUEST['item_id'] ){
-		e();
+		dg();
 	
 	} else if(! $rw = table('item', $item_id) ){
-		//
+		dg();
 
 	} else {
 		$_REQUEST['cat_id'] = $rw['cat_id'];
@@ -18,9 +18,7 @@ function breadcrumb_66(){
 		$c.= "<a href=\"".pgItem_link( $rw )."\">".$rw['name']."</a>";
 	}
 
-
 	return $c;
-	
 }
 
 

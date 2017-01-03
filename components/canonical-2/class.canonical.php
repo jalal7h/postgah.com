@@ -11,7 +11,10 @@ class Canonical {
 
 	public static function tag(){
 
-		if(! $link = self::link() ){
+		if( d404_flag === true ){
+			return '';
+
+		} else if(! $link = self::link() ){
 			return '';
 		
 		} else {
