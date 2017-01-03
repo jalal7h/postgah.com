@@ -8,8 +8,6 @@ function layout_headtag(){
 	
 	ksort($GLOBALS['layout_headtag']);
 
-	print_r($GLOBALS['layout_headtag']);
-
 	if(! sizeof($GLOBALS['layout_headtag']) ){
 		$c = '';
 	
