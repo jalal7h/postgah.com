@@ -13,7 +13,7 @@
 $GLOBALS['do_init'][] = 'd404_do';
 
 function d404_do(){
-
+	
 	if(! sizeof($GLOBALS['d404']) ){
 		return true;
 
@@ -30,20 +30,17 @@ function d404_do(){
 		if( _PAGE != $page_id ){
 			continue;
 		
-		} else {
-			if(! $id = $_REQUEST[ $id_variable ] ){
-				d404();
+		} else if(! $id = $_REQUEST[ $id_variable ] ){
+			d404();
 
-			} else if(! is_table($table_name) ){
-				d404();
+		} else if(! is_table($table_name) ){
+			d404();
 
-			} else if(! $rw = table($table_name,$id) ){
-				d404();
+		} else if(! $rw = table($table_name,$id) ){
+			d404();
 
-			} else if( array_key_exists($flag_variable, $rw) and ( $rw[$flag_variable] == 0 ) ){
-				d404();
-			}
-
+		} else if( array_key_exists($flag_variable, $rw) and ( $rw[$flag_variable] == 0 ) ){
+			d404();
 		}
 
 	}

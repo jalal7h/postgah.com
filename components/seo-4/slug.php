@@ -1,13 +1,13 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/30
-# 1.0
+# 2017/01/03
+# 1.1
 
 add_slug([
 
 	'sitemap.xml' => './?do_action=seo_sitemap_mega' ,
-	'sitemap/$-$.xml' => './?do_action=seo_sitemap&feed=$1&page=$2' ,
+	'sitemap/$-$.xml' => './?do_action=seo_sitemap&feed=$1&p=$2' ,
 	'sitemap/$.xml' => './?do_action=seo_sitemap&feed=$1' ,
 
 	'rss' => './?do_action=seo_rss_mega' ,

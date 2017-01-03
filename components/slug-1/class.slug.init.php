@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/02
-# 1.3
+# 2017/01/03
+# 1.4
 
 class Slug {
 
@@ -27,9 +27,7 @@ class Slug {
 
 		} else if( query_string_set() == '' ) {
 			define( '_PAGE', ( $_REQUEST['page'] ? $_REQUEST['page'] : 1 ) );
-			// echo "404";
 			d404();
-			die();
 				
 		} else {
 			return true;
