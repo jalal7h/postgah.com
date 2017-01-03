@@ -13,11 +13,7 @@ function init_etc(){
 	if( session_id()=='' ){
 		session_start();
 	}
-
-	#
-	# timezone
-	date_default_timezone_set("Asia/Tehran");
-
+	
 	#
 	# _PAGE
 	if(! $page_id = $_REQUEST['page'] ){
