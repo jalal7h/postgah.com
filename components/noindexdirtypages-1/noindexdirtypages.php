@@ -1,8 +1,10 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/01/02
-# 1.2
+# 2017/01/03
+# 1.3
+
+add_headtag( 'noindexdirtypages' );
 
 function noindexdirtypages(){
 

@@ -1,5 +1,11 @@
 <?
 
+# jalal7h@gmail.com
+# 2017/01/03
+# 1.0
+
+add_headtag( 'include_all_css_echotags' );
+
 function include_all_css_echotags(){
 
 	if( defined('minify_css') and minify_css===false ){

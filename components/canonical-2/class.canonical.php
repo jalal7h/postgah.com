@@ -1,8 +1,10 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/02
-# 1.0
+# 2017/01/03
+# 1.1
+
+add_headtag( 'Canonical::tag' );
 
 class Canonical {
 	

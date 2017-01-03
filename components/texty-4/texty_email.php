@@ -24,7 +24,7 @@ texty_email(
 
 
 
-$GLOBALS['mss_list']['texty_email'] = 'پیامهای پیشفرض';
+$GLOBALS['mss_list']['texty_email_this'] = 'پیامهای پیشفرض';
 
 function texty_email( $who , $slug , $vars=null ){
 
