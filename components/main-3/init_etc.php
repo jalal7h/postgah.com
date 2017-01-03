@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/07/01
-# 1.1
+# 2017/01/03
+# 1.2
 
 add_init( 'init_etc', 1 );
 
@@ -13,6 +13,10 @@ function init_etc(){
 	if( session_id()=='' ){
 		session_start();
 	}
+
+	#
+	# timezone
+	date_default_timezone_set("Asia/Tehran");
 
 	#
 	# _PAGE
