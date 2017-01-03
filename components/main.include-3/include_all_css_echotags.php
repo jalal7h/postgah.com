@@ -4,7 +4,7 @@
 # 2017/01/03
 # 1.0
 
-add_headtag( 'include_all_css_echotags' );
+add_headtag( 'include_all_css_echotags', 0 );
 
 function include_all_css_echotags(){
 
