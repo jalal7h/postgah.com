@@ -14,7 +14,7 @@ function noindexdirtypages(){
 	$meta.= "\n";
 
 
-	if( in_array( _PAGE, [ 'admin', 14, 58, 59, 60, 63 ] ) ){
+	if( _PAGE == 'admin' or ( noindex_pages() and in_array( _PAGE, noindex_pages() ) ) ){
 		return $meta;
 
 	} else if( is_userpanel() ){
@@ -34,4 +34,7 @@ function noindexdirtypages(){
 	}
 
 }
+
+
+
 
