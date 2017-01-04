@@ -1,16 +1,17 @@
 <?
 
-if( $_REQUEST['its_tag']==1 ){
-	$GLOBALS['do_init'][] = 'its_tag_check_if_exists_on_db';
-}
+# jalal7h@gmail.com
+# 2017/01/04
+# 1.0
 
-function its_tag_check_if_exists_on_db(){
+add_init( function(){
 	
-	if(! $q = trim($_REQUEST['q']) ){
+	if( $_REQUEST['its_tag'] != 1 ){
 		//
 
-	} else if(! kword_is($q) ){
+	} else if(! kword_is( pgSearch_q() ) ){
 		d404();
 	}
-}
+
+});
 

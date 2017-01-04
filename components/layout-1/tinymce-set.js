@@ -1,3 +1,4 @@
+/*print*/
 
 if( typeof tinymce !== 'undefined' ){
 	tinymce.init({
@@ -10,7 +11,7 @@ if( typeof tinymce !== 'undefined' ){
 		directionality : 'rtl',
 		theme_advanced_toolbar_align : "right",
 
-                content_css : "./templates/Default/font/font.css,./styles.css,./modules/tinymce/tinymce.css",
+                content_css : _URL + "/templates/Default/font/font.css,"+_URL+"/styles.css",
 
 		plugins: [
                 "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking table contextmenu directionality emoticons template textcolor paste textcolor"

@@ -1,61 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/04/11
-# Version 3.1
-
-/********************
-$GLOBALS['formName'] = "tForm"; // its used in formtag
-echo
-ff(array("عنوان",'n:name'=>$tTour,'inDiv')).
-ff(array( lmtc("table:field") ,'n:city*'=>$tTour,'inDiv')).
-ff(array("شهر",'n:city*'=>$tTour,'inDiv')).
-ff(array('تاریخ','class'=>'calendar','n:date*'=>$tTour,'inDiv')).
-ff(array('نوع سفر','n:tripType*'=>$tTour,'option'=>array('z' => 'زمینی','h' => 'هوایی'),'inDiv')).
-ff(array('گروه','n:cat*'=>$tTour,'option'=>listmaker_options($table_name, $condition="", $returnArray=true) ,'inDiv')).
-ff(array('خدمات','t:textarea','class'=>'tinymce','n:khadamat'=>$tTour,'inDiv')).
-ff(array('مدت اقامت','n:modatEghamat*'=>$tTour,'inDiv')).
-ff(array('عکس','n:file*+'=>'','accept'=>'image/*','inDiv', 'title_in_span'=>false)).
-ff(array('عکس','n:autoparts+'=>'','table_id'=>$rw['code'],'accept'=>'image/*','inDiv')).
-ff('clear').
-ff('hr').
-ff('br').
-ff(array('t:submit','n:submit'=>'ثبت','inDiv'));
-
-
-# in yani, mikhaim be ff befahmunim file haye js marbut be tinymce ro ghablan dadim, niaz nis ff bede
-$GLOBALS['tinymce-defined'] = true;
-
-
-	echo 
-	
-	fm( array( 
-		'table' => 'stash' ,
-		'name' => __FUNCTION__ , // if not define , it will be some random name
-		'class' => __FUNCTION__ , // if define , it will be
-		'method' => 'post' , // if not method define , it will be 'post'
-		'action' => './page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['func'], // must define
-		'save_switch' => 'do', // if define , it will be saveNew/saveEdit
-		'title_in_span'=> false, // if define , it will be in ff
-		)).
-
-	ff(array( 'n:name+*'=>$rw , 'inDiv')).
-	ff(array( 'n:cat_id*'=>$rw , 'option'=>cat_display('cat') , 'inDiv' )).
-	ff(array( 'n:desc*'=>$rw , 't:textarea' , 'class'=>'tinymce' , 'inDiv' )).
-	ff(array( 'n:email'=>$rw , 't:email', 'inDiv' )).
-	ff(array( 'n:website'=>$rw , 't:url', 'inDiv' )).
-	ff(array( 'n:icon+*'=>'','accept'=>'image/*','inDiv' )).
-	ff(array( 'n:screenshot*+'=>'','accept'=>'image/*','inDiv' )). // * => ejbari , + => bishtar
-	ff(array( 'n:kw'=>$rw , 'inDiv' )).
-	
-	ff('clear').
-	ff('hr').
-	ff('br').
-	ff(array('t:submit','n:submit'=>'ثبت','inDiv'));
-
-	fm('close' , $listifcsselements=true );
-
-************/
+# 2017/01/04
+# 3.1
 
 function ff($field){
 	return listmaker_formfield($field);
@@ -79,7 +26,6 @@ function listmaker_formfield($field){
 	if(!is_array($field)){
 		switch ($field) {
 			case 'br': return '<br />';
-			// case 'hr': return '<div class="divider"></div>';
 			case 'hr': return '<hr class="listmaker_divider">';
 			case 'clear': return '<div class="clear"></div>';
 			default: return '<span class="listmaker_formfield_titlespan lmffts">'.$field.'</span>';
@@ -369,8 +315,8 @@ function listmaker_formfield($field){
 			$GLOBALS['tinymce-defined'] = true;
 			$c.= '
 			<!--- tinymce --->
-			<script src="http://parsunix.com/cdn/js/tinymce/tinymce.jquery/tinymce.min.js"></script>
-			<script src="http://parsunix.com/cdn/js/tinymce/tinymce-set.js"></script>
+			<script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>
+			'.js_print( 'layout', 'tinymce-set' ).'
 			<!---->
 			';
 		}

@@ -40,6 +40,10 @@ label input[type="checkbox"] ,
 label input[type="radio"] {
 	position: relative; top: 2px; left: 3px;
 }
+legend {
+	font-size: 16px;
+	border: 0;
+}
 
 
 

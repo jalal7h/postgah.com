@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/19
-# 1.1
+# 2017/01/04
+# 1.2
 
 function listmaker_form_element_this_textarea( $info ){
 	
@@ -12,7 +12,10 @@ function listmaker_form_element_this_textarea( $info ){
 	#
 	# tinymce
 	if( strstr( " ".strtolower($info['class'])." ", ' tinymce ') ){
-		$c = "<script src=\"modules/tinymce/tinymce.min.js\"></script>\n<script src=\"modules/tinymce/tinymce-set.js\"></script>\n".$c;
+		$c = str_replace( '"', '\"', 
+				'<script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>'.
+				js_print( 'layout', 'tinymce-set' )
+			) . $c;
 	}
 
 	$id = $info['id'] ? $info['id'] : "lmfe_".$info['formName']."_".$info['name'];

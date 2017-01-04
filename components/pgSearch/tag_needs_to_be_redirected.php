@@ -1,12 +1,12 @@
 <?
 
-if( $_REQUEST['tag_needs_to_be_redirected']==1 ){
-	$GLOBALS['do_init'][] = 'tag_needs_to_be_redirected';
-}
+# jalal7h@gmail.com
+# 2017/01/04
+# 1.0
 
-function tag_needs_to_be_redirected(){
+add_init( function(){
 	
-	if( $_REQUEST['tag_needs_to_be_redirected']!=1 ){
+	if( $_REQUEST['tag_needs_to_be_redirected'] != 1 ){
 		//
 
 	} else if(! $q = trim($_REQUEST['q']) ){
@@ -18,5 +18,6 @@ function tag_needs_to_be_redirected(){
 		header( "Location: "._URL."/tag/".$q );
 		die();
 	}
-}
+
+});
 

@@ -1,5 +1,9 @@
 <?
 
+# jalal7h@gmail.com
+# 2017/01/04
+# 1.0
+
 function layout_post_extra( $rw_pagelayer ){
 	
 	$rw_pagelayer['data'] = str_ireplace( "</textarea>", "&lt;/textarea&gt;", $rw_pagelayer['data'] );
@@ -8,10 +12,9 @@ function layout_post_extra( $rw_pagelayer ){
 
 	?>
 
-	<script src="modules/tinymce/tinymce.min.js"></script>
-	<!-- <script src="//cdn.tinymce.com/4/tinymce.min.js"></script> -->
-	<script src="modules/tinymce/tinymce-set+func.js"></script>
-	
+	<script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>
+	<?=js_print( 'layout', 'tinymce-set-func' )?>
+		
 	<textarea name="data" class="tinymce" id="_data" ><?=$rw_pagelayer['data']?></textarea>
 
 	<label class="framed_label">

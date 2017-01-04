@@ -1,5 +1,9 @@
 <?
 
+# jalal7h@gmail.com
+# 2017/01/04
+# 1.0
+
 function useraccess_mg_form(){
 
 	echo lmfo([
@@ -20,7 +24,12 @@ function useraccess_mg_form(){
 		# 
 		# flag
 		if( $user_id ){
-			$flag = dbn( dbq(" SELECT * FROM `useraccess` WHERE `user_id`='$user_id' AND `component`='$component_func' LIMIT 1 ") );
+			if(! $rs01 = dbq(" SELECT * FROM `useraccess` WHERE `user_id`='$user_id' AND `component`='$component_func' LIMIT 1 ") ){
+				e( dbe() );
+
+			} else {
+				$flag = dbn($rs01);
+			}
 		}
 
 		# 
