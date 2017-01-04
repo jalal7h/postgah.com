@@ -1,16 +1,26 @@
 <?php
 
 # jalal7h@gmail.com
-# 2016/12/31
-# 1.0
+# 2017/01/04
+# 1.1
 
 function layout_open(){
 
-	$vars['meta_title'] = tab__temp('main_title');
+	$vars['meta_title'] = setting('main_title');
+
 
 	#
 	# rw of the page
 	$rw = table( 'page', _PAGE );
+
+
+	#
+	# meta func
+	$func_meta = "meta_"._PAGE;
+	if( function_exists( $func_meta ) ){
+		$rw_meta = $func_meta();
+	}
+
 
 	#
 	# title
@@ -21,7 +31,11 @@ function layout_open(){
 		eval("?>".$rw['meta_title']."<?");
 		$vars['meta_title'] = ob_get_contents();
 		ob_end_clean();
-	
+
+	// meta func
+	} else if(  $rw_meta ){
+		$vars['meta_title'] = $rw_meta['title'];
+
 	// its a normal page with no special title
 	} else {
 		$vars['meta_title'] = setting('main_title');
@@ -30,39 +44,55 @@ function layout_open(){
 		}
 	}
 	
+
 	#
 	# kw
-	if($rw['meta_kw']){ // it have an special title
+	// special
+	if( $rw['meta_kw'] ){
 		$rw['meta_kw'] = stripcslashes($rw['meta_kw']);
 		ob_start();
 		eval("?>".$rw['meta_kw']."<?");
 		$vars['meta_kw'] = ob_get_contents();
 		ob_end_clean();
+	
+	// meta func
+	} else if( $rw_meta ){
+		$vars['meta_kw'] = $rw_meta['kw'];
+	
+	// normal page
 	} else {
-		// its a normal page with no special title
 		$vars['meta_kw'] = str_replace("،",",",tab__temp("keywords"));
 	}
 	
+
 	#
 	# desc
-	if($rw['meta_desc']){ // it have an special title
+	// special
+	if($rw['meta_desc']){
 		$rw['meta_desc'] = stripcslashes($rw['meta_desc']);
 		ob_start();
 		eval("?>".$rw['meta_desc']."<?");
 		$vars['meta_desc'] = ob_get_contents();
 		ob_end_clean();
+	
+	// meta func
+	} else if( $rw_meta ){
+		$vars['meta_desc'] = $rw_meta['desc'];
+	
+	// normal page
 	} else {
-		// its a normal page with no special title
 		$vars['meta_desc'] = str_replace("،",",",tab__temp("websitedescription"));
 	}
 
+
 	return template_engine('html-tag-open',$vars);
+
 }
 
 
 $GLOBALS['block_layers']['layout_header'] = 'سرایند سایت';
 function layout_header(){
-	
+
 	$vars['THEME']=_THEME;
 	return template_engine('header',$vars);
 	
