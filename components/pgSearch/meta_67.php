@@ -6,10 +6,7 @@
 
 function meta_67(){
 
-	if( d404_flag === true ){
-		$title = "404. Not Found !";
-
-	} else if(! $q = pgSearch_q() ){
+	if(! $q = pgSearch_q() ){
 		e();
 
 	} else {
