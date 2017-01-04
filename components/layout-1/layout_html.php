@@ -10,13 +10,13 @@ function layout_open(){
 	#
 	# its 404 page
 	if( d404_flag === true ){
-		$vars['meta_title'] = '404. Not Found !';
+		$vars['meta_title'] = _DOMAIN.' - Page Not Found !';
 		$vars['meta_kw'] = '';
 		$vars['meta_desc'] = '';
 	
 	} else {
 
-		
+
 		$vars['meta_title'] = setting('main_title');
 
 
