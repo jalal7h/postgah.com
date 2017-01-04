@@ -12,7 +12,7 @@ function pgSearch_q(){
 	} else if(! $q = rawurldecode($q) ){
 		e();
 
-	} else if(! $q = mb_ereg_replace( '[^A-Za-z0-9آ-ی ]+', '', $q ) ){
+	} else if(! $q = mb_ereg_replace( '[^A-Za-z\-\+0-9آ-ی ]+', '', $q ) ){
 		e();
 
 	} else if(! $q = trim($q) ){
