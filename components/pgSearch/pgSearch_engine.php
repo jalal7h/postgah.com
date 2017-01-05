@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016.08.31
-# 1.0
+# 2017/01/05
+# 1.1
 
 function pgSearch_engine( $q ){
 
@@ -41,7 +41,7 @@ function pgSearch_engine( $q ){
 		// echo 'text_relevance : ' . $rw['text_relevance']."<br>";
 	}
 
-	$query = " SELECT * FROM `item` WHERE `flag`='2' AND `expired`='0' $pos_query AND MATCH (`name`,`text`) AGAINST ('*$q*' IN BOOLEAN MODE ) ";
+	$query = " SELECT * FROM `item` WHERE `flag`='2' AND `expired`='0' $pos_query AND MATCH (`name`,`text`) AGAINST ('$q' IN BOOLEAN MODE ) ";
 	$link = _URL."/?".query_string_set( "p", "%%" );
 	// echo query_string_set();die();
 	$paging = listmaker_paging( $query, $link, $limit );
