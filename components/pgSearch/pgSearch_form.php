@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/02
-# 1.2
+# 2017/01/06
+# 1.3
 
 define( '_PAGE_SEARCH', '67' );
 
@@ -21,6 +21,10 @@ function pgSearch_form(){
 	}
 
 	$q = pgSearch_q();
+
+	if( $_REQUEST['its_tag'] ){
+		$q = '';
+	}
 
 	$c.='
 	<form method="get" action="'._URL.'" name="'.__FUNCTION__.'" class="'.__FUNCTION__.'" >

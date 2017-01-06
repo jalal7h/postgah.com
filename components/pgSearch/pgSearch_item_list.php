@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/02
-# 1.2
+# 2017/01/06
+# 1.3
 
 $GLOBALS['block_layers_center']['pgSearch_item_list'] = 'جستجوی آیتم - لیست نتایج';
 
@@ -30,7 +30,7 @@ function pgSearch_item_list( $rw_pagelayer ){
 
 			$listmaker_paging__count = qpop('listmaker_paging__count');
 			$c.= '<div class="head"><span class="title">'.$title.'</span>'.
-				( $listmaker_paging__count ? ' <span class="count">('.$listmaker_paging__count.')</span>' : '' ).
+				( $listmaker_paging__count ? ' <span class="count">('.number_format($listmaker_paging__count).')</span>' : '' ).
 				'</div>';
 			
 			#
