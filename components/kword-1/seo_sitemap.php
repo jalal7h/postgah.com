@@ -10,7 +10,7 @@ $GLOBALS['seo_sitemap']['tags'] = array(
 	"link"		 =>	'kword_link($rw["kword"])',
 	"freq"		 =>	"weekly",
 	"prio"		 =>	"0.5",
-	"cache_time" =>	"7days-8days",
+	"cache_time" =>	"4days-9days",
 
 );
 	
