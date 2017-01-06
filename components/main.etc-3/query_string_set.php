@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/02
-# 1.3
+# 2017/01/06
+# 1.4
 
 /*
 query_string_set( "p", null ); to remove p
@@ -22,7 +22,8 @@ function query_string_set( $param=null, $value=null, $qs=null ){
 
 	if(! $qs ){
 		if( sizeof($_REQUEST) ){
-			$qs = $_REQUEST;
+			// $qs = $_REQUEST;
+			$qs = $_GET;
 			if( sizeof($GLOBALS['query_string_ignore']) ){
 				foreach( $GLOBALS['query_string_ignore'] as $ignore_key ) {
 					if( $qs[ $ignore_key ] ){

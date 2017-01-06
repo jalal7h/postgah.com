@@ -13,7 +13,7 @@ function admin_html_open(){
 	
 	<title>.:: <?=setting('main_title')?> - Administrator ::.</title>
 	
-	<link rel="shortcut icon" href="image_list/favicon.ico" >
+	<link rel="shortcut icon" href="<?=_URL."/".setting('site_ico')?>" >
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

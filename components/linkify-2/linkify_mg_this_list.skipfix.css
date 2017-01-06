@@ -1,0 +1,7 @@
+
+.linkify_mg_this_list td:nth-child(2){
+	direction: ltr;
+	text-align: left;
+}
+
+

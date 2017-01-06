@@ -12,16 +12,15 @@ function listmaker_form_element_this_textarea( $info ){
 	#
 	# tinymce
 	if( strstr( " ".strtolower($info['class'])." ", ' tinymce ') ){
-		$c = str_replace( '"', '\"', 
-				'<script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>'.
-				js_print( 'layout', 'tinymce-set' )
-			) . $c;
+		$c = '<script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>'.
+			 js_print( 'layout', 'tinymce-set' ).
+			 $c;
 	}
 
 	$id = $info['id'] ? $info['id'] : "lmfe_".$info['formName']."_".$info['name'];
 	$id = listmaker_uniqId( $id );
 
-	$c.= $info['PreTab']."<textarea ".
+	$c.= "<textarea ".
 		"name=\"".$info['name'].( $info['ArrayInput'] ? '[]' : '' )."\" ".
 		"id=\"".$id."\" ".
 		( $info['class'] ? "class=\"".$info['class']."\" " : '' ).

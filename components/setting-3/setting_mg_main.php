@@ -10,14 +10,19 @@ function setting_mg_main(){
 	echo listmaker_form('
 		[!
 			"table" => "setting" ,
-			"action" => "./?'.query_string_set().'&do=save",
-			"name" => "'.__FUNCTION__.'" ,
-			"class" => "'.__FUNCTION__.'" ,
 			"rw" => setting_rw_slug_n_text(),
 		!]
 			
 			[!"'.setting_rw('tiny_title')['name'].'","text:tiny_title*"!]
 			[!"'.setting_rw('main_title')['name'].'","text:main_title*"!]
+
+			<hr>
+
+			[!"'.setting_rw('site_logo')['name'].'","file:site_logo"!]
+			[!"'.setting_rw('site_ico')['name'].'","file:site_ico","accept"=>"image/ico"!]
+
+			<hr>
+
 			[!"'.setting_rw('keywords')['name'].'","text:keywords"!]
 			[!"'.setting_rw('websitedescription')['name'].'","text:websitedescription"!]
 			[!"'.setting_rw('money_unit')['name'].'","text:money_unit"!]

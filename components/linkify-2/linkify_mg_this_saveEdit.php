@@ -1,13 +1,18 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/28
-# 2.0
+# 2017/01/06
+# 2.1
 
 function linkify_mg_this_saveEdit(){
 	
 	if(! $_REQUEST['url'] ){
 		$_REQUEST['url'] = _URL;
+	}
+
+	$URL_len = strlen(_URL);
+	if( substr( $_REQUEST['url'], 0, $URL_len ) == _URL ){
+		$_REQUEST['url'] = '{_URL}'.substr( $_REQUEST['url'], $URL_len );
 	}
 
 	$parent = intval($_REQUEST['parent']);

@@ -1,10 +1,11 @@
 
 
 # jalal7h@gmail.com
-# 2016/12/05
-# 1.10
+# 2017/01/06
+# 1.11
 
 /*
+
 
 * the old version * * *
 
@@ -24,5 +25,14 @@ table( "esm e table" , "id e record" , "field i ke ma mikhaim azash ( ino age na
  	"name" ,
  	" `mother`='43' AND ( 0 OR `cat`='$cat_id') "
  ]);
-
 * no AND prefixed to conditon
+
+
+
+* the 3input version
+
+ table( 'news' , "20,10" ); // returns 3th 10 records news
+ table( 'news' ); // returns all news
+ table( 'news' , ["cat_id"=>11, "flag"=>1] , "1" ); // first active on cat 11
+
+

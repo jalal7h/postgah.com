@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/03
-# 1.2
+# 2017/01/06
+# 1.3
 
 function admin_login_form(){
 
@@ -16,7 +16,7 @@ function admin_login_form(){
 	
 	<div>
 		<div class="legend"><?=__('مدیریت سایت')?></div>
-		<div class="container">
+		<div class="admin-container">
 		
 		<input autocomplete="off" placeholder="Username .." type="text" class="username" name="<?=login_key()['username']?>" >
 		

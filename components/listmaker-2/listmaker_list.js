@@ -12,6 +12,16 @@ $(document).ready(function(){
 		lml_intoolstd = "out";
 		// cl(lml_intoolstd);
 	});
+
+	// allow links in td,th to be clicked.
+	$('.listmaker_list td a , .listmaker_list th a').on('click', function(){
+		cl( 'kk');
+		lml_intoolstd = 'in';
+		setTimeout( function(){
+			lml_intoolstd = 'out';
+		} , 500 );
+	});
+	
 })
 
 

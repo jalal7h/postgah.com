@@ -1,8 +1,6 @@
 
 .linkify_mg_this_list td:nth-child(2){
 	width: 25%;
-	direction: ltr;
-	text-align: left;
 }
 .linkify_mg_this_list td:nth-child(2) > a {
 	font-family: monospace,sans-serif;
