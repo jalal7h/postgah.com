@@ -1,11 +1,16 @@
-
-// 2016/12/11
 /*footer*/
+/*20170106*/
 
 jQuery(document).ready(function($) {
 	
 	$(window).on('load', function() {
 		
+		if( lang_dir == 'rtl' ){
+			the_left = 'left';
+		} else {
+			the_left = 'right';
+		}
+
 		$("img.isss, img.imagesoftsizeset").each( function(i){
 			
 			var t = $(this);
@@ -52,7 +57,7 @@ jQuery(document).ready(function($) {
 			z_h = isss_h / or_h;
 
 			if( or_w > or_h ){
-				cl('its a wide pic');
+				// cl('its a wide pic');
 				
 				if( (isss_w / isss_h) < (or_w / or_h) ){
 					t.width('auto');
@@ -60,7 +65,7 @@ jQuery(document).ready(function($) {
 					t_new_width = t.width();
 					move_left = (t_new_width - isss_w) / 2;
 					move_left = Math.round( move_left );
-					t.css({'position':'relative', 'left' : move_left });
+					t.css({'position':'relative', the_left : move_left });
 					
 				} else {
 					t.height('auto');
@@ -72,7 +77,7 @@ jQuery(document).ready(function($) {
 				}
 			
 			} else if( or_w < or_h ){
-				cl('its a tall pic');
+				// cl('its a tall pic');
 				
 				if( (isss_w / isss_h) < (or_w / or_h) ){
 					cl('mengol');
@@ -81,7 +86,7 @@ jQuery(document).ready(function($) {
 					t_new_width = t.width();
 					move_left = (t_new_width - isss_w) / 2;
 					move_left = Math.round( move_left );
-					t.css({'position':'relative', 'left' : move_left });
+					t.css({'position':'relative', the_left : move_left });
 				
 				} else {
 					cl('yengol');
@@ -94,7 +99,7 @@ jQuery(document).ready(function($) {
 				}
 			
 			} else {
-				cl('its just same');
+				// cl('its just same');
 				t.width(isss_w);
 				t.height(isss_h);
 			}

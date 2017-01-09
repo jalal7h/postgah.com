@@ -19,18 +19,16 @@
 	margin: 5px 0 5px 0;
 	width: 450px;
 	max-width: 95%;
-	direction: ltr;
 }
 .user_register_form input[name="name"] {
 	direction: rtl !important;
 	width: 270px !important;
 	display: inline-block;
-	direction: rtl;
 }
 .user_register_form input[name="cell"] {
 	width: 170px;
 	display: inline-block;
-	margin-right: 7px;
+	/* margin-right: 7px; */
 }
 .user_register_form input[name="username"] {
 	margin-bottom: 10px;

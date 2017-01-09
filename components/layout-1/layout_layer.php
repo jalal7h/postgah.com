@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/03
-# 1.2
+# 2017/01/07
+# 1.3
 
 function layout_layer( $pos="center" ){
 	
@@ -24,6 +24,10 @@ function layout_layer( $pos="center" ){
 		
 		$page_layer_id = $rw_pagelayer['id'];
 		$page_layer_func = $rw_pagelayer['func'];
+
+		if( $rw_pagelayer['hide_name'] ){
+			$rw_pagelayer['name'] = '';
+		}
 
 		if(! function_exists( $page_layer_func ) ){
 			echo convbox( __("function %% does not exists",[$page_layer_func]) );

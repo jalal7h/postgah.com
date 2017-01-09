@@ -1,11 +1,11 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/01
-# 1.2
+# 2017/01/07
+# 1.3
 
-$GLOBALS['block_layers']['user_register_form'] = 'فرم ثبت نام';
-$GLOBALS['do_action'][] = 'user_register_form';
+add_layer( 'user_register_form', 'فرم ثبت نام', 'center' );
+add_action( 'user_register_form' );
 
 function user_register_form(){
 	

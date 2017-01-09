@@ -1,5 +1,9 @@
 <?
 
+# jalal7h@gmail.com
+# 2017/01/07
+# 1.1
+
 function layout_mg_layer_form_extra( $rw ){
 
 	$func_name = $rw['func']."_extra";
@@ -11,9 +15,9 @@ function layout_mg_layer_form_extra( $rw ){
 	} else {
 		
 		if(! $id = $_REQUEST['id'] ){
-			e(__FUNCTION__,__LINE__);
+			e();
 		} else if(! $rw_pagelayer = table("page_layer",$id) ){
-			e(__FUNCTION__,__LINE__,$id);
+			e( $id );
 		}
 
 		#
@@ -34,10 +38,7 @@ function layout_mg_layer_form_extra( $rw ){
 			<legend ><?=$GLOBALS['block_layers'][ $rw['func'] ]?></legend>
 			<? $func_name($rw_pagelayer); ?>
 			<? echo ff('hr'); ?>
-			<center>
-				<input type="button" class="submit_button" onclick="location.href='./?page=admin&cp=<?=$_REQUEST['cp']?>'" value="<?=__('بازگشت')?>"/>
-				<input type="submit" class="submit_button" value="<?=__('ثبت تغييرات')?>"/>
-			</center>
+			<input type="submit" style="margin-left:30px;" class="submit_button" value="<?=__('ثبت')?>"/>
 		</fieldset>
 		</form>	
 		<?

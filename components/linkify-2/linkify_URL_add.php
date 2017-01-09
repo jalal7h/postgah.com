@@ -5,7 +5,13 @@
 # 1.0
 
 function linkify_URL_add( $the_url ){
-	return str_replace("{_URL}", _URL, $the_url );
+	
+	if( substr( $the_url, 0, strlen(_URL) ) == _URL ){
+		$the_url = '{_URL}'.substr( $the_url, strlen(_URL) );
+	}
+
+	return $the_url;
+
 }
 
 

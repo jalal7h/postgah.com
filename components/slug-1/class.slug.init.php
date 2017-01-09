@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/03
-# 1.4
+# 2017/01/06
+# 1.5
 
 class Slug {
 
@@ -38,6 +38,10 @@ class Slug {
 
 	private static function file(){
 		
+		uksort( $GLOBALS['slug'] , function( $a, $b ){
+			return strlen($b)-strlen($a);
+		});
+
 		if( sizeof($GLOBALS['slug']) ){
 			foreach( $GLOBALS['slug'] as $slug_pattern => $slug_path ){
 				if( $path = self::pattern_matches( $slug_pattern, $slug_path ) ){

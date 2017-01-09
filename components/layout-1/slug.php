@@ -6,9 +6,9 @@
 
 add_slug([
 
-	'/page-$.html' => './?page=$1&canonical_tag=1' ,
-	'/templates/Default/css/template.css' => './?do_action=include_all_css_template' ,
-	'/templates/Default/font/font.css' => './?do_action=include_all_font',
+	'page-$.html' => './?page=$1&canonical_tag=1' ,
+	'templates/Default/css/template.css' => './?do_action=include_all_css_template' ,
+	'templates/Default/font/font.css' => './?do_action=include_all_font',
 
 ]);
 

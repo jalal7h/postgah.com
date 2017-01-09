@@ -46,8 +46,18 @@ function layout_mg_layer_form(){
 				</script>
 			<? } ?>
 
-			<input type="text" placeholder="<?=__('عنوان لایه')?>" name="name" value="<?=$rw['name']?>" >
+			<div>
+				<input type="text" placeholder="<?=__('عنوان لایه')?>" name="name" value="<?=$rw['name']?>" >
+				<? if( is_column( 'page_layer', 'hide_name' ) ){ ?>
+				<div class="jtoggle_w">
+					<input type="jtoggle" name="hide_name" value="<?=intval($rw['hide_name'])?>">
+					<span class="title"><?=lmtc('page_layer:hide_name')?></span>
+				</div>
+				<? } ?>
+			</div>
+
 			<?=ff("hr")?>
+
 			<input type="submit" class="submit_button" value="<?=__('ثبت')?>" >
 	
 		</form>

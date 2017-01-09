@@ -1,6 +1,10 @@
-<?
-$GLOBALS['cmp']['layout_mg'] = 'طرح صفحه';
-$GLOBALS['cmp-icon']['layout_mg'] = '121';
+<?php
+
+# jalal7h@gmail.com
+# 2017/01/07
+# 1.0
+
+add_component( 'layout_mg', 'طرح صفحه', '121' );
 
 function layout_mg(){
 
@@ -31,7 +35,7 @@ function layout_mg(){
 			break;
 
 		case 'layer_prio':
-			listmaker_prio( array('page_layer','same'=>'page_id') );
+			listmaker_prio([ 'page_layer','same'=>'page_id' ]);
 			break;
 
 		case 'layer_remove':

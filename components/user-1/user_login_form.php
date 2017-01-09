@@ -1,7 +1,11 @@
 <?
 
-$GLOBALS['block_layers']['user_login_form'] = 'فرم ورود به محیط کاربری';
-$GLOBALS['do_action'][] = 'user_login_form';
+# jalal7h@gmail.com
+# 2017/01/07
+# 1.0
+
+add_layer( 'user_login_form', 'فرم ورود به محیط کاربری', 'center' );
+add_action( 'user_login_form' );
 
 function user_login_form(){
 	

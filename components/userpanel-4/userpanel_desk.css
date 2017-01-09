@@ -1,6 +1,6 @@
 
 
-.back {
+.userpanel_desk .back {
 	margin: 0 0 0 10px;
 	font: normal 12px tahoma;
 	color: rgb(76, 147, 199);
@@ -16,10 +16,6 @@
 	border-radius: 5px;
 	vertical-align: top;
 	overflow: hidden;
-}
-
-.userpanel_desk_management {
-	
 }
 .userpanel_desk_management .container {
 	border:1px solid #ccc;

@@ -4,7 +4,7 @@
 # 2016/11/01
 # 1.2
 
-$GLOBALS['block_layers']['user_forgot_form'] = 'فرم فراموشی کلمه عبور';
+add_layer( 'user_forgot_form', 'فرم فراموشی کلمه عبور', 'center' );
 
 function user_forgot_form(){
 	

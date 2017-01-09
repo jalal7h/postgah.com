@@ -1,10 +1,10 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/18
-# 2.2
+# 2017/01/06
+# 2.3
 
-$GLOBALS['block_layers_side']['userpanel_menu'] = 'منوی کاربری';
+add_layer( 'userpanel_menu', 'منوی کاربری', 'side' );
 
 function userpanel_menu(){
 	

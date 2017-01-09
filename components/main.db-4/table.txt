@@ -31,8 +31,8 @@ table( "esm e table" , "id e record" , "field i ke ma mikhaim azash ( ino age na
 
 * the 3input version
 
- table( 'news' , "20,10" ); // returns 3th 10 records news
+ table( 'news' , null, null, "20,10" ); // returns 3th 10 records news
  table( 'news' ); // returns all news
- table( 'news' , ["cat_id"=>11, "flag"=>1] , "1" ); // first active on cat 11
+ table( 'news' , ["cat_id"=>11, "flag"=>1] , null, "1" ); // first active on cat 11
 
 

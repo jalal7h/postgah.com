@@ -1,0 +1,11 @@
+
+.user_register_form input {
+	direction: ltr;
+}
+.user_register_form input[name="name"] {
+	direction: rtl;
+}
+.user_register_form input[name="cell"] {
+	direction: ltr;
+}
+

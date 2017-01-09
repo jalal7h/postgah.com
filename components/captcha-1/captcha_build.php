@@ -11,17 +11,28 @@ function captcha_build( $numb=4 ){
 	// session_destroy();
 	# 
 	# select the code and store it
-	$rand=rand(1000,9999);
-	error_log("session before write : ".$_SESSION['captcha-'.$captcha_name] );
-	$_SESSION['captcha-'.$captcha_name] = $rand;
-	error_log("session after write : ".$_SESSION['captcha-'.$captcha_name] );
+	if( intval($_SESSION['captcha-wrong']) < 3 ){
 
-	#
-	# select the color
-	$color_R = rand(120,200);
-	$color_G = rand(120,200);
-	$color_B = 255 + 240 - $color_R - $color_G;
-	
+		#
+		# the code
+		$rand = rand(1000,9999);
+		error_log("session before write : ".$_SESSION['captcha-'.$captcha_name] );
+		$_SESSION['captcha-'.$captcha_name] = $rand;
+		error_log("session after write : ".$_SESSION['captcha-'.$captcha_name] );
+
+		#
+		# select the color
+		$color_R = rand(180,230);
+		$color_G = rand(180,230);
+		// $color_B = 255 + 240 - $color_R - $color_G;
+		$color_B = rand(180,230);
+
+	} else {
+		$rand = "OVER";		
+		$_SESSION['captcha-'.$captcha_name] = "N";
+		$color_R = $color_G = $color_B = 160;
+	}
+
 	#
 	# build the image
 	$im = imagecreatefrompng( imgp('captcha'.rand(1,4).'.png') );

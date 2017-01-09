@@ -10,10 +10,7 @@ function linkify_mg_this_saveEdit(){
 		$_REQUEST['url'] = _URL;
 	}
 
-	$URL_len = strlen(_URL);
-	if( substr( $_REQUEST['url'], 0, $URL_len ) == _URL ){
-		$_REQUEST['url'] = '{_URL}'.substr( $_REQUEST['url'], $URL_len );
-	}
+	$_REQUEST['url'] = linkify_URL_add( $_REQUEST['url'] );
 
 	$parent = intval($_REQUEST['parent']);
 	

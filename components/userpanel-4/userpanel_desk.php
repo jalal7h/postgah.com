@@ -1,10 +1,10 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/03
-# 2.2
+# 2017/01/06
+# 2.3
 
-$GLOBALS['block_layers_center']['userpanel_desk'] = 'میز کاربری';
+add_layer( 'userpanel_desk', 'میز کاربری', 'center' );
 
 function userpanel_desk(){
 

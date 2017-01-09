@@ -1,0 +1,50 @@
+
+/*index*/
+
+.tallfooter {
+	width: 100%;
+	display: block;
+	border-top: 4px solid #A90000;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+	color: #999;
+	margin-top: 50px;
+}
+.tallfooter a {
+	color: gray;
+    padding: 10px 0 0 10px;
+    display: inline-block;
+    transition: all 0.3s;
+}
+.tallfooter a:hover {
+	color: #A90000;
+}
+.tallfooter ,
+.tallfooter * {
+	box-sizing: border-box;
+}
+
+.tallfooter .wrapper {
+	background-color: #262626;
+}
+.tallfooter .wrapper:nth-child(2n+1) {
+	border: 1px dashed #141414;
+	border-width: 1px 0;
+}
+.tallfooter .wrapper:nth-child(2n) {
+	border: 1px dashed #333;
+	border-width: 1px 0;
+    background-color: #1c1c1c;
+    box-shadow: 0 0 40px #080808 inset;
+}
+
+.tallfooter .wrapper .inner {
+	padding: 25px 55px;
+}
+
+.tallfooter .this {
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+
