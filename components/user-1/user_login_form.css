@@ -14,7 +14,7 @@
 #user_login_form input {
 	direction: ltr;
 	display: block;
-	font: normal 16px monospace,tahoma;
+	font: normal 16px monospace,DefaultFont;
 	padding: 10px;
 	border: 1px solid #ccc;
 	border-radius: 3px;
@@ -28,21 +28,21 @@
 }
 #user_login_form .d01 {
 	margin: 0 0 40px 0;
-	font: bold 32px tahoma;
+	font: bold 32px DefaultFont;
 	color: #666;
 }
 #user_login_form .d03 {
-	font: normal 10px tahoma;
+	font: normal 10px DefaultFont;
 	margin: 0px 2px 20px 0;
 }
 #user_login_form .d04 {
-	font: normal 10px tahoma;
+	font: normal 10px DefaultFont;
 	display: block;
 	margin: 15px 2px 0 0;
 	width: 140px;
 }
 #user_login_form .d05 {
-	font: normal 10px tahoma;
+	font: normal 10px DefaultFont;
 }
 
 #user_login_form .prompt {
