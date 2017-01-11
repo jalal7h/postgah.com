@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/31
-# 1.0
+# 2017/01/09
+# 1.1
 
 $GLOBALS['tallfooter_element']['linkify'] = 'جعبه پیوند';
 
@@ -24,7 +24,7 @@ function tallfooter_linkify( $rw_tf ){
 			dg();
 
 		} else foreach( $cat['items'] as $id => $info ){
-			$c.= "<a href=\"".$info['url']."\" >".$info['name']."</a>\n";
+			$c.= "<a class=\"cl_l1_hover_before_i\" href=\"".linkify_URL_remove($info['url'])."\" >".$info['name']."</a>\n";
 		}
 
 	}

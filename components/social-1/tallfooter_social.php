@@ -69,7 +69,7 @@ function tallfooter_social( $rw_tf ){
 			continue;
 		}
 
-		$c.= "\t<li><a href=\"".$link."\" title=\"".$class_title."\" target=\"_blank\"><i class=\"fa ".$class."\"></i></a></li>\n";
+		$c.= "\t<li><a href=\"".$link."\" class=\"cl_l1_hover\" title=\"".$class_title."\" target=\"_blank\"><i class=\"fa ".$class."\"></i></a></li>\n";
 
 	}
 	// die();

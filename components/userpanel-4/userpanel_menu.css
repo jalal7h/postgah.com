@@ -37,29 +37,29 @@
 .userpanel_menu > div > a:last-child {
 	border-bottom: 0px !important;
 }
-.userpanel_menu > div > a:hover {
+.userpanel_menu > div > a:hover ,
+.userpanel_menu > div > a:hover icon {
 	color: white;
 	background-color: rgba(0, 0, 0, 0.5);
 	border-right-color: #E22697;
 }
-.userpanel_menu > div > a:before {
+.userpanel_menu > div > a:hover icon {
+    border-bottom: 1px solid #404040;
+}
+
+.userpanel_menu > div > a > icon {
 	text-align: center;
 	background-color: #ededed;
 	width: 38px;
 	height: 38px;
 	line-height: 38px !important;
 	display: inline-block;
-    font: normal 20px FontAwesome;
     padding: 0;
     margin: 0 0 0 10px !important;
     border-bottom: 1px solid white;
-	content: "\f015";
+    font-size: 22px;
 }
 
-.userpanel_menu > div > a:hover:before {
-    border-bottom: 1px solid #ededed;
-	background-color: black;
-}
 .userpanel_menu > div > a:hover:last-child:before {
     border-bottom: 1px solid #000;	
 }

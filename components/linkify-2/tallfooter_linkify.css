@@ -39,7 +39,6 @@
 	color: #fff;
 }
 .tallfooter .this.linkify > a:hover:before {
-	color: #A90000;
     transform: rotate(-45deg);
 }
 

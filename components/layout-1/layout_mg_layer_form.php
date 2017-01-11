@@ -25,6 +25,14 @@ function layout_mg_layer_form(){
 		}
 	}
 
+	foreach( $GLOBALS['block_layers'] as $func => $name ) {
+		if( $rw0 = table( 'page_layer', ['func'=>$func] ) ){
+			if( $func != 'layout_post' and $rw0['id'] < 100 ){
+				unset( $GLOBALS['block_layers'][$func] );
+			}
+		}
+	}
+
 	asort( $GLOBALS['block_layers'] );
 
 	?>

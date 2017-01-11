@@ -1,0 +1,73 @@
+
+.userpanel_headmenu.logged {
+    border-radius: 4px;
+}
+.userpanel_headmenu.logged:hover {
+    box-shadow: 0 5px 70px rgba(8, 0, 0, 0.5);
+}
+.userpanel_headmenu.logged:hover .links {
+    display: none;
+}
+
+.userpanel_headmenu.logged:hover .box {
+    padding-left: 63px;
+    width: 200px;
+    border-radius: 4px 4px 0 0;
+}
+
+.userpanel_headmenu.logged:hover .box > .circle {
+    left: -10px;
+}
+
+.userpanel_headmenu.logged {
+    /* position: relative; */
+}
+.userpanel_headmenu.logged menu {
+    /* background-color: #fce; */
+    display: none;
+}
+.userpanel_headmenu.logged:hover menu {
+    display: block;
+}
+.userpanel_headmenu.logged menu > a {
+    display: block;
+    color: #404040;
+    white-space: nowrap;
+    height: 39px;
+    border-bottom: 1px dotted rgba(0, 0, 0, .15);
+    /* border-right: 3px solid gray; */
+}
+.userpanel_headmenu.logged menu > a:last-child {
+    border-bottom: 0px;
+    border-radius: 0 0 4px 4px;
+    height: 38px;
+}
+.userpanel_headmenu.logged menu > a:last-child icon {
+    border-radius: 0 0 4px 0px;
+}
+.userpanel_headmenu.logged menu > a > icon {
+    text-align: center;
+    /* background-color: #ededed; */
+    width: 38px;
+    height: 38px;
+    line-height: 38px !important;
+    display: inline-block;
+    padding: 0;
+    margin: 0 3px 0 1px !important;
+    /* border-bottom: 1px solid white; */
+    font-size: 22px;
+}
+.userpanel_headmenu.logged menu > a:hover > icon {
+    /* background-color: #404040; */
+    /* color: white; */
+}
+.userpanel_headmenu.logged menu > a:hover {
+    text-shadow: 0 0 3px #000;
+}
+
+.userpanel_headmenu.logged menu > a > span {
+    font-size: 14px;
+    position: relative; top: -3px;
+}
+
+

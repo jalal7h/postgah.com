@@ -30,13 +30,15 @@ function layout_mg_meta_form(){
 		?>
 		<form name="layout_mg_meta_form" class="layout_mg_meta_form" method="post" action="./?page=admin&cp=<?=$_REQUEST['cp']?>&do=<?=$_REQUEST['do']?>&id=<?=$_REQUEST['id']?>&do2=meta_save">
 			
-			<div class="head">جزئیات صفحه <?=table('page',$id,'name')?></div>
+			<div class="head"><?=__('جزئیات صفحه %%', [ table('page',$id,'name') ] )?></div>
 
+			<? if( $id != 1 ){ ?>
 			<div class="slug_div">
 				<span><?=__('آدرس صفحه')?> ..</span>
 				<div><input name="slug" type="text" value="<?=layout_link($rw)?>" /></div>
 			</div>
 			<hr>
+			<? } ?>
 
 			<? foreach ($GLOBALS['layout-metatag'] as $k => $column) { ?>
 			<div>

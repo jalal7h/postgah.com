@@ -102,7 +102,7 @@ function layout_open(){
 }
 
 
-$GLOBALS['block_layers']['layout_header'] = 'سرایند سایت';
+// $GLOBALS['block_layers']['layout_header'] = 'سرایند سایت';
 function layout_header(){
 
 	$vars['THEME']=_THEME;
@@ -111,7 +111,7 @@ function layout_header(){
 }
 
 
-$GLOBALS['block_layers']['layout_footer'] = 'پسایند سایت';
+// $GLOBALS['block_layers']['layout_footer'] = 'پسایند سایت';
 function layout_footer(){
 	return template_engine( 'footer' );
 }

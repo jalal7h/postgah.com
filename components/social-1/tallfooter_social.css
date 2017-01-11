@@ -18,9 +18,6 @@ ul.tallfooter_social > li > a {
     transition-duration: 0.2s;
     text-shadow: 0 0 4px rgba(0,0,0,0.6);
 }
-ul.tallfooter_social > li > a:hover {
-	color: rgb(169,0,0);
-}
 
 ul.tallfooter_social .social-aparat {
     background-image: url(image_list/aparat-logo-gray.png);

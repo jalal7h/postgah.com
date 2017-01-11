@@ -84,7 +84,7 @@ function ticketbox_user_list(){
 	$list['linkTo']['move_to_archive'] = [
 		'url' => '_URL."/?page=".$_REQUEST["page"]."&do=".$_REQUEST["do"]."&do1=flag&id=".$rw["ticketbox_id"]',
 		'icon' => '14a',
-		'name' => 'انتقال به آرشیو',
+		'name' => __('انتقال به آرشیو'),
 		'color' => '#62bb00',
 		'width' => 35,
 		'text_archivePrompt' => __('آیا مایل به انتقال این پیام به آرشیو هستید؟'),
@@ -92,7 +92,7 @@ function ticketbox_user_list(){
 
 	#
 	# paging select
-	$list['paging_select']['flag'] = "<option value=''>پیامهای فعال</option><option value='1'>آرشیو پیام‌ها</option>";
+	$list['paging_select']['flag'] = "<option value=''>".__('پیامهای فعال')."</option><option value='1'>".__('آرشیو پیام‌ها')."</option>";
 
 	#
 	# echo result

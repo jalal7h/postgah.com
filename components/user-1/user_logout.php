@@ -1,11 +1,11 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/03
-# 1.2
+# 2017/01/10
+# 1.3
 
-$GLOBALS['do_action'][] = 'user_logout';
-$GLOBALS['userpanel_item'][ 96 ] = [ 'user_logout', 'خروج', '08b' ];
+add_action( 'user_logout' );
+add_userpanel_item( 'user_logout', 'خروج', '08b', 96 );
 
 function user_logout( $redirect_to=_URL ){
 	

@@ -1,7 +1,7 @@
 
 // 2016/07/11
 
-document.write('<div id="tooltip"></div>');
+document.write('<div id="tooltip" class="cl_l1r_border"></div>');
 
 jQuery(document).ready(function($) {
 	

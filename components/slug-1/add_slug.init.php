@@ -19,10 +19,10 @@ function add_slug( $slug_string , $slug_path=null ){
 		e();
 	
 	} else if(! $slug_string = trim($slug_string) ){
-		e();
+		e( $slug_string . " -  " . $slug_path );
 
 	} else if(! $slug_path = trim($slug_path) ){
-		e();
+		e( $slug_string . " -  " . $slug_path );
 
 	} else {
 		$GLOBALS['slug'][ $slug_string ] = $slug_path;

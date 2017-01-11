@@ -1,25 +1,19 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/01/07
+# 2017/01/09
 # 1.0
 
 add_layer( 'user_login_form_side', 'فرم ورود به محیط کاربری', 'side' );
 
 function user_login_form_side(){
 	
-	switch ($_REQUEST['do']) {
-		case 'login_do':
-			$prompt = user_login_do();
-			break;
-	}
-	
 	if( user_logged() ){
 		jsgo( layout_link(14) );
 	}
 
 	?>
-	<form autocomplete="off" method="post" action="<?=_URL?>" class="<?=__FUNCTION__?>" >
+	<form autocomplete="off" method="post" action="<?=layout_link(60)?>" class="<?=__FUNCTION__?>" >
 
 		<div class="head" ><?=__('ورود کاربر')?></div>
 

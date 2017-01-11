@@ -14,14 +14,12 @@ function useravatar( $user_id, $text_flag=false, $link_flag=false, $job_flag=fal
 		return false;
 	}
 
-	if(! $rw_user['profile_pic'] ){
-		$rw_user['profile_pic'] = 'image_list/avatar-not-found.png';
-	}
+	$profile_pic = user_photo( $rw_user );
 
 	$c.= '<div class="useravatar">';
 	
 	$c.= ( $link_flag ?'<a target="_blank" href="'.userprofile_link( $user_id ).'">' :'' );
-	$c.= '<img src="'._URL.'/'.$rw_user['profile_pic'].'" />';
+	$c.= '<img src="'._URL.'/'.$profile_pic.'" />';
 	$c.= ( $link_flag ?'</a>' :'' );
 	
 	if( $text_flag ) {

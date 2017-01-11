@@ -12,8 +12,7 @@ function add_init( $init_func, $i=null ){
 	if( !is_closure($init_func) and (! $init_func = trim($init_func) ) ){
 		e();
 
-	} else 
-	if( ($i === null) or !is_numeric($i) ){
+	} else if( ($i === null) or !is_numeric($i) ){
 		$GLOBALS['do_init'][] = $init_func;
 		
 	} else {

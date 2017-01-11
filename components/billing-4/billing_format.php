@@ -1,16 +1,16 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/01
-# 1.0
+# 2017/01/09
+# 1.1
 
 // $%% USD
 
 /*README*/
 
-function billing_format( $money ){
+function billing_format( $money, $silent_on_zero=true ){
 
-	if( $money == 0 ){
+	if( $silent_on_zero and $money == 0 ){
 		return "";
 	}
 

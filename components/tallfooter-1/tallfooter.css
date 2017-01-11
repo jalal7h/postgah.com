@@ -4,19 +4,17 @@
 .tallfooter {
 	width: 100%;
 	display: block;
-	border-top: 4px solid #A90000;
+	border-top-width: 4px;
+	border-top-style: solid;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 	color: #999;
 	margin-top: 50px;
 }
 .tallfooter a {
 	color: gray;
-    padding: 10px 0 0 10px;
+    /* padding: 10px 0 0 10px; */
     display: inline-block;
     transition: all 0.3s;
-}
-.tallfooter a:hover {
-	color: #A90000;
 }
 .tallfooter ,
 .tallfooter * {
