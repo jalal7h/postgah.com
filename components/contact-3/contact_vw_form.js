@@ -1,6 +1,6 @@
 
 jQuery(document).ready(function($) {
-	$('.contact_vw_form').on('submit', function(){
+	$('.contact_vw_form form').on('submit', function(){
 
 		if( $(this).find('select[name="to"]').val() == '0' ){
 			$(this).find('select[name="to"]').focus();
@@ -24,3 +24,4 @@ jQuery(document).ready(function($) {
 
 	})
 });
+

@@ -3,3 +3,6 @@ input[type=checkbox] {
 	position: relative !important;
 	margin-left: 0px !important;
 }
+legend {
+	width: auto;
+}

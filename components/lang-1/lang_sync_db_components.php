@@ -39,7 +39,7 @@ function lang_sync_db_components(){
 				continue;
 
 			} else if(! $php = implode('', file($file) ) ) {
-				e();
+				e( $file );
 
 			} else {
 

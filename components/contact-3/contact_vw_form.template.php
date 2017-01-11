@@ -7,7 +7,7 @@
 		<div>{setting_rw("contact_fax")["name"]} : <span dir=ltr >{contact_fax}</div>
 	</div>
 
-	<form method="post" action="./?page={page}&do=send" >
+	<form method="post" action="{_URL}/?page={page}&do=send" >
 		
 		{token_make}
 
@@ -35,13 +35,6 @@
 	</form>
 
 </div>
-
-
-
-
-
-
-
 
 
 

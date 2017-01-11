@@ -124,7 +124,7 @@ jQuery(document).ready(function($) {
 
 		hidden_input.val( selected.attr('the_id') );
 		text_input.val( selected.html() );
-		tx.addClass('completed');
+		text_input.addClass('completed');
 
 		list.hide();
 

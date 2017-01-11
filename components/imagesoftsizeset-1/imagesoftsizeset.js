@@ -1,5 +1,5 @@
 /*footer*/
-/*20170109*/
+/*20170111*/
 
 jQuery(document).ready(function($) {
 	
@@ -10,7 +10,7 @@ jQuery(document).ready(function($) {
 		} else {
 			the_left = 'right';
 		}
-
+// 
 		$("img.isss, img.imagesoftsizeset").each( function(i){
 
 			var t = $(this);
@@ -24,28 +24,36 @@ jQuery(document).ready(function($) {
 			if( its_a == "reload" ){
 				clone_rand = rand(6);
 				t_hidden_id = "isss_hidden_" + clone_rand;
-				t.clone().insertBefore( t ).addClass('isss_hidden').removeClass('isss').attr('id', t_hidden_id)
+				t.clone().insertBefore( t ).addClass('isss_hidden').removeClass('isss').removeClass('imagesoftsizeset').attr('id', t_hidden_id)
 				t.attr('clone_rand', clone_rand);
-				cl( 'clone done');
+				// cl( 'clone done');
 
 			} else {
 				clone_rand = t.attr('clone_rand');
 				t_hidden_id = "isss_hidden_" + clone_rand;
 			}
 			t_hidden = $('#'+t_hidden_id);
-			t_hidden.css({'margin-top': -1*t_hidden.height()})
 
+
+			/* ** * ** * ** * ** * ** * ** * ** * ** * ** * ** *
+			 * get the nature dimentions from t_hidden
+			 */
 			if( its_a == "resize" ){
 				t.parent().parent().hide();
+				t_hidden.show();
 			}
 			var isss_w = t_hidden.width();
 			var isss_h = t_hidden.height();
 			if( its_a == "resize" ){
+				t_hidden.hide();
 				t.parent().parent().show();
 			}
+			/*
+			 * ** * ** * ** * ** * ** * ** * ** * ** * ** * ** */
+
 
 			// alert( '// '  + isss_w );
-
+			
 			t.css({'width':'auto','height':'auto'});
 
 			var or_w = t.width();
@@ -90,10 +98,10 @@ jQuery(document).ready(function($) {
 			z_h = isss_h / or_h;
 
 			if( or_w > or_h ){
-				cl('its a wide pic');
+				// cl('its a wide pic');
 				
 				if( (isss_w / isss_h) < (or_w / or_h) ){
-					cl('mengol');
+					// cl('mengol');
 					t.width('auto');
 					t.height(isss_h);
 					t_new_width = t.width();
@@ -102,7 +110,7 @@ jQuery(document).ready(function($) {
 					t.css({'position':'relative', the_left : move_left });
 					
 				} else {
-					cl('yengol');
+					// cl('yengol');
 					t.height('auto');
 					t.width(isss_w);
 					t_new_height = t.height();
@@ -112,10 +120,10 @@ jQuery(document).ready(function($) {
 				}
 			
 			} else if( or_w < or_h ){
-				cl('its a tall pic');
+				// cl('its a tall pic');
 				
 				if( (isss_w / isss_h) < (or_w / or_h) ){
-					cl('mengol');
+					// cl('mengol');
 					t.width('auto');
 					t.height(isss_h);
 					t_new_width = t.width();
@@ -124,7 +132,7 @@ jQuery(document).ready(function($) {
 					t.css({'position':'relative', the_left : move_left });
 				
 				} else {
-					cl('yengol');
+					// cl('yengol');
 					t.width(isss_w);
 					t.height('auto');
 					t_new_height = t.height();
@@ -134,11 +142,13 @@ jQuery(document).ready(function($) {
 				}
 			
 			} else {
-				cl('its just same');
+				// cl('its just same');
 				t.width(isss_w);
 				t.height(isss_h);
 			}
-		
+
+			// t.parent().parent().css({'margin-right': -1*t_hidden.width()})
+
 			t.animate({'opacity':'1.0'}, 300);
 
 		});

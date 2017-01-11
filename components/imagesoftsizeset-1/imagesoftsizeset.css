@@ -1,16 +1,17 @@
 
 .isss {
-	opacity: 0.0;
+	/* opacity: 0.0; */
 }
 
 .isss_wrapper {
 	display: inline-block;
+	position: relative;
+	z-index: 1;
 }
 .isss_wrapper > .inner {
 	display: inline-block;
 	overflow: hidden;
 }
 .isss_hidden {
-	opacity: .2;
-	position: relative; z-index: -1111;
+	display: none;
 }

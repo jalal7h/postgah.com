@@ -18,7 +18,7 @@
 
  	<? if( is_component('billing') ){ ?>
 		<div class="links">
-	 		<a class="cl_l2 cl_l1_hover" href="{layout_link(14)}/billing_userpanel_payment">
+	 		<a class="cl_l2_i cl_l1_hover" href="{layout_link(14)}/billing_userpanel_payment">
 	 			<?=__('موجودی شما')?> : {credit}
 	 		</a>
 	 	</div>
