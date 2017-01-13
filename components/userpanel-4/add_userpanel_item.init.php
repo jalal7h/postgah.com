@@ -4,9 +4,9 @@
 # 2017/01/10
 # 1.0
 
-function add_userpanel_item( $func, $name, $icon, $i=null ){
+function add_userpanel_item( $func, $name, $icon, $i=null, $default=false ){
 	
-	$info = [ $func, $name, $icon ];
+	$info = [ $func, $name, $icon, $default ];
 
 	if( $i === null ){
 		$GLOBALS['userpanel_item'][] = $info;

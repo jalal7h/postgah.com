@@ -6,12 +6,12 @@
 
 function its_local(){
 	
-	if( $_SERVER['SERVER_ADDR'] == '127.0.0.1' ){
-		return true;
+	// if( $_SERVER['SERVER_ADDR'] == '127.0.0.1' ){
+	// 	return true;
 
-	} else {
+	// } else {
 		return false;
-	}
+	// }
 
 }
 

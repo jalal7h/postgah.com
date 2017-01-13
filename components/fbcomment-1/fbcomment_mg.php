@@ -4,8 +4,7 @@
 # 2016/11/29
 # 1.0
 
-$GLOBALS['cmp']['fbcomment_mg'] = 'مدیریت نظرات';
-$GLOBALS['cmp-icon']['fbcomment_mg'] = '27a';
+add_component( 'fbcomment_mg', 'مدیریت نظرات', '27a' );
 
 function fbcomment_mg(){
 	

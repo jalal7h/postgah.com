@@ -1,6 +1,7 @@
 
 .userpanel_headmenu {
 	position: absolute; top: 29px; left: 25px;
+    z-index: 25;
 }
 .userpanel_headmenu .box {
     display: inline-block;

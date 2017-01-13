@@ -1,8 +1,10 @@
 <?
 
 # taghipoor.meysam@gmail.com
-# 2016/11/27
-# 1.0
+# 2017/01/11
+# 1.1
+
+add_userpanel_item( 'bookmarky_user_list', 'علاقه مندی ها', '004' );
 
 function bookmarky_user_list(){	
 	

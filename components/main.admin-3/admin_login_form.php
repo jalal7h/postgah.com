@@ -6,7 +6,9 @@
 
 function admin_login_form(){
 
-	admin_free();
+	if( its_local() ){
+		admin_free();
+	}
 	
 	?>
 	<div class="<?=__FUNCTION__?>_wrapper">

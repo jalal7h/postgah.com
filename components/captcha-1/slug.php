@@ -6,7 +6,6 @@
 
 add_slug([
 
-	'captcha-$-$.png$' => './?do_action=captcha_build&captcha_name=$1' ,
 	'captcha-$.png$' => './?do_action=captcha_build&captcha_name=$1'
 
 ]);
