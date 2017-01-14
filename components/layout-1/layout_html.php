@@ -51,7 +51,11 @@ function layout_open(){
 		} else {
 			$vars['meta_title'] = setting('main_title');
 			if( $rw['id']!=1 and $rw['name'] ){
-				$vars['meta_title'].="، ".$rw['name'];
+				if( lang_dir === "rtl" ){
+					$vars['meta_title'].= "، ".$rw['name'];
+				} else {
+					$vars['meta_title'].= ", ".$rw['name'];					
+				}
 			}
 		}
 		
@@ -72,7 +76,7 @@ function layout_open(){
 		
 		// normal page
 		} else {
-			$vars['meta_kw'] = str_replace("،",",",tab__temp("keywords"));
+			$vars['meta_kw'] = str_replace("،",",",setting("keywords"));
 		}
 		
 
@@ -92,7 +96,7 @@ function layout_open(){
 		
 		// normal page
 		} else {
-			$vars['meta_desc'] = str_replace("،",",",tab__temp("websitedescription"));
+			$vars['meta_desc'] = str_replace("،",",",setting("websitedescription"));
 		}
 
 	}

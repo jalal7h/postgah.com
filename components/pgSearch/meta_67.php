@@ -1,7 +1,7 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/04
+# 2017/01/14
 # 1.0
 
 function meta_67(){
@@ -18,7 +18,7 @@ function meta_67(){
 	return [ 
 		'title' => $title ,
 		'kw' => $kw ,
-		'desc' => $desc ,
+		// 'desc' => $desc ,
 	];
 
 }

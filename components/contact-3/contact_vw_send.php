@@ -7,7 +7,7 @@
 function contact_vw_send(){
 
 	token_check();
-
+	
 	if(! $_REQUEST['to'] = $_REQUEST['to'] ){
 		dg();
 	

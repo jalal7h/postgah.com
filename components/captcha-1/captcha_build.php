@@ -1,5 +1,10 @@
 <?
-$GLOBALS['do_action'][] = 'captcha_build';
+
+# jalal7h@gmail.com
+# 2017/01/14
+# 1.0
+
+add_action( 'captcha_build' );
 
 function captcha_build( $numb=4 ){
 	
