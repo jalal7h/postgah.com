@@ -27,8 +27,8 @@ function captcha_build( $numb=4 ){
 		# select the color
 		$color_R = rand(180,230);
 		$color_G = rand(180,230);
-		// $color_B = 255 + 240 - $color_R - $color_G;
-		$color_B = rand(180,230);
+		$color_B = 255 + 240 - $color_R - $color_G;
+		// $color_B = rand(180,230);
 
 	} else {
 		$rand = "OVER";		
