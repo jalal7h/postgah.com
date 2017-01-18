@@ -6,6 +6,8 @@
 
 function its_local(){
 	
+	return false;
+
 	if( $_SERVER['SERVER_ADDR'] == '127.0.0.1' ){
 		return true;
 
