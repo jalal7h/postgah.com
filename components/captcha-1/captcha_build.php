@@ -20,7 +20,7 @@ function captcha_build( $numb=4 ){
 
 		#
 		# the code
-		$rand = rand( pow(10,$numb), pow(10,$numb+1)-1 );
+		$rand = rand( pow(10,$numb-1), pow(10,$numb)-1 );
 		$_SESSION['captcha-'.$captcha_name] = $rand;
 
 		#
