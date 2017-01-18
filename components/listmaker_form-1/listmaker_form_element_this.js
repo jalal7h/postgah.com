@@ -28,7 +28,7 @@ $(document).ready(function($) {
 
 	// lmfe_more
 	var lmfe_c = 0;
-	$('.lmfe_more icon').on('click', function(){
+	$("body").delegate('.lmfe_more icon', "click", function() {	
 
 		// more_c
 		lmfe_more_c_handle = $(this).closest('.lmfe_more_c');

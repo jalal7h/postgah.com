@@ -52,22 +52,23 @@ function layout_mg(){
 	# list
 	?>
 	<div class="layout_mg">
-		<?
-		if(! $rs = dbq(" SELECT * FROM `page` WHERE 1 ORDER BY `id` ASC ") ){
-			e(__FUNCTION__,__LINE__);
-		
-		} else while($rw = dbf($rs)){
-			layout_mg_this($rw);
-		}
+	<?
 
-		echo ff('hr');
+	if(! $rs = dbq(" SELECT * FROM `page` WHERE 1 ORDER BY `id` ASC ") ){
+		e();
+	
+	} else while($rw = dbf($rs)){
+		layout_mg_this($rw);
+	}
 
-		?>
-		<div></div>
-		<form action="./?page=admin&cp=<?=$_REQUEST['cp']?>&do=save" method="post" class="this new" >
-			<input type="text" name="name" placeholder="<?=__('صفحه جدید ..')?>" />
-			<input type="submit" class="submit_button" value="<?=__('ثبت')?>"/>
-		</form>
+	echo ff('hr');
+
+	?>
+	<div></div>
+	<form action="./?page=admin&cp=<?=$_REQUEST['cp']?>&do=save" method="post" class="this new" >
+		<input type="text" name="name" placeholder="<?=__('صفحه جدید ..')?>" />
+		<input type="submit" class="btn btn-primary" value="<?=__('ثبت')?>"/>
+	</form>
 	</div>
 	<?
 

@@ -65,7 +65,7 @@ function billing_userpanel_payment_offline(){
 			<div>
 			<hr>
 				<span>&nbsp;</span>
-				<input type="submit" class="submit_button" value="<?=__("ثبت پرداخت")?>"/>
+				<input type="submit" class="btn btn-primary" value="<?=__("ثبت پرداخت")?>"/>
 			</div>
 		</form>
 		<script>

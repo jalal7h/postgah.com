@@ -6,3 +6,10 @@ input[type=checkbox] {
 legend {
 	width: auto;
 }
+
+.btn.btn-primary ,
+.btn.btn-primary:hover {
+	color: white;
+}
+
+

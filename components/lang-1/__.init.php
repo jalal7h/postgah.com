@@ -5,7 +5,7 @@
 # 1.0
 
 function __( $text, $vars=null ){
-
+	
 	// lang replacement
 	if( lang_flag ){
 		if( do_action != 'lang_sync_db' ){

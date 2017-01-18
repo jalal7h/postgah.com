@@ -1,6 +1,4 @@
 
-/*skipfix*/
-
 .jtoggle-ul ,
 .jtoggle-ul * {
 	margin: 0px;
@@ -43,7 +41,8 @@
 	padding: 7.5px 0 0 12px !important;
 	margin-left: -45px;
 	/* background-color: rgb(150, 0, 252); */
-	background-color: rgb(117, 172, 0);
+	/* background-color: rgb(117, 172, 0); */
+	background-color: rgb(51, 122, 183);
 	box-shadow: 0 0 10px #000 inset;
 	color: white;
 	width: 60px;

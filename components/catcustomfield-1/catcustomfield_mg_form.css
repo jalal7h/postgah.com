@@ -4,11 +4,24 @@
 }
 
 .catcustomfield_mg_form .head {
-	font: bold 16px DefaultFont;
-	padding: 0 0 40px 0;
+    font: bold 18px DefaultFont;
+    padding: 28px 30px 30px 0;
 	margin: 0 0 40px 0;
 	border-bottom: 1px dashed #aaa;
 }
 .catcustomfield_mg_form .head a {
 	font: bold 16px DefaultFont;
 }
+.catcustomfield_mg_form .prompt {
+	display: none;
+}
+.catcustomfield_mg_form .prompt span:nth-child(2) {
+	color: #e80000;
+	list-style-type: circle;
+}
+
+.catcustomfield_mg_form .lmfe_tnit {
+	width: 200px;
+}
+
+

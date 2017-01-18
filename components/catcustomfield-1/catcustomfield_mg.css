@@ -1,11 +1,22 @@
 
 .catcustomfield_mg {
 	direction: rtl;
-	margin: 40px;
+	margin: 0 10px;
 }
-.catcustomfield_mg .head {
+.catcustomfield_mg .header {
 	font: bold 16px DefaultFont;
 	padding: 0 0 30px 0;
 	margin: 0 0 25px 0;
 	border-bottom: 1px dashed #aaa;
 }
+
+.catcustomfield_mg .footer {
+	padding: 30px 0 0 0;
+	margin: 25px 0 0 0;
+	border-top: 1px dashed #aaa;
+}
+.catcustomfield_mg .footer a.btn-primary {
+	color: white;
+}
+
+

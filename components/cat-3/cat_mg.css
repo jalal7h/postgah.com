@@ -18,6 +18,11 @@
 	width: 400px;
 	font: 14px DefaultFont;
 }
+#cat_mg .btn.btn-primary {
+	font-size: 12px !important;
+	border: 0px !important;
+	width: auto !important;
+}
 
 
 /*** position */
@@ -38,14 +43,14 @@
 	color: blue;
 	font-size: 12px;
 	/* padding-right:10px; */
-	margin-top: 2px;
-	margin-right: 3px;
+	/* margin-top: 2px; */
+	/* margin-right: 3px; */
 	color: white;
 	font-family: DefaultFont;
 }
 #cat_form_management input[type=submit]{
-	width: 80px;
-	margin-left: 3px;
+	/* width: 80px; */
+	/* margin-left: 3px; */
 }
 #cat_form_management input[type=text]{
 	margin-left: 3px;
@@ -66,7 +71,7 @@
 
 
 #cat_form_management #new{
-	padding-right: 121px;
+	padding-right: 125px;
 }
 #cat_form_management div a img{
 	padding-left:5px;
@@ -162,9 +167,28 @@
 	color: #666;
 }
 
-#cat_form_management .disabled {
+
+/*********/
+
+#cat_mg icon.toggle {
+	font-size: 32px;
+    max-height: 20px;
+    line-height: 20px;
+    position: relative;
+    top: 7px;
+    margin-right: 5px;
+    color: #337ab7;
+    cursor: pointer;
+}
+#cat_mg .record.off {
 	background-color: #e2e2e2;
 	border-radius: 4px;
 }
 
-/*********/
+
+
+
+
+
+
+

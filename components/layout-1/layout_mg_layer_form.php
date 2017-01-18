@@ -66,7 +66,7 @@ function layout_mg_layer_form(){
 
 			<?=ff("hr")?>
 
-			<input type="submit" class="submit_button" value="<?=__('ثبت')?>" >
+			<input type="submit" class="btn btn-primary" value="<?=__('ثبت')?>" >
 	
 		</form>
 	</fieldset>

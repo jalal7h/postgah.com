@@ -230,7 +230,7 @@ function listmaker_formfield($field){
 			if( $lmft_titleInSpan ){
 				$c = "<span class='lmft_tis'>".$field['placeholder']."</span>";
 			}
-			$c.= "<div class='lmff_div'".($lmft_titleInSpan?" style='display:inline-block' ":"")."><span onclick='lmff_div_select( this )' class='lmff_span submit_button'>".$field['placeholder']."</span>".
+			$c.= "<div class='lmff_div'".($lmft_titleInSpan?" style='display:inline-block' ":"")."><span onclick='lmff_div_select( this )' class='lmff_span btn btn-primary'>".$field['placeholder']."</span>".
 			"<input ".
 			"type='".$field['type']."' ".
 			"class='lmff_file".($field['class']?" ".$field['class']:"")."' ".

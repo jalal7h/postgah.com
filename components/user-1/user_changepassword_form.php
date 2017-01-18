@@ -34,7 +34,7 @@ function user_changepassword_form(){
 					
 					<div>
 						<span></span>
-						<input type='submit' class='submit_button' value='".__('تغییر کلمه عبور')."' />
+						<input type='submit' class='btn btn-primary' value='".__('تغییر کلمه عبور')."' />
 					</div>
 					
 			</form>";

@@ -48,14 +48,14 @@ function billing_management_methods(){
 		} else if(!dbn($rs)){
 			// $installed = false;
 			$inputs = "
-			<input type='button' class='submit_button' value='".__('نصب')."' onclick='location.href=\"./?page=".$_REQUEST['page']."&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func']."&do=install&method=".$method."\"' />";
+			<input type='button' class='btn btn-primary' value='".__('نصب')."' onclick='location.href=\"./?page=".$_REQUEST['page']."&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func']."&do=install&method=".$method."\"' />";
 		
 		} else {
 			// $installed = true;
 			$rw = dbf($rs);
 			$inputs = "
-			<input type='button' class='submit_button' value='".__('تنظیمات')."' onclick='location.href=\"./?page=".$_REQUEST['page']."&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func']."&do=form&method=".$method."\"' />
-			<input type='button' class='submit_button' value='".__('لغو')."' onclick='location.href=\"./?page=".$_REQUEST['page']."&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func']."&do=uninstall&method=".$method."\"' />";
+			<input type='button' class='btn btn-primary' value='".__('تنظیمات')."' onclick='location.href=\"./?page=".$_REQUEST['page']."&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func']."&do=form&method=".$method."\"' />
+			<input type='button' class='btn btn-primary' value='".__('لغو')."' onclick='location.href=\"./?page=".$_REQUEST['page']."&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func']."&do=uninstall&method=".$method."\"' />";
 		}
 
 		echo "<div class=r >

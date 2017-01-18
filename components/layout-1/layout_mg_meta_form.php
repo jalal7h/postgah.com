@@ -51,8 +51,8 @@ some php code
 			</div>
 			<? } ?>
 			<div class='submit-div'>
-				<input type="button" value="<?=__('بازگشت')?>" class="submit_button" onclick="location.href='./?page=admin&cp=<?=$_REQUEST['cp']?>'" />
-				<input type="submit" value="<?=__('ثبت')?>" class="submit_button" />
+				<input type="button" value="<?=__('بازگشت')?>" class="btn btn-primary" onclick="location.href='./?page=admin&cp=<?=$_REQUEST['cp']?>'" />
+				<input type="submit" value="<?=__('ثبت')?>" class="btn btn-primary" />
 			</div>
 		</form>
 		<?

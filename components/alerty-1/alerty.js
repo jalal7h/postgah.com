@@ -23,7 +23,7 @@ jQuery(document).ready(function($) {
 function alerty_hide( id, hide_delay ){
 	setTimeout( function(){
 		$('#alerty #'+id).addClass('hide');
-		cl( 'class hide added to '+id );
+		// cl( 'class hide added to '+id );
 	}, hide_delay * 1000 );
 }
 

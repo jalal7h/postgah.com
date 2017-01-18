@@ -31,7 +31,7 @@ function user_login_form(){
 			<input autocomplete="off" type="password" name="password" placeholder="<?=__("کلمه عبور")?>" dir="ltr" />
 			<div class="d03"><?=__('شما با کلیک کردن روی دکمه ورود موافقت می کنید که تمامی %%قوانین سایت%% را پذیرفته اید.', ['<a href="'.layout_link(6).'">','</a>'] )?></div>
 			<?=( $prompt ?'<div class="prompt">'.$prompt.'</div>' :'' )?>
-			<input type="submit" class="submit_button" value="<?=__('ورود')?>" />
+			<input type="submit" class="btn btn-primary" value="<?=__('ورود')?>" />
 			<a class="d04" target="_top" href="<?=layout_link(63)?>"><?=__('کلمه عبورام را فراموش کرده ام')?></a>
 		</div>
 

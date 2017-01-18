@@ -1,6 +1,4 @@
 
-/*2016/08/16*/
-
 .lmtl {
 	width: 548px;
 }
@@ -74,7 +72,7 @@
 }
 .layout_mg_this_layer > .name {
 	display: inline-block;
-	cursor: default;
+	/* cursor: default; */
 	font-size: 10px;
 	transition: all 0.2s;
 }

@@ -30,7 +30,7 @@ function billing_management_offline_methods_form(){
 		</div>
 		<hr>
 		<div>
-			<input class="submit_button" type="submit" value="<?=__("ثبت")?>"/>
+			<input class="btn btn-primary" type="submit" value="<?=__("ثبت")?>"/>
 		</div>
 	</form>
 	<?

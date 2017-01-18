@@ -53,7 +53,7 @@
 		'hr',
 		'br',
 
-		['t:submit','class'=>'submit_button','n:submit'=>'ثبت','inDiv'],
+		['t:submit','class'=>'btn btn-primary','n:submit'=>'ثبت','inDiv'],
 	
 	]);
 

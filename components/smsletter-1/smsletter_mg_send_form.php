@@ -37,7 +37,7 @@ function smsletter_mg_send_form(){
 		<div class="divider"></div>
 		
 		<div>
-			<input type="submit" value="<?=__('ارسال')?>" class="submit_button" />
+			<input type="submit" value="<?=__('ارسال')?>" class="btn btn-primary" />
 		</div>
 
 	</form>

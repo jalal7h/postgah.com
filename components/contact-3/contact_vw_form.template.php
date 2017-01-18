@@ -27,7 +27,7 @@
 				<input placeholder="{lmtc('contact:cell')}" type="text" class="numeric" name="cell" value="{cell}">
 				<input placeholder="{lmtc('contact:email')}" type="email" name="email" value="{email}">
 				<textarea placeholder="{lmtc('contact:content')}" name="content" >{content}</textarea>
-				<input type="submit" value="<lang>ارسال</lang>" class="submit_button" >
+				<input type="submit" value="<lang>ارسال</lang>" class="btn btn-primary" >
 			</div>
 
 		</fieldset>

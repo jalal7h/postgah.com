@@ -138,13 +138,13 @@ function abusereport_mg_view(){
 			# -spi- for postgah.com
 			if( $rw_ar['table_name'] == 'item' ){
 				$edit_item_link = _URL."/?page=admin&cp=pgItem_mg&do=edit&id=".$rw_ar['table_id'];
-				echo "<a class=\"submit_button red\" href=\"".$edit_item_link."\" >".__('ویرایش %%',[$item_title])."</a>";
+				echo "<a class=\"btn btn-primary red\" href=\"".$edit_item_link."\" >".__('ویرایش %%',[$item_title])."</a>";
 			}
 
 			#
 			# remove the bad item
 			$remove_item_link = $base_link."&do=view&id=".$rw_ar['id']."&do2=remove_item";
-			echo "<a onclick=\"if(!confirm('".__('آیا مایله به حذف هستید؟')."')){return false;}\" class=\"submit_button red\" href=\"".$remove_item_link."\" >".__('حذف %%',[$item_title])."</a>";
+			echo "<a onclick=\"if(!confirm('".__('آیا مایله به حذف هستید؟')."')){return false;}\" class=\"btn btn-primary red\" href=\"".$remove_item_link."\" >".__('حذف %%',[$item_title])."</a>";
 
 		}
 
@@ -153,19 +153,19 @@ function abusereport_mg_view(){
 			#
 			# remove all items of bad user
 			$removeUserItems_link = $base_link."&do=view&id=".$rw_ar['id']."&do2=remove_userItems&user_id=".$rw_theBadUser['id'];
-			echo "<a onclick=\"if(!confirm('".__('آیا مایله به حذف هستید؟')."')){return false;}\" class=\"submit_button red\" href=\"".$removeUserItems_link."\" >".__("حذف همه %% از این کاربر",[$item_title_s])."</a>";
+			echo "<a onclick=\"if(!confirm('".__('آیا مایله به حذف هستید؟')."')){return false;}\" class=\"btn btn-primary red\" href=\"".$removeUserItems_link."\" >".__("حذف همه %% از این کاربر",[$item_title_s])."</a>";
 			
 			#
 			# remove bad user and all of his things
 			$removeBadUser_link = $base_link."&do=remove_user&id=".$rw_ar['id']."&user_id=".$rw_theBadUser['id'];
-			echo "<a onclick=\"if(!confirm('".__('آیا مایله به حذف هستید؟')."')){return false;}\" class=\"submit_button red\" href=\"".$removeBadUser_link."\" >".__("حذف کامل این کاربر")."</a>";
+			echo "<a onclick=\"if(!confirm('".__('آیا مایله به حذف هستید؟')."')){return false;}\" class=\"btn btn-primary red\" href=\"".$removeBadUser_link."\" >".__("حذف کامل این کاربر")."</a>";
 
 		}
 
 		# 
 		# remove this report
 		$remove_abusereport_link = _URL."/?page=admin&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func']."&do=remove&id=".$rw_ar['id'];
-		echo "<a class=\"submit_button red\" href=\"".$remove_abusereport_link."\" >".__("حذف این گزارش")."</a>";
+		echo "<a class=\"btn btn-primary red\" href=\"".$remove_abusereport_link."\" >".__("حذف این گزارش")."</a>";
 
 
 		if( $rw_theBadUser ){

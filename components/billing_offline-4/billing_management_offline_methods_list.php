@@ -19,7 +19,7 @@ function billing_management_offline_methods_list(){
 	);
 	echo listmaker_list($list);
 
-	echo "<a class='submit_button' href='./?page=admin&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func']."&func2=".$_REQUEST['func2']."&do=form' class='new'>".__('ثبت روش پرداخت جدید')."</a>";
+	echo "<a class='btn btn-primary' href='./?page=admin&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func']."&func2=".$_REQUEST['func2']."&do=form' class='new'>".__('ثبت روش پرداخت جدید')."</a>";
 
 	echo "</div>";
 

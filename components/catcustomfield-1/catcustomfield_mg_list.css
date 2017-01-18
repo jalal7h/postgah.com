@@ -1,0 +1,86 @@
+
+.catcustomfield_mg .list .field_w {
+	display: inline-block;
+	margin: 8px 0;
+}
+.catcustomfield_mg .list .field_w > div {
+	background-color: white;
+	box-shadow: 0 0 5px rgba(0,0,0,0.15);
+	margin: 2px 10px;
+	/* padding: 25px 30px; */
+	border-radius: 10px;
+}
+.catcustomfield_mg .list .field_w > div:hover {
+	background-color: #f8f8f8;
+}
+
+.catcustomfield_mg .list .field_w > div {
+	position: relative;
+	transition: all 0.2s;
+}
+.catcustomfield_mg .list .field_w > div.off {
+	background-color: #ffeddb;
+}
+
+.catcustomfield_mg .list .field_w .tools {
+	position: absolute; right: 0px; bottom: -16px; z-index: 1;
+	background-color: rgb(18, 59, 95);
+	padding: 7px 5px 0 5px;
+	border-radius: 0 0 5px 5px;
+	transition: all 0.2s;
+	color: white;
+	opacity: 0.0;
+}
+.catcustomfield_mg .list .field_w:hover .tools {
+	opacity: 0.4;
+}
+.catcustomfield_mg .list .field_w .tools:hover {
+	opacity: 1.0;
+}
+
+.catcustomfield_mg .list .field_w .tools > icon {
+	position: relative; top: 2px;
+	opacity: 0.7;
+	transition: all 0.2s;
+	margin: 0 1px;
+}
+.catcustomfield_mg .list .field_w .tools > icon:hover {
+	opacity: 1.0;
+}
+
+
+.catcustomfield_mg .list .text {
+	position: relative; top: 0; z-index: 2;
+	/* border-radius: 5px; */
+	/* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+	display: inline-block;
+}
+.catcustomfield_mg .list .text > * {
+	margin: 0px;
+	display: inline-block;
+    padding: 15px 20px;
+    font-size: 12px;
+}
+.catcustomfield_mg .list .text .type {
+	background-color: #337ab7;
+    color: white;
+    border-radius: 0 10px 10px 0;
+}
+.catcustomfield_mg .list .text .name {
+
+}
+
+
+@media all and (max-width: 999px)  {
+	.catcustomfield_mg .list .text .type {
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+

@@ -31,7 +31,7 @@ function user_forgot_form(){
 			<div class="d01"><?=__('فراموشی کلمه عبور!')?></div>
 			<div class="d02"><?=__('لطفا آدرس ایمیل خود را برای دریافت پیوند تنظیم مجدد کلمه عبور وارد نمایید.')?></div>
 			<input type="text" name="username" placeholder="<?=__('Email address')?>" dir="ltr" />
-			<input type="submit" class="submit_button" value="<?=__('ارسال درخواست')?>" />
+			<input type="submit" class="btn btn-primary" value="<?=__('ارسال درخواست')?>" />
 		</div>
 	</form>
 	<?

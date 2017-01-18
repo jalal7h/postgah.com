@@ -1,7 +1,7 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/14
+# 2017/01/15
 # 1.0
 
 add_action( 'captcha_build' );
@@ -20,10 +20,8 @@ function captcha_build( $numb=4 ){
 
 		#
 		# the code
-		$rand = rand(1000,9999);
-		error_log("session before write : ".$_SESSION['captcha-'.$captcha_name] );
+		$rand = rand( pow(10,$numb), pow(10,$numb+1)-1 );
 		$_SESSION['captcha-'.$captcha_name] = $rand;
-		error_log("session after write : ".$_SESSION['captcha-'.$captcha_name] );
 
 		#
 		# select the color
@@ -51,6 +49,7 @@ function captcha_build( $numb=4 ){
 	echo imagepng($im);
 	imagedestroy($im);
 	die();
+
 }
 
 

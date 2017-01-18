@@ -38,7 +38,7 @@ function layout_mg_layer_form_extra( $rw ){
 			<legend ><?=$GLOBALS['block_layers'][ $rw['func'] ]?></legend>
 			<? $func_name($rw_pagelayer); ?>
 			<? echo ff('hr'); ?>
-			<input type="submit" style="margin-left:30px;" class="submit_button" value="<?=__('ثبت')?>"/>
+			<input type="submit" style="margin-left:30px;" class="btn btn-primary" value="<?=__('ثبت')?>"/>
 		</fieldset>
 		</form>	
 		<?

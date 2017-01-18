@@ -162,8 +162,35 @@ function cl(t){
 	console.log(t);
 }
 
-
 function rand( n ){
 	return Math.round( Math.random() * Math.pow( 10 , n ) );
 }
+
+function is_defined( n ){
+	if( typeof n === typeof undefined ){
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function getGridNumber( t ){
+	jQuery(document).ready(function($) {
+		for( i=1; i<=12; i++ ){
+			the_class = 'grid'+i;
+			if( t.hasClass('grid'+i) ){
+				break;
+			}
+		}
+	});
+	return i;
+}
+
+iframe = function( url ){
+	return '<iframe src="'+url+'" frameborder=0 ></iframe>';
+}
+
+
+
+
 

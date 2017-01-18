@@ -17,7 +17,7 @@ function nl_index_form(){
 		<icon></icon>
 		<div class="tx1"><?=__('ایمیل خود را در سایت ثبت کنید.<br>تا آخرین تغییرات برای شما ارسال گردد.')?></div>
 		<input type="email" name="email" placeholder="email address" />
-		<input type="submit" class="submit_button" value="<?=__('ثبت')?>" />
+		<input type="submit" class="btn btn-primary" value="<?=__('ثبت')?>" />
 	</form>
 	<?
 

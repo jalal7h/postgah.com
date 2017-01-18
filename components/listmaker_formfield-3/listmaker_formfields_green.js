@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 	$("input[type=file].green").wrap("<div class='greenwrapper'></div>");
-	$("div.greenwrapper").append("<span class='trigger submit_button'>0</span>");
+	$("div.greenwrapper").append("<span class='trigger btn btn-primary'></span>");
 	$('input[type=file].green').each(function() {
 		$(this).parent().find('span.trigger').html( $(this).attr("rel") );
 	});

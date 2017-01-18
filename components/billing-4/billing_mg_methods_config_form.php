@@ -56,7 +56,7 @@ function billing_management_methods_config_form(){
 
 		<div>
 			<span>&nbsp;</span>
-			<input type='submit' class='submit_button' value='".__("ثبت تغییرات")."'/>
+			<input type='submit' class='btn btn-primary' value='".__("ثبت تغییرات")."'/>
 		</div>
 		
 		</form>";

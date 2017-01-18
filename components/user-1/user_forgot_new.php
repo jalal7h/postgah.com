@@ -38,7 +38,7 @@ function user_forgot_new(){
 
 				<label>
 					<span></span>
-					<input type="submit" class="submit_button" value="<?=__('ثبت کلمه عبور جدید')?>" />
+					<input type="submit" class="btn btn-primary" value="<?=__('ثبت کلمه عبور جدید')?>" />
 				</label>
 
 				<label>

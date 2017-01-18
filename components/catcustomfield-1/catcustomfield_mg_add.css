@@ -1,0 +1,16 @@
+
+.catcustomfield_mg_add_form {
+	/* margin: 20px 5%; */
+	text-align: center;
+	margin: auto;
+	margin-top: 30px;
+}
+.catcustomfield_mg_add_form > div {
+	margin: 5px auto;
+	width: 85%;
+}
+.catcustomfield_mg_add_form > div ,
+.catcustomfield_mg_add_form > div:hover {
+	color: white;
+}
+
