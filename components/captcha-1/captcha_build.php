@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/15
-# 1.0
+# 2017/01/18
+# 1.1
 
 add_action( 'captcha_build' );
 
