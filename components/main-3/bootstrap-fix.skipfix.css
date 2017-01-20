@@ -12,4 +12,11 @@ legend {
 	color: white;
 }
 
-
+.radio {
+	margin: 0px;
+	display: inline-block;
+}
+.checkbox {
+	margin: 0px;
+	display: inline-block;
+}

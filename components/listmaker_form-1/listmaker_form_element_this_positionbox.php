@@ -7,16 +7,16 @@
 function listmaker_form_element_this_positionbox( $info ){
 
 	if(! sizeof($GLOBALS['position_config']) ){
-		e( __FUNCTION__, __LINE__ );
+		e();
 
 	} else {
 
 		$c.= lmfe_tnit( $info );
 
 		// list e position ha besurat e json
-		js_enqueue( _URL."/?do_action=listmaker_form_element_this_positionbox_preload&nc=".date("md") );
-		js_enqueue( 'listmaker_form-1', 'listmaker_form_element_this_positionbox' );
-
+		add_jscode_footer( listmaker_form_element_this_positionbox_preload() );
+		add_js_footer( 'listmaker_form', 'listmaker_form_element_this_positionbox' );
+	
 		if(! $info['value'] ){
 			$position_name = __("انتخاب")." ".$info['placeholder'];
 		} else {

@@ -52,14 +52,10 @@ function admin_footer(){
 
 
 function admin_html_close(){
-
-	echo "\n";
-	echo js_enqueue_list();
 	
-	?>
-	</body>
-	</html>
-	<?
+	echo "\n\n\t";
+	echo list_js_footer();
+	echo "\n</body>\n</html>\n";
 
 }
 

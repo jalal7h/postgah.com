@@ -1,6 +1,5 @@
 
-	<script type="text/javascript" src="{_URL}/scripts-footer.js"></script>	
-	{js_enqueue_list}
+	{list_js_footer}
 	
 </body>
 </html>

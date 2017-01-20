@@ -21,47 +21,25 @@
 }
 .catcustomfield_formload > .ccffe_thisCat > div ,
 .catcustomfield_formload > .ccffe_thisCat > label {
-	display: block;
-	padding: 10px 0;
+	/* display: block; */
+	padding: 10px 20px;
+	vertical-align: top;
 }
 
 .catcustomfield_formload > .ccffe_thisCat .element_name {
-	/* width: 150px; */
-	/* text-align: left; */
-	/* direction: rtl; */
-	/* display: inline-block; */
 	vertical-align: middle;
 	padding-left: 10px;
 	color: #777;
 }
-.catcustomfield_formload > .ccffe_thisCat .element_name.radio {
-	vertical-align: top;
-    padding-top: 3px;
-}
 
 .catcustomfield_formload > .ccffe_thisCat div ,
 .catcustomfield_formload > .ccffe_thisCat label {
-	margin: 6px 0 6px 20px;
-    display: block;
-}
-.catcustomfield_formload > .ccffe_thisCat label.label {
-	margin-bottom: -5px;
-	padding-bottom: 0px;
-	/* display: block; */
-}
-.catcustomfield_formload > .ccffe_thisCat .radio_c > label {
-	margin: 0 0 10px 10px;
+	margin: 6px 0 6px 0;
     display: inline-block;
-    background-color: #fff;
-    padding: 2px 10px 1px 10px;
-    border-radius: 4px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.14);
 }
-.catcustomfield_formload > .ccffe_thisCat .radio_c > label:active {
 
-}
-.catcustomfield_formload > .ccffe_thisCat label span {
-	display: inline-block;
+.catcustomfield_formload > .ccffe_thisCat > label > span {
+	display: block;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -69,34 +47,88 @@
 	-ms-user-select: none;
 	user-select: none;
 }
+
+
+/* * *
+ * label
+ */
+.catcustomfield_formload > .ccffe_thisCat label.label {
+	margin-bottom: -5px;
+	padding-bottom: 0px;
+}
+
+
+/* * *
+ * radio
+ */
 .catcustomfield_formload > .ccffe_thisCat .radio_c {
 	display: inline-block;
-    width: calc( 100% - 180px );
+    width: 100%;
+}
+.catcustomfield_formload > .ccffe_thisCat .radio_c > label {
+	margin: 0 0 0 10px;
+    display: inline-block;
+    padding: 0 0 0 10px;
+}
+.catcustomfield_formload > .ccffe_thisCat .radio_c > label:active {
+
+}
+.catcustomfield_formload .element_name.radio {
+	vertical-align: top;
+    margin: 0px;
+    padding: 0px;
 }
 
+/* * *
+ * textarea
+ */
 .catcustomfield_formload > .ccffe_thisCat textarea {
-	width: calc( 100% - 160px );
-}
-.catcustomfield_formload input[type=checkbox] {
-	left: 0px; top: 0px; right: 0px;
-	margin-left: 5px;
-	margin-right: 3px;
+	width: 100%;
 }
 
+
+/* * *
+ * hr
+ */
 .catcustomfield_formload hr.ccfhr {
-	margin-left: 20px;
-	margin-right: 20px;	
+
 }
 
 
-
-.ccf_checkbox_w {
-	display: inline-block !important;
+/* * *
+ * select
+ */
+.catcustomfield_formload select.ccf_element.select {
+	width: 100%;
 }
-.ccf_checkbox_w label.checkbox {
+
+/* * *
+ * input
+ */
+.catcustomfield_formload input.ccf_element.text {
+	width: 100%;
+}
+
+/* * *
+ * checkbox
+ */
+.catcustomfield_formload > .ccffe_thisCat .checkbox_c {
 	display: inline-block;
+    width: 100%;
 }
+.catcustomfield_formload > .ccffe_thisCat .checkbox_c > label {
+	margin: 0 0 0 10px;
+    display: inline-block;
+    padding: 0 0 0 10px;
+}
+.catcustomfield_formload > .ccffe_thisCat .checkbox_c > label:active {
 
+}
+.catcustomfield_formload .element_name.checkbox {
+	vertical-align: top;
+    margin: 0px;
+    padding: 0px;
+}
 
 
 

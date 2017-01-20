@@ -128,9 +128,9 @@ input[type=button] {
 
 }
 input[type=checkbox] {
-	position:relative;
-	top:3px;
-	left:5px;
+	/* position:relative; */
+	/* top:3px; */
+	/* left:5px; */
 }
 select:hover,
 input[type=text]:hover,
