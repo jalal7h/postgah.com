@@ -23,7 +23,9 @@ function list_js_footer(){
 	#
 	# component private js files
 	if( sizeof($GLOBALS[ 'add_js_footer_component' ]) ){
-		foreach ($GLOBALS[ 'add_js_footer_component' ] as list($component_name, $file_name) ) {
+		foreach ($GLOBALS[ 'add_js_footer_component' ] as $arr ) {
+			
+			list($component_name, $file_name) = $arr;
 
 			if(! $v = component_version($component_name) ){
 			} else if(! $file = 'components/'.$component_name.'-'.$v.'/'.$file_name.'.js' ){
