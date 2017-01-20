@@ -18,7 +18,7 @@ function catcustomfield_mg_list(){
 	echo "<div class=\"list_w\">";
 	echo convbox( __('موردی یافت نشد.') );
 
-	if(! $rw_s = table('catcustomfield', ['cat_id'=>$cat_id] ) ){
+	if(! $rw_s = table('catcustomfield', ['cat_id'=>$cat_id,'wrapper'=>'0'] ) ){
 		js('$(\'.catcustomfield_mg .list_w .convbox\').show();');
 	} else {
 		js('$(\'.catcustomfield_mg .list_w .convbox\').hide();');
@@ -60,7 +60,7 @@ function catcustomfield_mg_list_this( $rw ){
 		</div>
 
 		<div class=\"text\">
-			<span class=\"type\">".$GLOBALS['catcustomfield-select-options'][ $rw['type'] ]."</span><span class=\"name\">".$rw['name']."</span>
+			<span class=\"type\">".$GLOBALS['catcustomfield-select-options'][ $rw['type'] ]."</span><span class=\"name\">".( $rw['name'] ? $rw['name'] : '<i>'.__('ثبت نشده').'</i>' )."</span>
 		</div>
 
 	</div></div>";

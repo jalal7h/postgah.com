@@ -69,7 +69,9 @@
 .catcustomfield_mg .list .text .name {
 
 }
-
+.catcustomfield_mg .list .text .name > i {
+	color: #bbb;
+}
 
 @media all and (max-width: 999px)  {
 	.catcustomfield_mg .list .text .type {

@@ -4,8 +4,6 @@ form.lmfo {
 	text-align: right;
 }
 
-
-
 /*
  * more button */
 .lmfe_more_c {
@@ -83,7 +81,19 @@ form.lmfo {
 	border: 1px solid #f99 !important;
 }
 
-
+.lmfe_submit_prompt {
+	opacity: 0.0;
+	color: #c50000;
+	padding-right: 10px;
+	font-size: 12px;
+	transition: 0.1s all;
+}
+.lmfe_submit_prompt:before {
+	font-family: FontAwesome;
+	content: "\f111";
+	padding: 0 5px;
+	font-size: 9px;
+}
 
 
 

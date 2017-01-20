@@ -1,12 +1,14 @@
+// 2017/01/20
 
-// 2016/12/21
+var lmfe_isNeeded_flag = false;
 
 $(document).ready(function($) {
-		
+
 	// lmfe_isNeeded
 	$('.lmfe_isNeeded').closest("form").on('submit', function(e){
 
 		$(this).find('.lmfe_isNeeded').each(function( index ) {
+  			
   			if( $(this).val()=='' || $(this).val()==0 ){
   				
   				if( $(this).prop('tagName') == 'INPUT' && $(this).prop('type') == 'hidden' ){
@@ -16,9 +18,15 @@ $(document).ready(function($) {
   					$(this).focus();
   				}
 
+  				lmfe_isNeeded_flag = true;
+
   				e.preventDefault();
   				return false;
+  			
+  			} else {
+  				lmfe_isNeeded_flag = false;
   			}
+
 		});
 
 	});
