@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/27
-# 1.2
+# 2017/01/20
+# 1.3
 
 function listmaker_form_element_this_text( $info ){
 	
@@ -11,6 +11,16 @@ function listmaker_form_element_this_text( $info ){
 	
 	$id = $info['id'] ? $info['id'] : "lmfe_".$info['formName']."_".$info['name'];
 	$id = listmaker_uniqId( $id );
+
+	if( !$info['moreButton'] and $info['moreButton_icon'] ){
+		$removeButton_needed = true;
+	}
+
+	if( $removeButton_needed ){
+		$info['class'].= " removeButton";
+	}
+
+	$info['class'] = trim($info['class']);
 
 	$c.= $info['PreTab']."<input autocomplete=\"off\" type=\"".$info['type']."\" ".
 		"name=\"".$info['name'].( $info['ArrayInput'] ? '[]' : '' )."\" ".
@@ -26,8 +36,11 @@ function listmaker_form_element_this_text( $info ){
 		).
 		"/>\n";
 
-	$minOrMax_c = listmaker_form_element_content_minOrMax_table( $info );
+	if( $removeButton_needed ){
+		$c.= "<remove></remove>";
+	}
 
+	$minOrMax_c = listmaker_form_element_content_minOrMax_table( $info );
 
 	if( $tnit_c and $minOrMax_c ){
 		$c = $c.'<span class="lmfe_tnit" ></span>'.$minOrMax_c;

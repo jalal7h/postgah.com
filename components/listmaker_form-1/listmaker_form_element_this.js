@@ -61,6 +61,9 @@ $(document).ready(function($) {
 		// clean
 		$('#'+lmfe_more_new_item_id+' .lmfe_tnit').html('');
 		$('#'+lmfe_more_new_item_id+' input').val('');
+		$('#'+lmfe_more_new_item_id+' input').attr('value','');
+		$('#'+lmfe_more_new_item_id+' input').addClass('removeButton');
+		$('#'+lmfe_more_new_item_id+' input').after('<remove></remove>');
 		$('#'+lmfe_more_new_item_id+' icon').hide();
 		$('#'+lmfe_more_new_item_id+' .lmfetfp').hide();
 		$('#'+lmfe_more_new_item_id+' .lmfetc .lmfetc .lmfetc').html('');

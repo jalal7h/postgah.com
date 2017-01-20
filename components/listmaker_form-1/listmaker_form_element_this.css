@@ -1,3 +1,4 @@
+/*2017/01/20*/
 
 form.lmfo {
 	direction: rtl;
@@ -95,5 +96,26 @@ form.lmfo {
 	font-size: 9px;
 }
 
+.lmfo remove:before {
+    font-family: FontAwesome;
+    content: "\f00d";
+    color: rgba(0, 0, 0, 0.25);
+    position: relative;
+    margin: 0 -22px 0 10px;
+    font-size: 13px;
+    top: 2px;
+    cursor: pointer;
+    display: inline-block;
+}
+.lmfo .lmfe_fileDiv remove:before {
+	margin: 0px 16px 0 0;
+	font-size: 18px;
+}
+.lmfo remove:hover:before {
+    color: red;
+}
+.lmfo .removeButton {
+	padding-left: 22px;
+}
 
 

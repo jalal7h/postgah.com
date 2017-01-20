@@ -53,6 +53,7 @@ function lmfe_inDiv_cover( $c_main , $info ){
 	$c.= lmfe_inDiv_close( $info );
 	return $c;
 }
+
 function lmfe_inDiv_open( $info ){
 	
 	if( $info['type']=="hidden" ){

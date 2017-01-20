@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/01/18
-# 1.0
+# 2017/01/20
+# 1.1
 
 add_action('catcustomfield_mg_add');
 
@@ -28,7 +28,7 @@ function catcustomfield_mg_add(){
 			$prio = 1;
 		}
 
-		if(! $id = dbs('catcustomfield', [ 'cat_id', 'type', 'name'=>$name, 'prio'=>$prio, 'display_as_filter'=>1, 'grid'=>12, 'flag'=>1 ]) ){
+		if(! $id = dbs('catcustomfield', [ 'cat_id', 'type', 'name'=>$name, 'prio'=>$prio, 'display_as_filter'=>0, 'grid'=>12, 'flag'=>1 ]) ){
 			ed();
 
 		} else {

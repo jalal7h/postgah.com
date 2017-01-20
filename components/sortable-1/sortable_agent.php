@@ -62,7 +62,13 @@ function sortable_agent(){
 		# sort the prio list
 		asort($prio_list);
 		foreach ($prio_list as $i => $prio) {
-			$sorted_prio_list[] = $prio;
+			if( sizeof($sorted_prio_list) and in_array( $prio, $sorted_prio_list ) ){
+				$over_prio++;
+				$sorted_prio_list[] = $prio + $over_prio;
+			} else {
+				$sorted_prio_list[] = $prio;
+
+			}
 		}
 		$prio_list = $sorted_prio_list;
 		
