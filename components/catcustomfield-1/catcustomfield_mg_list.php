@@ -18,7 +18,7 @@ function catcustomfield_mg_list(){
 	echo "<div class=\"list_w\">";
 	echo convbox( __('موردی یافت نشد.') );
 
-	if(! $rw_s = table('catcustomfield', ['cat_id'=>$cat_id,'wrapper'=>'0'] ) ){
+	if(! $rw_s = table('catcustomfield', ['cat_id'=>$cat_id] ) ){
 		js('$(\'.catcustomfield_mg .list_w .convbox\').show();');
 	} else {
 		js('$(\'.catcustomfield_mg .list_w .convbox\').hide();');
