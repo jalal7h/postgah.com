@@ -9,7 +9,7 @@ function linkify( $lc_name, $class ){
 	if(! $lc_name ){
 		e();
 
-	} else if(! $rw = table( 'linkify_config', [ 'name' => $lc_name ] ) ){
+	} else if(! $rw = table( 'linkify_config', [ 'name' => $lc_name ] )[0] ){
 		e();
 
 	} else if(! $lf = linkify_get( $rw['id'] ) ){

@@ -1,14 +1,14 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/03
-# 1.0
+# 2017/01/21
+# 1.1
 
 add_headtag( 'include_all_css_echotags', 0 );
 
 function include_all_css_echotags(){
 
-	if( defined('minify_css') and minify_css===false ){
+	if( defined('minify') and minify===false ){
 
 		asort($GLOBALS['include_all_css']);
 

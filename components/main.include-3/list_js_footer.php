@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/01/20
-# 1.0
+# 2017/01/21
+# 1.1
 
 function list_js_footer(){
 	
@@ -48,6 +48,12 @@ function list_js_footer(){
 			$the_code.= $code;
 			$the_code.= "\n";
 		}
+	}
+
+	#
+	# minify
+	if( minify !== false ){
+		$the_code = JSMin::minify($the_code);
 	}
 
 	#

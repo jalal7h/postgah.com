@@ -8,7 +8,7 @@ function filedump( $file_content, $ext ){
 	
 	#
 	# the key
-	$dump_name = md5($file_content) .".". $ext;
+	$dump_name = md5x($file_content,12) .".". $ext;
 
 	# 
 	# the main dump dir
@@ -43,7 +43,7 @@ function filedump( $file_content, $ext ){
 
 	#
 	# put file
-	$file_path.= '/'.$dump_name;
+	$file_path.= '/'.substr($dump_name,9);
 	if(! file_exists($file_path) ){
 		file_put_contents( $file_path, "\xEF\xBB\xBF".$file_content );
 	}

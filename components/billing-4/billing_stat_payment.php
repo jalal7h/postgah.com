@@ -88,7 +88,7 @@ function billing_stat_payment( $list ){
 	}
 
 	if(!$rs = dbq( $q )){
-		e( __FUNCTION__, __LINE__ );
+		e();
 
 	} else {
 		return (int) dbr($rs,0,0);

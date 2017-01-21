@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2015/10/24
-# Version 1.1.1
+# 2017/01/21
+# 1.2
 
 function billing_management_stat_dailychart(){
 
@@ -38,8 +38,12 @@ function billing_management_stat_dailychart(){
 		$list_of_days_str_cost[] = round(billing_stat_payment( $list ) / 1000);
 	}
 
-	$list_of_days_str = implode(",", $list_of_days_str);
-	$list_of_days_str_cost = implode(",", $list_of_days_str_cost);
+	if( sizeof($list_of_days_str) ){
+		$list_of_days_str = implode(",", $list_of_days_str);
+	}
+	if( sizeof($list_of_days_str_cost) ){
+		$list_of_days_str_cost = implode(",", $list_of_days_str_cost);
+	}
 
 	#
 	# costs in months
