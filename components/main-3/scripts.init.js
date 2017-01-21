@@ -159,7 +159,9 @@ function number_format(n){
 }
 
 function cl(t){
-	console.log(t);
+	if( debug == true ){
+		console.log(t);
+	}
 }
 
 function rand( n ){

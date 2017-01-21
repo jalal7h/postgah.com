@@ -80,29 +80,30 @@ jQuery(document).ready(function($) {
 		$('.lmfe_catbox_c.selected input[type="hidden"]').val( cat_value );
 		$('.lmfe_catbox_c.selected .lmfe_catbox').html( '<nobr>' + cat_title + '</nobr>' );
 		
+
+		/** load the ccf - start *************************/
+		// extra before
+		if(typeof lmfetc_extra_before == 'function') { 
+			cl('trying to run lmfetc_extra_before');
+			lmfetc_extra_before( cat_value );
+		}
+
+		// catcustomfield console
+		cat_name = $('.lmfe_catbox_c.selected').attr('cat_name');
+		if(typeof catcustomfield_console == 'function') { 
+			catcustomfield_console( cat_name, cat_value /* as cat_id */ ); 
+		}
+
+		// extra after
+		if(typeof lmfetc_extra_after == 'function') { 
+			cl('trying to run lmfetc_extra_after');
+			lmfetc_extra_after( cat_value );
+		}
+		/** load the ccf - end *************************/
+
+
 		if( typeof catjson[ cat_value ] === 'undefined' ){
-
-			// extra before
-			if(typeof lmfetc_extra_before == 'function') { 
-				lmfetc_extra_before( cat_value );
-			}
-
-			// catcustomfield console
-			cat_name = $('.lmfe_catbox_c.selected').attr('cat_name');
-			cl( 'SSS ' + cat_name );
-			if(typeof catcustomfield_console == 'function') { 
-				catcustomfield_console( cat_name, cat_value /* as cat_id */ ); 
-			}
-
-			// $('.lmfe_catbox_c.selected input[type="hidden"]').val( cat_value );
-			// $('.lmfe_catbox_c.selected .lmfe_catbox').html( '<nobr>' + cat_title + '</nobr>' );
 			$('.lmfe_catbox_c.selected').removeClass('selected');
-
-			// extra after
-			if(typeof lmfetc_extra_after == 'function') { 
-				lmfetc_extra_after( cat_value );
-			}
-
 			dehitbox_do();
 		
 		} else {
