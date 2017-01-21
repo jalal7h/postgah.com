@@ -11,9 +11,10 @@ jQuery(document).ready(function($) {
 			hitbox('<img src="'+_URL+'/image_list/mss_loading.gif" width=300 height=300 />', 300, 300 );
 
 			$.ajax({
-				method: "POST",
-				url: $(this).attr('href')+"&mail_to="+mail_to ,
-			
+				url: $(this).attr('href'),
+				type: 'POST',
+				data: {'mail_to': mail_to},
+						
 			}).done(function( html ) {
 				hitbox( html , 400 , 400 );
 				setTimeout(function(){

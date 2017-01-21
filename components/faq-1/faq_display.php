@@ -1,25 +1,21 @@
 <?php
 
 # jalal7h@gmail.com
-# 2016/12/27
-# 1.3
+# 2017/01/21
+# 1.4
 
-$GLOBALS['block_layers']['faq_display'] = 'سوالات متداول';
+add_layer( 'faq_display', 'سوالات متداول', 'center' );
 
 function faq_display( $table_name=null, $page_id=null ){
 	
-	if(! $rs = dbq(" SELECT * FROM `faq` WHERE 1 ORDER BY `prio` ASC ") ){
+	if(! $rw_s = table('faq') ){
 		e();
-	
-	} else if(! dbn($rs) ){
-		e();
-	
-	} else while( $rw = dbf($rs) ){
+
+	} else foreach ($rw_s as $rw) {
 		$list[] = [ "name"=>$rw['name'], "text"=>$rw['text'] ];
 	}
 
 	$content = listmaker_clicktab($list);
-
 
 	if( $page_id ){
 		$title = table( $table_name , $page_id , "name" );

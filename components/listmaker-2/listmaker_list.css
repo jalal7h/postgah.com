@@ -142,14 +142,6 @@
 /* linkTo */
 .listmaker_list_record .linkTo {
 	display: inline-block;
-	background-color: rgb(117, 172, 0);
-	padding: 7px 15px;
-	font: normal 13px DefaultFont;
-	color: white;
-	border-radius: 3px;
-	margin: 0 0 0 5px;
-	text-decoration: none;
-	box-shadow: 0 0 10px #ccc;
 }
 .listmaker_list_record .linkTo:hover {
 	opacity: 0.6;

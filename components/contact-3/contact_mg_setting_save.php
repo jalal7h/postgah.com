@@ -1,6 +1,10 @@
 <?
 
-function contact_mg_config_save(){
+# jalal7h@gmail.com
+# 2017/01/21
+# 1.0
+
+function contact_mg_setting_save(){
 
 	#
 	# contact details
@@ -18,7 +22,7 @@ function contact_mg_config_save(){
 
 			if(! $email ){
 				dbq(" DELETE FROM `setting` WHERE `slug`='$slug' LIMIT 1 ");
-
+				
 			} else {
 				setting( $slug, $email );
 			}

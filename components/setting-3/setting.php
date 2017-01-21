@@ -1,25 +1,22 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/01
-# 1.0
+# 2017/01/21
+# 1.1
 
 function setting( $slug=null, $text=null ){
 
 	#
 	# it wants all rich settings
 	if(! $slug ){
-		if(! $rs = dbq(" SELECT * FROM `setting` WHERE 1 ")){
+		if(! $rw_s = table('setting') ){
 			e( dbe() );
 		
-		} else if(! dbn($rs) ){
-			e();
-		
 		} else {
-			while( $rw = dbf($rs) ){
-				$rw_s[ $rw['slug'] ] = $rw['text'];
+			foreach ($rw_s as $rw) {
+				$rw_s0[ $rw['slug'] ] = $rw['text'];
 			}
-			return $rw_s;
+			return $rw_s0;
 		}
 
 		return false;
@@ -43,7 +40,7 @@ function setting( $slug=null, $text=null ){
 	
 	#
 	# wants to store some text in some slug
-	} else if(! dbn(dbq(" SELECT * FROM `setting` WHERE `slug`='$slug' LIMIT 1 ")) ){
+	} else if(! dbqc('setting', ['slug'=>$slug]) ){
 		dbs( 'setting', ['text'=>$text, 'slug'=>$slug] );
 
 	} else if(! dbs( 'setting', ['text'=>$text], ['slug'=>$slug] ) ){

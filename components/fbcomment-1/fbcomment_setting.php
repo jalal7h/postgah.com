@@ -1,10 +1,10 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/07
-# 1.0
+# 2017/01/21
+# 1.1
 
-$GLOBALS['setting']['fbcomment_setting'] = 'نظرات';
+add_setting('fbcomment_setting','نظرات');
 
 function fbcomment_setting(){
 

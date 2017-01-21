@@ -2,7 +2,7 @@
 /*admin*/
 /*skipfix*/
 
-.contact_mg_config input[type="text"] {
+.contact_mg_setting input[type="text"] {
 	width: 180px;
 	direction: ltr;
 	font-family: monospace,sans-serif;
@@ -10,7 +10,7 @@
 	padding: 7px 12px;
 }
 
-.contact_mg_config input[type="email"] {
+.contact_mg_setting input[type="email"] {
 	width: 240px;
 	font-size: 14px;
 	padding: 7px 12px;

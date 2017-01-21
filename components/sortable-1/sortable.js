@@ -24,6 +24,7 @@ jQuery(document).ready(function($) {
 		    		data: { 'feed': feed, 'the_id_s': the_id_s },
 		    	}).done(function(html){
 		    		if( html != 'OK' ){
+		    			// cl( html );
 		    			alert( text_sortable_something_wrong );
 		    		}
 		    	});

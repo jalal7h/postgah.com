@@ -1,11 +1,10 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/06
-# 1.1
+# 2017/01/21
+# 1.2
 
-$GLOBALS['cmp']['setting_mg'] = 'تنظيمات';
-$GLOBALS['cmp-icon']['setting_mg'] = '085';
+add_component( 'setting_mg', 'تنظيمات', '085' );
 
 function setting_mg(){
 
