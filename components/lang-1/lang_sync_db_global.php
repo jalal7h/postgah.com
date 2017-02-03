@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/12
-# 1.0
+# 2017/01/23
+# 1.1
 
 function lang_sync_db_global(){
 
@@ -33,7 +33,7 @@ function lang_sync_db_global(){
 	# $GLOBALS['userpanel_item'][ 94 ] = [ 'userprofile_form', 'پروفایل کاربر', '007' ];
 	if( sizeof($GLOBALS['userpanel_item']) ){
 		foreach( $GLOBALS['userpanel_item'] as $i => $record ){
-			$text = $record[1];
+			$text = $record[2];
 			$arr[ ":".lang_hash($text) ] = $text;
 		}
 	}

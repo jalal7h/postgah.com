@@ -1,10 +1,10 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/31
-# 1.2
+# 2017/01/23
+# 1.3
 
-$GLOBALS['userpanel_item'][ 94 ] = [ 'userprofile_form', 'پروفایل کاربر', '007' ];
+add_userpanel_item( 'userprofile_form', 'profile', 'پروفایل کاربر', '007', 94 );
 
 function userprofile_form(){
 

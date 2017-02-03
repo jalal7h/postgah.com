@@ -1,4 +1,3 @@
-/*2017/01/20*/
 
 form.lmfo {
 	direction: rtl;
@@ -69,12 +68,21 @@ form.lmfo {
 }
 
 .lmfe_isDate {
-	direction: ltr !important;
 	font-family: monospace,sans-serif !important;
 	font-size: 13px !important;
-	padding: 8px !important;
+	padding: 8px 32px 8px 8px !important;
+	text-align: center;
+    width: 140px !important;
 }
-
+.lmfe_isDate_icon {
+    position: relative;
+    z-index: 11;
+    font-size: 18px;
+    margin-left: -23px;
+    left: -4px;
+    top: 2px;
+    color: #777;
+}
 .lmfe_redline {
 	border: 1px solid #c00 !important;
 }

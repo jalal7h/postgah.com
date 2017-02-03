@@ -4,17 +4,16 @@
 .contact_mg_setting {
 	margin: 20px 0 80px 0;
 }
-.contact_mg_setting > div:nth-child(1) ,
-.contact_mg_setting > div:nth-child(2) {
+.contact_mg_setting > div:nth-child(2) ,
+.contact_mg_setting > div:nth-child(3) {
 	display: inline-block;
 	width: 45%;
 	vertical-align: top;
-	padding-top: 50px;
+	margin-top: 30px;
+	padding-top: 20px;
 }
-.contact_mg_setting > div:nth-child(2) {
+.contact_mg_setting > div:nth-child(3) {
 	border-right: 1px dashed #ccc;
-	/* min-height: 350px; */
-	/* margin-bottom: -19px; */
 }
 
 .contact_mg_setting > div:nth-child(4) {
@@ -27,7 +26,6 @@
 }
 
 .contact_mg_setting input[name="contact_email_address[]"] {
-	/* margin-bottom: 15px; */
 	display: inline-block;
 }
 .contact_mg_setting .lmfe_tnit {

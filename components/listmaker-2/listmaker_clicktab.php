@@ -29,7 +29,7 @@ function listmaker_clicktab($list){
 	} else foreach($list as $k => $tab){
 		$c.= '
 		<div class="r">
-			<div class="name" >'.$tab['name'].'</div>
+			<div class="name cl_l1r_hover" >'.$tab['name'].'</div>
 			<div class="text" >'.nl2br($tab['text']).'</div>
 		</div>';
 	}

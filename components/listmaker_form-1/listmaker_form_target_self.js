@@ -11,6 +11,8 @@ jQuery(document).ready(function($) {
 			button = t.find('input[type="submit"]');
 			prompt = t.find('.lmfe_submit_prompt');
 
+			the_button_color = button.css('background-color');
+			cl( the_button_color );
 			button.attr('disabled',true);
 
 			var data_to_send_arr = [];
@@ -32,10 +34,11 @@ jQuery(document).ready(function($) {
 
 			}).done(function() {
 				prompt.css({'opacity':'1'});
+				button.attr('disabled',false);
+				button.css({'background-color':the_button_color});
 				setTimeout( function(){
 					prompt.animate({'opacity':'0'}, 2000 );
 				}, 1000 );
-				button.attr('disabled',false);
 			});
 
 		}

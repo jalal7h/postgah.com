@@ -1,17 +1,19 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/08/30
-# 1.3
+# 2017/01/29
+# 1.4
 
 function layout_mg_layer_form(){
 	
 	if( $layer_id = $_REQUEST['id'] ){
 		$rw = table( "page_layer", $layer_id );
 		$pos = $rw['pos'];
+		$page_id = $rw['page_id'];
 	
 	} else {
 		$pos = $_REQUEST['pos'];
+		$page_id = $_REQUEST['page_id'];
 	}
 	
 	if( in_array( $pos, ['left','right'] ) ){
@@ -25,13 +27,35 @@ function layout_mg_layer_form(){
 		}
 	}
 
+
 	foreach( $GLOBALS['block_layers'] as $func => $name ) {
-		if( $rw0 = table( 'page_layer', ['func'=>$func] ) ){
-			if( $func != 'layout_post' and $rw0['id'] < 100 ){
-				unset( $GLOBALS['block_layers'][$func] );
-			}
+		
+		$repeat = $GLOBALS['layout_block_repeat'][$func];
+		
+		// echo "<hr>".$func." - ".$repeat."<br>";
+
+		// age azad hast: pak nakon
+		if( $repeat == 'N' ){
+			continue;
+		
+		// age ye edit hast: pak nakon
+		} else if(  $rw  and  $rw['func'] == $func  ){
+			continue;
+		
+		// age kolan ruye 1bar limit hast, va kolan azash nis: pak nakon
+		} else if(  $repeat == 0  and  !table( 'page_layer', ['func'=>$func] )  ){
+			continue;
+			
+		// age safhey 1dune limit hast, va dar in safhe azash nis: pak nakon
+		} else if(  $repeat == 1  and  !table( 'page_layer', [ 'func'=>$func, 'page_id'=>$page_id ] )  ){
+			continue;
 		}
+
+		// echo $func." - ".$repeat." - will be removed";
+		unset( $GLOBALS['block_layers'][$func] );
+
 	}
+
 
 	asort( $GLOBALS['block_layers'] );
 

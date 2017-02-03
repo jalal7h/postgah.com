@@ -14,7 +14,7 @@
 			<span><?=__('صفحه اصلی')?></span>
 		</a>
 		<? foreach( userpanel_menu_items() as $item ){ ?>
-			<a href="{_URL}/{userpanel_slug}/<?=$item['func']?>" class="userpanel_menu_<?=$item['func']?> <?=$item['curr_class']?>" >
+			<a href="{_URL}/{userpanel_slug}/<?=$item['slug']?>" class="userpanel_menu_<?=$item['slug']?> <?=$item['curr_class']?>" >
 				<?fa_icon($item['icon'])?>
 				<span><?=$item['name']?></span>
 			</a>

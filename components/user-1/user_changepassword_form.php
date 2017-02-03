@@ -1,6 +1,10 @@
 <?
 
-$GLOBALS['userpanel_item'][ 95 ] = [ 'user_changepassword_form', 'تغییر رمز عبور', '13e' ];
+# jalal7h@gmail.com
+# 2017/01/23
+# 1.0
+
+add_userpanel_item( 'user_changepassword_form', 'password', 'تغییر رمز عبور', '13e' );
 
 function user_changepassword_form(){
 	

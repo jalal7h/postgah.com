@@ -1,12 +1,12 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/01/10
-# 1.0
+# 2017/01/23
+# 2.0
 
-function add_userpanel_item( $func, $name, $icon, $i=null, $default=false ){
+function add_userpanel_item( $func, $slug, $name, $icon, $i=null, $default=false ){
 	
-	$info = [ $func, $name, $icon, $default ];
+	$info = [ $func, $slug, $name, $icon, $default ];
 
 	if( $i === null ){
 		$GLOBALS['userpanel_item'][] = $info;

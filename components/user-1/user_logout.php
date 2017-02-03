@@ -5,7 +5,7 @@
 # 1.3
 
 add_action( 'user_logout' );
-add_userpanel_item( 'user_logout', 'خروج', '08b', 96 );
+add_userpanel_item( 'user_logout', 'logout', 'خروج', '08b', 96 );
 
 function user_logout( $redirect_to=_URL ){
 	

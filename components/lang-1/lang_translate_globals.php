@@ -1,14 +1,12 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/12
-# 1.0
+# 2017/01/29
+# 1.3
 
+add_init( function(){
 
-$GLOBALS['do_init'][] = 'lang_translate_globals';
-
-function lang_translate_globals(){
-
+	#
 	if( $_REQUEST['do_action'] == 'lang_sync_db' ){
 		return true;
 	}
@@ -41,7 +39,7 @@ function lang_translate_globals(){
 	# $GLOBALS['userpanel_item'][ 94 ] = [ 'userprofile_form', 'پروفایل کاربر', '007' ];
 	if( sizeof($GLOBALS['userpanel_item']) ){
 		foreach( $GLOBALS['userpanel_item'] as $i => $record ){
-			$GLOBALS['userpanel_item'][$i][1] = __( $GLOBALS['userpanel_item'][$i][1] );
+			$GLOBALS['userpanel_item'][$i][2] = __( $GLOBALS['userpanel_item'][$i][2] );
 		}
 	}
 
@@ -92,7 +90,8 @@ function lang_translate_globals(){
 		}
 	}
 
-}
+}, null );
+
 
 
 

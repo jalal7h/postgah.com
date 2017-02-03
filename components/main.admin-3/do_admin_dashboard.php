@@ -24,7 +24,7 @@ function do_admin_dashboard(){
 		}
 
 		if(! $global_switch_complex ){
-			e();
+			echo convbox( __('صفحه مورد نظر تعریف شده نیست!') );
 
 		} else if(! function_exists($func) ){
 			e();

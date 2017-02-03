@@ -1,15 +1,15 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/05/17
-# Version 1.1
+# 2017/01/29
+# 1.2
 
-$GLOBALS['block_layers']['userprofile_vw'] = 'پروفایل کاربر';
+add_layer( 'userprofile_vw', 'پروفایل کاربر' );
 
 function userprofile_vw(){
 	
 	if(! $id = $_REQUEST['id'] ){
-		e(__FUNCTION__,__LINE__);
+		e();
 	
 	} else if(! $rw = table("user", $id)){
 		echo "<script> location.href='"._URL."/404.php';</script>";

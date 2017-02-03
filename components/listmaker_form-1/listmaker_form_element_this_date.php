@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/24
-# 1.1
+# 2017/02/02
+# 1.2
 
 function listmaker_form_element_this_date( $info ){
 
@@ -21,7 +21,7 @@ function listmaker_form_element_this_date( $info ){
 		$input_type = 'text';
 	}
 
-	$c.= $info['PreTab']."<input type=\"$input_type\" ".
+	$c.= $info['PreTab']."<icon class=\"fa fa-calendar lmfe_isDate_icon\"></icon><input type=\"text\" ".
 		"name=\"".$info['name'].( $info['ArrayInput'] ? '[]' : '' )."\" ".
 		"id=\"".( $info['id'] ? $info['id'] : "lmfe_".$info['formName']."_".$info['name'] )."\" ".
 		( $info['class'] ? "class=\"".$info['class']."\" " : '' ).

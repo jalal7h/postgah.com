@@ -7,9 +7,13 @@ legend {
 	width: auto;
 }
 
-.btn.btn-primary ,
-.btn.btn-primary:hover {
-	color: white;
+.btn ,
+.btn:hover {
+	color: white !important;
+}
+.btn-default ,
+.btn-default:hover {
+	color: #555555;
 }
 
 .radio {

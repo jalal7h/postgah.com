@@ -1,22 +1,22 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/08/28
-# 1.0
+# 2017/01/22
+# 1.1
 
-// $GLOBALS['cmp']['mss_mg'] = 'سرور های ایمیل';
-$GLOBALS['setting']['mss_mg'] = 'سرور های ایمیل';
+add_setting('mss_mg','سرور های ایمیل');
 
 function mss_mg(){
 	
-	$url = "./?page=admin&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func'];
-	$menu = array(
-		__FUNCTION__."_server_list" => __("لیست سرور ها"),
-		__FUNCTION__."_client_list" => __("لیست کلاینت ها"),
-	);
+	listmaker_tabmenu([
+	
+		"mss_mg_server_list" => __("لیست سرور ها"),
+		"mss_mg_client_list" => __("لیست کلاینت ها"),
 
-	listmaker_tabmenu( $menu, $url, "func2" );
+	], _URL."/?page=admin&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func'], 'func2' );
 
 }
+
+
 
 

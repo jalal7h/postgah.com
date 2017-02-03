@@ -1,30 +1,23 @@
 
-
-// _URL
-var _URL;
-_URL = window.location.href.match(/^.*\//);
-_URL = String(_URL);
-_URL = _URL.substr( 0, _URL.length -1 );
-if( _URL.substr( _URL.length -6 ) == '/admin' ){
-	_URL = _URL.substr( 0, _URL.length -6 );
-}
+// fetch the hashtag
+var hash = location.hash.substr(1);
 
 
 $(document).ready(function() {
 
 
 	// scroll to hash section
-	$("a").on('click', function(event) {
-		if( this.hash !== "" ) {
-			event.preventDefault();
-			var hash = this.hash;
-			$('html, body').animate({
-				scrollTop: $(hash).offset().top
-			}, 800, function(){
-				window.location.hash = hash;
-			});
-		}
-	});
+	// $("a").on('click', function(event) {
+	// 	if( this.hash !== "" ) {
+	// 		event.preventDefault();
+	// 		var hash = this.hash;
+	// 		$('html, body').animate({
+	// 			scrollTop: $(hash).offset().top
+	// 		}, 800, function(){
+	// 			window.location.hash = hash;
+	// 		});
+	// 	}
+	// });
 
 
 	// autocomplete off

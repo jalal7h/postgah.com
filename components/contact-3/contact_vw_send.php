@@ -1,12 +1,13 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/09/18
-# 1.2
+# 2017/01/25
+# 1.3
 
 function contact_vw_send(){
 
 	token_check();
+	recaptcha_check();
 	
 	if(! $_REQUEST['to'] = $_REQUEST['to'] ){
 		dg();

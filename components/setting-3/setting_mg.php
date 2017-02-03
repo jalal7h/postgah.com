@@ -1,14 +1,14 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/21
+# 2017/01/22
 # 1.2
 
 add_component( 'setting_mg', 'تنظيمات', '085' );
 
 function setting_mg(){
 
-	$url = "./?page=admin&cp=".$_REQUEST['cp'];
+	$url = _URL."/?page=admin&cp=".$_REQUEST['cp'];
 	$cp = $_REQUEST['cp'];
 
 	$menu[ $cp.'_main' ] = __('تنظیمات کلی');

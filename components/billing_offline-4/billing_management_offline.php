@@ -1,17 +1,18 @@
 <?
 
+# jalal7h@gmail.com
+# 2017/01/22
+# 1.0
+
 function billing_management_offline(){
 	
-	$url = "./?page=admin&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func'];
+	listmaker_tabmenu([
 	
-	$menu = array(
 		$_REQUEST['func']."_list&archive=0" => __("لیست پرداخت های تایید نشده") ,
 		$_REQUEST['func']."_list&archive=1" => __("آرشیو پرداخت ها") ,
 		$_REQUEST['func']."_methods" => __("روشهای پرداخت") ,
-	);
 
-	listmaker_tabmenu( $menu , $url, "func2" );
-	
+	], _URL."/?page=admin&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func'], "func2" );
+
 }
-
 

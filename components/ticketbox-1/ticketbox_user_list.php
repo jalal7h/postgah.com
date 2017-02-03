@@ -1,10 +1,10 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/31
-# 1.1
+# 2017/01/23
+# 1.2
 
-$GLOBALS['userpanel_item'][ 51 ] = [ 'ticketbox_user_list', 'پیام ها', '0e6' ];
+add_userpanel_item( 'ticketbox_user_list', 'ticket', 'پیام ها', '0e6' );
 
 function ticketbox_user_list(){
 	

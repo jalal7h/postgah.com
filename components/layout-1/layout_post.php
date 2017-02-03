@@ -1,10 +1,10 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/08/23
-# 1.1
+# 2017/01/29
+# 1.2
 
-$GLOBALS['block_layers']['layout_post'] = 'پست دلخواه';
+add_layer( 'layout_post', 'پست دلخواه', '', 'N' );
 
 function layout_post( $rw /* $rw_pagelayer */ ){
 	

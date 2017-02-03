@@ -1,10 +1,10 @@
 <?php
 
 # taghipoor.meysam@gmail.com
-# 2016/11/27
-# 1.0
+# 2017/01/29
+# 1.1
 
-$GLOBALS['block_layers']['news_display'] = 'نمایش خبر';
+add_layer( 'news_display', 'نمایش خبر' );
 
 function news_display( $rw_pagelayer ){
 	

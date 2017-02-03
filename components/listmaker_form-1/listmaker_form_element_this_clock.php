@@ -2,7 +2,7 @@
 
 # jalal7h@gmail.com
 # 2016/05/14
-# Version 1.0
+# 1.0
 
 function listmaker_form_element_this_clock( $info ){
 

@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/06
-# 2.3
+# 2017/01/23
+# 2.4
 
 add_layer( 'userpanel_desk', 'میز کاربری', 'center' );
 
@@ -12,35 +12,21 @@ function userpanel_desk(){
 		user_logout( layout_link(60) );
 	}
 
-	userpanel_fix_do();
+	echo "<div class=\"userpanel_desk\">";
 
-	$res = false;
-
-	echo "<div class='userpanel_desk'>";
-
-	foreach( $GLOBALS['userpanel_item'] as $i => $array ){
+	foreach( userpanel_menu_items() as $item ){
 		
-		$func = $array[0];
-		$name = $array[1];
+		$func = $item['func'];
+		$slug = $item['slug'];
 
-		if( $func==$_REQUEST['do'] ){
-			$res = call_user_func($func);
+		if( $slug == $_REQUEST['do_slug'] ){
+			call_user_func($func);
 			break;
 		}
 
 	}
 	
-	?>
-	<style type="text/css">
-	.userpanel_menu {
-		opacity: 1.0;
-	}
-	</style>
-	<?
-	
 	echo "</div>";
-
-	return $res;
 	
 }
 

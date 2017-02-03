@@ -1,19 +1,19 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/23
-# 1.0
+# 2017/01/22
+# 1.1
 
-$GLOBALS['cmp']['billing_mg'] = 'حسابداری';
-$GLOBALS['cmp-icon']['billing_mg'] = '155';
+add_component( 'billing_mg', 'حسابداری', '155' );
 
 function billing_mg(){
 	
-	$url = "./?page=admin&cp=".$_REQUEST['cp'];
+	$url = _URL."/?page=admin&cp=".$_REQUEST['cp'];
 	
 	$menu['billing_management_stat'] = __("حساب روزانه");
 	$menu['billing_management_user'] = __("صورتحساب های کاربران");
 	$menu['billing_management_methods'] = __("درگاه پرداخت آنلاین");
+	
 	if( is_component('billing_offline') ){
 		$menu['billing_management_offline'] = __("پرداخت آفلاین");
 	}

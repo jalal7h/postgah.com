@@ -7,7 +7,7 @@
 function layout_post_box( $title, $content, $allow_eval=false, $framed=0, $pos="center", $return=false ){
 	
 	if(! $framed ){
-	
+
 		if( $allow_eval==true ){
 			ob_start();
 			eval("?>$content<?");
@@ -16,7 +16,7 @@ function layout_post_box( $title, $content, $allow_eval=false, $framed=0, $pos="
 		}
 		
 	} else {
-		
+
 		if( $allow_eval==true ){
 			ob_start();
 			eval("?>$content<?");

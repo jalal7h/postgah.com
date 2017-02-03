@@ -1,6 +1,10 @@
 <?
 
-$GLOBALS['block_layers']['pgItem_list_of_last'] = 'لیست آخرین آگهی ها';
+# jalal7h@gmail.com
+# 2017/02/03
+# 1.1
+
+add_layer( 'pgItem_list_of_last', 'لیست آخرین آگهی ها', 'side', $repeat='0' );
 
 function pgItem_list_of_last( $rw_pagelayer ){
 	
@@ -18,7 +22,7 @@ function pgItem_list_of_last( $rw_pagelayer ){
 		}
 
 		if(! $rs_item = dbq(" SELECT * FROM `item` WHERE `flag`='2' ORDER BY `date_updated` DESC LIMIT $number_of_rows ") ){
-			e(__FUNCTION__,__LINE__);
+			e();
 
 		} else if(! dbn($rs_item) ){
 			$content = '<br><center>موردی یافت نشد</center><br>';
@@ -27,10 +31,7 @@ function pgItem_list_of_last( $rw_pagelayer ){
 			$content.= pgItem_list_brief_this( $rw_item );		
 		}
 
-		ob_start();
-		layout_post_box( $layer_name, $content, 0, 1, $rw_pagelayer['pos'] );
-		$the_box = ob_get_contents();
-		ob_end_clean();
+		$the_box = layout_post_box( $layer_name, $content, 0, 1, $rw_pagelayer['pos'], true );
 
 		echo cache( "make", $cache_key, $the_box );
 
