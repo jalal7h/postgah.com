@@ -3,13 +3,11 @@
 	display: inline-block;
 	width: 100%;
 	direction: rtl;
-	/* background-color: white; */
 	margin-bottom: 20px;
 	border-radius: 4px;
-	opacity: 0.0;
+	background-color: white;
 }
 
-/*avatar*/
 .userpanel_menu .profile_avatar {
 	width: 100%;
 	max-height: 400px;

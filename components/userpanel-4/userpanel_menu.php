@@ -1,13 +1,13 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/10
-# 2.5
+# 2017/02/04
+# 2.6
 
 add_layer( 'userpanel_menu', 'منوی کاربری', 'side' );
 
 function userpanel_menu(){
-	
+
 	$userpanel_slug = Slug::get('page',14);
 
 	if(! $user_id = user_logged() ){

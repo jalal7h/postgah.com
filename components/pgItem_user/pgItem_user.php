@@ -1,5 +1,11 @@
 <?
 
+# jalal7h@gmail.com
+# 2017/02/04
+# 1.1
+
+add_userpanel_item( 'pgItem_user', 'items', 'لیست آگهی ها', '022', null, true );
+
 function pgItem_user(){
 
 	if(! $user_id = user_logged() ){
