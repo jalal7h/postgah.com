@@ -4,6 +4,8 @@
 # 2017/01/22
 # 1.2
 
+add_component( 'abusereport_mg', 'گزارشات تخلف', '071' );
+
 function abusereport_mg(){
 	
 	listmaker_tabmenu([
