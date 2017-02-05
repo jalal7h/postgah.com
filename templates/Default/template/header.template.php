@@ -7,8 +7,8 @@
 		
 		{pgSearch_form}
 
-		<a href="{_URL}/new_item" class="new_ads">ارسال آگهی رایگان</a>
-		<a href="{_URL}/login" class="login_or_register">ورود / عضویت</a>
+		<a href="{_URL}/<?=Slug::get('page',14)?>/items/new" class="new_ads">ارسال آگهی رایگان</a>
+		<a href="{_URL}/<?=Slug::get('page',60)?>" class="login_or_register">ورود / عضویت</a>
 
 		{breadcrumb}
 

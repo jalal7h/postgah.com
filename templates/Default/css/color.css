@@ -1,0 +1,116 @@
+/*20170109*/
+
+.clWhite {
+	color: #444;
+	background-color: white;
+}
+
+.clNeu {
+	color: #444;
+	background-color: #f7f7f7;
+}
+
+/* range dagh e asli */
+.cl_l1 ,
+.cl_l1_hover:hover ,
+.cl_l1_hover_before:hover:before {
+	color: #a90000;
+}
+.cl_l1_i ,
+.cl_l1_hover_i:hover ,
+.cl_l1_hover_before_i:hover:before {
+	color: #a90000 !important;
+}
+.cl_l1r ,
+.cl_l1r_hover:hover {
+	background-color: #a90000;
+	border-color: #a90000;
+	color: white;
+}
+.cl_l1r_i ,
+.cl_l1r_hover_i:hover {
+	background-color: #a90000 !important;
+	border-color: #a90000 !important;
+	color: white !important;
+}
+.cl_l1r_BG ,
+.cl_l1r_BG_hover:hover {
+	background-color: #a90000;
+}
+.cl_l1r_BG_i ,
+.cl_l1r_BG_hover_i:hover {
+	background-color: #a90000 !important;
+}
+.cl_l1r_border ,
+.cl_l1r_border_hover:hover {
+	border-color: #a90000;
+}
+
+/* rang e aram e asli */
+.cl_l2_t {
+	color: #c3c3c3;
+}
+.cl_l2 ,
+.cl_l2_hover:hover {
+	color: #696969;
+}
+.cl_l2_i ,
+.cl_l2_hover_i:hover {
+	color: #696969 !important;
+}
+.cl_l2r ,
+.cl_l2r_hover:hover {
+	background-color: #c3c3c3;
+	border-color: #c3c3c3;
+	color: #696969;
+}
+.cl_l2r_i ,
+.cl_l2r_hover_i:hover {
+	background-color: #c3c3c3 !important;
+	border-color: #c3c3c3 !important;
+	color: #696969 !important;
+}
+.cl_l2r_BG ,
+.cl_l2r_BG_hover:hover {
+	background-color: #c3c3c3;
+}
+.cl_l2r_border ,
+.cl_l2r_border_hover:hover {
+	border-color: #c3c3c3;
+}
+
+.cl_l3 ,
+.cl_l3_hover:hover ,
+.cl_l3_hover_before:hover:before {
+	color: #337ab7;
+}
+.cl_l3_i ,
+.cl_l3_hover_i:hover ,
+.cl_l3_hover_before_i:hover:before {
+	color: #337ab7 !important;
+}
+.cl_l3r ,
+.cl_l3r_hover:hover {
+	background-color: #337ab7;
+	border-color: #337ab7;
+	color: white;
+}
+.cl_l3r_i ,
+.cl_l3r_hover_i:hover {
+	background-color: #337ab7 !important;
+	border-color: #337ab7 !important;
+	color: white !important;
+}
+.cl_l3r_BG ,
+.cl_l3r_BG_hover:hover {
+	background-color: #337ab7;
+}
+.cl_l3r_BG_i ,
+.cl_l3r_BG_hover_i:hover {
+	background-color: #337ab7 !important;
+}
+.cl_l3r_border ,
+.cl_l3r_border_hover:hover {
+	border-color: #337ab7;
+}
+

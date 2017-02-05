@@ -1,0 +1,50 @@
+
+.ccf_displayFilters > .cat {
+	margin: -5px 0;
+}
+.ccf_displayFilters > .cat > .element {
+	position: relative;
+	display: block;
+	margin: 15px 10px;
+	padding-bottom: 15px;
+	border-bottom: 1px dashed #eee;
+	
+	max-height: 120px;
+	overflow: hidden;
+}
+.ccf_displayFilters > .cat > .element .more {
+	position: absolute; top: 93px; right: 0px;
+	padding: 2px 0px;
+	background-color: #fff;
+	width: 100%;
+	text-align: left;
+	color: rgba(0, 0, 0, .5);
+}
+.ccf_displayFilters > .cat > .element .more:hover {
+	color: #000;
+}
+.ccf_displayFilters > .cat > .element:last-child {
+	border-bottom: 0;
+	padding-bottom: 0;
+}
+.ccf_displayFilters > .cat > .element > .head {
+	display: block;
+	margin-bottom: 10px;
+	color: #999;
+}
+.ccf_displayFilters > .cat > .element label {
+	min-width: 48%;
+    display: inline-block;
+    padding-right: 8px;
+    margin: 5px 0;
+}
+.ccf_displayFilters > .cat > .element span {
+	color: #333;
+	font-size: 12px;
+}
+.ccf_displayFilters > .cat > .element > label > input[type="checkbox"] {
+	/* position: relative; top: 0px !important; left: 2px; */
+}
+.ccf_displayFilters > .cat select {
+	width: auto !important;
+}
