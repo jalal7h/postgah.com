@@ -10,7 +10,7 @@ function pgItem_user_form(){
 
 	[!
 		"table" => "item" ,
-		"action" => "'.layout_link(14).'/pgItem_user",
+		"action" => "'.layout_link(14).'/items",
 		"name" => "'.__FUNCTION__.'" ,
 		"class" => "'.__FUNCTION__.'" ,
 		"switch" => "do1",

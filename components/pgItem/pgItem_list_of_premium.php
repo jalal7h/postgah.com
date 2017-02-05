@@ -1,6 +1,10 @@
 <?
 
-$GLOBALS['block_layers']['pgItem_list_of_premium'] = 'لیست آخرین ویژه ها';
+# jalal7h@gmail.com
+# 2017/02/04
+# 1.1
+
+add_layer( 'pgItem_list_of_premium', 'لیست آخرین ویژه ها', 'side', $repeat='N' );
 
 function pgItem_list_of_premium( $rw_pagelayer ){
 	
