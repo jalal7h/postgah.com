@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/22
-# 1.2
+# 2017/02/05
+# 1.3
 
 add_component( 'abusereport_mg', 'گزارشات تخلف', '071' );
 

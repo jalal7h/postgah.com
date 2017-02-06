@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/16
-# 1.0
+# 2017/02/06
+# 1.1
 
 function pgItem_user_saveNew(){
 	
@@ -32,8 +32,13 @@ function pgItem_user_saveNew(){
 	#
 	# insert
 	$item_id = dbs("item", ['user_id'=>$user_id,'name','text','cat_id','position_id','cost','cell','tell','video','sale_by_postgah','state','count_of_stock','weight','sale_duration','delivery_method','delivery_cost_town','delivery_cost_country','date_updated'=>U()] );
-	#
 
+	#
+	# save the custom fields.
+	catcustomfield_save( 'item', $item_id );
+
+	#
+	# fetch the 'cat serial' and 'position serial' for this item and save on db
 	pgItem_set_cat_serial( $item_id );
 	pgItem_set_position_serial( $item_id );
 
@@ -46,7 +51,6 @@ function pgItem_user_saveNew(){
 	#
 	# upload photo
 	listmaker_fileupload( 'item', $item_id );
-	#
 	
 	#
 	# paid ads

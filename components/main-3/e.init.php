@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/07
-# 1.6
+# 2017/02/06
+# 1.7
 
 function e( $text=null, $line=null, $etc=null, $its_ed=0 ){
 
@@ -12,7 +12,7 @@ function e( $text=null, $line=null, $etc=null, $its_ed=0 ){
 	} else {
 		$bt1 = debug_backtrace()[1+$its_ed];
 		$bt0 = debug_backtrace()[0+$its_ed];
-		$text = $bt1['function'] . " : " . $bt0['line'] . "; " . $text;
+		$text = "<div style=\"border-radius: 8px 0 0 8px; background-color:#888; color:white; display: inline-block; padding: 5px 10px; font-family: monospace;\">".$bt1['function'] . ":" . $bt0['line'] . "</div> <div style=\"display: inline-block; padding: 5px 10px; font-family: monospace;\">" . $text . "</div>";
 	}
 	
 	if( $etc ){
@@ -21,7 +21,7 @@ function e( $text=null, $line=null, $etc=null, $its_ed=0 ){
 
 	#
 	# echo 
-	echo "<center>".$text."</center>";
+	echo "<center dir=ltr ><div style=\"background:#eee; border-radius:8px; margin: 6px auto 0; display: inline-block;\">".$text."</div></center>";
 	
 	#
 	# error log

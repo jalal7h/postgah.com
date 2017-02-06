@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/16
-# 1.0
+# 2017/02/06
+# 1.1
 
 function pgItem_user_saveEdit(){
 
@@ -46,8 +46,13 @@ function pgItem_user_saveEdit(){
 	# insert
 	$item_id = dbs("item", 
 		['name','text','cat_id','position_id','cost','cell','tell','video','sale_by_postgah','state','count_of_stock','weight','sale_duration','delivery_method','delivery_cost_town','delivery_cost_country','flag'=>$flag ], ['id','user_id'=>$user_id] );
-	#
 
+	#
+	# save the custom fields.
+	catcustomfield_save( 'item', $item_id );
+
+	#
+	# fetch the 'cat serial' and 'position serial' for this item and save on db
 	pgItem_set_cat_serial( $item_id );
 	pgItem_set_position_serial( $item_id );
 
@@ -58,11 +63,13 @@ function pgItem_user_saveEdit(){
 	#
 	# upload photo
 	listmaker_fileupload( 'item', $item_id );
-	#
 	
-	$vars['item_id'] = $item_id;
-	$vars['item_name'] = trim( strip_tags($_REQUEST['name']) );
-	$c = texty('pgItem_user_saveEdit', $vars);
+	#
+	# send relared messages	
+	$c = texty('pgItem_user_saveEdit', [
+		'item_id' => $item_id,
+		'item_name' => trim( strip_tags($_REQUEST['name']) ),
+	]);
 	
 	qpush( __FUNCTION__."_result", $c );
 	
