@@ -10,6 +10,7 @@ legend {
 .btn ,
 .btn:hover {
 	color: white !important;
+	text-shadow: 0 0 0 #000 !important;
 }
 .btn-default ,
 .btn-default:hover {

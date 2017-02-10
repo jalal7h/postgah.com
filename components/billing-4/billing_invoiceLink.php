@@ -1,5 +1,17 @@
 <?
 
+# jalal7h@gmail.com
+# 2017/02/08
+# 1.1
+
 function billing_invoiceLink( $rw ){
-	return _URL."/billing-invoice-".$rw['id'];
+
+	if( is_numeric($rw) ){
+		$invoice_id = $rw;
+	} else {
+		$invoice_id = $rw['id'];
+	}
+
+	return _URL.'/'.Slug::get('page',14).'/invoice/'.$invoice_id;
+
 }

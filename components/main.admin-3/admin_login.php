@@ -1,19 +1,18 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/01
-# 1.4
+# 2017/02/08
+# 1.5
 
 $GLOBALS['do_action'][] = 'admin_login';
 
 function admin_login(){
 
+	recaptcha_check();
+
 	$fc2 = $_POST[ login_key()['fc2'] ];
 	$fc2 = intval( $fc2 );
 	
-	$captcha_name = "admin-login";
-	$captcha_code = $_POST[ login_key()['captcha'] ];
-
 	if(! defined('__FC') ){
 		dg();
 		$code = "no_fc2_defined";
@@ -21,11 +20,7 @@ function admin_login(){
 	} else if( $fc2 != __FC ){
 		dg();
 		$code = "invalid_fc2";
-	
-	} else if(! captcha_check( $captcha_name , $captcha_code ) ){
-		dg();
-		$code = "wrong_captcha";
-
+		
 	} else if(! $user_id = admin_check() ){
 		dg();
 		$code = "invalid_auth";
@@ -87,7 +82,7 @@ function admin_check(){
 
 function login_key(){
 	
-	foreach( [ 'uid', 'username', 'password', 'fc2', 'captcha' ] as $i => $key ){
+	foreach( [ 'uid', 'username', 'password', 'fc2' ] as $i => $key ){
 		$c[ $key ] = md5x( $key . session_id(), 30, true, true);
 	}
 

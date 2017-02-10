@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/07/16
-# 1.0
+# 2017/02/07
+# 1.1
 
 function billing_invoiceMake_congratulate( $invoice_id ){
 	
@@ -22,9 +22,10 @@ function billing_invoiceMake_congratulate( $invoice_id ){
 		// }
 
 		$vars['invoice_id'] = $invoice_id;
-		$vars['invoice_cost'] = $rw_invoice['cost'];
+		$vars['invoice_cost'] = billing_format($rw_invoice['cost']);
 		$vars['user_name'] = $rw_user['name'];
-		$vars['invoice_payment_link'] = _URL.'/?page='.$_REQUEST['page'].'&do=billing_userpanel_payment&invoice_id='.$vars['invoice_id'];
+		$vars['invoice_payment_link'] = billing_invoiceLink( $vars['invoice_id'] );
+		$vars['invoice_payment_button'] = "<a class=\"btn btn-primary btn-sm\" href=\"".$vars['invoice_payment_link']."\">".__('فرم پرداخت صورتحساب')."</a>";
 
 		echo texty( 'billing_invoiceMake_congratulate', $vars, $user_id );
 

@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/16
-# 1.2
+# 2017/02/08
+# 1.3
 
 function texty_mg_saveEdit(){
 
@@ -25,7 +25,9 @@ function texty_mg_saveEdit(){
 	], ['id'] ) ){
 
 	} else {
-		echo convbox( __("تغییرات مربوط به پیام های <b>%%</b> ثبت شد", [table('texty',$_REQUEST['id'], 'name')] ) );
+		$texty_name = table('texty',$_REQUEST['id'], 'name');
+		$texty_name = __( $texty_name );
+		echo convbox( __("تغییرات مربوط به پیام های <b>%%</b> ثبت شد", [ $texty_name ] ) );
 	}
 
 }

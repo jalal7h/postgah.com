@@ -1,8 +1,15 @@
 
 jQuery(document).ready(function($) {
 	
+	// rotate admin login form
+	if( $('.admin_login_form').length ){
+		cl( 'YYY' );
+		$('.admin_login_form input.username').focus();
+		$('.admin_login_form').css({'transform' : 'rotate(0deg)','opacity' : '1.0'});
+	}
+
 	$('form.admin_login_form').on('submit', function(e){
-		
+
 		if( $(this).find('.username').val() == '' ){
 			$(this).find('.username').focus();
 

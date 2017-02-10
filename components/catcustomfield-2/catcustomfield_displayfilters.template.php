@@ -1,3 +1,4 @@
+<?if( sizeof($cats) ):?>
 
 <script>
 	var _PAGE = '{_PAGE}';
@@ -23,3 +24,4 @@
 <?endforeach?>
 </div>
 
+<?endif?>

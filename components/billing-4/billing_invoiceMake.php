@@ -48,7 +48,7 @@ function billing_invoiceMake( $cost, $order_table="", $order_id=0, $user_id=null
 		# repeat verification
 		} else if(! $rs_repeat = dbq(" SELECT * FROM `billing_invoice` WHERE `order_table`='$order_table' AND `order_id`='$order_id' LIMIT 1 ") ){
 			e(__FUNCTION__,__LINE__,dbe());
-
+			
 		} else if( dbn($rs_repeat) ){
 			if(! dbrm("billing_invoice",$invoice_id) ){
 				e();
