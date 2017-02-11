@@ -1,12 +1,12 @@
 
 
 # jalal7h@gmail.com
-# 2017/02/10
-# 1.7
+# 2017/02/11
+# 1.8
 
 /*
 	
-	'[ 'text','color','name','number','textarea','select','checkbox','radio','date','clock','toggle','url','email','file','submit','hidden','password','cat','catbox','catsearch','position','positionbox','keyword','searchbox','head' ]'
+	'[ 'text','color','name','number','textarea','select','checkbox','radio','date','clock','toggle','url','email','file','submit','hidden','password','cat','catbox','catsearch','position','positionbox','keyword','searchbox','head'.'catcheck' ]'
 	
 	['text:name*+{ + will add `[]` }'],
 	['color:color_code'],
