@@ -10,7 +10,7 @@
 		<?if(! user_logged() ):?>
 			<a href="{_URL}/<?=Slug::get('page',60)?>" class="login_or_register">ورود / عضویت</a>
 		<?elseif(! is_userPanel() ):?>
-			<a href="{_URL}/<?=Slug::get('page',14)?>" class="login_or_register">محیط کاربری</a>
+			<a href="{_URL}/<?=Slug::get('page',14)?>" class="login_or_register">محیط کاربری من</a>
 		<?endif?>
 
 		<?if(! strstr($_SERVER['REQUEST_URI'], '/userpanel/items/new' ) ):?>
