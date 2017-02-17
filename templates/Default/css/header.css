@@ -33,7 +33,7 @@ header .login_or_register {
 }
 header .new_ads {
 	background-color: #e72a46;
-	left: 128px;
+	left: 10px;
 }
 header .new_ads:before {
 	font-family: FontAwesome;
@@ -43,7 +43,7 @@ header .new_ads:before {
 }
 header .login_or_register {
 	background-color: #8cc34b;
-	left: 10px;
+	left: 168px;
 }
 
 header .new_ads:hover ,
