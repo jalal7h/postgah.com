@@ -19,6 +19,12 @@ function pgItem_user_saveNew(){
 	kbclear( $_REQUEST['tell'] );
 	kbclear( $_REQUEST['video'] );
 
+	#
+	# character limit
+	if( mg_strlen( $_REQUEST['name'] ) < 70 ){
+		$_REQUEST['name'] = mb_substr( $_REQUEST['name'], 0, 70 );
+	}
+	
 	if(! $user_id = user_logged() ){
 		ed();
 	
