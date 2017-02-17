@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/02/02
-# 1.2
+# 2017/02/13
+# 1.3
 
 function listmaker_form_element_this_date( $info ){
 
@@ -10,8 +10,8 @@ function listmaker_form_element_this_date( $info ){
 
 	$info['class'].= " lmfe_isDate calendar-".( lang_dir == 'ltr' ? 'en' : lang_code );
 	$info['class'] = trim($info['class']);
-	
-	if( function_exists('date_zero') ){
+
+	if( $info['value'] and function_exists('date_zero') ){
 		$info['value'] = date_zero('remove', $info['value']);
 	}
 

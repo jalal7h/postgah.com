@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/14
-# 1.0
+# 2017/02/13
+# 1.1
 
 function __( $text, $vars=null ){
 	
@@ -18,6 +18,9 @@ function __( $text, $vars=null ){
 	
 	// vars replacement
 	if( $vars ){
+		if(! is_array($vars) ){
+			$vars = [ $vars ]; 
+		}
 		foreach( $vars as $i => $var ){
 			$text = str_replace_first( '%%', $var, $text);
 		}

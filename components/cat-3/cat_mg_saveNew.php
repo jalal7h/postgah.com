@@ -8,10 +8,11 @@ function cat_mg_saveNew(){
 	$parent = intval($_REQUEST['parent']);
 	$desc = strip_tags($_REQUEST['desc']);
 	$kw = strip_tags($_REQUEST['kw']);
+	$color = strip_tags($_REQUEST['color']);
 
 	#
 	# uploading the logo file
-	$fileupload_upload = fileupload_upload( array("id"=>$l, "input"=>"cat") );
+	$fileupload_upload = fileupload_upload([ "id"=>$l, "input"=>"cat" ]);
 	$logo = $fileupload_upload[0];
 
 	#
@@ -19,7 +20,7 @@ function cat_mg_saveNew(){
 	if(! $name = $_REQUEST['name'] ){
 		return false;
 	
-	} else if(! dbs( 'cat', ['name','desc'=>$desc,'kw'=>$kw,'cat'=>$l,'parent'=>$parent,'logo'=>$logo,'flag'=>1] ) ){
+	} else if(! dbs( 'cat', ['name','desc'=>$desc,'kw'=>$kw,'cat'=>$l,'parent'=>$parent,'logo'=>$logo,'color'=>$color,'flag'=>1] ) ){
 		e( dbe() );
 	}
 

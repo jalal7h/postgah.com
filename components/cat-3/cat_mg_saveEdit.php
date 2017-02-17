@@ -1,14 +1,15 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/05/17
-# 1.2
+# 2017/02/11
+# 1.3
 
 function cat_mg_saveEdit(){
 	
 	$l = $_REQUEST['l'];
 	$desc = strip_tags($_REQUEST['desc']);
 	$kw = strip_tags($_REQUEST['kw']);
+	$color = strip_tags($_REQUEST['color']);
 
 	if(! $name = $_REQUEST['name'] ){
 		//
@@ -18,7 +19,7 @@ function cat_mg_saveEdit(){
 	
 	} else {
 
-		dbs( 'cat', [ 'name'=>$name, 'desc'=>$desc, 'kw'=>$kw ], [ 'id'=>$id ] );
+		dbs( 'cat', [ 'name'=>$name, 'desc'=>$desc, 'kw'=>$kw, 'color'=>$color ], [ 'id'=>$id ] );
 
 		$fileupload_upload = fileupload_upload( array("id"=>$l, "input"=>"cat") );
 		if( $fileupload_upload[0] ){

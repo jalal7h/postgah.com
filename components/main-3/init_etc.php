@@ -23,7 +23,7 @@ function init_etc(){
 
 	# 
 	# main components
-	$needed_components = [ 'main', 'main.admin', 'main.db', 'main.include', 'layout' ];
+	$needed_components = [ 'main', 'admin', 'main.db', 'main.include', 'layout' ];
 	if(! is_component( $needed_components ) ){
 		echo 'the following component is needed : <br>'.implode(', ', $needed_components);
 		die();

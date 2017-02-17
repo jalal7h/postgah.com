@@ -1,7 +1,7 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/02/10
+# 2017/02/11
 # 1.0
 
 function listmaker_form_element_this_head( $info ){
@@ -15,7 +15,7 @@ function listmaker_form_element_this_head( $info ){
 		$tableName = $lmtc[0];
 	}
 
-	if( $edit ){
+	if( $GLOBALS['listmaker_form-rw'] ){
 		$text = __( 'ویرایش %%', [$tableName] );
 	
 	} else {

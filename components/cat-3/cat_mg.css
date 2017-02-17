@@ -186,7 +186,12 @@
 }
 
 
-
+#cat_form_management form > input[type=color] {
+	height: 36px;
+    width: 20px;
+    position: relative;
+    vertical-align: bottom;
+}
 
 
 
