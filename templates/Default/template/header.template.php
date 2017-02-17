@@ -8,14 +8,17 @@
 		{pgSearch_form}
 
 		<a href="{_URL}/<?=Slug::get('page',14)?>/items/new" class="new_ads">ارسال آگهی رایگان</a>
-		<a href="{_URL}/<?=Slug::get('page',60)?>" class="login_or_register">ورود / عضویت</a>
+		<?if( user_logged() ):?>
+			<a href="{_URL}/<?=Slug::get('page',14)?>" class="login_or_register">محیط کاربری</a>
+		<?else:?>
+			<a href="{_URL}/<?=Slug::get('page',60)?>" class="login_or_register">ورود / عضویت</a>
+		<?endif?>
 
 		{breadcrumb}
 
 	</div>
 
 	{anchor_back_to_admin_if_logged}
-	{anchor_back_to_user_if_logged}
 	
 </header>
 
