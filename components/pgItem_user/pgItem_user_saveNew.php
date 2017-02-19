@@ -21,7 +21,7 @@ function pgItem_user_saveNew(){
 
 	#
 	# character limit
-	if( mg_strlen( $_REQUEST['name'] ) < 70 ){
+	if( mb_strlen( $_REQUEST['name'] ) < 70 ){
 		$_REQUEST['name'] = mb_substr( $_REQUEST['name'], 0, 70 );
 	}
 	
