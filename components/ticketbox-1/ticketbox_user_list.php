@@ -47,7 +47,7 @@ function ticketbox_user_list(){
 	#
 	# base url is needed in version upper 1.2 
 	# ** address base e in list
-	$list['base_url'] = '_URL."/?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'"';
+	$list['base_url'] = '_URL."/?page='.$_REQUEST['page'].'&do_slug='.$_REQUEST['do_slug'].'"';
 
 	#
 	# target // maghsad e click ruye har row
@@ -58,7 +58,7 @@ function ticketbox_user_list(){
 	# ** mitunim link ham bedim bejaye 'true'
 	# ** ama age base_url ro dashte bashim az hamun estefade mikone
 	#
-	$list['addnew_url'] = true;
+	$list['addnew_url'] = '_URL."/?page='.$_REQUEST['page'].'&do_slug='.$_REQUEST['do_slug'].'&do1=form"';
 	// $list['setflag_url'] = true; // link active / inactive
 	$list['paging_url'] = true; // not needed when we have 'tdd'
 	// $list['modify_url'] = true;
