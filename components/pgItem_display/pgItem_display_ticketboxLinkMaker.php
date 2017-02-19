@@ -17,14 +17,14 @@ function pgItem_display_ticketboxLinkMaker(){
 		e( dbe() );
 	
 	} else if( dbn($rs) == 1 ){
-		$link = _URL."/?page=14&do=ticketbox_user_list&do1=view&id=".dbr($rs,0,'ticketbox_id');
+		$link = _URL."/?page=14&do_slug=ticket&do1=view&id=".dbr($rs,0,'ticketbox_id');
 		echo "<a href=\"$link\" class=\"btn btn-primary ask_from_seller\">".__('سوال از فروشنده')."</a>";
 		
 	} else {
 		
 		$foreign = $rw_item['user_id'];
 		
-		$link = _URL."/?page=14&do=ticketbox_user_list&do1=form&table_name=item&table_id=$item_id&user_id=$foreign&hash_code=".ticketbox_private_token_make([ 'table_name'=>'item', 'table_id'=>$item_id, 'user_id'=>$foreign ]);
+		$link = _URL."/?page=14&do_slug=ticket&do1=form&table_name=item&table_id=$item_id&user_id=$foreign&hash_code=".ticketbox_private_token_make([ 'table_name'=>'item', 'table_id'=>$item_id, 'user_id'=>$foreign ]);
 		echo "<a href=\"$link\" class=\"btn btn-primary ask_from_seller\">".__('سوال از فروشنده')."</a>";
 		
 	}
