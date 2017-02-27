@@ -19,20 +19,18 @@ karborde listmaker_flag baraye enable/disable kardan e ye record e.
 
 
 function listmaker_flag( $table_name , $setFlagTo=null , $id=null , $column="flag" ){
-	
+
 	if( $id === null ){
 		if(! $id = $_REQUEST['id']){
 			e();
 		}
 	}
 
-
 	if( $setFlagTo ){
 		$value_query = "'$setFlagTo'";
 	} else {
 		$value_query = "MOD(`$column`+1,2)";
 	}
-
 
 	if(! $rw = table( $table_name , $id ) ){
 		e();

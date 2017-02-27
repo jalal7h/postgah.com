@@ -32,7 +32,8 @@ function admin_changepassword(){
 			[!"name:name"!]
 			[!"text:cell"!]
 			[!"password:password"=>"************"!]
-			[!"file:profile_pic"!]
+			
+			'.( is_component('userprofile') ? '[!"file:profile_pic"!]' : '' ).'
 			
 			<br> 
 			<br>

@@ -6,43 +6,54 @@
 
 function news_mg_list(){
 	
+	#
+	# actions
 	switch($_REQUEST['do']){
 	
-		case 'saveNew' : 
+		case 'saveNew': 
 			news_mg_saveNew();
 			break;
 	
-		case 'saveEdit' : 
+		case 'saveEdit': 
 			news_mg_saveEdit();
 			break;
 	
-		case 'remove' : 
+		case 'remove': 
 			dbrm('news');
 			break;
+
+		case 'flag':
+			listmaker_flag( 'news' );
+			break;
+
+		case 'form': 
+			return news_mg_form();
+			
 	}
 	
-	$list['query'] = " SELECT * FROM `news` WHERE 1 ORDER BY `id` DESC ";
-	$list['target_url'] = '_URL."/?page=".$_REQUEST["page"]."&cp=".$_REQUEST["cp"]."&func=news_mg_form&p=".$_REQUEST["p"]."&id=".$rw["id"]';
-	$list['paging_url'] = '_URL."/?page=".$_REQUEST["page"]."&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["func"]';
-	$list['remove_url'] = '_URL."/?page=".$_REQUEST["page"]."&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["func"]."&p=".$_REQUEST["p"]."&do=remove&id=".$rw["id"]';
-	
-	$list['list_array'] = array(
-		// picture
-		array(	"picture" => '_URL."/".$rw["image"]'),
-		
-		// name
-		array(	"content" => '$rw["name"]'),
-
-		// cat
-		array(  "content" => 'cat_translate($rw["cat"])'),
-				
-	);
-
-	$list['paging_select']['cat'] = "<option value=''>".cat_detail('news')['name']."</option>".cat_display('news',$is_array=false);
-	
-	$list['search'] = [ 'name', 'text' ];
-
-	echo listmaker_list($list);
+	#
+	# the list
+	# --------------------------------------------
+	echo listmaker_list([
+		'table' => 'news',
+		'order' => [ 'id' => 'desc' ],
+		'limit' => 5,
+		'url' => [
+			'base' => '_URL."/?page=".$_REQUEST["page"]."&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["func"]',
+			'target' => true, //'_URL."/admin/".$_REQUEST["cp"]."/edit/".$rw["id"]',
+			'add' => true,
+			'remove' => true,
+			'flag' => true,
+		],
+		'filter' => [ 'cat' => [ cat_detail('news')['name'], cat_display('news') ] ],
+		'item' => [
+			[ 'picture' => 'news_image($rw)' ],
+			[ '$rw["name"]' ],
+			[ 'cat_translate($rw["cat"])' ],
+		],
+		'search' => [ 'name', 'text' ],
+	]);
+	# --------------------------------------------
 
 }
 

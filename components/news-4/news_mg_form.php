@@ -17,7 +17,7 @@ function news_mg_form(){
 		!]
 			
 			[!"text:name*"!]
-			[!"select:cat*","option"=>"<option value=\'\'></option>".cat_display("news",$is_array=false)!]
+			[!"select:cat*","option"=>cat_display("news")!]
 			[!"textarea:text*.tinymce"!]
 			[!"keyword:tag"!]
 			[!"file:image"!]

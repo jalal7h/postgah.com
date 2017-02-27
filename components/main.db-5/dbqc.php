@@ -6,14 +6,26 @@
 
 function dbqc( $table, $where_array=null ){
 	
-	if( $where_array ){
-		$where_query = " WHERE 1 ";
-		foreach( $where_array as $column_name => $column_value ){
-			$where_query.= " AND `$column_name`='$column_value' ";
-		}
-	}
+	#
+	# its a query
+	if( strstr( $table, ' ' ) ){
+		$q = $table;
+		$q = explode(' ORDER BY ', $q )[0];
+		$q = str_replace( " SELECT * FROM ", " SELECT COUNT(*) FROM ", $q );
 
-	$q = " SELECT COUNT(*) FROM `$table` $where_query ";
+	#
+	# ...
+	} else {
+		if( $where_array ){
+			$where_query = " WHERE 1 ";
+			foreach( $where_array as $column_name => $column_value ){
+				$where_query.= " AND `$column_name`='$column_value' ";
+			}
+		}
+
+		$q = " SELECT COUNT(*) FROM `$table` $where_query ";
+
+	}
 
 	if(! $rs = dbq( $q ) ){
 		e();

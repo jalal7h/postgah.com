@@ -52,7 +52,7 @@ function pgItem_user_list(){
 
 	#
 	# search columns // az in field ha tu table search mikone
-	$list['search'] = array("name","text");
+	$list['search'] = array("id","name","text");
 
 	#
 	# paging select
