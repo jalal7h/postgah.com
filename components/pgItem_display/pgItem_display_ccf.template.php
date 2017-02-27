@@ -1,6 +1,7 @@
 
 <div class="pgItem_display_ccf">
-<?foreach($records as list( $name, $value ) ):?>
+<?foreach($records as $record ):?>
+	<? list( $name, $value ) = $record; ?>
 	<div class="re">
 		<div class="name"><?=$name?></div><!--
 	 --><div class="value">
