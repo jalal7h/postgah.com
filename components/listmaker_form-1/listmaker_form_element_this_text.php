@@ -22,7 +22,7 @@ function listmaker_form_element_this_text( $info ){
 
 	$info['class'] = trim($info['class']);
 
-	$c.= $info['PreTab']."<input autocomplete=\"off\" type=\"".$info['type']."\" ".
+	$c.= $info['PreTab']."<input autocomplete=\"new-password\" type=\"".$info['type']."\" ".
 		"name=\"".$info['name'].( $info['ArrayInput'] ? '[]' : '' )."\" ".
 		"id=\"".$id."\" ".
 		( $info['class'] ? "class=\"".$info['class']."\" " : '' ).

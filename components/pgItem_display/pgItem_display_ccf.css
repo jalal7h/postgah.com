@@ -13,18 +13,20 @@
 }
 .pgItem_display_ccf .re .name {
 	display: inline-block;
-	width: 40%;
+	width: 190px;
 	vertical-align: top;
+	color: #888;
 }
 .pgItem_display_ccf .re .value {
 	display: inline-block;
-	width: 60%;
+	width: calc( 100% - 190px );
 }
-.pgItem_display_ccf .re .value .checkbox {
+.pgItem_display_ccf .re .value .checkbox_node {
 	margin: 3px 0;
-	min-width: 140px;
+	min-width: 175px;
+	display: inline-block;
 }
-.pgItem_display_ccf .re .value .checkbox:before {
+.pgItem_display_ccf .re .value .checkbox_node:before {
 	content: "\f046";
 	font-family: FontAwesome;
 	margin-left: 5px;

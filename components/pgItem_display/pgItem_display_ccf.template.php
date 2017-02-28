@@ -7,7 +7,7 @@
 	 --><div class="value">
 		<?if( is_array($value) ):?>
 			<?foreach($value as $value_this):?><!--
-			 --><div class="checkbox"><?=$value_this?></div><!--
+			 --><div class="checkbox_node"><?=$value_this?></div><!--
 		 --><?endforeach?>
 		<?else:?>
 			<?=$value?>
