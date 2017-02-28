@@ -9,12 +9,12 @@
 		<div class="legend"><lang>مدیریت سایت</lang></div>
 		<div class="admin-container">
 			
-			<input autocomplete="off" placeholder="Username .." type="text" class="username" name="<?=login_key()['username']?>" >
+			<input autocomplete="new-password" placeholder="Username .." type="text" class="username" name="<?=login_key()['username']?>" >
 			
 			<input autocomplete="off" placeholder="Password .." type="password" class="password" >
 			<input type="hidden" class="md5" name="<?=login_key()['password']?>" value="" >
 			
-			<input autocomplete="off" placeholder="FC2" maxlength="3" type="password" class="fc2 numeric" name="<?=login_key()['fc2']?>" title="<lang>کد مشخصه ثابت برای هر لایسنس</lang>" >
+			<input autocomplete="new-password" placeholder="FC2" maxlength="3" type="password" class="fc2 numeric" name="<?=login_key()['fc2']?>" title="<lang>کد مشخصه ثابت برای هر لایسنس</lang>" >
 			
 			<table cellpadding="0" cellspacing="0" >
 				<tr>

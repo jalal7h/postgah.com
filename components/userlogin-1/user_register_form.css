@@ -1,0 +1,75 @@
+
+.user_register_form {
+	margin: auto;
+	display: block;
+	margin-bottom: 30px;
+}
+.user_register_form input {
+	display: block;
+	font: normal 16px DefaultFont;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+.user_register_form input[name="name"] {
+	direction: rtl !important;
+	width: 300px !important;
+	display: inline-block;
+}
+.user_register_form input[name="cell"] {
+	width: 190px;
+	display: inline-block;
+}
+
+.user_register_form input[name="username"] ,
+.user_register_form input[name="password"] {
+	font-size: 16px;
+	width: 300px;
+	padding: 8px 12px;
+	font-family: monospace,sans-serif;
+}
+
+.user_register_form input[name=cell]:-moz-placeholder ,
+.user_register_form input[name=username]:-moz-placeholder ,
+.user_register_form input[name=password]:-moz-placeholder {
+    text-align: right;
+    font-family: DefaultFont;
+    direction: rtl;
+}
+.user_register_form input[name=cell]:-ms-input-placeholder ,
+.user_register_form input[name=username]:-ms-input-placeholder ,
+.user_register_form input[name=password]:-ms-input-placeholder {
+    text-align: right;
+    font-family: DefaultFont;
+    direction: rtl;
+}
+.user_register_form input[name=cell]::-webkit-input-placeholder ,
+.user_register_form input[name=username]::-webkit-input-placeholder ,
+.user_register_form input[name=password]::-webkit-input-placeholder {
+    text-align: right;
+    font-family: DefaultFont;
+    direction: rtl;
+}
+
+.user_register_form input[type=submit] {
+	margin: 10px 0px !important;
+	width: auto;
+	border-radius: 6px;
+    padding: 10px 20px;
+}
+
+.user_register_form .head {
+	margin: 30px -30px 40px 0;
+	font-size: 24px;
+}
+.user_register_form .terms {
+	font: normal 10px DefaultFont;
+	margin-top: 20px;
+}
+.user_register_form .register {
+	font: normal 10px DefaultFont;
+}
+.user_register_form .the_key {
+	display: none;
+}
+

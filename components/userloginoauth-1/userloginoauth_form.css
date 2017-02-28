@@ -1,0 +1,21 @@
+
+.userloginoauth_form {
+	border-top: 2px dashed #ccc;
+	margin: 0 auto 20px;
+	padding: 50px 0 0px 0;
+	width: 93%;
+	text-align: center;
+}
+.userloginoauth_form > a.login {
+	margin: 0px 6px;
+	display: inline-block;
+}
+.userloginoauth_form > a.login > img {
+	height: 34px;
+	border-radius: 4px;
+	opacity: 0.8;
+}
+.userloginoauth_form > a.login > img:hover {
+	opacity: 1;
+}
+

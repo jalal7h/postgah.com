@@ -1,0 +1,92 @@
+
+#user_login_form {
+	padding: 30px 15px;
+}
+#user_login_form .head {
+	font-size: 24px;
+}
+#user_login_form .login_form {
+	display: inline-block;
+	width: 55%;
+	vertical-align: top;
+	padding: 50px 30px;
+	border-left: 2px dashed #ccc;
+}
+#user_login_form .username ,
+#user_login_form .password {
+	margin-bottom: 10px;
+}
+#user_login_form input[name=username] ,
+#user_login_form input[name=password] {
+	font-size: 16px;
+	width: 300px;
+	padding: 8px 12px;
+	font-family: monospace,sans-serif;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .2) inset;
+}
+
+#user_login_form .terms {
+	font-size: 11px;
+}
+#user_login_form .terms > a {
+	color: #900;
+}
+#user_login_form .terms > a:hover {
+	color: #d00;
+}
+#user_login_form .prompt {
+
+}
+#user_login_form input[type=submit] {
+	margin: 10px 0;
+}
+#user_login_form .forgot {
+	color: #900;
+}
+#user_login_form .forgot:hover {
+	color: #d00;
+}
+#user_login_form .register_button {
+	display: inline-block;
+	width: 45%;
+	vertical-align: top;
+	padding: 70px 50px;
+}
+#user_login_form .register_button > div {
+	margin-bottom: 20px;
+}
+#user_login_form .register_button > a.btn {
+	
+}
+
+
+#user_login_form input[name=username]:-moz-placeholder ,
+#user_login_form input[name=password]:-moz-placeholder {
+    text-align: right;
+    font-family: DefaultFont;
+    direction: rtl;
+}
+#user_login_form input[name=username]:-ms-input-placeholder ,
+#user_login_form input[name=password]:-ms-input-placeholder {
+    text-align: right;
+    font-family: DefaultFont;
+    direction: rtl;
+}
+#user_login_form input[name=username]::-webkit-input-placeholder ,
+#user_login_form input[name=password]::-webkit-input-placeholder {
+    text-align: right;
+    font-family: DefaultFont;
+    direction: rtl;
+}
+
+#user_login_form .prompt {
+	color: #e00;
+	margin: 15px 10px 15px 0;
+}
+#user_login_form .prompt:before {
+	font-family: FontAwesome;
+	content: "\f111";
+	font-size: 8px;
+	margin-left: 5px;
+}
+
