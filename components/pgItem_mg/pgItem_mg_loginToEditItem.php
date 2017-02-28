@@ -8,16 +8,16 @@
 function pgItem_mg_loginToEditItem(){
 
 	if(! $item_id = $_REQUEST['id'] ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else if(! $rw_item = table('item', $item_id) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else {
 		
 		#
 		# all we need for user login
-		$_SESSION['uid'] = $rw_item['user_id'];
+		user_login_session( $rw_item['user_id'] );
 		
 		#
 		# redirect to user panel
