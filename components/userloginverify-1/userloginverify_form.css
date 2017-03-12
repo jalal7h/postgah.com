@@ -1,0 +1,57 @@
+
+#userloginverify_form {
+	margin: auto;
+	display: block;
+	margin-right: 8%;
+	margin-bottom: 8%;
+	padding: 20px 0 20px 0;
+}
+#userloginverify_form input[type=text] {
+	font-family: monospace,'sans-serif' !important;
+	margin-bottom: 18px;
+	font-size: 16px;
+	width: 320px;
+	padding: 8px 16px;
+	border: 1px solid #bbb !important;
+	direction: ltr;
+	text-align: left;
+}
+#userloginverify_form input[type=submit] {
+	padding: 8px 18px;
+}
+#userloginverify_form .head {
+	font: normal 24px DefaultFont;
+}
+#userloginverify_form .info {
+	margin: 50px 3px 20px 0;
+	font-size: 13px;
+}
+
+#userloginverify_form input[type=text]:-moz-placeholder {
+    text-align: right;
+    font-family: DefaultFont;
+    direction: rtl;
+}
+#userloginverify_form input[type=text]:-ms-input-placeholder {
+    text-align: right;
+    font-family: DefaultFont;
+    direction: rtl;
+}
+#userloginverify_form input[type=text]::-webkit-input-placeholder {
+    text-align: right;
+    font-family: DefaultFont;
+    direction: rtl;
+}
+
+#userloginverify_form .prompt {
+	color: #a00;
+	margin-right: 8px;
+	margin-bottom: 17px;
+}
+#userloginverify_form .prompt:before {
+	font-family: FontAwesome;
+	content: "\f111";
+	font-size: 9px;
+	padding-left: 5px;
+}
+

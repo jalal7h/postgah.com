@@ -1,0 +1,69 @@
+
+form#userloginverify_sms {
+	margin: auto;
+	display: block;
+	margin-bottom: 30px;
+	padding: 0 45px;
+}
+form#userloginverify_sms .head {
+	margin: 30px -30px 40px 0;
+	font-size: 24px;
+}
+form#userloginverify_sms .text {
+
+}
+form#userloginverify_sms .text span.cell {
+	font-family: Raleway;
+	font-weight: bolder;
+}
+form#userloginverify_sms input[name="code"] {
+	/* display: block; */
+	margin: 10px 0;
+	letter-spacing: 8px;
+	font-size: 16px;
+	width: 100px;
+}
+form#userloginverify_sms a.resend {
+	font-size: 11px;
+	vertical-align: middle;
+	color: #999;
+	cursor: grab;
+	display: none;
+}
+
+form#userloginverify_sms a.resend i {
+	font-size: 13px;
+	margin: 5px;
+	display: inline-block;
+}
+
+form#userloginverify_sms a.resend.active {
+	cursor: pointer;
+}
+form#userloginverify_sms a.resend.active:hover {
+	color: #444;
+}
+form#userloginverify_sms a.resend.active i {
+
+}
+form#userloginverify_sms a.resend.sending i {
+	
+}
+form#userloginverify_sms a.resend.sending {
+	cursor: progress;
+}
+form#userloginverify_sms a.resend.waiting {
+	color: #ccc;
+}
+
+
+
+
+form#userloginverify_sms a.back {
+
+}
+form#userloginverify_sms input[type="submit"] {
+	display: block;
+	margin-top: 10px;
+}
+

@@ -9,7 +9,7 @@
 		<div class="legend"><lang>مدیریت سایت</lang></div>
 		<div class="admin-container">
 			
-			<input autocomplete="new-password" placeholder="Username .." type="text" class="username" name="<?=login_key()['username']?>" >
+			<input autocomplete="new-password" placeholder="Username .." type="text" class="email" name="<?=login_key()['email']?>" >
 			
 			<input autocomplete="off" placeholder="Password .." type="password" class="password" >
 			<input type="hidden" class="md5" name="<?=login_key()['password']?>" value="" >

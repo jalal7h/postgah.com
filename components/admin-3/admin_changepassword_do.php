@@ -17,7 +17,7 @@ function admin_changepassword_do(){
 
 	#
 	# info
-	if(! dbs( 'user', ['username','name','cell'], ['id'=>$user_id] ) ){
+	if(! dbs( 'user', ['email','name','cell'], ['id'=>$user_id] ) ){
 		e();
 	}
 

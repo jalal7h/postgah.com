@@ -9,7 +9,7 @@
 		<div class="work_at"><span class="clSameAsBG">{lmtc("user:work_at")}</span>{work_at}</div>
 		<div class="cell"><span class="clSameAsBG">{lmtc("user:cell")}</span>{cell}</div>
 		<div class="tell"><span class="clSameAsBG">{lmtc("user:tell")}</span>{tell}</div>
-		<div class="email"><span class="clSameAsBG">{lmtc("user:username")}</span><img src="{emailgif($_REQUEST["id"])}"/></div>
+		<div class="email"><span class="clSameAsBG">{lmtc("user:email")}</span><img src="{emailgif($_REQUEST["id"])}"/></div>
 		<div><span></span></div>
 	</div>
 	

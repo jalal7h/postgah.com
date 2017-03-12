@@ -18,16 +18,16 @@ function userprofile_save(){
 	} else if(! is_name_correct_or_not($name) ){
 		$text = __("لطفا نام خود را به درستی وارد کنید!");
 
-	} else if(! $username = trim($_REQUEST['username']) ){
+	} else if(! $email = trim($_REQUEST['email']) ){
 		$text = __("لطفا آدرس ایمیل خود را وارد کنید!");
 	
-	} else if(! is_email_correct_or_not($username) ){
+	} else if(! is_email_correct_or_not($email) ){
 		$text = __("لطفا آدرس ایمیل خود را به درستی وارد کنید!");
 
-	} else if( ($username != $rw['username']) and table('user', $username, null, 'username') ){
+	} else if( ($email != $rw['email']) and table('user', $email, null, 'email') ){
 		$text = __("آدرس ایمیل جدید شما قبلا توسط کاربر دیگری ثبت شده است!");
 
-	} else if(! dbs('user', ['name','username','cell','tell','address','im_a','work_at','gender'] , ['id'=>$user_id] ) ){
+	} else if(! dbs('user', ['name','email','cell','tell','address','im_a','work_at','gender'] , ['id'=>$user_id] ) ){
 		dg( dbe() );
 
 	} else {

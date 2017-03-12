@@ -10,7 +10,7 @@ function billing_management_user_activity( $user_id ){
 		<div class='billing_management_user_activity' >
 			<div class='name' >
 				<span>".__("نام")." : </span>
-				<span>".$rw['name']." &lt;".$rw['username']."&gt;</span>
+				<span>".$rw['name']." &lt;".$rw['email']."&gt;</span>
 			</div>
 			<div class='credit' >
 				<span>".__("اعتبار")." : </span>

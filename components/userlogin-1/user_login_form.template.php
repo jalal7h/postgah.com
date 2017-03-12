@@ -2,6 +2,7 @@
 <form autocomplete="off" method="post" action="<?=layout_link(60)?>" id="user_login_form" >
 <input type="hidden" name="do" value="login_do"/>
 <input type="hidden" name="refer" value="{refer}" />
+<?=token_make()?>
 
 	<div class="head"><lang>ورود به سایت</lang></div>
 

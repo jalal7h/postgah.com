@@ -5,7 +5,7 @@
 # 1.1
 
 function is_name_correct_or_not( $name_orig ){
-
+	
 	if(! $name_orig = trim($name_orig) ){
 		return false;
 	}

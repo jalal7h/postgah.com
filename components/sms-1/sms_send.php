@@ -1,12 +1,13 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/19
-# 1.2
+# 2017/03/10
+# 1.3
 
 function sms_send( $to , $text ){
 	
 	if( its_local() ){
+		dg('sms send; to: '.$to.'; text: '.$text);
 		return true;
 	}
 

@@ -16,3 +16,5 @@ INSERT INTO `cat` (`id`, `name`, `parent`, `cat`, `prio`, `logo`) VALUES
 (25, 'خانه دار', 0, 'emplyment_status', 0, ''),
 (26, 'مایل به جواب دادن نیستم', 0, 'emplyment_status', 0, '');
 
+
+--spi--

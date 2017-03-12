@@ -8,7 +8,7 @@ function useraccess_mg_saveNew(){
 
 	#
 	# check variables
-	if(! $username = $_REQUEST['username'] ){
+	if(! $email = $_REQUEST['email'] ){
 		dg();
 	
 	} else if(! $password = $_REQUEST['password'] ){
@@ -22,7 +22,7 @@ function useraccess_mg_saveNew(){
 		
 		#
 		# edit
-		if(  table('user', $username, null, 'username') ){
+		if(  table('user', $email, null, 'email') ){
 			echo convbox( __('از آدرس ایمیل مورد نظر شما قبلا استفاده شده است.') );
 		
 		#
@@ -31,11 +31,11 @@ function useraccess_mg_saveNew(){
 
 			#
 			# remove the hidden record
-			dbq(" DELETE FROM `user` WHERE `username`='$username' ", true );
+			dbq(" DELETE FROM `user` WHERE `email`='$email' ", true );
 			
 			#
 			# add new record
-			$user_id = dbs( 'user', ['username','password','permission'=>'2','name','management_title','cell'] );
+			$user_id = dbs( 'user', ['email','password','permission'=>'2','name','management_title','cell'] );
 
 		}
 

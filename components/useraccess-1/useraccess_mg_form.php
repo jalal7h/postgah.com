@@ -47,7 +47,7 @@ function useraccess_mg_form(){
 		
 		'<div class="right">',
 			['text:name*','inDiv'],
-			['email:username*','inDiv'],
+			['email:email*','inDiv'],
 			['text:management_title*','inDiv'],
 			( $user_id ? ['password:password','inDiv'] : ['password:password*','inDiv'] ),
 			['text:cell.numeric','inDiv'],
@@ -67,7 +67,7 @@ function useraccess_mg_form(){
 		?>
 		<script>
 			jQuery(document).ready(function($) {
-				$('#lmfe_useraccess_mg_form_username').prop('disabled',true);
+				$('#lmfe_useraccess_mg_form_email').prop('disabled',true);
 			});
 			setTimeout( function(){
 				$('.useraccess_mg_form input[type="password"]').val('');			

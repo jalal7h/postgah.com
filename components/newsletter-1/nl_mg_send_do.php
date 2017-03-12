@@ -32,14 +32,14 @@ function nl_mg_send_do(){
 
 		if( $_REQUEST['user_email_list']=='1' ){
 			
-			if(! $rws = table(array( 'user' , 'username' , " AND `username` LIKE '%@%' " )) ){
+			if(! $rws = table(array( 'user' , 'email' , " AND `email` LIKE '%@%' " )) ){
 				//
 			
 			} else if(! sizeof($rws) ){
 				//
 			
 			} else foreach ($rws as $k => $rw) {
-				if(! $email = trim($rw['username']) ){
+				if(! $email = trim($rw['email']) ){
 					continue;
 				} else {
 					$list_of_email_addresses[ $email ] = true;

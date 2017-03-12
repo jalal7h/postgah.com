@@ -7,15 +7,15 @@ legend {
 	width: auto;
 }
 
-.btn ,
-.btn:hover {
+.btn-primary , .btn-success, .btn-info, .btn-warning, .btn-danger, 
+.btn-primary:hover , .btn-success:hover, .btn-info:hover, .btn-warning:hover, .btn-danger:hover {
 	color: white !important;
 	text-shadow: 0 0 0 #000 !important;
 }
-.btn-default ,
+/* .btn-default ,
 .btn-default:hover {
 	color: #555555 !important;
-}
+} */
 
 .radio {
 	margin: 0px;

@@ -79,11 +79,15 @@ function lmfe_inDiv_open( $info ){
 
 function lmfe_inDiv_close( $info ){
 	
+	if( $info['prompt'] ){
+		$c = "<span class=\"prompt\" >" . $info['prompt'] . "</span>";
+	}
+
 	if( $info['type']=="hidden" ){
 		return "";
 	
 	} else if( $info['inDiv'] ){
-		$c = "</div>";
+		$c.= "</div>";
 	}
 
 	return $c;

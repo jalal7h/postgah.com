@@ -37,7 +37,7 @@ function userprofile_form(){
 			!]
 				
 				[!"text:name*","inDiv"!]
-				[!"text:username*","inDiv"!]
+				[!"text:email*","inDiv"!]
 				[!"text:cell","inDiv"!]
 				[!"text:tell","inDiv"!]
 

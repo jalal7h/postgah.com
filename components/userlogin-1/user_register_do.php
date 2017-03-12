@@ -1,56 +1,131 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/31
-# 1.5
+# 2017/03/12
+# 2.0
 
 function user_register_do(){
 	
+
+	token_check();
+	
+
 	if( user_logged() ){
 		jsgo( layout_link(14) );
+	}
 
-	} else if( is_component('user_emailverifybeforesignup') and !user_emailverifybeforesignup_check() ){
-		$text = user_emailverifybeforesignup_invalid_verification_link;
 
-	} else if( is_component('user_emailverifybeforesignup') and !user_emailverifybeforesignup_fillRequestUsername() ){
-		dg();
+	$form_valid = true;
+	$email = trim($_REQUEST['email']);
+	$cell = trim($_REQUEST['cell']);
 
-	} else if(! $username = strtolower(trim($_REQUEST['username'])) ){
-		$text = __("لطفا آدرس ایمیل خود را وارد کنید.");
-	
-	} else if( table('user', $username, null, 'username') ){
-		$text = __("آدرس ایمیل مورد نظر قبلا ثبت شده است");
 
-	} else if(! is_email_correct_or_not($username) ){
-		$text = __("لطفا آدرس ایمیل خود را به درستی وارد کنید.");
-
-	} else if(! $password = trim($_REQUEST['password']) ){
-		$text = __("لطفا کلمه عبور خود وارد کنید.");
+	#
+	# check password
+	if(! $password = trim($_REQUEST['password']) ){
+		qpush( 'user_register_form_password', __("لطفا کلمه عبور خود وارد کنید.") );
+		$form_valid = false;
 
 	} else if(! is_password_secure_or_not($password) ){
-		$text = __("لطفا کلمه عبور خود را به درستی وارد کنید.");
+		qpush( 'user_register_form_password', __("لطفا کلمه عبور مطمئن‌تری انتخاب کنید. (ترکیب عدد و حروف بیشتر از ۸ کارکتر)") );
+		$form_valid = false;
 
+	#
+	# check name
 	} else if(! $name = trim($_REQUEST['name']) ){
-		$text = __("لطفا نام خود را وارد کنید.");
+		qpush( 'user_register_form_name', __("لطفا نام خود را وارد کنید.") );
+		$form_valid = false;
 
 	} else if(! is_name_correct_or_not($name) ){
-		$text = __("لطفا نام خود را به درستی وارد کنید.");
-	
+		qpush( 'user_register_form_name', __("لطفا نام خود را به درستی وارد کنید.") );
+		$form_valid = false;
+	}
+
+
+	#
+	# check username - no verify
+	if(! is_component('userloginverify') ){
+
+		#
+		# cell
+		if( $cell ){
+			if(! is_cell_correct_or_not( $cell ) ){
+				qpush( 'user_register_form_cell', __("لطفا شماره موبایل خود را به درستی وارد کنید.") );
+				$cell = '';
+			
+			} else if( table('user', $cell, null, 'cell') ) {
+				qpush( 'user_register_form_cell', __("شماره موبایل مورد نظر شما قبلا ثبت شده است.") );
+				$cell = '';
+			}
+		}
+
+		#
+		# email
+		if( $email ){
+			if(! is_email_correct_or_not($email) ){
+				qpush( 'user_register_form_email', __("لطفا آدرس ایمیل خود را به درستی وارد کنید.") );
+				$email = '';
+
+			} else if( table('user', $email, null, 'email') ){
+				qpush( 'user_register_form_email', __("ایمیل مورد نظر شما قبلا ثبت شده است.") );
+				$email = '';
+			}
+		}
+
+		#
+		# form_valid
+		if(! ( $email or ( userlogin_username_mobile === true and $cell ) ) ){
+			$form_valid = false;
+		}
+
+		#
+		# username
+		if( userlogin_username_mobile ){
+			$username = $email .( $email and $cell ? " / " : "" ). $cell;
+		} else {
+			$username = $email;
+		}
+
+	#
+	# check username - verify
+	} else if(! $the_list = userloginverify_registerVarList() ){
+		$form_valid = false;
+
+	} else {
+		list( $email, $cell, $username ) = $the_list;
+	}
+
+
+	#
+	# insert
+	if(! $form_valid ){
+		//
+
 	} else if(! $user_id = dbs('user', [
-		'username'=>$username, 
+		'email'=>$email, 
 		'password'=>( is_component('userhashpassword') ? userhashpassword($password) : $password ), 
 		'name'=>$name, 
-		'cell'=>( is_cell_correct_or_not(trim($_REQUEST['cell'])) ?trim($_REQUEST['cell']) :"" ),
+		'cell'=>$cell,
 		'flag'=>'1',
 	]) ){
-		$text = __("اختلال در ثبت‌نام رخ داده است.");
-		
+		echo convbox_back( __("اختلال در ثبت‌نام رخ داده است.") , 'transparent' );
+
+	#
+	# congratulation
 	} else {
 
 		# 
-		# loging in client
+		# client login
 		user_login_session( $user_id );
 
+		#
+		# verify flags
+		if( is_component('userloginverify') ){
+			userloginverify_after_registration();
+		}
+
+		#
+		# texty
 		$vars['user_id'] = $user_id;
 		$vars['user_username'] = $username;
 		$vars['user_password'] = $password;
@@ -59,12 +134,11 @@ function user_register_do(){
 		$vars['__BEFORE__'] = '<div class="'.__FUNCTION__.'"><icon></icon><div class="left"><span>';
 		$vars['__AFTER__'] = '</span><a href="'.layout_link(14).'">'.__('ورود به محیط کاربری').'</a></div></div>';
 		
-		echo texty( 'user_register_do' , $vars, '', $convbox=false );
-					
+		echo texty( 'user_register_do' , $vars, $user_id, $convbox=false );	
 		return true;
+
 	}
 
-	echo convbox( $text."<br><a href=\"javascript:history.go(-1);\">".__('بازگشت')."</a>", "transparent" );
 	return false;
 
 }

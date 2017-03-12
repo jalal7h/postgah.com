@@ -5,7 +5,7 @@
 # 1.1
 
 function is_cell_correct_or_not( $numb ){
-
+	
 	$numb = mb_ereg_replace('[^0-9\+]+','',$numb);
 	$numb = trim( $numb );
 

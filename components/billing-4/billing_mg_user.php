@@ -20,7 +20,7 @@ function billing_management_user(){
 	$list['list_array'] = array(
 		#
 		# name
-		array( "head" => lmtc('user:name') , "content" => '"<span title=\'".$rw[\'username\']."\'>".$rw["name"]."</span>"' , "attr" => array( "width" => "200px" , "align" => 'center' , "dir" => _rtl) ),
+		array( "head" => lmtc('user:name') , "content" => '"<span title=\'".$rw[\'email\']."\'>".$rw["name"]."</span>"' , "attr" => array( "width" => "200px" , "align" => 'center' , "dir" => _rtl) ),
 		#
 		# payments
 		array( "head" => __("پرداخت") , "content" => 'billing_format(intval(dbr(dbq(" SELECT SUM(`cost`) FROM `billing_invoice` WHERE `user_id`=\'".$rw[\'id\']."\' AND `date`>0 AND `method`!=\'wallet\' "),0,0)))' , "attr" => array( "align" => 'right',"dir" => _rtl) ),

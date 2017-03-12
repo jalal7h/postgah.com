@@ -1,10 +1,12 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/07
-# 1.7
+# 2016/12/28
+# 1.8
 
 function user_login_do(){
+
+	token_check();
 
 	$u = trim(stripcslashes(strip_tags($_REQUEST['username'])));
 	$p = trim(stripcslashes(strip_tags($_REQUEST['password'])));
@@ -36,6 +38,7 @@ function user_login_do(){
 	}
 
 	return $c;
+	
 }
 
 

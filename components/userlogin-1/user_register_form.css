@@ -3,9 +3,16 @@
 	margin: auto;
 	display: block;
 	margin-bottom: 30px;
+	padding: 0 45px;
+}
+.user_register_form a {
+	color: #900;
+}
+.user_register_form a:hover {
+	color: #d00;
 }
 .user_register_form input {
-	display: block;
+	/* display: block; */
 	font: normal 16px DefaultFont;
 	padding: 10px;
 	border: 1px solid #ccc;
@@ -21,7 +28,7 @@
 	display: inline-block;
 }
 
-.user_register_form input[name="username"] ,
+.user_register_form input[name="email"] ,
 .user_register_form input[name="password"] {
 	font-size: 16px;
 	width: 300px;
@@ -30,21 +37,21 @@
 }
 
 .user_register_form input[name=cell]:-moz-placeholder ,
-.user_register_form input[name=username]:-moz-placeholder ,
+.user_register_form input[name=email]:-moz-placeholder ,
 .user_register_form input[name=password]:-moz-placeholder {
     text-align: right;
     font-family: DefaultFont;
     direction: rtl;
 }
 .user_register_form input[name=cell]:-ms-input-placeholder ,
-.user_register_form input[name=username]:-ms-input-placeholder ,
+.user_register_form input[name=email]:-ms-input-placeholder ,
 .user_register_form input[name=password]:-ms-input-placeholder {
     text-align: right;
     font-family: DefaultFont;
     direction: rtl;
 }
 .user_register_form input[name=cell]::-webkit-input-placeholder ,
-.user_register_form input[name=username]::-webkit-input-placeholder ,
+.user_register_form input[name=email]::-webkit-input-placeholder ,
 .user_register_form input[name=password]::-webkit-input-placeholder {
     text-align: right;
     font-family: DefaultFont;

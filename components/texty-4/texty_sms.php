@@ -6,7 +6,7 @@
 
 /*
 texty_sms( "user" , "user_register_do_sms" , array(
-	"username"=>$username,
+	"email"=>$email,
 	"password"=>$password,
 ) );
 */
@@ -96,7 +96,7 @@ function texty_sms_this( $to, $content, $vars, $rw_user ){
 
 	if( $rw_user ){
 		$content = str_replace('{user_cell}', $to, $content);
-		$content = str_replace('{user_email}', $rw_user['username'], $content);
+		$content = str_replace('{user_email}', $rw_user['email'], $content);
 		$content = str_replace('{user_id}', $rw_user['id'], $content);
 		$content = str_replace('{user_name}', $rw_user['name'], $content);
 	}

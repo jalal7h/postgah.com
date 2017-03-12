@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/02
-# 3.5
+# 2017/03/11
+# 3.6
 
 /*
 texty_email( 
@@ -28,6 +28,10 @@ $GLOBALS['mss_list']['texty_email_this'] = 'پیامهای پیشفرض';
 
 function texty_email( $who , $slug , $vars=null ){
 
+	if( $who == '' ){
+		return false;
+	}
+
 	#
 	# actions
 	switch ($who) {
@@ -42,16 +46,16 @@ function texty_email( $who , $slug , $vars=null ){
 
 		default:
 
-			# [ 2 , 45 ]
+			# for example : [ 2 , 45 ]
 			if( is_array($who) ){
 				$user_id = $who[0];
 				$user2_id = $who[1];
 			
-			# 11
+			# for example : 11
 			} else if( is_numeric($who) ){
 				$user_id = $who;
 
-			# jay@vay.com
+			# for example : jay@vay.com
 			} else if( is_email_correct_or_not($who) ) {
 				$user_email = $who;
 			
@@ -63,7 +67,7 @@ function texty_email( $who , $slug , $vars=null ){
 	}
 
 
-	#
+	# 
 	# get texty record
 	if(! $texty = texty_fetch( $slug ) ){
 		return false;
@@ -134,8 +138,8 @@ function texty_email_this( $email, $subject, $content, $vars, $rw_user=null ){
 	if( $rw_user ){
 		
 		# email
-		$subject = str_replace('{user_email}', $rw_user['username'], $subject);
-		$content = str_replace('{user_email}', $rw_user['username'], $content);
+		$subject = str_replace('{user_email}', $rw_user['email'], $subject);
+		$content = str_replace('{user_email}', $rw_user['email'], $content);
 		# id
 		$subject = str_replace('{user_id}', $rw_user['id'], $subject);
 		$content = str_replace('{user_id}', $rw_user['id'], $content);
