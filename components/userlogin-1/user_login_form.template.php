@@ -9,12 +9,12 @@
 	<div class="login_form">
 	
 		<div class="username">
-			<input required autocomplete="new-password" name="username" placeholder="{userlogin_username_title}" type="text" value="{username}" /><!--
+			<input class="placeholder_fix" required autocomplete="new-password" name="username" placeholder="{userlogin_username_title}" type="text" value="{username}" /><!--
 		 --><icon class="fa fa-user"></icon>
 		</div>
 		
 		<div class="password">
-			<input required autocomplete="new-password" name="password" placeholder="<?=lmtc('user:password')?>" type="password" /><!--
+			<input class="placeholder_fix" required autocomplete="new-password" name="password" placeholder="<?=lmtc('user:password')?>" type="password" /><!--
 		 --><icon class="fa fa-lock"></icon>
 		</div>
 

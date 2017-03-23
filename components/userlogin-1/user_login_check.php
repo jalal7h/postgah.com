@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/03/11
-# 1.1
+# 2017/03/23
+# 1.2
 
 function user_login_check( $username , $password ){
 	
@@ -24,7 +24,7 @@ function user_login_check( $username , $password ){
 	
 	#
 	# userloginverify
-	if( is_component('userloginverify') ){
+	if( is_component('userloginverify') and is_column('user', $its.'_verified') ){
 		$username_query.= " AND `".$its."_verified`='1' ";
 	}
 

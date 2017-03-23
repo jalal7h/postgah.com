@@ -1,0 +1,69 @@
+
+form#userverification_email {
+	margin: auto;
+	display: block;
+	margin-bottom: 30px;
+	padding: 0 45px;
+}
+form#userverification_email .head {
+	margin: 30px -30px 40px 0;
+	font-size: 24px;
+}
+form#userverification_email .text {
+
+}
+form#userverification_email .text span.email {
+	font-family: Raleway;
+	font-weight: bolder;
+}
+form#userverification_email input[name="code"] {
+	/* display: block; */
+	margin: 10px 0;
+	letter-spacing: 8px;
+	font-size: 16px;
+	width: 180px !important;
+}
+form#userverification_email a.resend {
+	font-size: 11px;
+	vertical-align: middle;
+	color: #999;
+	cursor: grab;
+	display: none;
+}
+
+form#userverification_email a.resend i {
+	font-size: 13px;
+	margin: 5px;
+	display: inline-block;
+}
+
+form#userverification_email a.resend.active {
+	cursor: pointer;
+}
+form#userverification_email a.resend.active:hover {
+	color: #444;
+}
+form#userverification_email a.resend.active i {
+
+}
+form#userverification_email a.resend.sending i {
+	
+}
+form#userverification_email a.resend.sending {
+	cursor: progress;
+}
+form#userverification_email a.resend.waiting {
+	color: #ccc;
+}
+
+
+
+
+form#userverification_email a.back {
+
+}
+form#userverification_email input[type="submit"] {
+	display: block;
+	margin-top: 10px;
+}
+

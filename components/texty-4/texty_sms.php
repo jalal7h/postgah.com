@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/16
-# 3.3
+# 2017/03/12
+# 3.4
 
 /*
 texty_sms( "user" , "user_register_do_sms" , array(
@@ -35,22 +35,18 @@ function texty_sms( $who , $slug , $vars ){
 
 		default:
 			
-			# [ 2 , 45 ]
+			# array of user id's : for example [ 2 , 45 ]
 			if( is_array($who) ){
 				$user_id = $who[0];
 				$user2_id = $who[1];
 			
-			# Yadollah
-			} else if(! is_numeric($who) ){
-				return false;
+			# mobile number : for example 09127744129
+			} else if( is_cell_correct_or_not($who) ){
+				$anonymous_cell = $who;
 
-			# 11
-			} else if( strlen($who) < 10 ) {
+			# user_id : for example 11 
+			} else if( is_numeric($who) and strlen($who) < 10 ){
 				$user_id = $who;
-			
-			# 9127744129
-			} else {
-				$user_numb = $who;
 			}
 
 			break;
@@ -69,11 +65,16 @@ function texty_sms( $who , $slug , $vars ){
 		
 	} else {
 
+		if( $anonymous_cell ){
+			texty_sms_this( $anonymous_cell, $texty['user_sms'], $vars, null );			
+		}
+
 		if( $user_id > 0 ){
 			$rw_user = table( 'user' , $user_id );
 			$user_numb = user_cellNumber( $user_id );
 			texty_sms_this( $user_numb, $texty['user_sms'], $vars, $rw_user );
 		}
+
 		if( $user2_id > 0 ){
 			$rw_user2 = table( 'user' , $user2_id );
 			$user2_numb = user_cellNumber( $user2_id );
@@ -85,7 +86,7 @@ function texty_sms( $who , $slug , $vars ){
 }
 
 
-function texty_sms_this( $to, $content, $vars, $rw_user ){
+function texty_sms_this( $to, $content, $vars, $rw_user=null ){
 
 	if(! $to ){
 		return false;

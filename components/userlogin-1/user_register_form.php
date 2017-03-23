@@ -64,10 +64,10 @@ function user_register_form(){
 				</div>
 				
 				[!"name:name*"=>$_REQUEST["name"],"prompt"=>qpop("user_register_form_name")!]
-				[!"number:cell"=>$_REQUEST["cell"],"prompt"=>qpop("user_register_form_cell")!]
+				[!"number:cell.placeholder_fix"=>$_REQUEST["cell"],"prompt"=>qpop("user_register_form_cell")!]
 
-				[!"email:email'.( userlogin_username_mobile ? '/required=1' : '' ).'"=>$_REQUEST["email"],"prompt"=>qpop("user_register_form_email")!]
-				[!"password:password*","prompt"=>qpop("user_register_form_password")!]
+				[!"email:email.placeholder_fix'.( userlogin_username_mobile ? '/required=1' : '' ).'"=>$_REQUEST["email"],"prompt"=>qpop("user_register_form_email")!]
+				[!"password:password.placeholder_fix*","prompt"=>qpop("user_register_form_password")!]
 
 				<div class="terms">'.__('شما با کلیک کردن روی دکمه ثبت نام موافقت می کنید که تمامی %%قوانین سایت%% پذیرفته اید.',[ '<a target="_top" href="'.layout_link(6).'">','</a>' ] ).'</div>
 				

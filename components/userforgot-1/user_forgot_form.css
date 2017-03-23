@@ -1,0 +1,57 @@
+
+#user_forgot_form {
+	margin: auto;
+	display: block;
+	margin-right: 8%;
+	margin-bottom: 8%;
+	padding: 0px 0 80px 0;
+}
+#user_forgot_form input[name="username"] {
+	font-family: monospace,'sans-serif' !important;
+    margin-bottom: 18px;
+    font-size: 16px;
+    width: 320px;
+    padding: 8px 16px;
+    border: 1px solid #bbb !important;
+    direction: ltr;
+    text-align: left;
+    display: block;
+}
+#user_forgot_form input[type="submit"] {
+ 	padding: 8px 18px;
+ }
+
+#user_forgot_form .head {
+	margin: 20px 0 30px 0;
+	font: normal 24px DefaultFont;
+	color: #666;
+}
+#user_forgot_form .text {
+	 margin: 50px 3px 20px 0;
+}
+
+
+#user_forgot_form input[name=username]:-moz-placeholder ,
+#user_forgot_form input[name=password]:-moz-placeholder {
+    text-align: right;
+    font-family: DefaultFont;
+    direction: rtl;
+}
+#user_forgot_form input[name=username]:-ms-input-placeholder ,
+#user_forgot_form input[name=password]:-ms-input-placeholder {
+    text-align: right;
+    font-family: DefaultFont;
+    direction: rtl;
+}
+#user_forgot_form input[name=username]::-webkit-input-placeholder ,
+#user_forgot_form input[name=password]::-webkit-input-placeholder {
+    text-align: right;
+    font-family: DefaultFont;
+    direction: rtl;
+}
+
+
+
+
+
+

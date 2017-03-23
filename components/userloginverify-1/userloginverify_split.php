@@ -13,11 +13,11 @@ function userloginverify_split(){
 		$prompt = __('لطفا %% خود را به درستی وارد کنید.', userlogin_username_title );
 
 	} else if( is_email_correct_or_not($username) ){
-		userloginverify_email($username);
+		useremailverification($username);
 		return true;
 
 	} else if(  userlogin_username_mobile === true  and  is_cell_correct_or_not($username)  ){
-		userloginverify_sms($username);
+		usercellverification($username);
 		return true;
 	}
 	

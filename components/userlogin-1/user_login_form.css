@@ -59,26 +59,6 @@
 	
 }
 
-
-#user_login_form input[name=username]:-moz-placeholder ,
-#user_login_form input[name=password]:-moz-placeholder {
-    text-align: right;
-    font-family: DefaultFont;
-    direction: rtl;
-}
-#user_login_form input[name=username]:-ms-input-placeholder ,
-#user_login_form input[name=password]:-ms-input-placeholder {
-    text-align: right;
-    font-family: DefaultFont;
-    direction: rtl;
-}
-#user_login_form input[name=username]::-webkit-input-placeholder ,
-#user_login_form input[name=password]::-webkit-input-placeholder {
-    text-align: right;
-    font-family: DefaultFont;
-    direction: rtl;
-}
-
 #user_login_form .prompt {
 	color: #e00;
 	margin: 15px 10px 15px 0;

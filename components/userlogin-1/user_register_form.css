@@ -36,28 +36,6 @@
 	font-family: monospace,sans-serif;
 }
 
-.user_register_form input[name=cell]:-moz-placeholder ,
-.user_register_form input[name=email]:-moz-placeholder ,
-.user_register_form input[name=password]:-moz-placeholder {
-    text-align: right;
-    font-family: DefaultFont;
-    direction: rtl;
-}
-.user_register_form input[name=cell]:-ms-input-placeholder ,
-.user_register_form input[name=email]:-ms-input-placeholder ,
-.user_register_form input[name=password]:-ms-input-placeholder {
-    text-align: right;
-    font-family: DefaultFont;
-    direction: rtl;
-}
-.user_register_form input[name=cell]::-webkit-input-placeholder ,
-.user_register_form input[name=email]::-webkit-input-placeholder ,
-.user_register_form input[name=password]::-webkit-input-placeholder {
-    text-align: right;
-    font-family: DefaultFont;
-    direction: rtl;
-}
-
 .user_register_form input[type=submit] {
 	margin: 10px 0px !important;
 	width: auto;

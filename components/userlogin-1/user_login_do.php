@@ -5,12 +5,12 @@
 # 1.8
 
 function user_login_do(){
-
+	
 	token_check();
-
+	
 	$u = trim(stripcslashes(strip_tags($_REQUEST['username'])));
 	$p = trim(stripcslashes(strip_tags($_REQUEST['password'])));
-
+	
 	if( user_logged() ){
 		return e();
 	

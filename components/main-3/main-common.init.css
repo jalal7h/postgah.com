@@ -23,6 +23,22 @@
 	background: orange;
 }
 
+.placeholder_fix:-moz-placeholder {
+    text-align: right;
+    font-family: DefaultFont;
+    direction: rtl;
+}
+.placeholder_fix:-ms-input-placeholder {
+    text-align: right;
+    font-family: DefaultFont;
+    direction: rtl;
+}
+.placeholder_fix::-webkit-input-placeholder {
+    text-align: right;
+    font-family: DefaultFont;
+    direction: rtl;
+}
+
 .noselect {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;

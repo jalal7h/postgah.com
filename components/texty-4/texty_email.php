@@ -119,7 +119,8 @@ function texty_email_this( $email, $subject, $content, $vars, $rw_user=null ){
 
 	#
 	# if its disabled return back.
-	if( !$subject or !$content ){
+	if( !$email or !$subject or !$content ){
+		dg( 'texty_email ignored; email:'.$email.'; subject:'.$subject );
 		return false;
 	}
 
