@@ -14,7 +14,7 @@
 			<input autocomplete="off" placeholder="Password .." type="password" class="password" >
 			<input type="hidden" class="md5" name="<?=login_key()['password']?>" value="" >
 			
-			<input autocomplete="new-password" placeholder="FC2" maxlength="3" type="password" class="fc2 numeric" name="<?=login_key()['fc2']?>" title="<lang>کد مشخصه ثابت برای هر لایسنس</lang>" >
+			<input autocomplete="new-password" placeholder="FC2" minlength="3" maxlength="3" type="password" class="fc2 numeric" name="<?=login_key()['fc2']?>" title="<lang>کد ۳ رقمی ثابت</lang>" >
 			
 			<table cellpadding="0" cellspacing="0" >
 				<tr>

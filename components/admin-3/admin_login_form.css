@@ -30,23 +30,23 @@
 	text-align:center;
 }
 .admin_login_form input {
-	padding:10px;
-	font:normal 14px monospace,tahoma !important;
-	margin:2px;
+	padding: 10px;
+	font: normal 14px monospace,tahoma !important;
+	margin: 2px;
 	box-shadow: 0 0 20px #ccc;
 	outline: none;
 }
-.admin_login_form .username {
-	width:295px;
-	display:block;
+.admin_login_form .email {
+	width: 295px;
+	display: block;
 	margin-bottom: 4px;
 }
 .admin_login_form .password {
-	width:201px;
+	width: 201px;
 	margin-bottom: 4px;
 }
 .admin_login_form .fc2 {
-	width:86px !important;
+	width: 86px !important;
 	text-align:center;
 	margin-right: 0px;
 	margin-left: 1px;
