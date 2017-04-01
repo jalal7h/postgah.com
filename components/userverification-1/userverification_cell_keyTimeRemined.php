@@ -4,7 +4,7 @@
 # 2017/03/12
 # 1.0
 
-define( 'userverification_cell_deadline' , 300 );
+define( 'userverification_cell_deadline' , 60 );
 
 function userverification_cell_keyTimeRemined(){
 	
