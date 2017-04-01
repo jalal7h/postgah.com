@@ -4,7 +4,7 @@
 # 2017/01/23
 # 1.0
 
-add_userpanel_item( 'user_changepassword_form', 'password', 'تغییر رمز عبور', '13e' );
+add_userpanel_item( 'user_changepassword_form', 'password', 'تغییر رمز عبور', '13e', 95 );
 
 function user_changepassword_form(){
 	
