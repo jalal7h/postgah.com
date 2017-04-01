@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/03/23
-# 1.2
+# 2017/04/01
+# 1.3
 
 function user_login_check( $username , $password ){
 	
@@ -21,13 +21,13 @@ function user_login_check( $username , $password ){
 
 	$username_query = " `$its`='$username' ";
 	
-	
+
 	#
-	# userloginverify
-	if( is_component('userloginverify') and is_column('user', $its.'_verified') ){
+	# userregisterverify
+	if( is_component('userregisterverify') and is_column('user', $its.'_verified') ){
 		$username_query.= " AND `".$its."_verified`='1' ";
 	}
-
+	
 	#
 	# query
 	if(! $rs = dbq(" SELECT `id` FROM `user` WHERE $username_query AND `password`='$password' AND `permission`='0' LIMIT 1 ")){

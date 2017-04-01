@@ -6,7 +6,7 @@
 
 /*
 	
-	'[ 'text','color','name','number','textarea','select','checkbox','radio','date','clock','toggle','url','email','file','submit','hidden','password','cat','catbox','catsearch','position','positionbox','keyword','searchbox','head','catcheck','count','cost' ]'
+	'[ 'text','color','name','number','textarea','select','checkbox','radio','date','clock','toggle','url','email','file','submit','hidden','password','cat','catbox','catsearch','position','positionbox','keyword','searchbox','head','catcheck','count','cost','memo' ]'
 	
 	['text:name*+{ + will add `[]` }'],
 	['color:color_code'],

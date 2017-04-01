@@ -6,6 +6,6 @@
 
 # -sp_i-
 
-define( 'userlogin_username_title', __('شماره موبایل / آدرس ایمیل') );
 define( 'userlogin_username_mobile', true );
+define( 'userlogin_username_title', __('شماره موبایل / آدرس ایمیل') );
 

@@ -66,5 +66,16 @@
     padding: 0 0 20px 0;
 }
 
+form.userprofile_form .lmfe_tnit {
+	color: #888;
+	font-size: 11px !important;
+}
+
+#lmfe_userprofile_form_email ,
+#lmfe_userprofile_form_cell {
+	font-family: monospace,sans-serif;
+	width: 320px;
+}
+
 
 

@@ -16,39 +16,47 @@ function user_register_form(){
 	}
 
 	#
-	# actions
-	switch ($_REQUEST['do']) {
-		case 'saveNew':
-			if( user_register_do() ){
-				return true;
-			}
-			break;
-	}
-
-	#
 	# form
-	if( is_component('userloginverify') and !userloginverify_check() ){
-		return userloginverify();
+	# agar niaz be verify e user hast, va hanuz verify nashode
+	if( is_component('userregisterverify') and !userregisterverify_check() ){
+		return userregisterverify();
 
 	} else {
 
-		if( is_component('userloginverify') ){
-			if( $qpop = qpop('result_of_userloginverify_check') ){
+
+		if( is_component('userregisterverify') ){
+
+			if( $qpop = qpop('result_of_userregisterverify_check') ){
 				$qpop = explode( ':', $qpop );
 				$qp_column = $qpop[0];
 				$qp_value = $qpop[1];
 				if(! in_array( $qp_column, ['email', 'cell'] ) ){
 					ed();
 				}
-				$userloginverify_hidden = '[!"hidden:username"=>"'.$_REQUEST['username'].'"!]';
-				$userloginverify_hidden.= '[!"hidden:hash"=>"'.$_REQUEST['hash'].'"!]';
-				$userloginverify_hidden.= '[!"hidden:processed_hash"=>"'.str_enc( $qp_column.':'.md5x($qp_value,8) ).'"!]';
+				$userregisterverify_hidden = '[!"hidden:username"=>"'.$_REQUEST['username'].'"!]';
 
+			# age chizi push nashode, error bede
 			} else {
-				ed();
+				userregisterverify_retry( $_REQUEST['username'] );
 			}
+
 		}
 
+
+		#
+		# actions
+		switch ($_REQUEST['do']) {
+			case 'saveNew':
+				# age sabtenam be dorosti anjam shode, bezan birun, age na form ro neshun bede
+				# age doros anjam nashode, qpush kon moshkel ro, k tuye form 'prompt' beshe ruye element
+				if( user_register_do() ){
+					return true;
+				}
+				break;
+		}
+
+
+		# the form
 		# -------------------------------------------------
 		echo listmaker_form('
 			
@@ -56,7 +64,7 @@ function user_register_form(){
 
 				<?=token_make()?>
 
-				'.$userloginverify_hidden.'
+				'.$userregisterverify_hidden.'
 				
 				<div class="head">'.__('ثبت نام').'</div>
 				<div class="register">'.
@@ -77,7 +85,8 @@ function user_register_form(){
 		# -------------------------------------------------
 
 
-		if( is_component('userloginverify') ){
+		# age niaz be verify hast, sotun e username, readonly beshe
+		if( is_component('userregisterverify') ){
 			if( $qp_column ){
 				?>
 				<script>
@@ -87,9 +96,12 @@ function user_register_form(){
 			}
 		}
 
+
+		# age oAuth faal hast, form esh load beshe
 		if( is_component('userloginoauth') ){
 			echo userloginoauth_form();
 		}
+
 
 	}
 

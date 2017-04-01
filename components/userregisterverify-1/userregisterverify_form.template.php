@@ -1,8 +1,6 @@
 
 <form method="post" action="{layout_link(58)}" id="{template_name}" >
-	<input type="hidden" name="do" value="split">
-
-	{token_make}
+	<input type="hidden" name="do" value="verify">
 	
 	<div class=""> 
 		
@@ -11,7 +9,7 @@
 		<div class="info"><?=__('لطفا %% خود را برای دریافت لینک تایید ایمیل وارد نمایید.', userlogin_username_title )?></div>
 		
 		<div>
-			<input type="text" name="username" placeholder="{userlogin_username_title}"/>
+			<input type="text" name="username" value="{username}" placeholder="{userlogin_username_title}"/>
 		</div>
 		
 		<?if( strlen($prompt) ):?>

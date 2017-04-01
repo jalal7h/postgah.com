@@ -1,7 +1,7 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/03/12
+# 2017/04/01
 # 2.0
 
 function user_register_do(){
@@ -44,7 +44,7 @@ function user_register_do(){
 
 	#
 	# check username - no verify
-	if(! is_component('userloginverify') ){
+	if(! is_component('userregisterverify') ){
 
 		#
 		# cell
@@ -88,11 +88,11 @@ function user_register_do(){
 
 	#
 	# check username - verify
-	} else if(! $the_list = userloginverify_registerVarList() ){
+	} else if(! $the_list = userregisterverify_registerVarsForTexty() ){
 		$form_valid = false;
 
 	} else {
-		list( $email, $cell, $username ) = $the_list;
+		list( $its, $email, $cell, $username ) = $the_list;
 	}
 
 
@@ -120,8 +120,8 @@ function user_register_do(){
 
 		#
 		# verify flags
-		if( is_component('userloginverify') ){
-			userloginverify_after_registration();
+		if( is_component('userregisterverify') ){
+			userregisterverify_after_registration( $its, $user_id );
 		}
 
 		#

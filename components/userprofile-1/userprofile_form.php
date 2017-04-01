@@ -36,26 +36,31 @@ function userprofile_form(){
 				"switch" => "do2",
 			!]
 				
-				[!"text:name*","inDiv"!]
-				[!"text:email*","inDiv"!]
-				[!"text:cell","inDiv"!]
-				[!"text:tell","inDiv"!]
+				'.( !is_column('user','email_verified') ? 
+					'[!"text:email*/readonly=1"!]' : 
+					'[!"memo:email"!]' ).'
 
-				[!"text:address","inDiv"!]
+				'.( (!is_column('user','cell_verified') or !userlogin_username_mobile) ? 
+					'[!"text:cell"!]' : 
+					'[!"memo:cell"!]' ).'
 
-				[!"file:profile_pic","inDiv"!]
-				[!"select:gender","option"=>["M"=>"'.__('مذکر').'", "F"=>"'.__('مونث').'"],"inDiv"!]
+				[!"text:name*"!]
+				[!"text:tell"!]
 
-				[!"text:im_a","inDiv"!]
-				[!"text:work_at","inDiv"!]
+				[!"text:address"!]
+
+				[!"file:profile_pic"!]
+				[!"select:gender","option"=>["M"=>"'.__('مذکر').'", "F"=>"'.__('مونث').'"]!]
+
+				[!"text:im_a"!]
+				[!"text:work_at"!]
 
 				<br>
 				<hr>
 				<br>
 
-				[!"submit:'.__('ثبت').'","inDiv"!]
+				[!submit!]
 
-			[!close!]
 		');
 		## -------------------------------------------------
 
