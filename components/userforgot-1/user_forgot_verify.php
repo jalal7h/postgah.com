@@ -29,7 +29,7 @@ function user_forgot_verify(){
 		echo convbox_back( __('هیچ حساب کاربری با %% مورد نظر شما ثبت نشده است.', userlogin_username_title) );
 
 	} else {
-		userverification_init( $u, _URL.'/forgot/new/'.str_enc($u), $its=null );
+		userverification_init( $u, _URL.'/'.Slug::get('page',63).'/new/'.str_enc($u), $its=null );
 		return true;
 	}
 
