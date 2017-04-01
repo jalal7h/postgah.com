@@ -1,10 +1,11 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/07/30
-# 1.0
+# 2017/04/01
+# 1.1
 
-$GLOBALS['do_action'][] = 'pgItem_mg_reject';
+add_action('pgItem_mg_reject');
+add_jstext('pgItem_mg_reject', 'با سلام،\nکاربر گرامی،\n\nآگهی ثبت شده توسط شما به دلیل مقایرت با قوانین سایت تایید نشد.\nلطفا در انتخاب عنوان و محتوای مناسب بیشتر دقت فرمائید.\n\nبا تشکر\nپستگاه');
 
 function pgItem_mg_reject(){
 	

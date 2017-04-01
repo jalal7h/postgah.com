@@ -19,6 +19,10 @@ function pgItem_user_saveEdit(){
 	kbclear( $_REQUEST['tell'] );
 	kbclear( $_REQUEST['video'] );
 
+	if( !$_REQUEST['position_id'] or !$_REQUEST['cat_id'] ){
+		ed();
+	}
+
 	#
 	# character limit
 	if( mb_strlen( $_REQUEST['name'] ) < 70 ){
