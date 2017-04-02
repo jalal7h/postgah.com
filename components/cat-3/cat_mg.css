@@ -193,6 +193,21 @@
     vertical-align: bottom;
 }
 
+#cat_mg .btn-link ,
+#cat_mg .btn-link:active {
+	color: #337ab7;
+	font-size: 12px;
+}
+#cat_mg .btn-link:hover {
+	color: red;
+}
+#cat_mg .btn-link.subcat {
+	padding-left: 4px;
+}
+#cat_mg .btn-link.ccf {
+	padding-right: 4px;
+}
+
 
 
 
