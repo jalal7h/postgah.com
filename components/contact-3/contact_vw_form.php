@@ -7,10 +7,11 @@
 add_layer( 'contact_vw_form', 'فرم تماس با ما' , 'center' );
 
 function contact_vw_form(){
-	
+
 	switch($_REQUEST['do']) {
 		case 'send':
-			return contact_vw_send();
+			if( contact_vw_send() ) return;
+			break;
 	}
 
 	if(! $rs = dbq(" SELECT * FROM `setting` WHERE `slug` LIKE 'contact_email_address_%' ORDER BY `slug` ")){
