@@ -13,8 +13,6 @@
 	width: 320px;
 	padding: 8px 16px;
 	border: 1px solid #bbb !important;
-	direction: ltr;
-	text-align: left;
 }
 #userregisterverify_form input[type=submit] {
 	padding: 8px 18px;

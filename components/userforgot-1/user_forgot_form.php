@@ -4,7 +4,7 @@
 # 2017/03/12
 # 1.3
 
-add_layer( 'user_forgot_form', 'فرم فراموشی کلمه عبور', 'center' );
+add_layer( 'user_forgot_form', __('فرم فراموشی کلمه عبور'), 'center' );
 
 function user_forgot_form(){
 

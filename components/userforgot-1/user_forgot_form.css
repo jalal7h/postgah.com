@@ -13,8 +13,6 @@
     width: 320px;
     padding: 8px 16px;
     border: 1px solid #bbb !important;
-    direction: ltr;
-    text-align: left;
     display: block;
 }
 #user_forgot_form input[type="submit"] {

@@ -1,0 +1,7 @@
+
+#user_forgot_form input[name="username"] {
+    direction: ltr;
+    text-align: left;
+}
+
+

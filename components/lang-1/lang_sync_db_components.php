@@ -42,8 +42,9 @@ function lang_sync_db_components(){
 				e( $file );
 
 			} else {
-
+				// echo "<hr>".$file."<br>";
 				$php = str_replace( '"', "'", $php );
+				$php = str_replace( "__( '", "__('", $php );
 				$key_arr = explode( "__('", $php );
 				
 				if(! sizeof($key_arr) ){
@@ -58,7 +59,7 @@ function lang_sync_db_components(){
 						continue;
 
 					} else {
-
+						// echo $the_key_str."<br>";
 						$the_key_str = nl2br($the_key_str);
 						$arr[ ":".lang_hash($the_key_str) ] = $the_key_str;
 

@@ -1,0 +1,78 @@
+
+.user_login_form_side {
+	background-color: #a90000;
+	color: rgba(255,255,255,0.8);
+    padding: 30px 35px;
+    border-radius: 2px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+    display: block;
+    border-radius: 5px 2px 2px 5px;
+}
+.user_login_form_side a {
+	color: rgba(255,255,255,0.8);
+	text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+}
+.user_login_form_side a:hover {
+	color: white;
+}
+
+.user_login_form_side .head {
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	margin: -5px 0 25px;
+	text-shadow: 0 0 3px #000;
+}
+
+.user_login_form_side .input_w {
+	box-shadow: 0 0 5px rgba(60, 0, 0, 0.95);
+	background-color: white;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.user_login_form_side input[type="text"] ,
+.user_login_form_side input[type="text"]:hover ,
+.user_login_form_side input[type="password"] ,
+.user_login_form_side input[type="password"]:hover {
+	display: block;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.8) inset !important;
+	margin: 0;
+	border: 0px;
+	outline: none;
+	font-size: 14px;
+	border: 1px solid white;
+	padding: 10px;
+	width: 100%;
+}
+
+.user_login_form_side .remmeber_w {
+	margin: 2px 0 10px;
+}
+.user_login_form_side .remmeber_w:hover {
+	color: white;
+}
+.user_login_form_side .remmeber_w input {
+	top: 0px !important;
+	left: 0px;
+}
+
+.user_login_form_side .signup {
+	font-size: 13px;
+	margin-right: 40px;
+	display: inline-block;
+	position: relative; top: 2px;
+}
+
+.user_login_form_side input[type="submit"] {
+	font-size: 16px;
+    padding: 5px 20px;
+}
+
+.user_login_form_side .forgot_w {
+	margin: 10px 0 0 0;
+}
+
+
+
+

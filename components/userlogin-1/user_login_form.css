@@ -70,3 +70,19 @@
 	margin-left: 5px;
 }
 
+#user_login_form input[name=username] ,
+#user_login_form input[name=password] {
+	padding-left: 45px;
+}
+
+#user_login_form icon {
+	margin-right: -36px;
+    border-radius: 3px 0 0 3px;
+}
+
+
+
+
+
+
+

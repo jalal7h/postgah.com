@@ -12,7 +12,6 @@
 	color: #d00;
 }
 .user_register_form input {
-	/* display: block; */
 	font: normal 16px DefaultFont;
 	padding: 10px;
 	border: 1px solid #ccc;
