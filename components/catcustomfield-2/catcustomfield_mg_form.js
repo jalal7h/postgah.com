@@ -16,7 +16,7 @@ $(document).ready(function($) {
 	} else {
 		$('#lmfe_inDiv_formdd96d1_display_as_filter').hide();
 	}
-
+	
 	if( $.inArray( sel_val, ccf_haveOptions ) !== -1 ){
 		$('.catcustomfield_mg_form .option_list').show();
 	
