@@ -1,5 +1,5 @@
 
-<form autocomplete="off" method="post" action="<?=layout_link(60)?>" id="user_login_form" >
+<form autocomplete="off" method="post" action="{layout_link(60)}" id="user_login_form" >
 <input type="hidden" name="do" value="login_do"/>
 <input type="hidden" name="refer" value="{refer}" />
 <?=token_make()?>
@@ -9,7 +9,7 @@
 	<div class="login_form">
 	
 		<div class="username">
-			<input class="placeholder_fix" required autocomplete="new-password" name="username" placeholder="{userlogin_username_title}" type="text" value="{username}" /><!--
+			<input class="placeholder_fix" required autocomplete="new-password" name="username" placeholder="{ucfirst(userlogin_username_title)}" type="text" value="{username}" /><!--
 		 --><icon class="fa fa-user"></icon>
 		</div>
 		

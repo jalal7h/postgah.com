@@ -7,7 +7,7 @@
 	
 	<div class="head"><lang>فراموشی کلمه عبور!</lang></div>
 	<div class="text"><?=__( 'لطفا بمنظور تنظیم مجدد کلمه عبور، %% خود را وارد نمایید.', userlogin_username_title )?></div>
-	<input type="text" name="username" placeholder="{userlogin_username_title}" dir="ltr" required />
+	<input type="text" name="username" placeholder="{ucfirst(userlogin_username_title)}" dir="ltr" required />
 	<input type="submit" class="btn btn-primary" value="<lang>ارسال</lang>" />
 
 </form>

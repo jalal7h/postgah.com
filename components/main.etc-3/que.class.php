@@ -42,7 +42,7 @@ class que {
 			return $value;
 			
 		} else if( $value = redis($name) ){
-			redis_remove($name);
+			redis_remove( session_id() . $name );
 			return $value;
 
 		} else {

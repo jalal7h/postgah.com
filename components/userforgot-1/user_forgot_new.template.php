@@ -9,7 +9,7 @@
 	<div class="head" ><lang>بازنشانی کلمه عبور</lang></div>
 	<div class="text" ><lang>لطفا کلمه عبور جدید را وارد کنید.</lang></div>
 	
-	<input class="placeholder_fix" placeholder="<lang>کلمه عبور جدید</lang>" autocomplete="new-password" type="password" id="password1" required />
+	<input class="placeholder_fix" placeholder="{ucfirst(userlogin_username_title)}" autocomplete="new-password" type="password" id="password1" required />
 	<input class="placeholder_fix" placeholder="<lang>تکرار کلمه عبور</lang>" autocomplete="new-password" type="password" id="password2" name="password" required />
 	
 	<label class="prompt_w">

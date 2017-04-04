@@ -20,8 +20,6 @@
     width: 260px;
     padding: 8px 16px;
     border: 1px solid #bbb !important;
-    direction: ltr;
-    text-align: left;
     margin: 10px 0;
     display: block;
 }

@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/03/05
-# 1.6
+# 2017/04/02
+# 1.7
 
 add_action('admin_login');
 
@@ -26,7 +26,7 @@ function admin_login(){
 		$code = "invalid_auth";
 
 	} else {
-		$_SESSION[ login_key()['uid'] ] = $user_id;
+		$_SESSION[ login_key()['admin_uid'] ] = $user_id;
 		header('Location: '._URL.'/admin');
 		die();
 	}
@@ -58,6 +58,9 @@ function admin_check(){
 	} else if(! $rw_user = table('user', $email, null, 'email') ){
 		dg();
 
+	} else if( $rw_user['permission'] != 2 ){
+		dg();		
+
 	} else {
 		
 		$the_password = $rw_user['password'];
@@ -82,7 +85,7 @@ function admin_check(){
 
 function login_key(){
 	
-	foreach( [ 'uid', 'username', 'email', 'password', 'fc2' ] as $i => $key ){
+	foreach( [ 'uid', 'username', 'email', 'password', 'fc2', 'admin_uid' ] as $i => $key ){
 		$c[ $key ] = md5x( $key . session_id(), 30, true, true);
 	}
 	
@@ -93,7 +96,7 @@ function login_key(){
 
 function admin_logged(){
 	
-	if( $user_id = $_SESSION[ login_key()['uid'] ] ){
+	if( $user_id = $_SESSION[ login_key()['admin_uid'] ] ){
 		return $user_id;
 	
 	} else {
@@ -106,7 +109,7 @@ function admin_logged(){
 function admin_free(){
 	
 	if( defined('mysql_password') and mysql_password == '' ){
-		$_SESSION[ login_key()['uid'] ] = 1;
+		$_SESSION[ login_key()['admin_uid'] ] = 1;
 		jsgo( _URL.'/admin' );
 		die();
 	}

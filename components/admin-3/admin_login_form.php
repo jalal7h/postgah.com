@@ -21,7 +21,7 @@ function admin_login_form(){
 			$prompt = __('خطا در نام کاربری / گذرواژه'); break;
 	}
 
-	echo template_engine('admin_login_form' );
+	echo template_engine( 'admin_login_form', [ 'prompt'=>$prompt ] );
 
 }
 

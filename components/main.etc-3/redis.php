@@ -1,10 +1,12 @@
 <?php 
 
 # jalal7h@gmail.com
-# 2017/03/12
-# 1.0
+# 2017/04/02
+# 1.1
 
 function redis( $key, $value=null ){
+
+	$key = session_id() . $key;
 	
 	$redis = new Redis(); 
 	$redis->connect('127.0.0.1', 6379); 

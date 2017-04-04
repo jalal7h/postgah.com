@@ -19,7 +19,7 @@ function userverification_init( $username, $verify_back, $its=null ){
 	} else if( is_cell_correct_or_not($username) ){
 		$its = 'cell';		
 	}
-
+	
 	$redis_key = md5x( $verify_back, 12 ); // fixed in time
 	redis( 'userverification_init_'.$redis_key, $verify_back );
 	

@@ -6,12 +6,12 @@
 
 function user_loginLink( $user_id ){
 
-	if(! admin_logged() ){
-		return false;
+	// if(! admin_logged() ){
+		// return false;
 
-	} else {
+	// } else {
 		return _URL.'/admin/user/login/'.$user_id;
-	}
+	// }
 	
 }
 

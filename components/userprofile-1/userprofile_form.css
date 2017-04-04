@@ -69,12 +69,16 @@
 form.userprofile_form .lmfe_tnit {
 	color: #888;
 	font-size: 11px !important;
+	vertical-align: top;
+	padding-top: 10px;
+	display: inline-block;
 }
 
 #lmfe_userprofile_form_email ,
 #lmfe_userprofile_form_cell {
 	font-family: monospace,sans-serif;
 	width: 320px;
+	min-height: 34px;
 }
 
 

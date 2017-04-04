@@ -9,7 +9,7 @@
 		<div class="info"><?=__('لطفا %% خود را برای دریافت لینک تایید ایمیل وارد نمایید.', userlogin_username_title )?></div>
 		
 		<div>
-			<input type="text" name="username" value="{username}" placeholder="{userlogin_username_title}"/>
+			<input type="text" name="username" value="{username}" placeholder="{ucfirst(userlogin_username_title)}"/>
 		</div>
 		
 		<?if( strlen($prompt) ):?>

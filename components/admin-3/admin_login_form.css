@@ -89,9 +89,7 @@
     display: block;
     margin: 0;
     text-align: center;
-    color: #ff6c6c;
-    position: relative;
-    top: 20px;
+    color: red;
     text-shadow: 0 0 1px #fff;
 }
 

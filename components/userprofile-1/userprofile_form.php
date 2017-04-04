@@ -30,7 +30,7 @@ function userprofile_form(){
 		echo listmaker_form('
 			[!
 				"table" => "user" ,
-				"action" => "'._URL.'/?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'",
+				"action" => "'.layout_link(14).'/profile",
 				"name" => "'.__FUNCTION__.'" ,
 				"class" => "'.__FUNCTION__.'" ,
 				"switch" => "do2",

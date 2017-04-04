@@ -3,8 +3,8 @@
 	<div class="head" ><lang>ورود کاربر</lang></div>
 	<input type="hidden" name="do" value="login_do"/>
 
-	<div class="input_w"><input autocomplete="off" type="text" name="username" placeholder="<?=lmtc('user:username')?>" dir="ltr" value="{username}" /></div>
-	<div class="input_w"><input autocomplete="off" type="password" name="password" placeholder="<lang>کلمه عبور</lang>" dir="ltr" /></div>
+	<div class="input_w"><input autocomplete="new-password" type="text" name="username" placeholder="{ucfirst(userlogin_username_title)}" dir="ltr" value="{username}" /></div>
+	<div class="input_w"><input autocomplete="new-password" type="password" name="password" placeholder="<lang>کلمه عبور</lang>" dir="ltr" /></div>
 	<label class="remmeber_w"><input type="checkbox" name="remember" value="1" /> <lang>Remember</lang></label>
 
 	<div>
