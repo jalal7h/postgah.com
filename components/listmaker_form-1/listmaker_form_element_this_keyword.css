@@ -47,7 +47,7 @@
 	color: red;
 }
 .lmfe_isKeyword > input[type="text"] {
-	width: auto;
+	width: auto !important;
 	border: 0px;
 	display: inline-block;
 	/* background-color: #eee; */

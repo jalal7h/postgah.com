@@ -14,7 +14,8 @@ function add_userpanel_item( $func, $slug, $name, $icon, $i=null, $default=false
 	} else {
 		if( isset( $GLOBALS['userpanel_item'][ $i ] ) ){
 			if( $GLOBALS['userpanel_item_locked'][ $i ] == '1' ){
-				echo "The init number $i is locked for ".$GLOBALS['userpanel_item'][ $i ]['name'].".";
+				echo "The \"userpanel item\" number $i is locked for \"".$GLOBALS['userpanel_item'][ $i ][2]."\".";
+				echo "<br>So, we cant bind it to \"".__($info[2])."\".";
 				die();
 			} else {
 				$GLOBALS['userpanel_item'][] = $GLOBALS['userpanel_item'][ $i ];

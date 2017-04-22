@@ -12,22 +12,22 @@ function userpanel_desk(){
 		user_logout( layout_link(60) );
 	}
 
-	echo "<div class=\"userpanel_desk\">";
-
 	foreach( userpanel_menu_items() as $item ){
 		
 		$func = $item['func'];
 		$slug = $item['slug'];
 
 		if( $slug == $_REQUEST['do_slug'] ){
+			echo "<div class=\"userpanel_desk\">";
 			call_user_func($func);
-			break;
+			echo "</div>";
+			return;
 		}
 
 	}
-	
-	echo "</div>";
-	
+
+	redirect( _URL . '/404.php' );
+
 }
 
 

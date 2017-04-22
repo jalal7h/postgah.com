@@ -29,6 +29,7 @@ function contact_mg_setting(){
 			
 			<div>
 				[!"'.setting_rw('contact_tell')['name'].'","text:contact_tell"!]
+				[!"'.setting_rw('contact_cell')['name'].'","text:contact_cell"!]
 				[!"'.setting_rw('contact_fax')['name'].'","text:contact_fax"!]
 				[!"'.setting_rw('contact_address')['name'].'","textarea:contact_address"!]
 			</div>

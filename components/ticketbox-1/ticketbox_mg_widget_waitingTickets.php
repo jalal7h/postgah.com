@@ -5,13 +5,14 @@
 # 1.0
 
 $GLOBALS['admin_widget']['ticketbox_mg_widget_waitingTickets'] = [
-	'name' => 'تیکت‌های منتظر',
+	'name' => __('تیکت‌های منتظر'),
 	'grid' => 3,
 ];
 
 function ticketbox_mg_widget_waitingTickets(){
 	
-	echo "۱۰ تیکت منتظر پاسخ <a href=\"\">مشاهده</a>";
+	// echo "۱۰ تیکت منتظر پاسخ <a href=\"\">مشاهده</a>";
+	echo "working on ...";
 
 }
 

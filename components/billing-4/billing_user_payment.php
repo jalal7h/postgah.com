@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/07/04
-# 1.0
+# 2017/04/16
+# 1.1
 
 # action e form e pardakht
 # form e pardakht
@@ -41,6 +41,15 @@ function billing_userpanel_payment(){
 
 	}
 
+	#
+	# wallet png
+	if( lang_code ){
+		$png_name = 'billing_wallet-'.lang_code.'.png';
+		if(! imgp( $png_name ) ){
+			$png_name = 'billing_wallet-en.png';
+		}
+	}
+
 	# 
 	# if its an invoice, wallet method is available
 	if( $rw_invoice ){
@@ -48,7 +57,7 @@ function billing_userpanel_payment(){
 			<div class='r'>
 			<label>
 			<input title='".__('کیف پول')."' type=radio name='method' value='wallet' />
-			<img src='"._URL."/image_list/billing_wallet.png'/>
+			<img src='"._URL."/image_list/".$png_name."'/>
 			<span class='wallet_credit'>".billing_format( billing_userCredit($user_id) )." ".__('اعتبار')."</span>
 			</label>
 			</div>";

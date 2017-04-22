@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/02/13
-# 1.3
+# 2017/04/14
+# 1.4
 
 function listmaker_form_element_this_date( $info ){
 
@@ -12,7 +12,7 @@ function listmaker_form_element_this_date( $info ){
 	$info['class'] = trim($info['class']);
 
 	if( $info['value'] and function_exists('date_zero') ){
-		$info['value'] = date_zero('remove', $info['value']);
+		// $info['value'] = date_zero('remove', $info['value']);
 	}
 
 	if( lang_dir == 'ltr' ){

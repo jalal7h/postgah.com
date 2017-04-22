@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/21
-# 1.0
+# 2017/04/16
+# 1.1
 
 function contact_mg_setting_save(){
 

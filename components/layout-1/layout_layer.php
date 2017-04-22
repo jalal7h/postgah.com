@@ -6,8 +6,37 @@
 
 function layout_layer( $pos="center" ){
 	
-	if( $pos=="center" ){
+	if( $pos == "center" ){
 		$pos = "";
+	}
+
+	switch ($pos) {
+		case 'top':
+			if(! layout_pos_top ){
+				return;
+			}
+			break;
+		case 'left':
+			if(! layout_pos_left ){
+				return;
+			}
+			break;
+		case 'right':
+			if(! layout_pos_right ){
+				return;
+			}
+			break;
+		case 'bottom':
+			if(! layout_pos_bottom ){
+				return;
+			}
+			break;
+
+		case '':
+			if(! layout_pos_center ){
+				return;
+			}
+			break;
 	}
 
 	ob_start();
