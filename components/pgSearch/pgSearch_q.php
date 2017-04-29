@@ -13,10 +13,10 @@ function pgSearch_q(){
 		e();
 
 	} else if(! $q = mb_ereg_replace( '[^A-Za-z\-\+0-9آ-ی ]+', '', $q ) ){
-		e();
+		// e();
 
 	} else if(! $q = trim($q) ){
-		e();
+		// e();
 		
 	} else {
 		return $q;
