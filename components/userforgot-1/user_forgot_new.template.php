@@ -1,5 +1,5 @@
 
-<form id="user_forgot_new" method="post" action="{_URL}/<?=Slug::get('page',63)?>" >
+<form id="user_forgot_new" method="post" action="{_URL}/<?=Slug::getSlugByName('forgot')?>" >
 	
 	{token_make}
 

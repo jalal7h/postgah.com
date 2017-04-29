@@ -15,10 +15,7 @@ function layout_link( $page_id, $skip_slug=false ){
 	if( $page_id == 1 ){
 		$link = _URL.'/';
 	
-	} else if( !$skip_slug and $slug = Slug::get( './?page='.$page_id ) ){
-		$link = _URL .'/'. $slug;
-
-	} else if( !$skip_slug and $slug = Slug::get( 'page' , $page_id ) ){
+	} else if( !$skip_slug and $slug = Slug::getSlugByURL( './?page='.$page_id ) ){
 		$link = _URL .'/'. $slug;
 
 	} else {

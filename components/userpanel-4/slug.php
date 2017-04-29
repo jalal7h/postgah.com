@@ -6,7 +6,7 @@
 
 add_slug([
 
-	Slug::get('page',14).'/$' => _URL.'/?page=14&do_slug=$1' ,
+	Slug::getSlugByName('userpanel').'/$' => _URL.'/?page=14&do_slug=$1' ,
 
 ]);
 

@@ -97,4 +97,6 @@ function layout_mg_layer_form(){
 	<?
 
 	layout_mg_layer_form_extra( $rw );
+
 }
+

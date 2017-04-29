@@ -8,13 +8,13 @@
 		{pgSearch_form}
 
 		<?if(! user_logged() ):?>
-			<a href="{_URL}/<?=Slug::get('page',60)?>" class="login_or_register">ورود / عضویت</a>
+			<a href="{_URL}/<?=Slug::getSlugByName('login')?>" class="login_or_register">ورود / عضویت</a>
 		<?elseif(! is_userPanel() ):?>
-			<a href="{_URL}/<?=Slug::get('page',14)?>" class="login_or_register">محیط کاربری من</a>
+			<a href="{_URL}/<?=Slug::getSlugByName('userpanel',14)?>" class="login_or_register">محیط کاربری من</a>
 		<?endif?>
 
 		<?if(! strstr($_SERVER['REQUEST_URI'], '/userpanel/items/new' ) ):?>
-			<a href="{_URL}/<?=Slug::get('page',14)?>/items/new" class="new_ads">ارسال آگهی رایگان</a>
+			<a href="{_URL}/<?=Slug::getSlugByName('userpanel',14)?>/items/new" class="new_ads">ارسال آگهی رایگان</a>
 		<?endif?>
 
 		{breadcrumb}

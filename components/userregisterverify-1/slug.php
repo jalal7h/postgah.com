@@ -4,5 +4,5 @@
 # 2017/04/01
 # 1.0
 
-add_slug( Slug::get('page',58).'/$', './?page=58&username=$1' );
+add_slug( Slug::getSlugByName('register').'/$', './?page=58&username=$1' );
 

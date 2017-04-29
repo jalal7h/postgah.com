@@ -7,7 +7,7 @@
 function userregisterverify_retry( $username ){
 	
 	userverification_invalidate( $username );
-	jsgo( _URL . '/' . Slug::get('page',58) );
+	jsgo( _URL . '/' . Slug::getSlugByName('register') );
 
 }
 

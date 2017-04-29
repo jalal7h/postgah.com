@@ -8,7 +8,7 @@ function news_mg_saveEdit(){
 	
 	#
 	# insert
-	$id = dbs( 'news', [ 'name','cat','text','tag' ], ['id'] );
+	$id = dbs( 'news', [ 'name', 'cat', 'text', 'tag' ], ['id'] );
 	#
 
 	#

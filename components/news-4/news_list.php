@@ -48,7 +48,7 @@ function news_list($rw_pagelayer){
 
 	$tdd = 10;
 	$stt = $tdd * intval($_REQUEST['p']); 
-    $query1 = " SELECT * FROM `news` WHERE 1 $q_cat ORDER BY `id` DESC LIMIT $stt , $tdd ";
+    $query1 = " SELECT * FROM `news` WHERE `flag`='1' $q_cat ORDER BY `id` DESC LIMIT $stt , $tdd ";
     
     if(! $rs1 = dbq($query1) ){
 		e();

@@ -4,6 +4,6 @@
 # 2017/02/07
 # 1.1
 
-add_slug( Slug::get('page',14).'/invoice/$', _URL.'/?page=14&do_slug=payment&invoice_id=$1' );
+add_slug( Slug::getSlugByName('userpanel').'/invoice/$', _URL.'/?page=14&do_slug=payment&invoice_id=$1' );
 
 

@@ -49,7 +49,7 @@
 <div class="billing_userpanel_credit" >
 	<span><lang>اعتبار شما</lang> : </span>
 	<span style="font:bold 16px font01;">{credit}</span>
-	<a class="btn btn-primary" href="{_URL}/<?=Slug::get('page',14)?>/payment" ><lang>شارژ حساب</lang></a>
+	<a class="btn btn-primary" href="{_URL}/<?=Slug::getSlugByName('userpanel')?>/payment" ><lang>شارژ حساب</lang></a>
 </div>
 
 

@@ -8,7 +8,7 @@ add_layer( 'userpanel_menu', 'منوی کاربری', 'side' );
 
 function userpanel_menu(){
 
-	$userpanel_slug = Slug::get('page',14);
+	$userpanel_slug = Slug::getSlugByName('userpanel');
 
 	if(! $user_id = user_logged() ){
 		return dg();

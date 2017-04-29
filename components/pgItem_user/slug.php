@@ -6,9 +6,8 @@
 
 add_slug([
 	
-	// 'new_item' => './?page=14&do=pgItem_user&do1=form' ,
-	Slug::get('page',14)."/items/new" => './?page=14&do=pgItem_user&do1=form' ,
-	Slug::get('page',14)."/items/edit/$" => './?page=14&do1=form&id=$1' ,
+	Slug::getSlugByName('userpanel')."/items/new" => './?page=14&do=pgItem_user&do1=form' ,
+	Slug::getSlugByName('userpanel')."/items/edit/$" => './?page=14&do1=form&id=$1' ,
 	
 ]);
 

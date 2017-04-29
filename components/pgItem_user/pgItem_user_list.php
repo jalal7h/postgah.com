@@ -33,7 +33,7 @@ function pgItem_user_list(){
 	# ** ama age base_url ro dashte bashim az hamun estefade mikone
 	#
 	
-	$list['addnew_url'] = '"'._URL.'/'.Slug::get('page',14).'/items/new"';
+	$list['addnew_url'] = '"'._URL.'/'.Slug::getSlugByName('userpanel').'/items/new"';
 	$list['remove_url'] = true; // link dokme hazf
 	$list['modify_url'] = '_URL."/?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=form&id=".$rw["id"]';
 	// $list['modify_url'] = '_URL."/items/edit/".$rw["id"]';

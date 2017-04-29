@@ -33,7 +33,7 @@ function layout_mg_layer_form_extra( $rw ){
 		#
 		# form
 		?>
-		<form method="post" action="./?page=admin&cp=<?=$_REQUEST['cp']?>&id=<?=$_REQUEST['id']?>&do=<?=$_REQUEST['do']?>&do2=save">
+		<form method="post" name="<?=$func_name?>_form" action="./?page=admin&cp=<?=$_REQUEST['cp']?>&id=<?=$_REQUEST['id']?>&do=<?=$_REQUEST['do']?>&do2=save">
 		<fieldset class="<?=__FUNCTION__?> <?=$func_name?>">
 			<legend ><?=$GLOBALS['block_layers'][ $rw['func'] ]?></legend>
 			<? $func_name($rw_pagelayer); ?>
@@ -46,4 +46,7 @@ function layout_mg_layer_form_extra( $rw ){
 	}
 
 }
+
+
+
 

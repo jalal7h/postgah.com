@@ -12,6 +12,6 @@ function billing_invoiceLink( $rw ){
 		$invoice_id = $rw['id'];
 	}
 
-	return _URL.'/'.Slug::get('page',14).'/invoice/'.$invoice_id;
+	return _URL.'/'.Slug::getSlugByName('userpanel').'/invoice/'.$invoice_id;
 
 }

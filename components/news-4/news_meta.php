@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/03
-# 1.2
+# 2017/04/29
+# 1.3
 
 # title / kw / desc
 # echo news_meta('kw');
@@ -14,6 +14,9 @@ function news_meta( $type ){
 
 	} else if(! $rw = table("news", $id) ){
 		// e();
+	
+	} else if(! $rw['flag'] ){
+		d404();
 
 	} else {
 

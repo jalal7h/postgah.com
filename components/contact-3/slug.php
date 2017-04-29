@@ -6,6 +6,6 @@
 
 add_slug([
 
-	Slug::get('page',2).'/send' => _URL.'/?page=2&do=send' ,
+	Slug::getSlugByName('contact').'/send' => _URL.'/?page=2&do=send' ,
 
 ]);

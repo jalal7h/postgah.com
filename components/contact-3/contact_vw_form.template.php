@@ -7,7 +7,7 @@
 		<div>{setting_rw("contact_fax")["name"]} : <span dir=ltr >{contact_fax}</div>
 	</div>
 
-	<form method="post" action="{_URL}/<?=Slug::get('page',2)?>/send" >
+	<form method="post" action="{_URL}/<?=Slug::getSlugByName('contact')?>/send" >
 		
 		{token_make}
 

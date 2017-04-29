@@ -17,7 +17,7 @@ function userpanel_headmenu(){
 				'name' => $rw['name'] ,
 				'photo' => ( user_photo( $rw, true ) ? user_photo($rw , "90x90") : '' ) ,
 				'credit' => billing_format( billing_userCredit($user_id), false) ,
-				'userpanel_slug' => Slug::get('page',14) 
+				'userpanel_slug' => Slug::getSlugByName('userpanel') 
 			] );
 
 		}

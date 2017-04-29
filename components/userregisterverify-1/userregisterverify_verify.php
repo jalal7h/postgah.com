@@ -29,7 +29,7 @@ function userregisterverify_verify(){
 		qpush( 'userregisterverify_form_username', __('حساب کاربری با %% مورد نظر شما قبلا ثبت شده است.', userlogin_username_title) );
 
 	} else {
-		userverification_init( $u, _URL.'/'.Slug::get('page',58).'/'.str_enc($u), $its=null );
+		userverification_init( $u, _URL.'/'.Slug::getSlugByName('register').'/'.str_enc($u), $its=null );
 		return true;
 	}
 
