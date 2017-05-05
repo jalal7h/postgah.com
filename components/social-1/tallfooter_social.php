@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/06
-# 1.0
+# 2017/05/04
+# 1.1
 
 $GLOBALS['tallfooter_element']['social'] = 'جامعه مجازی';
 
@@ -53,13 +53,13 @@ function tallfooter_social( $rw_tf ){
 			$class = 'fa-google-plus-square';
 			$class_title = 'Google Plus';
 
-		} else if( strstr( $link , 'sitemap' ) ){
-			$class = 'fa-sitemap';
-			$class_title = 'Sitemap';
+		// } else if( strstr( $link , 'sitemap' ) ){
+		// 	$class = 'fa-sitemap';
+		// 	$class_title = 'Sitemap';
 
-		} else if( strstr( $link , 'rss' ) ){
-			$class = 'fa-rss-square';
-			$class_title = 'RSS';
+		// } else if( strstr( $link , 'rss' ) ){
+		// 	$class = 'fa-rss-square';
+		// 	$class_title = 'RSS';
 
 		} else if( strstr( $link , 'aparat.com' ) ){
 			$class = 'social-aparat';

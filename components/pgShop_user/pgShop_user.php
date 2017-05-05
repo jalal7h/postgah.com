@@ -12,7 +12,7 @@ function pgShop_user(){
 		die();
 	}
 
-	switch ($_REQUEST['do1']) {
+	switch ($_REQUEST['do']) {
 		
 		case 'form':
 			return pgShop_user_form();

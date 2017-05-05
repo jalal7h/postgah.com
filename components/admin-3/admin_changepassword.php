@@ -30,7 +30,7 @@ function admin_changepassword(){
 	
 			[!"email:email"!]
 			[!"name:name"!]
-			[!"text:cell"!]
+			[!"cell:cell"!]
 			[!"password:password"=>"************"!]
 			
 			'.( is_component('userprofile') ? '[!"file:profile_pic"!]' : '' ).'
@@ -38,7 +38,7 @@ function admin_changepassword(){
 			<br> 
 			<br>
 			
-			[!"submit:'.__('ثبت').'"!]
+		[!submit!]
 	
 	');
 	# -------------------------------------------------

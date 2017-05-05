@@ -1,0 +1,19 @@
+
+form.user_mg_view_main {
+	padding: 50px 0;
+}
+form.user_mg_view_main .lmfe_tnit {
+	width: 160px;
+}
+form.user_mg_view_main input[type="text"] ,
+form.user_mg_view_main input[type="email"] {
+	width: 200px;
+}
+form.user_mg_view_main .lmfe_toggle_email_verified ,
+form.user_mg_view_main .lmfe_toggle_cell_verified {
+	position: relative; top: 13px; right: 10px;
+}
+form.user_mg_view_main .lmfe_inDiv {
+	width: 48%;
+	display: inline-block;
+}

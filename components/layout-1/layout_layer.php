@@ -55,7 +55,7 @@ function layout_layer( $pos="center" ){
 		$page_layer_func = $rw_pagelayer['func'];
 
 		if( $rw_pagelayer['hide_name'] ){
-			$rw_pagelayer['name'] = '';
+			// $rw_pagelayer['name'] = '';
 		}
 
 		if(! function_exists( $page_layer_func ) ){

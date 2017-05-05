@@ -1,5 +1,9 @@
 <?
 
+# jalal7h@gmail.com
+# 2017/05/01
+# 1.0
+
 $GLOBALS['mss_list']['nl_mg_send_do'] = 'خبرنامه';
 
 function nl_mg_send_do(){
@@ -74,7 +78,7 @@ function nl_mg_send_do(){
 				}
 			}
 			
-			xmail( $list , $subject , $text , $from );
+			xmail( $list , $subject , $text , $from, $html=1 );
 			echo convbox( __('ارسال ایمیل به %% آدرس با موفقیت انجام شد.', [$i] ) );
 
 		}

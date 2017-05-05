@@ -26,20 +26,20 @@
 
 
 /*** position */
-#cat_form_management{
+#cat_mg_w{
 	width: 100%;
 	text-align: right;
 	direction: rtl;
 }
-#cat_form_management .record {
+#cat_mg_w .record {
 	margin: 0 0px 8px 0px;
 	padding: 3px 5px 3px 0;
 }
-#cat_form_management .record a > img.arrow {
+#cat_mg_w .record a > img.arrow {
 	width: 24px;
 	position: relative; top: 3px;
 }
-#cat_form_management .subanchor {
+#cat_mg_w .subanchor {
 	color: blue;
 	font-size: 12px;
 	/* padding-right:10px; */
@@ -48,49 +48,49 @@
 	color: white;
 	font-family: DefaultFont;
 }
-#cat_form_management input[type=submit]{
+#cat_mg_w input[type=submit]{
 	/* width: 80px; */
 	/* margin-left: 3px; */
 }
-#cat_form_management input[type=text]{
+#cat_mg_w input[type=text]{
 	margin-left: 3px;
 	transition: width 0.4s;
 	width: 200px;
 }
 
 
-#cat_form_management .itgc_grid1 > form > input[type=text] {
+#cat_mg_w .itgc_grid1 > form > input[type=text] {
 	width: 250px;
 }
-#cat_form_management .itgc_grid2 > form > input[type=text] {
+#cat_mg_w .itgc_grid2 > form > input[type=text] {
 	width: 200px;
 }
-#cat_form_management .itgc_grid3 > form > input[type=text] {
+#cat_mg_w .itgc_grid3 > form > input[type=text] {
 	width: 131.5px;
 }
 
 
-#cat_form_management #new{
-	padding-right: 125px;
+#cat_mg_w #new{
+	padding-right: 121px;
 }
-#cat_form_management div a img{
+#cat_mg_w div a img{
 	padding-left:5px;
 	padding-right:5px;
 }
-#cat_form_management .title,
-#cat_form_management .title a {
+#cat_mg_w .title,
+#cat_mg_w .title a {
 	font:bold 14px DefaultFont ;
 }
-#cat_form_management div .manage{
+#cat_mg_w div .manage{
 	padding-right:10px;
 	color:blue;
 	font-weight:bold;
 }
-#cat_form_management #new {
+#cat_mg_w #new {
 	margin-top: 20px;
 }
 
-#cat_form_management a.remove:before {
+#cat_mg_w a.remove:before {
 	padding: 0 8px;
 	vertical-align: middle;
 	content: "\f00d";
@@ -100,12 +100,12 @@
 	display: inline-block;
 	border-radius: 4px;
 }
-#cat_form_management a.remove:hover:before {
+#cat_mg_w a.remove:hover:before {
 	color: #f00;
 	background-color: #ddd;
 }
 
-#cat_form_management a.move-up:before {
+#cat_mg_w a.move-up:before {
 	padding: 0 10px;
 	vertical-align: middle;
 	content: "\f0d8";
@@ -115,13 +115,13 @@
 	display: inline-block;
 
 }
-#cat_form_management a.move-up:hover:before {
+#cat_mg_w a.move-up:hover:before {
 	background-color: #ddd;
 	border-radius: 4px;
 	color: #000;
 }
 
-#cat_form_management a.move-down:before {
+#cat_mg_w a.move-down:before {
 	padding: 0 10px;
 	vertical-align: middle;
 	content: "\f0d7";
@@ -131,13 +131,13 @@
 	display: inline-block;
 	margin-left: 10px;
 }
-#cat_form_management a.move-down:hover:before {
+#cat_mg_w a.move-down:hover:before {
 	background-color: #ddd;
 	border-radius: 4px;
 	color: #000;
 }
 
-#cat_form_management a.flag:before {
+#cat_mg_w a.flag:before {
 	padding: 0 8px;
     vertical-align: middle;
     content: "\f14a";
@@ -148,11 +148,11 @@
     border-radius: 4px;
     margin: -11px 0;
 }
-#cat_form_management a.flag:hover:before {
+#cat_mg_w a.flag:hover:before {
 	color: #666;
 }
 
-#cat_form_management a.customfield:before {
+#cat_mg_w a.customfield:before {
 	padding: 0 8px;
     vertical-align: middle;
     content: "\f14d";
@@ -163,7 +163,7 @@
     border-radius: 4px;
     margin: -11px -5px;
 }
-#cat_form_management a.customfield:hover:before {
+#cat_mg_w a.customfield:hover:before {
 	color: #666;
 }
 
@@ -186,7 +186,7 @@
 }
 
 
-#cat_form_management form > input[type=color] {
+#cat_mg_w form > input[type=color] {
 	height: 36px;
     width: 20px;
     position: relative;
@@ -207,6 +207,14 @@
 #cat_mg .btn-link.ccf {
 	padding-right: 4px;
 }
+
+
+#cat_mg input[name="slug"] {
+	width: 120px !important;
+}
+
+
+
 
 
 

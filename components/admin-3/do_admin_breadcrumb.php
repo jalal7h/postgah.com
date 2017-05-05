@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/22
-# 1.0
+# 2017/05/03
+# 1.1
 
 function do_admin_breadcrumb(){
 	
@@ -29,7 +29,9 @@ function do_admin_breadcrumb(){
 
 			$func_bc = substr($cp,0,-3).'_breadcrumb';
 			if( function_exists($func_bc) ){
-				$func_bc();
+				if( $func_links = $func_bc() and sizeof($func_links) ){
+					$links = array_merge( $links, $func_links );
+				}
 				
 			} else {
 				if( $_REQUEST['do'] == 'form' ){

@@ -1,5 +1,9 @@
 <?
 
+# jalal7h@gmail.com
+# 2017/05/01
+# 1.1
+
 function listmaker_form_element_this_toggle( $info ){
 
 	if(! $info['TitleInTag'] ){
@@ -8,7 +12,7 @@ function listmaker_form_element_this_toggle( $info ){
 		$c.= $info['PreTab']."<span class=\"lmfe_tnit\"></span>\n";		
 	}
 
-	$c.= $info['PreTab']."<span>\n";
+	$c.= $info['PreTab']."<span class=\"lmfe_toggle_".$info['name']."\">\n";
 
 	$c.= "\t".$info['PreTab']."<input type=\"jtoggle\" ".
 		"name=\"".$info['name'].( $info['ArrayInput'] ? '[]' : '' )."\" ".

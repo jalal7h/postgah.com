@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/29
-# 1.4
+# 2017/04/30
+# 1.5
 
 function layout_mg_layer_form(){
 	
@@ -80,12 +80,12 @@ function layout_mg_layer_form(){
 
 			<div>
 				<input type="text" placeholder="<?=__('عنوان لایه')?>" name="name" value="<?=$rw['name']?>" >
-				<? if( is_column( 'page_layer', 'hide_name' ) ){ ?>
+				<?if( is_column('page_layer', 'hide_name') and ( $rw['func'] == 'layout_post' ) ):?>
 				<div class="jtoggle_w">
 					<input type="jtoggle" name="hide_name" value="<?=intval($rw['hide_name'])?>">
 					<span class="title"><?=lmtc('page_layer:hide_name')?></span>
 				</div>
-				<? } ?>
+				<?endif?>
 			</div>
 
 			<?=ff("hr")?>

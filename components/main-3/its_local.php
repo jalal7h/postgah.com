@@ -1,17 +1,18 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/02
-# 1.0
+# 2017/05/04
+# 1.1
 
 function its_local(){
 	
 	// return false;
 
-	if( $_SERVER['SERVER_ADDR'] == '127.0.0.1' ){
+	if( in_array( $_SERVER['SERVER_NAME'] , [ '127.0.0.1', 'localhost' ] ) ){
 		return true;
 
 	} else {
+		echo "UU";
 		return false;
 	}
 

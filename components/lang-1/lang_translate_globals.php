@@ -90,6 +90,14 @@ add_init( function(){
 		}
 	}
 
+	# $GLOBALS['adminusertab']['ticketbox_viewUserTicketList'] = 'تیکت‌ها';
+	if( sizeof($GLOBALS['adminusertab']) ){
+		foreach( $GLOBALS['adminusertab'] as $i => $text ){
+			$GLOBALS['adminusertab'][$i] = __( $text );
+		}
+	}
+
+
 }, null );
 
 

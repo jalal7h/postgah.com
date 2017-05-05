@@ -1,7 +1,5 @@
 
 .linkify_simple {
-	background-color: gray;
-	color: black;
 	padding: 0 25px;
 	margin: -25px;
 }
@@ -13,19 +11,20 @@
 	display: block;
 }
 
-
 .linkify_simple .master { /* pushesh e link haye asli */
 	display: inline-block;
 }
 .linkify_simple .master > a { /* link haye asli */
 	display: inline-block;
+	color: white;
+	transition: 0.2s all;
 }
 .linkify_simple .master > a:hover {
-	background-color: #000;
+	background-color: rgba(0, 0, 0, 0.3);
 	color: white;
 }
 
-.linkify_simple .sub_w { /* div haye pishesh e sub */
+.linkify_simple .sub_w { /* div haye pushesh e sub */
 	display: none;
 	background-color: #ccc;
 	position: absolute;
@@ -36,11 +35,19 @@
 	display: block;
 }
 
-.linkify_simple .sub { /* div haye pishesh e sub */
+.linkify_simple .sub {
 	display: block;
 }
 .linkify_simple .sub a { /* link haye sub */
-	display: inline-block;
+	display: block;
+	white-space: nowrap;
+}
+
+.linkify_simple .sub:hover {
+	background-color: rgba(0, 0, 0, .2);
+}
+.linkify_simple .sub:hover a {
+	color: white;
 }
 
 

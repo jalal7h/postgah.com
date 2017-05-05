@@ -28,6 +28,10 @@ function linkify_mg_this_form(){
 		$list_of_pages_in_select.= "<option value='".layout_link($rw_page)."::".$rw_page['name']."' >".$rw_page['name']."</option>";
 	}
 	
+	if( is_component('postadmin') ){
+		$list_of_posts_in_select = postadmin_list_of_posts_in_select();
+	}
+	
 
 	## -------------------------------------------------
 	echo listmaker_form('
@@ -37,7 +41,9 @@ function linkify_mg_this_form(){
 			"switch" => "do1",
 		!]
 			
-			[!"select:list_of_pages_in_select","option"=>"'.$list_of_pages_in_select.'"!]
+			[!"select:list_of_pages_in_select","Pages","option"=>"'.$list_of_pages_in_select.'"!]
+			'.( is_component('postadmin') ? 
+				'[!"select:list_of_posts_in_select","Posts","option"=>"'.$list_of_posts_in_select.'"!]' : '' ).'
 
 			<hr>
 

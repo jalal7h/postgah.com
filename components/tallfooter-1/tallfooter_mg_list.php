@@ -73,6 +73,12 @@ function tallfooter_mg_list_theType( $rw ){
 		case 'social':
 			return __('جامعه مجازی');
 		
+		case 'nl':
+			return __('خبرنامه');
+		
+		case 'seo':
+			return __('sitemap و rss');
+		
 		default:
 			return __('نامشخص');
 		

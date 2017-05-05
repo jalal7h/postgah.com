@@ -1,5 +1,9 @@
 <?
 
+# jalal7h@gmail.com
+# 2017/05/01
+# 1.0
+
 function nl_mg_send_form(){
 
 	switch ($_REQUEST['do']) {
@@ -19,7 +23,9 @@ function nl_mg_send_form(){
 		
 		<div class="te-div">
 			<div><?=__('متن خبرنامه')?></div>
-			<textarea name="text" id="<?=__FUNCTION__?>_text"></textarea>
+			<script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>
+			<script type="text/javascript" src="<?=_URL?>/components/layout-1/tinymce-set.js" ></script>
+			<textarea name="text" class="tinymce" id="<?=__FUNCTION__?>_text"></textarea>
 		</div>
 	
 		<label>

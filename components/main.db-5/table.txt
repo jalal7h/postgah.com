@@ -1,8 +1,8 @@
 
 
 # jalal7h@gmail.com
-# 2017/01/21
-# 1.14
+# 2017/05/03
+# 1.15
 
 /*
 
@@ -14,6 +14,8 @@ table( "esm e table" , "id e record" , "field i ke ma mikhaim azash ( ino age na
 # table( "posts", $id , "fullname");
 # table( "posts" $id );
 # table( "posts" $username , "fullname" , "username" );
+
+# age vorudie where, value array bud, = dar nazar nemigire, balke IN (value) dar nazar migire
 
 
 * the new version * * * 

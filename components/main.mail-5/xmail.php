@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/19
-# 3.4
+# 2017/05/01
+# 3.5
 
 function xmail( $to, $subject, $text, $from='', $html=0, $mssp_id=0 ){
 
@@ -24,9 +24,9 @@ function xmail( $to, $subject, $text, $from='', $html=0, $mssp_id=0 ){
 
 	# 
 	# force html
-	if( defined('xmail_force_html') and ( xmail_force_html == true ) ){
+	if( xmail_force_html === true ){
 		$text = '<html><body>
-		<p style="color:#444;font-size:14px;font-family:tahoma;direction:'._rtl.';">'.nl2br($text).'</p>
+		<p style="color:#444;font-size:14px;font-family:tahoma;direction:'.land_dir.';">'.nl2br($text).'</p>
 		</body></html>';
 		$html = 1;
 	}

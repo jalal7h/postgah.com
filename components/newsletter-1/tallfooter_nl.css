@@ -1,0 +1,50 @@
+
+.tallfooter_nl .text_1 {
+	font-size: 18px;
+	padding-bottom: 5px;
+    /* text-transform: uppercase; */
+}
+
+.tallfooter_nl form {
+	position: relative;
+	width: 300px;
+	display: inline-block;
+}
+.tallfooter_nl form input[name="email"] {
+	transition: 0.3s all;
+	width: 300px;
+	box-shadow: 0 0 15px black;
+	border: 0px;
+	font-family: Monospace,Raleway;
+
+}
+.tallfooter_nl form input[name="email"]:focus {
+	padding: 6px 12px;
+}
+.tallfooter_nl form input[type="submit"] {
+	position: absolute; top: 3px;
+    padding: 1px 8px 1px;
+	transition: 0.3s all;
+	text-shadow: 0 0 2px black;
+	font-family: Raleway;
+}
+.tallfooter_nl form input[type="submit"]:hover {
+	opacity: 0.7 !important;
+}
+
+.tallfooter_nl .prompt {
+	display: inline-block;
+	padding-right: 10px;
+	color: yellow;
+	opacity: 0;
+	transition: 0.3s all;
+}
+
+.tallfooter_nl .text_2 {
+	font-size: 13px;
+	padding-top: 8px;
+}
+
+
+
+

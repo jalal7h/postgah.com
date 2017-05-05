@@ -1,6 +1,10 @@
 <?
 
-$GLOBALS['block_layers']['pgItem_item_list'] = 'لیست آیتم‌ها';
+# jalal7h@gmail.com
+# 2017/05/04
+# 1.0
+
+add_layer( 'pgItem_item_list', 'لیست آیتم‌ها', 'center', $repeat='0' );
 
 function pgItem_item_list( $rw_pagelayer ){
 	

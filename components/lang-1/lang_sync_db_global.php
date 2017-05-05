@@ -91,6 +91,12 @@ function lang_sync_db_global(){
 		}
 	}
 	
+	# $GLOBALS['billing_method']['ticketbox_viewUserTicketList'] = 'تیکت‌ها';
+	if( sizeof($GLOBALS['adminusertab']) ){
+		foreach( $GLOBALS['adminusertab'] as $i => $text ){
+			$arr[ ":".lang_hash($text) ] = $text;
+		}
+	}
 
 
 	return $arr;

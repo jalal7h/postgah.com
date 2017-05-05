@@ -12,7 +12,7 @@
 .tallfooter ,
 .tallfooter * {
 	box-sizing: border-box;
-	line-height: 20px !important;
+	/* line-height: 20px !important; */
 }
 
 .tallfooter a {

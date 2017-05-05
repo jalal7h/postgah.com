@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/31
-# 1.0
+# 2017/05/01
+# 1.1
 
 function tallfooter_mg_form_linkify(){
 	
@@ -13,25 +13,26 @@ function tallfooter_mg_form_linkify(){
 
 	# -------------------------------------------------
 	echo listmaker_form('
-		[!
-			"table" => "tallfooter" ,
-			"action" => "./?page=admin&cp=".$_REQUEST["cp"],
-			"name" => "'.__FUNCTION__.'" ,
-			"class" => "'.__FUNCTION__.'" ,
-			"switch" => "do",
-		!]
+		
+		[!"table" => "tallfooter"!]
 			
 			[!"name:name*"!]
 			[!"hidden:type"=>"linkify"!]
 			[!"select:grid*","dir"=>"ltr","option"=>'.$grid_option.'!]
-			[!"select:content*","'.__('جعبه پیوند').'","option"=>listmaker_option("linkify_config","`flag`=1")!]
+			[!"select:content*","'.__('جعبه پیوند').'","option"=>listmaker_option("linkify_config","`flag`=1",true)!]
 			
 			<hr>
-			
-		[!"submit:'.__('ثبت').'"!]
+
+		[!submit!]
+
 	');
 	# -------------------------------------------------
 
 }
+
+
+	
+
+
 
 

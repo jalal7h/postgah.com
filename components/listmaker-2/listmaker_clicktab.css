@@ -19,7 +19,7 @@
 	border-radius: 4px;
 }
 .listmaker_clicktab > .r > .name:hover {
-	background-color: #A90000;
+	/* background-color: #a90000; */
 	color: white;
 }
 .listmaker_clicktab > .r > .text {

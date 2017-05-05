@@ -23,19 +23,17 @@ ru onvan mizani matn dide mishe
 
 
 function listmaker_clicktab($list){
-	$c = '<div class="listmaker_clicktab">';
-	if(!sizeof($list)){
-		e("error on listmaker_clicktab - ".__LINE__);
-	} else foreach($list as $k => $tab){
-		$c.= '
-		<div class="r">
-			<div class="name cl_l1r_hover" >'.$tab['name'].'</div>
-			<div class="text" >'.nl2br($tab['text']).'</div>
-		</div>';
+	
+	if(! sizeof($list) ){
+		return e();
+	
+	} else {
+		foreach( $list as $k => $tab ){
+			$list[$k]['text'] = nl2br($list[$k]['text']);
+		}
+		return template_engine( 'listmaker_clicktab', [ 'list' => $list ] );
 	}
-	$c.= '</div>';
-
-	return $c;
+	
 }
 
 

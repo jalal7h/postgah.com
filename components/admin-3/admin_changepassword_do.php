@@ -1,13 +1,15 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/23
-# 1.0
+# 2017/05/03
+# 1.1
 
-$GLOBALS['do_action'][] = 'admin_changepassword_do';
+add_action('admin_changepassword_do');
 
 function admin_changepassword_do(){
 	
+	$_REQUEST['cell'] = urlencode($_REQUEST['cell']);
+
 	if(! $user_id = admin_logged() ){
 		ed();
 	
