@@ -9,7 +9,6 @@ add_layer( 'pgShop_view', 'فروشگاه ::‌ لیست محصولات', 'cente
 function pgShop_view( $rw_pl ){
 
 	$path = _SHOP_PATH;
-	$path = 'hpe.postgah.com';
 
 	if(! $rw_shop = table( 'shop', [ 'path'=>$path ] )[0] ){
 		e();
@@ -41,7 +40,7 @@ function pgShop_view( $rw_pl ){
 
 				$rw_item_s[$i]['link'] = pgItem_link( $rw_item );
 				$rw_item_s[$i]['image'] = pgItem_image( $rw_item, 1, "300x300" );
-				$rw_item_s[$i]['cost'] = 129000;
+				// $rw_item_s[$i]['cost'] = 129000;
 				if( $rw_item_s[$i]['cost'] == 0 ){
 					$rw_item_s[$i]['cost'] = 'مجانی';
 				} else {
