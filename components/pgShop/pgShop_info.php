@@ -8,7 +8,7 @@ add_layer( 'pgShop_info', 'فروشگاه ::‌ جزئیات', 'side', $repeat='
 
 function pgShop_info( $rw_pl ){
 
-	if(! $rw_shop = table( 'shop', [ 'path'=>_SHOP_PATH ] )[0] ){
+	if(! $rw_shop = table( 'shop', [ 'path'=>_DOMAIN ] )[0] ){
 		e();
 		// no shop found
 
