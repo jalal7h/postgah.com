@@ -8,9 +8,7 @@ add_layer( 'pgShop_view', 'فروشگاه ::‌ لیست محصولات', 'cente
 
 function pgShop_view( $rw_pl ){
 
-	$path = _SHOP_PATH;
-
-	if(! $rw_shop = table( 'shop', [ 'path'=>$path ] )[0] ){
+	if(! $rw_shop = table( 'shop', [ 'path'=>_DOMAIN ] )[0] ){
 		e();
 		// no shop found
 	
@@ -40,9 +38,9 @@ function pgShop_view( $rw_pl ){
 
 				$rw_item_s[$i]['link'] = pgItem_link( $rw_item );
 				$rw_item_s[$i]['image'] = pgItem_image( $rw_item, 1, "300x300" );
-				// $rw_item_s[$i]['cost'] = 129000;
+
 				if( $rw_item_s[$i]['cost'] == 0 ){
-					$rw_item_s[$i]['cost'] = 'مجانی';
+					$rw_item_s[$i]['cost'] = '';
 				} else {
 					$rw_item_s[$i]['cost'] = billing_format( $rw_item_s[$i]['cost'] );
 				}

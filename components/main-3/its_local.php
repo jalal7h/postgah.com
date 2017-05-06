@@ -12,6 +12,7 @@ function its_local(){
 		return true;
 
 	} else {
+		echo "UU";
 		return false;
 	}
 
