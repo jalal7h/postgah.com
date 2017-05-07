@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/11
-# 1.1
+# 2017/05/06
+# 1.2
 
 function news_mg_list(){
 	
@@ -35,6 +35,7 @@ function news_mg_list(){
 	# the list
 	# --------------------------------------------
 	echo listmaker_list([
+		'head' => __('لیست %%', [ lmtc('news')[1] ] ),
 		'table' => 'news',
 		'order' => [ 'id' => 'desc' ],
 		'limit' => 5,

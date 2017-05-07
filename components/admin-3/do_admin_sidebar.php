@@ -18,7 +18,9 @@ function do_admin_sidebar(){
 	<style> #<?=$rand?>:before { content: "\f0e4" }</style>
 	<?
 
-	foreach ($GLOBALS['cmp'] as $func => $name ) {
+	// asort($GLOBALS['cmp']);
+
+	foreach( $GLOBALS['cmp'] as $func => $name ){
 		if( (! is_component('useraccess')) or useraccess( admin_logged(), $func) ){
 			do_admin_sidebar_this( $func, $name );
 		}

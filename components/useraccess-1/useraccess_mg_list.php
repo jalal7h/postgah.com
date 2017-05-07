@@ -65,13 +65,13 @@ function useraccess_mg_list(){
 	# list array // list e sotun haye list
 	$list['list_array'][] = array("head"=>lmtc("user:name"), "content" => '$rw[\'name\']');
 	$list['list_array'][] = array("head"=>lmtc("user:email"), "content" => '$rw[\'email\']');
-	$list['list_array'][] = array("head"=>lmtc("user:management_title"), "content" => '$rw[\'management_title\']');
+	$list['list_array'][] = array("head"=>lmtc("user:useraccess_title"), "content" => '$rw[\'useraccess_title\']');
 	$list['list_array'][] = array("head"=>__('زمان ثبت‌نام'), "content" => '( $rw[\'date_created\']==0 ? \''.__('نامشخص').'\' : time_inword($rw[\'date_created\']) )');
 	$list['list_array'][] = array("head"=>__('وضعیت'), "content" => 'useraccess_mg_list__status($rw)');
 
 	#
 	# search columns // az in field ha tu table search mikone
-	$list['search'] = array('name','email','tell','management_title');
+	$list['search'] = array('name','email','tell','useraccess_title');
 
 	#
 	# echo result

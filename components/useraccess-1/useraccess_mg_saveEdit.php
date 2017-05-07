@@ -15,7 +15,7 @@ function useraccess_mg_saveEdit(){
 
 		#
 		# set array
-		$set_array = [ 'name', 'management_title', 'cell' ];
+		$set_array = [ 'name', 'useraccess_title', 'cell' ];
 
 		#
 		# take care of password

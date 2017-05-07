@@ -11,7 +11,10 @@
 .user_register_form a:hover {
 	color: #d00;
 }
-.user_register_form input {
+.user_register_form input[type="text"],
+.user_register_form input[type="email"],
+.user_register_form input[type="number"],
+.user_register_form input[type="password"] {
 	font: normal 16px DefaultFont;
 	padding: 10px;
 	border: 1px solid #ccc;
@@ -38,8 +41,8 @@
 .user_register_form input[type=submit] {
 	margin: 10px 0px !important;
 	width: auto;
-	border-radius: 6px;
-    padding: 10px 20px;
+	/* border-radius: 6px; */
+    /* padding: 10px 20px; */
 }
 
 .user_register_form .head {

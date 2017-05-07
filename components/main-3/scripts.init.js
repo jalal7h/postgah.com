@@ -39,7 +39,7 @@ $(document).ready(function() {
 
 
 	// numeric force input
-    $(".numeric").keydown(function(e) {
+	$("body").delegate('.numeric', 'keydown', function(e) {
     
         // .
         if( e.keyCode == 190 ){
