@@ -3,6 +3,5 @@ User-agent: *
 Disallow: /data/
 Disallow: /components/
 Disallow: /modules/
-Disallow: /templates/
 
 
