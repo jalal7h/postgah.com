@@ -1,8 +1,8 @@
 <?
 
 # taghipoor.meysam@gmail.com
-# 2016/12/11
-# 1.1
+# 2017/05/09
+# 1.2
 
 # echo "<div ". bookmarky( 'item', $rw_item['id'] ) ." >some text</div>";
 
@@ -13,7 +13,7 @@ function bookmarky( $table_name, $table_id ){
 		'class="'.	
 			__FUNCTION__.' '.
 			( user_logged() ? 'logged ' : 'logout ' ).
-			( bookmarky_ifAdded( $table_name, $table_id ) ? 'active ' : '' ).
+			( bookmarky_ifAdded( $table_name, $table_id ) ? 'active cl_l1_before ' : '' ).
 		'" '.
 		
 		( user_logged() ? 'title="'.bookmarky_result( $table_name, $table_id ) : '' ).

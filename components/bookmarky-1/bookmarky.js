@@ -1,7 +1,7 @@
 
 // taghipoor.meysam@gmail.com
-// 2016/12/11
-// 1.1
+// 2017/05/09
+// 1.2
 
 jQuery(document).ready(function($) {
 	
@@ -10,7 +10,7 @@ jQuery(document).ready(function($) {
 
 		if( $(this).hasClass('logged') ){
 
-			$(this).toggleClass('active');
+			$(this).toggleClass('cl_l1_before active');
 
 			//آیدی آیتمی که روش کلیک شده ، تا نتیجه در اون دیو قرار بگیره
 			id = $(this).attr('id');

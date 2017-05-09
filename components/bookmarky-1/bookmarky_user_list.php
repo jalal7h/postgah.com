@@ -7,19 +7,20 @@
 add_userpanel_item( 'bookmarky_user_list', 'bookmark', 'علاقه مندی ها', '004' );
 
 function bookmarky_user_list(){	
-	
+
+
 	#
 	# action
-	switch ($_REQUEST['do1']) {
-		
+	switch ($_REQUEST['do']) {
 		case 'remove':
 			bookmarky_user_remove();
 			break;
 	}
 
+
 	#
 	# list
-
+	$list['head'] = __('لیست %%', [ lmtc('bookmarky')[1] ] );
 	$list['name'] = __FUNCTION__;
 	$list['query'] = " SELECT * FROM `bookmarky` WHERE `user_id`='".user_logged()."' ORDER BY `id` ASC ";
 	$list['tdd'] = 10;
@@ -27,7 +28,7 @@ function bookmarky_user_list(){
 	#
 	# base url is needed in version upper 1.2 
 	# ** address base e in list
-	$list['base_url'] = '_URL."/?page='.$_REQUEST['page'].'&do=bookmarky_user_list"';
+	$list['base_url'] = '_URL."/?page='.$_REQUEST['page'].'&do_slug='.$_REQUEST['do_slug'].'"';
 
 	#
 	# actions 

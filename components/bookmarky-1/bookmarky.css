@@ -28,7 +28,6 @@
 }
 .bookmarky.active:before {
 	content: "\f004";
-	color: #ff6c86;
 	transform: scale( 1.2 );
 }
 
