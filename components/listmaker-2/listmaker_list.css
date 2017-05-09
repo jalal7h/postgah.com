@@ -274,11 +274,15 @@
 	display: inline-block;
 	width: 100%;
 }
-.listmaker_list_form .list_addnew_url {
-	position: relative;
-	left: 6px;
-    top: 0px;
+
+.lmfe_newButton {
+    position: relative;
+    left: 0px;
+    top: 16px;
     z-index: 3;
+    float: left;
+    padding-bottom: 7px;
+    border-radius: 2px;
 }
 
 iframe[name="_hidden"] {

@@ -51,6 +51,7 @@ function linkify_mg(){
 	# 
 	# the list
 	$table = 'linkify_config';
+	$list['head'] = 'Linkboxes';
 	$list['name'] = __FUNCTION__;
 	$list['query'] = " SELECT * FROM `$table` WHERE 1 ORDER BY `id` DESC ";
 	

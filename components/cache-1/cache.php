@@ -9,6 +9,7 @@
 
 
 # cache( "make", __FUNCTION__.$rw_pagelayer, "some_content" );
+# cacle( "make", $some_key, $some_value );
 
 # cache( "make", "[cat_id,p,ccf_*]", "some_content" );
 # cache( "hit", "the_key", "3600/3600second/10minute/6hour/2day/3week/3month/3season/1year/null" );

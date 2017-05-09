@@ -18,7 +18,7 @@ jQuery(document).ready(function($) {
 	// run tooltip
 	mouse_left = 0;
 	mouse_top = 0;
-	$( document ).on( "mousemove", function( e ) {
+	$(document).on( "mousemove", function( e ) {
 		mouse_left = e.pageX;
 		mouse_top = e.pageY;
 		// cl( "pageX: " + e.pageX + ", pageY: " + e.pageY );

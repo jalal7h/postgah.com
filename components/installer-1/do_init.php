@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/31
-# 1.0
+# 2017/05/09
+# 1.1
 
 if( debug === true ){
 	add_init( 'install_init' );
@@ -10,7 +10,9 @@ if( debug === true ){
 
 function install_init(){
 
-	Installer::init();
+	if( its_local() ){
+		Installer::init();
+	}
 
 }
 
