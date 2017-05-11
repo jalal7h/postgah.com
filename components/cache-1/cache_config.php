@@ -1,17 +1,17 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2016/12/21
-# 1.2
+# 2017/05/10
+# 1.0
 
-# -spi-
+# --spi--
 
-define( '_cache_flag', ( defined('cache') ? cache : false ) );
-define( '_cache_dir', 'data/cache' );
-define( '_cache_debug', false );
+define( 'cache_type', 'redis' ); // file / redis / memcached
 
-
-
-
-
+#
+# redis
+define( 'cache_redis_server', null );
+define( 'cache_redis_port', null );
+define( 'cache_redis_password', null );
+define( 'cache_redis_database', null );
 
