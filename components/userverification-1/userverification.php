@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/03/12
-# 1.0
+# 2017/05/11
+# 1.2
 
 add_layer( 'userverification', 'تایید شناسه کاربر', 'center', $repeat='0' );
 
@@ -22,7 +22,8 @@ function userverification(){
 
 	} else {
 
-		$verify_back = redis( 'userverification_init_'.$verify_back );
+		$cache_key = 'userverification_init_'.$verify_back;
+		$verify_back = cache( 'hit', $cache_key, "24hours" );
 		$func = 'userverification_'.$its;
 		$func( str_dec($username), $verify_back );
 

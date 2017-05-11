@@ -1,55 +1,64 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/08/31
-# 1.0
+# 2017/05/10
+# 2.0
 
-# cache( $task, $key, $value="", $date=null ) 
-# $task [ make / hit / remove ]
-
+# $task [ make / hit / remove / pop ]
 
 # cache( "make", __FUNCTION__.$rw_pagelayer, "some_content" );
 # cacle( "make", $some_key, $some_value );
 
-# cache( "make", "[cat_id,p,ccf_*]", "some_content" );
+# cache( "make", "[cat_id,p,ccf_*]", "some_content" ); // $_REQUEST['cat_id'].$_REQUEST['p']....
 # cache( "hit", "the_key", "3600/3600second/10minute/6hour/2day/3week/3month/3season/1year/null" );
 # cache( "remove", "the_key" );
 
-/*
+# ..............................
 
-$cache_key = "[cat_id,ccf_*]";
+# $cache_key = "[cat_id,ccf_*]";
 
-if( $cache_hit = cache( "hit", $cache_key, "2hours" ) ){
-	echo $cache_hit;
-	
-} else {
-	$cache_value = "something";
-	echo cache( "make", $cache_key, $cache_value );
-}
-
-*/
+# if( $cache_hit = cache( "hit", $cache_key, "2hours" ) ){
+# 	echo $cache_hit;
+#
+# } else {
+#	$cache_value = "something";
+#	echo cache( "make", $cache_key, $cache_value );
+# }
 
 /*README*/
 
 function cache( $task, $key, $value_or_timeout=""){
 	
-	if( _cache_flag===true ){
+	if( cache === true ){
 		
 		$key = cache_keycheck( $key );
+
+		$class = 'Cache' . ucfirst(cache_type);
+		if(! class_exists($class) ){
+			dg('cache type '.cache_type.' not found!');
+			$class = 'CacheFile';
+		}
 
 		switch ($task) {
 			
 			case 'remove':
-				return cache_remove( $key );
+				return $class::Remove( $key );
 				
 			case 'make':
 				$value = $value_or_timeout;
-				return cache_make( $key, $value );
+				return $class::Make( $key, $value );
 
 			case 'hit':
 				$timeout = $value_or_timeout;
-				return cache_hit( $key, $timeout );
-			
+				return $class::Hit( $key, $timeout );
+
+			case 'pop':
+				$timeout = $value_or_timeout;
+				if( $value = $class::Hit( $key, $timeout ) ){
+					$class::Remove( $key );
+				}
+				return $value;
+
 		}
 
 	} else if( $task == 'make' ){

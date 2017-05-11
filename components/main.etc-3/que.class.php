@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/04/02
-# 1.1
+# 2017/05/10
+# 1.2
 
 /**
 * que : some place to push some content, and use it later
@@ -14,7 +14,7 @@ class que {
 	}
 	
 	public function ppush( $name, $value ){
-		redis( $name, $value );
+		cache( "make", session_id().$name, $value );
 	}
 
 	public static function is( $name ){
@@ -22,10 +22,8 @@ class que {
 			return true;
 		} else if( $_SESSION['que'] and array_key_exists($name, $_SESSION['que']) ){
 			return true;
-		} else if( redis($name) ){
-			return true;
 		} else {
-			return false;
+			return cache( "hit", session_id().$name, "1hour" );
 		}
 	}
 
@@ -41,8 +39,7 @@ class que {
 			unset( $_SESSION['que'][ $name ] );
 			return $value;
 			
-		} else if( $value = redis($name) ){
-			redis_remove( session_id() . $name );
+		} else if( $value = cache( "pop", session_id().$name ) ){
 			return $value;
 
 		} else {
