@@ -4,12 +4,12 @@
 # 2016/08/24
 # 1.1
 
-function multi_size_pic( $file_name, $nWD, $nHT ){
-	
+function multi_size_pic( $file_name, $new_w, $new_h, $cut_flag=null ){
+
 	if(! file_exists($file_name) ){
 		return false;
 	
-	} else if( $nWD==0 or $nHT==0 ){
+	} else if( $new_w==0 or $new_h==0 ){
 		return false;
 	}
 
@@ -27,7 +27,7 @@ function multi_size_pic( $file_name, $nWD, $nHT ){
 	## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ##
 	} else {
 		
-		$sha_name = sha1( $file_name."-".$nWD."-".$nHT ).strrchr($file_name,'.');
+		$sha_name = sha1( $file_name."-".$new_w."-".$new_h."-".intval($cut_flag) ).strrchr($file_name,'.');
 		
 		if(! file_exists($PIC_tmp_dir) ){
 			mkdir($PIC_tmp_dir);
@@ -52,12 +52,13 @@ function multi_size_pic( $file_name, $nWD, $nHT ){
 		}
 
 		$PIC_tmp = $PIC_tmp_dir."/".$sha_name;
+		$PIC_tmp_cut = $PIC_tmp_dir."/cut_".$sha_name;
 
 	}
 	## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ##
 		
 	$PIC = _URL."/".$PIC;
-	
+
 	#
 	# resize if needed
 	if( file_exists($PIC_tmp) ){
@@ -65,37 +66,57 @@ function multi_size_pic( $file_name, $nWD, $nHT ){
 	
 	} else {
 		
-		$SZ = getimagesize($PIC);
-		$SW = $SZ[0];
-		$SH = $SZ[1];
+		
+		####################################################################
 		#
-		if( $SW-$nWD < $SH-$nHT ){
-			$CW=$nWD;
-			$CH= round($CW * ($SH / $SW));
-		
-		} else {
-			$CH=$nHT;
-			$CW= round($CH * ($SW / $SH));
-		}
-		
-		if($CH > $nHT){
-			$CH = $nHT;
-			$CW = round($CH * ($SW / $SH));
-		}
-		
-		if($CW > $nWD){
-			$CW=$nWD;
-			$CH= round($CW * ($SH / $SW));
+		# inputs ( $new_w; $new_h; $image_w; $image_h; )
+
+		list( $image_w, $image_h ) = getimagesize($PIC);
+		$new_z = floatval( $new_w / $new_h );
+		$image_z = floatval( $image_w / $image_h );
+
+		if(  $cut_flag  and  $new_z != $image_z  ){ // cut darim
+
+			if( $new_z > $image_z ){ // cut ariztare
+				// cut arzesh bishtar e, arz ro kamel migirim, ertefa ro kam mikonim
+				$cut_w = $image_w;
+				$cut_h = intval( floatval( $image_w / $new_z ) );
+
+			} else { // cut deraztare
+				// cut arzesh kamtar e, ertefa ro kamel migirim, arz ro kam mikonim
+				$cut_h = $image_h;
+				$cut_w = intval( floatval( $image_h * $new_z ) );
+			}
+
+			$resize_w = $new_w;
+			$resize_h = $new_h;
+			
+		} else { // cut nadarim
+
+			if( $image_z > $new_z ){ // ax ariztar a frame e resize hast
+				$resize_w = $new_w;
+				$resize_h = $new_w / $image_z;
+
+			} else {
+				$resize_h = $new_h;
+				$resize_w = $new_h * $image_z;
+			}
+
 		}
 
-		if(! resize_gd($PIC, '', $PIC_tmp, $CW, $CH, false) ){
-			echo __FUNCTION__." : ".__LINE__;
-			return false;
-	
-		} else {
-			// echo "resize process on ".$PIC_tmp; die();
-		}
+		# outputs ( $cut_w; $cut_h; $resize_w; $resize_h; )
+		#
+		####################################################################
 
+		if( $cut_flag ){
+			resize_cut( $PIC, $cut_w, $cut_h, $PIC_tmp_cut );
+			resize_gd( $PIC_tmp_cut, '', $PIC_tmp, $resize_w, $resize_h, false );
+			unlink( $PIC_tmp_cut );
+		
+		} else {
+			resize_gd( $PIC, '', $PIC_tmp, $resize_w, $resize_h, false );			
+		}
+		
 	}
 
 	#
@@ -139,7 +160,7 @@ function multi_size_pic( $file_name, $nWD, $nHT ){
 	@header("Last-Modified: {$mod_gmt}");
 	@header("Cache-Control: public, max-age={$expires}");
 	@header("Pragma: !invalid");
-	echo $func_show($IM);
+	$func_show($IM);
 	imagedestroy($IM);
 	
 	if(! $PIC_tmp_dir ){

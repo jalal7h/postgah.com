@@ -1,7 +1,7 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/05/11
+# 2017/05/14
 # 1.1
 
 function userverification_init( $username, $verify_back, $its=null ){
@@ -23,7 +23,7 @@ function userverification_init( $username, $verify_back, $its=null ){
 	$cache_key = md5x( $verify_back, 12 ); // fixed in time
 	cache( 'make', 'userverification_init_'.$cache_key, $verify_back );
 	
-	jsgo(  _URL.'/verify/'.$its.'/'.str_enc($username).'/'.$redis_key  );
+	jsgo(  _URL.'/verify/'.$its.'/'.str_enc($username).'/'.$cache_key  );
 
 }
 

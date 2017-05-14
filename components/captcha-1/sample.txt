@@ -1,5 +1,0 @@
-
-
-<img src="<?=_URL?>/captcha-admin-login.png&nocache=<?=rand(10000000,99999999)?>" >
-
-

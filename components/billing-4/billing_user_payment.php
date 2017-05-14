@@ -45,7 +45,7 @@ function billing_userpanel_payment(){
 	# wallet png
 	if( lang_code ){
 		$png_name = 'billing_wallet-'.lang_code.'.png';
-		if(! imgp( $png_name ) ){
+		if(! image_list( $png_name ) ){
 			$png_name = 'billing_wallet-en.png';
 		}
 	}

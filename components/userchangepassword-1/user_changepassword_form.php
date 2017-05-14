@@ -11,13 +11,13 @@ function user_changepassword_form(){
 	echo "<div class=".__FUNCTION__."_container >
 		<div class=d01>".__('تغییر %%',[lmtc('user:password')])."</div>";
 
-	switch( $_REQUEST['do2'] ){
+	switch( $_REQUEST['do'] ){
 		
 		case 'save':
 			return user_changepassword_save();
 
 		default :
-			echo "<form id=".__FUNCTION__." method=post action='"._URL."/?page=".$_REQUEST['page']."&do=".$_REQUEST['do']."&do2=save' onsubmit='return checkform_uchform();' name=uchform >
+			echo "<form id=".__FUNCTION__." method=post action='"._URL."/?page=".$_REQUEST['page']."&do_slug=".$_REQUEST['do_slug']."&do=save' onsubmit='return checkform_uchform();' name=uchform >
 			<input type='hidden' name='email' value='$email'>
 			<input type='hidden' name='h' value='".$_REQUEST['h']."'>
 

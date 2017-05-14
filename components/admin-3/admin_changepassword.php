@@ -29,7 +29,7 @@ function admin_changepassword(){
 			<div class="head">'.__('پروفایل مدیریت').'</div>
 	
 			[!"email:email"!]
-			[!"name:name"!]
+			[!"'.__('نام').'", "name:name"!]
 			[!"cell:cell"!]
 			[!"password:password"=>"************"!]
 			

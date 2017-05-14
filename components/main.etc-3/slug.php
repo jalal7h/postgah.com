@@ -1,10 +1,10 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/31
+# 2017/05/13
 # 1.0
 
-add_slug( 'image_list/$', './?do_action=imgp_echo&filename=$1' );
+add_slug( 'image_list/$', './?do_action=image_list&filename=$1' );
 
 
 
