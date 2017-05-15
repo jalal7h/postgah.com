@@ -7,7 +7,8 @@
 /**
 * 
 */
-class slugInDB {
+class slugInDB
+{
 	
 
 	public static function set( $name, $slug, $path ){

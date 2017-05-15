@@ -49,7 +49,7 @@ function pgShop_view( $rw_pl ){
 
 			}
 
-			$paging = listmaker_paging( " SELECT * FROM `item` WHERE `id` IN (".implode( ', ', $item_id_arr ).") AND `flag`='2' AND `expired`='0' " , _URL."/?&p=%%", $tdd );
+			$paging = listmaker_paging( " SELECT * FROM `item` WHERE `id` IN (".implode( ', ', $item_id_arr ).") AND `flag`='2' AND `expired`='0' " , _URL."/hpe?&p=%%", $tdd );
 
 			echo template_engine( 'pgShop_view', [ 'shop_name'=>$shop_name, 'items'=>$rw_item_s, 'paging'=>$paging ] );
 

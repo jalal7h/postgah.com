@@ -1,44 +1,55 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/04/26
-# 1.6
+# 2017/05/15
+# 1.7
 
 class Slug
 {
 
     public static function translate(){
-        if (_URI == '/') {
+
+        $URI = substr(_URI, 0, 1) == '/' ? substr(_URI, 1) : _URI;
+        list( $URI_DIR, $URI_PAR ) = explode( '?', $URI );
+
+        define( '_URI_DIR', $URI_DIR );
+        define( '_URI_PAR', $URI_PAR );
+
+        if( _URI_DIR == '/' ){
             return true;
-        } elseif (strstr(_URI, '?')) {
-            return true;
-            
+        // } elseif( strstr(_URI, '?') ){
+        //     return true;
+        
         #
         # file slug
-        } elseif (self::file()) {
+        } else if( self::file() ){
             return true;
 
         #
         # database slug
-        } elseif (self::database()) {
+        } else if( self::database() ){
             return true;
-        } elseif (query_string_set() == '') {
-            define('_PAGE', ($_REQUEST['page'] ? $_REQUEST['page'] : 1));
+        
+        } else if( query_string_set() == '' ){
+            define( '_PAGE', ( $_REQUEST['page'] ? $_REQUEST['page'] : 1 ) );
             d404();
+
         } else {
             return true;
         }
+
     }
 
 
     private static function file(){
+        
         uksort($GLOBALS['slug'], function ($a, $b) {
             return strlen($b)-strlen($a);
         });
 
-        if (sizeof($GLOBALS['slug'])) {
-            foreach ($GLOBALS['slug'] as $slug_string => $slug_path) {
-                if ($path = self::pattern_matches($slug_string, $slug_path)) {
+        if( sizeof($GLOBALS['slug']) ){
+            foreach( $GLOBALS['slug'] as $slug_string => $slug_path ){
+                if( $path = self::pattern_matches($slug_string, $slug_path) ){
                     self::pattern_set($path);
                     return true;
                 }
@@ -46,11 +57,13 @@ class Slug
         }
 
         return false;
+
     }
     
 
     private static function database(){
-        $the_slug = substr(_URI, 1);
+        
+        $the_slug = _URI_DIR;
         $the_slug = urldecode($the_slug);
         
         if (! $path = table('slug', $the_slug, 'path', 'slug')) {
@@ -74,7 +87,7 @@ class Slug
         
         $pattern = str_replace('/', '\/', $pattern);
         $pattern = "/" . $pattern . "_END_PATTERN/U";
-        $subject = (substr(_URI, 0, 1) == '/' ? substr(_URI, 1) : _URI) . "_END_PATTERN";
+        $subject = _URI_DIR . "_END_PATTERN";
         
         preg_match_all($pattern, $subject, $matches);
         
@@ -82,19 +95,22 @@ class Slug
         // echo $subject."<hr>";
         // var_dump($matches);
         
-        if ($matches[0][0] == $subject) {
-            for ($i=1; $i<sizeof($matches); $i++) {
+        if( $matches[0][0] == $subject ){
+            for( $i=1; $i<sizeof($matches); $i++ ){
                 $path = str_replace('$'.$i, $matches[$i][0], $path);
             }
             return $path;
+        
         } else {
             return false;
         }
+
     }
 
 
     private static function pattern_set($path){
-        if (strstr($path, "?")) {
+        
+        if( strstr($path, "?") ){
             $path = explode('?', $path)[1];
         }
 
@@ -108,17 +124,22 @@ class Slug
                 $_REQUEST[ $key ] = $value;
             }
         }
+
     }
 
 
     public static function getSlugByURL( $query_string ){
-        if( $slug = self::getSlugByURLFromFile( $query_string ) ){
+        
+        if( $slug = self::getSlugByURLFromFile($query_string) ){
             return $slug;
-        } elseif( $slug = self::getSlugByURLFromDB( $query_string ) ){
+        
+        } elseif( $slug = self::getSlugByURLFromDB($query_string) ){
             return $slug;
+        
         } else {
             return false;
         }
+
     }
 
     
@@ -157,13 +178,17 @@ class Slug
 
 
     public static function getSlugByName( $name ){
+        
         if( $slug = self::getSlugByNameFromFile( $name ) ){
             return $slug;
+        
         } else if( $slug = self::getSlugByNameFromDB( $name ) ){
             return $slug;
+        
         } else {
             return false;
         }
+
     }
 
 
@@ -232,5 +257,11 @@ class Slug
     }
 
 
-
 }
+
+
+
+
+
+
+
