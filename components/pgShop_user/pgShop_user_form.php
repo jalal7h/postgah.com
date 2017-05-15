@@ -22,28 +22,26 @@ function pgShop_user_form(){
 	$content = listmaker_form('
 		[!
 			"table" => "shop" ,
-			"action" => "./?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'",
+			"action" => "./?page='.$_REQUEST['page'].'&do_slug='.$_REQUEST['do_slug'].'",
 			"name" => "'.__FUNCTION__.'" ,
 			"class" => "'.__FUNCTION__.'" ,
-			"switch" => "do1",
 		!]
 			
-			[!"text:path*","inDiv"!]
-			[!"text:name*","inDiv"!]
-			[!"textarea:desc","inDiv"!]
-			[!"file:logo","inDiv"!]
+			[!"text:path*"!]
+			[!"text:name*"!]
+			[!"textarea:desc"!]
+			[!"file:logo"!]
 			
 			<hr>
 
-			[!"text:address","inDiv"!]
-			[!"number:phone","inDiv"!]
-			[!"toggle:flag","inDiv"!]
+			[!"text:address"!]
+			[!"number:phone"!]
+			[!"toggle:flag"!]
 			
 			<hr>
 
-			[!"submit:ثبت","inDiv"!]
+		[!submit!]
 
-		[!close!]
 	');
 
 	layout_post_box( "مشخصات فروشگاه", $content, $allow_eval=false, $framed=1 );

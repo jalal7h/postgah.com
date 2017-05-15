@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/06
-# 1.1
+# 2017/05/15
+# 1.2
 
 /*
 $rw_mssp['to'] = $to;
@@ -50,8 +50,13 @@ function xmail_remote( $rw ){
 		$mail->FromName = "no-reply";
 	}
 
+	if(! is_array($to) ){
+		$mail->AddAddress( $to );
 
-	$mail->AddAddress( $to , "" ); 
+	} else foreach( $to as $to_this ){
+		$mail->AddAddress( $to_this );
+	}
+
 	$mail->WordWrap = 50;
 
 
@@ -69,7 +74,6 @@ function xmail_remote( $rw ){
 	# content
 	$mail->Subject  =  $subject;
 	$mail->Body     =  $text;
-
 
 	#
 	# send

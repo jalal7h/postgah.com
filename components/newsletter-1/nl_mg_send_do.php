@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/05/01
-# 1.0
+# 2017/05/15
+# 1.1
 
 $GLOBALS['mss_list']['nl_mg_send_do'] = 'خبرنامه';
 
@@ -53,8 +53,9 @@ function nl_mg_send_do(){
 		}
 
 		if( $numb = $_REQUEST['numb'] ){
-			$numb = str_replace( array('،',"
-","\n","\r\n") , ",", $numb );
+			$numb = stripcslashes($numb);
+			$numb = str_replace( ['،',"
+","\n","\r\n"] , ",", $numb );
 			$numb = explode(",", $numb);
 			foreach ($numb as $k => $email) {
 				if(! $email = trim($email) ){
@@ -67,10 +68,9 @@ function nl_mg_send_do(){
 
 		$from = "noreply@"._DOMAIN;
 
-		if( sizeof($list_of_email_addresses)){
-			
-			foreach ($list_of_email_addresses as $k => $r) {
-				if(! strstr($k, '@')){
+		if( sizeof($list_of_email_addresses) ){
+			foreach( $list_of_email_addresses as $k => $r ){
+				if(! strstr($k, '@') ){
 					continue;
 				} else {
 					$list[] = $k;
