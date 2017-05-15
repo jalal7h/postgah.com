@@ -16,15 +16,19 @@ function pgShop_user_saveNew(){
 		
 	} else {
 
+		$_REQUEST['path'] = substr( $_REQUEST['path'], strlen(_DOMAIN)+1 );
+
 		# 
 		# save in db
-		$id = dbs('shop', ['path','name','desc','user_id'=>$user_id,'address','phone','flag']);
-		#
+		$id = dbs('shop', [ 'path','name','desc','user_id'=>$user_id,'address','phone','flag'=>1 ]);
 
 		#
 		# upload files
 		listmaker_fileupload( 'shop', $id );
+
 		#
+		# slug
+		slugInDB::set( 'shop-'.$id, $_REQUEST['path'], './?page=171&path='.$_REQUEST['path'] );
 
 		return true;
 

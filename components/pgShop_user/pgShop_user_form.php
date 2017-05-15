@@ -27,7 +27,7 @@ function pgShop_user_form(){
 			"class" => "'.__FUNCTION__.'" ,
 		!]
 			
-			[!"text:path*"!]
+			[!"text:path*"=>"'._DOMAIN.'/".$rw["path"]!]
 			[!"text:name*"!]
 			[!"textarea:desc"!]
 			[!"file:logo"!]

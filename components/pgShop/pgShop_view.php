@@ -8,7 +8,9 @@ add_layer( 'pgShop_view', 'فروشگاه ::‌ لیست محصولات', 'cente
 
 function pgShop_view( $rw_pl ){
 
-	if(! $rw_shop = table( 'shop', [ 'path'=>_DOMAIN ] )[0] ){
+	$_REQUEST['path'] = var_control( $_REQUEST['path'], '0-9a-z' );
+
+	if(! $rw_shop = table( 'shop', [ 'path'=>$_REQUEST['path'] ] )[0] ){
 		e();
 		// no shop found
 	

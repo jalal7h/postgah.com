@@ -16,7 +16,7 @@ function pgShop_user_list(){
 		'item' => [
 			[ "head"=>lmtc("shop:logo"), "tag"=>"th", "picture" => '$rw["logo"]' ],
 			[ "head"=>lmtc("shop:name"), '$rw["name"]' ],
-			[ "head"=>lmtc("shop:path"), '$rw["path"]' ],
+			[ "head"=>lmtc("shop:path"), '_DOMAIN."/".$rw["path"]' ],
 		],
 		// 'search' => [ "name","path","desc","address","phone" ],
 	]);

@@ -1,0 +1,7 @@
+
+.pgShop_user_list table td:nth-child(3) {
+	direction: ltr;
+	text-align: center;
+	font-family: monospace,sans-serif;
+}
+
