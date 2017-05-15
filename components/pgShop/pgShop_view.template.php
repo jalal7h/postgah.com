@@ -7,6 +7,7 @@
 	 --><a href="<?=$item['link']?>" class="re" title="<?=$item['name']?>">
 			<img class="isss" src="<?=$item['image']?>"/>
 			<span class="name"><?=$item['name']?></span>
+			<span class="fa fa-cart-plus fa-2x"></span>
 			<?if( $item['cost'] ):?>
 			<div class="cost"><?=$item['cost']?></div>
 			<?endif?>

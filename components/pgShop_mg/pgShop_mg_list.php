@@ -36,7 +36,7 @@ function pgShop_mg_list_shopNameNLinkNOwner( $rw ){
 
 	$rw_user = user_detail( $rw['user_id'] );
 
-	$t =  "<a title=\"مشاهده فروشگاه\" ".( $rw['flag'] ? " href=\"http://".$rw["path"]."\" " : "" )." target=\"_blank\">".$rw["name"]."</a>";
+	$t =  "<a title=\"مشاهده فروشگاه\" ".( $rw['flag'] ? " href=\""._URL."/".$rw["path"]."\" " : "" )." target=\"_blank\">".$rw["name"]."</a>";
 	$t.= "<br>";
 	$t.= "سازنده:‌ <a title=\"پروفایل کاربر\" href=\""._URL."/admin/user/view/".$rw_user['id']."\" target=\"_blank\">".$rw_user["name"]."</a>";
 

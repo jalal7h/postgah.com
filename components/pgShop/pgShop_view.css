@@ -30,7 +30,8 @@
 .pgShop_view .re .name {
 	display: block;
 	margin: 10px auto;
-	padding: 0 10px;
+	padding: 0 10px 0 55px;
+    text-align: right;
 }
 .pgShop_view .re .cost {
 	position: absolute; top: 160px; left: 10px; z-index: 2;
@@ -40,3 +41,21 @@
 	box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 	color: black;
 }
+
+.pgShop_view .re .fa-cart-plus {
+    color: rgb(237, 255, 148);
+    position: absolute;
+    left: 10px;
+    bottom: 12px;
+    background-color: #7caa26;
+    padding: 0 8px 0 6px;
+    line-height: 31px !important;
+    display: inline-block;
+    border-radius: 4px;
+    border: 1px solid ;
+}
+.pgShop_view .re .fa-cart-plus:hover {
+	opacity: 0.8;
+}
+
+
