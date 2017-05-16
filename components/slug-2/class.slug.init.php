@@ -15,7 +15,8 @@ class Slug
         define( '_URI_DIR', $URI_DIR );
         define( '_URI_PAR', $URI_PAR );
 
-        if( _URI_DIR == '/' ){
+        if( _URI_DIR == '/'  or  _URI_DIR == ''  ){
+            // echo _URI_DIR;die();
             return true;
         // } elseif( strstr(_URI, '?') ){
         //     return true;
