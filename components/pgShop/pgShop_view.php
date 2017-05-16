@@ -10,18 +10,19 @@ function pgShop_view( $rw_pl ){
 
 	$_REQUEST['path'] = var_control( $_REQUEST['path'], '0-9a-z' );
 
-	if(! $rw_shop = table( 'shop', [ 'path'=>$_REQUEST['path'] ] )[0] ){
-		e();
-		// no shop found
-	
+	if(! $rw_shop = table( 'shop', [ 'path'=>$_REQUEST['path'] ] )[0] ){	
+		d404();
+		
+	} else if(! $rw_shop['flag'] ){
+		d404();
+		
 	} else if(! $rw_s = table('shop_item', [ 'shop_id'=>$rw_shop['id'] ] ) ){
-		e();
-		// no item found
-
+		d404();
+		
 	} else {
 		
 		$shop_name = $rw_shop['name'];
-
+		
 		foreach( $rw_s as $rw ){
 			$item_id_arr[] = $rw['item_id'];
 		}
@@ -55,7 +56,6 @@ function pgShop_view( $rw_pl ){
 
 		}
 	}
-
 
 }
 

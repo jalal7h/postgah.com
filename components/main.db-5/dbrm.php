@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/05/05
-# 3.0
+# 2017/05/16
+# 3.1
 
 # dbrm( 'post', 11 );
 # dbrm( 'post', 11, $recursive=true );
@@ -11,17 +11,15 @@
 function dbrm( $table, $id=null, $recursive=false ){
 
 	#
-	# if there is any `id`
+	# state: no $id input
 	if(! $id ){
 		if(! $id = $_REQUEST['id'] ){
 			return e();
 		}
-	
-	} else if(! is_numeric($id) ){
-		return e();
 	}
 
-
+	#
+	# state: array $id
 	if( is_array($id) ){
 
 		#
@@ -45,6 +43,13 @@ function dbrm( $table, $id=null, $recursive=false ){
 
 	}
 	
+	# loop passed.
+
+	#
+	# non numeric $id
+	if(! is_numeric($id) ){
+		return e();
+	}
 
 	# 
 	# recursive records

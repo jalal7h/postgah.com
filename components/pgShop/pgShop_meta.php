@@ -7,14 +7,18 @@
 function pgShop_meta( $column ){
 	
 	if(! $path = $_REQUEST['path'] ){
-		// e();
+		d404();
 
 	} else if(! $rw_s = table( 'shop', [ 'path'=>$path ] ) ){
-		// e();
+		d404();
 
+	} else if(! $rw_s[0]['flag'] ){
+		d404();
+	
 	} else {
 		return $rw_s[0][ $column ];
 	}
+
 
 }
 

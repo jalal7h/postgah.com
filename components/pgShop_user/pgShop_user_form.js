@@ -17,8 +17,12 @@ jQuery(document).ready(function($) {
 				e.preventDefault();
 			}
 
-		} else if( e.keyCode==13 ){
+		} else if( e.keyCode==13 ){ // enter
 			//
+
+		} else if( e.keyCode==9 ){ // tab
+			//
+
 		} else if( (e.keyCode >= 65 && e.keyCode <= 90) || ( e.keyCode >= 48 && e.keyCode <= 57 ) ) {
 			
 			// ignore

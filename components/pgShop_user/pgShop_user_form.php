@@ -1,4 +1,8 @@
-<?
+<?php
+
+# jalal7h@gmail.com
+# 2017/05/15
+# 1.0
 
 function pgShop_user_form(){
 
@@ -14,7 +18,6 @@ function pgShop_user_form(){
 
 		} else if( dbn($rs) ){
 			echo convbox('درحال حاضر امکان ثبت بیش از یک فروشگاه برای هر کاربر نیست!','transparent');
-			// echo "<div class='convbox'>درحال حاضر امکان ثبت بیش از یک فروشگاه برای هر کاربر نیست!</div>";
 			return true;
 		}
 	}
@@ -27,7 +30,7 @@ function pgShop_user_form(){
 			"class" => "'.__FUNCTION__.'" ,
 		!]
 			
-			[!"text:path*"=>"'._DOMAIN.'/".$rw["path"]!]
+			[!"text:path*"=>"'._DOMAIN.'/".$rw["path"], "validation"=>"pgShop_user_form_pathCheck"!]
 			[!"text:name*"!]
 			[!"textarea:desc"!]
 			[!"file:logo"!]
