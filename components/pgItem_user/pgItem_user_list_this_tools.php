@@ -28,13 +28,19 @@ function pgItem_user_list_this_tools_OutOfStock( $rw ){
 }
 
 function pgItem_user_list_this_tools_RegisterInShop( $rw ){
+	if( $rw['cost'] == 0 ){
+		$onclick = " onclick=\"alert('لطفا برای ثبت این محصول در فروشگاه، ابتدا قیمت محصول را تعیین نمائید.'); return false;\" ";
+	}
 	$the_url = _URL.'/?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=RegisterInShop&id='.$rw["id"];
-	return "<a title=\"نمایش در فروشگاه من\" href=\"".$the_url."\" class=\"RegisterInShop\"></a>";
+	return "<a $onclick title=\"نمایش در فروشگاه من\" href=\"".$the_url."\" class=\"RegisterInShop\"></a>";
 }
 
 function pgItem_user_list_this_tools_UnregisterInShop( $rw ){
+	if( $rw['cost'] == 0 ){
+		$onclick = " onclick=\"alert('لطفا برای ثبت این محصول در فروشگاه، ابتدا قیمت محصول را تعیین نمائید.'); return false;\" ";
+	}
 	$the_url = _URL.'/?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=UnregisterInShop&id='.$rw["id"];
-	return "<a title=\"عدم نمایش در فروشگاه من\" href=\"".$the_url."\" class=\"UnregisterInShop\"></a>";
+	return "<a $onclick title=\"عدم نمایش در فروشگاه من\" href=\"".$the_url."\" class=\"UnregisterInShop\"></a>";
 }
 
 function pgItem_user_list_this_tools_SetUpdateTime( $rw ){

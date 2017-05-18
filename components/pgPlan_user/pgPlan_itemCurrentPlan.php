@@ -8,7 +8,7 @@ function pgPlan_itemCurrentPlan( $rw_item ){
 		return "";
 	}
 
-	$c.= "<div class=\"".__FUNCTION__."\">";
+	$c.= "<div class=\"".__FUNCTION__."\" title=\"پلان آگهی\" >";
 
 	if( pgItem_isFree($rw_item) ){
 		$c.= "رایگان";
