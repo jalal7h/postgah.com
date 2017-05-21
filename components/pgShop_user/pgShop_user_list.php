@@ -15,7 +15,7 @@ function pgShop_user_list(){
 		],
 		'item' => [
 			[ "head"=>lmtc("shop:logo"), "tag"=>"th", "picture" => '$rw["logo"]' ],
-			[ "head"=>lmtc("shop:name"), '( strlen($rw["name"]) > 50 ? mb_substr($rw["name"],0,50)." .." : $rw["name"] )' ],
+			[ "head"=>lmtc("shop:name"), '( strlen($rw["name"]) > 50 ? mb_substr($rw["name"],0,50,"utf-8")." .." : $rw["name"] )' ],
 			[ "head"=>lmtc("shop:path"), '"<a target=\"_blank\" href=\"http://"._DOMAIN."/".$rw["path"]."\">"._DOMAIN."/".$rw["path"]."</a>"' ],
 		],
 		// 'search' => [ "name","path","desc","address","phone" ],
