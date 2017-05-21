@@ -11,7 +11,7 @@ function pgShop_user_list(){
 		'table' => 'shop', 'where' => [ 'user_id'=>user_logged() ], 'order' => [ 'id' => 'desc' ], 
 		'url' => [
 			'base' => '_URL."/?page='.$_REQUEST['page'].'&do_slug='.$_REQUEST['do_slug'].'"', // *
-			'modify' => true, 'add' => true, 'remove' => true, //'flag' => true,
+			'modify' => true, 'add' => true, 'remove' => true, 'flag' => true,
 		],
 		'item' => [
 			[ "head"=>lmtc("shop:logo"), "tag"=>"th", "picture" => '$rw["logo"]' ],
