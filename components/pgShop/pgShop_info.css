@@ -5,7 +5,9 @@
 	min-width: 100%;
 	box-shadow: 0 0 20px rgba(0, 0, 0, .1);
 }
-
+.pgShop_info > img.logo {
+	max-height: 300px;
+}
 .pgShop_info > div {
 	background-color: white;
 	padding: 15px;
