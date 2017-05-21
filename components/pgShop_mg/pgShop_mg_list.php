@@ -25,7 +25,7 @@ function pgShop_mg_list(){
 			[ 'dbqc("shop_item",["shop_id"=>$rw["id"]])." عدد"', "head" => "محصول" ],
 			[ 'pgShop_mg_list_shopView( $rw )', "head"=>"بازدید" ]
 		],
-		'search' => [ 'path','name','desc','user(user_id)[name]','address','phone' ],
+		'search' => [ 'path','name','desc','user(user_id)[name]','address' ],
 	]);
 	# --------------------------------------------
 

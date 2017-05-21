@@ -15,6 +15,9 @@ function pgShop_user_remove(){
 	} else if(! $rw_s = table( 'shop', [ 'user_id'=>$user_id, 'id'=>$shop_id ] ) ){
 		e();
 
+	} else if(! dbrm( 'shop_phone', [ 'shop_id'=>$shop_id ] ) ){
+		e();
+
 	} else if(! dbrm( 'shop_item', [ 'shop_id'=>$shop_id ] ) ){
 		e();
 
