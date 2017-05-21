@@ -12,12 +12,22 @@ jQuery(document).ready(function($) {
 		var inp = $(this);
 		var lvi = inp.next('.lmfe_validation_i');
 		
+		if( inp.val() == '' ){
+			lvi.find('i.wrong').css({'display':'inline-block'});
+			lvi.find('.the_message').html('');
+			lvi.find('.the_message').removeClass('color_checked').addClass('color_wrong');
+			inp.attr('downvote', '1');
+			return;
+		}
+
 		lvi.find('i').css({'display':'none'});
 		lvi.find('i.checking').css({'display':'inline-block'});
 		lvi.find('.the_message').html('');
 
 		$.ajax({
-			url: _URL + "/?do_action=lmfe_validation_func&func=" + inp.attr('func') + "&value=" + inp.val() + '&req=' + lvi.attr('req') ,
+			url: _URL + "/?do_action=lmfe_validation_func" ,
+			type: 'POST',
+			data: { 'func' : inp.attr('func') , 'value' : inp.val() , 'req' :  lvi.attr('req') },
 		})
 		.done(function( html ) {
 
