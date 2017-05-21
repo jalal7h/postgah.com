@@ -50,4 +50,3 @@ jQuery(document).ready(function($) {
 
 });
 
-// 65 - 90 , 48 - 57

@@ -11,6 +11,9 @@ function pgShop_user_form_pathCheck( $path ){
 	if(! $path ){
 		echo "مقداری وارد نشده است";
 	
+	} else if( var_control( $path, 'a-zA-Z0-9' ) != $path ){
+		echo "آدرس وارده شده مجاز نیست.";
+
 	} else if( $id = intval($_REQUEST['id']) ){ // edit
 		
 		if(! $rw = table( 'shop', $id ) ){
