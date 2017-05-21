@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/05/15
-# 1.0
+# 2017/05/21
+# 1.1
 
 function pgShop_user_remove(){
 
@@ -16,6 +16,9 @@ function pgShop_user_remove(){
 		e();
 
 	} else if(! dbrm( 'shop_item', [ 'shop_id'=>$shop_id ] ) ){
+		e();
+
+	} else if(! dbs( 'shop', [ 'path'=>$rw_s[0]['path']."__".U() ], [ 'id'=>$shop_id ] ) ){
 		e();
 
 	} else if(! dbrm( 'shop', $shop_id ) ){
