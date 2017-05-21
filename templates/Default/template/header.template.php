@@ -17,7 +17,15 @@
 			<a href="{_URL}/<?=Slug::getSlugByName('userpanel',14)?>/items/new" class="new_ads">ارسال آگهی رایگان</a>
 		<?endif?>
 
-		{breadcrumb}
+		<?if( $_REQUEST['page'] == 171 ):?>
+			<style>
+				header {
+					margin-bottom: 30px !important;
+				}	
+			</style>
+		<?else:?>
+			{breadcrumb}
+		<?endif?>
 
 	</div>
 
