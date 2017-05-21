@@ -39,7 +39,6 @@ function pgShop_user_form(){
 
 			[!"text:address"!]
 			[!"number:phone+"!]
-			[!"toggle:flag"!]
 			
 			<hr>
 
