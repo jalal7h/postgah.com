@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/05/15
-# 1.0
+# 2017/05/21
+# 1.1
 
 function pgShop_user_form(){
 
@@ -31,14 +31,14 @@ function pgShop_user_form(){
 		!]
 			
 			[!"text:path*"=>"'._DOMAIN.'/".$rw["path"], "validation"=>"pgShop_user_form_pathCheck"!]
-			[!"text:name*"!]
-			[!"textarea:desc"!]
+			[!"text:name*", "content_max"=>"60c"!]
+			[!"textarea:desc", "content_max"=>"500c"!]
 			[!"file:logo"!]
 			
 			<hr>
 
 			[!"text:address"!]
-			[!"number:phone"!]
+			[!"number:phone+"!]
 			[!"toggle:flag"!]
 			
 			<hr>

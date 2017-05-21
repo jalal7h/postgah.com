@@ -19,6 +19,14 @@ function pgShop_info( $rw_pl ){
 	} else {
 
 		$rw_shop['desc'] = nl2br( $rw_shop['desc'] );
+		
+		if( $rw_s = table('shop_phone', [ 'shop_id'=>$rw_shop['id'] ] ) ){
+			foreach ($rw_s as $rw ) {
+				$phones[] = $rw['phone'];
+			}
+		}
+		$rw_shop['phones'] = $phones;
+		
 		echo template_engine( 'pgShop_info', $rw_shop );
 
 	}

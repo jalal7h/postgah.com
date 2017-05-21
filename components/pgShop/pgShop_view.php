@@ -17,7 +17,7 @@ function pgShop_view( $rw_pl ){
 		d404();
 		
 	} else if(! $rw_s = table('shop_item', [ 'shop_id'=>$rw_shop['id'] ] ) ){
-		d404();
+		echo convbox( 'هنوز محصولی در این فروشگاه ثبت نشده است.' );
 		
 	} else {
 		

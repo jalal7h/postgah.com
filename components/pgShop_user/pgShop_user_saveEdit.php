@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/23
-# 1.0
+# 2017/05/21
+# 1.1
 
 function pgShop_user_saveEdit(){
 
@@ -23,7 +23,7 @@ function pgShop_user_saveEdit(){
 
 		# 
 		# update in db
-		$id = dbs( 'shop', ['path','name','desc','user_id'=>$user_id,'address','phone','flag'], ['id'] );
+		$id = dbs( 'shop', [ 'path','name','desc','user_id'=>$user_id,'address','phone' ], ['id'] );
 
 		#
 		# upload files

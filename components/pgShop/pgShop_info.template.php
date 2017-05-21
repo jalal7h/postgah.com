@@ -12,7 +12,11 @@
 	</div>
 	<div class="phone">
 		<div class="head">تلفن</div>
-		<span>{phone}</span>
+		<?if( sizeof($phones) ):?>
+		<?foreach( $phones as $phone ):?>
+			<span><?=$phone?></span>
+		<?endforeach?>
+		<?endif?>
 	</div>
 
 </div>

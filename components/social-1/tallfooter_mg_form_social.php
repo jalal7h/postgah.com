@@ -26,7 +26,7 @@ function tallfooter_mg_form_social(){
 
 		[!
 			"table" => "tallfooter" ,
-			"action" => "./?page=admin&cp=".$_REQUEST["cp"],
+			"action" => "'._URL.'/?page=admin&cp='.$_REQUEST['cp'].'",
 			"name" => "'.__FUNCTION__.'" ,
 			"class" => "'.__FUNCTION__.'" ,
 			"switch" => "do",

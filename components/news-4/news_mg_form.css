@@ -17,8 +17,8 @@
 	margin-top: 11px;
 	padding-top: 0px !important;
 }
-.news_mg_form #mceu_52 {
-	width: calc( 100% - 200px );
+.news_mg_form .mce-tinymce.mce-container.mce-panel {
+	width: calc( 100% - 200px ) !important;
 	display: inline-block;
 }
 

@@ -17,7 +17,7 @@
 	min-width: 300px;
 	padding: 10px;
 }
-#lmfe_pgShop_user_form_phone {
+.pgShop_user_form input[type="number"] {
 	width: 140px !important;
 }
 .pgShop_user_form textarea {
@@ -32,4 +32,6 @@
 	text-transform: lowercase;
 }
 
-
+#lmfe_pgShop_user_form_name {
+	width: 490px;
+}
