@@ -17,7 +17,7 @@ function pgShop_mg(){
 			break;
 			
 		case 'remove':
-			dbrm('shop', null, true);
+			pgShop_remove( $_REQUEST['id'] );
 			break;
 			
 	}
