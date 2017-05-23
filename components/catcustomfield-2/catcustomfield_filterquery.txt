@@ -1,0 +1,17 @@
+
+
+# jalal7h@gmail.com
+# 2016/08/31
+# 1.0
+
+/*
+
+if( is_component('catcustomfield') ){
+	$ccf_filterquery = catcustomfield_filterquery();
+}
+$query = " SELECT * FROM `item` WHERE 
+	(`cat_serial` LIKE '%/$cat_id/%')
+	$ccf_filterquery
+	ORDER BY `id` DESC 
+	LIMIT $start_from , $count_in_page ";
+

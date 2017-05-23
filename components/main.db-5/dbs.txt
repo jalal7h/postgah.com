@@ -1,0 +1,20 @@
+
+
+# jalal7h@gmail.com
+# 2017/05/15
+# 2.2
+
+/*
+	
+	#
+	# insert
+	$id = dbs( "session", 
+		['name','text','approach','publisher','reflection','clock','date','date_created'=>date('U'),'state','university','address','film','flag'=>1] );
+	#
+	
+	#
+	# upload photo
+	listmaker_fileupload( 'session', $id, "*" );
+	#
+
+

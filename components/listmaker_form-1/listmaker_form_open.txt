@@ -1,0 +1,143 @@
+
+
+# jalal7h@gmail.com
+# 2017/01/20
+# 1.7
+
+/*
+
+	# -------------------------------------------------
+	echo listmaker_form('
+		[!
+			"table" => "plan" ,
+			"action" => "./?page=admin&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["cp"]."_list",
+			"name" => "'.__FUNCTION__.'" ,
+			"class" => "'.__FUNCTION__.'" ,
+			"switch" => "do",
+			"target" => "self", // in yani tuye ye iframe e hidden run mishe
+		!]
+			
+			[!"cat:cat_id", "ccf"=>true, "cat_name"=>"adsCat"!]
+			[!"position:position_id","notInDiv"!]
+		
+			[!"searchbox:user_id*","feed"=>"user(name)[id]"!]
+
+			<hr>
+
+			[!"text:name/user_id=11"!]
+			[!"text:name_on_form"!]
+			[!"url:sample_page"!]
+			
+			<hr>
+
+			[!"file:icon","notInDiv"!]
+
+			[!"file:watermark"!]
+			[!"toggle:watermark_onlyfirst"!]
+
+			<hr>
+
+			[!"toggle:search_box_color_flag"!]
+			[!"color:search_box_color"!]
+			[!"file:search_result_cover"!]
+			
+			<hr>
+
+			[!"toggle:show_in_index"!]
+			[!"toggle:suggest_as_related"!]
+			[!"toggle:send_in_newsletter"!]
+			[!"toggle:pin_in_all_cat"!]
+			[!"toggle:pin_in_own_cat"!]
+			[!"toggle:pin_in_search"!]		
+			
+			<hr>
+
+			'.$duration.'
+
+			<hr>
+
+			[!"submit:ثبت"!]
+
+		[!close!] // in close ro nazari ham khodesh ezafe mikone
+	');
+	# -------------------------------------------------
+
+	echo lmfo([
+		'table' => 'item' ,
+		'action' => './?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['func'],
+		// 'name' => __FUNCTION__ ,
+		'class' => __FUNCTION__ ,
+		'method' => 'post' ,
+		'switch' => 'do',
+	]);
+
+	echo lmfe([
+		'some text',
+		['cat:cat_id', 'cat_name'=>'adsCat','inDiv'],
+		['text:name*+/readonly','inDiv'],
+		['color:color_code','inDiv'],
+		['checkbox:flag','inDiv'],
+		['toggle:flag','inDiv'],
+		['date:date0','inDiv'],
+		['textarea:brief[]','inDiv'],
+		['textarea:desc.tinymce class_name'=>'متن آزماشی فورس شده','inDiv'],
+		['name:name/disabled','عنوان اجباری','inDiv'],
+		
+		['number:prio','inDiv'],
+		
+		['radio:filter_lang','option'=>cat_display('filter_lang'),'inDiv'],
+		
+		['آدرس سایت', 'url:website','inDiv'],
+		'<hr>',
+		['آدرس ایمیل','email:email*+','inDiv'],
+		['select:cat_id*+.some_class another_class#some_id.and_more_class','option'=>cat_display("cat"),'inDiv'],
+		['file:stash_icon.someClass and_moreclass/rel="amita"','accept'=>'image/*','inDiv'],
+		['submit:ثبت.some_class more class#some_id.className','inDiv'],
+	]);
+
+	echo lmfc();
+
+
+	echo $GLOBALS['listmaker_form-formTable'];
+	echo $GLOBALS['listmaker_form-formName'];
+	var_dump( $GLOBALS['listmaker_form-rw'] );
+
+- - - - - - - - - - - -
+
+type hai ke darim : 
+  
+  [ 'text','color','name','number','textarea','select','checkbox','radio','date','clock','toggle','url','email','file','submit','hidden','password','cat','position' ]
+
+function litesponsor_mg_form(){
+
+	?><div id="litesponsor_mg_form"><?
+
+	echo lmfo([
+		'table' => 'litesponsor' ,
+		'action' => './?page=admin&cp='.$_REQUEST['cp'].'&func=litesponsor_mg_list',
+		'name' => 'sForm' ,
+		'method' => 'post' ,
+		'switch' => 'do',
+	]);
+
+	echo lmfe([
+		
+		"<hr><br>",
+		
+		['cat:cat_id','cat_name'=>'adsCat'],
+
+		['text:name*','inDiv'],
+		['url:link*','inDiv'],
+		['file:image','inDiv'],
+
+		"<br><hr><br>",
+
+		['submit:ثبت','inDiv'],
+
+	]);
+
+	echo lmfc();
+
+	?></div><?
+}
+

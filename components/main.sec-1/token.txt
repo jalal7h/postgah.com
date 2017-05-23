@@ -1,0 +1,16 @@
+
+
+# jalal7h@gmail.com
+# 2017/03/12
+# 1.2
+
+/*
+
+echo token_make() ro dakhel e form gharar midim, tu safheye form
+fa token_check() ro ejra mkonim, tusafheye ejraye pasokh e form, 
+faghat ejra mkonim, be in halat : token_check(); if o e() ham nemiad.
+
+hadaf jelogiri az tekrar e ejraye form hast
+
+*/
+
