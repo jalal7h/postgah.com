@@ -28,7 +28,7 @@ function ticketbox_user_form(){
 	echo listmaker_form('
 		[!
 			"table" => "ticketbox" ,
-			"action" => "./?'.query_string_set( 'do1', null ).'",
+			"action" => _URL."/?'.query_string_set( 'do1', null ).'",
 			"name" => "'.__FUNCTION__.'" ,
 			"class" => "'.__FUNCTION__.'" ,
 			"switch" => "do1",

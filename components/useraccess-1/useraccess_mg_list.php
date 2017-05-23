@@ -45,11 +45,11 @@ function useraccess_mg_list(){
 	#
 	# base url is needed in version upper 1.2 
 	# ** address base e in list
-	$list['base_url'] = '"./?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['func'].'"';
+	$list['base_url'] = '_URL."/?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['func'].'"';
 
 	#
 	# target // maghsad e click ruye har row
-	$list['target_url'] = '"./?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['cp'].'_form&id=".$rw["id"]';
+	$list['target_url'] = '_URL."/?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['cp'].'_form&id=".$rw["id"]';
 
 	#
 	# actions 

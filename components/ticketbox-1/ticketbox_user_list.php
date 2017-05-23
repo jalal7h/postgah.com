@@ -82,7 +82,7 @@ function ticketbox_user_list(){
 	#
 	# dokme enteghal be archive
 	$list['linkTo']['move_to_archive'] = [
-		'url' => '_URL."/?page=".$_REQUEST["page"]."&do=".$_REQUEST["do"]."&do1=flag&id=".$rw["ticketbox_id"]',
+		'url' => '_URL."/?page=".$_REQUEST["page"]."&do_slug=".$_REQUEST["do_slug"]."&do1=flag&id=".$rw["ticketbox_id"]',
 		'icon' => '14a',
 		'name' => __('انتقال به آرشیو'),
 		'color' => '#62bb00',

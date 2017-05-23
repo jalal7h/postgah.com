@@ -1,10 +1,10 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/29
-# 1.0
+# 2017/05/22
+# 1.1
 
-add_component( 'fbcomment_mg', 'مدیریت نظرات', '27a' );
+add_component( 'fbcomment_mg', 'نظرات', '27a' );
 
 function fbcomment_mg(){
 	
@@ -13,7 +13,8 @@ function fbcomment_mg(){
 	switch ($_REQUEST['do']) {
 		
 		case 'flag':
-			listmaker_flag('fbcomment');
+			listmaker_flag( 'fbcomment' );
+			echo "00";
 			break;
 
 		case 'remove':
@@ -24,36 +25,28 @@ function fbcomment_mg(){
 
 	# 
 	# the list
-	$list['name'] = 'fbcomment';
-	$list['query'] = " SELECT * FROM `fbcomment` WHERE `flag`='0' ORDER BY `id` ASC ";
-	$list['tdd'] = 10; // tedad dar safhe
-	
-	#
-	# base url is needed in version upper 1.2 
-	# ** address base e in list
-	$list['base_url'] = '"./?page=admin&cp='.$_REQUEST['cp'].'"';
-
-	#
-	# actions 
-	# ** mitunim link ham bedim bejaye 'true'
-	# ** ama age base_url ro dashte bashim az hamun estefade mikone
-	#
-	$list['addnew_url'] = false; // link icon "new" vaqti ke list khali hast dide mishe
-	$list['remove_url'] = true; // link dokme hazf
-	$list['setflag_url'] = true;
-
-	#
-	# list array // list e sotun haye list
-	$list['list_array'][] = array("content" => 'fbcomment_mg_info($rw)');
-	$list['list_array'][] = array("content" => 'time_inword($rw["date_created"])');
- 
-	#
-	# search columns // az in field ha tu table search mikone
-	$list['search'] = array("text");
-
-	#
-	# echo result
-	echo listmaker_list( $list );
+	# --------------------------------------------
+	if(! $rs = dbq(" SELECT DISTINCT `table_name` FROM `fbcomment` WHERE 1 ") ){
+		e();
+	} else while( $rw = dbf($rs) ){
+		$table_name = $rw['table_name'];
+		$comment_tables[ $table_name ] = lmtc( $table_name )[1];
+	}
+	echo listmaker_list([
+		'head' => __('لیست %%', [ lmtc('fbcomment')[1] ] ),
+		'table' => 'fbcomment',
+		'where' => ( $_REQUEST['table_name'] and is_table($_REQUEST['table_name']) ) ? [ 'table_name'=>$_REQUEST['table_name'] ] : [] ,
+		'order' => [ 'flag'=>'asc', 'id'=>'desc' ],
+		'limit' => 10,
+		'url' => [
+			'base' => '_URL."/?page=admin&cp=".$_REQUEST["cp"]', // *
+			'remove' => true, 'flag' => true,
+		],
+		'filter' => ( sizeof($comment_tables) > 0 ? [ 'table_name' => [ '.. '.__('بخش').' ..', $comment_tables ] ] : [] ) ,
+		'item' => [ [ 'fbcomment_mg_info($rw)' ], [ 'time_inword($rw["date_created"])' ] ],
+		'search' => [ 'text' ],
+	]);
+	# --------------------------------------------
 
 }
 

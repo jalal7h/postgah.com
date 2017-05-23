@@ -11,17 +11,17 @@
 /*README*/
 
 
-function emailgif( $emil ){
-		
+function emailgif( $email ){
+	
 	if( is_numeric($email) ){
 		if(! $email = table( "user", $email, "email" ) ){
-			e(__FUNCTION__,__LINE__);
+			e();
 			return false;
 		}
 	}
 
 	$code = rand( 10000, 90000 );
-	$_SESSION['photools_email_gif'][ $code ] = $email;
+	$_SESSION['emailgif'][ $code ] = $email;
 	error_log( $code." - ".$email );
 
 	$url = _URL."/?do_action=emailgif_do&code=".$code."&nocache=".rand(1000,9999);

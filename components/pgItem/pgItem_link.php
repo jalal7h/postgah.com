@@ -1,5 +1,9 @@
 <?
 
+# jalal7h@gmail.com
+# 2017/05/21
+# 1.0
+
 function pgItem_link( $rw__or__item_id ){
 
 	# if rw is id, replace it with rw

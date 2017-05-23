@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/30
-# 1.0
+# 2017/05/22
+# 1.1
 
 function tallfooter_mg_form_html(){
 
@@ -21,7 +21,7 @@ function tallfooter_mg_form_html(){
 		</style>
 		[!
 			"table" => "tallfooter" ,
-			"action" => "./?page=admin&cp=".$_REQUEST["cp"],
+			"action" => "'._URL.'/?page=admin&cp=".$_REQUEST["cp"],
 			"name" => "'.__FUNCTION__.'" ,
 			"class" => "'.__FUNCTION__.'" ,
 			"switch" => "do",

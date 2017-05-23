@@ -65,7 +65,7 @@ function layout_mg(){
 
 	?>
 	<div></div>
-	<form action="./?page=admin&cp=<?=$_REQUEST['cp']?>&do=save" method="post" class="this new" >
+	<form action="<?=_URL?>/?page=admin&cp=<?=$_REQUEST['cp']?>&do=save" method="post" class="this new" >
 		<input type="text" name="name" placeholder="<?=__('صفحه جدید ..')?>" />
 		<input type="submit" class="btn btn-primary" value="<?=__('ثبت')?>"/>
 	</form>

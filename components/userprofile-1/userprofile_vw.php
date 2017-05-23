@@ -16,10 +16,10 @@ function userprofile_vw(){
 		die();
 
 	} else {
+		
 		if( file_exists($rw['profile_pic']) ){
-			$size = getimagesize( $rw['profile_pic'] );
-			$rw['profile_pic_width'] = $size[0];
-			$rw['profile_pic_height'] = $size[1];
+			list( $rw['profile_pic_width'], $rw['profile_pic_height'] ) = getimagesize( $rw['profile_pic'] );
+		
 		} else {
 			
 			$rw['profile_pic_hide_style'] = '
@@ -33,10 +33,15 @@ function userprofile_vw(){
 			}
 			</style>';
 
-
-
 		}
+
 		echo template_engine( 'userprofile_vw', $rw );
+
 	}
+
 }
+
+
+
+
 

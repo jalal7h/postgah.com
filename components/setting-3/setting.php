@@ -25,7 +25,7 @@ function setting( $slug=null, $text=null ){
 	# wants some specific record
 	} else if( $text === null ){
 		
-		if(! $rs = dbq(" SELECT `text` FROM `setting` WHERE `slug`='$slug' LIMIT 1 ")){
+		if(! $rs = dbq(" SELECT `text` FROM `setting` WHERE `slug`='$slug' LIMIT 1 ") ){
 			e( dbe() );
 		
 		} else if( dbn($rs) != 1 ){

@@ -21,3 +21,10 @@
 	width: 90px;
 	text-align: center;
 }
+
+.fbcomment_mg .listmaker_list_record a {
+	color: #800;
+}
+.fbcomment_mg .listmaker_list_record a:hover {
+	color: red;
+}

@@ -1,0 +1,16 @@
+
+.billing_mg_widget_monthlyPayments {
+	
+}
+.billing_mg_widget_monthlyPayments .head {
+	display: block;
+	border-bottom: 1px dashed rgba(0, 0, 0, .1);
+	margin-bottom: 10px;
+	padding: 4px 10px 10px;
+}
+.billing_mg_widget_monthlyPayments #canvas_daily {
+	max-width: calc( 100% - 30px );
+	margin-right: 20px;
+}
+
+

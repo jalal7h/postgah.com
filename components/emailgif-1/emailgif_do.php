@@ -9,10 +9,10 @@ $GLOBALS['do_action'][] = 'emailgif_do';
 function emailgif_do(){
 	
 	if(! $code = $_REQUEST['code'] ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else if(! $email = $_SESSION['emailgif'][ $code ] ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else {
 		
@@ -21,7 +21,7 @@ function emailgif_do(){
 		$ch = 18;
 
 		$im = imagecreate( $cw, $ch );
-		$white = imagecolorallocate( $im, 255, 255, 255 );
+		$white = imagecolorallocate( $im, 240, 240, 240 );
 		$black = imagecolorallocate( $im, 0, 0, 0 );
 		imagefill( $im, 0, 0, $white);
 		imagestring( $im, 12, 0, 0, $email, $black );
@@ -30,7 +30,9 @@ function emailgif_do(){
 		imagedestroy( $im );
 
 		die();
+
 	}
+
 }
 
 

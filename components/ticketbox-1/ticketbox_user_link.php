@@ -14,7 +14,7 @@ function ticketbox_user_link( $rw_tb__or__id_tb ){
 		$id = $rw_tb['id'];
 	}
 
-	return _URL."/ticket-".$id;
+	return _URL . '/' . Slug::getSlugByName('userpanel') . "/ticket-" . $id;
 
 }
 

@@ -18,9 +18,11 @@ function fbcomment_setting(){
 			"rw" => setting_rw_slug_n_text(),
 		!]
 			
-			[!"'.setting_rw('fbcomment_share_on_twitter')['name'].'","toggle:fbcomment_share_on_twitter*"!]
-			[!"'.setting_rw('fbcomment_user_countOn60m')['name'].'","number:fbcomment_user_countOn60m*"!]
-			[!"'.setting_rw('fbcomment_user_countOn24h')['name'].'","number:fbcomment_user_countOn24h*"!]
+			[!"'.setting_rw('fbcomment_needForConfirm')['name'].'","toggle:fbcomment_needForConfirm"!]
+			[!"'.setting_rw('fbcomment_share_on_twitter')['name'].'", "toggle:fbcomment_share_on_twitter"!]
+
+			[!"'.setting_rw('fbcomment_user_countOn60m')['name'].'", "number:fbcomment_user_countOn60m", "prompt"=>"'.__('مقدار 0 : غیرفعال').'"!]
+			[!"'.setting_rw('fbcomment_user_countOn24h')['name'].'", "number:fbcomment_user_countOn24h", "prompt"=>"'.__('مقدار 0 : غیرفعال').'"!]
 			
 			<hr>
 

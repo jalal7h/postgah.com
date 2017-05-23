@@ -1,0 +1,48 @@
+
+#do_admin .admin_widgets {
+	margin-right: 10px;
+}
+
+#do_admin .admin_widgets a {
+	color: #600;
+}
+#do_admin .admin_widgets a:hover {
+	color: red;
+}
+
+#do_admin .admin_widgets > .head {
+	padding: 15px 0px 20px;
+    font-size: 26px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    margin-bottom: 25px;
+}
+#do_admin .admin_widgets .widget_list {
+	margin: -7px;
+}
+#do_admin .admin_widgets .widget_wrapper {
+	display: inline-block;
+	vertical-align: top;
+	float: right;
+}
+#do_admin .admin_widgets .widget {
+	margin: 7px;
+	padding: 10px 15px;
+}
+#do_admin .admin_widgets .widget.cover {
+	background-color: white;
+	/* border-radius: 4px; */
+	box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+#do_admin .admin_widgets .widget.cover > .head {
+	display: block;
+    border-bottom: 1px dashed rgba(0,0,0,.1);
+    margin-bottom: 10px;
+    padding: 4px 0px 10px 0;
+}
+
+
+
+
+
+

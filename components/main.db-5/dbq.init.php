@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/07
-# 1.2
+# 2017/05/21
+# 1.3
 
 function dbq( $query='', $force=false ){
 
@@ -101,6 +101,27 @@ function dbq_query_hide( $query ){
 		[" $table_name "	, " ".$table_name."."],
 		[" `$table_name` "	, " `".$table_name."`." ],
 		$query );
+
+
+	# 
+	# fix, if there is no where 1 on select query
+	if( $its == "SELECT" and !stristr($query, ' WHERE ') ){
+		$delimiters = [ 'ORDER BY', 'GROUP BY', 'LIMIT' ];
+		foreach( $delimiters as $delimiter ){
+			$delimiter = " $delimiter ";
+			if( stristr( $query, $delimiter ) ){
+				$query_ar0 = explode( $delimiter, $query );
+				$query_ar0[0].= " WHERE 1";
+				$query = implode( $delimiter, $query_ar0 );
+				$where1_attachment_done = true;
+				break;
+			}
+		}
+		if(! $where1_attachment_done ){
+			$query.= " WHERE 1";
+		}
+	}
+
 
 	#
 	# normalize

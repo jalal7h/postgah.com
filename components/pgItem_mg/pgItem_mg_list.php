@@ -27,7 +27,7 @@ function pgItem_mg_list(){
 	#
 	# base url is needed in version upper 1.2 
 	# ** address base e in list
-	$list['base_url'] = '"./?page=admin&cp='.$_REQUEST['cp'].'"';
+	$list['base_url'] = '_URL."/?page=admin&cp='.$_REQUEST['cp'].'"';
 
 	#
 	# actions 
@@ -38,7 +38,7 @@ function pgItem_mg_list(){
 	$list['addnew_url'] = false;
 	$list['remove_url'] = true; // link dokme hazf
 	$list['paging_url'] = true; // not needed when we have 'tdd'
-	$list['modify_url_inBlank'] = '"./?page=admin&cp='.$_REQUEST['cp'].'&do=edit&id=".$rw["id"]'; // not needed when we have 'tdd'
+	$list['modify_url_inBlank'] = '_URL."/?page=admin&cp='.$_REQUEST['cp'].'&do=edit&id=".$rw["id"]'; // not needed when we have 'tdd'
 
 	$list['tr_class'] = 'pgItem_mg_list_tr_class($rw)';
 

@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/29
-# 1.0
+# 2017/05/21
+# 1.1
 
 function fbcomment_mg_info( $rw ){
 
@@ -11,6 +11,11 @@ function fbcomment_mg_info( $rw ){
 
 	$item_name = table($rw['table_name'],$rw['table_id'],'name');
 	$item_link = _URL."/?page=".$rw['page_id']."&id=".$rw['table_id']."&#comment-".$rw['id']; // nxx
+
+	$func_link = $rw['table_name'] . "_link";
+	if( function_exists($func_link) ){
+		$item_link = $func_link( $rw['table_id'] )."#comment-".$rw['id'];
+	}
 
 	$info = "<a target=_blank href='$profile_link' class='name'>$profile_name</a> ".__('درباره')." <a target=_blank href='$item_link'>$item_name</a> : ";
 	$info.= $rw['text'];
