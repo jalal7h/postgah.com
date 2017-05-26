@@ -54,7 +54,7 @@ function pgItem_mg_list(){
 
 	#
 	# search columns // az in field ha tu table search mikone
-	$list['search'] = [ "id", "name", "text", "user(user_id)[username]", "user(user_id)[name]", "cat(cat_id)[name]", "position(position_id)[name]" ];
+	$list['search'] = [ "id", "name", "text", "user(user_id)[email]", "user(user_id)[name]", "cat(cat_id)[name]", "position(position_id)[name]" ];
 
 	#
 	# paging select
