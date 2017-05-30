@@ -235,10 +235,10 @@
 .listmaker_list_search input {
 	width: 140px !important;
     outline: 0px;
-    border-radius: 3px;
+    border-radius: 4px;
     margin: 5px;
 	box-shadow: 0 0 0px rgba(0,0,0,0.25) inset;
-    padding: 10px 8px !important;
+    padding: 9px 8px !important;
     border: 0px !important;
     transition: all 0.5s;
     border: 1px solid rgba(0,0,0,0.08) !important;
@@ -282,7 +282,7 @@
     z-index: 3;
     float: left;
     padding-bottom: 7px;
-    border-radius: 2px;
+    /* border-radius: 2px; */
 }
 
 iframe[name="_hidden"] {

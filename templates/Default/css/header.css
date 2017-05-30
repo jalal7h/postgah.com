@@ -30,6 +30,7 @@ header .login_or_register {
 	font-family: DefaultFont;
 	position: absolute;
 	top: 36px;
+	font-size: 12px;
 }
 header .new_ads {
 	background-color: #e72a46;

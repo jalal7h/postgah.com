@@ -7,7 +7,7 @@
     color: #a0a0a0;
 }
 
-.pgCat_main_this {
+.pgCat_main .re {
 	text-align: center;
 	vertical-align: middle;
 	display: inline-block;
@@ -16,14 +16,15 @@
 	border-radius: 5px;
 	box-shadow: 0 0 10px #ddd;
 	background-color: white;
-	margin: 8px 6px;
+	margin: 8px 7.5px;
 }
-.pgCat_main_this img {
+.pgCat_main .re img {
 	max-height: 40px;
 	width: auto;
 	margin-top: 30px;
 }
-.pgCat_main_this div {
+.pgCat_main .re div {
 	margin-top: 10px;
+	font-size: 12px;
 }
 

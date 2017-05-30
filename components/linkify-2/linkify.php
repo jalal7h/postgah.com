@@ -38,7 +38,7 @@ function linkify_display_this( $items, $haveSub, $haveIcon, $count_of_tab=null )
 
 	foreach( $items as $i => $item ){
 		
-		$c.= $t."<div class=\"".( $its_master ? 'master' : 'sub' )."\" >\n";
+		$c.= $t."<div class=\"".( $its_master ? 'master' : 'sub cl_l2r' )."\" >\n";
 		
 		$item_url = $item['url'];
 		$item_url = linkify_URL_remove($item['url']);

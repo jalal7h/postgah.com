@@ -15,7 +15,7 @@
 	vertical-align: middle;
 }
 .billing_userpanel_credit span:nth-child(1) {
-	font:normal 13px tahoma;
+	font: normal 13px tahoma;
 }
 .billing_userpanel_credit span:nth-child(2) {
 	font-weight: bold;

@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/23
-# 1.2
+# 2017/05/25
+# 1.3
 
 # after order invoice payment order_table_name_orderSettle( $order_id );
 # the order table should have `flag` column
@@ -37,17 +37,17 @@ function billing_settleOrder( $order_table , $order_id ){
 
 	} else {
 
-		$order_settle_func = $order_table."_orderSettle";
-		if( function_exists($order_settle_func) ){
-			$order_settle_func( $order_id );
-		}
-		
 		# 
 		# congragulate
 		$vars['order_id'] = $rw_order['id'];
 		$vars['cost'] = $rw_order['cost']." ".setting('money_unit');
 		echo texty( 'billing_orderSettle', $vars );
 		
+		$order_settle_func = $order_table."_orderSettle";
+		if( function_exists($order_settle_func) ){
+			$order_settle_func( $order_id );
+		}
+
 		return true;
 
 	}

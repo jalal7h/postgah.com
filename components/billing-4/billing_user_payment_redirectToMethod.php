@@ -18,7 +18,7 @@ function billing_userpanel_payment_redirectToMethod(){
 		echo convbox( __('صورتحساب با شناسه %% یافت نشد!', [$invoice_id] ), 'transparent');
 
 	} else if(! $rw_invoice['user_id'] == $user_id ){
-		e();
+		ed();
 
 	} else if( $rw_invoice['date'] ){
 		echo convbox( __('صورتحساب با شناسه %% قبلا اعتبار‌سنجی شده است!', [$invoice_id] ) , 'red');

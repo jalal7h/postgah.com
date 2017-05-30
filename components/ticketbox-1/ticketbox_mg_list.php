@@ -43,6 +43,7 @@ function ticketbox_mg_list(){
 	# 
 	# the list
 	$list['name'] = __FUNCTION__;
+	$list['head'] = __('لیست %%', [ lmtc('ticketbox')[1] ] );
 	$list['query'] = " SELECT * FROM `ticketbox` INNER JOIN `ticketbox_user` on `ticketbox`.`id` = `ticketbox_user`.`ticketbox_id` WHERE `ticketbox`.`hide`='0' AND `ticketbox_user`.`flag`='".intval($_REQUEST['flag'])."' AND `user_id`='1' ORDER BY `ticketbox_user`.`flag` ASC , `date_updated` DESC ";
 	$list['id_column'] = 'ticketbox_id';
 	
@@ -55,7 +56,7 @@ function ticketbox_mg_list(){
 
 	#
 	# target // maghsad e click ruye har row
-	$list['target_url'] = '_URL."/?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['func'].'&do=view&id=".$rw["ticketbox_id"]';
+	$list['target_url'] = '_URL."/admin/ticketbox/view/".$rw["ticketbox_id"]';
 
 	#
 	# actions 

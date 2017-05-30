@@ -1,5 +1,5 @@
 
-// 2016/07/11
+// 2017/05/30
 
 document.write('<div id="tooltip" class="cl_l1r_border"></div>');
 
@@ -17,18 +17,34 @@ jQuery(document).ready(function($) {
 
 	// run tooltip
 	mouse_left = 0;
+	mouse_right = 0;
 	mouse_top = 0;
 	$(document).on( "mousemove", function( e ) {
 		mouse_left = e.pageX;
+		mouse_right = $(window).width() - mouse_left;
 		mouse_top = e.pageY;
 		// cl( "pageX: " + e.pageX + ", pageY: " + e.pageY );
 	});
 
 	$('*').on('mouseenter', function(){
+		
 		var title = $(this).attr('tooltip-title');
+		
 		if(typeof title !== typeof undefined && title !== false && title!=''){
 			$('#tooltip').html( title );
-			$('#tooltip').css({ 'left':(mouse_left+15), 'top':(mouse_top+15) });
+
+			$('#tooltip').css({ 'left': 'auto', 'right': 'auto' });
+			$('#tooltip').show();
+			ttw = $('#tooltip').outerWidth();
+			$('#tooltip').hide();
+
+			if( $(window).width() < mouse_left + ttw + 50 ){
+				$('#tooltip').css({ 'right': (mouse_right+18), 'top':(mouse_top+18), 'left' : 'auto' });
+
+			} else {
+				$('#tooltip').css({ 'left':(mouse_left+18), 'top':(mouse_top+18), 'right' : 'auto' });
+			}
+
 			$('#tooltip').show(100);
 		}
 	

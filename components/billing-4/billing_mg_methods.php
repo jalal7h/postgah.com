@@ -40,18 +40,16 @@ function billing_management_methods(){
 			continue;
 		}
 
-		$cost = number_format( billing_stat_payment( array("method" => $method) ) );
+		$cost = billing_stat_payment([ "method" => $method ]);
 
-		if(!$rs = dbq(" SELECT * FROM `billing_method` WHERE `method`='$method' LIMIT 1 ")){
-			e(__FUNCTION__.__LINE__);
+		if(! $rs = dbq(" SELECT * FROM `billing_method` WHERE `method`='$method' LIMIT 1 ") ){
+			e();
 		
-		} else if(!dbn($rs)){
-			// $installed = false;
+		} else if(! dbn($rs) ){
 			$inputs = "
 			<input type='button' class='btn btn-primary' value='".__('نصب')."' onclick='location.href=\"./?page=".$_REQUEST['page']."&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func']."&do=install&method=".$method."\"' />";
 		
 		} else {
-			// $installed = true;
 			$rw = dbf($rs);
 			$inputs = "
 			<input type='button' class='btn btn-primary' value='".__('تنظیمات')."' onclick='location.href=\"./?page=".$_REQUEST['page']."&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func']."&do=form&method=".$method."\"' />

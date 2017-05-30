@@ -29,6 +29,7 @@
 }
 .pgItem_list_brief_this .text .name {
 	margin: 5px 0;
+	font-size: 12px;
 }
 .pgItem_list_brief_this .text .cat {
 	color: #888;

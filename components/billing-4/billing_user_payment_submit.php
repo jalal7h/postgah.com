@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/07/04
-# 1.0
+# 2017/05/00
+# 1.1
 
 # update :
 #	method e pardakht
@@ -18,40 +18,47 @@ function billing_userpanel_payment_submit(){
 	#
 	# user authenticate
 	if(! $user_id = user_logged() ){
-		e(__FUNCTION__,__LINE__);
+		e();
 	
 	#
 	# check variables
-	} else if(! $cost = intval($_REQUEST['cost']) ){
-		e(__FUNCTION__,__LINE__);
-	} else if( $cost <=0 ){
-		e(__FUNCTION__,__LINE__);
 	} else if(! $method = $_REQUEST['method'] ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else {
 
 		# 
 		# order payment
 		if( $invoice_id = $_REQUEST['invoice_id'] ){
+			if(! $rw_invoice = billing_invoiceDetail( $invoice_id ) ){
+				return e();
+			} else {
+				$cost = $rw_invoice['cost'];
+			}
 
 		#
 		# charge account
 		} else {
-			if(! $invoice_id = billing_invoiceMake( $cost ) ){
-				return false;
+			if(! $cost = intval($_REQUEST['cost']) ){
+				return e();
+			} else if( $cost <=0 ){
+				return e();
+			} else if(! $invoice_id = billing_invoiceMake( $cost ) ){
+				return e();
+			} else {
+				//
 			}
 		}
 
 		#
 		# set method
 		if(! dbs( 'billing_invoice', ['method'=>$method], ['id'=>$invoice_id] ) ){
-			e(__FUNCTION__,__LINE__);
+			e();
 		
 		#
 		# handle payment form
 		} else {
-			echo "<script> location.href = '"._URL."/?page=".$_REQUEST['page']."&do=".$_REQUEST['do']."&do2=redirect&invoice_id=".$invoice_id."'; </script>";
+			echo "<script> location.href = '"._URL."/?page=".$_REQUEST['page']."&do_slug=".$_REQUEST['do_slug']."&do2=redirect&invoice_id=".$invoice_id."'; </script>";
 			die();
 		}
 

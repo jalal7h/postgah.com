@@ -42,7 +42,7 @@ function billing_settleInvoice( $invoice_id , $transaction ){
 		# congragulate the payment
 		$vars = $rw_invoice;
 		$vars['invoice_id'] = $rw_invoice['id'];
-		$vars['invoice_transaction'] = $rw_invoice['transaction'];
+		$vars['invoice_transaction'] = $transaction;
 		$vars['invoice_cost'] = billing_format($rw_invoice['cost']);
 		
 		echo texty( 'billing_settleInvoice', $vars );

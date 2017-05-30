@@ -15,12 +15,12 @@ function billing_settle( $invoice_id , $transaction ){
 	#
 	# confirm the invoice
 	if(! $rw_invoice = billing_settleInvoice( $invoice_id , $transaction ) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	# 
 	# confirm the order [if exists] and decrease credit
 	} else if(! billing_settleOrder( $rw_invoice['order_table'], $rw_invoice['order_id'] ) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else {
 		return true;

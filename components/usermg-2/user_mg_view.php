@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/05/01
-# 1.0
+# 2017/05/30
+# 1.1
 
 function user_mg_view(){
 
@@ -14,7 +14,7 @@ function user_mg_view(){
 
 	} else {
 
-		echo "<div class=\"user_mg_view_head\">#".$rw_user['id']." - ".$rw_user['name']."</div>";
+		echo "<div class=\"user_mg_view_head\"><a href=\""._URL."/admin/user\">".__('لیست کاربران')."</a> &nbsp; » &nbsp; #".$rw_user['id']." - ".$rw_user['name']."</div>";
 
 		$tabmenu_items[ "user_mg_view_main" ] = __("مشخصات کاربر");
 		if( sizeof($GLOBALS['adminusertab']) ){

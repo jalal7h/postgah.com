@@ -40,7 +40,7 @@ function billing_mg_widget_monthlyPayments(){
 			"skipwallet" => true ,
 			"date" => array ( "day" => substr($Date, 0, 8).($i<10?"0".$i:$i) ) ,
 		);
-		$list_of_days_str_cost[] = round(billing_stat_payment( $list ) / _billng_unit_rate );
+		$list_of_days_str_cost[] = round(billing_stat_payment( $list ) * 100 / _billng_unit_rate ) / 100;
 	}
 
 	if( sizeof($list_of_days_str) ){

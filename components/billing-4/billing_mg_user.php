@@ -1,5 +1,9 @@
 <?
 
+# jalal7h@gmail.com
+# 2017/05/30
+# 1.1
+
 function billing_management_user(){
 	
 	#
@@ -13,7 +17,7 @@ function billing_management_user(){
 	# list
 	$list['query'] = " SELECT * FROM `user` WHERE `permission`='0' ORDER BY `id` DESC ";
 	
-	$list['target_url'] = '_URL."/?page=".$_REQUEST["page"]."&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["func"]."&do=invoice_list&id=".$rw["id"]';
+	$list['target_url'] = '_URL."/admin/billing/user/".$rw["id"]';
 	$list['paging_url'] = '_URL."/?page=".$_REQUEST["page"]."&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["func"]';
 	$list['addnew_url'] = false;
 	

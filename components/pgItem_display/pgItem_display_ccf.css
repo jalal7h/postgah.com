@@ -16,15 +16,18 @@
 	width: 190px;
 	vertical-align: top;
 	color: #888;
+	font-size: 13px;
 }
 .pgItem_display_ccf .re .value {
 	display: inline-block;
 	width: calc( 100% - 190px );
+	font-size: 12px;
 }
 .pgItem_display_ccf .re .value .checkbox_node {
 	margin: 3px 0;
 	min-width: 175px;
 	display: inline-block;
+	font-size: 12px;
 }
 .pgItem_display_ccf .re .value .checkbox_node:before {
 	content: "\f046";

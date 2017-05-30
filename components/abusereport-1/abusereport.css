@@ -1,6 +1,7 @@
 
 .abusereport {
 	cursor: pointer;
+	font-size: 12px;
 }
 .abusereport:before {
 	font-family: FontAwesome;

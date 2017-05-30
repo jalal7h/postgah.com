@@ -15,6 +15,7 @@
 	background-color: white;
 	direction: rtl;
 	transition: all 1s;
+	font-size: 13px;
 }
 
 #alerty .msg.hide {

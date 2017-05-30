@@ -28,6 +28,7 @@
 	font-family: DefaultFont;
 	position: relative; top: -1px; z-index: 11;
 	transition: 0.2s all;
+	font-size: 12px;
 }
 .pgSearch_form input[type="submit"]:hover {
 	opacity: 0.8;

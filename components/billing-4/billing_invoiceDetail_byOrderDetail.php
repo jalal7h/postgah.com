@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/09
-# 1.0
+# 2017/05/28
+# 1.1
 
 function billing_invoiceDetail_byOrderDetail( $order_table, $order_id ){
 
@@ -10,7 +10,7 @@ function billing_invoiceDetail_byOrderDetail( $order_table, $order_id ){
 		e();
 
 	} else if(! dbn($rs) ){
-		e();
+		return false;
 
 	} else if(! $rw = dbf($rs) ){
 		e();

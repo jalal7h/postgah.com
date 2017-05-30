@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/05/07
-# 1.2
+# 2017/05/24
+# 1.3
 
 # action e form e pardakht
 # form e pardakht
@@ -80,7 +80,7 @@ function billing_userpanel_payment(){
 	#
 	# offline methods
 	if(! $rs_off = dbq(" SELECT * FROM `billing_method` WHERE `c5`='offline' ORDER BY `id` DESC ") ){
-		e(__FUNCTION__.__LINE__);
+		e();
 	
 	} else if(! dbn($rs_off) ){
 		// nothing

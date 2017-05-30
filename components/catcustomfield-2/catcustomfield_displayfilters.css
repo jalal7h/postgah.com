@@ -19,6 +19,7 @@
 	width: 100%;
 	text-align: left;
 	color: rgba(0, 0, 0, .5);
+	font-size: 12px;
 }
 .ccf_displayFilters > .cat > .element .more:hover {
 	color: #000;
@@ -31,12 +32,13 @@
 	display: block;
 	margin-bottom: 10px;
 	color: #999;
+	font-size: 13px;
 }
 .ccf_displayFilters > .cat > .element label {
 	min-width: 48%;
     display: inline-block;
     padding-right: 8px;
-    margin: 5px 0;
+    margin: 1px 0;
 }
 .ccf_displayFilters > .cat > .element span {
 	color: #333;

@@ -7,15 +7,22 @@ jQuery(document).ready(function($) {
 	
 	if(typeof tinymce !== 'undefined'){
 		
+		if( lang_dir == 'ltr' ){
+			default_align = 'left';
+		} else {
+			default_align = 'right';
+		}
+
 		tinymce.init({
 			
 			selector:'textarea.tinymce',
-		
+			height:'200',
+
             plugins: "paste",
             paste_data_images: true,
 		
-			directionality : 'rtl',
-			theme_advanced_toolbar_align : "right",
+			directionality : lang_dir,
+			theme_advanced_toolbar_align : default_align,
 			
             content_css : _URL + "/templates/Default/font/font.css,"+_URL+"/styles.css",
 
