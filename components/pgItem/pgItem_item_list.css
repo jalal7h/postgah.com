@@ -6,6 +6,7 @@
 .pgItem_item_list .head_and_subcat_wrapper {
 	background-color: #e8e8e8;
 	border-radius: 5px;
+	font-size: 13px;
 }
 
 .pgItem_item_list .head {
@@ -25,12 +26,14 @@
 }
 .pgItem_item_list .subcat > a > .title {
 	display: inline-block;
+	font-size: 12px;
 }
 .pgItem_item_list .subcat > a:hover {
 	color: blue;
 }
 .pgItem_item_list .subcat > a > span.count {
 	color: #adadad;
+	font-size: 12px;
 }
 
 .pgItem_item_list .items {
