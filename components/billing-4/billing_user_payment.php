@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/05/24
-# 1.3
+# 2017/06/03
+# 1.4
 
 # action e form e pardakht
 # form e pardakht
@@ -93,7 +93,7 @@ function billing_userpanel_payment(){
 	<form method='post' action='"._URL."/?page=".$_REQUEST['page']."&do_slug=".$_REQUEST['do_slug']."&do2=submit".( $invoice_id ? "&invoice_id=".$invoice_id : "" )."' class='billing_userpanel_payment' name='blngpf'>
 		<div class='text' >".__("نحوه پرداخت").":</div>
 		<div class='method_list'>
-			<!--<h1>".__("آنلاین")."</h1>-->
+			<h1>".__("آنلاین")."</h1>
 			".$method_str."
 			".$method_str_offline."
 		</div>
