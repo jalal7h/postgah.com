@@ -7,11 +7,13 @@ jQuery(document).ready(function($) {
 	
 	// remove all 'title' , and replace it with 'tooltip-title'
 	$("*").each(function(index){
-		var attr = $(this).attr('title');
-		if(typeof attr !== typeof undefined && attr !== false){
-			title = $(this).attr('title');
-			$(this).removeAttr('title');
-			$(this).attr('tooltip-title', title);
+		var attr_title = $(this).attr('title');
+		if(typeof attr_title !== typeof undefined && attr_title !== false){
+			var attr_skip = $(this).attr('skiptooltip');
+			if(typeof attr_skip === typeof undefined || attr_title === false ){
+				$(this).removeAttr('title');
+				$(this).attr('tooltip-title', attr_title);
+			}
 		}
 	});
 

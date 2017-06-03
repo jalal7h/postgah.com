@@ -1,0 +1,11 @@
+
+#user_login_form .login_form {
+	border: 0;
+	width: 100%;
+	display: block;
+}
+
+#user_login_form .register_button {
+	display: none;
+}
+

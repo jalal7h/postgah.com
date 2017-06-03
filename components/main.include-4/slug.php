@@ -11,8 +11,8 @@ add_slug([
 	'scripts-footer.js' => './?do_action=include_all_js_footer' ,
 	'scripts-admin.js' => './?do_action=include_all_js&page=admin' ,
 
-	'styles.css' => './?do_action=include_all_css' ,
-	'styles-admin.css' => './?do_action=include_all_css&page=admin' ,
+	'styles.css' => './?do_action=include_css' ,
+	'styles-admin.css' => './?do_action=include_css&page=admin' ,
 
 ]);
 

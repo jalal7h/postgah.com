@@ -1,0 +1,18 @@
+
+.news_list .re {
+	height: auto;
+}
+
+.news_list img {
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+.news_list .info {
+	min-width: 100%;
+}
+
+.news_list .social {
+	display: none;
+}

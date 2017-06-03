@@ -8,7 +8,7 @@
     /* right: 5px; */
     /* top: 0px; */
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     padding-left: 130px;
 }
 .pgItem_display_slide .item_code {
@@ -16,6 +16,7 @@
     left: 6px;
     top: 9px;
     color: gray;
+    font-size: 12px;
 }
 .pgItem_display_slide .slidy {
     margin-top: 20px;

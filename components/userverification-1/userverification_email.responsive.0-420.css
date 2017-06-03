@@ -1,0 +1,8 @@
+
+form#userverification_email {
+	padding: 6%;
+}
+
+form#userverification_email .head {
+	margin: 0 -2% 20px;
+}

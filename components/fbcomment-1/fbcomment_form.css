@@ -18,7 +18,7 @@
 	padding: 10px 10px 10px 60px;
 	border: 1px solid #f1f1f1;
 	vertical-align: top;
-	width: calc( 100% - 54px );
+	width: calc( 100% - 56px );
 	border-radius: 6px;
 	font: normal 11px DefaultFont;
 	transition: all 0.2s;
@@ -28,7 +28,7 @@
 .fbcomment form.form > input[type="submit"] {
 	position: absolute;
     left: 21px;
-    top: 21px;
+    top: 20px;
     color: #BD3559;
     opacity: 0.0;
     transition: all 0.5s;
@@ -38,6 +38,7 @@
     padding: 4px 9px;
     width: auto;
     line-height: 1.5 !important;
+    font-size: 12px;
 }
 
 .fbcomment_form_login_request {

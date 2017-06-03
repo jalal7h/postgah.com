@@ -27,7 +27,11 @@ function lang_css_fix( $css, $file ){
 	foreach ($css_arr as $i => $tag) {
 		$tag_arr = explode('}', $tag);
 		$tag_arr[0] = lang_css_fix_toggle( $tag_arr[0], 'direction:rtl', 'direction:ltr' );
+
+		$tag_arr[0] = lang_css_fix_toggle( $tag_arr[0], 'copyright', 'copy__ght' );
 		$tag_arr[0] = lang_css_fix_toggle( $tag_arr[0], 'left', 'right' );
+		$tag_arr[0] = lang_css_fix_toggle( $tag_arr[0], 'copy__ght', 'copyright' );
+
 		$css_arr[$i] = implode('}', $tag_arr);
 	}
 	$css = implode('{', $css_arr);

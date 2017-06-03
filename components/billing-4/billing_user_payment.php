@@ -50,23 +50,11 @@ function billing_userpanel_payment(){
 		}
 	}
 
-	# 
-	# if its an invoice, wallet method is available
-	if( $rw_invoice ){
-		$method_str.= "
-			<div class='r'>
-			<label>
-			<input title='".__('کیف پول')."' type=radio name='method' value='wallet' />
-			<img src='"._URL."/image_list/".$png_name."'/>
-			<span class='wallet_credit'>".billing_format( billing_userCredit($user_id) )." ".__('اعتبار')."</span>
-			</label>
-			</div>";
-	}
-
 	#
 	# online methods
 	asort($GLOBALS['billing_method']);
-	foreach($GLOBALS['billing_method'] as $method => $method_title){
+
+	foreach( $GLOBALS['billing_method'] as $method => $method_title ){
 		
 		if( $method=="wallet" ){
 			continue;
@@ -77,51 +65,54 @@ function billing_userpanel_payment(){
 
 	}
 
-	#
-	# offline methods
-	if(! $rs_off = dbq(" SELECT * FROM `billing_method` WHERE `c5`='offline' ORDER BY `id` DESC ") ){
-		e();
-	
-	} else if(! dbn($rs_off) ){
-		// nothing
-	
-	} else {
-		
-		$method_str_offline = "<div style='clear: both; float: none;'></div><h1 style='border-top: 1px dashed #ccc; padding-top: 27px;'>".__("آفلاین")."</h1>";
-		
-		while( $rw_off = dbf($rs_off) ){
-			$method_str_offline.= "
-			<label class='r offline'>
-				<input title='".$rw_off['c1']."' type='radio' name='method' value='".$rw_off['method']."' />
-				<span class='c1'>".$rw_off['c1']."</span>
-			    <div class='c-container'>
-					<span class='c2'>".__("حساب").":‌ ".$rw_off['c2']."</span>
-					<span class='c3'>".__("کارت").":‌ ".$rw_off['c3']."</span>
-				</div>
-			</label>";
-		}
 
+	# 
+	# if its an invoice, wallet method is available
+	if( $rw_invoice and $rw_invoice['order_table'] != '' ){
+		$method_str.= "
+			<div class='r'>
+			<label>
+			<input title='".__('کیف پول')."' type=radio name='method' value='wallet' />
+			<img src='"._URL."/image_list/".$png_name."'/>
+			<span class='wallet_credit'>".billing_format( billing_userCredit($user_id) )." ".__('اعتبار')."</span>
+			</label>
+			</div>";
 	}
+
+	$method_str.= "<input style=\"display:none;\" type=radio name='method' value='null' />";
+
+	#
+	# offline
+	if( is_component('billing_offline') ){
+		$method_str_offline = billing_userpanel_offline_form_listofpaymentmethods();
+	}
+
 
 	$content = "
 	<script> var billing_userCredit='".billing_userCredit( $user_id )."';</script>
 	<form method='post' action='"._URL."/?page=".$_REQUEST['page']."&do_slug=".$_REQUEST['do_slug']."&do2=submit".( $invoice_id ? "&invoice_id=".$invoice_id : "" )."' class='billing_userpanel_payment' name='blngpf'>
 		<div class='text' >".__("نحوه پرداخت").":</div>
 		<div class='method_list'>
-			<h1>".__("آنلاین")."</h1>
+			<!--<h1>".__("آنلاین")."</h1>-->
 			".$method_str."
 			".$method_str_offline."
 		</div>
 		<div class='cost-container'>
 			<span>".__("مبلغ قابل پرداخت")."</span>
 			
-			".( $cost ? "<span class=\"fixed_cost\">".billing_format($cost)."</span>" : "<input type=text name=\"cost\" class=\"numeric\" id=\"billing_cost\" value=\"$cost\" readonly=\"1\" />" )."
+			".( $cost 
+				? '<span class="fixed_cost">'.billing_format($cost).'</span>'
+				: '<input type="text" name="cost" class="numeric" id="billing_cost" value="'.$cost.'" />'
+			)."
+
+			<input type=\"submit\" value=\"".__("پرداخت")."\" />
 
 			".convbox( __('با کلیک روی پرداخت به درگاه بانک می روید<br/>شما می توانید پرداخت خود را با کلیه کارت عضو شتاب انجام دهید') )."
-			<input type=\"submit\" value=\"".__("پرداخت")."\" />
+
 		</div>
 		".token_make()."
-	</form>";
+	</form>
+	";
 
 	layout_post_box( __("شارژ حساب"), $content, $allow_eval=false, $framed=1 );
 

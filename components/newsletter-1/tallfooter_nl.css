@@ -15,7 +15,7 @@
 	width: 300px;
 	box-shadow: 0 0 15px black;
 	border: 0px;
-	font-family: Monospace,Raleway;
+	font-family: Raleway;
 
 }
 .tallfooter_nl form input[name="email"]:focus {

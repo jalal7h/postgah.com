@@ -19,6 +19,3 @@ function component_version( $component ){
 
 
 
-
-
-

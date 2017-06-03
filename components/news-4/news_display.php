@@ -35,7 +35,7 @@ function news_display( $rw_pagelayer ){
 				<div class="news_display_social">'.seo_share('24').'</div> 	
 			</div>
 			
-			'.( $image ? '<div class="news_display_img"><img class="isss" src="'._URL.'/'.$image.'"></div>' : '').'
+			'.( $image ? '<div class="news_display_img"><img src="'._URL.'/'.$image.'"></div>' : '').'
 
 			<div class="news_display">
 				<div class="text">'.$rw['text'].'</div>

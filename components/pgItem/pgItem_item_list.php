@@ -20,8 +20,7 @@ function pgItem_item_list( $rw_pagelayer ){
 
 	if( $cat_id = $_REQUEST['cat_id'] ){
 		if(! $rw_cat = table("cat", $cat_id) ){
-			e(__FUNCTION__,__LINE__);
-			return false;
+			return e();
 		}
 	}
 
@@ -46,7 +45,7 @@ function pgItem_item_list( $rw_pagelayer ){
 			#
 			# sub cats
 			if(! $rs_sub = dbq(" SELECT * FROM `cat` WHERE `flag`='1' AND `parent`='$cat_id' ORDER BY `prio` ASC, `name` ASC ") ){
-				e(__FUNCTION__,__LINE__);
+				e();
 			
 			} else if(! dbn($rs_sub) ){
 				//
@@ -128,7 +127,7 @@ function pgItem_item_list( $rw_pagelayer ){
 		$query = " SELECT * FROM `item` WHERE 1 $q_query $cat_query $ccf_filterquery AND `flag`='2' AND `expired`='0' ORDER BY `date_updated` DESC LIMIT $start_from , $count_in_page ";
 
 		if(! $rs_item = dbq( $query ) ){
-			e( __FUNCTION__,__LINE__,dbe() );
+			e( dbe() );
 		
 		} else if(! dbn($rs_item) ){
 			$cache_value.= convbox("هنوز آیتمی در این دسته ثبت نشده است.");

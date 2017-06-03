@@ -1,181 +1,46 @@
-<?
+<?php
 
-# taghipoor.meysam@gmail.com
-# 2017/01/29
-# 1.1
+# jalal7h@gmail.com
+# 2017/05/31
+# 1.0
 
-add_layer( 'news_list', 'لیست خبر‌ها' );
+add_layer( 'news_list', 'لیست خبر‌ها', 'center', $repeat='1' );
 
-function news_list($rw_pagelayer){
-
-	$title = $rw_pagelayer['name'];
+function news_list( $rw_pagelayer ){
 	
-	# در صورت انتخواب گروه خبری در سلکت استفاده میشه
-	if ($cat_id = $_REQUEST['cat_id']) {
-	
-		# اگر Any انتخواب شده بود
-		if ($cat_id == "Any") {
-			$q_cat = "";
-			$link = _URL."/?page=51&p=".$_REQUEST['p'];
+	$where_set = [ 'flag' => 1 ];
 
-		} else {
-			$q_cat = "AND `cat`='$cat_id'";
-			$link = _URL."/?page=51&cat_id=".$cat_id."&p=".$_REQUEST['p'];
-		}
-	
+	$tdd = 7;
+	$p = intval($_REQUEST['p']);
+	$stt = $p * $tdd;
+
+	if(! $news_list = table( 'news', $where_set, [ 'date_created' => 'desc' ], "$stt,$tdd" ) ){
+		$content = convbox( __('خبری نیست!') );
+
 	} else {
-		$link = _URL."/?page=51&p=".$_REQUEST['p'];
+
+		foreach( $news_list as $i => $news ){
+			
+			$news['link'] = news_link( $news );
+			if( $news['image'] ){
+				$news['image'] = _URL . '/' . $news['image'];
+			}
+			$news['cat'] = cat_translate( $news['cat'] );
+			$news['date'] = UDate( $news['date_created'], 'text' );
+			$news['social'] = seo_share( '24' , news_link($news) );
+
+			$news_list[$i] = (object) $news;
+
+		}
+
+		$paging = listmaker_paging( " SELECT * FROM `news` WHERE `flag`='1' " , _URL.'/news/%%' , $tdd );
+
+		$content = template_engine( 'news_list', [ 'news_list'=>$news_list, 'paging'=>$paging ] );
+
 	}
 
-	# دسته خبری را از دیتابیس گرفته و در optionقرار میدهیم
-    $rw = cat_display('news');
-    foreach ($rw as $id => $name) {
-		$list_of_options_for_news_list.= "<option ".( $cat_id==$id? "selected" : "" )." value=\"".$id."\">".$name."</option>\n";
-	}	
-	
-	$content = '<div class="news_list">
-	<span>'.__('دسته بندی').'</span>
-	<select id = "mySelect" onchange="Categorylist()">
-		<option value = "Any"></option>
-		'.$list_of_options_for_news_list.'
-	</select>';
-	
-	# برای کنترل تعداد ستون ها استفاده میشه
-	$i = 1; 
-	
-	# برای تنظیم دو ستونی شدن به کار میره
-	$j = 0; 
-
-	$tdd = 10;
-	$stt = $tdd * intval($_REQUEST['p']); 
-    $query1 = " SELECT * FROM `news` WHERE `flag`='1' $q_cat ORDER BY `id` DESC LIMIT $stt , $tdd ";
-    
-    if(! $rs1 = dbq($query1) ){
-		e();
-	
-	} else if(! dbn($rs1) ){
-		$content.= convbox( __('موردی یافت نشد') );
-	
-	} else {
-
-	    while( $rw1 = dbf($rs1) ){
-
-			$image = $rw1['image'];
-
-			# بررسی تصویر
-			if (! $image ) {
-				if ($i == 1) {
-					$i = 2;
-					$j = 0;
-					# نمایش خبر بدون تصویر در یک ستون
-					$content.= noimg1($rw1);
-
-				} else {
-					$j++;
-					if($j == 2){
-						$i = 1;
-						$j = 0;
-					}
-					# نمایش خبر بدون تصویر در ستون دوم
-					$content.= noimg2($rw1);
-				}
-
-			} else if( $i == 1 ){
-				# اگر تصویر باشد و تکی نمایش دهد
-				$i = 2;
-			
-			$content.= '<div class="news_list_content">
-				<a href="'.news_link($rw1).'">
-					<div class="news_list_text">
-						<div class="news_list_tile">
-							<span class="news_list__cat">'.cat_translate($rw1['cat']).'</span>
-							<span class="news_list__date">'.UDate( $rw1['date_created'],'text').'</span>
-							<p>'.$rw1['name'].'</p>
-						</div>
-					</div><div class="news_list_img">
-						<img class="isss" src="'._URL.'/'.$image.'">
-					</div>
-					<div class="social2">'.seo_share( '24' , news_link($rw1) ).'</div>
-				</a>
-			</div>';
-					
-			} elseif ($i == 2) { // نمایش خبر ها در دو ستون
-				$j++;
-				if($j == 2){
-					$i = 1;
-					$j = 0;
-				}
-				$content.= two_news_list($rw1);
-			}
-
-		}# end while	
-		$content.= listmaker_paging($query1, $link, $tdd, $debug=true);
-    }# end else
-	
-	$content.= '</div>';
-    layout_post_box( $title , $content, $allow_eval = false, $framed = true, $position = "center");
+	$title = $rw_pagelayer['name'];
+    layout_post_box( $title , $content, $allow_eval=false, $framed=true, $position="center" );
 
 }
 
-# در صورت نداشتن تصویر این اجرا میشه
-function noimg1($rw1){
-	
-	$noimg1.= '<div class="noimg">
-		<a href="'.news_link($rw1).'">
-			<div class="left">
-				<span class="news_list__cat">'.cat_translate($rw1['cat']).'</span>
-				<span class="news_list__date">'.UDate($rw1['date_created'], 'text').'</span>
-			</div>
-			<div class="right">
-				<p>'.$rw1['name'].'</p>
-			</div>
-		</a>	
-		<div class="social3">'.seo_share( '24' , news_link($rw1) ).'</div>
-	</div>';
-
-	return $noimg1;
-	
-}
-
-# در صورت نداشتن تصویر و نمایش خبر در ستون دوم
-$GLOBALS['news-counter'];
-function noimg2( $rw1 ){
-	
-	$GLOBALS['news-counter']++;
-		
-	$noimg2.= '<div class="two_news_list_noimg '.( $GLOBALS['news-counter'] %2 ? "first" : "second" ).'" >
-		<a href="'.news_link($rw1).'">
-			<div class="left">
-				<span class="news_list__cat">'.cat_translate($rw1['cat']).'</span>
-				<span class="news_list__date">'.UDate($rw1['date_created'], 'text').'</span>
-				<p>'.$rw1['name'].'</p>
-			</div>
-			<div class="social2">'.seo_share( '24' , news_link($rw1) ).'</div>
-		</a>			
-	</div>';
-
-	return $noimg2;
-
-}
-
-# خبرها در دو ستون نشان داده میشه
-function two_news_list($rw1){
-	
-	$GLOBALS['news-counter']++;
-
-	$two_news_list.= '<div class="two_news_list '.( $GLOBALS['news-counter'] %2 ? "first" : "second" ).'" >
-		<a href="'.news_link($rw1).'">
-			<div class="left">
-				<span class="news_list__cat">'.cat_translate($rw1['cat']).'</span>
-				<span class="news_list__date">'.UDate($rw1['date_created'], 'text').'</span>
-				<p>'.$rw1['name'].'</p>
-			</div><div class="news_list_2img">
-				<img class="isss" src="'._URL.'/resize/1800x780/'.$rw1['image'].'">
-			</div>
-			<div class="social2">'.seo_share( '24' , news_link($rw1) ).'</div>
-		</a>			
-	</div>';
-
-	return $two_news_list;
-	
-}

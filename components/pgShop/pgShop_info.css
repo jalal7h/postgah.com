@@ -22,9 +22,11 @@
 }
 .pgShop_info > div > span {
 	display: block;
+	font-size: 12px;
 }
 .pgShop_info > .desc > span {
 	text-align: justify;
+	font-size: 12px;
 }
 .pgShop_info > .phone > span {
 	direction: ltr;

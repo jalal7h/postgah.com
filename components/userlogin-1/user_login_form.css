@@ -20,6 +20,7 @@
 #user_login_form input[name=password] {
 	font-size: 16px;
 	width: 300px;
+	max-width: 100%;
 	padding: 8px 12px;
 	font-family: monospace,sans-serif;
 	box-shadow: 0 0 5px rgba(0, 0, 0, .2) inset;

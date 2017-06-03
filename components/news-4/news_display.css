@@ -6,7 +6,7 @@
 
 .news_display {
 	margin: 30px auto;
-	max-width: 980px;
+	max-width: 98%;
 	padding: 0 22px;
 	margin-left: auto;
 	margin-right: auto;
@@ -42,8 +42,8 @@
 }
 .news_display_img > img {
 	width: 816px;
+	max-width: 100%;
 	margin: 10px auto;
-
 }
 .news_display .text * {
 	font-size: 16px;

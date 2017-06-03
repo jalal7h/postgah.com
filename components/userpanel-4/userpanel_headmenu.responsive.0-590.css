@@ -1,0 +1,60 @@
+/*index*/
+
+.userpanel_headmenu {
+    position: relative;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    text-align: center;
+}
+
+.userpanel_headmenu .box > .circle {
+    display: none;
+}
+
+.userpanel_headmenu .box {
+    display: block;
+    padding: 7px 10px;
+    border-radius: 4px 4px 0 0;
+    margin: 10px 0 0;
+    width: 100%;
+    transition: all 0.2s;
+}
+.userpanel_headmenu .box icon {
+    display: none;
+}
+.userpanel_headmenu .links {
+    left: 0px;
+    right: 0px;
+    background-color: rgba(0,0,0,0.03);
+    padding: 0 0 4px 0;
+    border-radius: 0 0 4px 4px;
+}
+.userpanel_headmenu.logged:hover .box {
+    width: 100%;
+    padding: 7px 10px;
+}
+.userpanel_headmenu.logged menu {
+    display: block;
+}
+.userpanel_headmenu.logged menu a icon {
+    display: none;
+}
+.userpanel_headmenu.logged menu > a > span {
+    top: 6px;
+    text-transform: uppercase;
+}
+.userpanel_headmenu.logged > a {
+    display: none;
+}
+.userpanel_headmenu.logged:hover {
+    box-shadow: 0 0 0 black;
+}
+.userpanel_headmenu.logged menu a:first-of-type {
+    border-radius: 4px 4px 0 0;
+}
+.userpanel_headmenu.logged:hover .links {
+    display: block;
+}
+
+

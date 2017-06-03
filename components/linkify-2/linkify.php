@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/01/06
-# 1.0
+# 2017/05/30
+# 1.1
 
 function linkify( $lc_name, $class ){
 
@@ -18,6 +18,7 @@ function linkify( $lc_name, $class ){
 	} else {
 		
 		$c.= "\n\t<div class=\"".__FUNCTION__."_".$class."\" lang_dir=\"".lang_dir."\" >\n";
+		$c.= "<i class=\"navmenu fa fa-navicon fa-2x\"></i>";
 		$c.= linkify_display_this( $lf['items'], $lf['haveSub'], $lf['haveIcon'] );
 		$c.= "\t</div>\n";
 

@@ -29,7 +29,7 @@
 
 function cache( $task, $key, $value_or_timeout=""){
 	
-	if( cache === true ){
+	if( cache_enabled() ){
 		
 		$key = cache_keycheck( $key );
 

@@ -13,6 +13,7 @@
 }
 .fbcomment_list > div > div.r:hover .date {
 	opacity: 1.0;
+	font-size: 12px;
 }
 
 .fbcomment_list div.r div.text {
@@ -57,7 +58,7 @@
 	color: black;
 }
 .fbcomment_list div.r div.links > .reply {
-	
+	font-size: 12px;
 }
 .fbcomment_list div.r div.links > .tweet {
 	

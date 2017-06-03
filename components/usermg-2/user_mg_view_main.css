@@ -16,4 +16,5 @@ form.user_mg_view_main .lmfe_toggle_cell_verified {
 form.user_mg_view_main .lmfe_inDiv {
 	width: 48%;
 	display: inline-block;
+	margin: 6px 0;
 }

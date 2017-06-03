@@ -1,7 +1,7 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/07/01
+# 2017/05/31
 # 1.1
 
 # if we have this component(s)
@@ -38,7 +38,7 @@ function is_component_load(){
 		return true;
 	
 	} else if(! $dp = opendir("components") ){
-		e(__FUNCTION__.__LINE__);
+		e();
 	
 	} else while( $d = readdir($dp) ){
 		
@@ -46,13 +46,16 @@ function is_component_load(){
 			continue;
 
 		} else {
+			
 			if( strstr($d, "-") ){
 				$d = explode("-", $d);
 				$the_component_name = $d[0];
 				$the_component_version = $d[1];
 			}
+
 			$GLOBALS['component_list'][] = $the_component_name;
 			$GLOBALS['component_version'][ $the_component_name ] = $the_component_version;
+			
 		}
 
 	}

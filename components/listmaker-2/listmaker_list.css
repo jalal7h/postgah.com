@@ -37,10 +37,11 @@
 .listmaker_list_record td {
 	/*border:1px solid #eee;*/
 	box-shadow: 0 0 10px #D4D4D4;
-	border-left:0px;
+	border-left: 0px;
 	vertical-align: middle;
 	border-radius: 4px;
 	text-align: right;
+	font-size: 12px;
 }
 .listmaker_list_record td:last-child {
 	/* border-left: 1px solid #eee; */
@@ -148,11 +149,12 @@
     background: linear-gradient(#fbfbfb, #fefefe); /* Standard syntax (must be last) */
 }
 .listmaker_list_head th {
-	padding:10px;
-	cursor:default;
-	text-align:center;
+	padding: 10px;
+	cursor: default;
+	text-align: center;
 	border-radius: 4px;
 	background-color: #ddd;
+	font-size: 12px;
 }
 .listmaker_list_head_footer {
 	height: 5px;

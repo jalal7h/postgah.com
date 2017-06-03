@@ -1,11 +1,15 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/05/14
-# 1.1
+# 2017/05/31
+# 1.2
 
 function userverification_init( $username, $verify_back, $its=null ){
 	
+	if(! cache_enabled() ){
+		ed( 'Cache is needed for verification.' );
+	}
+
 	if( $its ){
 		if( in_array($its, ['email', 'cell'] ) ){
 			ed();

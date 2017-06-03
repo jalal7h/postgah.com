@@ -1,0 +1,16 @@
+/*index*/
+
+.news_list .re:nth-child( 3n + 2 ), .news_list .re:nth-child( 3n ) ,
+.news_list .re {
+	display: block;
+	width: 100%;
+	margin: 20px 0;
+}
+
+
+
+
+
+
+
+

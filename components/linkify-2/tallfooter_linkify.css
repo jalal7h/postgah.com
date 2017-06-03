@@ -3,10 +3,10 @@
 	padding: 0 20px 10px 20px;
 }
 .tallfooter .this.linkify:first-child {
-	padding-right: 0px;
+	/* padding-right: 0px; */
 }
 .tallfooter .this.linkify:last-child {
-	padding-left: 0px;
+	/* padding-left: 0px; */
 }
 
 .tallfooter .this.linkify > div.head {

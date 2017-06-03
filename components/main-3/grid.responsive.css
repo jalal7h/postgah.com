@@ -1,0 +1,46 @@
+
+/**
+ * 490 - 980
+ ************/
+@media screen and (max-width: 980px) and (min-width: 590px) {
+	
+	.grid3 {
+		width: 50%;
+	}
+	.grid4 ,
+	.grid5 ,
+	.grid6 ,
+	.grid7 ,
+	.grid8 ,
+	.grid9 ,
+	.grid10 ,
+	.grid11 {
+		width: 100%;
+	}
+
+}
+
+/**
+ * 0 - 490
+ ************/
+@media screen and (max-width: 590px) and (min-width: 0px) {
+
+	.grid3 ,
+	.grid4 ,
+	.grid5 ,
+	.grid6 ,
+	.grid7 ,
+	.grid8 ,
+	.grid9 ,
+	.grid10 ,
+	.grid11 {
+		width: 100%;
+	}
+
+}
+
+
+
+
+
+

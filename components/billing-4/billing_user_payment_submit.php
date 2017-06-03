@@ -58,8 +58,7 @@ function billing_userpanel_payment_submit(){
 		#
 		# handle payment form
 		} else {
-			echo "<script> location.href = '"._URL."/?page=".$_REQUEST['page']."&do_slug=".$_REQUEST['do_slug']."&do2=redirect&invoice_id=".$invoice_id."'; </script>";
-			die();
+			jsgo( _URL . '/' . Slug::getSlugByName('userpanel') . '/payment/redirect/' . $invoice_id );
 		}
 
 	}
