@@ -49,12 +49,10 @@ function is_component_load(){
 			
 			if( strstr($d, "-") ){
 				$d = explode("-", $d);
-				$the_component_name = $d[0];
-				$the_component_version = $d[1];
+				$the_component_name = $d[0]; // $d[1] == component version
 			}
 
 			$GLOBALS['component_list'][] = $the_component_name;
-			$GLOBALS['component_version'][ $the_component_name ] = $the_component_version;
 			
 		}
 
