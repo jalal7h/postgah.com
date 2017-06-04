@@ -6,8 +6,7 @@
 
 function lang_sync_db_putInFiles( $c ){
 	
-	$v = component_version('lang');
-	$db = "components/lang-".$v."/lib/db";
+	$db = bysideme_local().'/lib/db';
 
 	if(! file_exists($db) ){
 		ed();

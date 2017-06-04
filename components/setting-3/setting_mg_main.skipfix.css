@@ -1,8 +1,8 @@
-
 /*admin*/
 
-.setting_mg_main #lmfe_setting_mg_main_html_extra_tags {
+.setting_mg_main #lmfe_form7dc22b_html_extra_tags ,
+.setting_mg_main #lmfe_form7dc22b_html_robots_txt {
 	direction: ltr;
 	font-family: monospace,sans-serif;
-	height: 140px;
+	height: 160px;
 }

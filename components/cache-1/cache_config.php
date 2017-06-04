@@ -4,7 +4,7 @@
 # 2017/06/03
 # 1.1
 
-# --spi--
+# -spi
 
 define( 'cache_type',!is_bool(cache)?cache:  'file'  ); // file / redis / memcached
 

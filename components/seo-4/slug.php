@@ -1,7 +1,7 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/03
+# 2017/06/04
 # 1.1
 
 add_slug([
@@ -12,5 +12,8 @@ add_slug([
 
 	'rss' => './?do_action=seo_rss_mega' ,
 	'rss/$.xml' => './?do_action=seo_rss&feed=$1' ,
+
+	'robots.txt' => './?do_action=seo_robots' ,
+
 
 ]);
