@@ -48,10 +48,6 @@
 #lmfe_inDiv_pgItem_user_form_delivery_method label {
 	margin-left: 20px;
 }
-#lmfe_inDiv_pgItem_user_form_delivery_method label span {
-	font-size: 12px;
-}
-
 #delivery_costs {
 	display: none;
 }
@@ -91,9 +87,6 @@
 	padding-top: 10px;
 }
 
-.sale_by_postgah_toggle_wrapper span {
-	font-size: 12px;
-}
 
 
 
