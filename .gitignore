@@ -1,5 +1,6 @@
 data/*
 codec
+sync
 codec.d
 allow.inc
 config.php

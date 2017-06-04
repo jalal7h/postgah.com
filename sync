@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/06/03
-# 1.0
+# 2017/06/04
+# 1.2
 
 
 const repo = '/Users/jalal/Dropbox/scripts/php/content_machine/';
@@ -86,7 +86,7 @@ class repo {
 
 				# if its new dir, make it
 				if(! file_exists($dir_d) ){
-					echo "d $dir_d\n";
+					echo "d ".substr($dir_d,11)."\n";
 					mkdir($dir_d);
 				}
 
@@ -109,7 +109,7 @@ class repo {
 			}
 			$dir_d = $dir."/".$d;
 			if(! file_exists( repo.$dir_d ) ){
-				echo 'r '.$dir_d."\n";
+				echo 'r '.substr($dir_d,11)."\n";
 				if( is_dir($dir_d) ){
 					self::remove_dir($dir_d);
 				} else {
@@ -142,7 +142,7 @@ class repo {
 			if( md5_file($repo_file) == md5_file($proj_file) ){
 				return false;
 			
-			} else if( exec( " grep '\-\-spi' '". $proj_file ."' " ) ) {
+			} else if( exec( " grep '\-spi' '". $proj_file ."' " ) ) {
 		        return false;
 		    }
 
@@ -150,7 +150,7 @@ class repo {
 
 		}
 
-		echo "f $proj_file\n";
+		echo "f ".substr($proj_file,11)."\n";
 		copy( $repo_file, $proj_file );
 
 	}
