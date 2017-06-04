@@ -6,6 +6,6 @@
 
 # -spi-
 
-define( 'seo_sitemap_count_in_page' , 10000 );
+define( 'seo_sitemap_count_in_page' , 50000 );
 
 

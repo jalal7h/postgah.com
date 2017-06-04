@@ -1,6 +1,4 @@
 
-/*print*/
-
 jQuery(document).ready(function($) {
 	
 	$('.ticketbox_user_list .tools-td a[name="move_to_archive"]').on('click', function(e){

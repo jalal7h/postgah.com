@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/10/05
-# 1.2
+# 2017/06/04
+# 1.3
 
 function slidy( $arr ){
 
@@ -18,31 +18,19 @@ function slidy( $arr ){
 	#
 
 	if(! is_array($arr) ){
-		// e(__FUNCTION__,__LINE__);
+		// e();
 
 	} else if(! sizeof($arr) ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else {
 
 		foreach ($arr as $i => $image) {
-			$size = getimagesize($image);
-			$list_of_images.= "<img src=\"$image\" numb=\"".($i+1)."\" width=\"".$size[0]."\" height=\"".$size[1]."\" />";
+			list( $width, $height ) = getimagesize($image);
+			$images[] = (object) [ 'src'=> $image, 'width'=>$width, 'height'=>$height, 'numb'=>( $i+1 ) ];
 		}
 
-		$c.= js_print( 'slidy', 'slidy' );
-
-		$c.= "
-		<div class=\"slidy\" min_wh=\"".$min_wh."\">
-			<div class=\"main\">
-				$list_of_images
-			</div>
-			<div class=\"tumb\">
-				$list_of_images
-			</div>
-		</div>\n";
-
-		return $c;
+		return template_engine( 'slidy', [ 'images' => $images ] );
 
 	}
 	

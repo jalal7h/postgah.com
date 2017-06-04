@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/05/30
-# 1.0
+# 2017/06/04
+# 1.1
 
 add_action('include_css');
 
@@ -28,7 +28,8 @@ function include_css(){
 		
 		$css = include_css_fixIfResposiveAndSizeAttached( $file, $css, $normal_or_responsive );
 
-		if( trim( str_replace([ "/*admin*/", "/*index*/", "/*print*/", "/*skipfix*/" ], "", $css ) ) == '' ){
+		// /*"/*print*/",
+		if( trim( str_replace([ "/*admin*/", "/*index*/", "/*skipfix*/" ], "", $css ) ) == '' ){
 			continue;
 		
 		} else if( strstr($css,"/*admin*/") or strstr(basename($file),'_mg_') or strstr(basename($file),'_mg.') ){

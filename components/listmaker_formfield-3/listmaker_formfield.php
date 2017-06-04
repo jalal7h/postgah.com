@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/04
-# 3.1
+# 2017/06/04
+# 3.2
 
 function ff($field){
 	return listmaker_formfield($field);
@@ -316,7 +316,7 @@ function listmaker_formfield($field){
 			$c.= '
 			<!--- tinymce --->
 			<script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>
-			'.js_print( 'layout', 'tinymce-set' ).'
+			<script src="'._URL.'/modules/tinymce/tinymce-set.js"></script>
 			<!---->
 			';
 		}

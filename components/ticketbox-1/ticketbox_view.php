@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/12/17
-# 1.1
+# 2017/06/04
+# 2.0
 
 function ticketbox_view(){
 	
@@ -16,11 +16,6 @@ function ticketbox_view(){
 		echo convbox( __('%% با شناسه #%% ثبت نشده است.',[ lmtc('ticketbox')[0], $id ] ), 'transparent' );
 
 	} else {
-
-		echo js_print('ticketbox', 'ticketbox_view_post');
-		if( is_admin() ){
-			echo js_print('ticketbox', 'ticketbox_mg_post_remove');
-		}
 
 		# 
 		# auth
@@ -64,8 +59,9 @@ function ticketbox_view(){
 
 	}
 
-
 	echo $c;
 
 }
+
+
 

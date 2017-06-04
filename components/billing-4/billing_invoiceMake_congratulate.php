@@ -27,7 +27,10 @@ function billing_invoiceMake_congratulate( $invoice_id ){
 		$vars['invoice_payment_link'] = billing_invoiceLink( $vars['invoice_id'] );
 		$vars['invoice_payment_button'] = "<a class=\"btn btn-primary btn-sm\" href=\"".$vars['invoice_payment_link']."\">".__('فرم پرداخت صورتحساب')."</a>";
 
-		echo texty( 'billing_invoiceMake_congratulate', $vars, $user_id );
+		$prompt = texty( 'billing_invoiceMake_congratulate', $vars, $user_id );
+		if(! que::pop( 'billing_invoiceMake_congratulate-silent' ) ){
+			echo $prompt;
+		}
 
 	}
 

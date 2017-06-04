@@ -1,13 +1,9 @@
 
-/*-spi-*/
-
 .catcustomfield_formload {
-	background-color: #f8f8f8;
-    border-radius: 8px;
-    margin-bottom: 60px;
+	
 }
 .catcustomfield_formload > .ccffe_thisCat {
-	margin-bottom: -40px; /*-spi-*/
+	margin-bottom: 15px;
 	padding-bottom: 10px;
 	border-radius: 0 0 8px 8px;
 	background-color: #f8f8f8;

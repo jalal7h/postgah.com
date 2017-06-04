@@ -1,10 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/21
-# 1.2
-
-# -spi-
+# 2017/06/04
+# 1.3
 
 function abusereport_mg_view(){
 
@@ -25,12 +23,6 @@ function abusereport_mg_view(){
 			break;
 		
 	}
-	
-	echo js_print( 'abusereport', [
-		'abusereport_mg_view',
-		'abusereport_mg_smsToBadUser',
-		'abusereport_mg_mailToBadUser'
-	]);
 
 	#
 	# no id found
@@ -133,14 +125,7 @@ function abusereport_mg_view(){
 		$base_link = _URL."/?page=admin&cp=".$_REQUEST['cp']."&func=".$_REQUEST['func'];
 		
 		if( $rw_item ){
-
-			# 
-			# -spi- for postgah.com
-			if( $rw_ar['table_name'] == 'item' ){
-				$edit_item_link = _URL."/?page=admin&cp=pgItem_mg&do=edit&id=".$rw_ar['table_id'];
-				echo "<a class=\"btn btn-primary red\" href=\"".$edit_item_link."\" >".__('ویرایش %%',[$item_title])."</a>";
-			}
-
+			
 			#
 			# remove the bad item
 			$remove_item_link = $base_link."&do=view&id=".$rw_ar['id']."&do2=remove_item";
@@ -172,7 +157,7 @@ function abusereport_mg_view(){
 			
 			echo "<div abusereport_id=\"".$id."\" class=\"etc\">";
 			
-			if( $email = is_email_correct_or_not($rw_theBadUser['username']) ){
+			if( $email = is_email_correct_or_not($rw_theBadUser['email']) ){
 				echo "<a email=\"$email\" text_textMessage=\"".__('متن ایمیل ..')."\" text_sendButton=\"".__('ارسال')."\" class=\"mailToBadUser\" >".__("ایمیل به ثبت‌کننده %%",[$item_title])."</a>";
 			}
 

@@ -1,6 +1,4 @@
 
-/*print*/
-
 jQuery(document).ready(function($) {
 	
 	// save new post

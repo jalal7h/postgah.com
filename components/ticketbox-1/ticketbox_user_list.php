@@ -31,8 +31,6 @@ function ticketbox_user_list(){
 	}
 
 
-	echo js_print( 'ticketbox', 'ticketbox_user_list_archive' );
-
 	###################################################################################
 	# the new version 1.30
 

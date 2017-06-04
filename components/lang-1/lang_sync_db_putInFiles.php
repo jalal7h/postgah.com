@@ -1,13 +1,13 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/14
-# 1.1
+# 2017/06/04
+# 1.2
 
 function lang_sync_db_putInFiles( $c ){
 	
 	$v = component_version('lang');
-	$db = "components/lang-".$v."/db";
+	$db = "components/lang-".$v."/lib/db";
 
 	if(! file_exists($db) ){
 		ed();

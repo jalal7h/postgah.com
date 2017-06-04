@@ -1,27 +1,21 @@
-<?
+<?php
+
+# jalal7h@gmail.com
+# 2017/06/04
+# 1.0
 
 function ticketbox_view_post( $rw ){
 
-	$c.= "
-	<div class=\"post\" post_id=\"".$rw['id']."\" >
-		
-		".( is_admin() ? "<div class=\"remove\" text_remove=\"".__('آیا مایل به حذف هستید؟')."\" ></div>" : '' )."
-		
-		<div class=\"info ".( is_adminUser($rw['user_id']) ? 'admin' : 'user' )."\">
-			".( is_component('useravatar') ? useravatar( $rw['user_id'] ) : '' )."
-			<div class=\"user\">".
-				( is_admin() ? '<a href="'.user_loginLink($rw['user_id']).'">' : '' ).
-				table('user', $rw['user_id'])['name'].
-				( is_admin() ? '</a>' : '' ).
-				"</div>
-			<div class=\"date\" title=\"".UDate($rw['date_created'],'text')." ".UClock($rw['date_created'])."\">".time_inword($rw['date_created'])."</div>
-		</div>".
-		
-		"<div class=\"text\">".nl2br($rw['text'])."</div>
+	$rw['text'] = nl2br($rw['text']);
+	$rw['user_name'] = user_detail( $rw['user_id'] )['name'];
+	$rw['user_avatar'] = is_component('useravatar') ? useravatar( $rw['user_id'] ) : '';
+	$rw['user_type'] = is_adminUser($rw['user_id']) ? 'admin' : 'user';
 
-	</div>";
+	return template_engine( 'ticketbox_view_post', [ 
+	
+		'post' => (object) $rw ,
 
-	return $c;
+	]);
 
 }
 

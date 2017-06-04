@@ -34,8 +34,7 @@ function ticketbox_mg_list(){
 			
 	}
 
-
-	echo js_print( 'ticketbox', 'ticketbox_mg_list_archive' );
+	?><script src="<?=bysideme()?>/ticketbox_mg_list_archive.exclude.js"></script><?
 
 	###################################################################################
 	# the new version 1.30

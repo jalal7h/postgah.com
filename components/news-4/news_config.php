@@ -3,7 +3,7 @@
 
 # -spi- 
 
-define( 'news_fbcomment_flag', false );
+define( 'news_fbcomment_flag', true );
 
 
 

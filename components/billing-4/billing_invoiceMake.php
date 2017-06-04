@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/07/16
-# 1.1
+# 2017/06/03
+# 1.2
 
 # table , id cost user_id mgire, va ye record tuye table invoice ezafe mikone.
 
@@ -47,13 +47,13 @@ function billing_invoiceMake( $cost, $order_table="", $order_id=0, $user_id=null
 		#
 		# repeat verification
 		} else if(! $rs_repeat = dbq(" SELECT * FROM `billing_invoice` WHERE `order_table`='$order_table' AND `order_id`='$order_id' LIMIT 1 ") ){
-			e(__FUNCTION__,__LINE__,dbe());
+			e( dbe() );
 			
 		} else if( dbn($rs_repeat) ){
 			if(! dbrm("billing_invoice",$invoice_id) ){
 				e();
 			}
-			e(__FUNCTION__,__LINE__,'repeaty order');
+			e( 'repeaty order' );
 
 		} else if(! dbs( 'billing_invoice', ['order_table'=>$order_table, 'order_id'=>$order_id], ['id'=>$invoice_id]) ){
 			e();
