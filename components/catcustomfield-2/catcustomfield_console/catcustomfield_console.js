@@ -1,10 +1,10 @@
 
-/*2016/10/18*/
+/*2017/06/05*/
 
 function catcustomfield_console( cat_name, cat_id ){
 jQuery(document).ready(function($) {
 	
-	// cl( cat_name + ' ;; ' + cat_id );
+	cl( 'catcustomfield_console :: ' + cat_name + ' ;; ' + cat_id );
 
 	$('.lmfe_inDiv.ccfc').hide();
 	$('#ccfc_'+cat_name+'_c').show();
@@ -14,8 +14,11 @@ jQuery(document).ready(function($) {
 	$('#ccfc_'+cat_name).html('');
 
 	var pars = 'do_action=catcustomfield_formload&cat_name='+cat_name+'&cat_id='+cat_id+'&item_info='+item_info;
-	$.ajax({ type:'GET', url:'./', data:pars, cache: false, 
+	cl( 'ajax request sent : ' + pars );
+
+	$.ajax({ type:'GET', url: _URL , data:pars, cache: false, 
 		success: function( html ){
+			cl('ajax done, success');
 			$('#ccfc_'+cat_name).html( html );
 		}
 	});
