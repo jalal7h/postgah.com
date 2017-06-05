@@ -38,7 +38,7 @@ div.catjson_hitbox_c span.head span.the_save_button {
     top: 14px;
 }
 div.catjson_hitbox_c span.head span.the_save_button:before {
-	content: "\f0c7";
+	content: "\f05d";
     font-family: FontAwesome;
     font-size: 24px;
     cursor: pointer;
@@ -57,6 +57,7 @@ div.catjson_hitbox_c > span.r {
 	margin: 2px;
 	cursor: pointer;
 	transition: all 0.2s;
+	font-size: 13px;
 }
 div.catjson_hitbox_c > span.r:nth-child(2n) {
 	float: left;
