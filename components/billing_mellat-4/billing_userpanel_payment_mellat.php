@@ -7,7 +7,7 @@
 $GLOBALS['billing_method']['mellat'] = 'بانک ملت';
 
 function billing_userpanel_payment_mellat( $invoice_id ){
-	
+
 	if(! $rw_invoice = table("billing_invoice", $invoice_id) ){
 		e();
 

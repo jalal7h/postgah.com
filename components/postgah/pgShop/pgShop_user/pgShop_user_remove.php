@@ -13,7 +13,7 @@ function pgShop_user_remove(){
 		e();
 	
 	} else if(! $rw_s = table( 'shop', [ 'user_id'=>$user_id, 'id'=>$shop_id ] ) ){
-		e();	
+		// e();	
 	
 	} else {
 		return pgShop_remove( $shop_id );

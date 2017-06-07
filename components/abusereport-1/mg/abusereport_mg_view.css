@@ -8,7 +8,7 @@
 .abusereport_mg_view a:hover {
 	color: #000 !important;
 }
-.abusereport_mg_view a.submit_button {
+.abusereport_mg_view a.btn.btn-primary {
 	color: white !important;
 }
 .abusereport_mg_view .case {

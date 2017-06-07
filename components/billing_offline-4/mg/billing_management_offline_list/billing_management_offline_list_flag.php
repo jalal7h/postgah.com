@@ -1,15 +1,15 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/07/08
-# 1.2
+# 2017/06/06
+# 1.3
 
 function billing_management_offline_list_flag(){
 	
 	if(! $invoice_id = $_REQUEST['id'] ){
 		e();
 	
-	} else if(! $rw_invoice = table("billing_invoice", $invoice_id) ){
+	} else if(! $rw_invoice = billing_invoiceDetail($invoice_id) ){
 		e();
 	
 	} else if( $rw_invoice['date'] ){

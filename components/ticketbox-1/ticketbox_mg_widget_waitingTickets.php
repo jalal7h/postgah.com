@@ -8,7 +8,7 @@ add_adminwidget([
 	'func'	=> 'ticketbox_mg_widget_waitingTickets',
 	'grid'	=> 6,
 	'cover'	=> true,
-	'prio'	=> 2,
+	'prio'	=> 1,
 ]);
 
 function ticketbox_mg_widget_waitingTickets(){

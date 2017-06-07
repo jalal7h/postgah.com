@@ -8,7 +8,7 @@ add_adminwidget([
 	'func'	=> 'billing_mg_widget_monthlyPayments',
 	'grid'	=> 12,
 	'cover'	=> true,
-	'prio'	=> 1,
+	'prio'	=> 0,
 ]);
 
 function billing_mg_widget_monthlyPayments(){

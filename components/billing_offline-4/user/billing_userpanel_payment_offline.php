@@ -30,12 +30,17 @@ function billing_userpanel_payment_offline(){
 				return billing_userpanel_payment_offline_save_n_congragulate();
 		}
 
-		echo template_engine( 'billing_userpanel_payment_offline', [
+		$method_info = billing_method( $rw_invoice['method'] );
+		$method_info = $method_info['c1'] . ' - ' . $method_info['c3'];
 
-			'method_name' => billing_method( $rw_invoice['method'] )['c1'] ,
+		$content = template_engine( 'billing_userpanel_payment_offline', [
+
+			'method_info' => $method_info ,
 			'cost' => billing_format($rw_invoice['cost']),
 
 		]);
+
+		layout_post_box( __('فرم پرداخت بانکی'), $content, $allow_eval=false, $framed=1 );
 	
 	}
 

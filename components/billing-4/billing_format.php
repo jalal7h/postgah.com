@@ -1,30 +1,26 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2017/04/14
-# 1.3
-
-// $%% USD
-
-/*README*/
+# 2017/06/05
+# 2.0
 
 function billing_format( $money, $silent_on_zero=true ){
 
-	$money = number_format( $money, 2 );
+
+	if( defined('lang_dir') and lang_dir === 'ltr' ){
+		$money = number_format( $money, 2 );
+
+	} else {
+		$money = number_format( $money );		
+	}
 
 	if( $silent_on_zero and $money == 0 ){
 		return "";
 	}
 
-	$unit = setting('money_unit');
+	$unit = billing_unit();
+	$money = $unit['sign'].$money." ".$unit['code'];
 	
-	if( strstr($unit, '%%') ){
-		$money = str_replace( '%%', $money, $unit );
-	
-	} else {
-		$money.= " ".$unit;
-	}
-
 	return $money;
 
 }

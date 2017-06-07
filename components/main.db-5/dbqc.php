@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/05/21
-# 1.1
+# 2017/06/08
+# 1.2
 
 function dbqc( $table, $where_array=null ){
 	
@@ -18,7 +18,11 @@ function dbqc( $table, $where_array=null ){
 	} else {
 		if( $where_array ){
 			foreach( $where_array as $column_name => $column_value ){
-				$where_query.= " AND `$column_name`='$column_value' ";
+				if( is_numeric($column_name) ){
+					$where_query.= " AND $column_value ";
+				} else {
+					$where_query.= " AND `$column_name`='$column_value' ";
+				}
 			}
 		}
 

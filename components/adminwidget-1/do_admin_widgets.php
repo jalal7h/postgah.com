@@ -1,13 +1,15 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/05/21
-# 1.1
+# 2017/06/08
+# 1.2
 
 function do_admin_widgets(){
 	
 	if( sizeof($GLOBALS['admin_widget']) ){
 		
+		ksort($GLOBALS['admin_widget']);
+
 		foreach( $GLOBALS['admin_widget'] as $widget ){
 			
 			ob_start();

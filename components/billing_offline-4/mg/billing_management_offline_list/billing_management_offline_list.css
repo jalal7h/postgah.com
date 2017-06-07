@@ -1,0 +1,7 @@
+
+#listmaker_list_billing_invoice_form td {
+	text-align: center;
+}
+#listmaker_list_billing_invoice_form td:first-child {
+	text-align: right;
+}

@@ -1,8 +1,8 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2016/11/29
-# 1.0
+# 2017/06/08
+# 1.1
 
 function abusereport_mg_list(){
 	
@@ -37,11 +37,11 @@ function abusereport_mg_list(){
 	#
 	# base url is needed in version upper 1.2 
 	# ** address base e in list
-	$list['base_url'] = '"./?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['func'].'"';
+	$list['base_url'] = '_URL."/?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['func'].'"';
 
 	#
 	# target // maghsad e click ruye har row
-	$list['target_url'] = '"./?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['func'].'&do=view&id=".$rw["id"]';
+	$list['target_url'] = '_URL."/?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['func'].'&do=view&id=".$rw["id"]';
 
 	#
 	# actions 

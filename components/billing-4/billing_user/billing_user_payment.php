@@ -56,7 +56,7 @@ function billing_userpanel_payment(){
 
 	foreach( $GLOBALS['billing_method'] as $method => $method_title ){
 		
-		if( $method=="wallet" ){
+		if( $method == "wallet" ){
 			continue;
 		
 		} else {
@@ -102,7 +102,7 @@ function billing_userpanel_payment(){
 			
 			".( $cost 
 				? '<span class="fixed_cost">'.billing_format($cost).'</span>'
-				: '<input type="text" name="cost" class="numeric" id="billing_cost" value="'.$cost.'" />'
+				: '<input type="text" name="cost" class="numeric" id="billing_cost" value="'.$cost.'" /> &nbsp; '.billing_unit()['code']
 			)."
 
 			<input type=\"submit\" value=\"".__("پرداخت")."\" />

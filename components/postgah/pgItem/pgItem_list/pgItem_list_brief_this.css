@@ -12,8 +12,8 @@
 .pgItem_list_brief_this img {
 	border-radius: 5px;
 	width: 70px;
-	height: 70px;
-	margin-bottom: -7px;
+	height: 67px;
+	/* margin-bottom: -6px; */
 }
 .pgItem_list_brief_this .text {
 	vertical-align: top;

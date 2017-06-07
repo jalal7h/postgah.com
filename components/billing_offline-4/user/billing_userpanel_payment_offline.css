@@ -1,7 +1,6 @@
 
 .billing_userpanel_payment_offline {
-	margin: 30px auto 100px auto;
-	position: relative; right: 40px;
+	margin: 30px auto;
 }
 .billing_userpanel_payment_offline h1 {
 	margin: 20px 30px 60px 0;
@@ -14,14 +13,14 @@
 	text-align: left;
 	width: 180px;
 	display: inline-block;
+	font-size: 13px;
 }
 .billing_userpanel_payment_offline div input[type=text] {
 	width: 250px;
-	font-size: 14px;
+	font-size: 13px;
 	padding: 10px;
 }
 .billing_userpanel_payment_offline input[type=submit] {
-	/* display: block !important; */
 	margin: 20px 0 !important;
 }
 
@@ -29,7 +28,7 @@
 	color: #f8f8f8;
 	margin-bottom: 0px;
 }
-
+/* 
 ._buposnc {
 	margin: 80px auto;
 	direction: rtl;
@@ -48,7 +47,7 @@
 	content: "\f14a";
 	font-size: 120px;
 	margin: -40px 0px;
-}
+} */
 
 .billing_userpanel_payment .method_list .offline span {
 	display: block;

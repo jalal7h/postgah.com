@@ -1,8 +1,8 @@
 <?
 
 # taghipoor.meysam@gmail.com
-# 2017/01/24
-# 1.2
+# 2017/06/05
+# 1.3
 
 add_userpanel_item( 'bookmarky_user_list', 'bookmark', 'علاقه مندی ها', '004' );
 
@@ -20,7 +20,6 @@ function bookmarky_user_list(){
 
 	#
 	# list
-	$list['head'] = __('لیست %%', [ lmtc('bookmarky')[1] ] );
 	$list['name'] = __FUNCTION__;
 	$list['query'] = " SELECT * FROM `bookmarky` WHERE `user_id`='".user_logged()."' ORDER BY `id` ASC ";
 	$list['tdd'] = 10;

@@ -52,14 +52,21 @@ section.center.have_right_sidebar .billing_userpanel_payment {
 	display: inline-block;
 	width: 50%;
 	margin: 0 20px 0 0;
+	font-size: 12px;
 }
-.billing_userpanel_payment .cost-container span {
-	margin: 0 20px 0 0;
-	display: inline-block;
-	font: normal 12px DefaultFont;
+.billing_userpanel_payment .cost-container > span {
+    margin: 0 32px 30px 32px;
+    display: inline-block;
+    font: normal 12px DefaultFont;
+    display: block;
+    background-color: #f6f6f6;
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+    border-radius: 4px;
+    color: #777;
 }
 .billing_userpanel_payment .cost-container input[type=text] {
-	margin: 0 20px 0 0;
+	margin: 0 32px 0 0;
 	font-size: 18px;
 	padding: 5px 15px 5px 15px;
 }

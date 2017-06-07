@@ -1,13 +1,11 @@
 
-<form class="{template_name}" action="{_URL}/?page={page}&do={do}&do2={do2}&invoice_id={invoice_id}&do3=save" method="post">
+<form class="{template_name}" action="{_URL}/?page={page}&do_slug={do_slug}&do2={do2}&invoice_id={invoice_id}&do3=save" method="post">
 	
 	<?= token_make(); ?>
-
-	<h1><lang>فرم پرداخت بانکی</lang></h1>
 	
 	<div>
 		<span><lang>بانک</lang>: </span>
-		<input type="text" readonly="1" value="{method_name}" />
+		<input type="text" readonly="1" value="{method_info}" />
 	</div>
 	
 	<div>

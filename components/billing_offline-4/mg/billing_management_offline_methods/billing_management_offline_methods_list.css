@@ -1,0 +1,11 @@
+
+.billing_management_offline_methods_list .notfound {
+	margin: 80px auto;
+}
+
+#listmaker_list__form td {
+	text-align: center;
+}
+#listmaker_list__form td:first-child {
+	text-align: right;
+}
