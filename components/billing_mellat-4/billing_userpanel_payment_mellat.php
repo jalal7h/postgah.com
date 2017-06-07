@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/07/09
-# 1.0
+# 2017/06/08
+# 1.1
 
 $GLOBALS['billing_method']['mellat'] = 'بانک ملت';
 
@@ -12,12 +12,13 @@ function billing_userpanel_payment_mellat( $invoice_id ){
 		e();
 
 	} else {
-		switch ($_REQUEST['bp_do']) {
+		switch( $_REQUEST['do2'] ){
 
 			case 'verify':
 				bpProcess();
 				break;
 			
+			case 'redirect':
 			default:
 				echo convbox( __('درحال انتقال به درگاه بانک ..') );
 				$_REQUEST['ACT'] = "CREATE_FORM";
