@@ -1,8 +1,10 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2016/07/09
-# Version 1.3
+# 2017/06/08
+# 1.1
+
+# -spi-
 
 /*********************** gateway-setting **************************/
 define( '__BP_TEST', false );
