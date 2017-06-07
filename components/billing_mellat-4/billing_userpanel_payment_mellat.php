@@ -12,13 +12,12 @@ function billing_userpanel_payment_mellat( $invoice_id ){
 		e();
 
 	} else {
-		switch( $_REQUEST['do2'] ){
+		switch( $_REQUEST['do3'] ){
 
 			case 'verify':
 				bpProcess();
 				break;
 			
-			case 'redirect':
 			default:
 				echo convbox( __('درحال انتقال به درگاه بانک ..') );
 				$_REQUEST['ACT'] = "CREATE_FORM";
