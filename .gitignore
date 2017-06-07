@@ -1,10 +1,10 @@
-data/*
-codec
-sync
-codec.d
-allow.inc
-config.php
-components/*/*.inc.php
+/codec
+/sync
+/codec.d
+/data
+/allow.inc
+/config.php
 error_log
+*.inc.php
 .htaccess
 /components/installer-1
