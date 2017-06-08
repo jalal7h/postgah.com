@@ -1,8 +1,8 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2016/07/08
-# 1.0
+# 2017/06/09
+# 1.1
 
 function bpPayRequest(){
 	
@@ -41,8 +41,7 @@ function bpPayRequest(){
 	// Check for an error
 	$err = $client->getError();
 	if ($err) {
-		e();
-		echo '<h2>Constructor error</h2><pre>' . $err . '</pre>';
+		echo convbox_back( '<pre>'.$err.'</pre>', 'red' );
 		die();
 	}
 	
@@ -93,7 +92,7 @@ function bpPayRequest(){
 		$err = $client->getError();
 		
 		if ($err) {
-			echo '<h2>Error</h2><pre>' . $err . '</pre>';
+			echo convbox_back( '<pre>'.$err.'</pre>', 'red' );
 			die();
 		
 		} else {
@@ -127,30 +126,23 @@ function bpPayRequest(){
 
 				//***********************************
 				echo '
-					<script language="javascript" type="text/javascript">    
-						
-						function postRefId (refIdValue) {
-							var form = document.createElement("form");
-							form.setAttribute("method", "POST");
-							form.setAttribute("action", "'._MELLAT_RDRCT.'");         
-							//form.setAttribute("target", "formresult");
-							var hiddenField = document.createElement("input");              
-							hiddenField.setAttribute("name", "RefId");
-							hiddenField.setAttribute("value", refIdValue);
-							form.appendChild(hiddenField);
-							document.body.appendChild(form);         
-							form.submit();
-							document.body.removeChild(form);
-						}
-					</script>
-					
-				<table dir=rtl style="width:100%; height:100vh;" >
-				<tr><th style="font-family:tahoma; font-size:12px; " >
-					'.__("ارتباط با بانک برقرار شد<br>تراکنش ثبت شد<br>در حال ورود به بانک ...").'
-				</th></tr>
-				</table>
-				<script language=javascript type="text/javascript" >postRefId("'.$refID.'");</script>
-				';
+				<script language="javascript" type="text/javascript">    
+					function postRefId (refIdValue) {
+						var form = document.createElement("form");
+						form.setAttribute("method", "POST");
+						form.setAttribute("action", "'._MELLAT_RDRCT.'");
+						//form.setAttribute("target", "formresult");
+						var hiddenField = document.createElement("input");
+						hiddenField.setAttribute("name", "RefId");
+						hiddenField.setAttribute("value", refIdValue);
+						form.appendChild(hiddenField);
+						document.body.appendChild(form);         
+						form.submit();
+						document.body.removeChild(form);
+					}
+				</script>
+				'.convbox( __("ارتباط با بانک برقرار شد<br>تراکنش ثبت شد<br>در حال ورود به بانک ...") ).'
+				<script language=javascript type="text/javascript" >postRefId("'.$refID.'");</script>';
 				die();
 
 			} else {
