@@ -1,13 +1,23 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/11/08
-# 1.0
+# 2017/06/09
+# 1.1
 
-$GLOBALS['do_action'][] = "echo_date";
+add_action('echo_date');
 
 function echo_date(){
-	echo date( 'Y/m/d H:i:s', U() );
+
+	$date = U();
+
+	echo $date;
+	echo "<br>";
+
+	echo date( 'Y/m/d H:i:s', $date );
+	echo "<br>";
+
+	echo substr( UDate($date), 0, 19 );
+
 }
 
 
