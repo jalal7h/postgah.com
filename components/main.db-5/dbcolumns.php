@@ -1,11 +1,15 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2016/09/14
-# 1.0
+# 2017/06/09
+# 1.2
 
 function dbcolumns( $table ){
 	
+	if( $GLOBALS[ __FUNCTION__ ] ){
+		return $GLOBALS[ __FUNCTION__ ];
+	}
+
 	if(! is_table($table) ){
 		return false;
 	
@@ -24,6 +28,7 @@ function dbcolumns( $table ){
 
 		}
 
+		$GLOBALS[ __FUNCTION__ ] = $list_of_columns;
 		return $list_of_columns;
 
 	}

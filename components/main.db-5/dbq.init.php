@@ -1,8 +1,8 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2017/05/21
-# 1.3
+# 2017/06/09
+# 1.4
 
 function dbq( $query='', $force=false ){
 
@@ -30,6 +30,16 @@ function dbq( $query='', $force=false ){
 				if(! $force ){
 					$query = dbq_query_normalize( $query );
 					$query = dbq_query_hide( $query );
+				}
+
+				#
+				# trafficmonitor
+				if( is_component('trafficmonitor') ){
+					$GLOBALS['trafficmonitor']['query'][] = $query." - ".
+						debug_backtrace()[1]['function'].":".debug_backtrace()[0]['line']." / ".
+						debug_backtrace()[2]['function'].":".debug_backtrace()[1]['line'];
+
+
 				}
 
 				if( $res = mysql_query( $query ) ){

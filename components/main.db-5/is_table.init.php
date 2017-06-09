@@ -1,31 +1,25 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2016/09/14
-# 1.2
+# 2017/06/09
+# 1.3
 
 function is_table( $table ){
 	
-	if( $table == "" ){
+	if( $table == '' ){
 		return false;
 	
-	} else if(! $rs = dbq(" SHOW TABLES LIKE '$table' ", $force) ){
-		dg();
-	
-	} else if(! dbn($rs) ){
+	} else if(! $array_set = get_tables() ){
 		return false;
 
-	} else if( dbr($rs,0,0) != $table ){
+	} else if(! in_array( $table, $array_set ) ){
 		return false;
 	
 	} else {
 		return true;
 	}
-	
+
 }
-
-
-
 
 
 

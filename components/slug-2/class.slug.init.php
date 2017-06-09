@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/05/15
-# 1.7
+# 2017/06/09
+# 1.8
 
 class Slug
 {
@@ -208,16 +208,31 @@ class Slug
     }
 
 
-    public static function getSlugByNameFromDB( $name ){
+    private static function getSlugByNameFromDB( $name ){
         
-        if (! $rs = dbq(" SELECT `slug` FROM `slug` WHERE `name`='$name' LIMIT 1 ")) {
-        } elseif (! dbn($rs)) {
-        } elseif (! $rw = dbf($rs)) {
+        $array_set = self::getSlugByNameFromDB_load();
+
+        if( array_key_exists($name, $array_set) ){
+            return $array_set[ $name ];
+        
         } else {
-            return $rw['slug'];
+            return false;
         }
 
-        return false;
+    }
+
+    private static function getSlugByNameFromDB_load(){
+        
+        if(! $GLOBALS[ __FUNCTION__ ] ){
+            if( $rs = dbq(" SELECT `name`, `slug` FROM `slug` WHERE 1 ") ){
+                while( $rw = dbf($rs) ){
+                    $GLOBALS[ __FUNCTION__ ][ $rw['name'] ] = $rw['slug'];
+                }
+            }
+        }
+
+        return $GLOBALS[ __FUNCTION__ ];
+
     }
 
 

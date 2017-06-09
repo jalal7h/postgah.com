@@ -7,12 +7,6 @@
 function layout_open(){
 
 	#
-	# trafficmonitor agent
-	if( is_component('trafficmonitor') ){
-		trafficmonitor_start();
-	}
-
-	#
 	# its 404 page
 	if( d404_flag === true ){
 		$vars['meta_title'] = _DOMAIN.' - Page Not Found !';
@@ -113,7 +107,7 @@ function layout_open(){
 
 	#
 	# return it.
-	$open = template_engine('html-tag-open',$vars);
+	return template_engine('html-tag-open',$vars);
 
 }
 
@@ -139,17 +133,7 @@ function layout_copyright(){
 
 
 function layout_close(){
-
-	$close = template_engine('html-tag-close',$vars);
-	
-	#
-	# trafficmonitor agent	
-	if( is_component('trafficmonitor') ){
-		trafficmonitor_end();
-	}
-
-	return $close;
-
+	return template_engine('html-tag-close',$vars);
 }
 
 

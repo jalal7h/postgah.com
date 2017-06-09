@@ -1,4 +1,4 @@
-<?
+<?php
 
 # jalal7h@gmail.com
 # 2016/03/07

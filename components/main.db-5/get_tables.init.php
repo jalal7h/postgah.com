@@ -11,26 +11,20 @@ function get_tables( $refresh = false ){
 			return $GLOBALS[__FUNCTION__];
 		}
 	}
-	
-	$list = [];
 
 	if(! $rs = dbq(" SHOW TABLES ") ){
-		ed();
+		dg();
 	
 	} else if(! dbn($rs) ){
-		//
+		return false;
 
 	} else while( $rw = dbf($rs) ){
-		$list[] = $rw[ 'Tables_in_'.strtolower(mysql_database) ];
+		$table_name = $rw[ array_keys($rw)[0] ];
+		$GLOBALS[__FUNCTION__][] = $table_name;
 	}
+
+	return $GLOBALS[__FUNCTION__];
 	
-	$GLOBALS[__FUNCTION__] = $list;
-	return $list;
-
 }
-
-
-
-
 
 
