@@ -141,7 +141,10 @@ function bpPayRequest(){
 						document.body.removeChild(form);
 					}
 				</script>
-				'.convbox( __("ارتباط با بانک برقرار شد<br>تراکنش ثبت شد<br>در حال ورود به بانک ...") ).'
+
+				<br><br><br>
+				<center>'.convbox( __("ارتباط با بانک برقرار شد<br>تراکنش ثبت شد<br>در حال ورود به بانک ..."), 'transparent' ).'</center>
+
 				<script language=javascript type="text/javascript" >postRefId("'.$refID.'");</script>';
 				die();
 

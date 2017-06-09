@@ -1,8 +1,8 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2017/03/12
-# 3.4
+# 2017/06/09
+# 3.5
 
 /*
 texty_sms( "user" , "user_register_do_sms" , array(
