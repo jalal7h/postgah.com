@@ -11,6 +11,15 @@ function include_css(){
 	@header("Content-disposition: filename=styles.css");
 	@header("Content-type: text/css");
 	
+
+	##########################
+	$cache_key = __FUNCTION__;
+	if( $css = cache( "hit", $cache_key, "30min" ) ){
+		echo $css;
+	} else {
+	###########################
+
+
 	asort( $GLOBALS['include_all_css'] );
 	$css_files = array_merge( $GLOBALS['include_all_css_init'], $GLOBALS['include_all_css'] );
 
@@ -67,8 +76,14 @@ function include_css(){
 	}
 
 	$css = $css_code['normal'] . $css_code['responsive'];
-	echo $css;
-	
+		
+
+
+	###########################
+		echo cache( "make", $cache_key, $css );
+	}
+	##########################
+
 }
 
 
