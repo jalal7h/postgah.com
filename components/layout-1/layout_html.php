@@ -1,11 +1,16 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/01/18
-# 1.2
+# 2017/06/09
+# 1.3
 
 function layout_open(){
 
+	#
+	# trafficmonitor agent
+	if( is_component('trafficmonitor') ){
+		trafficmonitor_start();
+	}
 
 	#
 	# its 404 page
@@ -108,7 +113,7 @@ function layout_open(){
 
 	#
 	# return it.
-	return template_engine('html-tag-open',$vars);
+	$open = template_engine('html-tag-open',$vars);
 
 }
 
@@ -134,7 +139,17 @@ function layout_copyright(){
 
 
 function layout_close(){
-	return template_engine('html-tag-close',$vars);
+
+	$close = template_engine('html-tag-close',$vars);
+	
+	#
+	# trafficmonitor agent	
+	if( is_component('trafficmonitor') ){
+		trafficmonitor_end();
+	}
+
+	return $close;
+
 }
 
 
