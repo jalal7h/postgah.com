@@ -1,8 +1,8 @@
 <?
 
 # jalal7h@gmail.com
-# 2017/01/11
-# 1.2
+# 2017/06/09
+# 1.3
 
 add_layer( 'contact_vw_form', 'فرم تماس با ما' , 'center' );
 
@@ -24,7 +24,9 @@ function contact_vw_form(){
 		$vars['email_select_option'].= '<option value="'.$rw['slug'].'">'.str_replace('@','[at]',$rw['text']).'</option>';		
 	}
 	
-	echo template_engine('contact_vw_form', $vars);
+	$vars['contact_address'] = nl2br(setting('contact_address'));
+
+	echo template_engine('contact_vw_form', $vars );
 
 }
 

@@ -43,8 +43,8 @@
 .pgItem_display_userinfo .cell a ,
 .pgItem_display_userinfo .tell a {
 	font: normal 18px Raleway;
-	/* text-align: center; */
 	margin-right: 10px;
+	width: calc( 100% - 60px );
 }
 .pgItem_display_userinfo .cell icon:before {
 	content: "\f10b";

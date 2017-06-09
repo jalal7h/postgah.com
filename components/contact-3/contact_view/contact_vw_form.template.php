@@ -2,7 +2,8 @@
 <div class="contact_vw_form">
 
 	<div class="path">
-		<div>{setting_rw("contact_address")["name"]} : {contact_address}</div>
+		<div>{contact_address}</div>
+		<br>
 		<div>{setting_rw("contact_tell")["name"]} : <span dir=ltr >{contact_tell}</div>
 		<div>{setting_rw("contact_fax")["name"]} : <span dir=ltr >{contact_fax}</div>
 	</div>

@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/06/04
-# 1.1
+# 2017/06/10
+# 1.2
 
 add_action('include_css');
 
@@ -13,7 +13,7 @@ function include_css(){
 	
 
 	##########################
-	$cache_key = __FUNCTION__;
+	$cache_key = __FUNCTION__._PAGE;
 	if( $css = cache( "hit", $cache_key, "30min" ) ){
 		echo $css;
 	} else {
