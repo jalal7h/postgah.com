@@ -95,6 +95,13 @@ function texty_sms_this( $to, $content, $vars, $rw_user=null ){
 		return false;
 	}
 
+
+	$content = str_replace( 
+		['{tiny_title}','{main_title}'], 
+		[setting('tiny_title'),setting('main_title')], 
+		$content );
+	
+
 	if( $rw_user ){
 		$content = str_replace('{user_cell}', $to, $content);
 		$content = str_replace('{user_email}', $rw_user['email'], $content);
