@@ -1,4 +1,8 @@
-<?
+<?php
+
+# jalal7h@gmail.com
+# 2017/06/13
+# 1.0
 
 function getVersionGd(){
 	ob_start();

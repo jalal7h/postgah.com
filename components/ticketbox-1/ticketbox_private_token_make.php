@@ -10,9 +10,7 @@ function ticketbox_private_token_make( $elem=null ){
 		$elem = $_REQUEST;
 	}
 
-	$table_name = $elem['table_name'];
-	$table_name = mb_ereg_replace('[^A-Za-z0-9_]+','',$table_name);
-	$table_name = trim($table_name);
+	$table_name = var_control( $elem['table_name'], 'a-zA-Z0-9_' );
 
 	if(! $table_name ){
 		return false;

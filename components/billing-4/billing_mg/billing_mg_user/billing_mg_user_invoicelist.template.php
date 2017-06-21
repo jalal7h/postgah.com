@@ -19,7 +19,15 @@
 
 	</div>
 
+
 	<div class="invoices">
+	<hr>
+
+	<div class="the_head_w">
+		<span class="the_head"><lang>لیست صورتحساب‌ها</lang></span>
+		<a class="btn btn-link" style="float:right" href="{_URL}/admin/billing/user/<?= $user->id ?>/new-invoice">new invoice</a>
+	</div>
+
 	<?if(! sizeof( $invoices ) ):?>
 		<?= convbox( __("هنوز صورتحسابی برای این کاربر ثبت نشده است.") ) ?>
 

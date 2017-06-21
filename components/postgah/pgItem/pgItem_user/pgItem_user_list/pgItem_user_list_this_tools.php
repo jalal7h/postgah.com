@@ -18,12 +18,12 @@ function pgItem_user_list_this_tools( $rw ){
 
 
 function pgItem_user_list_this_tools_InStock( $rw ){
-	$the_url = _URL.'/?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=SetStock&id='.$rw["id"];
+	$the_url = _URL.'/?page='.$_REQUEST['page'].'&do_slug='.$_REQUEST['do_slug'].'&do1=SetStock&id='.$rw["id"];
 	return "<a title=\"انتقال به فروخته شده‌ها\" href=\"".$the_url."\" class=\"InStock\"></a>";
 }
 
 function pgItem_user_list_this_tools_OutOfStock( $rw ){
-	$the_url = _URL.'/?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=SetStock&id='.$rw["id"];
+	$the_url = _URL.'/?page='.$_REQUEST['page'].'&do_slug='.$_REQUEST['do_slug'].'&do1=SetStock&id='.$rw["id"];
 	return "<a title=\"بازگشت به فروشگاه\" href=\"".$the_url."\" class=\"OutOfStock\"></a>";
 }
 
@@ -31,7 +31,7 @@ function pgItem_user_list_this_tools_RegisterInShop( $rw ){
 	if( $rw['cost'] == 0 ){
 		$onclick = " onclick=\"alert('لطفا برای ثبت این محصول در فروشگاه، ابتدا قیمت محصول را تعیین نمائید.'); return false;\" ";
 	}
-	$the_url = _URL.'/?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=RegisterInShop&id='.$rw["id"];
+	$the_url = _URL.'/?page='.$_REQUEST['page'].'&do_slug='.$_REQUEST['do_slug'].'&do1=RegisterInShop&id='.$rw["id"];
 	return "<a $onclick title=\"نمایش در فروشگاه من\" href=\"".$the_url."\" class=\"RegisterInShop\"></a>";
 }
 
@@ -39,12 +39,12 @@ function pgItem_user_list_this_tools_UnregisterInShop( $rw ){
 	if( $rw['cost'] == 0 ){
 		$onclick = " onclick=\"alert('لطفا برای ثبت این محصول در فروشگاه، ابتدا قیمت محصول را تعیین نمائید.'); return false;\" ";
 	}
-	$the_url = _URL.'/?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=UnregisterInShop&id='.$rw["id"];
+	$the_url = _URL.'/?page='.$_REQUEST['page'].'&do_slug='.$_REQUEST['do_slug'].'&do1=UnregisterInShop&id='.$rw["id"];
 	return "<a $onclick title=\"عدم نمایش در فروشگاه من\" href=\"".$the_url."\" class=\"UnregisterInShop\"></a>";
 }
 
 function pgItem_user_list_this_tools_SetUpdateTime( $rw ){
-	$the_url = _URL.'/?page='.$_REQUEST['page'].'&do='.$_REQUEST['do'].'&do1=SetUpdateTime&id='.$rw["id"];
+	$the_url = _URL.'/?page='.$_REQUEST['page'].'&do_slug='.$_REQUEST['do_slug'].'&do1=SetUpdateTime&id='.$rw["id"];
 	return "<a target=\"_hidden\" title=\"بروزرسانی\" href=\"".$the_url."\" class=\"SetUpdateTime\"></a>";
 }
 
@@ -66,7 +66,7 @@ function pgItem_user_list_this_tools_MakePremium( $rw ){
 
 function pgItem_user_list_this_tools_IncompletePayment( $rw ){
 	$invoice_id = qpop( 'IncompletePayment-invoice_id' );
-	return "<a title=\"پرداخت\" href=\"./billing-invoice-".$invoice_id."\" class=\"IncompletePayment\"></a>";
+	return "<a title=\"پرداخت\" href=\"".billing_invoiceLink($invoice_id)."\" class=\"IncompletePayment\"></a>";
 }
 
 

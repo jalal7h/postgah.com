@@ -1,8 +1,8 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2017/05/04
-# 1.2
+# 2017/06/15
+# 1.3
 
 define( 'pgItem_image_nopic', 'image_list/no-pic-ads.png' );
 
@@ -26,7 +26,7 @@ function pgItem_image( $rw_item, $numb_or_size=null, $size=null ){
 	$image_path = $image_array[ $numb ];
 
 	if( $size and ($image_path != pgItem_image_nopic) ){
-		$image_path = "resize/$size/$image_path";
+		$image_path = "resize_n_cut/$size/$image_path";
 	}
 
 	$_URL_SLASH = _URL."/";
@@ -43,11 +43,12 @@ function pgItem_image_array( $rw_item ){
 
 	# memo #
 	if( its_local() ){
+		$rand = rand(0,7);
 		return [
-			'data/item_image_memo/0'.rand(1,8).'.jpg',
-			'data/item_image_memo/0'.rand(1,8).'.jpg',
-			'data/item_image_memo/0'.rand(1,8).'.jpg',
-			'data/item_image_memo/0'.rand(1,8).'.jpg',
+			'data/item_image_memo/0'.(($rand+0)%8).'.jpg',
+			'data/item_image_memo/0'.(($rand+1)%8).'.jpg',
+			'data/item_image_memo/0'.(($rand+2)%8).'.jpg',
+			'data/item_image_memo/0'.(($rand+3)%8).'.jpg',
 		];
 	}
 	# #### #
@@ -55,7 +56,7 @@ function pgItem_image_array( $rw_item ){
 	$item_id = $rw_item['id'];
 
 	if(! $rs = dbq(" SELECT * FROM `item_image` WHERE `item_id`='$item_id' ORDER BY `id` ASC ") ){
-		e(__FUNCTION__,__LINE__);
+		e();
 
 	} else if(! dbn($rs) ){
 		$image_array[] = pgItem_image_nopic;

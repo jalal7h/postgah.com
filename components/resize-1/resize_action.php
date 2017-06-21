@@ -1,12 +1,12 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2017/05/14
-# 1.1
+# 2017/06/15
+# 1.0
 
-add_action('quick_resize');
+add_action('resize_action');
 
-function quick_resize(){
+function resize_action(){
 
 	if(! $addr = trim($_REQUEST['address']) ){
 		e();
@@ -30,13 +30,13 @@ function quick_resize(){
 	}
 
 	if( $_REQUEST['cut'] == '1'	){
-		multi_size_pic( $addr, $width, $height, $cut=true );
+		$resized = resize_image( $addr, $width, $height, $cut=true );
 
 	} else {
-		multi_size_pic( $addr, $width, $height );
+		$resized = resize_image( $addr, $width, $height, $cut=false );
 	}
 
-	die();
+	imagedump( $resized );
 
 }
 

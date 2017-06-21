@@ -7,6 +7,20 @@
 
 .user_mg_view_head ,
 .user_mg_view_head a {
+
+}
+
+.user_mg_view_head .nav ,
+.user_mg_view_head .nav a {
 	display: inline-block;
-    font-size: 26px;
+    font-size: 22px;
+}
+
+
+.user_mg_view_head .buttons {
+	display: inline-block;
+    float: left;
+}
+.user_mg_view_head .buttons a:hover {
+	background-color: #e6e6e6;
 }

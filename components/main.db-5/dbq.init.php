@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/06/09
-# 1.4
+# 2017/06/21
+# 1.5
 
 function dbq( $query='', $force=false ){
 
@@ -141,7 +141,7 @@ function dbq_query_hide( $query ){
 		// $query[0] = str_replace("\t", " ", $query[0]);
 
 		if( $its == "SELECT" ){
-			$query = implode(" WHERE `hide`='0' AND ", $query);
+			$query = implode(" WHERE `$table_name`.`hide`='0' AND ", $query);
 		} else {
 			$query = implode(" WHERE ", $query);
 		}
@@ -167,7 +167,7 @@ function dbq_query_hide( $query ){
 			"DELETE FROM `$table_name` ", 
 			"UPDATE `$table_name` SET `hide`='1' ", $query );
 	}
-	
+
 	// error_log('dqh; '.$query);
 	// die();
 

@@ -45,7 +45,7 @@ function pgPlan_mg_form(){
 	
 	[!
 		"table" => "plan" ,
-		"action" => "./?page=admin&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["cp"]."_list",
+		"action" => _URL."/?page=admin&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["cp"]."_list",
 		"name" => "'.__FUNCTION__.'" ,
 		"class" => "'.__FUNCTION__.'" ,
 		"switch" => "do",
@@ -63,9 +63,7 @@ function pgPlan_mg_form(){
 		<hr>
 
 		[!"file:icon","inDiv"!]
-
 		[!"file:watermark","inDiv"!]
-		[!"toggle:watermark_onlyfirst","inDiv"!]
 
 		<hr>
 
@@ -75,10 +73,8 @@ function pgPlan_mg_form(){
 		
 		<hr>
 
-		[!"toggle:show_in_index","inDiv"!]
 		[!"toggle:suggest_as_related","inDiv"!]
 		[!"toggle:send_in_newsletter","inDiv"!]
-		[!"toggle:pin_in_all_cat","inDiv"!]
 		[!"toggle:pin_in_own_cat","inDiv"!]
 		[!"toggle:pin_in_search","inDiv"!]		
 		
@@ -96,4 +92,7 @@ function pgPlan_mg_form(){
 
 }
 
+//		[!"toggle:show_in_index","inDiv"!]
+// 		[!"toggle:watermark_onlyfirst","inDiv"!]
+//		[!"toggle:pin_in_all_cat","inDiv"!]
 

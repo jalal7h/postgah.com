@@ -1,14 +1,12 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/05/14
-# 1.0
+# 2017/06/15
+# 1.1
 
-function resize_cut( $addr, $new_w, $new_h, $filepath=null ){
+function resize_cut( $addr, $new_w, $new_h, $destionation_path ){
 	
-	$ext = strrchr($addr, '.');
-	$ext = strtolower($ext);
-	$ext = substr($ext, 1);
+	$ext = fileext($addr);
 
 	if( $ext == 'jpg' ){
 		$ext = 'jpeg';
@@ -33,21 +31,15 @@ function resize_cut( $addr, $new_w, $new_h, $filepath=null ){
 	$new_y = ( $new_h == $image_h ) ? 0 : ceil( ($image_h - $new_h) / 2 );
 
 	$func_image = 'image'.$ext;
-	$func_creare = 'imagecreatefrom'.$ext;
 
-	$im = $func_creare( $addr );
+	$im = imagecreatefrom( $addr );
 	$im2 = imagecrop( $im, [ 'x' => $new_x, 'y' => $new_y, 'width' => $new_w, 'height' => $new_h ] );
 	
 	if( $im2 === FALSE ){
-		e();
-	
-	} else if( $filepath ){
-		$func_image( $im2, $filepath );
-		
-	} else {
-		header( 'Content-Type: image/'.$ext );
-		$func_image( $im2 );
+		return e();
 	}
+	
+	$func_image( $im2, $destionation_path );
 
 }
 

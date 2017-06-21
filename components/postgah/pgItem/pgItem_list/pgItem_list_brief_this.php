@@ -4,7 +4,7 @@ function pgItem_list_brief_this( $rw ){
 
 	$name = $rw['name'];
 	$cat = cat_translate( $rw['cat_id'] );
-	$price = $rw['cost'] > 0 ? $rw['cost']." ".setting('money_unit') : "مجانی";
+	$price = $rw['cost'] > 0 ? $rw['cost']." ".setting('money_unit') : "";
 
 	$c.= 
 	"<a title=\"$name\" class=\"pgItem_list_brief_this\" href=\"".pgItem_link($rw)."\"><!--

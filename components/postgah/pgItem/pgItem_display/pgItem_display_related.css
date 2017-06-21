@@ -40,5 +40,7 @@
 	color: #999 !important;
 }
 
-
+.pgItem_display_related > a.suggest_as_related > img {
+	border: 1px solid #ffb4b4;
+}
 

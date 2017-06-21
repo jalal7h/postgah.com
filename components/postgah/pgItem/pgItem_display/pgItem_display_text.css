@@ -41,9 +41,10 @@
     margin-left: 8px;
 }
 .pgItem_display_text .text_footer .ask_from_seller {
-	position: absolute; left: 0px; bottom: -10px;
+	position: absolute; left: 0px; bottom: -4px;
 	background-color: #2095f4;
 	cursor: pointer;
+	font-size: 12px;
 }
 .pgItem_display_text .text_footer .ask_from_seller.gray {
 	background-color: gray !important;

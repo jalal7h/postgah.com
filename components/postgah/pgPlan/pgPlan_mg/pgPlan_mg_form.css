@@ -4,7 +4,7 @@
 	margin: 80px auto 160px auto;
 }
 .pgPlan_mg_form > div span.lmfe_tnit {
-	width: 160px;
+	width: 180px;
 }
 #lmfe_pgPlan_mg_form_name { 
 	width: 60%;
@@ -48,7 +48,7 @@
     font-family: FontAwesome;
     font-size: 32px;
     cursor: pointer;
-    color: #75AC00;
+    color: #337ab7;
     transition: all 0.1s;
 }
 .pgPlan_mg_form_duration_c div.more:hover:before {

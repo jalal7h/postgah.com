@@ -67,7 +67,7 @@ function ticketbox_view_save(){
 		if(! $vars['ticket_cat'] = cat_translate($rw_tb['cat']) ){
 			$vars['ticket_cat'] = "نامشخص";
 		}
-		$vars['ticket_link'] = ticketbox_user_link($rw_tb);
+		$vars['ticket_link'] = ticketbox_link($rw_tb);
 		$vars['ticket_adminlink'] = _URL."/?page=admin&cp=ticketbox_mg&func=ticketbox_mg_list&do=view&id=".$rw_tb['id'];
 
 

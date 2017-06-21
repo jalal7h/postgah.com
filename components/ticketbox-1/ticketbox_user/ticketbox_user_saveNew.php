@@ -64,7 +64,7 @@ function ticketbox_user_saveNew(){
 		# the vars
 		$vars['ticket_id'] = $ticketbox_id;
 		$vars['ticket_name'] = $_REQUEST['name'];
-		$vars['ticket_link'] = ticketbox_user_link( $ticketbox_id );
+		$vars['ticket_link'] = ticketbox_link( $ticketbox_id );
 		$vars['ticket_adminlink'] = _URL."/?page=admin&cp=ticketbox_mg&func=ticketbox_mg_list&do=view&id=".$ticketbox_id;
 		$vars['receiver_user_name'] = table( 'user', $_REQUEST['user_id'] , 'name' );
 		$vars['sender_user_name'] = $rw_loggedUser['name'];

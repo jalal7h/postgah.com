@@ -27,7 +27,7 @@ jQuery(document).ready(function($) {
 
 			}
 	
-		} else if( e.keyCode == 27 ){
+		} else if( e.keyCode == 27 || e.keyCode == 9 ){
 			hv.remove();
 			ls.hide();
 		

@@ -1,8 +1,8 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2017/03/11
-# 1.4
+# 2017/06/16
+# 1.5
 
 #
 # echo texty( 'some_slug_name', $vars, $user_id='user' /*the logged in user*/ , $convbox=true );
@@ -11,8 +11,6 @@
 # user_id can be array
 
 # $user_id [ 11 / jalal7h@gmail.com / [11,143] ]
-
-/*README*/
 
 function texty( $slug, $vars=null, $user_id='user', $convbox=true ){
 	
@@ -24,7 +22,9 @@ function texty( $slug, $vars=null, $user_id='user', $convbox=true ){
 	
 	# 
 	# email
-	texty_email( 'admin', $slug, $vars );
+	if(! is_admin() ){ // age ferestande admin nist, behesh begu reply dari
+		texty_email( 'admin', $slug, $vars );
+	}
 	if( $user_id != 'admin' ){
 		dg("text email ".$user_id);
 		texty_email( $user_id, $slug, $vars );
@@ -32,7 +32,9 @@ function texty( $slug, $vars=null, $user_id='user', $convbox=true ){
 		
 	#
 	# sms
-	texty_sms( 'admin', $slug, $vars );
+	if(! is_admin() ){ // age ferestande admin nist, behesh begu reply dari
+		texty_sms( 'admin', $slug, $vars );
+	}
 	if( $user_id != 'admin' ){
 		dg("text sms ".$user_id);
 		texty_sms( $user_id, $slug, $vars );

@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/05/10
-# 1.0
+# 2017/06/16
+# 1.1
 
 /**
 * 
@@ -14,14 +14,18 @@ class CacheFile {
 	*/
 	static public function Make( $key, $value ){
 
+		if( is_array($value) or is_object($value) ){
+			$value = json_encode( $value );
+		}
+
 		if( $value = trim($value) ){		
 
 			self::remove( $key );
-			
 			$path = self::Path( $key, $make=true );
 			file_put_contents( $path, $value );
 
 			dg("<hr>make: $path<hr>");
+			
 		}
 
 		return $value;
@@ -53,7 +57,11 @@ class CacheFile {
 
 		} else {
 			dg( "<hr>hit: $path<hr>" );
-			return file_get_contents( $path );
+			$value = file_get_contents( $path );
+			if( is_json($value) ){
+				$value = json_decode( $value );
+			}
+			return $value;
 		}
 		
 	}

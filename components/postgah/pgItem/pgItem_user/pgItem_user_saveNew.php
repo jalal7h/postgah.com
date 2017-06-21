@@ -1,8 +1,8 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2017/04/01
-# 1.2
+# 2017/06/10
+# 1.3
 
 function pgItem_user_saveNew(){
 	
@@ -79,6 +79,7 @@ function pgItem_user_saveNew(){
 			$order_id = $IPD_id;
 			$cost = $rw_PD['cost'];
 			
+			que::push( 'billing_invoiceMake_congratulate-silent', true );
 			if(! $invoice_id = billing_invoiceMake( $cost, $order_table, $order_id ) ){
 				return e();
 			}
@@ -89,9 +90,10 @@ function pgItem_user_saveNew(){
 			$vars['item_invoice_id'] = $invoice_id;
 			$vars['item_cost'] = billing_format($cost);
 
-			$vars['item_payment_link'] = _URL.'/?page='.$_REQUEST['page'].'&do=billing_userpanel_payment&invoice_id='.$invoice_id;
+			$vars['item_payment_link'] = billing_invoiceLink($invoice_id);
+			$vars['invoice_list_link'] = billing_invoiceListLink();
+
 			$vars['item_payment_button'] = '<a class="btn btn-primary" href="'.$vars['item_payment_link'].'">پرداخت '.lmtc('billing_invoice')[0].'</a>';
-			$vars['invoice_list_link'] = _URL.'/?page='.$_REQUEST['page'].'&do=billing_userpanel_list';
 			$vars['invoice_list_button'] = '<a class="btn btn-primary" href="'.$vars['invoice_list_link'].'">لیست '.lmtc('billing_invoice')[1].'</a>';
 			
 			$vars['login_link'] = user_loginLink( user_logged() );

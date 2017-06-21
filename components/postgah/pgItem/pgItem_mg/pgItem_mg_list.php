@@ -1,17 +1,24 @@
-<?
+<?php
+
+# jalal7h@gmail.com
+# 2017/06/10
+# 1.0
 
 function pgItem_mg_list(){
 
 	###################################################################################
 	# the new version 1.2
+	
+	// ( isset($_REQUEST['flag']) ? ( $_REQUEST['flag']!='1' ? " AND `flag`!=1 " : " AND `flag`='1' " ) : '' ).
 
 	# 
 	# the list
+	$list['head'] = 'لیست آگهی‌ها';
 	$list['name'] = 'pgItem_mg';
 
 	$list['query'] = 
 	" SELECT * FROM `item` WHERE `hide`='0' ".
-	  ( $_REQUEST['flag']!='1' ? " AND `flag`!=1 " : " AND `flag`='1' " ).
+	  ( is_numeric($_REQUEST['flag']) ? " AND `flag`='".intval($_REQUEST['flag'])."' " : '' ).
 		
 		// hazf e mavaredi ke dar hale pardakht hastand ( faktor barashun sader shode, ama pardakht nashode, hala che offline, che online )
 		" AND `id` NOT IN ( ".
@@ -46,7 +53,7 @@ function pgItem_mg_list(){
 	# list array // list e sotun haye list
 	$list['list_array']= [
 		["picture" => 'pgItem_image($rw)'],
-		["content" => '$rw[\'name\']', "title"=>'time_inword($rw["date_updated"])'],
+		["content" => '$rw[\'name\']."<div style=\'font-size:9px\'>".table( "plan", pgPlan_getItemPlan($rw["id"]) )["name_on_form"]."</div>"', "title"=>'time_inword($rw["date_updated"])'],
 		["content" => '"<a target=\'_blank\' href=\'./?page=admin&cp=user_mg&do=login&id=".$rw[\'user_id\']."\'>".table("user",$rw[\'user_id\'], "name")'],
 		["content" => 'position_translate($rw[\'position_id\'])." / ".cat_translate($rw[\'cat_id\'])'],
 		["content" => 'pgItem_user_list_this_status($rw)'],

@@ -6,6 +6,7 @@
 	margin: 20px;
 	background-color: rgba(255, 255, 255, .8);
 	padding: 20px 30px;
+	color: #888;
 }
 .billing_mg_user_invoicelist .info .name {
 	font-size: 18px;
@@ -68,7 +69,27 @@
 }
 
 
+.billing_mg_user_invoicelist .invoices .the_head_w {
+	margin: 10px 0 20px 0;
+}
 
+.billing_mg_user_invoicelist .invoices .the_head {
+	font-size: 22px;
+    color: #777;
+    padding: 10px 0;
+}
+.billing_mg_user_invoicelist .invoices .the_head_w a {
+	  text-transform: uppercase;
+}
+.billing_mg_user_invoicelist .invoices .the_head_w a:hover {
+	background-color: #e6e6e6;
+}
 
+.billing_management_user_invoicelist_newForm {
+	margin: 70px 150px;
+}
+.billing_management_user_invoicelist_newForm .the_head {
+	font-size: 22px;
+}
 
 

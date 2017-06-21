@@ -3,7 +3,8 @@ a.pgIilt {
 	display: block;
 	background-color: white;
 	border-radius: 5px;
-	padding: 10px;
+	padding: 8px;
+	border: 2px solid white;
 	margin-top: 10px;
 	vertical-align: top;
 	position: relative;
@@ -61,4 +62,13 @@ a.pgIilt > .text > .date {
 .pgItem_item_list .listmaker_list_paging {
 	margin: 30px 10px;
 }
+
+a.pgIilt.pin_in_own_cat {
+	border: 2px solid #f9cccc;
+}
+
+
+
+
+
 

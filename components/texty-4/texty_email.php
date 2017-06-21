@@ -1,8 +1,8 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2017/03/11
-# 3.6
+# 2017/06/17
+# 3.7
 
 /*
 texty_email( 
@@ -95,7 +95,7 @@ function texty_email( $who , $slug , $vars=null ){
 			$content = $texty['user_email_content'];
 			texty_email_this( $user_email, $subject, $content, $vars );
 
-		} else if( $user_id ){
+		} else if( $user_id and !is_adminUser($user_id) ){
 			$rw_user = table( 'user' , $user_id );
 			$user_email = user_email( $rw_user );
 			$subject = $texty['user_email_subject'];
@@ -103,7 +103,7 @@ function texty_email( $who , $slug , $vars=null ){
 			texty_email_this( $user_email, $subject, $content, $vars, $rw_user );
 		}
 
-		if( $user2_id ){
+		if( $user2_id and !is_adminUser($user2_id) ){
 			$rw_user2 = table( 'user' , $user2_id );
 			$user2_email = user_email( $rw_user2 );
 			$subject = $texty['user2_email_subject'];

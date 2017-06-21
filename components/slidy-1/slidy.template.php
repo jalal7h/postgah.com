@@ -1,5 +1,5 @@
 
-<scrit src="{bysideme}/slidy.exclude.js"></scrit>
+<script src="{bysideme}/slidy.exclude.js"></script>
 
 <div class="slidy" min_wh="">
 	

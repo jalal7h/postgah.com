@@ -1,15 +1,15 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2017/05/04
-# 1.0
+# 2017/06/21
+# 1.1
 
 add_layer( 'pgItem_item_list', 'لیست آیتم‌ها', 'center', $repeat='0' );
 
 function pgItem_item_list( $rw_pagelayer ){
 	
 
-	$count_in_page = 10;
+	$count_in_page = 20;
 
 
 	$p = intval($_REQUEST['p']);
@@ -124,7 +124,17 @@ function pgItem_item_list( $rw_pagelayer ){
 			$ccf_filterquery = catcustomfield_filterquery();
 		}
 
-		$query = " SELECT * FROM `item` WHERE 1 $q_query $cat_query $ccf_filterquery AND `flag`='2' AND `expired`='0' ORDER BY `date_updated` DESC LIMIT $start_from , $count_in_page ";
+
+		#################################
+		
+		$JOIN = "LEFT JOIN `plan` ON `item`.`plan` = `plan`.`id`";
+		$WHERE = "WHERE 1 $q_query $cat_query $ccf_filterquery AND `item`.`flag`='2' AND `item`.`expired`='0'";
+		$ORDER = "ORDER BY `plan`.`pin_in_own_cat` DESC, `item`.`date_updated` DESC";
+		$LIMIT = "LIMIT $start_from , $count_in_page";
+
+		$query = " SELECT `item`.*, `plan`.`pin_in_own_cat` FROM `item` $JOIN $WHERE $ORDER $LIMIT ";
+
+		#################################
 
 		if(! $rs_item = dbq( $query ) ){
 			e( dbe() );
@@ -152,7 +162,6 @@ function pgItem_item_list( $rw_pagelayer ){
 		echo cache( "make", $cache_key, $cache_value );
 
 	}
-
 
 
 

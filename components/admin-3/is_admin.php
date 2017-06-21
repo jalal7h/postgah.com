@@ -1,19 +1,21 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2016/12/04
-# 1.0
+# 2017/06/16
+# 1.1
 
 function is_admin(){
 
 	if(! admin_logged() ){
 		return false;
 	
-	} else if( $_REQUEST['page'] != 'admin' ){
-		return false;
+	} else if( 
+	($_REQUEST['page'] == 'admin') or 
+	( strstr( $_SERVER['HTTP_REFERER'], '/admin/' ) or strstr( $_SERVER['HTTP_REFERER'], 'page=admin' ) ) ){
+		return true;
 	
 	} else {
-		return true;
+		return false;
 	}
 	
 }

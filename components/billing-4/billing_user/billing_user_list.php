@@ -14,7 +14,7 @@ function billing_userpanel_list(){
 	$p = intval($_REQUEST['p']);
 	$stt = $tdd * $p;
 	
-	$query = " SELECT * FROM `billing_invoice` WHERE `user_id`='$user_id' AND ( `date`>0 OR `order_table`!='' ) ORDER BY `date_created` DESC LIMIT $stt,$tdd ";
+	$query = " SELECT * FROM `billing_invoice` WHERE `user_id`='$user_id' AND ( `visible`=1 OR `date`>0 OR `order_table`!='' ) ORDER BY `date_created` DESC LIMIT $stt,$tdd ";
 
 	if(! $rs = dbq($query) ){
 		ed();

@@ -14,6 +14,7 @@ function texty_mg_list(){
 	# 
 	# the list
 	$table = 'texty';
+	$list['head'] = __('لیست پیام‌های پیشفرض');
 	$list['name'] = __FUNCION__;
 	$list['query'] = " SELECT * FROM `$table` WHERE 1 ORDER BY `name` ASC ";
 	$list['tdd'] = 5; // tedad dar safhe
