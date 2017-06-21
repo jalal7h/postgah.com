@@ -1,4 +1,8 @@
-<?
+<?php
+
+# jalal7h@gmail.com
+# 2017/06/22
+# 1.0
 
 function pgPlan_itemCurrentPlan( $rw_item ){
 

@@ -48,7 +48,7 @@ function kword_mg_list(){
 	$list['name'] = __FUNCTION__;
 	$list['class'] = __FUNCTION__;
 	$list['query'] = " SELECT * FROM `kword` WHERE 1 ORDER BY `id` DESC ";
-	$list['tdd'] = 5; // tedad dar safhe
+	$list['tdd'] = 20; // tedad dar safhe
 	
 	#
 	# base url is needed in version upper 1.2 

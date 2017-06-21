@@ -304,7 +304,7 @@ iframe[name="_hidden"] {
 }
 .userpanel_desk_wrap .listmaker_list_record td {
 	box-shadow: 0 0 0 #000;
-	padding: 20px;
+	/* padding: 20px; */
 }
 .userpanel_desk_wrap .listmaker_list_record {
 	background-color: #fafafa;
