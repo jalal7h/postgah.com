@@ -19,6 +19,8 @@ function pgShop_meta( $column ){
 		return $rw_s[0][ $column ];
 	}
 
-
 }
+
+
+
 

@@ -51,6 +51,8 @@ a.pgIilt > .text > .price {
 	left: 20px;
 	color: green;
 	font-size: 12px;
+	background-color: white;
+	padding: 0 20px 20px 0;
 }
 a.pgIilt > .text > .date {
 	bottom: 20px;

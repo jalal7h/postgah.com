@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/06/04
-# 1.3
+# 2017/06/23
+# 1.4
 
 function slidy( $arr ){
 
@@ -26,8 +26,10 @@ function slidy( $arr ){
 	} else {
 
 		foreach ($arr as $i => $image) {
-			list( $width, $height ) = getimagesize($image);
-			$images[] = (object) [ 'src'=> $image, 'width'=>$width, 'height'=>$height, 'numb'=>( $i+1 ) ];
+			if( file_exists($image) ){
+				list( $width, $height ) = getimagesize($image);
+				$images[] = (object) [ 'src'=> $image, 'width'=>$width, 'height'=>$height, 'numb'=>( $i+1 ) ];
+			}
 		}
 
 		return template_engine( 'slidy', [ 'images' => $images ] );
