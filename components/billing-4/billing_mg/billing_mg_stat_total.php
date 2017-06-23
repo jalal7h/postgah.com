@@ -1,4 +1,8 @@
-<?
+<?php
+
+# jalal7h@gmail.com
+# 2017/06/23
+# 1.0
 
 function billing_management_stat_total(){
 	#
@@ -9,6 +13,10 @@ function billing_management_stat_total(){
 		"date" => array ("day" => $date)
 	);
 	$stat_today = billing_format( billing_stat_payment( $list ) );
+	if(! $stat_today ){
+		$stat_today = '0';
+	}
+
 	#
 	# yesterday
 	$date_yesterday = substr( UDate( U()-(24*3600) ) , 0 , 10) ;
@@ -17,6 +25,10 @@ function billing_management_stat_total(){
 		"date" => array ("day" => $date_yesterday)
 	);
 	$stat_yesterday = billing_format( billing_stat_payment( $list ) );
+	if(! $stat_yesterday ){
+		$stat_yesterday = '0';
+	}
+
 	#
 	# week
 	$list = array (
@@ -24,6 +36,10 @@ function billing_management_stat_total(){
 		"date" => array ("week" => $date)
 	);
 	$stat_week = billing_format( billing_stat_payment( $list ) );
+	if(! $stat_week ){
+		$stat_week = '0';
+	}
+
 	#
 	# month
 	$list = array (
@@ -31,6 +47,10 @@ function billing_management_stat_total(){
 		"date" => array ("month" => $date)
 	);
 	$stat_month = billing_format( billing_stat_payment( $list ) );
+	if(! $stat_month ){
+		$stat_month = '0';
+	}
+
 	#
 	# year
 	$list = array (
@@ -38,12 +58,19 @@ function billing_management_stat_total(){
 		"date" => array ("year" => $date)
 	);
 	$stat_year = billing_format( billing_stat_payment( $list ) );
+	if(! $stat_year ){
+		$stat_year = '0';
+	}
+
 	#
 	# total
 	$list = array (
 		"skipwallet" => true
 	);
 	$stat_total = billing_format( billing_stat_payment( $list ) );
+	if(! $stat_total ){
+		$stat_total = '0';
+	}
 	
 	echo "
 	<div class='billing_management_stat_total'>

@@ -1,5 +1,5 @@
 
-// 2016/10/16
+// 2017/06/23
 
 jQuery(document).ready(function($) {
 	
@@ -8,6 +8,9 @@ jQuery(document).ready(function($) {
 
 		// define vairables
 		var the_text = $(this);
+		var max = the_text.attr('max');
+		var max_alert = the_text.attr('max_alert');
+		cl( max_alert);
 		var the_container = $(this).parent();
 		var the_hidden = the_container.find('input[type="hidden"]');
 		var this_word;
@@ -21,11 +24,16 @@ jQuery(document).ready(function($) {
 			the_search_match = ','+the_hidden.val()+',';
 			the_search_word = ','+this_word+',';
 
-			if( this_word == '' ){
+
+			if( max > 0 && the_hidden.val().split(',').length >= max ){
+				cl('max keywords');
+				alert( max_alert );
+				e.preventDefault();
+
+			} else if( this_word == '' ){
 				//
 				cl('the new word is blank');
 
-			// } else if( (the_search_match.match(/is/g) || []).length > 0 ){
 			} else if( (the_search_match.match(the_search_word) || []).length > 0 ){
 				//
 				cl('the word is repeaty');
@@ -92,6 +100,8 @@ function lmfe_keyword_set_spans( kwc_id ){
 	the_words_str = the_words_str.replace(/،/gi, ",");
 	the_words_arr = the_words_str.split(',');
 	
+	cl( 'count is ' +  the_words_arr.length );
+
 	the_kww.html('');
 	for( i=0; i<the_words_arr.length; i++ ){
 		

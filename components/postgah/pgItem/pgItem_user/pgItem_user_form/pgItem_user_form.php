@@ -1,8 +1,8 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2016/10/16
-# 1.2
+# 2017/06/23
+# 1.3
 
 function pgItem_user_form(){
 	
@@ -36,7 +36,7 @@ function pgItem_user_form(){
 		
 		<hr>
 
-		[!"کلمه کلیدی","keyword:kword"=>kwordusage_get("item",$rw["id"],$string_flag=true)!]
+		[!"کلمه کلیدی","max"=>10,"keyword:kword"=>kwordusage_get("item",$rw["id"],$string_flag=true)!]
 		
 		<hr>
 		
