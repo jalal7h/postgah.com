@@ -1,10 +1,10 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2017/01/02
-# 1.0
+# 2017/06/23
+# 1.1
 
-$GLOBALS['block_layers']['pgItem_display_tags'] = 'نمایش آیتم - برچسب ها';
+add_layer( 'pgItem_display_tags', 'نمایش آیتم - برچسب ها' );
 
 function pgItem_display_tags( $rw_pagelayer ){
 
@@ -19,6 +19,9 @@ function pgItem_display_tags( $rw_pagelayer ){
 
 		$content = "<div class=\"".__FUNCTION__."\">\n";
 		foreach ($kword_array as $i => $kword) {
+			if( $i >= 10 ){
+				break;
+			}
 			$content.= "\t<a target=\"_blank\" href=\"".kword_link($kword)."\">".$kword."</a>\n";
 		}
 		$content.= "</div>\n";
