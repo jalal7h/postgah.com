@@ -31,6 +31,9 @@
 	font-size: 10px;
 	margin: -10px 0;
 }
+.contact_mg_form .detail > div {
+	
+}
 .contact_mg_form .detail * {
 	color: #888;
 }
@@ -59,7 +62,7 @@
 	display: inline-block;
 }
 .contact_mg_form .detail > div > span {
-	/* text-align: left; */
+	text-align: left;
 	width: 38px;
 	color: #aaa;
 	font-size: 9px;

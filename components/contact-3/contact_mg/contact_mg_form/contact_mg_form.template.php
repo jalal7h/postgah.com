@@ -9,7 +9,8 @@
 			<div class="from">
 				<span><lang>از :</lang></span>
 				<b><?=$rw["name"]?></b>
-				<div>&lt;<?=$rw["email"]?>&gt;</div>
+				<div><a href="mailto:<?=$rw["email"]?>">&lt;<?=$rw["email"]?>&gt;</a></div>
+				<a href="tell:<?=$rw["cell"]?>"><?=$rw["cell"]?></a>
 			</div>
 			
 			<div class="to">

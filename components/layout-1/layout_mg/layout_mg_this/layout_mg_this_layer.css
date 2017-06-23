@@ -75,6 +75,7 @@
 	/* cursor: default; */
 	font-size: 10px;
 	transition: all 0.2s;
+	line-height: 1.7;
 }
 .layout_mg_this_layer > .tools {
 	/* background-color: #FDFFF7; */

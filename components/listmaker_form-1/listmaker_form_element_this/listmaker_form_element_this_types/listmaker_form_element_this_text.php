@@ -43,7 +43,7 @@ function listmaker_form_element_this_text( $info ){
 	$minOrMax_c = listmaker_form_element_content_minOrMax_table( $info );
 
 	if( $tnit_c and $minOrMax_c ){
-		$c = $c.'<span class="lmfe_tnit" ></span>'.$minOrMax_c;
+		$c = $c.'<br><span class="lmfe_tnit" ></span>'.$minOrMax_c;
 	
 	} else {
 		$c = $c.$minOrMax_c;

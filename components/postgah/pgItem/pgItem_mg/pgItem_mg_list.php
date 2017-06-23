@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/06/10
-# 1.0
+# 2017/06/22
+# 1.1
 
 function pgItem_mg_list(){
 
@@ -53,8 +53,8 @@ function pgItem_mg_list(){
 	# list array // list e sotun haye list
 	$list['list_array']= [
 		["picture" => 'pgItem_image($rw)'],
-		["content" => '$rw[\'name\']."<div style=\'font-size:9px\'>".table( "plan", pgPlan_getItemPlan($rw["id"]) )["name_on_form"]."</div>"', "title"=>'time_inword($rw["date_updated"])'],
-		["content" => '"<a target=\'_blank\' href=\'./?page=admin&cp=user_mg&do=login&id=".$rw[\'user_id\']."\'>".table("user",$rw[\'user_id\'], "name")'],
+		["content" => '$rw[\'name\']."<div style=\'font-size:9px\'>".pgPlan_getItemPlan_text($rw)."</div>"', "title"=>'time_inword($rw["date_updated"])'],
+		["content" => '"<a target=\'_blank\' href=\'".user_loginLink($rw[\'user_id\'])."\'>".table("user",$rw[\'user_id\'], "name")'],
 		["content" => 'position_translate($rw[\'position_id\'])." / ".cat_translate($rw[\'cat_id\'])'],
 		["content" => 'pgItem_user_list_this_status($rw)'],
 	];
@@ -71,6 +71,7 @@ function pgItem_mg_list(){
 		'flag' => "<option value='' >.. ".lmtc('item:flag')." ..</option><option value='2'>تایید شده</option><option value='0'>منتظر تایید</option><option value='1'>رد شده</option>",
 		'cat_id' => "<option value='' >.. ".lmtc('item:cat_id')." ..</option>".listmaker_option( "cat", $condition=" AND `cat`='adsCat' AND `parent`='0' AND `flag`='1' ORDER BY `prio` ", $returnArray=false ) ,
 		'position_id' => "<option value='' >.. ".lmtc('item:position_id')." ..</option>".listmaker_option( "position", $condition=" AND `parent`='0' ORDER BY `name` ASC ", $returnArray=false ) ,
+		'plan' => "<option value='' >.. ".lmtc('item:plan')." ..</option>".listmaker_option( "plan", $condition=" AND `flag`='1' ", $returnArray=false ) ,
 	];
 
 	$list['linkTo']['LinkToAds'] = [

@@ -67,6 +67,10 @@ $(document).ready(function() {
         } else if( (!e.shiftKey) && (event.keyCode >= 48) && (event.keyCode <= 57) ){
         	return;
         
+        // numeric without shift on numlock
+        } else if( (!e.shiftKey) && (event.keyCode >= 96) && (event.keyCode <= 105) ){
+        	return;
+        
         // navigation
         } else if( e.keyCode >=37 && e.keyCode <=40 ){
         	return;

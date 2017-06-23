@@ -1,5 +1,5 @@
 ﻿
-<header>
+<header class="page_{_PAGE}">
 	
 	<div class="middle">
 		

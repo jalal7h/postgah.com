@@ -9,7 +9,7 @@ function dbq( $query='', $force=false ){
 	$bt = debug_backtrace()[1];
 	
 	if(! $query ){
-		echo convbox("dbq at <b>".$bt['function']." : ".$bt['line']."</b><br> No query defined!", "ltr");
+		echo convbox("dbq at <b>".$bt['function']." : ".$bt['line']."</b><br>No query defined!", "ltr");
 	
 	} else {
 		

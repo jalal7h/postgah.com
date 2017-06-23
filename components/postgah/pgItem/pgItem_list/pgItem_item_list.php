@@ -117,7 +117,7 @@ function pgItem_item_list( $rw_pagelayer ){
 		$cache_value = '<div class="items">';
 		
 		if( $rw_cat ){
-			$cat_query = " AND (`cat_serial` LIKE '%/$cat_id/%') ";
+			$cat_query = " AND (`item`.`cat_serial` LIKE '%/$cat_id/%') ";
 		}
 
 		if( is_component('catcustomfield') ){

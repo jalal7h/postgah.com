@@ -1,8 +1,8 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2017/02/04
-# 1.1
+# 2017/06/23
+# 1.2
 
 add_userpanel_item( 'pgItem_user', 'items', 'لیست آگهی ها', '022', null, true );
 
@@ -60,7 +60,12 @@ function pgItem_user(){
 
 		case 'SetUpdateTime':
 			if( in_array( $do1, $list ) ){
-				dbs( 'item', ['date_updated'=>U()], ['id'] );
+				if( table('item', intval($_REQUEST['id']) )['date_updated'] > U() - (3600*24*2) ){
+					echo "<script>top.alert('شما قادر به یک بار بروزرسانی طی ۴۸ ساعت هستید.');</script>";
+
+				} else if( dbs( 'item', ['date_updated'=>U()], ['id'] ) ){
+					echo "<script>top.alert('برازرسانی انجام شد.');</script>";
+				}
 			}
 			break;
 
