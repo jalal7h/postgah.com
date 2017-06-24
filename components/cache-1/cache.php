@@ -1,8 +1,8 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2017/05/10
-# 2.0
+# 2017/06/24
+# 2.1
 
 # $task [ make / hit / remove / pop ]
 
@@ -50,10 +50,12 @@ function cache( $task, $key, $value_or_timeout=""){
 
 			case 'hit':
 				$timeout = $value_or_timeout;
+				$timeout = cache_hit_timeout_to_second( $timeout );
 				return $class::Hit( $key, $timeout );
 
 			case 'pop':
 				$timeout = $value_or_timeout;
+				$timeout = cache_hit_timeout_to_second( $timeout );
 				if( $value = $class::Hit( $key, $timeout ) ){
 					$class::Remove( $key );
 				}
