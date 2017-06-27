@@ -26,7 +26,7 @@ function userregisterverify_verify(){
 		or
 		(userlogin_username_mobile and table('user', array_merge($cell_where, ['cell'=>$u]) ) )
 	){
-		qpush( 'userregisterverify_form_username', __('حساب کاربری با %% مورد نظر شما قبلا ثبت شده است.', userlogin_username_title) );
+		que::push( 'userregisterverify_form_username', __('حساب کاربری با %% مورد نظر شما قبلا ثبت شده است.', userlogin_username_title) );
 
 	} else {
 		userverification_init( $u, _URL.'/'.Slug::getSlugByName('register').'/'.str_enc($u), $its=null );

@@ -6,7 +6,7 @@
 
 function userregisterverify_form(){
 	
-	echo template_engine( 'userregisterverify_form', [ 'prompt' => qpop('userregisterverify_form_username') ] );
+	echo template_engine( 'userregisterverify_form', [ 'prompt' => que::pop('userregisterverify_form_username') ] );
 	
 }
 

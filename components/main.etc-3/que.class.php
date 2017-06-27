@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/06/16
-# 1.3
+# 2017/06/27
+# 1.4
 
 /**
 * que : some place to push some content, and use it later
@@ -79,6 +79,8 @@ class que {
 		
 		$value = self::get( $name );
 		self::remove( $name );
+
+		return $value;
 
 	}
 
