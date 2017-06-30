@@ -27,6 +27,12 @@ function pgItem_mg(){
 		case 'reject':
 			pgItem_mg_reject();
 			break;
+
+		case 'removeAll':
+			foreach($_REQUEST['removeAll'] as $item_id){
+				dbrm('item', $item_id, true);
+			}
+			break;
 		
 	}
 
