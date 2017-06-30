@@ -74,6 +74,7 @@ function ticketbox_mg_list(){
 	#
 	# list array // list e sotun haye list
 	$list['list_array'][] = array('head'=>lmtc('ticketbox:name'), 'content' => '"<span>#".$rw["ticketbox_id"]."</span> ".$rw[\'name\']');
+	$list['list_array'][] = array('head'=>__('کاربر'), 'content' => '"<a target=\'_blank\' href=\'".user_mg_detailLink(ticketbox_user($rw["ticketbox_id"])["foreign"])."\'>".user_detail(ticketbox_user($rw["ticketbox_id"])["foreign"])["name"]."</a>"');
 	$list['list_array'][] = array('head'=>__('وضعیت'), 'content' => 'ticketbox_replyStatus($rw)');
 	$list['list_array'][] = array('head'=>__('تاریخ'), 'content' => 'substr( UDate($rw[\'date_updated\']) , 0 , 16 )');
 		
@@ -87,7 +88,7 @@ function ticketbox_mg_list(){
 	# dokme enteghal be archive
 	$list['linkTo']['move_to_archive'] = [
 		'url' => '_URL."/?page=admin&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["func"]."&do=flag&id=".$rw["ticketbox_id"]',
-		'icon' => '14a',
+		'icon' => '00c',
 		'name' => __('انتقال به آرشیو'),
 		'color' => '#62bb00',
 		'width' => 33,

@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/06/15
-# 1.1
+# 2017/06/30
+# 1.2
 
 function ticketbox_link( $rw ){
 
@@ -14,3 +14,6 @@ function ticketbox_link( $rw ){
 
 }
 
+function ticketbox_user_link( $rw ){
+	return ticketbox_link($rw);
+}
