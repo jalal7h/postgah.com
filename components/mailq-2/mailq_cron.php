@@ -27,7 +27,7 @@ function mailq_cron(){
 
 		# 
 		# signature for prevent mailq loop
-		qpush( 'mailq_itsFromQueue' , true );
+		que::push( 'mailq_itsFromQueue' , true );
 
 		# 
 		# send the mail

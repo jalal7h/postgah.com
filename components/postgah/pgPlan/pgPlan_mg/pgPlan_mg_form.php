@@ -1,4 +1,8 @@
-<?
+<?php
+
+# jalal7h@gmail.com
+# 2017/06/30
+# 1.0
 
 function pgPlan_mg_form(){
 
@@ -67,16 +71,12 @@ function pgPlan_mg_form(){
 
 		<hr>
 
-		[!"toggle:search_box_color_flag","inDiv"!]
 		[!"color:search_box_color","inDiv"!]
-		[!"file:search_result_cover","inDiv"!]
 		
 		<hr>
 
 		[!"toggle:suggest_as_related","inDiv"!]
-		[!"toggle:send_in_newsletter","inDiv"!]
 		[!"toggle:pin_in_own_cat","inDiv"!]
-		[!"toggle:pin_in_search","inDiv"!]		
 		
 		<hr>
 
@@ -95,4 +95,11 @@ function pgPlan_mg_form(){
 //		[!"toggle:show_in_index","inDiv"!]
 // 		[!"toggle:watermark_onlyfirst","inDiv"!]
 //		[!"toggle:pin_in_all_cat","inDiv"!]
+
+// 		[!"toggle:search_box_color_flag","inDiv"!]
+//		[!"file:search_result_cover","inDiv"!]
+//		[!"toggle:send_in_newsletter","inDiv"!]
+//		[!"toggle:pin_in_search","inDiv"!]
+
+
 

@@ -81,7 +81,7 @@ function pgItem_user_saveEdit(){
 		'item_name' => trim( strip_tags($_REQUEST['name']) ),
 	]);
 	
-	qpush( __FUNCTION__."_result", $c );
+	que::push( __FUNCTION__."_result", $c );
 	
 }
 

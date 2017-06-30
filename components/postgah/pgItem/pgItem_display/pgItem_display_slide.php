@@ -1,10 +1,10 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/06/10
-# 1.0
+# 2017/06/30
+# 1.1
 
-$GLOBALS['block_layers_center']['pgItem_display_slide'] = 'نمایش آیتم - اسلایدها';
+add_layer( 'pgItem_display_slide', 'نمایش آیتم - اسلایدها', 'side', $repeat='0' );
 
 function pgItem_display_slide( $rw_pagelayer ){
 
@@ -36,10 +36,15 @@ function pgItem_display_slide( $rw_pagelayer ){
 
 		}
 
+		if( $plan_color = pgItem_getPlanColor($rw_item) ){
+			$if_it_have_any_plan = "<div class=\"plan\" style=\"color: $plan_color\">ویژه</div>";			
+		}
+
 		$content = "
 		<div class=\"".__FUNCTION__."\">
 			<div class=\"item_name\">".$rw_item['name']."</div>
 			<div class=\"item_code\">کد آگهی :‌ ".$rw_item['id']."</div>
+			$if_it_have_any_plan
 			".slidy($image_arr)."
 		</div>";
 

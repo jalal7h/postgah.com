@@ -72,7 +72,7 @@ function pgItem_user_getValidActionList( $rw ){
 	if( $IPD_id = pgItem_haveIncompletePayment($rw) and !pgItem_isAnyWaitingOfflinePayment($rw) ){
 		$invoice_id = billing_invoiceDetail_byOrderDetail( 'item_plan_duration', $IPD_id )['id'];
 		$list[] = 'IncompletePayment';
-		qpush( 'IncompletePayment-invoice_id', $invoice_id );
+		que::push( 'IncompletePayment-invoice_id', $invoice_id );
 
 	}
 

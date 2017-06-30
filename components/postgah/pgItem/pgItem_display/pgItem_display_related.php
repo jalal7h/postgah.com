@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/06/21
-# 1.0
+# 2017/06/30
+# 1.1
 
 add_layer( 'pgItem_display_related', 'نمایش آیتم - آگهی های مرتبط', 'center', $repeat='0' );
 
@@ -39,10 +39,17 @@ function pgItem_display_related( $rw_pagelayer ){
 
 function pgItem_display_related_this( $rw ){
 
+	if( $rw['suggest_as_related'] ){
+		$a_class = 'suggest_as_related';
+		$a_color = pgItem_getPlanColor($rw);
+		$a_style_img.= 'border-color: '.$a_color;
+		$a_style_span.= 'color: '.$a_color;
+	}
+
 	$c.= "
-	<a href=\"".pgItem_link( $rw )."\" class=\"".( $rw['suggest_as_related'] ? 'suggest_as_related' : '' )."\" >
-		<img src=\"".pgItem_image($rw, "200x200")."\"/>
-		<span>".$rw['name']."</span>
+	<a href=\"".pgItem_link( $rw )."\" class=\"$a_class\" >
+		<img src=\"".pgItem_image($rw, "200x200")."\" style=\"$a_style_img\" />
+		<span style=\"$a_style_span\" >".$rw['name']."</span>
 	</a>";
 
 	return $c;

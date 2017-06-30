@@ -1,8 +1,8 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2016/10/16
-# 1.2
+# 2017/06/30
+# 1.3
 
 function pgItem_user_list(){
 
@@ -10,8 +10,8 @@ function pgItem_user_list(){
 		jsgo( layout_link(60) );
 	}
 
-	$content.= qpop( 'pgItem_user_saveNew_result' );
-	$content.= qpop( 'pgItem_user_saveEdit_result' );
+	$content.= que::pop( 'pgItem_user_saveNew_result' );
+	$content.= que::pop( 'pgItem_user_saveEdit_result' );
 
 	###################################################################################
 	# the new version 1.2

@@ -1,12 +1,5 @@
-
+<!--spi-->
 <div class="contact_vw_form">
-
-	<div class="path">
-		<div>{contact_address}</div>
-		<br>
-		<div>{setting_rw("contact_tell")["name"]} : <span dir=ltr >{contact_tell}</div>
-		<div>{setting_rw("contact_fax")["name"]} : <span dir=ltr >{contact_fax}</div>
-	</div>
 
 	<form method="post" action="{_URL}/<?=Slug::getSlugByName('contact')?>/send" >
 		
@@ -59,6 +52,13 @@
 		</fieldset>
 	
 	</form>
+
+	<div class="path">
+		<div>آدرس:‌ {contact_address}</div>
+		<br>
+		<div>{setting_rw("contact_tell")["name"]} : <span dir=ltr >{contact_tell}</div>
+		<div>{setting_rw("contact_fax")["name"]} : <span dir=ltr >{contact_fax}</div>
+	</div>
 
 </div>
 

@@ -65,7 +65,7 @@ function pgItem_user_list_this_tools_MakePremium( $rw ){
 }
 
 function pgItem_user_list_this_tools_IncompletePayment( $rw ){
-	$invoice_id = qpop( 'IncompletePayment-invoice_id' );
+	$invoice_id = que::pop( 'IncompletePayment-invoice_id' );
 	return "<a title=\"پرداخت\" href=\"".billing_invoiceLink($invoice_id)."\" class=\"IncompletePayment\"></a>";
 }
 

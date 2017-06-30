@@ -28,7 +28,7 @@ function pgSearch_item_list( $rw_pagelayer ){
 			$c.= '<div class="head_and_subcat_wrapper">';
 			$title = str_replace('%WORD%', $q, $rw_pagelayer['name']);
 
-			$listmaker_paging__count = qpop('listmaker_paging__count');
+			$listmaker_paging__count = que::pop('listmaker_paging__count');
 			$c.= '<div class="head"><span class="title">'.$title.'</span>'.
 				( $listmaker_paging__count ? ' <span class="count">('.number_format($listmaker_paging__count).')</span>' : '' ).
 				'</div>';
@@ -78,7 +78,7 @@ function pgSearch_item_list( $rw_pagelayer ){
 
 			#
 			# paging
-			$c.= qpop('pgSearch_engine_paging');
+			$c.= que::pop('pgSearch_engine_paging');
 
 			#
 			# echo all

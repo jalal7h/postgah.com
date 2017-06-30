@@ -1,8 +1,8 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2017/04/01
-# 2.0
+# 2017/06/30
+# 2.1
 
 function user_register_do(){
 	
@@ -23,21 +23,21 @@ function user_register_do(){
 	#
 	# check password
 	if(! $password = trim($_REQUEST['password']) ){
-		qpush( 'user_register_form_password', __("لطفا کلمه عبور خود وارد کنید.") );
+		que::push( 'user_register_form_password', __("لطفا کلمه عبور خود وارد کنید.") );
 		$form_valid = false;
 
 	} else if(! is_password_secure_or_not($password) ){
-		qpush( 'user_register_form_password', __("لطفا کلمه عبور مطمئن‌تری انتخاب کنید. (ترکیب عدد و حروف بیشتر از ۸ کارکتر)") );
+		que::push( 'user_register_form_password', __("لطفا کلمه عبور مطمئن‌تری انتخاب کنید. (ترکیب عدد و حروف بیشتر از ۸ کارکتر)") );
 		$form_valid = false;
 
 	#
 	# check name
 	} else if(! $name = trim($_REQUEST['name']) ){
-		qpush( 'user_register_form_name', __("لطفا نام خود را وارد کنید.") );
+		que::push( 'user_register_form_name', __("لطفا نام خود را وارد کنید.") );
 		$form_valid = false;
 
 	} else if(! is_name_correct_or_not($name) ){
-		qpush( 'user_register_form_name', __("لطفا نام خود را به درستی وارد کنید.") );
+		que::push( 'user_register_form_name', __("لطفا نام خود را به درستی وارد کنید.") );
 		$form_valid = false;
 	}
 
@@ -50,11 +50,11 @@ function user_register_do(){
 		# cell
 		if( $cell ){
 			if(! is_cell_correct_or_not( $cell ) ){
-				qpush( 'user_register_form_cell', __("لطفا شماره موبایل خود را به درستی وارد کنید.") );
+				que::push( 'user_register_form_cell', __("لطفا شماره موبایل خود را به درستی وارد کنید.") );
 				$cell = '';
 			
 			} else if( table('user', $cell, null, 'cell') ) {
-				qpush( 'user_register_form_cell', __("شماره موبایل مورد نظر شما قبلا ثبت شده است.") );
+				que::push( 'user_register_form_cell', __("شماره موبایل مورد نظر شما قبلا ثبت شده است.") );
 				$cell = '';
 			}
 		}
@@ -63,11 +63,11 @@ function user_register_do(){
 		# email
 		if( $email ){
 			if(! is_email_correct_or_not($email) ){
-				qpush( 'user_register_form_email', __("لطفا آدرس ایمیل خود را به درستی وارد کنید.") );
+				que::push( 'user_register_form_email', __("لطفا آدرس ایمیل خود را به درستی وارد کنید.") );
 				$email = '';
 
 			} else if( table('user', $email, null, 'email') ){
-				qpush( 'user_register_form_email', __("ایمیل مورد نظر شما قبلا ثبت شده است.") );
+				que::push( 'user_register_form_email', __("ایمیل مورد نظر شما قبلا ثبت شده است.") );
 				$email = '';
 			}
 		}

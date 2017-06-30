@@ -36,7 +36,7 @@ function userregisterverify_check(){
 			return false;
 		}
 
-		qpush( 'result_of_userregisterverify_check', $column . ':' . $_REQUEST['username'] );
+		que::push( 'result_of_userregisterverify_check', $column . ':' . $_REQUEST['username'] );
 		return true;
 
 	}

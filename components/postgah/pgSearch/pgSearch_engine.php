@@ -47,7 +47,7 @@ function pgSearch_engine( $q ){
 	$paging = listmaker_paging( $query, $link, $limit );
 	$paging = str_replace( '<a href', '<a rel="nofollow" href', $paging );
 	
-	qpush( 'pgSearch_engine_paging', $paging );
+	que::push( 'pgSearch_engine_paging', $paging );
 
 	return $res;
 

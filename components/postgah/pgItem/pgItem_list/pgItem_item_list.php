@@ -106,16 +106,18 @@ function pgItem_item_list( $rw_pagelayer ){
 		( strstr($_SERVER['QUERY_STRING'], '&ccf_') ? ",ccf_*" : "" ).
 		"]";
 
-	if( $cache_hit = cache( "hit", $cache_key ) ){
+	if( $cache_hit = cache( "hit", $cache_key, "10m" ) ){
+		// echo "\n<!-- hit ".date('H:i:s')." -->\n";
 		echo $cache_hit;
 	
 	# ## # ## # ## 
 	} else {
-		
+
 		# 
 		# items
 		$cache_value = '<div class="items">';
-		
+		// $cache_value.= "\n<!-- make ".date('H:i:s')." -->\n";
+
 		if( $rw_cat ){
 			$cat_query = " AND (`item`.`cat_serial` LIKE '%/$cat_id/%') ";
 		}

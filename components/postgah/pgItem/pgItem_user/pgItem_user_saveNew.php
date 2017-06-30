@@ -110,7 +110,7 @@ function pgItem_user_saveNew(){
 		$c = texty('pgItem_user_saveNew_free', $vars);
 	}
 
-	qpush( __FUNCTION__."_result", $c );
+	que::push( __FUNCTION__."_result", $c );
 
 }
 
