@@ -4,7 +4,7 @@
 # 2017/06/23
 # 1.4
 
-function slidy( $arr ){
+function slidy( $arr, $option=null ){
 
 	if( !$arr or !sizeof($arr) ){
 		return false;
@@ -32,7 +32,11 @@ function slidy( $arr ){
 			}
 		}
 
-		return template_engine( 'slidy', [ 'images' => $images ] );
+		if( $option ){
+			$option = (object) $option;
+		}
+
+		return template_engine( 'slidy', [ 'images' => $images, 'option'=>$option ] );
 
 	}
 	

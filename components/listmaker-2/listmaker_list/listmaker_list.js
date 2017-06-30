@@ -21,6 +21,32 @@ $(document).ready(function(){
 			lml_intoolstd = 'out';
 		} , 500 );
 	});
+
+
+	// remove all - check all
+	$('.listmaker_list_head th input[name="removeAll_listHead"]').on('click', function(){
+		if( $(this).prop('checked') == true ){
+			cl( 'checked');
+			$(this).closest('.listmaker_list').find('.listmaker_list_record .removeAll .removeAll_checkbox').each(function(index, el) {
+				$(this).prop('checked', true);
+			});
+		
+		} else {
+			cl( 'unchecked');
+			$(this).closest('.listmaker_list').find('.listmaker_list_record .removeAll .removeAll_checkbox').each(function(index, el) {
+				$(this).prop('checked', false);
+			});
+		}
+	});
+
+	// remove all - remove all
+	$('.listmaker_list .removeAll_removeButton').on('click', function(){
+		var fm = $(this).closest('.listmaker_list_form');
+		var fm_formAction = fm.find('input[type="hidden"][name="do"]');
+		fm_formAction.val('removeAll');
+		fm.submit();
+	});
+
 	
 })
 

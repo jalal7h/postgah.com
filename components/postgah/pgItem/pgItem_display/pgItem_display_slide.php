@@ -45,7 +45,7 @@ function pgItem_display_slide( $rw_pagelayer ){
 			<div class=\"item_name\">".$rw_item['name']."</div>
 			<div class=\"item_code\">کد آگهی :‌ ".$rw_item['id']."</div>
 			$if_it_have_any_plan
-			".slidy($image_arr)."
+			".slidy( $image_arr, [ 'linkToSource'=>true ] )."
 		</div>";
 
 		layout_post_box( $title, $content, $allow_eval=false, $framed=1, $rw_pagelayer['pos'] );

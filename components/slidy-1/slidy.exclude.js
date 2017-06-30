@@ -23,14 +23,14 @@ jQuery(document).ready(function($) {
 
 	if( disable_auto_flag==0 || slidy_handy_change==1 ){
 		
-		$('.slidy > .main > img').css({'opacity':'0.0'});
-		$('.slidy > .main > img').css({'z-index':'1'});
+		$('.slidy > .main > a > img').css({'opacity':'0.0'});
+		$('.slidy > .main > a > img').css({'z-index':'1'});
 
-		$('.slidy > .main > img:nth-child('+slidy_i0+')').css({'z-index':'2'});
-		$('.slidy > .main > img:nth-child('+slidy_i0+')').css({'opacity':'1.0'});
+		$('.slidy > .main > a:nth-child('+slidy_i0+') > img').css({'z-index':'2'});
+		$('.slidy > .main > a:nth-child('+slidy_i0+') > img').css({'opacity':'1.0'});
 
-		var this_width = $('.slidy > .main > img:nth-child('+slidy_i0+')').attr('width');
-		var this_height = $('.slidy > .main > img:nth-child('+slidy_i0+')').attr('height');
+		var this_width = $('.slidy > .main > a:nth-child('+slidy_i0+') > img').attr('width');
+		var this_height = $('.slidy > .main > a:nth-child('+slidy_i0+') > img').attr('height');
 		var slidy_height = this_height * slidy_width / this_width;
 
 		if( slidy_disable_height_change == true ){
@@ -53,7 +53,7 @@ jQuery(document).ready(function($) {
 
 jQuery(document).ready(function($) {
 	
-	size0 = $('.slidy > .main > img').size();
+	size0 = $('.slidy > .main > a > img').size();
 	slidy_i0 = 1;
 	disable_auto_flag = 0;
 	

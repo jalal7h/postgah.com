@@ -5,7 +5,9 @@
 	
 	<div class="main">
 	<?foreach( $images as $image ):?>
-		<img src="<?= $image->src ?>" numb="<?= $image->numb ?>" width="<?= $image->width ?>" height="<?= $image->height ?>" />
+		<a <?if( $option->linkToSource ):?>href="<?= $image->src ?>"<?endif?> >
+			<img src="<?= $image->src ?>" numb="<?= $image->numb ?>" width="<?= $image->width ?>" height="<?= $image->height ?>" />
+		</a>
 	<?endforeach?>
 	</div>
 	

@@ -5,7 +5,7 @@ function kword_mg_fileForm(){
 
 	echo lmfo([
 		'table' => 'kword' ,
-		'action' => './?page=admin&cp='.$_REQUEST['cp'].'&func='.$_REQUEST['cp'].'_list&do=fileSave',
+		'action' => './?page=admin&cp='.$_REQUEST['cp'].'&do=fileSave',
 		'name' => __FUNCTION__ ,
 		'class' => __FUNCTION__ ,
 	]);
