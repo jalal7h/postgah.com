@@ -18,6 +18,14 @@ function pgShop_user_list(){
 			[ "head"=>lmtc("shop:name"), '( strlen($rw["name"]) > 50 ? mb_substr($rw["name"],0,50,"utf-8")." .." : $rw["name"] )' ],
 			[ "head"=>lmtc("shop:path"), '"<a target=\"_blank\" href=\"http://"._DOMAIN."/".$rw["path"]."\">"._DOMAIN."/".$rw["path"]."</a>"' ],
 		],
+		'button' => [
+			'add_item_to_shop' => [
+				'url'	=> '_URL."/'.Slug::getSlugByName('userpanel').'/items/new"',
+				'icon'	=> '067',
+				'name'	=> 'ثبت کالای جدید در فروشگاه',
+				'color'	=> '#00f',
+			],
+		],
 		// 'search' => [ "name","path","desc","address","phone" ],
 	]);
 	# --------------------------------------------

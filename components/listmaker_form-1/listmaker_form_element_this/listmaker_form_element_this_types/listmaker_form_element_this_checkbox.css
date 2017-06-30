@@ -6,9 +6,10 @@
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
+    font-size: 12px;
 }
 .lmfe_inDiv.checkbox > label {
-	padding: 3px 10px;
+	/* padding: 3px 10px; */
 }
 .lmfe_inDiv.checkbox > label > input[type="checkbox"] {
 	top: 0px;

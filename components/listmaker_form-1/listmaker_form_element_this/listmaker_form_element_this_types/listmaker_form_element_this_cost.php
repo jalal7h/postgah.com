@@ -29,7 +29,7 @@ function listmaker_form_element_this_cost( $info ){
 		( $info['etc'] ? $info['etc']." " : '' ).
 		( $info['value'] ? "value=\"".$info['value']."\" " : '' ).
 		( $info['TitleInTag'] ? "placeholder=\"".$info['placeholder']."\" " : '' ).
-		"/>".$unit."\n";
+		"/><span class=\"lmfe_cost_unit\">".$unit."</span>\n";
 
 	return $c;
 	

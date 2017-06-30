@@ -63,6 +63,14 @@ function pgItem_user_saveNew(){
 	listmaker_fileupload( 'item', $item_id );
 	
 	#
+	# add_to_my_shop
+	if( $_REQUEST['add_to_my_shop'] ){
+		if( pgShop_getUserShopId() ){
+			pgShop_user_RegisterInShop( $item_id );
+		}
+	}
+
+	#
 	# paid ads
 	if( $PD_id = $_REQUEST['plan_duration_id'] ){
 

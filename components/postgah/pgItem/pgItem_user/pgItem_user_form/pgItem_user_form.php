@@ -6,6 +6,13 @@
 
 function pgItem_user_form(){
 	
+	// add_to_my_shop
+	if(! $_REQUEST['id'] ){
+		if( pgShop_getUserShopId() ){
+			$add_to_my_shop = true;
+		}
+	}
+
 	$content = listmaker_form('
 
 	[!
@@ -32,7 +39,7 @@ function pgItem_user_form(){
 		[!"url:video"!]
 		<div class="video_memo">فقط یوتوب، آپارات،‌ ویمئو</div>
 
-		<div>[!"number:cost","notInDiv"!] &nbsp; <?=setting("money_unit")?></div>
+		<div>[!"cost:cost","notInDiv"!]</div>
 		
 		<hr>
 
@@ -40,10 +47,14 @@ function pgItem_user_form(){
 		
 		<hr>
 		
-		[!"number:cell"!]
-		[!"number:tell"!]
+		<div>
+			[!"number:cell","notInDiv"!]
+			[!"number:tell","notInDiv"!]
+		</div>
 
 		<hr>
+
+		'.( $add_to_my_shop ? '[!"checkbox:add_to_my_shop", "نمایش در فروشگاه من"!]<hr>' : '').'
 
 		'.
 		( $_REQUEST['id'] ? '' : '
