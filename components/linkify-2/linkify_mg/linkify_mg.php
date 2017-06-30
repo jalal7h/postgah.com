@@ -1,11 +1,10 @@
-<?
+<?php
 
 # jalal7h@gmail.com
 # 2017/01/06
 # 1.1
 
-$GLOBALS['cmp']['linkify_mg'] = 'جعبه های پیوند';
-$GLOBALS['cmp-icon']['linkify_mg'] = '14c';
+add_component( 'linkify_mg', 'جعبه های پیوند', '14c' );
 
 function linkify_mg(){
 
@@ -51,7 +50,7 @@ function linkify_mg(){
 	# 
 	# the list
 	$table = 'linkify_config';
-	$list['head'] = 'Linkboxes';
+	$list['head'] = __('جعبه های پیوند');
 	$list['name'] = __FUNCTION__;
 	$list['query'] = " SELECT * FROM `$table` WHERE 1 ORDER BY `id` DESC ";
 	

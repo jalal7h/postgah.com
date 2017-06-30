@@ -1,11 +1,10 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2016/07/27
-# 1.0
+# 2017/06/30
+# 1.1
 
-$GLOBALS['cmp']['pgItem_mg'] = 'آگهی ها';
-$GLOBALS['cmp-icon']['pgItem_mg'] = '022';
+add_component( 'pgItem_mg', 'آگهی ها', '022' );
 
 function pgItem_mg(){
 
