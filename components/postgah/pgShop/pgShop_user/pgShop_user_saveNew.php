@@ -1,10 +1,16 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2017/05/21
-# 1.1
+# 2017/06/30
+# 1.2
 
 function pgShop_user_saveNew(){
+
+	#
+	# felan 1dune shop kafie
+	if( dbqc('shop', ['user_id'=>user_logged()] ) ){
+		return true;
+	}
 
 	$_REQUEST['path'] = trim( strtolower($_REQUEST['path']) );
 

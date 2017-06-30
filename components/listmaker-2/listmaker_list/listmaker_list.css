@@ -238,9 +238,9 @@
 	width: 140px !important;
     outline: 0px;
     border-radius: 4px;
-    margin: 5px;
+    margin: 6px 5px 5px 5px;
 	box-shadow: 0 0 0px rgba(0,0,0,0.25) inset;
-    padding: 9px 8px !important;
+    padding: 6px 8px !important;
     border: 0px !important;
     transition: all 0.5s;
     border: 1px solid rgba(0,0,0,0.08) !important;
@@ -250,7 +250,7 @@
 	transition: all 0.5s;
 }
 .listmaker_list_search input:focus {
-    padding: 10px 20px !important;
+    padding: 6px 20px !important;
 	width: 280px !important;
 	background-color: #f8f8f8 !important;
 	border-color: #f8f8f8 !important;
