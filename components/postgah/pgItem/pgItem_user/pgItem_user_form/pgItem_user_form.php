@@ -52,11 +52,11 @@ function pgItem_user_form(){
 
 		<div>[!"cost:cost","notInDiv"!]</div>
 		
-		<hr>
-
 		[!"کلمه کلیدی","max"=>10,"keyword:kword"=>kwordusage_get("item",$rw["id"],$string_flag=true)!]
-		
-		<hr>
+		<div>
+			<span class="lmfe_tnit"></span>
+			<span class="hint_for_keywords">پس از ثبت هر عبارت ، کلید Enter را زده و سپس عبارت بعدی را وارد کنید.</span>
+		</div>
 		
 		<div>
 			[!"number:cell","notInDiv"!]

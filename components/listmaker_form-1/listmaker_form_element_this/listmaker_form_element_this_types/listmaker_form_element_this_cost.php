@@ -22,7 +22,7 @@ function listmaker_form_element_this_cost( $info ){
 		$unit = " ".trim($unit);
 	}
 
-	$c.= $info['PreTab']."<input autocomplete=\"off\" type=\"text\" ".
+	$c.= "<input autocomplete=\"off\" type=\"text\" ".
 		"name=\"".$info['name'].( $info['ArrayInput'] ? '[]' : '' )."\" ".
 		"id=\"".$id."\" ".
 		( $info['class'] ? "class=\"".$info['class']." numeric\" " : '' ).

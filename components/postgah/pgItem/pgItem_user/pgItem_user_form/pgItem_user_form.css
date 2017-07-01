@@ -91,6 +91,12 @@
 	font-size: 12px;
 }
 
-
+.pgItem_user_form .hint_for_keywords {
+    font-size: 9px;
+    position: relative;
+    top: -20px;
+    color: #888;
+    right: -4px;
+}
 
 
