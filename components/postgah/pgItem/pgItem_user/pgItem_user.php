@@ -64,7 +64,7 @@ function pgItem_user(){
 					echo "<script>top.alert('شما قادر به یک بار بروزرسانی طی ۴۸ ساعت هستید.');</script>";
 
 				} else if( dbs( 'item', ['date_updated'=>U()], ['id'] ) ){
-					echo "<script>top.alert('برازرسانی انجام شد.');</script>";
+					echo "<script>top.alert('بروزرسانی انجام شد.');</script>";
 				}
 			}
 			break;
