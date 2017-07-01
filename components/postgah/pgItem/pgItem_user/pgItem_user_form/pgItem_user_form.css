@@ -98,5 +98,9 @@
     color: #888;
     right: -4px;
 }
-
+#lmfe_pgItem_user_form_cost {
+    font-size: 14px;
+    width: 130px !important;
+    padding: 6px 10px;
+}
 

@@ -50,13 +50,15 @@ function pgItem_user_form(){
 		[!"url:video"!]
 		<div class="video_memo">فقط یوتوب، آپارات،‌ ویمئو</div>
 
-		<div>[!"cost:cost","notInDiv"!]</div>
-		
 		[!"کلمه کلیدی","max"=>10,"keyword:kword"=>kwordusage_get("item",$rw["id"],$string_flag=true)!]
 		<div>
 			<span class="lmfe_tnit"></span>
 			<span class="hint_for_keywords">پس از ثبت هر عبارت ، کلید Enter را زده و سپس عبارت بعدی را وارد کنید.</span>
 		</div>
+		
+		<hr>
+
+		[!"cost:cost"!]
 		
 		<div>
 			[!"number:cell","notInDiv"!]
@@ -83,7 +85,7 @@ function pgItem_user_form(){
 		</div>
 		')
 		.'
-		
+		<!--
 		<div class="sales_by_postgah_checkbox_wrapper">
 			[!"checkbox:sale_by_postgah","آیا مایلید کالا/محصول فوق را با همکاری '.setting('tiny_title').' به فروش برسانید؟","notInDiv"!]
 			<span>(<a href=\''._URL.'/?page=64\' target=\'_blank\'>همکاری با پستگاه چیست؟</a>)</span>
@@ -106,8 +108,9 @@ function pgItem_user_form(){
 		</div>
 
 		<hr>
+		-->
 
-	[!"submit:ثبت"!]
+	[!submit!]
 	
 	');
 
