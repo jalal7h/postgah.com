@@ -26,10 +26,12 @@
 	float: right;
     text-align: right;
     margin: 25px 30px 0 0;
+    font-size: 12px;
 }
 .ppugpftc_form .current_plan > .head {
 	padding: 0 0 10px 0;
 	color: #999;
+    font-size: 12px;
 }
 .ppugpftc_form .current_plan > .head > b {
 	font-weight: bold;

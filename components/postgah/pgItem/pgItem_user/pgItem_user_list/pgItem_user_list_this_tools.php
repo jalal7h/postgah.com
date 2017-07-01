@@ -1,4 +1,8 @@
-<?
+<?php
+
+# jalal7h@gmail.com
+# 2017/07/01
+# 1.0
 
 function pgItem_user_list_this_tools( $rw ){
 
@@ -61,7 +65,16 @@ function pgItem_user_list_this_tools_RenewAds( $rw ){
 }
 
 function pgItem_user_list_this_tools_MakePremium( $rw ){
-	return "<a title=\"ویژه کردن\" href=\"".$rw['id']."\" class=\"MakePremium\"></a>";	
+	if( $rw['plan'] ){
+		$ignore_plan_id_list = [ $rw['plan'] ];
+	} else {
+		$ignore_plan_id_list = null;
+	}
+	
+	if( pgPlan_user_getPlansForThisCat_fetch( $ignore_plan_id_list ) ){
+		return "<a title=\"ویژه کردن\" href=\"".$rw['id']."\" class=\"MakePremium\"></a>";
+	}
+
 }
 
 function pgItem_user_list_this_tools_IncompletePayment( $rw ){

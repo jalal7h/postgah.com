@@ -13,6 +13,13 @@ function pgItem_user_form(){
 		}
 	}
 
+	// don't change cat / pos if its a planned item.
+	if( $item_id = $_REQUEST['id'] ){
+		if( pgItem_isPremium($item_id) ){
+			$its_premium = true;
+		}
+	}
+
 	$content = listmaker_form('
 
 	[!
@@ -25,10 +32,14 @@ function pgItem_user_form(){
 
 		<?= token_make(); ?>
 		
+		'.( $its_premium ? '' : '
+
 		[!"catbox:cat_id*", "ccf"=>true, "cat_name"=>"adsCat"!]
 		[!"positionbox:position_id*"!]
 		
 		<hr>
+
+		').'
 		
 		[!"text:name*","content_min"=>"3w","content_max"=>"70c"!]
 		[!"textarea:text*","content_min"=>"50c"!]

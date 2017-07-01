@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/04/01
-# 1.1
+# 2017/07/01
+# 1.2
 
 function pgItem_user_saveEdit(){
 
@@ -19,6 +19,16 @@ function pgItem_user_saveEdit(){
 	kbclear( $_REQUEST['tell'] );
 	kbclear( $_REQUEST['video'] );
 
+	// don't change cat / pos if its a planned item.
+	$item_id = intval($_REQUEST['id']);
+	if( pgItem_isPremium( $item_id ) ){
+		$rw_item = pgItem_fetch( $item_id );
+		$_REQUEST['position_id'] = $rw_item['position_id'];
+		$_REQUEST['cat_id'] = $rw_item['cat_id'];
+	}
+
+	#
+	# age position ya cat avaz shode, va unselected hast, in doros nis
 	if( !$_REQUEST['position_id'] or !$_REQUEST['cat_id'] ){
 		ed();
 	}
@@ -53,7 +63,7 @@ function pgItem_user_saveEdit(){
 	}
 
 	#
-	# insert
+	# update
 	$item_id = dbs("item", 
 		['name','text','cat_id','position_id','cost','cell','tell','video','sale_by_postgah','state','count_of_stock','weight','sale_duration','delivery_method','delivery_cost_town','delivery_cost_country','flag'=>$flag ], ['id','user_id'=>$user_id] );
 
@@ -84,4 +94,5 @@ function pgItem_user_saveEdit(){
 	que::push( __FUNCTION__."_result", $c );
 	
 }
+
 
