@@ -291,12 +291,12 @@ iframe[name="_hidden"] {
 	display: none;
 }
 
-.listmaker_list_record td.removeAll {
+.listmaker_list_record td.big_button {
 	text-align: center;
 	width: 49px;
 }
 
-.listmaker_list .removeAll_tr td {
+.listmaker_list .big_button_tr td {
 	direction: rtl;
 	text-align: right;
 }

@@ -1,11 +1,12 @@
-<?
+<?php
 
-function pgItem_mg_accept(){
+# jalal7h@gmail.com
+# 2017/07/01
+# 1.0
 
-	if(! $item_id = $_REQUEST['id'] ){
-		e();
-
-	} else if(! $rw_item = table('item', $item_id) ){
+function pgItem_mg_accept( $item_id ){
+	
+	if(! $rw_item = table('item', $item_id) ){
 		e();
 
 	} else if( $rw_item['flag'] == 2 ){

@@ -32,7 +32,6 @@ function pgItem_mg_list(){
 		'url' => [
 			'base' => '_URL."/?page=admin&cp='.$_REQUEST['cp'].'"', // *
 			'modify' => '_URL."/?page=admin&cp='.$_REQUEST['cp'].'&do=edit&id=".$rw["id"]',
-			'removeAll' => true,
 		],
 				
 		'filter' => [
@@ -66,6 +65,16 @@ function pgItem_mg_list(){
 			],
 		],
 
+		'big_button' => [
+			'removeAll' => [
+				'name'=>'حذف',
+				'class'=>'btn-danger',
+			],
+			'confirmAll' => [
+				'name'=>'تایید',
+				'class'=>'btn-primary',
+			],
+		],
 
 		'item' => [
 			[ "picture" => 'pgItem_image($rw)' ],

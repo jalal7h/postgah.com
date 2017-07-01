@@ -23,27 +23,28 @@ $(document).ready(function(){
 	});
 
 
-	// remove all - check all
-	$('.listmaker_list_head th input[name="removeAll_listHead"]').on('click', function(){
+	// big_button - check all
+	$('.listmaker_list_head th input[name="big_button_listHead"]').on('click', function(){
 		if( $(this).prop('checked') == true ){
 			cl( 'checked');
-			$(this).closest('.listmaker_list').find('.listmaker_list_record .removeAll .removeAll_checkbox').each(function(index, el) {
+			$(this).closest('.listmaker_list').find('.listmaker_list_record .big_button .big_button_checkbox').each(function(index, el) {
 				$(this).prop('checked', true);
 			});
 		
 		} else {
 			cl( 'unchecked');
-			$(this).closest('.listmaker_list').find('.listmaker_list_record .removeAll .removeAll_checkbox').each(function(index, el) {
+			$(this).closest('.listmaker_list').find('.listmaker_list_record .big_button .big_button_checkbox').each(function(index, el) {
 				$(this).prop('checked', false);
 			});
 		}
 	});
 
-	// remove all - remove all
-	$('.listmaker_list .removeAll_removeButton').on('click', function(){
+	// big_button - execute
+	$('.listmaker_list .big_button_theButton').on('click', function(){
+		var slug = $(this).attr('slug');
 		var fm = $(this).closest('.listmaker_list_form');
 		var fm_formAction = fm.find('input[type="hidden"][name="do"]');
-		fm_formAction.val('removeAll');
+		fm_formAction.val( slug );
 		fm.submit();
 	});
 

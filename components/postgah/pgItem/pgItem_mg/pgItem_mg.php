@@ -24,12 +24,22 @@ function pgItem_mg(){
 			break;
 			
 		case 'reject':
-			pgItem_mg_reject();
+			pgItem_mg_reject( $_REQUEST['id'] );
 			break;
 
 		case 'removeAll':
-			foreach($_REQUEST['removeAll'] as $item_id){
-				dbrm('item', $item_id, true);
+			if( sizeof($_REQUEST['big_button']) ){
+				foreach( $_REQUEST['big_button'] as $item_id ){
+					dbrm('item', $item_id, true);
+				}
+			}
+			break;
+
+		case 'confirmAll':
+			if( sizeof($_REQUEST['big_button']) ){
+				foreach( $_REQUEST['big_button'] as $item_id ){
+					pgItem_mg_accept( $item_id );
+				}
 			}
 			break;
 		
