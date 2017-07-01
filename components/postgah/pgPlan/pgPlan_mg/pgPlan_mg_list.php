@@ -27,7 +27,7 @@ function pgPlan_mg_list(){
 			break;
 
 		case 'remove' : 
-			listmaker_remove('plan');
+			pgPlan_mg_remove();
 			break;
 
 		case 'flag' : 

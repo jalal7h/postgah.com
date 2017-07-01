@@ -6,6 +6,15 @@
 
 function pgPlan_mg_form(){
 
+	if(! $plan_id = $_REQUEST['id'] ){
+		e();
+		return;
+
+	} else if( dbqc( 'item', [ 'plan'=>$plan_id ] ) ){
+		echo convbox_back('ویرایش پلان تا زمانی که تعدادی آگهی از آن وجود داشته باشد ممکن نیست.', 'red');
+		return;
+	}
+
 	#
 	# duration
 	#
