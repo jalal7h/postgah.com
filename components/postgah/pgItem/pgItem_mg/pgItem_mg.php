@@ -20,11 +20,11 @@ function pgItem_mg(){
 			break;
 
 		case 'accept':
-			pgItem_mg_accept();
+			pgItem_mg_accept( $_REQUEST['id'] );
 			break;
 			
 		case 'reject':
-			pgItem_mg_reject( $_REQUEST['id'] );
+			pgItem_mg_reject();
 			break;
 
 		case 'removeAll':
