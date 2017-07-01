@@ -2,6 +2,7 @@
 .lmfe_validation_i {
 	display: inline-block;
     vertical-align: middle;
+    font-size: 12px;
 }
 .lmfe_validation_i > i {
 	position: relative;
@@ -24,4 +25,5 @@
 
 .lmfe_validation_i .the_message {
 	vertical-align: middle;
+	font-size: 12px;
 }

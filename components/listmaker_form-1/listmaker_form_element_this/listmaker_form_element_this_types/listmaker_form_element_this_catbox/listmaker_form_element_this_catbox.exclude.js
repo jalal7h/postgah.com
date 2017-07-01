@@ -1,4 +1,4 @@
-/*2017/01/21*/
+/*2017/07/01*/
 
 var catjson_head = '';
 
@@ -29,6 +29,7 @@ jQuery(document).ready(function($) {
 	content+= '</span>';
 
 	for( var prop in obj ){
+		// console.log("obj." + prop + " = " + obj[prop]);
 		content+= '<span class="r" rel="' + prop + '" >' + obj[prop] + '</span>';
 	}
 	
@@ -39,6 +40,7 @@ jQuery(document).ready(function($) {
 
 jQuery(document).ready(function($) {
 	
+	// opens the hitbox of selecting cat and sub cat
 	$('body').delegate('.lmfe_catbox_c .lmfe_catbox', 'click', function() {
 
 		var lang_select = $(this).attr('lang_select');
@@ -79,25 +81,26 @@ jQuery(document).ready(function($) {
 		$('.lmfe_catbox_c.selected .lmfe_catbox').html( '<nobr>' + cat_title + '</nobr>' );
 		
 
-		/** load the ccf - start *************************/
 		// extra before
 		if(typeof lmfetc_extra_before == 'function') { 
 			cl('trying to run lmfetc_extra_before');
 			lmfetc_extra_before( cat_value );
 		}
 
+		/** load the ccf - start *************************/
 		// catcustomfield console
 		cat_name = $('.lmfe_catbox_c.selected').attr('cat_name');
 		if(typeof catcustomfield_console == 'function') { 
+			cl('trying to run catcustomfield_console');
 			catcustomfield_console( cat_name, cat_value /* as cat_id */ ); 
 		}
+		/** load the ccf - end *************************/
 
 		// extra after
 		if(typeof lmfetc_extra_after == 'function') { 
 			cl('trying to run lmfetc_extra_after');
 			lmfetc_extra_after( cat_value );
 		}
-		/** load the ccf - end *************************/
 
 
 		if( typeof catjson[ cat_value ] === 'undefined' ){

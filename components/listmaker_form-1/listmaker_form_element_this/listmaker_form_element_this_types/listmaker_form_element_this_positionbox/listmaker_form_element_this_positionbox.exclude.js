@@ -1,5 +1,4 @@
-
-/* 2016/11/06 */
+/* 2017/07/01 */
 
 var positionjson_head = '';
 
@@ -17,6 +16,7 @@ jQuery(document).ready(function($) {
 	}
 	
 	if( position_value == 0 ){
+		// ...
 		var nosh = $('.lmfe_positionbox_c.selected input[type="hidden"]').attr("name");
 		content+= $('.lmfe_positionbox_c.selected').closest('form').find('input[name="'+nosh+'"]').first().parent().parent().find('.lmfe_tnit').html();
 	}
@@ -26,9 +26,7 @@ jQuery(document).ready(function($) {
 	}
 
 	content+= '<span class="the_save_button"></span>';
-
 	content+= '</span>';
-
 
 	for( var prop in obj ){
 		// console.log("obj." + prop + " = " + obj[prop]);
@@ -39,7 +37,6 @@ jQuery(document).ready(function($) {
 
 });
 }
-
 
 jQuery(document).ready(function($) {
 	
@@ -66,10 +63,8 @@ jQuery(document).ready(function($) {
 				cl('index ' + position_value + ' in positionjson is NOT defined' );
 			
 			} else {
-				cl('sss');
 				hitbox( '<div class="positionjson_hitbox_c"></div>' , '80%', 'auto', 'lmfe_positionbox_c_hitbox' );
 				positionjson_set_content( position_value );
-
 			}
 
 		}
@@ -84,23 +79,27 @@ jQuery(document).ready(function($) {
 		
 		$('.lmfe_positionbox_c.selected input[type="hidden"]').val( position_value );
 		$('.lmfe_positionbox_c.selected .lmfe_positionbox').html( '<nobr>' + position_name + '</nobr>' );
-			
+
+
+		// extra before
+		if(typeof lmfetp_extra_before == 'function') { 
+			cl('trying to run lmfetp_extra_before');
+			lmfetp_extra_before( position_value );
+		}
+
+		// extra after
+		if(typeof lmfetp_extra_after == 'function') { 
+			cl('trying to run lmfetp_extra_after');
+			lmfetp_extra_after( position_value );
+		}
+
+		// agar sub pos select shod. - age chizi select shod k sub barash tarif nashode. kadr ro beband.
 		if( typeof positionjson[ position_value ] === 'undefined' ){
 			
-			// extra before
-			if(typeof lmfetp_extra_before == 'function') { 
-				lmfetp_extra_before( position_value );
-			}
-
 			// $('.lmfe_positionbox_c.selected input[type="hidden"]').val( position_value );
 			// $('.lmfe_positionbox_c.selected .lmfe_positionbox').html( '<nobr>' + position_name + '</nobr>' );
 			$('.lmfe_positionbox_c.selected').removeClass('selected');
 			
-			// extra after
-			if(typeof lmfetp_extra_after == 'function') { 
-				lmfetp_extra_after( position_value );
-			}
-
 			dehitbox_do();
 		
 		} else {
