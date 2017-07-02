@@ -6,13 +6,13 @@
 
 function pgPlan_mg_form(){
 
-	if(! $plan_id = $_REQUEST['id'] ){
-		e();
-		return;
-
-	} else if( dbqc( 'item', [ 'plan'=>$plan_id ] ) ){
-		echo convbox_back('ویرایش پلان تا زمانی که تعدادی آگهی از آن وجود داشته باشد ممکن نیست.', 'red');
-		return;
+	#
+	# dont edit a live plan
+	if( $plan_id = $_REQUEST['id'] ){
+		if( dbqc( 'item', [ 'plan'=>$plan_id ] ) ){
+			echo convbox_back('ویرایش پلان تا زمانی که تعدادی آگهی از آن وجود داشته باشد ممکن نیست.', 'red');
+			return;
+		}
 	}
 
 	#
@@ -58,11 +58,13 @@ function pgPlan_mg_form(){
 	
 	[!
 		"table" => "plan" ,
-		"action" => _URL."/?page=admin&cp=".$_REQUEST["cp"]."&func=".$_REQUEST["cp"]."_list",
+		"action" => _URL."/?page=admin&cp=".$_REQUEST["cp"],
 		"name" => "'.__FUNCTION__.'" ,
 		"class" => "'.__FUNCTION__.'" ,
 		"switch" => "do",
 	!]
+
+		[!head!]
 		
 		[!"catbox:cat_id","cat_name"=>"adsCat","inDiv"!]
 		[!"positionbox:position_id","inDiv"!]
