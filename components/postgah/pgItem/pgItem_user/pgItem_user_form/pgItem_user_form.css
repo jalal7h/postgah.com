@@ -104,3 +104,6 @@
     padding: 6px 10px;
 }
 
+#lmfe_pgItem_user_form_address {
+	width: calc( 100% - 165px );
+}

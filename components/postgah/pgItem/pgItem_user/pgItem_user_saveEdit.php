@@ -65,7 +65,7 @@ function pgItem_user_saveEdit(){
 	#
 	# update
 	$item_id = dbs("item", 
-		['name','text','cat_id','position_id','cost','cell','tell','video','sale_by_postgah','state','count_of_stock','weight','sale_duration','delivery_method','delivery_cost_town','delivery_cost_country','flag'=>$flag ], ['id','user_id'=>$user_id] );
+		['name','text','cat_id','position_id','cost','cell','tell','address','video','sale_by_postgah','state','count_of_stock','weight','sale_duration','delivery_method','delivery_cost_town','delivery_cost_country','flag'=>$flag ], ['id','user_id'=>$user_id] );
 
 	#
 	# save the custom fields.

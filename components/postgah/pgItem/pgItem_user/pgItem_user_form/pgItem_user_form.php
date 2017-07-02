@@ -65,6 +65,8 @@ function pgItem_user_form(){
 			[!"number:tell","notInDiv"!]
 		</div>
 
+		[!"text:address"!]
+
 		<hr>
 
 		'.( $add_to_my_shop ? '[!"checkbox:add_to_my_shop", "نمایش در فروشگاه من"!]<hr>' : '').'
