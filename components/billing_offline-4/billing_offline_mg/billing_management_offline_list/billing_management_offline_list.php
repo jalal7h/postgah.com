@@ -65,7 +65,7 @@ function billing_management_offline_list()
                 'icon'    => '00c',
                 'name'    => __('تایید پرداخت'),
                 'color'    => '#179600',
-                'text_readytoremove' => __('آیا مایل به حذف این گزارش پرداخت هستید؟'),
+                'text_readytoremove' => __('آیا مایل به تایید این گزارش پرداخت هستید؟'),
             ],
         ];
     }

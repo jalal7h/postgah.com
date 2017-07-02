@@ -25,6 +25,9 @@ function pgShop_user_form_pathCheck( $path ){
 		} else if( dbr($rs,0,0) != 0 ){
 			echo "قبلا ثبت شده است.";
 		
+		// } else if( Slug::getSlugByURL( './'.$path ) ){
+			// echo "صفحه مورد نظر قبلا رزرو شده است.";			
+
 		} else {
 			echo "آزاد است.";
 			return true;
