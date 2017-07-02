@@ -13,7 +13,8 @@ function DateU_en( $Date ){
 	$i = intval( substr( $Date, 14, 2) );
 	$s = intval( substr( $Date, 17, 2) );
 
-	$U = gmmktime($H, $i, $s, $m, $d, $Y, -1 );
+	// gmmktime
+	$U = mktime($H, $i, $s, $m, $d, $Y, -1 );
 
 	return $U;
 

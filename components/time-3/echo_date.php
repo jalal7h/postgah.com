@@ -16,7 +16,15 @@ function echo_date(){
 	echo date( 'Y/m/d H:i:s', $date );
 	echo "<br>";
 
-	echo substr( UDate($date), 0, 19 );
+	$date = UDate($date);
+	echo substr( $date, 0, 19 );
+
+	echo "<hr>";
+
+	$date = DateU($date);
+	echo $date."<br>";
+	$date = UDate($date);
+	echo $date."<br>";
 
 }
 
