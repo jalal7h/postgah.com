@@ -35,7 +35,9 @@ function useraccess_mg_saveNew(){
 			
 			#
 			# add new record
-			$user_id = dbs( 'user', ['email','password','permission'=>'2','name','useraccess_title','cell'] );
+			if(! $user_id = dbs( 'user', ['email','password','permission'=>'2','name','useraccess_title','cell','flag'=>1] ) ){
+				ed( dbe() );
+			}
 
 		}
 

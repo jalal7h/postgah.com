@@ -1,13 +1,15 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/06/09
-# 1.2
+# 2017/07/03
+# 1.3
 
 function dbcolumns( $table ){
 	
-	if( $GLOBALS[ __FUNCTION__ ] ){
-		return $GLOBALS[ __FUNCTION__ ];
+	$the_key = __FUNCTION__.$table;
+
+	if( $GLOBALS[ $the_key ] ){
+		return $GLOBALS[ $the_key ];
 	}
 
 	if(! is_table($table) ){
@@ -28,7 +30,7 @@ function dbcolumns( $table ){
 
 		}
 
-		$GLOBALS[ __FUNCTION__ ] = $list_of_columns;
+		$GLOBALS[ $the_key ] = $list_of_columns;
 		return $list_of_columns;
 
 	}
