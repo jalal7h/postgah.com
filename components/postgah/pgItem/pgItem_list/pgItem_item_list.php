@@ -131,10 +131,10 @@ function pgItem_item_list( $rw_pagelayer ){
 		
 		$JOIN = "LEFT JOIN `plan` ON `item`.`plan` = `plan`.`id`";
 		$WHERE = "WHERE 1 $q_query $cat_query $ccf_filterquery AND `item`.`flag`='2' AND `item`.`expired`='0'";
-		$ORDER = "ORDER BY `plan`.`pin_in_own_cat` DESC, `item`.`date_updated` DESC";
+		$ORDER = "ORDER BY (`ppioc` * `inOwnCat`) DESC, `item`.`date_updated` DESC";
 		$LIMIT = "LIMIT $start_from , $count_in_page";
 
-		$query = " SELECT `item`.*, `plan`.`pin_in_own_cat` FROM `item` $JOIN $WHERE $ORDER $LIMIT ";
+		$query = " SELECT IFNULL(`plan`.`pin_in_own_cat`,0) as `ppioc`, (`item`.`cat_id`='$cat_id') as `inOwnCat`, `item`.* FROM `item` $JOIN $WHERE $ORDER $LIMIT ";
 
 		#################################
 
