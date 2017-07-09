@@ -46,8 +46,8 @@ function admin_check(){
 		ed();
 	}
 
-	$email = mysql_real_escape_string($email);
-	$password = mysql_real_escape_string($password);
+	$email = mysqli_escape_string($GLOBALS['db'], $email);
+	$password = mysqli_escape_string($GLOBALS['db'], $password);
 
 	if(! $email = trim($email) ){
 		dg();
