@@ -13,7 +13,7 @@ a.pgIilt {
 a.pgIilt > img {
 	border-radius: 5px;
 	width: 120px;
-	height: auto;
+	height: 90px;
 	min-height: 90px;
 	box-shadow: 0 0 5px #aaa;
 	margin-bottom: -5px;
