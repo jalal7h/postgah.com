@@ -10,7 +10,7 @@ function pgPlan_mg_saveEdit(){
 	# update
 	$id = dbs(
 		"plan", 
-		['name','name_on_form','cat_id','position_id','watermark_onlyfirst','sample_page','search_box_color','search_box_color_flag','show_in_index','suggest_as_related','send_in_newsletter','pin_in_all_cat','pin_in_own_cat','pin_in_search'], 
+		['name','name_on_form','cat_id','position_id','watermark_onlyfirst','sample_page','search_box_color','search_box_color_flag','hilight_color','show_in_index','suggest_as_related','send_in_newsletter','pin_in_all_cat','pin_in_own_cat','pin_in_search'], 
 		['id']
 	);
 	#

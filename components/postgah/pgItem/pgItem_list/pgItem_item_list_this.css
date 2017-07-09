@@ -10,13 +10,21 @@ a.pgIilt {
 	position: relative;
 }
 
-a.pgIilt > img {
+a.pgIilt > img.itemImage {
 	border-radius: 5px;
 	width: 120px;
 	height: 90px;
 	min-height: 90px;
 	box-shadow: 0 0 5px #aaa;
 	margin-bottom: -5px;
+}
+a.pgIilt .frameImage {
+    width: 136px;
+    height: 110px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-radius: 5px;
 }
 a.pgIilt > .text {
 	display: inline-block;
@@ -54,7 +62,7 @@ a.pgIilt > .text > .price {
     font-weight: bold;
 }
 a.pgIilt > .text > .date {
-    background-color: white;
+    /*background-color: white;*/
 	top: 16px;
 	left: 12px;
 	font-size: 10px;

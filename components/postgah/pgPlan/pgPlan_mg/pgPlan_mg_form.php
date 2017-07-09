@@ -79,10 +79,12 @@ function pgPlan_mg_form(){
 
 		[!"file:icon","inDiv"!]
 		[!"file:watermark","inDiv"!]
+		[!"file:listframeimage","inDiv","prompt"=>"136x110"!]
 
 		<hr>
 
 		[!"color:search_box_color","inDiv"!]
+		[!"color:hilight_color","inDiv"!]
 		
 		<hr>
 

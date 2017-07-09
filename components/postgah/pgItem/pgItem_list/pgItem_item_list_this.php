@@ -12,12 +12,17 @@ function pgItem_item_list_this( $rw_item ){
 
 	if( $plan_color = pgItem_getPlanColor($rw_item) ){
 		$a_class.= ' pin_in_own_cat';
-		$a_style.= 'border-color: '.$plan_color;
+		$a_style.= 'border-color: '.$plan_color.'; ';
+		$a_style.= 'background-color: '.pgItem_getPlanHLColor($rw_item).'; ';
+	}
+
+	if( $frameImage = pgItem_getPlanFrameImage($rw_item) ){
+		$frameImageTag = '<img src="'._URL.'/'.$frameImage.'" class="frameImage"/>';
 	}
 
 	$c = '
 	<a class="'.$a_class.'" style="'.$a_style.'" href="'.pgItem_link($rw_item).'">
-		<img src="'.pgItem_image($rw_item, "240x180").'" title="'.$rw_item['name'].'" alt="'.$rw_item['name'].'" />
+		<img src="'.pgItem_image($rw_item, "240x180").'" class="itemImage" title="'.$rw_item['name'].'" alt="'.$rw_item['name'].'" />
 		<div class="text">
 			<div class="name">'.$rw_item['name'].'</div>
 			<div class="cat">'.cat_translate($rw_item['cat_id']).'</div>
@@ -26,6 +31,7 @@ function pgItem_item_list_this( $rw_item ){
 			<div class="date">'.time_inword($rw_item['date_updated']).'</div>
 			'.( user_cellVerified($rw_item['user_id']) ? '<img class="cell_verified_icon" src="'._URL.'/image_list/cell_verified_icon.png"/>' : '' ).'
 		</div>
+		'.$frameImageTag.'
 	</a>';
 
 	return $c;
