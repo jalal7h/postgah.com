@@ -1,7 +1,7 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2016/12/24
+# 2017/07/06
 # 1.1
 
 if( $_REQUEST['page'] ){
@@ -27,15 +27,15 @@ if( $_REQUEST ){
 		}
 		
 		// $_REQUEST[ $k ] = str_replace( "'", "\'", $v );
-		$_REQUEST[ $k ] = mysql_escape_string( $v );
+		$_REQUEST[ $k ] = mysqli_escape_string( $GLOBALS['db'], $v );
 
 		if( $_GET[ $k ] ){
 			// $_GET[ $k ] = str_replace( "'", "\'", $v );
-			$_GET[ $k ] = mysql_escape_string( $v );
+			$_GET[ $k ] = mysqli_escape_string( $GLOBALS['db'], $v );
 
 		} else if( $_POST[ $k ] ){
 			// $_POST[ $k ] = str_replace( "'", "\'", $v );
-			$_POST[ $k ] = mysql_escape_string( $v );
+			$_POST[ $k ] = mysqli_escape_string( $GLOBALS['db'], $v );
 		}
 
 	}

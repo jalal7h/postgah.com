@@ -21,7 +21,7 @@ function dbq( $query='', $force=false ){
 		
 		} else {
 			
-			if( dbc() ){
+			if( $db = dbc() ){
 				
 				if( strstr( $query, ' INNER JOIN ') ){
 					$force = true;
@@ -42,7 +42,7 @@ function dbq( $query='', $force=false ){
 
 				}
 
-				if( $res = mysql_query( $query ) ){
+				if( $res = mysqli_query( $db, $query ) ){
 					return $res;
 				
 				} else {

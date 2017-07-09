@@ -17,11 +17,11 @@ function dbr( $rs=null, $r="", $c="" ){
 	} else if(! dbn($rs) ){
 		echo convbox("dbr at <b>".$bt['function']." : ".$bt['line']."</b><br>No record found on query pointer", "ltr");
 	
-	} else if( $c=="" ){
-		return mysql_result( $rs, $r );
+	} else if( $c == "" ){
+		return mysqli_result( $rs, $r );
 	
 	} else {
-		return mysql_result( $rs, $r, $c );
+		return mysqli_result( $rs, $r, $c );
 	}
 
 	return false;

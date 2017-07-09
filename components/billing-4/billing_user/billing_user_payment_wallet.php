@@ -17,6 +17,9 @@ function billing_userpanel_payment_wallet( $invoice_id ){
 	} else if(! $rw_invoice = table("billing_invoice", $invoice_id) ){
 		e();
 	
+	} else if(! $rw_invoice['order_table'] ){
+		e();
+
 	} else if( $rw_invoice['date'] ){
 		e();
 	
@@ -26,8 +29,8 @@ function billing_userpanel_payment_wallet( $invoice_id ){
 	} else if( $cost > $credit ){
 		e();
 	
-	} else if(! billing_userCredit($user_id , -1*$cost) ){
-		e();
+	// } else if(! billing_userCredit($user_id , -1*$cost) ){
+		// e();
 	
 	} else {
 

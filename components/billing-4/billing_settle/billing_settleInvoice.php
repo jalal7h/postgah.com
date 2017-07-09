@@ -31,7 +31,7 @@ function billing_settleInvoice( $invoice_id , $transaction ){
 	} else {
 
 		#
-		# increase credit
+		# increase credit (if its not wallet)
 		if( $rw_invoice['method'] != 'wallet' ){
 			if(! billing_userCredit($user_id, $rw_invoice['cost']) ){
 				echo convbox("could not add credit ".$rw_invoice['cost']." to user $user_id. method: ".$rw_invoice['method']);

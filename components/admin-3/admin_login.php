@@ -1,8 +1,8 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2017/04/02
-# 1.7
+# 2017/07/09
+# 1.8
 
 add_action('admin_login');
 
@@ -108,7 +108,7 @@ function admin_logged(){
 
 function admin_free(){
 	
-	if( defined('mysql_password') and mysql_password == '' ){
+	if( defined('mysql_password') and mysql_password == '0000' ){
 		$_SESSION[ login_key()['admin_uid'] ] = 1;
 		jsgo( _URL.'/admin' );
 		die();
