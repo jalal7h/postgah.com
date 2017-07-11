@@ -29,7 +29,7 @@ function pgItem_item_list_this( $rw_item ){
 			<div class="pos">'.position_translate($rw_item['position_id']).'</div>
 			<div class="price">'.billing_format($rw_item['cost']).'</div>
 			<div class="date">'.time_inword($rw_item['date_updated']).'</div>
-			'.( user_cellVerified($rw_item['user_id']) ? '<img class="cell_verified_icon" src="'._URL.'/image_list/cell_verified_icon.png"/>' : '' ).'
+			'.( user_cellVerified($rw_item['user_id']) ? '<img title="تلفن همراه تایید شده است." class="cell_verified_icon" src="'._URL.'/image_list/cell_verified_icon.png"/>' : '' ).'
 		</div>
 		'.$frameImageTag.'
 	</a>';
