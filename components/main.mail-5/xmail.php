@@ -1,8 +1,8 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2017/05/22
-# 3.7
+# 2017/07/24
+# 3.8
 
 function xmail( $to, $subject, $text, $from='', $html=0, $mssp_id=0 ){
 
@@ -24,13 +24,17 @@ function xmail( $to, $subject, $text, $from='', $html=0, $mssp_id=0 ){
 
 	# 
 	# force html
-	if( xmail_force_html === true ){
+	if( $html ){
+		$text = '<p style="direction: '.lang_dir.'" dir="'.lang_dir.'" >'.$text.'</p>';
+
+	} else if( xmail_force_html === true ){
 		$text = nl2br($text);
 		$text = '<html><body>
-		<p style="color:#444;font-size:14px;font-family:tahoma;direction:'.land_dir.';">'.$text.'</p>
+		<p style="color: #444; font-size: 14px; font-family: tahoma; direction: '.lang_dir.'" dir="'.lang_dir.'">'.$text.'</p>
 		</body></html>';
 		$html = 1;
 	}
+	
 
 	#
 	# maybe local or remote

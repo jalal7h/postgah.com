@@ -1,6 +1,6 @@
 <?
 
-# just sends only html content;
+# sends html content only
 
 function mail_utf8( $to, $subject, $text, $header ) {
 	$header_ = 'MIME-Version: 1.0' . "\r\n".'Content-type: text/html; charset=utf8' . "\r\n";

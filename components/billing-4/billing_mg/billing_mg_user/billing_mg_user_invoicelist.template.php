@@ -25,7 +25,7 @@
 
 	<div class="the_head_w">
 		<span class="the_head"><lang>لیست صورتحساب‌ها</lang></span>
-		<a class="btn btn-link" style="float:right" href="{_URL}/admin/billing/user/<?= $user->id ?>/new-invoice">new invoice</a>
+		<a class="btn btn-link new_invoice" href="{_URL}/admin/billing/user/<?= $user->id ?>/new-invoice"><lang>صورتحساب جدید</lang></a>
 	</div>
 
 	<?if(! sizeof( $invoices ) ):?>
