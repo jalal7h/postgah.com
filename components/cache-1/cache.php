@@ -27,7 +27,7 @@
 
 /*README*/
 
-function cache( $task, $key, $value_or_timeout=""){
+function cache( $task, $key, $value_or_timeout="" ){
 	
 	if( cache_enabled() ){
 		
