@@ -29,7 +29,8 @@ function listmaker_form_element_this_positionbox( $info ){
 				".($info['isNeeded']?'class="lmfe_isNeeded"':'')." 
 				type=\"hidden\" 
 				name=\"".$info['name'].( $info['ArrayInput'] ? '[]' : '' )."\" 
-				value=\"".( $info['value'] ? $info['value'] : '0' )."\" 
+				value=\"".( $info['value'] ? $info['value'] : '0' )."\"
+				".( $info['etc'] ? $info['etc']." " : '' )."
 				/>
 			<span class='lmfe_positionbox' lang_select='".__('انتخاب')."' lang_back='".__('بازگشت')."' >".$position_name."</span>
 		</span>";

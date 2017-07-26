@@ -1,0 +1,16 @@
+
+.pgItem_item_list_sort {
+	float: left;
+	padding: 0px;
+	margin: 0px;
+	display: inline-block;
+	margin-top: -15px;
+}
+
+.pgItem_item_list_sort .sort {
+	width: 120px;
+	padding: 7px;
+}
+.pgItem_item_list_sort .lmfe_tnit {
+	display: none;
+}

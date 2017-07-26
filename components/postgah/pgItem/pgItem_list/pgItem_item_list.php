@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/06/21
-# 1.1
+# 2017/07/26
+# 1.2
 
 add_layer( 'pgItem_item_list', 'لیست آیتم‌ها', 'center', $repeat='0' );
 
@@ -16,6 +16,7 @@ function pgItem_item_list( $rw_pagelayer ){
 	$start_from = $count_in_page * $p;
 
 	?><div class="<?=__FUNCTION__?>"><?
+	?><script>var _PAGE = '<?=_PAGE?>'; var ccf_main_cat_id = '<?=intval($_REQUEST['cat_id'])?>'; </script><?
 
 
 	if( $cat_id = $_REQUEST['cat_id'] ){
@@ -23,6 +24,7 @@ function pgItem_item_list( $rw_pagelayer ){
 			return e();
 		}
 	}
+
 
 
 	# list e subgroup ha
@@ -40,7 +42,7 @@ function pgItem_item_list( $rw_pagelayer ){
 			$cat_name = $rw_cat['name'];
 			$title = str_replace( '%CAT_NAME%', $cat_name, $rw_pagelayer['name'] );
 
-			$cache_value.= '<div class="head"><span class="title">'.$title.'</span> <span class="count">('.pgCat_number_of_items($cat_id).')</span></div>';
+			$cache_value.= '<div class="head"><span class="title">'.$title.'</span> <span class="count">('.pgCat_number_of_items($cat_id).')</span>'.pgItem_item_list_sort().'</div>';
 
 			#
 			# sub cats
@@ -93,18 +95,10 @@ function pgItem_item_list( $rw_pagelayer ){
 	}
 
 
-
-
 	# list e agahi ha
-
 	# ## # ## # ## 
 	
-	$cache_key = 
-		"[".
-		( $rw_cat ? "cat_id," : "" ).
-		"p".
-		( strstr($_SERVER['QUERY_STRING'], '&ccf_') ? ",ccf_*" : "" ).
-		"]";
+	$cache_key = '[cat_id,p,ccf_*,pictured_ads,postgah_sales,price_range,position_id,sort]';
 
 	if( $cache_hit = cache( "hit", $cache_key, "10m" ) ){
 		// echo "\n<!-- hit ".date('H:i:s')." -->\n";
@@ -129,12 +123,50 @@ function pgItem_item_list( $rw_pagelayer ){
 
 		#################################
 		
+		if( $_REQUEST['postgah_sales'] ){
+			$salePostgah_q = " AND `sale_by_postgah`=1 ";
+		}
+		if( $_REQUEST['pictured_ads'] ){
+			$picturedAds_q = " AND `item`.`id` IN (SELECT DISTINCT `item_image`.`item_id` FROM `item_image` WHERE `item_image`.`hide`=0) ";
+		}
+		if(! in_array( $_REQUEST['price_range'] , [ '', '0-10000000' ] ) ){
+			list($prMin, $prMax) = explode('-', $_REQUEST['price_range']);
+			$priceRange_q = " AND (`item`.`cost` BETWEEN $prMin AND $prMax) ";
+		}
+		if( $pos_id = intval($_REQUEST['position_id']) ){
+			$pos_q = " AND `position_serial` LIKE '%/$pos_id/%' ";
+		}
+
+		switch( $_REQUEST['sort'] ){
+
+			case 'cheapest':
+				$second_order = " `item`.`cost` ASC ";
+				$cost_q = " AND `item`.`cost` > 0 ";
+				break;
+
+			case 'mostExpensive':
+				$second_order = " `item`.`cost` DESC ";
+				$cost_q = " AND `item`.`cost` > 0 ";
+				break;
+
+			case 'mostVisited':
+				$second_order = " `item`.`view` DESC ";
+				break;
+
+			case 'newest':
+			default: 
+				$second_order = " `item`.`date_updated` DESC ";
+
+		}
+
 		$JOIN = "LEFT JOIN `plan` ON `item`.`plan` = `plan`.`id`";
-		$WHERE = "WHERE 1 $q_query $cat_query $ccf_filterquery AND `item`.`flag`='2' AND `item`.`expired`='0'";
-		$ORDER = "ORDER BY (`ppioc` * `inOwnCat`) DESC, `item`.`date_updated` DESC";
+		$WHERE = "WHERE 1 $q_query $cat_query $ccf_filterquery $salePostgah_q $picturedAds_q $priceRange_q $pos_q $cost_q AND `item`.`flag`='2' AND `item`.`expired`='0'";
+		$ORDER = "ORDER BY (`ppioc` * `inOwnCat`) DESC, ".$second_order;
 		$LIMIT = "LIMIT $start_from , $count_in_page";
 
 		$query = " SELECT IFNULL(`plan`.`pin_in_own_cat`,0) as `ppioc`, (`item`.`cat_id`='$cat_id') as `inOwnCat`, `item`.* FROM `item` $JOIN $WHERE $ORDER $LIMIT ";
+
+		// echo "<div dir=ltr >$query</div>";
 
 		#################################
 

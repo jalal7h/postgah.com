@@ -35,10 +35,11 @@ select,
 input[type=text],
 input[type=email],
 input[type=password],
-input[type=reset],
-input[type=button],
+/* input[type=reset], */
+/* input[type=button], */
 textarea,
-reset {
+/* reset  */
+{
 	background-color: #ffffff;
 	border: 1px solid #cccccc;
 	padding: 6px;
@@ -65,10 +66,11 @@ select:hover,
 input[type=text]:hover,
 input[type=email]:hover,
 input[type=password]:hover,
-input[type=reset]:hover,
-reset:hover,
+/* input[type=reset]:hover, */
+/* reset:hover, */
 textarea:hover,
-input[type=button]:hover {
+/* input[type=button]:hover */
+ {
 	border: 1px solid #f0f0f0;
 	background-color: white;
 	color: #000;

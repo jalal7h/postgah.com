@@ -42,28 +42,36 @@ jQuery(document).ready(function($) {
 	});
 
 
+	// // click on checkbox
+	// if( typeof ccf_main_cat_id !== 'undefined' && ccf_main_cat_id ){
 
-	if( typeof ccf_main_cat_id !== 'undefined' && ccf_main_cat_id ){
-
-		$('.option_container > input[type="checkbox"]').on('change', function(){
+	// 	$('.option_container > input[type="checkbox"]').on('change', function(){
 						
-			var elem_name = $(this).attr('name');
-			var elem_value = $(this).prop("checked") ? 1 : 0;
-			var the_url = _URL + "/?page=" + _PAGE + '&cat_id=' + ccf_main_cat_id;
+	// 		var elem_name = $(this).attr('name');
+	// 		var elem_value = $(this).prop("checked") ? 1 : 0;
+	// 		var the_url = _URL + "/?page=" + _PAGE + '&cat_id=' + ccf_main_cat_id;
 
-			$('.option_container > input[type="checkbox"]').each(function(i){
-				var each_elem_name = $(this).attr('name');
-				var each_elem_value = $(this).prop("checked") ? 1 : 0;
-				if( each_elem_value==1 ){
-					the_url = the_url + '&' + each_elem_name + '=' + each_elem_value;
-				}
-			});
+	// 		// $('.option_container > input[type="checkbox"]').each(function(i){
+	// 		// 	var each_elem_name = $(this).attr('name');
+	// 		// 	var each_elem_value = $(this).prop("checked") ? 1 : 0;
+	// 		// 	if( each_elem_value==1 ){
+	// 		// 		the_url = the_url + '&' + each_elem_name + '=' + each_elem_value;
+	// 		// 	}
+	// 		// });
 
-			location.href = the_url;
+	// 		$('[rrqs="1"]').each(function(i){
+	// 			var each_elem_name = $(this).attr('name');
+	// 			var each_elem_value = $(this).prop("checked") ? 1 : 0;
+	// 			if( each_elem_value==1 ){
+	// 				the_url = the_url + '&' + each_elem_name + '=' + each_elem_value;
+	// 			}
+	// 		});
 
-		});
+	// 		location.href = the_url;
 
-	}
+	// 	});
+
+	// }
 
 
 });

@@ -13,7 +13,7 @@
 				<div class="head"><?=$record['name']?> : </div>
 				<?foreach( $record['option'] as $option ):?>
 					<label class="option_container">
-						<input type="checkbox" value="1" name="<?=$option['name']?>" <?=$option['checked']?> />
+						<input type="checkbox" value="1" rrqs="1" name="<?=$option['name']?>" <?=$option['checked']?> />
 						<span class="noselect"><?=$option['option']?></span>
 					</label>
 				<?endforeach?>

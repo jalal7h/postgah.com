@@ -1,0 +1,33 @@
+
+.pgItem_item_list_filters {
+	padding: 10px;
+	background: rgba(255,255,255,0.9);
+	margin-bottom: 18px;
+	border-radius: 4px;
+	box-shadow: 0 0 10px #ddd;	
+}
+.pgItem_item_list_filters .toggle_w {
+	width: 100%;
+	border-radius: 7px;
+	background-color: #f4f4f4;
+	margin-top: 3px;
+}
+
+.pgItem_item_list_filters #slider-range {
+	width: 90%;
+	margin: auto;
+}
+
+.pgItem_item_list_filters {
+	font-size: 12px;
+}
+.pgItem_item_list_filters #amount {
+	text-align: left;
+	direction: rtl;
+	width: 90%;
+	margin: 5px auto;
+}
+.pgItem_item_list_filters input[type="button"] {
+	margin: 15px 5% 5px;
+}
+

@@ -1,4 +1,4 @@
-/* 2017/07/01 */
+/* 2017/07/25 */
 
 var positionjson_head = '';
 
@@ -77,7 +77,9 @@ jQuery(document).ready(function($) {
 		var position_value = $(this).attr('rel');
 		var position_name = positionjson_get_title_serial( position_value );
 		
-		$('.lmfe_positionbox_c.selected input[type="hidden"]').val( position_value );
+		hdn_inp = $('.lmfe_positionbox_c.selected input[type="hidden"]');
+		hdn_inp.val( position_value );
+
 		$('.lmfe_positionbox_c.selected .lmfe_positionbox').html( '<nobr>' + position_name + '</nobr>' );
 
 
@@ -101,6 +103,10 @@ jQuery(document).ready(function($) {
 			$('.lmfe_positionbox_c.selected').removeClass('selected');
 			
 			dehitbox_do();
+
+			if( hdn_inp.attr('rrqs') == 1 ){
+				hdn_inp.trigger( "change" );
+			}
 		
 		} else {
 			positionjson_set_content( $(this).attr('rel') );
@@ -116,6 +122,10 @@ jQuery(document).ready(function($) {
 
 	$('body').delegate('div.positionjson_hitbox_c span.head span.the_save_button', 'click', function() {
 		dehitbox_do();
+		hdn_inp = $('.lmfe_positionbox_c.selected input[type="hidden"]');
+		if( hdn_inp.attr('rrqs') == 1 ){
+			hdn_inp.trigger( "change" );
+		}
 	});
 
 
