@@ -25,7 +25,7 @@ jQuery(document).ready(function($) {
 		content+= '<span class="title_serial">' + catjson_get_title_serial( cat_value ) + '</span>';
 	}
 
-	content+= '<span class="the_save_button"></span>';
+	content+= '<span class="btn btn-primary btn-xs the_save_button">تایید</span>';
 	content+= '</span>';
 
 	for( var prop in obj ){
@@ -50,7 +50,7 @@ jQuery(document).ready(function($) {
 
 		// ba click ruye section, bere be 0
 		$(this).parent().find('input[type="hidden"]').val('0');
-		$(this).parent().find('.lmfe_catbox').html('<nobr>'+lang_select+' '+ $(this).parent().parent().find('.lmfe_tnit').html() +'</nobr>');
+		$(this).parent().find('.lmfe_catbox').html( $(this).parent().parent().find('.lmfe_tnit').html() );
 
 		cat_value = 0;
 		
@@ -78,8 +78,12 @@ jQuery(document).ready(function($) {
 		var cat_title = catjson_get_title_serial( cat_value );
 
 		$('.lmfe_catbox_c.selected input[type="hidden"]').val( cat_value );
-		$('.lmfe_catbox_c.selected .lmfe_catbox').html( '<nobr>' + cat_title + '</nobr>' );
+		$('.lmfe_catbox_c.selected .lmfe_catbox').html( cat_title );
 		
+		// get form name, and element name :
+		formName = $('.lmfe_catbox_c.selected').closest('form').attr('name');
+		elemName = $('.lmfe_catbox_c.selected').find('input[type="hidden"]').attr('name');
+		elemFuncName = 'lmfetcb_EFN_'+formName+'_'+elemName;
 
 		// extra before
 		if(typeof lmfetc_extra_before == 'function') { 
@@ -87,12 +91,22 @@ jQuery(document).ready(function($) {
 			lmfetc_extra_before( cat_value );
 		}
 
+		if( function_exits(elemFuncName) ){
+			cl('trying to run '+elemFuncName);
+			window[elemFuncName]( cat_value );
+		
+		} else {
+			cl( 'func '+elemFuncName+' does not exists.' );
+		}
+
 		/** load the ccf - start *************************/
 		// catcustomfield console
 		cat_name = $('.lmfe_catbox_c.selected').attr('cat_name');
-		if(typeof catcustomfield_console == 'function') { 
-			cl('trying to run catcustomfield_console');
-			catcustomfield_console( cat_name, cat_value /* as cat_id */ ); 
+		if( $('.lmfe_catbox_c.selected ').attr('ccf') == 1 ){
+			if(typeof catcustomfield_console == 'function') { 
+				cl('trying to run catcustomfield_console');
+				catcustomfield_console( cat_name, cat_value /* as cat_id */ ); 
+			}
 		}
 		/** load the ccf - end *************************/
 
@@ -118,7 +132,7 @@ jQuery(document).ready(function($) {
 		catjson_set_content( $(this).attr('parent') );
 	});
 
-	$('body').delegate('div.catjson_hitbox_c span.head span.the_save_button', 'click', function() {
+	$('body').delegate('div.catjson_hitbox_c span.head .the_save_button', 'click', function() {
 		dehitbox_do();
 	});
 

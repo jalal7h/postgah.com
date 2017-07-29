@@ -1,24 +1,12 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2017/01/06
-# 1.3
+# 2017/07/28
+# 2.0
 
 define( '_PAGE_SEARCH', '67' );
 
 function pgSearch_form(){
-
-	$pos_id = intval($_REQUEST['position_id']);
-
-	if(! $rs = dbq(" SELECT * FROM `position` WHERE `parent`='0' ORDER BY `name` ASC ") ){
-		e();
-
-	} else if(! dbn($rs) ){
-		e();
-
-	} else while( $rw = dbf($rs) ){
-		$list_of_options_for_states.= "<option ".( $pos_id==$rw['id'] ? "selected" : "" )." value=\"".$rw['id']."\">".$rw['name']."</option>\n";
-	}
 
 	$q = pgSearch_q();
 
@@ -26,18 +14,52 @@ function pgSearch_form(){
 		$q = '';
 	}
 
-	$c.='
-	<form method="get" action="'._URL.'" name="'.__FUNCTION__.'" class="'.__FUNCTION__.'" >
-		<input type="hidden" name="page" value="'._PAGE_SEARCH.'" />
-		<select name="position_id">
-			<option value="">همه استان‌ها</option>
-			'.$list_of_options_for_states.'
-		</select>
-		<input type="text" name="q" placeholder="محصول، دسته یا برند مورد نظر خود را جستجو کنید .." value="'.$q.'" />
-		<input type="submit" value="جستجو" />
-	</form>';
+	if( $cat_id = $_POST['q_cat'] ){
+		if(! $cat_name = cat_translate($cat_id) ){
+			$cat_id = null;
+		}
+	}
 
-	return $c;
+	if( $pos_id = $_POST['q_pos'] ){
+		if(! $pos_name = position_translate($pos_id) ){
+			$pos_id = null;
+		}
+	}
+
+	return listmaker_form('
+		[!"action" => _URL."/?page="._PAGE_SEARCH!]
+			
+		[!"catbox:q_cat", "cat_name"=>"adsCat", "همه گروه‌ها"!]
+		[!"text:q"=>"'.$q.'"!]
+		[!"positionbox:q_pos", "همه شهرها"!]
+		<i class="fa fa-search submit btn btn-primary btn-sm"></i>
+
+		<shelf>
+			<cat></cat>
+			<pos></pos>
+		</shelf>
+
+		'.( $cat_id ? '
+		<script>
+			jQuery(document).ready(function($) {
+				$("#lmfe_inDiv_formd41d8c_q_cat input[type=\'hidden\'][name=\'q_cat\']").val("'.$cat_id.'");
+				$("#lmfe_inDiv_formd41d8c_q_cat .lmfe_catbox ").html("&nbsp;");
+				$(".pgSearch_form shelf cat").html("'.$cat_name.'").addClass("visi");
+			});
+		</script>
+		' : '' ).'	
+
+		'.( $pos_id ? '
+		<script>
+			jQuery(document).ready(function($) {
+				$("#lmfe_inDiv_formd41d8c_q_pos input[type=\'hidden\'][name=\'q_pos\']").val("'.$pos_id.'");
+				$("#lmfe_inDiv_formd41d8c_q_pos .lmfe_positionbox ").html(" ");
+				$(".pgSearch_form shelf pos").html("'.$pos_name.'").addClass("visi");
+			});
+		</script>
+		' : '' ).'	
+
+	');	
 
 }
 

@@ -1,11 +1,11 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2017/06/04
-# 1.1
+# 2017/07/29
+# 1.2
 
 function listmaker_form_element_this_positionbox( $info ){
-
+// echo $info['class'];die();
 	if(! sizeof($GLOBALS['position_config']) ){
 		e();
 
@@ -18,7 +18,11 @@ function listmaker_form_element_this_positionbox( $info ){
 		add_js_footer( bysideme().'/listmaker_form_element_this_positionbox.exclude.js' );
 
 		if(! $info['value'] ){
-			$position_name = __("انتخاب")." ".$info['placeholder'];
+			if(! $info['placeholder'] ){
+				$position_name = __("انتخاب");
+			} else {
+				$position_name = $info['placeholder'];
+			}
 		} else {
 			$position_name = positionjson_get_title_serial( $info['value'] );	
 		}
@@ -32,7 +36,7 @@ function listmaker_form_element_this_positionbox( $info ){
 				value=\"".( $info['value'] ? $info['value'] : '0' )."\"
 				".( $info['etc'] ? $info['etc']." " : '' )."
 				/>
-			<span class='lmfe_positionbox' lang_select='".__('انتخاب')."' lang_back='".__('بازگشت')."' >".$position_name."</span>
+			<span class='lmfe_positionbox ".$info['class']."' lang_select='' lang_back='".__('بازگشت')."' >".$position_name."</span>
 		</span>";
 		
 		return $c;

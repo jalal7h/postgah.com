@@ -1,12 +1,12 @@
 <?
 
 # jalal7h@gmail.com
-# 2016/01/04
-# 1.3
+# 2017/07/29
+# 1.4
 
 function pgSearch_q(){
 	
-	if(! $q = $_GET['q'] ){
+	if(! $q = $_POST['q'] ){
 		// e();
 
 	} else if(! $q = rawurldecode($q) ){

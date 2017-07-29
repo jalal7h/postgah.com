@@ -4,7 +4,7 @@
 # 2017/01/05
 # 1.1
 
-function pgSearch_engine( $q ){
+function pgSearch_engine( $q, $cat=0, $pos=0 ){
 
 	$limit = 10;
 
@@ -12,15 +12,19 @@ function pgSearch_engine( $q ){
 	$start = $limit * $p;
 	$res = [];
 
-	if( $position_id = $_REQUEST['position_id'] ){
-		$pos_query = " AND `position_serial` LIKE '%/".$position_id."/%' ";
+	if( $cat ){
+		$cat_query = " AND `cat_serial` LIKE '%/".$cat."/%' ";
+	}
+	
+	if( $pos ){
+		$pos_query = " AND `position_serial` LIKE '%/".$pos."/%' ";
 	}
 
 	$query = " SELECT *, ".
 		" MATCH (`text`) AGAINST ( '$q' IN BOOLEAN MODE) AS text_relevance, ".
 		" MATCH (`name`) AGAINST ( '$q' IN BOOLEAN MODE) AS title_relevance ".
 		" FROM `item` ".
-		" WHERE 1 AND `flag`='2' AND `expired`='0' $pos_query ".
+		" WHERE 1 AND `flag`='2' AND `expired`='0' $cat_query $pos_query ".
 		" AND MATCH (`name`,`text`) AGAINST ( '$q' IN BOOLEAN MODE ) ".
 		" ORDER BY title_relevance DESC , text_relevance DESC LIMIT $start, $limit ";
 

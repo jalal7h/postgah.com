@@ -14,3 +14,21 @@
 .pgItem_item_list_sort .lmfe_tnit {
 	display: none;
 }
+
+.pgItem_item_list_sort .lmfe_positionbox_c > .lmfe_positionbox:after {
+	content: "\f107";
+	padding-right: 6px;
+}
+.pgItem_item_list_sort .lmfe_positionbox_c > .lmfe_positionbox {
+	border: 0;
+    border-radius: 8px;
+    padding: 5px 16px 5px 6px;
+    background-color: #337ab7;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+}
+.pgItem_item_list_sort .lmfe_positionbox_c > .lmfe_positionbox:hover {
+	background-color: #286090;
+}
+

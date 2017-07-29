@@ -37,7 +37,7 @@
 	<div id="slider-range"></div>
 
 
-	<input type="button" value="اعمال" class="btn btn-xs btn-primary" />
+	<input type="button" value="تایید" class="btn btn-xs btn-primary" />
 
 </div>
 

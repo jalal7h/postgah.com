@@ -1,4 +1,4 @@
-/* 2017/07/25 */
+/* 2017/07/29 */
 
 var positionjson_head = '';
 
@@ -25,7 +25,7 @@ jQuery(document).ready(function($) {
 		content+= '<span class="title_serial">' + positionjson_get_title_serial( position_value ) + '</span>';
 	}
 
-	content+= '<span class="the_save_button"></span>';
+	content+= '<span class="btn btn-primary btn-xs the_save_button">تایید</span>';
 	content+= '</span>';
 
 	for( var prop in obj ){
@@ -50,7 +50,7 @@ jQuery(document).ready(function($) {
 		
 		// ba click ruye section, bere be 0
 		$(this).parent().find('input[type="hidden"]').val('0');
-		$(this).parent().find('.lmfe_positionbox').html('<nobr>'+lang_select+' '+ $(this).parent().parent().find('.lmfe_tnit').html() +'</nobr>');
+		$(this).parent().find('.lmfe_positionbox').html( $(this).parent().parent().find('.lmfe_tnit').html() );
 
 		position_value = 0;
 		
@@ -80,13 +80,27 @@ jQuery(document).ready(function($) {
 		hdn_inp = $('.lmfe_positionbox_c.selected input[type="hidden"]');
 		hdn_inp.val( position_value );
 
-		$('.lmfe_positionbox_c.selected .lmfe_positionbox').html( '<nobr>' + position_name + '</nobr>' );
+		$('.lmfe_positionbox_c.selected .lmfe_positionbox').html( position_name );
 
+		// get form name, and element name :
+		formName = $('.lmfe_positionbox_c.selected').closest('form').attr('name');
+		elemName = $('.lmfe_positionbox_c.selected').find('input[type="hidden"]').attr('name');
+		elemFuncName = 'lmfetpb_EFN_'+formName+'_'+elemName;
 
 		// extra before
 		if(typeof lmfetp_extra_before == 'function') { 
 			cl('trying to run lmfetp_extra_before');
 			lmfetp_extra_before( position_value );
+		} else {
+			cl('func lmfetp_extra_before does not exits.');			
+		}
+
+		if( function_exits(elemFuncName) ){
+			cl('trying to run '+elemFuncName);
+			window[elemFuncName]( position_value );
+		
+		} else {
+			cl( 'func '+elemFuncName+' does not exists.' );
 		}
 
 		// extra after
@@ -120,7 +134,7 @@ jQuery(document).ready(function($) {
 	});
 
 
-	$('body').delegate('div.positionjson_hitbox_c span.head span.the_save_button', 'click', function() {
+	$('body').delegate('div.positionjson_hitbox_c span.head .the_save_button', 'click', function() {
 		dehitbox_do();
 		hdn_inp = $('.lmfe_positionbox_c.selected input[type="hidden"]');
 		if( hdn_inp.attr('rrqs') == 1 ){

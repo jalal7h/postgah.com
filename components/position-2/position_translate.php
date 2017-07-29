@@ -1,13 +1,13 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2016/07/13
-# 1.1
+# 2017/07/29
+# 1.2
 
 function position_translate( $id ){
 	
 	if(! $rs = dbq(" SELECT `name` FROM `position` WHERE `id`='$id' LIMIT 1 ") ){
-		e(__FUNCTION__." : ".__LINE__);
+		e();
 	
 	} else if( dbn($rs)!=1 ){
 		return '';
@@ -15,5 +15,6 @@ function position_translate( $id ){
 	} else {
 		return dbr( $rs, 0, 0 );
 	}
+
 }
 
