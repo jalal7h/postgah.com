@@ -6,10 +6,14 @@ jQuery(document).ready(function($) {
 		pf = $('.pgItem_item_list_filters .price_from').val();
 		pt = $('.pgItem_item_list_filters .price_to').val();
 
+		if( pt < pf ){
+			return false;
+		}
+
 		if( !isnumeric(pf) || pf < 0 ){
 			pf = 0;
 		}
-		if( !isnumeric(pt) || pt < 0 || pt < pf ){
+		if( !isnumeric(pt) || pt < 0 ){
 			pt = 'n';
 		}
 		
