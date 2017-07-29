@@ -31,7 +31,7 @@ function pgItem_item_list( $rw_pagelayer ){
 	if( $rw_cat ){
 
 		# ## # ## # ## 
-		$cache_key = "[cat_id]";
+		$cache_key = '[cat_id,position_id,sort]';
 		if( $cache_hit = cache( "hit", $cache_key, "10m" ) ){
 			echo $cache_hit;
 		
