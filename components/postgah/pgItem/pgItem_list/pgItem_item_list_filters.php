@@ -14,6 +14,9 @@ function pgItem_item_list_filters(){
 	
 	} else {
 		list( $range_min, $range_max ) = explode('-', $price_range);
+		if( $range_min == '0' ){
+			$range_min = '';
+		}
 		if( $range_max == 'n' ){
 			$range_max = '';
 		}
