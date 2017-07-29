@@ -1,8 +1,8 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2017/01/05
-# 1.1
+# 2017/07/29
+# 1.2
 
 function pgSearch_engine( $q, $cat=0, $pos=0 ){
 
@@ -15,7 +15,7 @@ function pgSearch_engine( $q, $cat=0, $pos=0 ){
 	if( $cat ){
 		$cat_query = " AND `cat_serial` LIKE '%/".$cat."/%' ";
 	}
-	
+
 	if( $pos ){
 		$pos_query = " AND `position_serial` LIKE '%/".$pos."/%' ";
 	}

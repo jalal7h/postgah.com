@@ -31,3 +31,30 @@
 	margin: 15px 5% 5px;
 }
 
+.pgItem_item_list_filters .price_boxes {
+	text-align: center;
+	margin-top: 5px;
+}
+.pgItem_item_list_filters .price_boxes > input {
+	width: 100px;
+	font-size: 12px;
+	padding: 6px;
+	display: inline-block;
+	text-align: left;
+	direction: ltr;
+}
+.pgItem_item_list_filters .price_boxes > input:-moz-placeholder {
+    text-align: right;
+    direction: rtl;
+}
+.pgItem_item_list_filters .price_boxes > input:-ms-input-placeholder {
+    text-align: right;
+    direction: rtl;
+}
+.pgItem_item_list_filters .price_boxes > input::-webkit-input-placeholder {
+    text-align: right;
+    direction: rtl;
+}
+
+
+

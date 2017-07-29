@@ -129,9 +129,12 @@ function pgItem_item_list( $rw_pagelayer ){
 		if( $_REQUEST['pictured_ads'] ){
 			$picturedAds_q = " AND `item`.`id` IN (SELECT DISTINCT `item_image`.`item_id` FROM `item_image` WHERE `item_image`.`hide`=0) ";
 		}
-		if(! in_array( $_REQUEST['price_range'] , [ '', '0-10000000' ] ) ){
+		if(! in_array( $_REQUEST['price_range'] , [ '', '0-n' ] ) ){
 			list($prMin, $prMax) = explode('-', $_REQUEST['price_range']);
-			$priceRange_q = " AND (`item`.`cost` BETWEEN $prMin AND $prMax) ";
+			$priceRange_q = " AND `item`.`cost` >= $prMin ";
+			if( $prMax != 'n' ){
+				$priceRange_q.= " AND `item`.`cost` <= $prMax ";
+			}
 		}
 		if( $pos_id = intval($_REQUEST['position_id']) ){
 			$pos_q = " AND `position_serial` LIKE '%/$pos_id/%' ";

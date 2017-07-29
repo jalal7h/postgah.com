@@ -10,10 +10,13 @@ function pgItem_item_list_filters(){
 	
 	if(! $price_range = $_REQUEST['price_range'] ){
 		$range_min = 0;
-		$range_max = 10000000;
+		$range_max = '';
 	
 	} else {
 		list( $range_min, $range_max ) = explode('-', $price_range);
+		if( $range_max == 'n' ){
+			$range_max = '';
+		}
 	}
 
 	echo template_engine( 'pgItem_item_list_filters', [ 'range_min'=>$range_min, 'range_max'=>$range_max ] );
