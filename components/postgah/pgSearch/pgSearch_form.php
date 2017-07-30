@@ -27,8 +27,8 @@ function pgSearch_form(){
 	}
 
 	return listmaker_form('
-		[!"action" => _URL."/?page="._PAGE_SEARCH!]
-			
+		[!"action" => _URL, "method"=>"get", "switch"=>false!]
+		[!"hidden:page"=>_PAGE_SEARCH!]
 		[!"catbox:q_cat", "cat_name"=>"adsCat", "همه گروه‌ها"!]
 		[!"text:q"=>"'.$q.'"!]
 		[!"positionbox:q_pos", "همه شهرها"!]

@@ -131,6 +131,8 @@ function pgItem_item_list( $rw_pagelayer ){
 		}
 		if(! in_array( $_REQUEST['price_range'] , [ '', '0-n' ] ) ){
 			list($prMin, $prMax) = explode('-', $_REQUEST['price_range']);
+			$prMin = number_fa2en($prMin);
+			$prMax = number_fa2en($prMax);
 			$priceRange_q = " AND `item`.`cost` >= $prMin ";
 			if( $prMax != 'n' ){
 				$priceRange_q.= " AND `item`.`cost` <= $prMax ";

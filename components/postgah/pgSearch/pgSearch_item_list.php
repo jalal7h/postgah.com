@@ -21,7 +21,7 @@ function pgSearch_item_list( $rw_pagelayer ){
 		# ## # ## # ## 
 		} else {
 			
-			$pse = pgSearch_engine( $q, $_POST['q_cat'], $_POST['q_pos'] );
+			$pse = pgSearch_engine( $q, $_GET['q_cat'], $_GET['q_pos'] );
 
 			$c.= '<div class="'.__FUNCTION__.'">';
 

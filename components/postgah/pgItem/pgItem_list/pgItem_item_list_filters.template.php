@@ -12,6 +12,7 @@
 		<input type="text" placeholder="از" class="price_from" value="{range_min}" />
 		<input type="text" placeholder="تا" class="price_to" value="{range_max}" />
 	</div>
+	<script>$('.price_from, .price_to').number( true, 0 );</script>
 
 	<input type="button" value="تایید" class="btn btn-xs btn-primary" />
 

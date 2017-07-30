@@ -6,7 +6,7 @@
 
 function pgSearch_q(){
 	
-	if(! $q = $_POST['q'] ){
+	if(! $q = $_GET['q'] ){
 		// e();
 
 	} else if(! $q = rawurldecode($q) ){
