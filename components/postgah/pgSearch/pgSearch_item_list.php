@@ -14,7 +14,7 @@ function pgSearch_item_list( $rw_pagelayer ){
 	} else {
 
 		# ## # ## # ## 
-		$cache_key = __FUNCTION__ . "," . $q . "," . $_REQUEST['p'] . "," . $_REQUEST['position_id'];
+		$cache_key = __FUNCTION__ . "," . $q . "," . $_GET['p'] . "," . $_GET['q_pos'] . "," . $_GET['q_cat'];
 		if( $cache_hit = cache( "hit", $cache_key, "1day" ) ){
 			echo $cache_hit;
 			
