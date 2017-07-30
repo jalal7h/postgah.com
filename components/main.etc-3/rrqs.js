@@ -3,7 +3,7 @@
 
 jQuery(document).ready(function($) {
   
-  $('[rrqs="1"]').on('change', function(){
+  $('[rrqs="1"]').not('input[type="text"]').on('change', function(){
       
       the_url = _URL + "/?page=" + _PAGE;
       if( typeof ccf_main_cat_id !== 'undefined' && ccf_main_cat_id ){
