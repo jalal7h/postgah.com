@@ -4,5 +4,7 @@
 # 2017/07/30
 # 1.0
 
-$_REQUEST['cat_id'] = $_REQUEST['q_cat'];
+if( !$_REQUEST['cat_id'] and $_REQUEST['q_cat'] ){
+	$_REQUEST['cat_id'] = $_REQUEST['q_cat'];
+}
 
