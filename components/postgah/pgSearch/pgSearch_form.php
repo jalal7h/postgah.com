@@ -14,13 +14,13 @@ function pgSearch_form(){
 		$q = '';
 	}
 
-	if( $cat_id = $_POST['q_cat'] ){
+	if( $cat_id = $_GET['q_cat'] ){
 		if(! $cat_name = cat_translate($cat_id) ){
 			$cat_id = null;
 		}
 	}
 
-	if( $pos_id = $_POST['q_pos'] ){
+	if( $pos_id = $_GET['q_pos'] ){
 		if(! $pos_name = position_translate($pos_id) ){
 			$pos_id = null;
 		}
