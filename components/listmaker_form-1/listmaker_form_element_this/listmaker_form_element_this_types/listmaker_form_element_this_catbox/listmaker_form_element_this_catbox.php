@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/07/29
-# 1.4
+# 2017/07/30
+# 1.5
 
 function listmaker_form_element_this_catbox( $info ){
 
@@ -35,8 +35,9 @@ function listmaker_form_element_this_catbox( $info ){
 			type=\"hidden\" 
 			name=\"".$info['name'].( $info['ArrayInput'] ? '[]' : '' )."\" 
 			value=\"".$cat_value."\" 
+			".( $info['etc'] ? $info['etc']." " : '' )."
 			/>
-		<span class='lmfe_catbox' lang_select='' lang_back='".__('بازگشت')."' >".$cat_name."</span>
+		<span class='lmfe_catbox ".$info['class']."' lang_select='' lang_back='".__('بازگشت')."' >".$cat_name."</span>
 	</span>";
 	
 	if( is_component('catcustomfield') and $info['ccf']==true ){

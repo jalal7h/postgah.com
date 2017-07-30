@@ -1,10 +1,10 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/07/29
-# 1.2
+# 2017/07/30
+# 1.3
 
-function pgSearch_engine( $q, $cat=0, $pos=0 ){
+function pgSearch_engine( $q ){
 
 	$limit = 10;
 
@@ -12,19 +12,36 @@ function pgSearch_engine( $q, $cat=0, $pos=0 ){
 	$start = $limit * $p;
 	$res = [];
 
-	if( $cat ){
-		$cat_query = " AND `cat_serial` LIKE '%/".$cat."/%' ";
+	if( $cat = $_GET['q_cat'] ){
+		$cat_q = " AND `item`.`cat_serial` LIKE '%/".$cat."/%' ";
 	}
 
-	if( $pos ){
-		$pos_query = " AND `position_serial` LIKE '%/".$pos."/%' ";
+	if( $pos = $_GET['q_pos'] ){
+		$pos_q = " AND `item`.`position_serial` LIKE '%/".$pos."/%' ";
 	}
 
+	if( $_GET['postgah_sales'] == 1 ){
+		$postgah_sales_q = " AND `item`.`sale_by_postgah`=1 ";
+	}
+	if( $_GET['pictured_ads'] == 1 ){
+		$pictured_ads_q = " AND `item`.`id` IN (SELECT DISTINCT `item_image`.`item_id` FROM `item_image` WHERE `item_image`.`hide`=0) ";
+	}
+
+	if(! in_array( $_REQUEST['price_range'] , [ '', '0-n' ] ) ){
+		list($prMin, $prMax) = explode('-', $_REQUEST['price_range']);
+		$prMin = number_fa2en($prMin);
+		$prMax = number_fa2en($prMax);
+		$priceRange_q = " AND `item`.`cost` >= $prMin ";
+		if( $prMax != 'n' ){
+			$priceRange_q.= " AND `item`.`cost` <= $prMax ";
+		}
+	}
+	
 	$query = " SELECT *, ".
 		" MATCH (`text`) AGAINST ( '$q' IN BOOLEAN MODE) AS text_relevance, ".
 		" MATCH (`name`) AGAINST ( '$q' IN BOOLEAN MODE) AS title_relevance ".
 		" FROM `item` ".
-		" WHERE 1 AND `flag`='2' AND `expired`='0' $cat_query $pos_query ".
+		" WHERE 1 AND `flag`='2' AND `expired`='0' $cat_q $pos_q $pictured_ads_q $postgah_sales_q $priceRange_q ".
 		" AND MATCH (`name`,`text`) AGAINST ( '$q' IN BOOLEAN MODE ) ".
 		" ORDER BY title_relevance DESC , text_relevance DESC LIMIT $start, $limit ";
 

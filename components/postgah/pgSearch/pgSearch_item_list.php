@@ -21,7 +21,7 @@ function pgSearch_item_list( $rw_pagelayer ){
 		# ## # ## # ## 
 		} else {
 			
-			$pse = pgSearch_engine( $q, $_GET['q_cat'], $_GET['q_pos'] );
+			$pse = pgSearch_engine( $q );
 
 			$c.= '<div class="'.__FUNCTION__.'">';
 
@@ -31,6 +31,7 @@ function pgSearch_item_list( $rw_pagelayer ){
 			$listmaker_paging__count = que::pop('listmaker_paging__count');
 			$c.= '<div class="head"><span class="title">'.$title.'</span>'.
 				( $listmaker_paging__count ? ' <span class="count">('.number_format($listmaker_paging__count).')</span>' : '' ).
+				// pgItem_item_list_sort().
 				'</div>';
 			
 			#

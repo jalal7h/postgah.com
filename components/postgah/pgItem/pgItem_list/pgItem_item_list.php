@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/07/26
-# 1.2
+# 2017/07/30
+# 1.3
 
 add_layer( 'pgItem_item_list', 'لیست آیتم‌ها', 'center', $repeat='0' );
 
@@ -138,9 +138,9 @@ function pgItem_item_list( $rw_pagelayer ){
 				$priceRange_q.= " AND `item`.`cost` <= $prMax ";
 			}
 		}
-		if( $pos_id = intval($_REQUEST['position_id']) ){
-			$pos_q = " AND `position_serial` LIKE '%/$pos_id/%' ";
-		}
+		// if( $pos_id = intval($_REQUEST['position_id']) ){
+		// 	$pos_q = " AND `position_serial` LIKE '%/$pos_id/%' ";
+		// }
 
 		switch( $_REQUEST['sort'] ){
 

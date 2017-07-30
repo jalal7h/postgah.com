@@ -10,7 +10,7 @@ jQuery(document).ready(function($) {
 
 		if( pt >= pf ){
 			
-			cl( pt +' is bigger than '+ pf );
+			// cl( pt +' is bigger than '+ pf );
 
 			if( !isnumeric(pf) || pf < 0 ){
 				pf = 0;
