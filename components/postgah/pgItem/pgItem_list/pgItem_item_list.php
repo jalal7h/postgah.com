@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/07/30
-# 1.3
+# 2017/07/31
+# 1.4
 
 add_layer( 'pgItem_item_list', 'لیست آیتم‌ها', 'center', $repeat='0' );
 
@@ -90,6 +90,7 @@ function pgItem_item_list( $rw_pagelayer ){
 		echo '
 		<div class="head_and_subcat_wrapper">
 			<div class="head">'.$title.'</div>
+			<span class="count"></span>
 		</div>';
 
 	}
@@ -197,6 +198,12 @@ function pgItem_item_list( $rw_pagelayer ){
 
 		$cache_value.= listmaker_paging( $query , $link, $count_in_page );
 		$cache_value.= '</div>'; // items
+		$count = que::get('listmaker_paging__count');
+		$cache_value.= "<script>
+		jQuery(document).ready(function($) {
+			$('.head_and_subcat_wrapper .count').html('(".number_format($count).")');
+		});
+		</script>";
 		
 		echo cache( "make", $cache_key, $cache_value );
 
