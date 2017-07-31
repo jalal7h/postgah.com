@@ -27,6 +27,9 @@ function listmaker_form_element_this_positionbox( $info ){
 			$position_name = positionjson_get_title_serial( $info['value'] );	
 		}
 
+		$info['class'] = trim(str_replace( 'lmfe_isNeeded', '', $info['class']));
+		$info['class'].= ' lmfe_positionbox';
+
 		$c.= "
 		<span class='lmfe_positionbox_c' >
 			<input 
@@ -36,7 +39,7 @@ function listmaker_form_element_this_positionbox( $info ){
 				value=\"".( $info['value'] ? $info['value'] : '0' )."\"
 				".( $info['etc'] ? $info['etc']." " : '' )."
 				/>
-			<span class='lmfe_positionbox ".$info['class']."' lang_select='' lang_back='".__('بازگشت')."' >".$position_name."</span>
+			<span class='".$info['class']."' lang_select='' lang_back='".__('بازگشت')."' >".$position_name."</span>
 		</span>";
 		
 		return $c;

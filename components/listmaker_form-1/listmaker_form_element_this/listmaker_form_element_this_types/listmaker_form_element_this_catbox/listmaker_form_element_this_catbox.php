@@ -28,6 +28,9 @@ function listmaker_form_element_this_catbox( $info ){
 
 	$cat_value = ( $info['value'] ? $info['value'] : '0' );
 
+	$info['class'] = trim(str_replace( 'lmfe_isNeeded', '', $info['class']));
+	$info['class'].= ' lmfe_catbox';
+
 	$c.= "
 	<span class='lmfe_catbox_c' ccf='".( $info['ccf'] ? '1' : '0' )."' cat_name=\"".$info['cat_name']."\" >
 		<input 
@@ -37,7 +40,7 @@ function listmaker_form_element_this_catbox( $info ){
 			value=\"".$cat_value."\" 
 			".( $info['etc'] ? $info['etc']." " : '' )."
 			/>
-		<span class='lmfe_catbox ".$info['class']."' lang_select='' lang_back='".__('بازگشت')."' >".$cat_name."</span>
+		<span class='".$info['class']."' lang_select='' lang_back='".__('بازگشت')."' >".$cat_name."</span>
 	</span>";
 	
 	if( is_component('catcustomfield') and $info['ccf']==true ){
