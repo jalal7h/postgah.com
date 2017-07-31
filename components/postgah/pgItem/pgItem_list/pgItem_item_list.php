@@ -138,9 +138,9 @@ function pgItem_item_list( $rw_pagelayer ){
 				$priceRange_q.= " AND `item`.`cost` <= $prMax ";
 			}
 		}
-		// if( $pos_id = intval($_REQUEST['position_id']) ){
-		// 	$pos_q = " AND `position_serial` LIKE '%/$pos_id/%' ";
-		// }
+		if( $pos_id = intval($_REQUEST['position_id']) ){
+			$pos_q = " AND `position_serial` LIKE '%/$pos_id/%' ";
+		}
 
 		switch( $_REQUEST['sort'] ){
 
