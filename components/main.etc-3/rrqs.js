@@ -4,7 +4,7 @@
 
 jQuery(document).ready(function($) {
   
-  $('[rrqs="a"]').not('input[type="text"]').on('change', function(){
+  $('[rrqs="a"]').on('change', function(){
       
       the_url = _URL + "/?page=" + _PAGE;
       if( typeof ccf_main_cat_id !== 'undefined' && ccf_main_cat_id ){
