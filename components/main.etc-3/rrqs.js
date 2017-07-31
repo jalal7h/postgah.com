@@ -1,16 +1,17 @@
 
 // rrqs : Round Ring Query String
+// a: active, p: passive
 
 jQuery(document).ready(function($) {
   
-  $('[rrqs="1"]').not('input[type="text"]').on('change', function(){
+  $('[rrqs="a"]').not('input[type="text"]').on('change', function(){
       
       the_url = _URL + "/?page=" + _PAGE;
       if( typeof ccf_main_cat_id !== 'undefined' && ccf_main_cat_id ){
         the_url+= '&cat_id=' + ccf_main_cat_id; // what the hell is this!
       }
 
-      $('[rrqs="1"]').each(function(i){
+      $('[rrqs]').each(function(i){
 
         each_elem_name = $(this).attr('name');
 

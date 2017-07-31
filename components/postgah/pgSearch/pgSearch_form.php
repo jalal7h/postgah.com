@@ -29,9 +29,9 @@ function pgSearch_form(){
 	return listmaker_form('
 		[!"action" => _URL, "method"=>"get", "switch"=>false!]
 		[!"hidden:page"=>_PAGE_SEARCH!]
-		[!"catbox:q_cat/rrqs=1", "cat_name"=>"adsCat", "همه گروه‌ها"!]
-		[!"text:q/rrqs=1"=>"'.$q.'"!]
-		[!"positionbox:q_pos/rrqs=1", "همه شهرها"!]
+		[!"catbox:q_cat/rrqs=p", "cat_name"=>"adsCat", "همه گروه‌ها"!]
+		[!"text:q/rrqs=p"=>"'.$q.'"!]
+		[!"positionbox:q_pos/rrqs=p", "همه شهرها"!]
 		<i class="fa fa-search submit btn btn-primary btn-sm"></i>
 
 		<shelf>

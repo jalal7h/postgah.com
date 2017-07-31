@@ -118,7 +118,7 @@ jQuery(document).ready(function($) {
 			
 			dehitbox_do();
 
-			if( hdn_inp.attr('rrqs') == 1 ){
+			if( hdn_inp.attr('rrqs') == 'a' ){
 				hdn_inp.trigger( "change" );
 			}
 		
@@ -137,7 +137,7 @@ jQuery(document).ready(function($) {
 	$('body').delegate('div.positionjson_hitbox_c span.head .the_save_button', 'click', function() {
 		dehitbox_do();
 		hdn_inp = $('.lmfe_positionbox_c.selected input[type="hidden"]');
-		if( hdn_inp.attr('rrqs') == 1 ){
+		if( hdn_inp.attr('rrqs') == 'a' ){
 			hdn_inp.trigger( "change" );
 		}
 	});

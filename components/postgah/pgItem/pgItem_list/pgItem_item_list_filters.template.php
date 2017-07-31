@@ -1,12 +1,12 @@
 
 <div class="{template_name}" dir="rtl">
 
-	<?=toggle( 'pictured_ads', 'آگهی‌های عکس‌دار', null, $rrqs=true ) ?>
-	<?=toggle( 'postgah_sales', 'فروش با همکاری پستگاه', null, $rrqs=true ) ?>
+	<?=toggle( 'pictured_ads', 'آگهی‌های عکس‌دار', null, $rrqs='a' ) ?>
+	<?=toggle( 'postgah_sales', 'فروش با همکاری پستگاه', null, $rrqs='a' ) ?>
 
 	<hr>
 	
-	<input type="hidden" name="price_range" value="{price_range}" rrqs="1" />
+	<input type="hidden" name="price_range" value="{price_range}" rrqs="a" />
 	<div for="amount">بازه قیمت ({billing_unit()['code']}):‌</div>
 	<div class="price_boxes">
 		<input type="text" placeholder="از" class="price_from" value="{range_min}" />

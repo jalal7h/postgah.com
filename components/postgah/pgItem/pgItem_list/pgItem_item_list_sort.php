@@ -9,9 +9,9 @@ function pgItem_item_list_sort(){
 	return listmaker_form('
 		[!"action"=>"somewhere","method"=>"get"!]
 			
-			[!"positionbox:position_id/rrqs=1"'.( $_REQUEST['position_id'] ? '=>'.$_REQUEST['position_id'] : '' ).',"شهر","notInDiv"!]
+			[!"positionbox:position_id/rrqs=a"'.( $_REQUEST['position_id'] ? '=>'.$_REQUEST['position_id'] : '' ).',"شهر","notInDiv"!]
 			
-			<select rrqs="1" name="sort" class="sort">
+			<select rrqs="a" name="sort" class="sort">
 				<option value="newest">جدیدترین</option>
 				<option value="cheapest">ارزانترین</option>
 				<option value="mostExpensive">گرانترین</option>
