@@ -1,14 +1,15 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/07/28
-# 2.0
+# 2017/07/31
+# 2.1
 
 define( '_PAGE_SEARCH', '67' );
 
 function pgSearch_form(){
 
-	$q = pgSearch_q();
+	$q_the_original = pgSearch_q();
+	$q = $q_the_original;
 
 	if( $_REQUEST['its_tag'] ){
 		$q = '';
@@ -57,9 +58,7 @@ function pgSearch_form(){
 				$(".pgSearch_form shelf pos").html("'.$pos_name.'").addClass("visi");
 			});
 		</script>
-		' : '' ).'	
-
-	');	
+		' : '' ). ( $_REQUEST['its_tag'] ? '<input type="hidden" name="q" rrqs="p" name="q" value="'.$q_the_original.'">' : '' ) );	
 
 }
 
