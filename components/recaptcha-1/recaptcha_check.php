@@ -5,7 +5,7 @@
 # 1.0
 
 function recaptcha_check(){
-	
+
 	if(! $response = trim($_REQUEST['g-recaptcha-response']) ){
 		//
 

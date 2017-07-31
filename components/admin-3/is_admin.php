@@ -4,6 +4,8 @@
 # 2017/06/16
 # 1.1
 
+# are we in admin page?
+
 function is_admin(){
 
 	if(! admin_logged() ){

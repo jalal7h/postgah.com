@@ -66,7 +66,7 @@ function pgSearch_engine( $q ){
 		// echo 'text_relevance : ' . $rw['text_relevance']."<br>";
 	}
 
-	$query = " SELECT * FROM `item` WHERE `flag`='2' AND `expired`='0' $cat_q $pos_q $pictured_ads_q $postgah_sales_q $priceRange_q AND MATCH (`name`,`text`) AGAINST ('$q' IN BOOLEAN MODE ) ";
+	$query = " SELECT * FROM `item` WHERE `flag`='2' AND `expired`='0' $cat_q $pos_q $pictured_ads_q $postgah_sales_q $priceRange_q $ccf_filterquery AND MATCH (`name`,`text`) AGAINST ('$q' IN BOOLEAN MODE ) ";
 	$link = _URL."/?".query_string_set( "p", "%%" );
 	// echo query_string_set();die();
 	$paging = listmaker_paging( $query, $link, $limit );
