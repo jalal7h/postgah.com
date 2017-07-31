@@ -37,11 +37,15 @@ function pgSearch_engine( $q ){
 		}
 	}
 	
+	if( is_component('catcustomfield') ){
+		$ccf_filterquery = catcustomfield_filterquery();
+	}
+
 	$query = " SELECT *, ".
 		" MATCH (`text`) AGAINST ( '$q' IN BOOLEAN MODE) AS text_relevance, ".
 		" MATCH (`name`) AGAINST ( '$q' IN BOOLEAN MODE) AS title_relevance ".
 		" FROM `item` ".
-		" WHERE 1 AND `flag`='2' AND `expired`='0' $cat_q $pos_q $pictured_ads_q $postgah_sales_q $priceRange_q ".
+		" WHERE 1 AND `flag`='2' AND `expired`='0' $cat_q $pos_q $pictured_ads_q $postgah_sales_q $priceRange_q $ccf_filterquery ".
 		" AND MATCH (`name`,`text`) AGAINST ( '$q' IN BOOLEAN MODE ) ".
 		" ORDER BY title_relevance DESC , text_relevance DESC LIMIT $start, $limit ";
 
