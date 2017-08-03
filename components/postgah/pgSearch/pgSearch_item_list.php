@@ -14,7 +14,7 @@ function pgSearch_item_list( $rw_pagelayer ){
 	} else {
 
 		# ## # ## # ## 
-		$cache_key = "[q,p,q_pos,q_cat,pictured_ads,postgah_sales,price_range]";
+		$cache_key = "[q,p,q_pos,q_cat,pictured_ads,postgah_sales,price_range,ccf_*]";
 		if( $cache_hit = cache( "hit", $cache_key, "1day" ) ){
 			echo $cache_hit;
 			
