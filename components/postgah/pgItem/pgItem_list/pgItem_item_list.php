@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/07/31
-# 1.4
+# 2017/08/03
+# 1.5
 
 add_layer( 'pgItem_item_list', 'لیست آیتم‌ها', 'center', $repeat='0' );
 
@@ -194,6 +194,10 @@ function pgItem_item_list( $rw_pagelayer ){
 
 		} else {
 			$link = pgCat_link( $rw_cat, $page_number="%%" );
+		}
+
+		if( $_REQUEST['position_id'] or $_REQUEST['price_range'] or $_REQUEST['pictured_ads'] or $_REQUEST['postgah_sales'] ){
+			$link = _URL . "/?" . query_string_set( "p", "%%" );
 		}
 
 		$cache_value.= listmaker_paging( $query , $link, $count_in_page );

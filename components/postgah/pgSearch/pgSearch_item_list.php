@@ -1,8 +1,8 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2017/01/06
-# 1.3
+# 2017/08/03
+# 1.4
 
 $GLOBALS['block_layers_center']['pgSearch_item_list'] = 'جستجوی آیتم - لیست نتایج';
 
