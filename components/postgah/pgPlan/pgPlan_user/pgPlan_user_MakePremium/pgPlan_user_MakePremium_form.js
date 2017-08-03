@@ -1,6 +1,7 @@
 
 jQuery(document).ready(function($) {
 	
+	// form e make premium	
 	$('.pgItem_user_list .MakePremium').on('click', function(e){
 
 		item_id = $(this).attr('href');
@@ -10,6 +11,27 @@ jQuery(document).ready(function($) {
 		hitbox( content, 640, 'auto', 'pgPlan_user_MakePremium_form_hitbox' );
 
 		e.preventDefault();
+	});
+
+
+
+	$("body").delegate( '.ppugpftc_form .plan_wrapper', 'click', function(){
+
+		if(! $(this).hasClass('selectedPlan') ){
+
+			$('.ppugpftc_form .plan_wrapper').removeClass('selectedPlan');
+			$(this).addClass('selectedPlan');
+
+			$('.ppugpftc_form .plan_wrapper select').prop({
+				'disabled': true,
+			});
+			$(this).find('select').attr({
+				'disabled': false,
+			});
+
+		}
+
+
 	});
 
 });

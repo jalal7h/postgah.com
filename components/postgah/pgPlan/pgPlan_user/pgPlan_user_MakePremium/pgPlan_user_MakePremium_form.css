@@ -6,10 +6,7 @@
 #hitbox-container .ppugpftc_form {
     text-align: left;
     background-color: #ececec;
-}
-#hitbox-container .ppugpftc_form .this_plan {
-    margin: 0px;
-    text-align: right;
+    font-size: 12px;
 }
 #hitbox-container .ppugpftc_form .submit_button {
     margin: 40px;
@@ -20,6 +17,7 @@
     font-size: 20px;
     background-color: #f6f6f6;
     color: #777777;
+    margin-bottom: 20px
 }
 
 .ppugpftc_form .current_plan {
@@ -42,4 +40,30 @@
     overflow: hidden !important;
 }
 
+#hitbox-container .ppugpftc_form .plan_wrapper {
+    width:90%;
+    margin: 5px auto 0;
+    text-align: right;
+    display: block;
+    padding: 5px 50px;
+    background-color: #e0e0e0;
+}
+#hitbox-container .ppugpftc_form .plan_wrapper.selectedPlan {
+    background-color: #fffbea;
+}
+#hitbox-container .ppugpftc_form .plan_wrapper .name {
+    display: inline-block;
+    font-size: 12px;
+    min-width: 100px;
+    padding-right: 7px;
+}
 
+#hitbox-container .ppugpftc_form .plan_wrapper .sample_page {
+    display: inline-block;
+    margin-right: 10px;
+    color: royalblue;
+}
+
+#hitbox-container .ppugpftc_form .plan_wrapper select:disabled {
+    background: #dddddd;
+}

@@ -8,19 +8,18 @@ function pgPlan_user_MakePremium_form( $rw_item ){
 
 	$item_id = $rw_item['id'];
 
-	$c.= "<div class='".__FUNCTION__."_buffer' item_id='".$rw_item['id']."' >";
-	
-	$c.= token_make();
-
 	$_REQUEST['item_id'] = $item_id;
 	$_REQUEST['cat_id'] = intval($rw_item['cat_id']);
 	$_REQUEST['position_id'] = intval($rw_item['position_id']);
-	ob_start();
-	pgPlan_user_getPlansForThisCat( [ $rw_item['plan'] ] );
-	$c.= ob_get_contents();
-	ob_end_clean();
 	
+	#
+	# all plans
+	$rw_s = pgPlan_user_getPlansForThisCat_fetch([ $rw_item['plan'] ]);
+
+	#
+	# old plan
 	if( $rw_item['plan'] ){
+		
 		$rw_plan = table('plan', $rw_item['plan']);
 		$IPD_id = pgPlan_getItemPlanDuration( $rw_item['id'] );
 		$rw_IPD = table('item_plan_duration', $IPD_id);
@@ -40,16 +39,19 @@ function pgPlan_user_MakePremium_form( $rw_item ){
 		## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ## # ##
 
 
-		$c.= "
-		<div class=\"current_plan\">
-			<div class=\"head\">پلن فعلی <b>".$rw_plan['name_on_form']."</b> تا ".time_inword($rw_IPD['date_end'])."</div>
-			<div>با ارتقاء به پلن جدید، پلن فعلی شما بطور کامل حذف میشود</div>
-		</div>
-		";
+		$current_plan['name'] = $rw_plan['name_on_form'];
+		$current_plan['remaining'] = time_inword($rw_IPD['date_end']);
+
 	}
 
-	$c.= "</div>";
 
-	return $c;
+	return template_engine( 'pgPlan_user_MakePremium_form', [ 
+		
+		'item'=>$rw_item, 
+		'plans'=>$rw_s, 
+		'current_plan'=>$current_plan,
+
+	]);
+
 }
 

@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/07/01
-# 1.0
+# 2017/08/03
+# 1.1
 
 function pgPlan_user_getPlansForThisCat_fetch( $ignore_plan_id_list=null ){
 
@@ -32,9 +32,7 @@ function pgPlan_user_getPlansForThisCat_fetch( $ignore_plan_id_list=null ){
 
 	#
 	# put out the content
-	if(! $rs = dbq(" SELECT * FROM `plan` WHERE `flag`='1' $ignore_plan_id_query AND
-			`cat_id` IN (".implode(',',$cat_serial).") AND
-			`position_id` IN (".implode(',',$position_serial).")
+	if(! $rs = dbq(" SELECT * FROM `plan` WHERE `flag`='1' $ignore_plan_id_query AND `cat_id` IN (".implode(',',$cat_serial).") AND `position_id` IN (".implode(',',$position_serial).")
 	") ){
 		e();
 
