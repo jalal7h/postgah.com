@@ -196,7 +196,7 @@ function pgItem_item_list( $rw_pagelayer ){
 			$link = pgCat_link( $rw_cat, $page_number="%%" );
 		}
 
-		if( $_REQUEST['position_id'] or $_REQUEST['price_range'] or $_REQUEST['pictured_ads'] or $_REQUEST['postgah_sales'] ){
+		if( $_REQUEST['position_id'] or $_REQUEST['price_range'] or $_REQUEST['pictured_ads'] or $_REQUEST['postgah_sales'] or $_REQUEST['sort'] ){
 			$link = _URL . "/?" . query_string_set( "p", "%%" );
 		}
 
