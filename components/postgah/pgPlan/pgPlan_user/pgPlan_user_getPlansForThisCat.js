@@ -57,8 +57,28 @@ function pgPlan_user_getPlansForThisCat(){
 
 
 
+// entekhab e plan, dar list e plan ha. sabt e agahi, ya upgrade
+jQuery(document).ready(function($) {
+	
+	$("body").delegate( '.plan_wrapper', 'click', function(){
 
+		if(! $(this).hasClass('selectedPlan') ){
 
+			$('.plan_wrapper').removeClass('selectedPlan');
+			$(this).addClass('selectedPlan');
+
+			$('.plan_wrapper select').prop({
+				'disabled': true,
+			});
+			$(this).find('select').attr({
+				'disabled': false,
+			});
+
+		}
+
+	});
+
+});
 
 
 

@@ -4,7 +4,8 @@
 # 2016/07/24
 # 1.0
 
-// inja yekam sambal shod, 100% test nashod, chon ajalei bud, baiad tu in hafte upload mishod.
+// 2016/07/24 - yekam sambal shod, 100% test nashod.
+// 2017/08/05 - ye bug manteqi peyda, va raf shod.
 
 function item_plan_duration_orderSettle_RenewAds( $rw_item, $rw_IPD ){
 	
@@ -13,15 +14,15 @@ function item_plan_duration_orderSettle_RenewAds( $rw_item, $rw_IPD ){
 	if(! $rw_PD = table('plan_duration', $rw_IPD['plan_duration_id']) ){
 		e();
 
-	} else if(! $current_IPD_id = pgPlan_getItemPlanDuration($item_id) ){
+	} else if(! $endmost_IPD_id = pgPlan_getItemPlanDuration_endmost($item_id) ){
 		e();
 
-	} else if(! $rw_current_IPD = table('item_plan_duration', $current_IPD_id) ){
+	} else if(! $rw_endmost_IPD = table('item_plan_duration', $endmost_IPD_id) ){
 		e();
 
-	} else {
+	} else {    
 	
-		$date_start = $rw_current_IPD['date_end'];
+		$date_start = $rw_endmost_IPD['date_end'];
 		$date_end = $date_start + ( $rw_PD['hour'] * 3600 );
 		
 		if(! dbs( 'item_plan_duration', [ 'date_start'=>$date_start, 'date_end'=>$date_end ], [ 'id'=>$rw_IPD['id'] ] ) ){

@@ -23,9 +23,11 @@ function pgPlan_user_RenewAds_do_congratulate( $IPD_id, $invoice_id ){
 	$vars['item_plan'] = $rw_plan['name_on_form'];
 	$vars['item_duration'] = $rw_PD['hour']." ساعت";
 
-	$vars['item_payment_link'] = _URL.'/?page='.$_REQUEST['page'].'&do=billing_userpanel_payment&invoice_id='.$invoice_id;
+	$userpanel = _URL.'/'.Slug::getSlugByName('userpanel');
+
+	$vars['item_payment_link'] = $userpanel.'/invoice/'.$invoice_id;
 	$vars['item_payment_button'] = '<a class="btn btn-primary" href="'.$vars['item_payment_link'].'">پرداخت '.lmtc('billing_invoice')[0].'</a>';
-	$vars['invoice_list_link'] = _URL.'/?page='.$_REQUEST['page'].'&do=billing_userpanel_list';
+	$vars['invoice_list_link'] = $userpanel.'/invoice';
 	$vars['invoice_list_button'] = '<a class="btn btn-primary" href="'.$vars['invoice_list_link'].'">لیست '.lmtc('billing_invoice')[1].'</a>';
 	
 	echo texty( 'pgPlan_user_RenewAds_do_congratulate', $vars );

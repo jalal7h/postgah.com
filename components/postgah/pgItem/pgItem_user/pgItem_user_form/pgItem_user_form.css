@@ -107,3 +107,44 @@
 #lmfe_pgItem_user_form_address {
 	width: calc( 100% - 165px );
 }
+
+
+
+
+.pgItem_user_form .plan_wrapper {
+    /* width:90%; */
+    margin: 5px 0 0 0;
+    text-align: right;
+    display: block;
+    padding: 5px 12px;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    font-size: 12px;
+}
+.pgItem_user_form .plan_wrapper.selectedPlan {
+    background-color: #fffbea;
+}
+.pgItem_user_form .plan_wrapper .name {
+    display: inline-block;
+    font-size: 12px;
+    min-width: 100px;
+    padding-right: 7px;
+}
+
+.pgItem_user_form .plan_wrapper .sample_page {
+    display: inline-block;
+    margin-right: 10px;
+    color: royalblue;
+}
+
+.pgItem_user_form .plan_wrapper select:disabled {
+    background: #f3f3f3;
+}
+
+
+
+
+
+
+
+

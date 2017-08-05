@@ -86,8 +86,8 @@ function pgItem_user_form(){
 		<hr>
 		</div>
 		')
-		.'
-		<!--
+		.
+		/*
 		<div class="sales_by_postgah_checkbox_wrapper">
 			[!"checkbox:sale_by_postgah","آیا مایلید کالا/محصول فوق را با همکاری '.setting('tiny_title').' به فروش برسانید؟","notInDiv"!]
 			<span>(<a href=\''._URL.'/?page=64\' target=\'_blank\'>همکاری با پستگاه چیست؟</a>)</span>
@@ -110,7 +110,8 @@ function pgItem_user_form(){
 		</div>
 
 		<hr>
-		-->
+		*/
+		'
 
 	[!submit!]
 	
