@@ -1,4 +1,8 @@
-<?
+<?php
+
+# jalal7h@gmail.com
+# 2017/08/10
+# 1.0
 
 // still_not_used : agahi k sabt shode, vije hast, pardakhtesh anjam shode, ama admin hanuz taid nakarde
 // be ebarati hanuz setDate nashode, va niaz be date dare, yani request_for_date 1 hast.

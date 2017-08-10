@@ -78,7 +78,7 @@ function pgItem_mg_list(){
 
 		'item' => [
 			[ "picture" => 'pgItem_image($rw)' ],
-			[ '$rw[\'name\']."<div style=\'font-size:9px\'>".pgPlan_getItemPlan_text($rw)."</div>"', "title"=>'time_inword($rw["date_updated"])' ],
+			[ '$rw[\'name\']."<div style=\'font-size:9px\'>".pgPlan_getItemPlan_NowAndFuture_text($rw)."</div>"', "title"=>'time_inword($rw["date_updated"])' ],
 			[ '"<a target=\'_blank\' href=\'".user_loginLink($rw[\'user_id\'])."\'>".table("user",$rw[\'user_id\'], "name")' ],
 			[ 'position_translate($rw[\'position_id\'])." / ".cat_translate($rw[\'cat_id\'])' ],
 			[ 'pgItem_user_list_this_status($rw)' ],
