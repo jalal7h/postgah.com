@@ -9,5 +9,5 @@ function user_login_session( $user_id ){
 	$_SESSION[ login_key()['uid'] ] = $user_id;
 
 }
-		
-		
+
+

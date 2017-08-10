@@ -1,10 +1,16 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2016/10/23
-# 1.2
+# 2017/08/10
+# 1.3
 
-function billing_settleInvoice( $invoice_id , $transaction ){
+function billing_settleInvoice( $invoice_id , $transaction, $date=null ){
+
+	# 
+	# if date is not defined, set it.
+	if(! $date ){
+		$date = U();
+	}
 
 	#
 	# invoice auth
@@ -25,7 +31,7 @@ function billing_settleInvoice( $invoice_id , $transaction ){
 
 	#
 	# mark invoice as paid
-	} else if(! dbs( 'billing_invoice', ['date'=>U(), 'transaction'=>$transaction], ['id'=>$invoice_id] ) ){
+	} else if(! dbs( 'billing_invoice', ['date'=>$date, 'transaction'=>$transaction], ['id'=>$invoice_id] ) ){
 		ed();
 	
 	} else {
@@ -40,13 +46,17 @@ function billing_settleInvoice( $invoice_id , $transaction ){
 		}
 
 		# 
-		# congragulate the payment
-		$vars = $rw_invoice;
-		$vars['invoice_id'] = $rw_invoice['id'];
-		$vars['invoice_transaction'] = $transaction;
-		$vars['invoice_cost'] = billing_format($rw_invoice['cost']);
-		
-		echo texty( 'billing_settleInvoice', $vars );
+		# congratulate the payment (if its not offline)
+		if( substr( $rw_invoice['method'], 0, 6 ) == 'manual' ){
+
+			$vars = $rw_invoice;
+			$vars['invoice_id'] = $rw_invoice['id'];
+			$vars['invoice_transaction'] = $transaction;
+			$vars['invoice_cost'] = billing_format($rw_invoice['cost']);
+			
+			echo texty( 'billing_settleInvoice', $vars );
+
+		}
 		
 		return $rw_invoice;
 		

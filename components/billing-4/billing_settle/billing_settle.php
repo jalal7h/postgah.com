@@ -1,8 +1,8 @@
-<?
+<?php
 
 # jalal7h@gmail.com
-# 2016/07/09
-# 1.1
+# 2016/08/10
+# 1.2
 
 # accounting user wallet, setting order as paid [if exists] and at the final congragulating.
 
@@ -10,11 +10,11 @@
 # + age order_id dar kar bashe, taid mikone, az hesab kam mikone
 
 
-function billing_settle( $invoice_id , $transaction ){
+function billing_settle( $invoice_id , $transaction, $date=null ){
 
 	#
 	# confirm the invoice
-	if(! $rw_invoice = billing_settleInvoice( $invoice_id , $transaction ) ){
+	if(! $rw_invoice = billing_settleInvoice( $invoice_id , $transaction, $date ) ){
 		e();
 
 	# 

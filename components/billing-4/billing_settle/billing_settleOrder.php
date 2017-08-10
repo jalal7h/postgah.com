@@ -1,4 +1,4 @@
-<?
+<?php
 
 # jalal7h@gmail.com
 # 2017/05/25
@@ -8,7 +8,7 @@
 # the order table should have `flag` column
 /*README*/
 
-function billing_settleOrder( $order_table , $order_id ){
+function billing_settleOrder( $order_table, $order_id ){
 	
 	if(! $order_table ){
 		return true;
@@ -38,7 +38,7 @@ function billing_settleOrder( $order_table , $order_id ){
 	} else {
 
 		# 
-		# congragulate
+		# congratulate
 		$vars['order_id'] = $rw_order['id'];
 		$vars['cost'] = $rw_order['cost']." ".setting('money_unit');
 		echo texty( 'billing_orderSettle', $vars );
