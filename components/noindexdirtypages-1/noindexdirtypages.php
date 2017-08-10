@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/01/03
-# 1.3
+# 2017/08/10
+# 1.4
 
 add_headtag( 'noindexdirtypages' );
 
@@ -41,7 +41,8 @@ function noindexdirtypages(){
 		//
 	}
 
-	return '';
+	return "<meta name=\"googlebot\" content=\"index,follow\">\n\t".
+		   "<meta name=\"robots\" content=\"index,follow\">\n";
 
 }
 
