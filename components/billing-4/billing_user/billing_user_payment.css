@@ -24,7 +24,7 @@ section.center.have_right_sidebar .billing_userpanel_payment {
 .billing_userpanel_payment .method_list .r {
 	display: block;
 	vertical-align: top;
-	margin: 0;
+	margin: 0 0 5px 0;
     padding: 10px 25px;
     border-radius: 5px;
 	background-color: #f4f4f4;

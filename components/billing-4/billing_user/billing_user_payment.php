@@ -7,6 +7,8 @@
 # action e form e pardakht
 # form e pardakht
 
+add_jstext( 'wallet_credit_not_enough', __('اعتبار شما کافی نیست.') );
+
 function billing_userpanel_payment(){
 
 	# 
@@ -87,7 +89,6 @@ function billing_userpanel_payment(){
 		$method_str_offline = billing_userpanel_offline_form_listofpaymentmethods();
 	}
 
-
 	$content = "
 	<script> var billing_userCredit='".billing_userCredit( $user_id )."';</script>
 	<form method='post' action='"._URL."/?page=".$_REQUEST['page']."&do_slug=".$_REQUEST['do_slug']."&do2=submit".( $invoice_id ? "&invoice_id=".$invoice_id : "" )."' class='billing_userpanel_payment' name='blngpf'>
@@ -101,7 +102,7 @@ function billing_userpanel_payment(){
 			<span>".__("مبلغ قابل پرداخت")."</span>
 			
 			".( $cost 
-				? '<span class="fixed_cost">'.billing_format($cost).'</span>'
+				? '<span class="fixed_cost">'.billing_format($cost).'</span><input type="hidden" id="billing_cost" value="'.$cost.'" >'
 				: '<input type="text" name="cost" class="numeric" id="billing_cost" value="'.$cost.'" /> &nbsp; '.billing_unit()['code']
 			)."
 

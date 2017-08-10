@@ -4,6 +4,7 @@ $(document).ready(function(){
 	$('.billing_userpanel_payment').on('submit', function( e ){
 
 		if( $('#billing_cost').val() == '' /*|| $('#billing_cost').val() < 100*/ || (blngpf.method.value == 'wallet' && parseInt( $('#billing_cost').val() ) > billing_userCredit ) ){
+			alert( text_wallet_credit_not_enough );
 			$('#billing_cost').focus();
 			$('#billing_cost').css({'border':'1px solid red'});
 		
