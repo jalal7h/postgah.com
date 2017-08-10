@@ -1,9 +1,13 @@
-<?
+<?php
+
+# jalal7h@gmail.com
+# 2017/08/10
+# 1.0
 
 function breadcrumb_65(){
 
 	if(! $cat_id = $_REQUEST['cat_id'] ){
-		e(__FUNCTION__,__LINE__);
+		return "";
 
 	} else {
 		
