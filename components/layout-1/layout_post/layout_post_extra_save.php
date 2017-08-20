@@ -1,15 +1,19 @@
-<?
+<?php
+
+# jalal7h@gmail.com
+# 2017/08/20
+# 1.0
 
 function layout_post_extra_save( $rw_pagelayer ){
 
-	$data = mysql_real_escape_string( $_REQUEST['data'] );
+	$data = addslashes( $_REQUEST['data'] );
 	$framed = intval($_REQUEST['framed']);
 	
 	if(! $type = $_REQUEST['type'] ){
-		e(__FUNCTION__,__LINE__);
+		e();
 	
 	} else if(! dbs( 'page_layer', [ 'data'=>$data, 'framed'=>$framed, 'type' ], ['id'] ) ){
-		e(__FUNCTION__,__LINE__,dbe());
+		e( dbe() );
 		
 	} else {
 		return true;
