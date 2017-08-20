@@ -1,8 +1,8 @@
 <?php
 
 # jalal7h@gmail.com
-# 2017/06/09
-# 1.8
+# 2017/08/20
+# 1.9
 
 class Slug
 {
@@ -12,10 +12,14 @@ class Slug
         $URI = substr(_URI, 0, 1) == '/' ? substr(_URI, 1) : _URI;
         list( $URI_DIR, $URI_PAR ) = explode( '?', $URI );
 
+        if( substr($URI_DIR, -1) == '/' ){
+            $URI_DIR = substr($URI_DIR, 0, -1);
+        }
+
         define( '_URI_DIR', $URI_DIR );
         define( '_URI_PAR', $URI_PAR );
 
-        if( _URI_DIR == '/'  or  _URI_DIR == ''  ){
+        if( _URI_DIR == '' ){
             // echo _URI_DIR;die();
             return true;
         // } elseif( strstr(_URI, '?') ){
