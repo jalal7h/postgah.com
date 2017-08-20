@@ -9,12 +9,12 @@
 		
 		<div class="credit" >
 			<span><lang>پرداختی</lang>:</span>
-			<span><?= $user->credit ?></span>
+			<span><?= $user->payments ?></span>
 		</div>
 		
 		<div class="payments" >
 			<span><lang>اعتبار</lang>:</span>
-			<span><?= $user->payments ?></span>
+			<span><?= $user->credit ?></span>
 		</div>
 
 	</div>
